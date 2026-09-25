@@ -29,8 +29,8 @@ class CatalogTests(unittest.TestCase):
 
     def test_reviewed_catalog(self):
         result = tool.validate(self.data)
-        self.assertEqual(37, result["exactIds"])
-        self.assertEqual(51, sum(len(e["identifierProofs"]) for e in self.data["entries"]))
+        self.assertEqual(39, result["exactIds"])
+        self.assertEqual(53, sum(len(e["identifierProofs"]) for e in self.data["entries"]))
 
     def test_duplicate_conflicting_identity_rejected(self):
         duplicate = copy.deepcopy(self.entry("meteor-client"))
@@ -123,9 +123,11 @@ class CatalogTests(unittest.TestCase):
         self.assertNotIn(("brand", "future"), parsed)
         self.assertNotIn(("mod", "bigrat"), parsed)
         self.assertNotIn(("mod", "template"), parsed)
-        for identifier in ("cheatutils", "gamesense", "nightx", "krs", "cigarette", "meteorplus"):
+        for identifier in ("cheatutils", "gamesense", "nightx", "krs", "cigarette", "meteorplus", "ferox", "wurstplusthree"):
             self.assertEqual("DENY", parsed[("mod", identifier)][2])
         self.assertEqual("ALERT", parsed[("mod", "baritoe")][2])
+        for identifier in ("eclient", "xulu", "coffee", "atomic", "ferox-helper", "wurstplusthree-helper"):
+            self.assertNotIn(("mod", identifier), parsed)
 
     def test_export_refuses_existing_file(self):
         output = self.folder / "out.tsv"
@@ -136,14 +138,15 @@ class CatalogTests(unittest.TestCase):
 
     def test_merge_preserves_admin_and_only_adds_explicit_selection(self):
         existing, output, report = [self.folder / name for name in ("existing.tsv", "candidate.tsv", "report.json")]
-        text = "# administrator choices\nmod\tmeteor-client\tOFF\thttps://example.org/server-policy\n"
+        text = "# administrator choices\nmod\tferox\tOFF\thttps://example.org/server-policy\n"
         existing.write_text(text, "utf-8")
         before = existing.read_bytes()
-        result = tool.merge(self.data, existing, output, report, ["mod:meteor-client", "mod:forgehax"])
+        result = tool.merge(self.data, existing, output, report, ["mod:ferox", "mod:forgehax"])
         self.assertEqual(before, existing.read_bytes())
         rows = tool.parse_rules(output.read_text("utf-8"))
-        self.assertEqual({("mod", "meteor-client"), ("mod", "forgehax")}, set(rows))
-        self.assertEqual(("OFF", "https://example.org/server-policy"), rows[("mod", "meteor-client")][2:])
+        self.assertEqual({("mod", "ferox"), ("mod", "forgehax")}, set(rows))
+        self.assertEqual(("OFF", "https://example.org/server-policy"), rows[("mod", "ferox")][2:])
+        self.assertNotIn(("mod", "wurstplusthree"), rows)
         self.assertEqual(1, len(result["conflictsPreservingAdministratorRule"]))
         self.assertEqual(hashlib.sha256(before).hexdigest(), result["inputSHA256"])
         self.assertFalse(result["serverFilesModified"])

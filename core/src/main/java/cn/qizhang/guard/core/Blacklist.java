@@ -31,6 +31,7 @@ final class Blacklist {
             + "mod\tcigarette\tDENY\thttps://raw.githubusercontent.com/cigaretteclient/cigarette/452a33333c985358ab56ac82258a8b82b35a0d3f/src/main/resources/fabric.mod.json\n"
             + "mod\tearthhack\tDENY\thttps://raw.githubusercontent.com/3arthqu4ke/3arthh4ck/211660641696fbd43edadc37471cdcb21dfa392d/src/main/resources/mcmod.info\n"
             + "mod\tfdpclient\tDENY\thttps://raw.githubusercontent.com/SkidderMC/FDPClient/07d03078b3fe12ac7278c678f56d0e7f607fbec2/src/main/resources/mcmod.info\n"
+            + "mod\tferox\tDENY\thttps://raw.githubusercontent.com/olliem5/ferox/627205bf13f3a8ff65780a60b319defdcab73eb4/src/main/resources/mcmod.info\n"
             + "mod\tforgehax\tDENY\thttps://raw.githubusercontent.com/fr1kin/ForgeHax/7c954394b1e9a341526e34d7884222ceaa508640/src/main/resources/META-INF/mods.toml\n"
             + "mod\tgamesense\tDENY\thttps://raw.githubusercontent.com/IUDevman/gamesense-client/62061a43fea311f42c64ea2b1dbbb56599c32295/src/main/resources/mcmod.info\n"
             + "mod\thypnotic\tDENY\thttps://raw.githubusercontent.com/Hypnotic-Development/Hypnotic-Client/ec9daf0586d37af0f4f9bac2817636c34c1270ac/src/main/resources/fabric.mod.json\n"
@@ -53,6 +54,7 @@ final class Blacklist {
             + "mod\ttrollhack\tDENY\thttps://raw.githubusercontent.com/Luna5ama/TrollHack/fbd6a8d74426f653de61ca8bd09e80a488af4398/fabric/src/main/resources/fabric.mod.json\n"
             + "mod\twurst\tDENY\thttps://raw.githubusercontent.com/Wurst-Imperium/Wurst7/15969f6394c9e263624d696108f7075939d4d7f7/src/main/resources/fabric.mod.json\n"
             + "mod\twurstplus\tDENY\thttps://raw.githubusercontent.com/TrvsF/wurstplus-two/b6cbe48605e090186a2c507e0c046cfd8825c59c/src/main/resources/mcmod.info\n"
+            + "mod\twurstplusthree\tDENY\thttps://raw.githubusercontent.com/WurstPlus/wurst-plus-three/4eca774c0998dfc06d2f378bf0d939b8ad59318c/src/main/resources/mcmod.info\n"
             + "mod\txray\tDENY\thttps://raw.githubusercontent.com/AdvancedXRay/XRay-Mod/63c6e61754040f57308b7207c688364f686a2079/fabric/src/main/resources/fabric.mod.json\n";
     private final Map<String, Rule> rules = new HashMap<String, Rule>();
     static final class Rule {

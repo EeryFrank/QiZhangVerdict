@@ -1,0 +1,117 @@
+{
+  "checks": [
+    {
+      "check": "validate",
+      "command": [
+        "C:\\Python313\\python.exe",
+        "-B",
+        "catalog/catalog_tool.py",
+        "validate"
+      ],
+      "exitCode": 0,
+      "stdoutFile": "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260925\\development-update\\validate.stdout",
+      "stderrFile": "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260925\\development-update\\validate.stderr",
+      "stdoutSHA256": "b390b0430d0970e463a724d00975559b98e48e6ca60cca7d123c91179e76a548",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "check": "verify-offline",
+      "command": [
+        "C:\\Python313\\python.exe",
+        "-B",
+        "catalog/catalog_tool.py",
+        "verify-sources",
+        "--cache",
+        "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260925\\development-update\\verified-sources",
+        "--offline"
+      ],
+      "exitCode": 0,
+      "stdoutFile": "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260925\\development-update\\verify-offline.stdout",
+      "stderrFile": "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260925\\development-update\\verify-offline.stderr",
+      "stdoutSHA256": "23fe4eb9ca0417cf18d46aacb2640eca560a5e72648c844d011d99bbc8b61879",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "check": "export-blacklist",
+      "command": [
+        "C:\\Python313\\python.exe",
+        "-B",
+        "catalog/catalog_tool.py",
+        "export",
+        "--cache",
+        "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260925\\development-update\\verified-sources",
+        "--format",
+        "blacklist",
+        "--output",
+        "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260925\\development-update\\blacklist-extension.tsv"
+      ],
+      "exitCode": 0,
+      "stdoutFile": "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260925\\development-update\\export-blacklist.stdout",
+      "stderrFile": "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260925\\development-update\\export-blacklist.stderr",
+      "stdoutSHA256": "566d23b3da0a768d2f9921fce93215efe5b4b8920e95ff3783755957898b7057",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "check": "export-catalog",
+      "command": [
+        "C:\\Python313\\python.exe",
+        "-B",
+        "catalog/catalog_tool.py",
+        "export",
+        "--cache",
+        "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260925\\development-update\\verified-sources",
+        "--format",
+        "catalog",
+        "--output",
+        "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260925\\development-update\\identifiers.tsv"
+      ],
+      "exitCode": 0,
+      "stdoutFile": "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260925\\development-update\\export-catalog.stdout",
+      "stderrFile": "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260925\\development-update\\export-catalog.stderr",
+      "stdoutSHA256": "66836465d643c66342cb77b6cb355a5fab30630b1735cf7b560c7d5bc0fb5e37",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "check": "tests",
+      "command": [
+        "C:\\Python313\\python.exe",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "catalog",
+        "-p",
+        "test_catalog.py",
+        "-v"
+      ],
+      "exitCode": 0,
+      "stdoutFile": "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260925\\development-update\\tests.stdout",
+      "stderrFile": "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260925\\development-update\\tests.stderr",
+      "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSHA256": "9d491588656da99bc130514cb456c58f9ca06309f68c1100b0d554d43081bf51"
+    }
+  ],
+  "sourceReuse": {
+    "verifiedCurrentSources": 249,
+    "sourcesReusedFromPriorHashVerifiedCache": 234,
+    "sourcesReadFromThisRoundOfficialDownloads": 15,
+    "freshAllSourcesNetworkFetch": false
+  },
+  "defaultsStaticCheck": {
+    "rows": 39,
+    "matchesExportedRows": true,
+    "javaExecuted": false
+  },
+  "preservation": {
+    "previous37RulesUnchanged": true,
+    "previous36EntriesUnchanged": true,
+    "previous233SourcesUnchanged": true,
+    "previous8PendingUnchanged": true
+  },
+  "pythonTests": {
+    "passed": 25,
+    "failures": 0,
+    "errors": 0
+  }
+}

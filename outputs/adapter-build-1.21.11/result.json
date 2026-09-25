@@ -1,0 +1,438 @@
+{
+  "schemaVersion": 1,
+  "reviewedAtUTC": "2026-09-25T14:57:16.924220+00:00",
+  "scope": "Read-only Fabric+NeoForge product/source ZIP, class-file, Mixin mapping and build-source-set review; inspected final combined build06 and original actual executions03/05; no Java/Gradle/game launched by reviewer.",
+  "passed": true,
+  "blockingFindings": [],
+  "artifact": {
+    "path": "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.21.11\\fabric\\build\\libs\\qizhangverdict-fabric-1.21.11-0.4.0-dev.jar",
+    "sha256": "732ba77c6978785a8969c6f92476b8c57009be464b9210bfef2c9bb19c0d6ce5",
+    "bytes": 97169
+  },
+  "sourceJar": {
+    "path": "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.21.11\\fabric\\build\\libs\\qizhangverdict-fabric-1.21.11-0.4.0-dev-sources.jar",
+    "sha256": "8b0ce59954014fa61db1f1d812ccbce813e4ddba1cf51224e2b793b352982ca6",
+    "bytes": 50164
+  },
+  "zip": {
+    "crcValid": true,
+    "uniqueEntries": 44,
+    "classCount": 29,
+    "classMajors": [
+      65
+    ],
+    "onlyFirstPartyClasses": true,
+    "testClassesBundled": false,
+    "nestedJars": false
+  },
+  "license": {
+    "LICENSE": {
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "embeddedEqualsRoot": true
+    },
+    "NOTICE": {
+      "sha256": "47514206d1ef6b6e26de075747b19c9aca8ae77b2b68d3f101dd4675c4b14155",
+      "embeddedEqualsRoot": true
+    }
+  },
+  "descriptor": {
+    "schemaVersion": 1,
+    "id": "qizhangverdict",
+    "version": "0.4.0-dev",
+    "name": "QiZhang's Verdict / 七章的裁决",
+    "description": "IP policy and privacy-limited self-reported companion checks; not trusted attestation.",
+    "environment": "*",
+    "entrypoints": {
+      "main": [
+        "cn.qizhang.guard.fabric.GuardFabric"
+      ],
+      "client": [
+        "cn.qizhang.guard.fabric.GuardFabricClient"
+      ]
+    },
+    "mixins": [
+      "qizhangverdict.mixins.json"
+    ],
+    "license": "GPL-3.0-only",
+    "depends": {
+      "fabricloader": ">=0.19.5",
+      "fabric-api": ">=0.141.6+1.21.11",
+      "minecraft": "1.21.11",
+      "java": ">=21"
+    }
+  },
+  "mixin": {
+    "required": true,
+    "defaultRequire": 1,
+    "compiledTargetAnnotation": {
+      "type": "Lorg/spongepowered/asm/mixin/Mixin;",
+      "values": {
+        "value": [
+          "Lnet/minecraft/class_2170;"
+        ]
+      }
+    },
+    "compiledInjectAnnotation": {
+      "type": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+      "values": {
+        "method": [
+          "performCommand(Lcom/mojang/brigadier/ParseResults;Ljava/lang/String;)V"
+        ],
+        "at": [
+          {
+            "type": "Lorg/spongepowered/asm/mixin/injection/At;",
+            "values": {
+              "value": "HEAD"
+            }
+          }
+        ],
+        "cancellable": 1,
+        "require": 1
+      }
+    },
+    "namedTarget": "performCommand(Lcom/mojang/brigadier/ParseResults;Ljava/lang/String;)V",
+    "intermediaryTarget": "Lnet/minecraft/class_2170;method_9249(Lcom/mojang/brigadier/ParseResults;Ljava/lang/String;)V",
+    "officialClass": "ee",
+    "officialMethod": "a",
+    "descriptor": "(Lcom/mojang/brigadier/ParseResults;Ljava/lang/String;)V",
+    "officialMethodActuallyPresent": true,
+    "officialMethodPublic": true,
+    "mappingChainVerified": true,
+    "runtimeInjectionVerifiedByThisReview": false
+  },
+  "mappingSources": {
+    "mojangVersion": {
+      "url": "https://piston-meta.mojang.com/v1/packages/bc03bf4398acc192063d758aecb1cb299f05d793/1.21.11.json",
+      "sha1": "bc03bf4398acc192063d758aecb1cb299f05d793"
+    },
+    "server": {
+      "sha1": "64bb6d763bed0a9f1d632ec347938594144943ed",
+      "size": 56327581,
+      "url": "https://piston-data.mojang.com/v1/objects/64bb6d763bed0a9f1d632ec347938594144943ed/server.jar",
+      "sha256": "f83b8e093865806f931c7e34aae41b177d4c076335263dd124c75d6d65dd1726"
+    },
+    "serverMappings": {
+      "sha1": "5621e9253f05fd57872bbe7f8ddf5f9a7d525955",
+      "size": 8678606,
+      "url": "https://piston-data.mojang.com/v1/objects/5621e9253f05fd57872bbe7f8ddf5f9a7d525955/server.txt",
+      "sha256": "7ffd98f77f403043748d56467aac287a58f8187a27d5d6b7ebcac70042b02b1c"
+    },
+    "intermediary": {
+      "path": "E:\\CodexTemp\\Gradle\\QiZhang_Games\\caches\\modules-2\\files-2.1\\net.fabricmc\\intermediary\\1.21.11\\16a84fabebbbfaf4950abe072f6d3653090430a\\intermediary-1.21.11-v2.jar",
+      "sha256": "f45b9530d0becae596fd48743e3ee1733cc2cdc69128cdb7d8d3571de163ab87",
+      "bytes": 707972,
+      "url": "https://maven.fabricmc.net/net/fabricmc/intermediary/1.21.11/intermediary-1.21.11-v2.jar",
+      "officialSha1URL": "https://maven.fabricmc.net/net/fabricmc/intermediary/1.21.11/intermediary-1.21.11-v2.jar.sha1",
+      "sha1": "016a84fabebbbfaf4950abe072f6d3653090430a",
+      "officialSha1Matches": true
+    }
+  },
+  "embeddedDefaults": {
+    "rules": 39,
+    "deny": 35,
+    "alert": 4,
+    "matchesCurrentExport": true
+  },
+  "sourceSetsReview": {
+    "dedicatedSmokeSourceSet": true,
+    "commonAndPlatformSmokeSources": true,
+    "mainOutputAndRuntimeDependenciesPresent": true,
+    "threeJavaExecTasksRequiredByCheck": true,
+    "standardTestRemainsStrict": true,
+    "currentTestTask": "NO-SOURCE",
+    "noSmokeClassesInProductOrSourcesJar": true,
+    "reviewedProductSourcesMatchFabric03Receipt": true,
+    "buildChangesAfterFabric03": [
+      "platforms/1.21.11/build.gradle"
+    ],
+    "currentInputsMatchNeo05Receipt": true,
+    "buildChangeExplanation": "Parent restricted the two existing JavaExec tasks to Fabric and moved Neo contracts to official FML JUnit; Fabric product and smoke source bytes stayed unchanged.",
+    "sourceFiles": [
+      {
+        "path": "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.21.11\\build.gradle",
+        "sha256": "78288307e501187ab937b3423b70fa12bc5dd366ed0e305f36dfd9c5db7f3c20",
+        "bytes": 2890
+      },
+      {
+        "path": "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.21.11\\fabric\\build.gradle",
+        "sha256": "a11ee8ee8517d0ea9d7174191e5f06a256d70e3a65a620ef33e90027b8c2b58d",
+        "bytes": 1180
+      },
+      {
+        "path": "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.21.11\\common\\src\\smoke\\java\\cn\\qizhang\\guard\\minecraft\\CommandParserSmoke.java",
+        "sha256": "09e94f6581af963a960cf5324070e9e06c806ff1b44afc1b2fbe68abfca05239",
+        "bytes": 3213
+      },
+      {
+        "path": "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.21.11\\common\\src\\smoke\\java\\cn\\qizhang\\guard\\minecraft\\PayloadCodecSmoke.java",
+        "sha256": "8a8a73df8ea766dad79bb6cb4e798e8b6e7cfe49b7a9c9a4073a3edca29ed4bb",
+        "bytes": 2476
+      },
+      {
+        "path": "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.21.11\\common\\src\\main\\java\\cn\\qizhang\\guard\\minecraft\\GuardCommands.java",
+        "sha256": "acbdb9b1af364727c5876f78ef28cb493189dc01ad8a43f867de4c0747be7ab4",
+        "bytes": 3630
+      },
+      {
+        "path": "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.21.11\\common\\src\\main\\java\\cn\\qizhang\\guard\\minecraft\\MinecraftGuard.java",
+        "sha256": "e075b9386eb49e90b7b3c99e347efa5409e084bf52901881e750c9a9b6f5e3f7",
+        "bytes": 11815
+      },
+      {
+        "path": "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.21.11\\common\\src\\main\\java\\cn\\qizhang\\guard\\minecraft\\mixin\\CommandGate12111Mixin.java",
+        "sha256": "ba8fa867745f569871e18838bef7faf76b056b88d4e432ed943fddd9bfaad222",
+        "bytes": 1170
+      },
+      {
+        "path": "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.21.11\\fabric\\src\\smoke\\java\\cn\\qizhang\\guard\\fabric\\ClientChallengeDispatchSmoke.java",
+        "sha256": "006c929fef71e42f0f56545337e6d8a581a5eb889c7a2784543f7d65a7f9c1d7",
+        "bytes": 3683
+      },
+      {
+        "path": "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.21.11\\fabric\\src\\main\\resources\\fabric.mod.json",
+        "sha256": "f098e3bc83ba125428bd98ee12612b71aa93c8b07cb677461ecc6cc6c56cfe3e",
+        "bytes": 604
+      },
+      {
+        "path": "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.21.11\\fabric\\src\\main\\resources\\qizhangverdict.mixins.json",
+        "sha256": "1505ebf9d4b63f81c0b1f3446cd1982d1dcf225b8f89f19ddd71cc5194fc2e60",
+        "bytes": 249
+      },
+      {
+        "path": "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.21.11\\fabric\\src\\main\\java\\cn\\qizhang\\guard\\fabric\\ClientChallengeDispatch.java",
+        "sha256": "b3b05af53e3385b9e8554cbc2ad19d58daaed4538bbd612adcb5424d4a04358d",
+        "bytes": 958
+      },
+      {
+        "path": "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.21.11\\fabric\\src\\main\\java\\cn\\qizhang\\guard\\fabric\\GuardFabric.java",
+        "sha256": "f5a670ac70577c2302a3d626d6458adec88df0148b943518ec18974e2f73c3c2",
+        "bytes": 3651
+      },
+      {
+        "path": "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.21.11\\fabric\\src\\main\\java\\cn\\qizhang\\guard\\fabric\\GuardFabricClient.java",
+        "sha256": "f6cac486163d5151a436e8984ef6e0e350b291b614fbf5b9fd0a7c84e97878c2",
+        "bytes": 2705
+      },
+      {
+        "path": "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.21.11\\fabric\\src\\main\\java\\cn\\qizhang\\guard\\minecraft\\GuardPayload.java",
+        "sha256": "f9459c63b19dae0ff7321de0ed9cfd7a2a77a300da4d285fe8e31c2261bb3646",
+        "bytes": 1637
+      }
+    ]
+  },
+  "existingBuildEvidence": {
+    "result": {
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\builds\\03-fabric-smoke-source-set\\result.json",
+      "sha256": "fbbad0ecf200a6e943481e0dc9270139ed166774752b3b406123a869d9ef98ba",
+      "bytes": 12519
+    },
+    "log": {
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\builds\\03-fabric-smoke-source-set\\console.log",
+      "sha256": "aefcec6dd320ddecdd6b92e96b7f61f0a4ac12fc156b5acfc7e0d206be6ac422",
+      "bytes": 4227
+    },
+    "exitCode": 0,
+    "artifactMatchesReceipt": true,
+    "groupsPassed": [
+      "clientChallengeDispatchSmoke (12 checks)",
+      "commandParserSmoke",
+      "payloadCodecSmoke"
+    ],
+    "notIncluded": "Exact-JAR core regression, dedicated server startup, real GUI client and command-gate runtime are separate acceptance steps."
+  },
+  "catalogLogCheckerReview": {
+    "blockingFindings": [],
+    "rulesAndCountsDerivedFromPassedTsv": true,
+    "exactRowsAndSequenceRequired": true,
+    "exactControlsRequiredOnce": 3,
+    "uniqueFinalSummaryRequired": true,
+    "nonzeroExitCannotPass": true,
+    "artifactOriginMechanismUnchanged": true,
+    "existingPythonRegression": {
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260925\\artifact-checks-regression-01\\result.json",
+      "sha256": "94c3c3a66aeade4e000a2c7c74f13a4684c5a3f909a7e1f72b01c37ad7bf4d84",
+      "bytes": 1000
+    },
+    "existingRegressionTestsPassed": 9,
+    "noJavaExecuted": true
+  },
+  "nonBlockingObservations": [
+    {
+      "file": "platforms/1.21.11/.gradle/loom-cache",
+      "detail": "The current Loom cache is a real directory under project workspace, not an E:/CodexTemp junction. It is not inside the product JAR. Observed before combined build06 finished; parent is relocating this cache after Java stops. This observation is not a product defect."
+    }
+  ],
+  "boundaries": [
+    "Static mapping existence and FML DEV JUnit success do not prove real-player command isolation or every production-loader route.",
+    "Exact-JAR core99 has its own parent-run evidence, not substituted by smoke/JUnit groups in this audit.",
+    "NeoJUnit actual execution is build05; build06 uses cached test result. Fabric smoke reran in build06.",
+    "No source files, historical evidence or release bytes were changed by reviewer."
+  ],
+  "additionalNeoForgeReview": {
+    "passed": true,
+    "blockingFindings": [],
+    "artifact": {
+      "path": "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.21.11\\neoforge\\build\\libs\\qizhangverdict-neoforge-1.21.11-0.4.0-dev.jar",
+      "sha256": "47dc8edff5faeb9c41ce19575bd37f49a2205877d99f814aa7acc33c0440d789",
+      "bytes": 95394
+    },
+    "sourceJar": {
+      "path": "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.21.11\\neoforge\\build\\libs\\qizhangverdict-neoforge-1.21.11-0.4.0-dev-sources.jar",
+      "sha256": "913e5a5688450c986f181c8c6ee81298195f40c2cf08417e61d617083497e75f",
+      "bytes": 49632
+    },
+    "zipCrcValid": true,
+    "entries": 43,
+    "classes": 29,
+    "classMajors": [
+      65
+    ],
+    "firstPartyClassesOnly": true,
+    "embeddedLicenseAndNoticeEqualRoot": true,
+    "descriptor": {
+      "license": "GPL-3.0-only",
+      "mods": [
+        {
+          "modId": "qizhangverdict",
+          "version": "0.4.0-dev",
+          "displayName": "QiZhang's Verdict",
+          "description": "IP, account and device admission controls with an optional wire-compatible client companion. Server policy determines whether the companion is required."
+        }
+      ],
+      "mixins": [
+        {
+          "config": "qizhangverdict.mixins.json"
+        }
+      ],
+      "dependencies": {
+        "qizhangverdict": [
+          {
+            "modId": "neoforge",
+            "type": "required",
+            "versionRange": "[21.11.45,21.12)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "type": "required",
+            "versionRange": "[1.21.11]",
+            "ordering": "NONE",
+            "side": "BOTH"
+          }
+        ]
+      }
+    },
+    "javaRequirement": {
+      "explicitJavaDescriptorFeature": null,
+      "classFileMinimum": 21,
+      "mixinCompatibility": "JAVA_21",
+      "note": "Neo descriptor itself has no explicit javaVersion feature; class65, JAVA_21 mixins and fixed Neo loader establish the actual Java21 minimum."
+    },
+    "mixin": {
+      "required": true,
+      "require": 1,
+      "cancellable": true,
+      "head": true,
+      "compiledMixinAnnotation": {
+        "type": "Lorg/spongepowered/asm/mixin/Mixin;",
+        "values": {
+          "value": [
+            "Lnet/minecraft/commands/Commands;"
+          ]
+        }
+      },
+      "compiledInjectAnnotation": {
+        "type": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+        "values": {
+          "method": [
+            "performCommand(Lcom/mojang/brigadier/ParseResults;Ljava/lang/String;)V"
+          ],
+          "at": [
+            {
+              "type": "Lorg/spongepowered/asm/mixin/injection/At;",
+              "values": {
+                "value": "HEAD"
+              }
+            }
+          ],
+          "cancellable": 1,
+          "require": 1
+        }
+      },
+      "refmapAbsent": true,
+      "namespace": "Mojang named",
+      "targetPresentInOfficialMappingsAndNeoDevClass": true,
+      "devInput": {
+        "path": "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.21.11\\neoforge\\build\\moddev\\artifacts\\neoforge-21.11.45.jar",
+        "sha256": "b5f03399af26a6753d793228bf6a38faaf208769ac6f146658ee0c0c40dc6187",
+        "bytes": 27105728
+      },
+      "runtimeGateNotTestedByThisReview": true
+    },
+    "embeddedDefaults": {
+      "rules": 39,
+      "deny": 35,
+      "alert": 4,
+      "matchesCurrentExport": true
+    },
+    "existingBuildEvidence": {
+      "result": {
+        "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\builds\\05-neoforge-junit\\result.json",
+        "sha256": "daf40d202a85a0e9efdf3cf264a1279e429cb6969bd909d4f034c744d4034371",
+        "bytes": 12637
+      },
+      "log": {
+        "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\builds\\05-neoforge-junit\\console.log",
+        "sha256": "0acc5c138fe1443f7fb5d0bd4ac107572cfa4b61bd73fa7d1e18ec6ebbd04a98",
+        "bytes": 12547
+      },
+      "exitCode": 0,
+      "sourceFilesStillMatch": true,
+      "dispatchAssertions": 9,
+      "junit": {
+        "xml": {
+          "path": "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.21.11\\neoforge\\build\\test-results\\test\\TEST-cn.qizhang.guard.neoforge.PlatformContractTest.xml",
+          "sha256": "ce1b4e047afb3a49b0ba3905f6236db2e53b9fbf87b28784be019208c3a706d6",
+          "bytes": 825
+        },
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "officialFMLBootObserved": true
+      }
+    },
+    "scope": "Neo05 JUnit ran under actual official FML DEV bootstrap, not a real dedicated-server player session; source classes, not standalone exact-JAR runtime."
+  },
+  "finalCombinedBuild": {
+    "result": {
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\builds\\06-combined\\result.json",
+      "sha256": "20fbf31f33a192f746e348e78c6e4c6bdd9347b2e063e684b54d88688043a816",
+      "bytes": 13062
+    },
+    "log": {
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\builds\\06-combined\\console.log",
+      "sha256": "f685b8fbcb729594bd9e529b86440a8fe9c140c3aa3b19b8b8a4e4ca1ace8d5e",
+      "bytes": 8215
+    },
+    "exitCode": 0,
+    "currentSourcesMatch": true,
+    "bothBinaryAndSourcesJarsUnchanged": true,
+    "previous18ArtifactsUnchanged": true,
+    "fabricThreeSmokeGroupsReran": true,
+    "neoJUnit": "FROM-CACHE; actual execution evidence stays in build05"
+  },
+  "reviewAttempts": [
+    {
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\static-artifact-review-01\\attempt-01-source-change.json",
+      "sha256": "91907ccb75cac3361cffe6c72c4d7f3ccb2d046e99dfccd090ddfe93fd2dc96e",
+      "bytes": 522
+    },
+    {
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\static-artifact-review-01\\attempt-02-concurrent-output.json",
+      "sha256": "3f0bfebe5c58f3616114ce00579402247d28e8995d001e7889a4e176da289415",
+      "bytes": 394
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+PASS 1: literal parser rejects DNS and ambiguous representations
+PASS 2: IPv4-mapped IPv6 shares limits with IPv4
+PASS 3: IPv6 canonical forms share limits
+PASS 4: CIDR allow and deny precedence
+PASS 5: mapped CIDR semantics
+PASS 6: failed attempts do not consume persisted accounts
+PASS 7: rolling history survives restart and expires
+PASS 8: concurrent pending accounts cannot bypass account limit
+PASS 9: concurrent joins cannot bypass online limit
+PASS 10: duplicate UUID cannot overwrite a session
+PASS 11: pending reservations expire
+PASS 12: join rate limit resets after rolling minute
+PASS 13: attacker IP buckets are bounded
+PASS 14: configuration reload is transactional
+PASS 15: invalid blacklist prevents configuration reload
+PASS 16: corrupt persisted history fails closed
+PASS 17: state replacement preserves coherent latest history
+PASS 18: fresh nonce and replay rejection
+PASS 19: mismatched nonce consumes challenge
+PASS 20: reissued challenge invalidates old nonce
+PASS 21: required report timeout kicks exactly once
+PASS 22: optional report timeout does not kick
+PASS 23: retry cannot extend report deadline
+PASS 24: malformed oversized incomplete and trailing reports rejected
+PASS 25: wire rejects invalid UTF-8 and protocol versions
+PASS 26: client report owns immutable copied lists
+PASS 27: blacklist uses exact normalized identifiers
+PASS 28: automation default only alerts
+PASS 29: explicit automation denial bans associated accounts and device across restart
+PASS 30: explicit automation denial honors KICK without persistent bans
+PASS 31: VM DENY requires companion
+PASS 32: VM evidence and unknown are distinguished
+PASS 33: global blacklist OFF and ALERT are honored
+PASS 34: managed glob rules and matching whitelist
+PASS 35: rule mutations persist and invalid changes are transactional
+PASS 36: legacy blacklist rules support list and removal
+PASS 37: account and device bans propagate and survive restart
+PASS 38: whitelist never bypasses a persistent ban
+PASS 39: account and device unban are independent
+PASS 40: KICK sanctions never persist a blacklist ban
+PASS 41: missing devices and invalid reports do not permanently ban
+PASS 42: same IP and device allows one concurrent account
+PASS 43: same IP different devices allow three accounts
+PASS 44: different IP same device is allowed until banned
+PASS 45: concurrent device reports cannot bypass the device limit
+PASS 46: IP and device limit respects configuration two
+PASS 47: brand sanctions bind known device only
+PASS 48: device protocol round trip and legacy rejection
+PASS 49: online associated bans are discoverable without losing sessions
+PASS 50: rechallenge applies new player rules
+PASS 51: admin bans and background saves do not deadlock
+PASS 52: online IP policy reload does not rewrite account history
+PASS 53: server scope persists across restarts and differs across instances
+PASS 54: corrupt server scope is rejected rather than regenerated
+PASS 55: pathological managed rules have a report-wide budget
+PASS 56: in-flight old report cannot consume or satisfy the new challenge
+PASS 57: only two previous-nonce reports are tolerated
+PASS: 57 security regression tests

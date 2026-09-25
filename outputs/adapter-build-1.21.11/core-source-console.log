@@ -1,0 +1,133 @@
+Picked up JAVA_TOOL_OPTIONS: -Djava.io.tmpdir=E:\CodexTemp\QiZhangVerdict\compat-1.21.11\core-checks-01\temp -Dqzguard.testDir=E:\CodexTemp\QiZhangVerdict\compat-1.21.11\core-checks-01\test-data -Djavax.net.ssl.trustStoreType=Windows-ROOT -Djavax.net.ssl.trustStore=NONE
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+
+> Task :core:compileJava
+警告: [options] 源值 8 已过时，将在未来发行版中删除
+警告: [options] 目标值 8 已过时，将在未来发行版中删除
+警告: [options] 要隐藏有关已过时选项的警告, 请使用 -Xlint:-options。
+3 个警告
+
+> Task :core:processResources NO-SOURCE
+> Task :core:classes
+
+> Task :core:compileTestJava
+警告: [options] 源值 8 已过时，将在未来发行版中删除
+警告: [options] 目标值 8 已过时，将在未来发行版中删除
+警告: [options] 要隐藏有关已过时选项的警告, 请使用 -Xlint:-options。
+3 个警告
+
+> Task :core:processTestResources NO-SOURCE
+> Task :core:testClasses
+
+> Task :core:securityTest
+Picked up JAVA_TOOL_OPTIONS: -Djava.io.tmpdir=E:\CodexTemp\QiZhangVerdict\compat-1.21.11\core-checks-01\temp -Dqzguard.testDir=E:\CodexTemp\QiZhangVerdict\compat-1.21.11\core-checks-01\test-data -Djavax.net.ssl.trustStoreType=Windows-ROOT -Djavax.net.ssl.trustStore=NONE
+PASS 1: literal parser rejects DNS and ambiguous representations
+PASS 2: IPv4-mapped IPv6 shares limits with IPv4
+PASS 3: IPv6 canonical forms share limits
+PASS 4: CIDR allow and deny precedence
+PASS 5: mapped CIDR semantics
+PASS 6: failed attempts do not consume persisted accounts
+PASS 7: rolling history survives restart and expires
+PASS 8: concurrent pending accounts cannot bypass account limit
+PASS 9: concurrent joins cannot bypass online limit
+PASS 10: duplicate UUID cannot overwrite a session
+PASS 11: pending reservations expire
+PASS 12: join rate limit resets after rolling minute
+PASS 13: attacker IP buckets are bounded
+PASS 14: configuration reload is transactional
+PASS 15: invalid blacklist prevents configuration reload
+PASS 16: corrupt persisted history fails closed
+PASS 17: state replacement preserves coherent latest history
+PASS 18: fresh nonce and replay rejection
+PASS 19: mismatched nonce consumes challenge
+PASS 20: reissued challenge invalidates old nonce
+PASS 21: required report timeout kicks exactly once
+PASS 22: optional report timeout does not kick
+PASS 23: retry cannot extend report deadline
+PASS 24: malformed oversized incomplete and trailing reports rejected
+PASS 25: wire rejects invalid UTF-8 and protocol versions
+PASS 26: client report owns immutable copied lists
+PASS 27: blacklist uses exact normalized identifiers
+PASS 28: automation default only alerts
+PASS 29: explicit automation denial bans associated accounts and device across restart
+PASS 30: explicit automation denial honors KICK without persistent bans
+PASS 31: VM DENY requires companion
+PASS 32: VM evidence and unknown are distinguished
+PASS 33: global blacklist OFF and ALERT are honored
+PASS 34: managed glob rules and matching whitelist
+PASS 35: rule mutations persist and invalid changes are transactional
+PASS 36: legacy blacklist rules support list and removal
+PASS 37: account and device bans propagate and survive restart
+PASS 38: whitelist never bypasses a persistent ban
+PASS 39: account and device unban are independent
+PASS 40: KICK sanctions never persist a blacklist ban
+PASS 41: missing devices and invalid reports do not permanently ban
+PASS 42: same IP and device allows one concurrent account
+PASS 43: same IP different devices allow three accounts
+PASS 44: different IP same device is allowed until banned
+PASS 45: concurrent device reports cannot bypass the device limit
+PASS 46: IP and device limit respects configuration two
+PASS 47: brand sanctions bind known device only
+PASS 48: device protocol round trip and legacy rejection
+PASS 49: online associated bans are discoverable without losing sessions
+PASS 50: rechallenge applies new player rules
+PASS 51: admin bans and background saves do not deadlock
+PASS 52: online IP policy reload does not rewrite account history
+PASS 53: server scope persists across restarts and differs across instances
+PASS 54: corrupt server scope is rejected rather than regenerated
+PASS 55: pathological managed rules have a report-wide budget
+PASS 56: in-flight old report cannot consume or satisfy the new challenge
+PASS 57: only two previous-nonce reports are tolerated
+PASS: 57 security regression tests
+
+> Task :core:catalogCompatibilityTest
+Picked up JAVA_TOOL_OPTIONS: -Djava.io.tmpdir=E:\CodexTemp\QiZhangVerdict\compat-1.21.11\core-checks-01\temp -Dqzguard.testDir=E:\CodexTemp\QiZhangVerdict\compat-1.21.11\core-checks-01\test-data -Djavax.net.ssl.trustStoreType=Windows-ROOT -Djavax.net.ssl.trustStore=NONE
+PASS rule 1: automation baritoe ALERT; parser, fresh defaults, source and report
+PASS rule 2: automation baritone ALERT; parser, fresh defaults, source and report
+PASS rule 3: mod advanced-xray-fabric DENY; parser, fresh defaults, source and report
+PASS rule 4: mod aegis DENY; parser, fresh defaults, source and report
+PASS rule 5: mod alien DENY; parser, fresh defaults, source and report
+PASS rule 6: mod aoba DENY; parser, fresh defaults, source and report
+PASS rule 7: mod ares DENY; parser, fresh defaults, source and report
+PASS rule 8: mod atianxray ALERT; parser, fresh defaults, source and report
+PASS rule 9: mod blackout DENY; parser, fresh defaults, source and report
+PASS rule 10: mod bleachhack DENY; parser, fresh defaults, source and report
+PASS rule 11: mod cheatutils DENY; parser, fresh defaults, source and report
+PASS rule 12: mod cigarette DENY; parser, fresh defaults, source and report
+PASS rule 13: mod earthhack DENY; parser, fresh defaults, source and report
+PASS rule 14: mod fdpclient DENY; parser, fresh defaults, source and report
+PASS rule 15: mod ferox DENY; parser, fresh defaults, source and report
+PASS rule 16: mod forgehax DENY; parser, fresh defaults, source and report
+PASS rule 17: mod gamesense DENY; parser, fresh defaults, source and report
+PASS rule 18: mod hypnotic DENY; parser, fresh defaults, source and report
+PASS rule 19: mod jex DENY; parser, fresh defaults, source and report
+PASS rule 20: mod kami DENY; parser, fresh defaults, source and report
+PASS rule 21: mod kamiblue DENY; parser, fresh defaults, source and report
+PASS rule 22: mod keystrokesmod ALERT; parser, fresh defaults, source and report
+PASS rule 23: mod krs DENY; parser, fresh defaults, source and report
+PASS rule 24: mod lambda DENY; parser, fresh defaults, source and report
+PASS rule 25: mod liquidbounce DENY; parser, fresh defaults, source and report
+PASS rule 26: mod mastermind DENY; parser, fresh defaults, source and report
+PASS rule 27: mod meteor-client DENY; parser, fresh defaults, source and report
+PASS rule 28: mod meteor-rejects DENY; parser, fresh defaults, source and report
+PASS rule 29: mod meteorplus DENY; parser, fresh defaults, source and report
+PASS rule 30: mod nightx DENY; parser, fresh defaults, source and report
+PASS rule 31: mod salhack DENY; parser, fresh defaults, source and report
+PASS rule 32: mod seppukumod DENY; parser, fresh defaults, source and report
+PASS rule 33: mod streak-addon DENY; parser, fresh defaults, source and report
+PASS rule 34: mod thunderhack DENY; parser, fresh defaults, source and report
+PASS rule 35: mod trollhack DENY; parser, fresh defaults, source and report
+PASS rule 36: mod wurst DENY; parser, fresh defaults, source and report
+PASS rule 37: mod wurstplus DENY; parser, fresh defaults, source and report
+PASS rule 38: mod wurstplusthree DENY; parser, fresh defaults, source and report
+PASS rule 39: mod xray DENY; parser, fresh defaults, source and report
+PASS control 1: ordinary and ambiguous identifiers remain allowed without bans
+PASS control 2: administrator OFF and API deletion survive reload and a new GuardService byte-for-byte
+PASS control 3: pre-existing sparse CRLF policy is never auto-expanded or normalized
+PASS: production Blacklist parser and fresh GuardService enforce 39 exact catalog rules (35 DENY, 4 ALERT); 3 preservation and ordinary-ID controls passed
+
+[Incubating] Problems report is available at: file:///E:/Codex_work/QiZhangVerdict/build/reports/problems/problems-report.html
+
+BUILD SUCCESSFUL in 12s
+4 actionable tasks: 4 executed

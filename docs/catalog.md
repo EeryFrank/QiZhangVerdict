@@ -1,6 +1,8 @@
 # 可核验标识扩展目录
 
-本目录供七章的裁决管理员审阅、按服规选用。2026-09-25 更新包含 **39 个公开源码仓库、36 个归并条目、37 个精确 ID（33 DENY / 4 ALERT）**，另有 **8 个待验证品牌或资源包**。本目录已用于 0.2.0-test.1 的首次默认规则；新成品的独立构建与运行证据见[本版验证汇总](../outputs/validation-0.2.0-test.1.json)。目录工具不会连接服务器、修改服务器配置或自动恢复管理员删除的规则；已发布版本的目录和默认规则以各自 tag 与发布包为准。
+本目录供七章的裁决管理员审阅、按服规选用。2026-09-25 当前开发目录包含 **41 个公开源码仓库、38 个归并条目、39 个精确 ID（35 DENY / 4 ALERT）**，另有 **8 个待验证品牌或资源包**。本轮在开发源码的首次默认规则中新增 `wurstplusthree`、`ferox`；这不是新 JAR 的交付或运行验收声明。目录工具不会连接服务器、修改服务器配置或自动恢复管理员删除的规则；已发布版本的目录和默认规则以各自 tag 与发布包为准。
+
+历史 **0.2.0-test.1 的 37 条默认规则（33 DENY / 4 ALERT）**及其[验证汇总](../outputs/validation-0.2.0-test.1.json)保持原事实。当前 Python 目录核验见 `catalog/verification.json`；新增默认规则的 Java 回归与成品验证需在后续构建中单独执行，不能套用历史测试结果。
 
 这里的 HIGH 表示“固定官方源码能证明这个标识和相应功能”，不表示服务端能可靠证明玩家运行了未经修改的原版客户端。目录覆盖本次有一手证据的已知项目，不声称囊括全部商业客户端、私有分支、注入器或未来版本。
 
@@ -31,6 +33,7 @@
 | KAMI Blue / KAMI | `kamiblue`, `kami` | DENY |
 | SalHack 与 Creepy SalHack / ForgeHax | `salhack`, `forgehax` | DENY |
 | Lambda 新旧实现 / Ares / Wurst+2 | `lambda`, `ares`, `wurstplus` | DENY |
+| Wurst+3 / Ferox | `wurstplusthree`, `ferox` | DENY；当前开发源码新增，均为固定 Forge 1.12.2 源码身份 |
 | Seppuku / FDPClient | `seppukumod`, `fdpclient` | DENY |
 | Meteor Rejects / Trouser Streak / BlackOut 扩展 | `meteor-rejects`, `streak-addon`, `blackout` | DENY |
 | Alien / Aoba / TrollHack / Jex | `alien`, `aoba`, `trollhack`, `jex` | DENY |
@@ -51,12 +54,16 @@
 - 多个不同 Xray 作者共用 `xray`，因此合并来源但不宣称属于同一客户端。`antixray` 不会命中 `xray`。
 - 不将性能优化、地图、配方查看、投影或无障碍辅助整类默认封禁。Sodium、Iris、JEI、REI、Litematica 等不是本目录的 DENY 条目。
 - `wurst_testmod`、`lambda-tests` 等开发测试描述符不导出。
+- Wurst+3 的 `wurstplusthree` 与 Wurst+2 的 `wurstplus` 不同；新增项都从 `mcmod.info` 主体读取，并与同提交 Forge `@Mod` 常量交叉核对。Ferox 的透视证据包含实际取消非目标方块绘制的 Mixin，不只依赖模块展示名。
+- Xulu 公开反编译归档的注解写 `eclient`，但本轮缺少明确游戏版本、加载器描述符与许可证据，因此 `eclient` 和猜测的 `xulu` 都不新增。Coffee、Atomic 未取得可固定提交的官方描述符，也不根据名字生成规则。
 - ThunderHack 开源分支已声明停止开发；这不证明闭源后继使用同一个 ID。
 - NightX 的 [`mcmod.info`](https://raw.githubusercontent.com/Aspw-w/NightX-Client/1c771444a9120d8c06fe7d88a3f5849402849bb4/src/main/resources/mcmod.info) 确实声明 `nightx`，但其 [IFMLLoadingPlugin 入口](https://raw.githubusercontent.com/Aspw-w/NightX-Client/1c771444a9120d8c06fe7d88a3f5849402849bb4/src/main/java/net/aspw/client/injection/forge/TransformerLoader.java) 使用 Mixin 且 `getModContainerClass` 返回 `null`。本次未证明普通 Forge Loader 列表一定包含它；该规则只会匹配实际收到的精确 ID，不能把加入规则说成能识别所有注入形式。
 - `bigrat` **不加入规则**：[作弊衍生客户端](https://raw.githubusercontent.com/ZimnyCat/BigRat/3dc274a18e5912f904f30734fdcf858b0aaf964f/src/main/resources/fabric.mod.json) 与[正常实体/物品模组](https://raw.githubusercontent.com/dodogang/bigrat/68bf3add5a5f73f39c0a7248acb3b9bf9b1da879/src/main/resources/fabric.mod.json) 在 Fabric 1.16.5 使用完全相同的 ID，不能据此默认封禁。
 - Achilles 的[实际描述符](https://raw.githubusercontent.com/NoboKik/Achilles/b63a84fdec014ed8015559671cda9f4ea2721103/client/src/main/resources/fabric.mod.json) 使用通用 ID `template`。`template` 和猜测出的 `achilles` 均不加入规则。
 
 新增来源保留许可差异：Meteor+ 根 [LICENSE](https://raw.githubusercontent.com/MeteorClientPlus/MeteorPlus/657959e9b46faa0c1228c5978d3afe844351c911/LICENSE) 为 AGPL-3.0，而同提交描述符写 GPL-3.0，不能消除冲突后冒称有统一再分发许可。CheatUtils 现代源码为 MIT；所读 1.16.5 历史描述符写 All rights reserved 且该提交没有根 LICENSE，不把现代授权追溯套用到旧源码。这些标准许可证文本也纳入来源 SHA256 核验。Cigarette 记录的是其官方 GitHub 仓库固定提交，仓库声明已迁移，不能据此宣称掌握新托管站的最新状态。
+
+Wurst+3 的固定 [LICENSE.md](https://raw.githubusercontent.com/WurstPlus/wurst-plus-three/4eca774c0998dfc06d2f378bf0d939b8ad59318c/LICENSE.md) 为 AGPLv3 文本；Ferox 的固定 [LICENSE](https://raw.githubusercontent.com/olliem5/ferox/627205bf13f3a8ff65780a60b319defdcab73eb4/LICENSE) 为 GPLv3 文本，未另行确定 only/or-later 授权选择。本轮只纳入 ID、事实说明和来源哈希，没有复制其实现或分发其二进制。
 
 Aristois、Impact、Future、RusherHack、Inertia、CatLean、Raven b+ 和 Xray Ultimate 留在 `pending`。官网、产品名或功能说明不足以证明真实 mod ID；其中 Aristois 官网抓取失败，Raven b+ 官方 API 返回 451，未绕过访问限制。资源包没有可推断的稳定 mod ID，文件名和本地 pack ID 都可修改，所以没有虚构 PACK/BRAND 封禁规则。验证器目前只允许 MOD 身份进入已验证列表。
 

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "qizhangverdict",
+  "version": "${version}",
+  "name": "QiZhang's Verdict / 七章的裁决",
+  "description": "IP policy and privacy-limited self-reported companion checks; not trusted attestation.",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["cn.qizhang.guard.fabric.GuardFabric"],
+    "client": ["cn.qizhang.guard.fabric.GuardFabricClient"]
+  },
+  "mixins": ["qizhangverdict.mixins.json"],
+  "license": "GPL-3.0-only",
+  "depends": {
+    "fabricloader": ">=0.19.5",
+    "fabric-api": ">=0.141.6+1.21.11",
+    "minecraft": "1.21.11",
+    "java": ">=21"
+  }
+}

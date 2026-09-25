@@ -14,8 +14,9 @@ TARGETS = {
     'mods-1.20.1': ('platforms/1.20.1', '0.2.0-test.1', ('fabric', 'forge')),
     'mods-1.20.4': ('platforms/1.20.4', '0.3.0-dev', ('fabric', 'forge', 'neoforge')),
     'mods-1.21.1': ('platforms/1.21.1', '0.2.0-test.1', ('fabric', 'neoforge')),
+    'mods-1.21.11': ('platforms/1.21.11', '0.4.0-dev', ('fabric', 'neoforge')),
 }
-DELIVERABLE_COUNT = 10
+DELIVERABLE_COUNT = 12
 
 
 def artifact_paths(target):
@@ -83,7 +84,7 @@ def collect(input_root, output, layout):
     if not input_root.is_dir() or input_root.is_symlink():
         raise ValueError('Expected ordinary artifact input directory')
     if {p.name for p in input_root.iterdir()} != set(folders.values()):
-        raise ValueError('Input target folders differ from the five pinned modern jobs')
+        raise ValueError('Input target folders differ from the six pinned modern jobs')
     sources = []
     for target, folder_name in folders.items():
         expected = [Path(path).name for path in artifact_paths(target)]
@@ -91,7 +92,7 @@ def collect(input_root, output, layout):
         verify_folder(folder, expected)
         sources.extend(folder / name for name in expected)
     if len(sources) != DELIVERABLE_COUNT or len({p.name for p in sources}) != DELIVERABLE_COUNT:
-        raise ValueError('Expected exactly ten distinct pinned production JARs')
+        raise ValueError('Expected exactly twelve distinct pinned production JARs')
     # Validate the entire input before creating the new result directory.
     output.mkdir(parents=True, exist_ok=False)
     for source in sources:

@@ -1,0 +1,871 @@
+{
+  "schemaVersion": 1,
+  "minecraft": "1.21.11",
+  "version": "0.4.0-dev",
+  "generatedAtUTC": "2026-09-25T15:04:03.723295+00:00",
+  "stage": "BUILD_STATIC_AND_EXACT_JAR_CORE_PASSED_RUNTIME_SEPARATE",
+  "passed": true,
+  "buildSuccessful": true,
+  "allAttemptsSuccessful": false,
+  "passedScope": "Two final production JAR builds, source/packaged-core regressions, platform contract tests and static packaging/Mixin mapping audit only.",
+  "formalAcceptancePassed": false,
+  "serverRuntimeIncluded": false,
+  "renderedClientRuntimeIncluded": false,
+  "tcpRuntimeIncluded": false,
+  "versions": {
+    "javaMajor": 21,
+    "gradle": "9.2.1",
+    "fabricLoom": "1.14.10",
+    "fabricLoader": "0.19.5",
+    "fabricApi": "0.141.6+1.21.11",
+    "neoforge": "21.11.45",
+    "modDevGradle": "2.0.147",
+    "fancyModLoader": "10.0.36"
+  },
+  "toolchainAttempts": [
+    {
+      "attempt": "toolchain-01",
+      "exitCode": 1,
+      "elapsedSeconds": 0.888181209564209,
+      "result": "adapter-build-1.21.11/toolchain-01-result.json",
+      "console": "adapter-build-1.21.11/toolchain-01-console.log"
+    },
+    {
+      "attempt": "toolchain-02",
+      "exitCode": 0,
+      "elapsedSeconds": 6.73072361946106,
+      "result": "adapter-build-1.21.11/toolchain-02-result.json",
+      "console": "adapter-build-1.21.11/toolchain-02-console.log"
+    }
+  ],
+  "toolchainFailureExplanation": "01 failed TLS PKIX verification downloading the official Gradle ZIP; 02 uses the Windows ROOT trust store with checksum verification retained, not disabled TLS verification.",
+  "buildAttempts": [
+    {
+      "attempt": "01-fabric",
+      "target": "fabric",
+      "exitCode": 1,
+      "elapsedSeconds": 497.08979970007204,
+      "sourcesUnchanged": true,
+      "previous18ArtifactsUnchanged": true,
+      "classification": "test bootstrap",
+      "explanation": "CommandParserSmoke reached Minecraft registry access without Bootstrap.bootStrap; source compilation had completed.",
+      "result": "adapter-build-1.21.11/build-01-fabric-result.json",
+      "console": "adapter-build-1.21.11/build-01-fabric-console.log"
+    },
+    {
+      "attempt": "02-fabric-bootstrap",
+      "target": "fabric",
+      "exitCode": 1,
+      "elapsedSeconds": 44.81106300000101,
+      "sourcesUnchanged": true,
+      "previous18ArtifactsUnchanged": true,
+      "classification": "Gradle test-source configuration",
+      "explanation": "The JavaExec contracts passed, but Gradle 9 Test failed because main-method smoke classes were placed in the JUnit test source set and no tests were discovered.",
+      "result": "adapter-build-1.21.11/build-02-fabric-bootstrap-result.json",
+      "console": "adapter-build-1.21.11/build-02-fabric-bootstrap-console.log"
+    },
+    {
+      "attempt": "03-fabric-smoke-source-set",
+      "target": "fabric",
+      "exitCode": 0,
+      "elapsedSeconds": 34.920870300149545,
+      "sourcesUnchanged": true,
+      "previous18ArtifactsUnchanged": true,
+      "classification": "success",
+      "explanation": "Smoke mains moved to src/smoke and retained mandatory check dependencies; standard Test remains strict and has NO-SOURCE.",
+      "result": "adapter-build-1.21.11/build-03-fabric-smoke-source-set-result.json",
+      "console": "adapter-build-1.21.11/build-03-fabric-smoke-source-set-console.log"
+    },
+    {
+      "attempt": "04-neoforge",
+      "target": "neoforge",
+      "exitCode": 1,
+      "elapsedSeconds": 114.98900500009768,
+      "sourcesUnchanged": true,
+      "previous18ArtifactsUnchanged": true,
+      "classification": "test loader initialization",
+      "explanation": "Plain JavaExec command smoke failed with There is no current FML Loader; source compilation and dispatch checks had completed.",
+      "result": "adapter-build-1.21.11/build-04-neoforge-result.json",
+      "console": "adapter-build-1.21.11/build-04-neoforge-console.log"
+    },
+    {
+      "attempt": "05-neoforge-junit",
+      "target": "neoforge",
+      "exitCode": 0,
+      "elapsedSeconds": 51.290796199813485,
+      "sourcesUnchanged": true,
+      "previous18ArtifactsUnchanged": true,
+      "classification": "success",
+      "explanation": "Official ModDev FML unit-test bootstrap actually executed the two JUnit contracts; dispatch nine checks also executed.",
+      "result": "adapter-build-1.21.11/build-05-neoforge-junit-result.json",
+      "console": "adapter-build-1.21.11/build-05-neoforge-junit-console.log"
+    },
+    {
+      "attempt": "06-combined",
+      "target": "all",
+      "exitCode": 0,
+      "elapsedSeconds": 37.49241679999977,
+      "sourcesUnchanged": true,
+      "previous18ArtifactsUnchanged": true,
+      "classification": "success",
+      "explanation": "Both builds succeeded; Fabric three smoke groups and Neo dispatch executed; Neo JUnit result was FROM-CACHE from successful build05.",
+      "result": "adapter-build-1.21.11/build-06-combined-result.json",
+      "console": "adapter-build-1.21.11/build-06-combined-console.log"
+    }
+  ],
+  "finalBuild": {
+    "attempt": "06-combined",
+    "exitCode": 0,
+    "sourceFileCount": 47,
+    "sourceFilesStillMatch": true,
+    "previousArtifactsRehashed": 18,
+    "previousArtifactsUnchanged": true
+  },
+  "artifacts": [
+    {
+      "loader": "fabric",
+      "artifact": {
+        "path": "platforms/1.21.11/fabric/build/libs/qizhangverdict-fabric-1.21.11-0.4.0-dev.jar",
+        "sha256": "732ba77c6978785a8969c6f92476b8c57009be464b9210bfef2c9bb19c0d6ce5",
+        "bytes": 97169
+      },
+      "sourceJar": {
+        "path": "platforms/1.21.11/fabric/build/libs/qizhangverdict-fabric-1.21.11-0.4.0-dev-sources.jar",
+        "sha256": "8b0ce59954014fa61db1f1d812ccbce813e4ddba1cf51224e2b793b352982ca6",
+        "bytes": 50164
+      },
+      "classCount": 29,
+      "classMajor": 65,
+      "zipCrcPassed": true,
+      "embeddedLicenseNoticeExact": true,
+      "onlyFirstPartyClasses": true,
+      "embeddedDefaults": {
+        "rules": 39,
+        "deny": 35,
+        "alert": 4
+      },
+      "exactJarCoreChecks": {
+        "security": 57,
+        "catalogRules": 39,
+        "catalogControls": 3,
+        "totalExecutions": 99,
+        "passed": true,
+        "javaMajor": 21,
+        "artifactOriginVerified": true,
+        "report": "adapter-build-1.21.11/core-fabric-result.json"
+      }
+    },
+    {
+      "loader": "neoforge",
+      "artifact": {
+        "path": "platforms/1.21.11/neoforge/build/libs/qizhangverdict-neoforge-1.21.11-0.4.0-dev.jar",
+        "sha256": "47dc8edff5faeb9c41ce19575bd37f49a2205877d99f814aa7acc33c0440d789",
+        "bytes": 95394
+      },
+      "sourceJar": {
+        "path": "platforms/1.21.11/neoforge/build/libs/qizhangverdict-neoforge-1.21.11-0.4.0-dev-sources.jar",
+        "sha256": "913e5a5688450c986f181c8c6ee81298195f40c2cf08417e61d617083497e75f",
+        "bytes": 49632
+      },
+      "classCount": 29,
+      "classMajor": 65,
+      "zipCrcPassed": true,
+      "embeddedLicenseNoticeExact": true,
+      "onlyFirstPartyClasses": true,
+      "embeddedDefaults": {
+        "rules": 39,
+        "deny": 35,
+        "alert": 4
+      },
+      "exactJarCoreChecks": {
+        "security": 57,
+        "catalogRules": 39,
+        "catalogControls": 3,
+        "totalExecutions": 99,
+        "passed": true,
+        "javaMajor": 21,
+        "artifactOriginVerified": true,
+        "report": "adapter-build-1.21.11/core-neoforge-result.json"
+      }
+    }
+  ],
+  "coreChecks": {
+    "distinctAssertions": 99,
+    "security": 57,
+    "catalogRules": 39,
+    "catalogControls": 3,
+    "sourceClasspathExecutions": 99,
+    "exactJarExecutions": 198,
+    "totalExecutions": 297,
+    "not297DistinctTests": true,
+    "sourceReport": "adapter-build-1.21.11/core-source-result.json"
+  },
+  "platformChecks": {
+    "fabric": {
+      "dispatchAssertions": 12,
+      "commandParserGroupPassed": true,
+      "payloadCodecGroupPassed": true,
+      "threeJavaExecGroupsActuallyExecutedIn": "06-combined",
+      "standardJUnitTask": "NO-SOURCE, main-method smoke classes are in their own source set"
+    },
+    "neoforge": {
+      "dispatchAssertions": 9,
+      "dispatchActuallyExecutedIn": "05-neoforge-junit and 06-combined",
+      "officialFmlJunitTests": 2,
+      "junitActuallyExecutedIn": "05-neoforge-junit",
+      "junitBuild06Status": "FROM-CACHE",
+      "junitFailures": 0,
+      "junitErrors": 0,
+      "junitSkipped": 0,
+      "actualExecutionConsole": "adapter-build-1.21.11/build-05-neoforge-junit-console.log",
+      "xmlOriginalSha256": "ce1b4e047afb3a49b0ba3905f6236db2e53b9fbf87b28784be019208c3a706d6"
+    },
+    "boundary": "Source-classpath contracts and FML DEV bootstrap do not establish a production server or rendered player session."
+  },
+  "catalogUpdate": {
+    "catalog": "../catalog/verification.json",
+    "snapshot": "adapter-build-1.21.11/catalog-verification.json",
+    "exactIds": 39,
+    "deny": 35,
+    "alert": 4,
+    "newIds": [
+      "ferox",
+      "wurstplusthree"
+    ],
+    "sourceRecordsReverified": 249,
+    "descriptorProofs": 53,
+    "newUrlsFreshlyRequested": 16,
+    "all249UrlsFreshlyRequestedThisRound": false,
+    "pythonTests": 25,
+    "outputValidatorRegressionTests": 9,
+    "runtimeDetectionClaimed": false
+  },
+  "staticReview": {
+    "report": "adapter-build-1.21.11/static-result.json",
+    "passed": true,
+    "fabricMappedTarget": "net.minecraft.class_2170.method_9249(ParseResults,String):void",
+    "neoforgeNamedTarget": "net.minecraft.commands.Commands.performCommand(ParseResults,String):void",
+    "required": true,
+    "injectRequire": 1,
+    "runtimeInjectionProvenByThisReport": false
+  },
+  "publicationReview": {
+    "explicitAllowlistOnly": true,
+    "rawBytesPreserved": true,
+    "credentialPatternScanPassed": true,
+    "privateStateIncluded": false,
+    "thirdPartyFullSourceOrMappingIncluded": false,
+    "excluded": [
+      "Minecraft/loader JARs, binaries and full mappings or sources",
+      "All failed-attempt JARs and all test-data/accounts.state/server-id files",
+      "Worlds, real client/device data and runtime fixtures",
+      "Full thread dumps: not necessary to establish these failures",
+      "JUnit XML: machine hostname metadata; its hash and actual execution are retained in static review and the original build05 console",
+      "Python bytecode and project/build cache directories"
+    ],
+    "note": "Only build logs/results and explicitly listed first-party tests/tools plus public checksum metadata were copied. No private device values were read or emitted for this build-only publication."
+  },
+  "boundaries": [
+    "No real dedicated/server-player/client/TCP acceptance is included; independently running game QA requires a separate report.",
+    "99 assertions were run once against source and once against each of two packaged cores, not 297 unique tests.",
+    "The 39-ID catalog is not exhaustive cheat coverage or trusted hardware attestation.",
+    "Windows PKIX and test-bootstrap/source-set failures remain in the raw attempt logs.",
+    "All prior 18 pinned release artifacts were rehashed unchanged."
+  ],
+  "evidence": [
+    {
+      "file": "adapter-build-1.21.11/build-01-fabric-result.json",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\builds\\01-fabric\\result.json",
+      "sha256": "739b752383e198ddd366d393afe751b12ee57a6d774ec3decc1612c788ade2ec",
+      "bytes": 12396,
+      "purpose": "Original build result, exact source hashes and command",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/build-01-fabric-console.log",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\builds\\01-fabric\\console.log",
+      "sha256": "8342430e93c34f0365870276196a40fc88274b555285cb01d420144f51f81ddb",
+      "bytes": 23346,
+      "purpose": "Unmodified complete build console including failures and warnings",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/build-01-fabric-snapshot.json",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\builds\\01-fabric\\snapshot.json",
+      "sha256": "5f300600abef8fe3210bfd8cabe72f8dc2d9386f8f1c2e9601cf5946f09835b2",
+      "bytes": 1049,
+      "purpose": "Original attempt-specific QA adjustment record",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/build-02-fabric-bootstrap-result.json",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\builds\\02-fabric-bootstrap\\result.json",
+      "sha256": "858d6042290e9e283893d61a06cbbbf3d6e6cec0c5456f282957c1f00457ad5e",
+      "bytes": 12465,
+      "purpose": "Original build result, exact source hashes and command",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/build-02-fabric-bootstrap-console.log",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\builds\\02-fabric-bootstrap\\console.log",
+      "sha256": "bad8b10dd0df2a55caeb40560d9b1d888610490663c30ed8c13a5caa26e9d141",
+      "bytes": 22565,
+      "purpose": "Unmodified complete build console including failures and warnings",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/build-02-fabric-bootstrap-snapshot.json",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\builds\\02-fabric-bootstrap\\snapshot.json",
+      "sha256": "d65647ef866fc11b607f7992120930cae344a5b4220c83519376d75e952d52b7",
+      "bytes": 677,
+      "purpose": "Original attempt-specific QA adjustment record",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/build-03-fabric-smoke-source-set-result.json",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\builds\\03-fabric-smoke-source-set\\result.json",
+      "sha256": "fbbad0ecf200a6e943481e0dc9270139ed166774752b3b406123a869d9ef98ba",
+      "bytes": 12519,
+      "purpose": "Original build result, exact source hashes and command",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/build-03-fabric-smoke-source-set-console.log",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\builds\\03-fabric-smoke-source-set\\console.log",
+      "sha256": "aefcec6dd320ddecdd6b92e96b7f61f0a4ac12fc156b5acfc7e0d206be6ac422",
+      "bytes": 4227,
+      "purpose": "Unmodified complete build console including failures and warnings",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/build-04-neoforge-result.json",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\builds\\04-neoforge\\result.json",
+      "sha256": "b85e6c7096fbe75843e5ed18a3307ec5cf6dae6fab26f94096e9e8a67859a708",
+      "bytes": 12426,
+      "purpose": "Original build result, exact source hashes and command",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/build-04-neoforge-console.log",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\builds\\04-neoforge\\console.log",
+      "sha256": "3bf30eb35dad3b40d9832bc9323208a050a4f8a8f8869a911a5c5dfd586b795e",
+      "bytes": 24272,
+      "purpose": "Unmodified complete build console including failures and warnings",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/build-04-neoforge-snapshot.json",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\builds\\04-neoforge\\snapshot.json",
+      "sha256": "b9df99da03c3014894fb66afce9107b8d76c03f1be803ffb2cc6a1be21181fe2",
+      "bytes": 896,
+      "purpose": "Original attempt-specific QA adjustment record",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/build-05-neoforge-junit-result.json",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\builds\\05-neoforge-junit\\result.json",
+      "sha256": "daf40d202a85a0e9efdf3cf264a1279e429cb6969bd909d4f034c744d4034371",
+      "bytes": 12637,
+      "purpose": "Original build result, exact source hashes and command",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/build-05-neoforge-junit-console.log",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\builds\\05-neoforge-junit\\console.log",
+      "sha256": "0acc5c138fe1443f7fb5d0bd4ac107572cfa4b61bd73fa7d1e18ec6ebbd04a98",
+      "bytes": 12547,
+      "purpose": "Unmodified complete build console including failures and warnings",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/build-06-combined-result.json",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\builds\\06-combined\\result.json",
+      "sha256": "20fbf31f33a192f746e348e78c6e4c6bdd9347b2e063e684b54d88688043a816",
+      "bytes": 13062,
+      "purpose": "Original build result, exact source hashes and command",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/build-06-combined-console.log",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\builds\\06-combined\\console.log",
+      "sha256": "f685b8fbcb729594bd9e529b86440a8fe9c140c3aa3b19b8b8a4e4ca1ace8d5e",
+      "bytes": 8215,
+      "purpose": "Unmodified complete build console including failures and warnings",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/toolchain-01-result.json",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\toolchain-01\\result.json",
+      "sha256": "1b15a5b3a4dc2959554f4b1634b9830e04d6ca7d100143e85b27bb92b71d7e21",
+      "bytes": 504,
+      "purpose": "Original Gradle wrapper preparation result",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/toolchain-01-console.log",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\toolchain-01\\console.log",
+      "sha256": "5a3a58e6c3ca9f07ff6ac70e67ce8167a2edeafdb0da97a20f9672ea4acf9215",
+      "bytes": 4024,
+      "purpose": "Original Gradle wrapper log",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/toolchain-02-result.json",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\toolchain-02\\result.json",
+      "sha256": "cf2769746b240720602e08d9696905c012a2363e47ba17a2c732bd9c9161066f",
+      "bytes": 681,
+      "purpose": "Original Gradle wrapper preparation result",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/toolchain-02-console.log",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\toolchain-02\\console.log",
+      "sha256": "f9525bf85ae3483d2b272bb0e630554f3af1385f95ac1ace01f56c516da7d181",
+      "bytes": 1213,
+      "purpose": "Original Gradle wrapper log",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/core-source-result.json",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\core-checks-01\\result.json",
+      "sha256": "f4098698d1b63ccdd5c75c02e1085a0d3de360b718ce7ccad00937036593ddc2",
+      "bytes": 3301,
+      "purpose": "Actual source-classpath core execution",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/core-source-console.log",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\core-checks-01\\console.log",
+      "sha256": "e8917417efcaf21306ae4cb16bfcdf746020ca3b3ce1c254f1594f681ef5f3b5",
+      "bytes": 8694,
+      "purpose": "Source 57 security and 39+3 catalog checks",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/core-fabric-java-version.log",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\core-checks-01\\fabric-artifact\\java-version.log",
+      "sha256": "2964d5e1b3b412d2128748e82aa8b0069d4a7b2c58bd5c7e50cd3ba4ebcc8aa0",
+      "bytes": 179,
+      "purpose": "Original exact-JAR java-version check",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/core-fabric-compile-runners.log",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\core-checks-01\\fabric-artifact\\compile-runners.log",
+      "sha256": "0776deeb6ace85f83d60a9ba535cbe73a21566505b5aec2fd5c75b2bde065172",
+      "bytes": 188,
+      "purpose": "Original exact-JAR compile-runners check",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/core-fabric-artifact-origin.log",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\core-checks-01\\fabric-artifact\\artifact-origin.log",
+      "sha256": "de3373d101bd34efca6d6014acec9d6fb476d4803cfadfa4d52bade4f5cb8c0b",
+      "bytes": 74,
+      "purpose": "Original exact-JAR artifact-origin check",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/core-fabric-security.log",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\core-checks-01\\fabric-artifact\\security.log",
+      "sha256": "1e26be45a2a53ee19e208f27f4e32b96db5c32f3c0dd7582a88d36147338e1fb",
+      "bytes": 3229,
+      "purpose": "Original exact-JAR security check",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/core-fabric-catalog.log",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\core-checks-01\\fabric-artifact\\catalog.log",
+      "sha256": "7d1c65f070f44153526c116a148c24d4dbdadf886cf45e9e562442c7320288cf",
+      "bytes": 3417,
+      "purpose": "Original exact-JAR catalog check",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/core-fabric-result.json",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\core-checks-01\\fabric-artifact\\result.json",
+      "sha256": "48e27550ded7ef91a0b5ae211a105908451fe342a5d712b0bee3747923b0f49b",
+      "bytes": 5571,
+      "purpose": "Exact-JAR runner result and all command hashes",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/core-fabric-ArtifactOriginCheck.java",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\core-checks-01\\fabric-artifact\\ArtifactOriginCheck.java",
+      "sha256": "2b9e5ada2a1bd7c9fd2617fe8e214895454bbc2ef6758df16757b79e02c6452e",
+      "bytes": 505,
+      "purpose": "First-party actual artifact-origin test source",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/core-neoforge-java-version.log",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\core-checks-01\\neoforge-artifact\\java-version.log",
+      "sha256": "2964d5e1b3b412d2128748e82aa8b0069d4a7b2c58bd5c7e50cd3ba4ebcc8aa0",
+      "bytes": 179,
+      "purpose": "Original exact-JAR java-version check",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/core-neoforge-compile-runners.log",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\core-checks-01\\neoforge-artifact\\compile-runners.log",
+      "sha256": "0776deeb6ace85f83d60a9ba535cbe73a21566505b5aec2fd5c75b2bde065172",
+      "bytes": 188,
+      "purpose": "Original exact-JAR compile-runners check",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/core-neoforge-artifact-origin.log",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\core-checks-01\\neoforge-artifact\\artifact-origin.log",
+      "sha256": "de3373d101bd34efca6d6014acec9d6fb476d4803cfadfa4d52bade4f5cb8c0b",
+      "bytes": 74,
+      "purpose": "Original exact-JAR artifact-origin check",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/core-neoforge-security.log",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\core-checks-01\\neoforge-artifact\\security.log",
+      "sha256": "1e26be45a2a53ee19e208f27f4e32b96db5c32f3c0dd7582a88d36147338e1fb",
+      "bytes": 3229,
+      "purpose": "Original exact-JAR security check",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/core-neoforge-catalog.log",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\core-checks-01\\neoforge-artifact\\catalog.log",
+      "sha256": "7d1c65f070f44153526c116a148c24d4dbdadf886cf45e9e562442c7320288cf",
+      "bytes": 3417,
+      "purpose": "Original exact-JAR catalog check",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/core-neoforge-result.json",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\core-checks-01\\neoforge-artifact\\result.json",
+      "sha256": "dd6fd4e6f4dfce65fb14ee8618fdd6106fd226e7358aff96b0877226b3e4c2fe",
+      "bytes": 5611,
+      "purpose": "Exact-JAR runner result and all command hashes",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/core-neoforge-ArtifactOriginCheck.java",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\core-checks-01\\neoforge-artifact\\ArtifactOriginCheck.java",
+      "sha256": "2b9e5ada2a1bd7c9fd2617fe8e214895454bbc2ef6758df16757b79e02c6452e",
+      "bytes": 505,
+      "purpose": "First-party actual artifact-origin test source",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/artifact_core_checks.py",
+      "source": "E:\\Codex_work\\QiZhangVerdict\\scripts\\artifact_core_checks.py",
+      "sha256": "8a0746fbb5a8a2802b84292c349dde8f86c1f56d4d9dbbb046ab8fe111ed0ddd",
+      "bytes": 8642,
+      "purpose": "Exact-JAR first-party verification driver",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/test_artifact_core_checks.py",
+      "source": "E:\\Codex_work\\QiZhangVerdict\\scripts\\test_artifact_core_checks.py",
+      "sha256": "4d2cb9c497033bc3afaa8078d9bc3eae5995e2c95d32a4eefb5cd93e72f9e3a7",
+      "bytes": 6410,
+      "purpose": "First-party validator regression source",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/SecurityRegressionTest.java",
+      "source": "E:\\Codex_work\\QiZhangVerdict\\core\\src\\test\\java\\cn\\qizhang\\guard\\core\\SecurityRegressionTest.java",
+      "sha256": "f1b0c445eaf5229e889b94d4c5176dbbe72eccebd81febe58b78ff980d716985",
+      "bytes": 45337,
+      "purpose": "Actual first-party core regression source",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/CatalogCompatibilityTest.java",
+      "source": "E:\\Codex_work\\QiZhangVerdict\\core\\src\\test\\java\\cn\\qizhang\\guard\\core\\CatalogCompatibilityTest.java",
+      "sha256": "aeeb0adb9d9a511c6aa1498ea70f099d1dbf2cfb0de044925e45b77037f24b7c",
+      "bytes": 10118,
+      "purpose": "Actual first-party core regression source",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/CommandParserSmoke.java",
+      "source": "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.21.11\\common\\src\\smoke\\java\\cn\\qizhang\\guard\\minecraft\\CommandParserSmoke.java",
+      "sha256": "09e94f6581af963a960cf5324070e9e06c806ff1b44afc1b2fbe68abfca05239",
+      "bytes": 3213,
+      "purpose": "First-party actually executed platform contract source",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/PayloadCodecSmoke.java",
+      "source": "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.21.11\\common\\src\\smoke\\java\\cn\\qizhang\\guard\\minecraft\\PayloadCodecSmoke.java",
+      "sha256": "8a8a73df8ea766dad79bb6cb4e798e8b6e7cfe49b7a9c9a4073a3edca29ed4bb",
+      "bytes": 2476,
+      "purpose": "First-party actually executed platform contract source",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/FabricClientChallengeDispatchSmoke.java",
+      "source": "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.21.11\\fabric\\src\\smoke\\java\\cn\\qizhang\\guard\\fabric\\ClientChallengeDispatchSmoke.java",
+      "sha256": "006c929fef71e42f0f56545337e6d8a581a5eb889c7a2784543f7d65a7f9c1d7",
+      "bytes": 3683,
+      "purpose": "First-party actually executed platform contract source",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/NeoForgeClientChallengeDispatchSmoke.java",
+      "source": "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.21.11\\neoforge\\src\\smoke\\java\\cn\\qizhang\\guard\\neoforge\\ClientChallengeDispatchSmoke.java",
+      "sha256": "4198fb1711b013ac1b77e2db0df5a0a2e93033703ecf1743cb6e22e737d1db4e",
+      "bytes": 4080,
+      "purpose": "First-party actually executed platform contract source",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/PlatformContractTest.java",
+      "source": "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.21.11\\neoforge\\src\\test\\java\\cn\\qizhang\\guard\\neoforge\\PlatformContractTest.java",
+      "sha256": "598e822928d64260649a3cfdfa0d9d7dd64318212b19f865706b1d8c4a8d45ee",
+      "bytes": 555,
+      "purpose": "First-party actually executed platform contract source",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/build_target.py",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\build_target.py",
+      "sha256": "f4b007ba44be29ca6cd0a02bcc1da7a1356457222943262dd1f8e99037d6d773",
+      "bytes": 4177,
+      "purpose": "First-party build orchestration tool; commands are also recorded per original attempt",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/static-result.json",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\static-artifact-review-01\\result.json",
+      "sha256": "1c66c9deec34ef405e863f2aee7298d38b10bbfc35fec581035f80a379d56b58",
+      "bytes": 18019,
+      "purpose": "Read-only first-party artifact review; concurrent-read attempts retained",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/static-review.md",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\static-artifact-review-01\\review.md",
+      "sha256": "9bcfdfb15264fb1ed833ebceaa30fa7a1ed219136435dbf203542e1eb5d012ca",
+      "bytes": 2175,
+      "purpose": "Read-only first-party artifact review; concurrent-read attempts retained",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/static-review.py",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\static-artifact-review-01\\review.py",
+      "sha256": "104f3095edc708cabedfc42b88b8fc8f5a738bcbd47da67ed19a6e354637e936",
+      "bytes": 15796,
+      "purpose": "Read-only first-party artifact review; concurrent-read attempts retained",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/static-review-both.py",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\static-artifact-review-01\\review-both.py",
+      "sha256": "469f36278b28ad375f32fb3f37448debb4aaa1699d81ede6e5c7d72d9a972353",
+      "bytes": 10480,
+      "purpose": "Read-only first-party artifact review; concurrent-read attempts retained",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/static-attempt-01-source-change.json",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\static-artifact-review-01\\attempt-01-source-change.json",
+      "sha256": "91907ccb75cac3361cffe6c72c4d7f3ccb2d046e99dfccd090ddfe93fd2dc96e",
+      "bytes": 522,
+      "purpose": "Read-only first-party artifact review; concurrent-read attempts retained",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/static-attempt-02-concurrent-output.json",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\static-artifact-review-01\\attempt-02-concurrent-output.json",
+      "sha256": "3f0bfebe5c58f3616114ce00579402247d28e8995d001e7889a4e176da289415",
+      "bytes": 394,
+      "purpose": "Read-only first-party artifact review; concurrent-read attempts retained",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/catalog-verification.json",
+      "source": "E:\\Codex_work\\QiZhangVerdict\\catalog\\verification.json",
+      "sha256": "0ad08f2edccef742e66095bc6ad17e139a8fa142d298b214c796aa937cf1553d",
+      "bytes": 18001,
+      "purpose": "Current catalog research and source-validation snapshot",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/catalog-validate.stdout",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260925\\development-update\\validate.stdout",
+      "sha256": "b390b0430d0970e463a724d00975559b98e48e6ca60cca7d123c91179e76a548",
+      "bytes": 78,
+      "purpose": "Original catalog validate stream",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/catalog-validate.stderr",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260925\\development-update\\validate.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "purpose": "Original catalog validate stream",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/catalog-verify-offline.stdout",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260925\\development-update\\verify-offline.stdout",
+      "sha256": "23fe4eb9ca0417cf18d46aacb2640eca560a5e72648c844d011d99bbc8b61879",
+      "bytes": 160,
+      "purpose": "Original catalog verify-offline stream",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/catalog-verify-offline.stderr",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260925\\development-update\\verify-offline.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "purpose": "Original catalog verify-offline stream",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/catalog-export-blacklist.stdout",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260925\\development-update\\export-blacklist.stdout",
+      "sha256": "566d23b3da0a768d2f9921fce93215efe5b4b8920e95ff3783755957898b7057",
+      "bytes": 274,
+      "purpose": "Original catalog export-blacklist stream",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/catalog-export-blacklist.stderr",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260925\\development-update\\export-blacklist.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "purpose": "Original catalog export-blacklist stream",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/catalog-export-catalog.stdout",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260925\\development-update\\export-catalog.stdout",
+      "sha256": "66836465d643c66342cb77b6cb355a5fab30630b1735cf7b560c7d5bc0fb5e37",
+      "bytes": 266,
+      "purpose": "Original catalog export-catalog stream",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/catalog-export-catalog.stderr",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260925\\development-update\\export-catalog.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "purpose": "Original catalog export-catalog stream",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/catalog-tests.stdout",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260925\\development-update\\tests.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "purpose": "Original catalog tests stream",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/catalog-tests.stderr",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260925\\development-update\\tests.stderr",
+      "sha256": "9d491588656da99bc130514cb456c58f9ca06309f68c1100b0d554d43081bf51",
+      "bytes": 2936,
+      "purpose": "Original catalog tests stream",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/catalog-final-summary.json",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260925\\development-update\\final-summary.json",
+      "sha256": "f817994f6aea3e4a10a6349cd8bb7a9e95689fa249c9cb7d362beae22540d3d6",
+      "bytes": 1361,
+      "purpose": "Original catalog development update summary",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/catalog-edit-preservation.json",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260925\\development-update\\edit-preservation.json",
+      "sha256": "3ce145a72e20f6c98a2e2b85acf7b336235ef7bc79f73f7ed145b5ba23aca25e",
+      "bytes": 353,
+      "purpose": "Original catalog development update summary",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/catalog-checks.json",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260925\\development-update\\checks.json",
+      "sha256": "2085e1eb350b55835b2e1b434aab7f38f05d55fdc59771bc727b6852627dd0ab",
+      "bytes": 4558,
+      "purpose": "Original catalog development update summary",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/catalog-validator-result.json",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260925\\artifact-checks-regression-01\\result.json",
+      "sha256": "94c3c3a66aeade4e000a2c7c74f13a4684c5a3f909a7e1f72b01c37ad7bf4d84",
+      "bytes": 1000,
+      "purpose": "Nine actual Python output-validator regressions",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/catalog-validator-tests.stdout",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260925\\artifact-checks-regression-01\\tests.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "purpose": "Original validator regression stream",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/catalog-validator-tests.stderr",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260925\\artifact-checks-regression-01\\tests.stderr",
+      "sha256": "e7e9ab1a20c218748d3f82cb95ea5f2c611f427db61eea845d302c782e29f3c6",
+      "bytes": 1517,
+      "purpose": "Original validator regression stream",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/official-neoforge-inputs.json",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\neoforge\\official-inputs.json",
+      "sha256": "dc7f51978c7491a87a60dfee00364985d09ebc27f3170c03d3f99fa517ecc7e1",
+      "bytes": 2396,
+      "purpose": "Official source/checksum metadata only, not third-party archive contents",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/official-neoforge-extra-inputs.json",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\neoforge\\official-extra-inputs.json",
+      "sha256": "b0fef9b556266cb87c6d18db0036acf9a46f7105ce543b84c8756cb65ba00fc0",
+      "bytes": 889,
+      "purpose": "Official source/checksum metadata only, not third-party archive contents",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/official-fml-inputs.json",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\neoforge\\official-loader-inputs.json",
+      "sha256": "1584ed1d970bdc7fb88be6ca27be6b57ea984e04a6e54a8e33948f9d48486f0d",
+      "bytes": 955,
+      "purpose": "Official source/checksum metadata only, not third-party archive contents",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/official-fabric-inputs.json",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\fabric\\official-inputs.json",
+      "sha256": "f6269f594742a20350ba52f02dbe20df446627c290bf328302194f4e799aef58",
+      "bytes": 2012,
+      "purpose": "Official source/checksum metadata only, not third-party archive contents",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/official-gradle-wrapper-inputs.json",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\root-preparation\\wrapper-inputs.json",
+      "sha256": "baabcfd7776544c5367a95548262869a18f0e577327439340fefce11799773a8",
+      "bytes": 1024,
+      "purpose": "Official source/checksum metadata only, not third-party archive contents",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "adapter-build-1.21.11/result.json",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\static-artifact-review-01\\result.json",
+      "sha256": "1c66c9deec34ef405e863f2aee7298d38b10bbfc35fec581035f80a379d56b58",
+      "bytes": 18019,
+      "purpose": "Original-name alias preserving static-review.md relative result.json link without changing either raw source",
+      "rawBytesPreserved": true
+    }
+  ],
+  "evidenceFileCount": 74,
+  "evidenceBytes": 409958
+}

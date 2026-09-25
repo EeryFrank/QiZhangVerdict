@@ -1,0 +1,268 @@
+{
+  "profile": "neoforge-1.21.11",
+  "guard": {
+    "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\neoforge-01\\mods\\qizhangverdict-neoforge-1.21.11-0.4.0-dev.jar",
+    "bytes": 95394,
+    "sha256": "47dc8edff5faeb9c41ce19575bd37f49a2205877d99f814aa7acc33c0440d789"
+  },
+  "mode": "tcp",
+  "command": [
+    "D:\\Java\\jdk-21\\bin\\java.exe",
+    "-Xms512M",
+    "-Xmx1536M",
+    "-Djava.awt.headless=true",
+    "-Dfile.encoding=UTF-8",
+    "-Djava.io.tmpdir=E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\neoforge-01\\runtime-temp",
+    "-Dmixin.debug.verbose=true",
+    "-Dmixin.debug.export=true",
+    "-Dmixin.debug.countInjections=true",
+    "@libraries\\net\\neoforged\\neoforge\\21.11.45\\win_args.txt",
+    "nogui"
+  ],
+  "scope": "Dedicated startup/status/required command Mixin and clean stop; optional real TCP synthetic reports, not rendered companion/hardware evidence",
+  "availablePhysicalGiB": 8.660030364990234,
+  "started": true,
+  "normalStop": true,
+  "serverExitCode": 0,
+  "protocolPassed": true,
+  "defaultPolicyVerified": true,
+  "defaultCatalogVerified": true,
+  "requiredMixinObserved": true,
+  "helper": {
+    "path": "E:\\Codex_work\\QiZhangVerdict\\scripts\\modern12111_mod_smoke.py",
+    "bytes": 30142,
+    "sha256": "3de1db2ce6f97fc3cf5a55bf346e2875b2659c88a93ec7296eafdc0db78b3431"
+  },
+  "serverPid": 89740,
+  "freshStatus": "[00:00:19] [Server thread/INFO] [minecraft/MinecraftServer]: QiZhangVerdict sessions=0, trackedIPs=0, accountPairs=0, rules=39, companion=required, vm=DENY, blacklist=DENY, rateBuckets=0, accountBans=0, deviceBans=0, deviceRequired=true",
+  "mixinLines": [
+    "[00:00:17] [Worker-Main-3/INFO] [mixin/]: Mixing CommandGate12111Mixin from qizhangverdict.mixins.json into net.minecraft.commands.Commands"
+  ],
+  "protocolSupport": {
+    "minecraftProtocolVersion": "1.66.2",
+    "minecraftDataVersion": "3.117.0",
+    "protocol": 774,
+    "versionMetadata": {
+      "path": "E:\\CodexTemp\\QiZhangGuard\\bot\\node_modules\\minecraft-data\\minecraft-data\\data\\pc\\1.21.11\\version.json",
+      "bytes": 107,
+      "sha256": "1f49acfc6a9ba00995b3ac6653550b9258ffaca1f2833aac10c902b3df92c28e"
+    },
+    "schema": {
+      "path": "E:\\CodexTemp\\QiZhangGuard\\bot\\node_modules\\minecraft-data\\minecraft-data\\data\\pc\\1.21.11\\protocol.json",
+      "bytes": 330792,
+      "sha256": "34d280120eef9090c66abc502d43d5305ffa2f592c1d2b0eb7a96b71048b81f7"
+    },
+    "versionList": {
+      "path": "E:\\CodexTemp\\QiZhangGuard\\bot\\node_modules\\minecraft-protocol\\src\\version.js",
+      "bytes": 368,
+      "sha256": "5b473bdb689c2fedf505b545be2096ab997d152f3b58338d7c624a5c1c73d1d1"
+    },
+    "scope": "Static package support and schema inspection; TCP success is a separate run result"
+  },
+  "syntheticPolicyOverrides": {
+    "limits.max-accounts-per-ip": "100",
+    "limits.attempts-per-minute": "1000",
+    "companion.timeout-seconds": "4 (10 for the operator gate)",
+    "vm.action": "ALERT initially; DENY in VM cases",
+    "ip.deny": "127.0.0.0/8 in CIDR case",
+    "limits.max-online-per-ip": "2 in final quota cases"
+  },
+  "executedProtocol": {
+    "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\neoforge-01\\qa\\protocol_smoke.cjs",
+    "bytes": 17854,
+    "sha256": "237ac7d2ec4aa5fc95a79575de06aa5b23d31a96ac8c04801dc3c6be5fef2939"
+  },
+  "protocolExitCode": 0,
+  "protocolElapsedSeconds": 76.732,
+  "forwardedCommands": 17,
+  "protocolResult": {
+    "passed": 26,
+    "cases": [
+      "normal companion joins",
+      "privileged commands blocked before report and restored afterward",
+      "missing companion expires",
+      "malformed report rejected",
+      "malformed report does not permanently ban account",
+      "first account on device allowed",
+      "same IP same device second account rejected",
+      "same IP second different device allowed",
+      "same IP third different device allowed",
+      "same IP fourth account rejected",
+      "disconnect releases device and IP quota",
+      "known cheat denied and sanctioned",
+      "same banned device different account denied",
+      "banned account denied with new device",
+      "administrator account and device unban restores access",
+      "administrator glob rule enforced",
+      "whitelist overrides matching blacklist item",
+      "removed whitelist takes effect",
+      "administrator removes default rule with colon ID",
+      "administrator restores removed blacklist entry",
+      "CIDR deny rejects login",
+      "known VM signal denied",
+      "VBS hypervisor alone does not ban physical machine",
+      "two-device setting first account",
+      "two-device setting second account",
+      "two-device setting rejects third account"
+    ],
+    "orePalette": [],
+    "maxChunkZeroPadding": 0,
+    "disconnectObservations": [
+      {
+        "name": "QVBot2",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"QiZhangGuard: required companion report timed out\"}"
+      },
+      {
+        "name": "BadWire",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"Malformed or oversized companion report\"}"
+      },
+      {
+        "name": "QVBot4",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"Only the configured number of accounts may use the same IP and device concurrently\"}"
+      },
+      {
+        "name": "QVBot7",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"Too many simultaneous accounts from this IP\"}"
+      },
+      {
+        "name": "CheatAccount",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"Reported mod matches an exact server blacklist rule\"}"
+      },
+      {
+        "name": "LinkedAccount",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"This reported device identifier is banned\"}"
+      },
+      {
+        "name": "CheatAccount",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"This account is banned by the server\"}"
+      },
+      {
+        "name": "QVBot9",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"Reported mod matches a server blacklist rule\"}"
+      },
+      {
+        "name": "QVBot11",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"Reported mod matches a server blacklist rule\"}"
+      },
+      {
+        "name": "QVBot13",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"Reported mod matches a server blacklist rule\"}"
+      },
+      {
+        "name": "QVBot14",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"This IP is denied by server policy\"}"
+      },
+      {
+        "name": "QVBot15",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"Companion reported a virtual machine indicator\"}"
+      },
+      {
+        "name": "QVBot19",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"Too many simultaneous accounts from this IP\"}"
+      }
+    ],
+    "kind": "real TCP clients using synthetic self-reports; not rendered mod client or real VM",
+    "version": "1.21.11"
+  },
+  "protocolResultRecord": {
+    "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\neoforge-01\\protocol-result.json",
+    "bytes": 5274,
+    "sha256": "d398e2ed6cc2d3bb987abff1fccd5346267f79d63285041ac88ab93bc13daeaf"
+  },
+  "policyBeforeRestore": {
+    "limits.max-online-per-ip": "2",
+    "limits.max-online-per-ip-device": "1",
+    "limits.max-accounts-per-ip": "100",
+    "limits.account-window-hours": "720",
+    "limits.attempts-per-minute": "1000",
+    "ip.allow": "",
+    "ip.deny": "",
+    "companion.required": "true",
+    "companion.timeout-seconds": "4",
+    "device.required": "true",
+    "vm.action": "ALERT",
+    "blacklist.action": "DENY",
+    "sanctions.on-deny": "BAN"
+  },
+  "restoredStatus": "[00:01:36] [Server thread/INFO] [minecraft/MinecraftServer]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=20, rules=40, companion=required, vm=DENY, blacklist=DENY, rateBuckets=1, accountBans=5, deviceBans=4, deviceRequired=true",
+  "strictPolicyRestored": true,
+  "elapsedSeconds": 90.299,
+  "console": {
+    "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\neoforge-01\\console.log",
+    "bytes": 45951,
+    "sha256": "60a363294dc4a537b99e21f00142467d15be4626214d7eacb6645312ade0341e"
+  },
+  "warningAndErrorLines": [
+    "2026-09-25T15:00:08.068631Z main WARN Advanced terminal features are not available in this environment",
+    "2026-09-25T15:00:18.954821300Z Server thread ERROR An exception occurred processing Appender DebugFile",
+    "org.apache.logging.log4j.core.appender.AppenderLoggingException: java.lang.NoClassDefFoundError: Could not initialize class io.netty.channel.kqueue.Native",
+    "Caused by: java.lang.ExceptionInInitializerError: Exception java.lang.IllegalStateException: Only supported on OSX/BSD [in thread \"Server thread\"]",
+    "2026-09-25T15:00:18.964901100Z Server thread ERROR An exception occurred processing Appender DebugFile",
+    "org.apache.logging.log4j.core.appender.AppenderLoggingException: java.lang.NoClassDefFoundError: Could not initialize class io.netty.channel.epoll.Native",
+    "Caused by: java.lang.ExceptionInInitializerError: Exception java.lang.IllegalStateException: Only supported on Linux [in thread \"Server thread\"]",
+    "[00:00:19] [Server thread/WARN] [minecraft/DedicatedServer]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!",
+    "[00:00:19] [Server thread/WARN] [minecraft/DedicatedServer]: The server will make no attempt to authenticate usernames. Beware.",
+    "[00:00:19] [Server thread/WARN] [minecraft/DedicatedServer]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.",
+    "[00:00:19] [Server thread/WARN] [minecraft/DedicatedServer]: To change this, set \"online-mode\" to \"true\" in the server.properties file.",
+    "[00:01:12] [Server thread/WARN] [minecraft/Connection]: handleDisconnection() called twice"
+  ],
+  "protocolDecoderErrors": [],
+  "protocolConsole": {
+    "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\neoforge-01\\protocol-console.log",
+    "bytes": 4356,
+    "sha256": "b45211657f12a5fa065ee25f137b133acb83a3e1b0dceb94352aacd4f2dfbfd0"
+  },
+  "passed": true
+}

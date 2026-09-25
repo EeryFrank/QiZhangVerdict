@@ -1,0 +1,288 @@
+{
+  "profile": "fabric-1.21.11",
+  "guard": {
+    "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\fabric-01\\mods\\qizhangverdict-fabric-1.21.11-0.4.0-dev.jar",
+    "bytes": 97169,
+    "sha256": "732ba77c6978785a8969c6f92476b8c57009be464b9210bfef2c9bb19c0d6ce5"
+  },
+  "mode": "tcp",
+  "command": [
+    "D:\\Java\\jdk-21\\bin\\java.exe",
+    "-Xms512M",
+    "-Xmx1536M",
+    "-Djava.awt.headless=true",
+    "-Dfile.encoding=UTF-8",
+    "-Djava.io.tmpdir=E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\fabric-01\\runtime-temp",
+    "-Dmixin.debug.verbose=true",
+    "-Dmixin.debug.export=true",
+    "-Dmixin.debug.countInjections=true",
+    "-jar",
+    "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\fabric-01\\fabric-server-launch.jar",
+    "nogui"
+  ],
+  "scope": "Dedicated startup/status/required command Mixin and clean stop; optional real TCP synthetic reports, not rendered companion/hardware evidence",
+  "availablePhysicalGiB": 8.359710693359375,
+  "started": true,
+  "normalStop": true,
+  "serverExitCode": 0,
+  "protocolPassed": true,
+  "defaultPolicyVerified": true,
+  "defaultCatalogVerified": true,
+  "requiredMixinObserved": true,
+  "helper": {
+    "path": "E:\\Codex_work\\QiZhangVerdict\\scripts\\modern12111_mod_smoke.py",
+    "bytes": 30142,
+    "sha256": "3de1db2ce6f97fc3cf5a55bf346e2875b2659c88a93ec7296eafdc0db78b3431"
+  },
+  "serverPid": 77244,
+  "freshStatus": "[23:58:04] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=0, accountPairs=0, rules=39, companion=required, vm=DENY, blacklist=DENY, rateBuckets=0, accountBans=0, deviceBans=0, deviceRequired=true",
+  "mixinLines": [
+    "[23:58:02] [Worker-Main-2/INFO]: Mixing CommandGate12111Mixin from qizhangverdict.mixins.json into net.minecraft.class_2170"
+  ],
+  "protocolSupport": {
+    "minecraftProtocolVersion": "1.66.2",
+    "minecraftDataVersion": "3.117.0",
+    "protocol": 774,
+    "versionMetadata": {
+      "path": "E:\\CodexTemp\\QiZhangGuard\\bot\\node_modules\\minecraft-data\\minecraft-data\\data\\pc\\1.21.11\\version.json",
+      "bytes": 107,
+      "sha256": "1f49acfc6a9ba00995b3ac6653550b9258ffaca1f2833aac10c902b3df92c28e"
+    },
+    "schema": {
+      "path": "E:\\CodexTemp\\QiZhangGuard\\bot\\node_modules\\minecraft-data\\minecraft-data\\data\\pc\\1.21.11\\protocol.json",
+      "bytes": 330792,
+      "sha256": "34d280120eef9090c66abc502d43d5305ffa2f592c1d2b0eb7a96b71048b81f7"
+    },
+    "versionList": {
+      "path": "E:\\CodexTemp\\QiZhangGuard\\bot\\node_modules\\minecraft-protocol\\src\\version.js",
+      "bytes": 368,
+      "sha256": "5b473bdb689c2fedf505b545be2096ab997d152f3b58338d7c624a5c1c73d1d1"
+    },
+    "scope": "Static package support and schema inspection; TCP success is a separate run result"
+  },
+  "syntheticPolicyOverrides": {
+    "limits.max-accounts-per-ip": "100",
+    "limits.attempts-per-minute": "1000",
+    "companion.timeout-seconds": "4 (10 for the operator gate)",
+    "vm.action": "ALERT initially; DENY in VM cases",
+    "ip.deny": "127.0.0.0/8 in CIDR case",
+    "limits.max-online-per-ip": "2 in final quota cases"
+  },
+  "executedProtocol": {
+    "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\fabric-01\\qa\\protocol_smoke.cjs",
+    "bytes": 17854,
+    "sha256": "237ac7d2ec4aa5fc95a79575de06aa5b23d31a96ac8c04801dc3c6be5fef2939"
+  },
+  "protocolExitCode": 0,
+  "protocolElapsedSeconds": 75.046,
+  "forwardedCommands": 17,
+  "protocolResult": {
+    "passed": 26,
+    "cases": [
+      "normal companion joins",
+      "privileged commands blocked before report and restored afterward",
+      "missing companion expires",
+      "malformed report rejected",
+      "malformed report does not permanently ban account",
+      "first account on device allowed",
+      "same IP same device second account rejected",
+      "same IP second different device allowed",
+      "same IP third different device allowed",
+      "same IP fourth account rejected",
+      "disconnect releases device and IP quota",
+      "known cheat denied and sanctioned",
+      "same banned device different account denied",
+      "banned account denied with new device",
+      "administrator account and device unban restores access",
+      "administrator glob rule enforced",
+      "whitelist overrides matching blacklist item",
+      "removed whitelist takes effect",
+      "administrator removes default rule with colon ID",
+      "administrator restores removed blacklist entry",
+      "CIDR deny rejects login",
+      "known VM signal denied",
+      "VBS hypervisor alone does not ban physical machine",
+      "two-device setting first account",
+      "two-device setting second account",
+      "two-device setting rejects third account"
+    ],
+    "orePalette": [],
+    "maxChunkZeroPadding": 0,
+    "disconnectObservations": [
+      {
+        "name": "QVBot2",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"QiZhangGuard: required companion report timed out\"}"
+      },
+      {
+        "name": "BadWire",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"Malformed or oversized companion report\"}"
+      },
+      {
+        "name": "QVBot4",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"Only the configured number of accounts may use the same IP and device concurrently\"}"
+      },
+      {
+        "name": "QVBot7",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"Too many simultaneous accounts from this IP\"}"
+      },
+      {
+        "name": "CheatAccount",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"Reported mod matches an exact server blacklist rule\"}"
+      },
+      {
+        "name": "LinkedAccount",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"This reported device identifier is banned\"}"
+      },
+      {
+        "name": "CheatAccount",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"This account is banned by the server\"}"
+      },
+      {
+        "name": "QVBot9",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"Reported mod matches a server blacklist rule\"}"
+      },
+      {
+        "name": "QVBot11",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"Reported mod matches a server blacklist rule\"}"
+      },
+      {
+        "name": "QVBot13",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"Reported mod matches a server blacklist rule\"}"
+      },
+      {
+        "name": "QVBot14",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"This IP is denied by server policy\"}"
+      },
+      {
+        "name": "QVBot15",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"Companion reported a virtual machine indicator\"}"
+      },
+      {
+        "name": "QVBot19",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"Too many simultaneous accounts from this IP\"}"
+      }
+    ],
+    "kind": "real TCP clients using synthetic self-reports; not rendered mod client or real VM",
+    "version": "1.21.11"
+  },
+  "protocolResultRecord": {
+    "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\fabric-01\\protocol-result.json",
+    "bytes": 5274,
+    "sha256": "d398e2ed6cc2d3bb987abff1fccd5346267f79d63285041ac88ab93bc13daeaf"
+  },
+  "policyBeforeRestore": {
+    "limits.max-online-per-ip": "2",
+    "limits.max-online-per-ip-device": "1",
+    "limits.max-accounts-per-ip": "100",
+    "limits.account-window-hours": "720",
+    "limits.attempts-per-minute": "1000",
+    "ip.allow": "",
+    "ip.deny": "",
+    "companion.required": "true",
+    "companion.timeout-seconds": "4",
+    "device.required": "true",
+    "vm.action": "ALERT",
+    "blacklist.action": "DENY",
+    "sanctions.on-deny": "BAN"
+  },
+  "restoredStatus": "[23:59:19] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=20, rules=40, companion=required, vm=DENY, blacklist=DENY, rateBuckets=1, accountBans=5, deviceBans=4, deviceRequired=true",
+  "strictPolicyRestored": true,
+  "elapsedSeconds": 94.707,
+  "console": {
+    "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\fabric-01\\console.log",
+    "bytes": 99769,
+    "sha256": "cc2a8fedc8b7a7dd0976a62b7bb0dddd8d6b8fd2836dbbd0fb452235bbb5e9f2"
+  },
+  "warningAndErrorLines": [
+    "[23:57:52] [main/WARN]: Ignoring invalid library path \"",
+    "[23:57:52] [main/WARN]: Ignoring invalid library path D:\\Program Files\\Node.js\\\"",
+    "[23:57:52] [main/WARN]: Compatibility level JAVA_21 specified by fabric-api-lookup-api-v1.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).",
+    "[23:57:55] [main/INFO]: Renaming synthetic method lambda$remap$5()Lnet/fabricmc/fabric/impl/registry/sync/RemapException; to md56d210$fabric-registry-sync-v0$lambda$remap$5$0 in fabric-registry-sync-v0.mixins.json:MappedRegistryMixin from mod fabric-registry-sync-v0",
+    "[23:57:55] [main/INFO]: Renaming synthetic method lambda$getStacks$0(Lnet/minecraft/class_1761;)Ljava/lang/IllegalStateException; to md56d210$fabric-item-group-api-v1$lambda$getStacks$0$0 in fabric-item-group-api-v1.mixins.json:CreativeModeTabMixin from mod fabric-item-group-api-v1",
+    "[23:57:56] [main/WARN]: @Shadow target fabric-transfer-api-v1.mixins.json:ChiseledBookShelfBlockEntityMixin from mod fabric-transfer-api-v1::field_41314 is final but shadow is not decorated with @Final",
+    "[23:57:56] [main/WARN]: Write access to @Mutable @Final field field_19315:Ljava/util/Set; in fabric-object-builder-v1.mixins.json:BlockEntityTypeMixin from mod fabric-object-builder-api-v1::handler$zgp000$fabric-object-builder-api-v1$mutableBlocks",
+    "[23:57:57] [main/WARN]: Write access to @Mutable @Final field field_54119:Lnet/minecraft/class_10162; in fabric-item-api-v1.mixins.json:ItemPropertiesMixin from mod fabric-item-api-v1::modelId",
+    "[23:57:59] [main/WARN]: Write access to @Mutable @Final field field_46095:Lcom/mojang/serialization/Codec; in fabric-recipe-api-v1.mixins.json:ingredient.IngredientMixin from mod fabric-recipe-api-v1::handler$zib000$fabric-recipe-api-v1$injectCodec",
+    "[23:58:00] [main/WARN]: Write access to @Mutable @Final field field_24730:Lcom/mojang/serialization/MapCodec; in fabric-biome-api-v1.mixins.json:TheEndBiomeSourceMixin from mod fabric-biome-api-v1::handler$zze000$fabric-biome-api-v1$modifyCodec",
+    "[23:58:00] [main/WARN]: Write access to @Mutable @Final field field_23730:Ljava/util/Map; in fabric-object-builder-v1.mixins.json:DefaultAttributesMixin from mod fabric-object-builder-api-v1::handler$zha000$fabric-object-builder-api-v1$injectAttributes",
+    "[23:58:00] [main/WARN]: Write access to @Mutable @Final field field_949:Lcom/google/common/collect/ImmutableList$Builder; in fabric-loot-api-v3.mixins.json:LootTableBuilderMixin from mod fabric-loot-api-v3::modifyPools",
+    "[23:58:00] [main/WARN]: @Shadow field fabric-events-interaction-v0.mixins.json:ServerGamePacketListenerImplMixin from mod fabric-events-interaction-v0::field_14140 is decorated with @Final but target is not final",
+    "[23:58:00] [main/WARN]: @At(\"STORE\" implicit List) has invalid IMPLICIT discriminator for opcode 6 in net/minecraft/class_3288::method_45274(Lnet/minecraft/class_9224;Lnet/minecraft/class_3288$class_7680;Lnet/minecraft/class_11555;Lnet/minecraft/class_3264;)Lnet/minecraft/class_3288$class_7679;: Found 0 candidate variables but exactly 1 is required.",
+    "[23:58:00] [main/WARN]: @At(\"STORE\" implicit List) has invalid IMPLICIT discriminator for opcode 14 in net/minecraft/class_3288::method_45274(Lnet/minecraft/class_9224;Lnet/minecraft/class_3288$class_7680;Lnet/minecraft/class_11555;Lnet/minecraft/class_3264;)Lnet/minecraft/class_3288$class_7679;: Found 0 candidate variables but exactly 1 is required.",
+    "[23:58:00] [main/WARN]: @At(\"STORE\" implicit List) has invalid IMPLICIT discriminator for opcode 25 in net/minecraft/class_3288::method_45274(Lnet/minecraft/class_9224;Lnet/minecraft/class_3288$class_7680;Lnet/minecraft/class_11555;Lnet/minecraft/class_3264;)Lnet/minecraft/class_3288$class_7679;: Found 0 candidate variables but exactly 1 is required.",
+    "[23:58:00] [main/WARN]: @At(\"STORE\" implicit List) has invalid IMPLICIT discriminator for opcode 41 in net/minecraft/class_3288::method_45274(Lnet/minecraft/class_9224;Lnet/minecraft/class_3288$class_7680;Lnet/minecraft/class_11555;Lnet/minecraft/class_3264;)Lnet/minecraft/class_3288$class_7679;: Found 0 candidate variables but exactly 1 is required.",
+    "[23:58:00] [main/WARN]: @At(\"STORE\" implicit List) has invalid IMPLICIT discriminator for opcode 60 in net/minecraft/class_3288::method_45274(Lnet/minecraft/class_9224;Lnet/minecraft/class_3288$class_7680;Lnet/minecraft/class_11555;Lnet/minecraft/class_3264;)Lnet/minecraft/class_3288$class_7679;: Found 0 candidate variables but exactly 1 is required.",
+    "[23:58:00] [main/WARN]: @At(\"STORE\" implicit List) has invalid IMPLICIT discriminator for opcode 73 in net/minecraft/class_3288::method_45274(Lnet/minecraft/class_9224;Lnet/minecraft/class_3288$class_7680;Lnet/minecraft/class_11555;Lnet/minecraft/class_3264;)Lnet/minecraft/class_3288$class_7679;: Found 0 candidate variables but exactly 1 is required.",
+    "[23:58:00] [main/WARN]: @At(\"STORE\" implicit List) has invalid IMPLICIT discriminator for opcode 80 in net/minecraft/class_3288::method_45274(Lnet/minecraft/class_9224;Lnet/minecraft/class_3288$class_7680;Lnet/minecraft/class_11555;Lnet/minecraft/class_3264;)Lnet/minecraft/class_3288$class_7679;: Found 0 candidate variables but exactly 1 is required.",
+    "[23:58:00] [main/WARN]: @At(\"STORE\" implicit List) has invalid IMPLICIT discriminator for opcode 88 in net/minecraft/class_3288::method_45274(Lnet/minecraft/class_9224;Lnet/minecraft/class_3288$class_7680;Lnet/minecraft/class_11555;Lnet/minecraft/class_3264;)Lnet/minecraft/class_3288$class_7679;: Found 0 candidate variables but exactly 1 is required.",
+    "[23:58:00] [main/WARN]: @At(\"STORE\" implicit List) has invalid IMPLICIT discriminator for opcode 128 in net/minecraft/class_3288::method_45274(Lnet/minecraft/class_9224;Lnet/minecraft/class_3288$class_7680;Lnet/minecraft/class_11555;Lnet/minecraft/class_3264;)Lnet/minecraft/class_3288$class_7679;: Found 0 candidate variables but exactly 1 is required.",
+    "[23:58:00] [main/WARN]: @At(\"STORE\" implicit List) has invalid IMPLICIT discriminator for opcode 139 in net/minecraft/class_3288::method_45274(Lnet/minecraft/class_9224;Lnet/minecraft/class_3288$class_7680;Lnet/minecraft/class_11555;Lnet/minecraft/class_3264;)Lnet/minecraft/class_3288$class_7679;: Found 0 candidate variables but exactly 1 is required.",
+    "[23:58:00] [main/WARN]: @At(\"STORE\" implicit List) has invalid IMPLICIT discriminator for opcode 151 in net/minecraft/class_3288::method_45274(Lnet/minecraft/class_9224;Lnet/minecraft/class_3288$class_7680;Lnet/minecraft/class_11555;Lnet/minecraft/class_3264;)Lnet/minecraft/class_3288$class_7679;: Found 0 candidate variables but exactly 1 is required.",
+    "[23:58:00] [main/WARN]: Write access to @Mutable @Final field field_14227:Ljava/util/Set; in fabric-resource-loader-v1.mixins.json:PackRepositoryMixin from mod fabric-resource-loader-v1::handler$zjk000$fabric-resource-loader-v1$construct",
+    "[23:58:02] [Worker-Main-2/INFO]: Renaming @Accessor method getFailedException()Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType; to getFailedException$fabric-command-api-v2_$md$56d210$0 in fabric-command-api-v2.mixins.json:HelpCommandAccessor from mod fabric-command-api-v2",
+    "[23:58:03] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!",
+    "[23:58:03] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.",
+    "[23:58:03] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.",
+    "[23:58:03] [Server thread/WARN]: To change this, set \"online-mode\" to \"true\" in the server.properties file.",
+    "[23:59:01] [Server thread/WARN]: handleDisconnection() called twice"
+  ],
+  "protocolDecoderErrors": [],
+  "protocolConsole": {
+    "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\fabric-01\\protocol-console.log",
+    "bytes": 4356,
+    "sha256": "b45211657f12a5fa065ee25f137b133acb83a3e1b0dceb94352aacd4f2dfbfd0"
+  },
+  "passed": true
+}

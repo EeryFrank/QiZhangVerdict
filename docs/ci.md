@@ -1,14 +1,14 @@
 # CI 构建范围
 
-当前开发分支的 GitHub Actions 与 GitLab CI 在 Linux 上分五个现代任务执行：核心+Bukkit、MC 1.19.2 的 Fabric+Forge、1.20.1 的 Fabric+Forge、1.20.4 的 Fabric+Forge+NeoForge、1.21.1 的 Fabric+NeoForge。最后收集十个精确指定的生产 JAR 和 SHA256SUMS，拒绝 sources JAR、其它版本和重复文件；组件仍保留各自的开发版本号，CI 构建成功本身不代表十份成品已完成游戏验收。流水线只保存构建产物和日志，不创建 release、不推送代码、不使用发布凭证。
+当前开发分支的 GitHub Actions 与 GitLab CI 配置了六个现代任务：核心+Bukkit、MC 1.19.2 的 Fabric+Forge、1.20.1 的 Fabric+Forge、1.20.4 的 Fabric+Forge+NeoForge、1.21.1 的 Fabric+NeoForge，以及新增 1.21.11 的 Fabric+NeoForge。最后收集十二个精确指定的生产 JAR 和 SHA256SUMS，拒绝 sources JAR、其它版本和重复文件；组件仍保留各自的开发版本号，CI 构建成功本身不代表成品已完成游戏验收。1.21.11 配置尚待本轮远端运行验证，下方历史十 JAR 结果不能替代新目标结果。流水线只保存构建产物和日志，不创建 release、不推送代码、不使用发布凭证。
 
-现代工程使用 Gradle Wrapper 8.14.1。Gradle 本身在 JDK 21 上运行；额外安装 JDK 17 供 1.19.2、1.20.1、1.20.4 工具链使用。每次调用通过 `-Porg.gradle.java.installations.paths` 显式传入 Linux JDK 目录，并关闭工具链自动探测/下载，覆盖本地 `gradle.properties` 中的 Windows 路径。`JAVA_TOOL_OPTIONS` 将核心测试的临时目录指向 runner 工作区。GitHub 使用固定提交 SHA 的官方 actions；GitLab 使用 Temurin 21 Noble 镜像和 Ubuntu 的 OpenJDK 17 包。
+现代工程使用 Gradle Wrapper 8.14.1；新增 1.21.11 工程独立使用 9.2.1。Gradle 本身在 JDK 21 上运行；额外安装 JDK 17 供 1.19.2、1.20.1、1.20.4 工具链使用。每次调用通过 `-Porg.gradle.java.installations.paths` 显式传入 Linux JDK 目录，并关闭工具链自动探测/下载，覆盖本地 `gradle.properties` 中的 Windows 路径。`JAVA_TOOL_OPTIONS` 将核心测试的临时目录指向 runner 工作区。GitHub 使用固定提交 SHA 的官方 actions；GitLab 使用 Temurin 21 Noble 镜像和 Ubuntu 的 OpenJDK 17 包。
 
-必须执行根工程 `build :core:securityTest`、四版工程各自的 `build :fabric:commandParserSmoke`，以及 Python 安装安全、运行证据解析和产物收集回归。`build` 会执行全部子工程的 `check`；Bukkit 新增实际待发送挑战任务的行为检查，1.20.4 三端包含报文编解码与上限检查，NeoForge 1.20.4 另执行 9 项客户端挑战调度断言。没有 `-x test`、`-x check` 或忽略失败设置；`pipefail` 确保记录日志不会吞掉失败退出码。`CI=true` 供 Loom 在 CI 中减少开发依赖源码重映射，不跳过产物 remap 或检查。
+必须执行根工程 `build :core:securityTest`、五版工程各自的 `build :fabric:commandParserSmoke`，以及 Python 安装安全、运行证据解析、产物收集和打包核心结果解析回归。`build` 会执行全部子工程的 `check`；Bukkit 包含实际待发送挑战任务的行为检查，1.20.4 三端包含报文编解码与上限检查，NeoForge 1.20.4 另执行 9 项客户端挑战调度断言。1.21.11 包含相同生产命令树和报文边界检查，以及 Fabric 12 项、NeoForge 9 项连接归属检查；NeoForge 的 Minecraft 类检查使用官方 ModDevGradle JUnit 加载器初始化。没有 `-x test`、`-x check` 或忽略失败设置；`pipefail` 确保记录日志不会吞掉失败退出码。`CI=true` 供 Loom 在 CI 中减少开发依赖源码重映射，不跳过产物 remap 或检查。
 
 上述构建 CI 是重新构建和静态/逻辑回归，不会自动接受 Minecraft EULA、启动游戏服务端或图形客户端，也不会覆盖 `outputs/validation.json` 的既有 Windows 实测证据。新构建字节不应被当作已通过本地联机验收的旧散列；测试版 release 的已验收产物由独立发布流程处理。
 
-GitHub 的 `qizhangverdict-ten-modern-jars-<commit>`、GitLab 的 `collect` job artifacts 为十 JAR 汇总，保留 30 天；中间构建与日志保留 14 天。两站共用 [构建脚本](../scripts/ci_modern_build.sh)和[精确版本清单及收集器](../scripts/ci_modern_artifacts.py)。GitLab 项目需要可用的 Linux Docker runner，并允许下载 Maven/Gradle/Minecraft 依赖及 Ubuntu 软件包。0.2.0-test.1 标签仍使用当时的五 JAR 现代收集流程，以下历史记录不因开发配置变更而改变。
+GitHub 的 `qizhangverdict-twelve-modern-jars-<commit>`、GitLab 的 `collect` job artifacts 为十二 JAR 汇总，保留 30 天；中间构建与日志保留 14 天。两站共用 [构建脚本](../scripts/ci_modern_build.sh)和[精确版本清单及收集器](../scripts/ci_modern_artifacts.py)。GitLab 项目需要可用的 Linux Docker runner，并允许下载 Maven/Gradle/Minecraft 依赖及 Ubuntu 软件包。0.2.0-test.1 标签仍使用当时的五 JAR 现代收集流程，0.3.0-dev-preview.1 标签使用十 JAR 流程，以下历史记录不因开发配置变更而改变。
 
 0.2.0-test.1 发布时执行目录的 25 项 Python 回归、57 项核心回归，以及 Java 生产解析器对 37 条导出规则和首次默认配置的检查；还检查已有 OFF、删除记录和稀疏配置文件保留。0.1.1 当时的检查数量为 55 项核心、31 条目录。GitLab 镜像使用 Temurin 21 Noble（Ubuntu 24.04），以满足标准库 `tomllib` 所需的 Python 3.11+；原 Jammy 默认 Python 3.10 不满足该工具要求。
 

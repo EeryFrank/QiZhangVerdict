@@ -51,9 +51,9 @@ build:
   timeout: 1h
   parallel:
     matrix:
-      - QV_TARGET: [core-bukkit, mods-1.19.2, mods-1.20.1, mods-1.20.4, mods-1.21.1]
+      - QV_TARGET: [core-bukkit, mods-1.19.2, mods-1.20.1, mods-1.20.4, mods-1.21.1, mods-1.21.11]
   cache:
-    key: 'gradle-8.14.1-${CI_COMMIT_REF_SLUG}-${QV_TARGET}'
+    key: 'gradle-${CI_COMMIT_REF_SLUG}-${QV_TARGET}'
     paths:
       - .gradle-user/caches/
       - .gradle-user/wrapper/
@@ -91,7 +91,7 @@ collect:
   script:
     - python3 -B scripts/ci_modern_artifacts.py collect --input ci-artifacts --output ci-release --layout gitlab
   artifacts:
-    name: 'qizhangverdict-ten-modern-jars-${CI_COMMIT_SHORT_SHA}'
+    name: 'qizhangverdict-twelve-modern-jars-${CI_COMMIT_SHORT_SHA}'
     expire_in: 30 days
     paths:
       - ci-release/

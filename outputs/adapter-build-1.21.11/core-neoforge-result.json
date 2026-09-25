@@ -1,0 +1,127 @@
+{
+  "artifact": "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.21.11\\neoforge\\build\\libs\\qizhangverdict-neoforge-1.21.11-0.4.0-dev.jar",
+  "sha256": "47dc8edff5faeb9c41ce19575bd37f49a2205877d99f814aa7acc33c0440d789",
+  "bytes": 95394,
+  "scope": "Core from the packaged JAR, not source classes; no Minecraft loader or player runtime acceptance.",
+  "java": "D:\\Java\\jdk-21\\bin\\java.exe",
+  "javac": "D:\\Java\\jdk-21\\bin\\javac.exe",
+  "checks": [
+    {
+      "name": "java-version",
+      "command": [
+        "D:\\Java\\jdk-21\\bin\\java.exe",
+        "-version"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "log": "java-version.log",
+      "sha256": "2964d5e1b3b412d2128748e82aa8b0069d4a7b2c58bd5c7e50cd3ba4ebcc8aa0",
+      "bytes": 179
+    },
+    {
+      "name": "compile-runners",
+      "command": [
+        "D:\\Java\\jdk-21\\bin\\javac.exe",
+        "--release",
+        "8",
+        "-encoding",
+        "UTF-8",
+        "-sourcepath",
+        "",
+        "-cp",
+        "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.21.11\\neoforge\\build\\libs\\qizhangverdict-neoforge-1.21.11-0.4.0-dev.jar",
+        "-d",
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\core-checks-01\\neoforge-artifact\\runner-classes",
+        "E:\\Codex_work\\QiZhangVerdict\\core\\src\\test\\java\\cn\\qizhang\\guard\\core\\SecurityRegressionTest.java",
+        "E:\\Codex_work\\QiZhangVerdict\\core\\src\\test\\java\\cn\\qizhang\\guard\\core\\CatalogCompatibilityTest.java",
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\core-checks-01\\neoforge-artifact\\ArtifactOriginCheck.java"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "log": "compile-runners.log",
+      "sha256": "0776deeb6ace85f83d60a9ba535cbe73a21566505b5aec2fd5c75b2bde065172",
+      "bytes": 188
+    },
+    {
+      "name": "artifact-origin",
+      "command": [
+        "D:\\Java\\jdk-21\\bin\\java.exe",
+        "-Xmx128M",
+        "-XX:MaxMetaspaceSize=64M",
+        "-Dqzguard.testDir=E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\core-checks-01\\neoforge-artifact\\test-data",
+        "-cp",
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\core-checks-01\\neoforge-artifact\\runner-classes;E:\\Codex_work\\QiZhangVerdict\\platforms\\1.21.11\\neoforge\\build\\libs\\qizhangverdict-neoforge-1.21.11-0.4.0-dev.jar",
+        "ArtifactOriginCheck",
+        "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.21.11\\neoforge\\build\\libs\\qizhangverdict-neoforge-1.21.11-0.4.0-dev.jar"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "log": "artifact-origin.log",
+      "sha256": "de3373d101bd34efca6d6014acec9d6fb476d4803cfadfa4d52bade4f5cb8c0b",
+      "bytes": 74
+    },
+    {
+      "name": "security",
+      "command": [
+        "D:\\Java\\jdk-21\\bin\\java.exe",
+        "-Xmx128M",
+        "-XX:MaxMetaspaceSize=64M",
+        "-Dqzguard.testDir=E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\core-checks-01\\neoforge-artifact\\test-data",
+        "-cp",
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\core-checks-01\\neoforge-artifact\\runner-classes;E:\\Codex_work\\QiZhangVerdict\\platforms\\1.21.11\\neoforge\\build\\libs\\qizhangverdict-neoforge-1.21.11-0.4.0-dev.jar",
+        "cn.qizhang.guard.core.SecurityRegressionTest"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "log": "security.log",
+      "sha256": "1e26be45a2a53ee19e208f27f4e32b96db5c32f3c0dd7582a88d36147338e1fb",
+      "bytes": 3229
+    },
+    {
+      "name": "catalog",
+      "command": [
+        "D:\\Java\\jdk-21\\bin\\java.exe",
+        "-Xmx128M",
+        "-XX:MaxMetaspaceSize=64M",
+        "-Dqzguard.testDir=E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\core-checks-01\\neoforge-artifact\\test-data",
+        "-cp",
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\core-checks-01\\neoforge-artifact\\runner-classes;E:\\Codex_work\\QiZhangVerdict\\platforms\\1.21.11\\neoforge\\build\\libs\\qizhangverdict-neoforge-1.21.11-0.4.0-dev.jar",
+        "cn.qizhang.guard.core.CatalogCompatibilityTest",
+        "E:\\Codex_work\\QiZhangVerdict\\catalog\\blacklist-extension.tsv"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "log": "catalog.log",
+      "sha256": "7d1c65f070f44153526c116a148c24d4dbdadf886cf45e9e562442c7320288cf",
+      "bytes": 3417,
+      "validation": {
+        "rules": 39,
+        "deny": 35,
+        "alert": 4,
+        "controls": 3,
+        "summary": "PASS: production Blacklist parser and fresh GuardService enforce 39 exact catalog rules (35 DENY, 4 ALERT); 3 preservation and ordinary-ID controls passed",
+        "catalogSha256": "1531b4bd34a6d2fc1d2d6ecde86c4d202d8f66881db77a66f56e330404e606af"
+      }
+    }
+  ],
+  "sourceFiles": [
+    {
+      "path": "core\\src\\test\\java\\cn\\qizhang\\guard\\core\\SecurityRegressionTest.java",
+      "sha256": "f1b0c445eaf5229e889b94d4c5176dbbe72eccebd81febe58b78ff980d716985"
+    },
+    {
+      "path": "core\\src\\test\\java\\cn\\qizhang\\guard\\core\\CatalogCompatibilityTest.java",
+      "sha256": "aeeb0adb9d9a511c6aa1498ea70f099d1dbf2cfb0de044925e45b77037f24b7c"
+    }
+  ],
+  "toolSha256": "8a0746fbb5a8a2802b84292c349dde8f86c1f56d4d9dbbb046ab8fe111ed0ddd",
+  "passed": true,
+  "embeddedCoreClassCount": 16,
+  "runnerClassFiles": [
+    "ArtifactOriginCheck.class",
+    "cn/qizhang/guard/core/CatalogCompatibilityTest.class",
+    "cn/qizhang/guard/core/SecurityRegressionTest$Check.class",
+    "cn/qizhang/guard/core/SecurityRegressionTest.class"
+  ],
+  "artifactUnchanged": true
+}

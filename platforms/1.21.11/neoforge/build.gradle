@@ -1,0 +1,49 @@
+// SPDX-License-Identifier: GPL-3.0-only
+plugins { id 'net.neoforged.moddev' version '2.0.147' }
+
+neoForge {
+    version = providers.gradleProperty('neo_version').getOrElse('21.11.45')
+    mods {
+        qizhangverdict { sourceSet(sourceSets.main) }
+    }
+    unitTest {
+        enable()
+        testedMod = mods.qizhangverdict
+    }
+    runs {
+        client {
+            client()
+            gameDirectory = new File(rootProject.qzRuntimeDirectory, 'neoforge-client')
+        }
+        server {
+            server()
+            programArgument '--nogui'
+            gameDirectory = new File(rootProject.qzRuntimeDirectory, 'neoforge-server')
+        }
+    }
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.13.4')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+sourceSets.test.java.srcDir rootProject.file('common/src/smoke/java')
+tasks.named('test', Test) {
+    useJUnitPlatform()
+    maxHeapSize = '768m'
+    workingDir = new File(rootProject.qzRuntimeDirectory, 'neoforge-junit')
+    doFirst { workingDir.mkdirs() }
+    testLogging { events 'passed', 'failed', 'skipped'; showStandardStreams = true }
+}
+
+tasks.register('clientChallengeDispatchSmoke', JavaExec) {
+    dependsOn tasks.named('smokeClasses')
+    classpath = sourceSets.smoke.runtimeClasspath
+    mainClass = 'cn.qizhang.guard.neoforge.ClientChallengeDispatchSmoke'
+    maxHeapSize = '128m'
+    javaLauncher = javaToolchains.launcherFor { languageVersion = JavaLanguageVersion.of(21) }
+    workingDir = new File(rootProject.qzRuntimeDirectory, 'neoforge-dispatch')
+    doFirst { workingDir.mkdirs() }
+}
+tasks.named('check') { dependsOn tasks.named('clientChallengeDispatchSmoke') }

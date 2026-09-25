@@ -22,6 +22,7 @@ if [[ "$QV_TARGET" == core-bukkit ]]; then
   python3 -B integrations/test_runtime_evidence.py 2>&1 | tee "$qv_logs/evidence-parser-tests.log"
   python3 -B -m unittest discover -s catalog -p test_catalog.py -v 2>&1 | tee "$qv_logs/catalog-tests.log"
   python3 -B -m unittest discover -s scripts -p test_ci_modern_artifacts.py -v 2>&1 | tee "$qv_logs/artifact-collection-tests.log"
+  python3 -B -m unittest discover -s scripts -p test_artifact_core_checks.py -v 2>&1 | tee "$qv_logs/artifact-core-validator-tests.log"
 else
   (cd "$qv_project" && bash ./gradlew "${gradle_options[@]}" build :fabric:commandParserSmoke) 2>&1 | tee "$qv_logs/gradle.log"
 fi

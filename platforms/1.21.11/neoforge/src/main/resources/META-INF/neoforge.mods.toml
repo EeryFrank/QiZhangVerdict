@@ -1,0 +1,25 @@
+# SPDX-License-Identifier: GPL-3.0-only
+license="GPL-3.0-only"
+
+[[mods]]
+modId="qizhangverdict"
+version="${version}"
+displayName="QiZhang's Verdict"
+description='''IP, account and device admission controls with an optional wire-compatible client companion. Server policy determines whether the companion is required.'''
+
+[[mixins]]
+config="qizhangverdict.mixins.json"
+
+[[dependencies.qizhangverdict]]
+modId="neoforge"
+type="required"
+versionRange="[21.11.45,21.12)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.qizhangverdict]]
+modId="minecraft"
+type="required"
+versionRange="[1.21.11]"
+ordering="NONE"
+side="BOTH"

@@ -1,0 +1,1098 @@
+{
+  "schemaVersion": 1,
+  "generatedUtc": "2026-09-25T15:10:12.956114+00:00",
+  "product": "QiZhangVerdict",
+  "artifactVersion": "0.4.0-dev",
+  "minecraft": "1.21.11",
+  "allPassed": true,
+  "actualServerAttempts": 2,
+  "passingServerAttempts": 2,
+  "failedServerAttempts": 0,
+  "passedCaseGroups": 52,
+  "uniqueCaseDefinitions": 26,
+  "scope": "Actual dedicated Minecraft servers plus real TCP protocol clients with explicitly synthetic companion/device/VM reports. This is not rendered companion-client, real VM, behavioral-anticheat or Anti-Xray validation.",
+  "attempts": [
+    {
+      "profile": "fabric-1.21.11",
+      "minecraft": "1.21.11",
+      "loader": "fabric",
+      "loaderVersion": "0.19.5",
+      "attempt": "fabric-01",
+      "passed": true,
+      "artifact": {
+        "path": "platforms/1.21.11/fabric/build/libs/qizhangverdict-fabric-1.21.11-0.4.0-dev.jar",
+        "sha256": "732ba77c6978785a8969c6f92476b8c57009be464b9210bfef2c9bb19c0d6ce5",
+        "bytes": 97169,
+        "version": "0.4.0-dev"
+      },
+      "java": {
+        "major": 21,
+        "executable": {
+          "path": "D:\\Java\\jdk-21\\bin\\java.exe",
+          "bytes": 54376,
+          "sha256": "f3d26e4f17c45da613a4676b5b0c6a387bf36d990be0835d60a177234b2f28ba"
+        },
+        "runtimeMajorLogEvidence": [
+          {
+            "line": 60,
+            "text": "/*                                        Java Version : 21.0 (supports compatibility 6-21)                                                                                                                            */"
+          }
+        ]
+      },
+      "officialInstaller": {
+        "exitCode": 0,
+        "sha256": "2487a69dd6f9d9c2605265a7142d77c26ab62edc620e6bcf810d581d2ee31b79",
+        "inputReceiptSha256": "d524e9e812891c4fccf6fa7a09ec1eb4d119361d2b5adac474800e5d8c1709ad"
+      },
+      "passedCaseGroups": 26,
+      "cases": [
+        "normal companion joins",
+        "privileged commands blocked before report and restored afterward",
+        "missing companion expires",
+        "malformed report rejected",
+        "malformed report does not permanently ban account",
+        "first account on device allowed",
+        "same IP same device second account rejected",
+        "same IP second different device allowed",
+        "same IP third different device allowed",
+        "same IP fourth account rejected",
+        "disconnect releases device and IP quota",
+        "known cheat denied and sanctioned",
+        "same banned device different account denied",
+        "banned account denied with new device",
+        "administrator account and device unban restores access",
+        "administrator glob rule enforced",
+        "whitelist overrides matching blacklist item",
+        "removed whitelist takes effect",
+        "administrator removes default rule with colon ID",
+        "administrator restores removed blacklist entry",
+        "CIDR deny rejects login",
+        "known VM signal denied",
+        "VBS hypervisor alone does not ban physical machine",
+        "two-device setting first account",
+        "two-device setting second account",
+        "two-device setting rejects third account"
+      ],
+      "protocolExitCode": 0,
+      "protocolElapsedSeconds": 75.046,
+      "serverExitCode": 0,
+      "normalStop": true,
+      "forcedTermination": false,
+      "elapsedSeconds": 94.707,
+      "protocol": {
+        "minecraftProtocolVersion": "1.66.2",
+        "minecraftDataVersion": "3.117.0",
+        "protocol": 774,
+        "versionMetadata": {
+          "path": "E:\\CodexTemp\\QiZhangGuard\\bot\\node_modules\\minecraft-data\\minecraft-data\\data\\pc\\1.21.11\\version.json",
+          "bytes": 107,
+          "sha256": "1f49acfc6a9ba00995b3ac6653550b9258ffaca1f2833aac10c902b3df92c28e"
+        },
+        "schema": {
+          "path": "E:\\CodexTemp\\QiZhangGuard\\bot\\node_modules\\minecraft-data\\minecraft-data\\data\\pc\\1.21.11\\protocol.json",
+          "bytes": 330792,
+          "sha256": "34d280120eef9090c66abc502d43d5305ffa2f592c1d2b0eb7a96b71048b81f7"
+        },
+        "versionList": {
+          "path": "E:\\CodexTemp\\QiZhangGuard\\bot\\node_modules\\minecraft-protocol\\src\\version.js",
+          "bytes": 368,
+          "sha256": "5b473bdb689c2fedf505b545be2096ab997d152f3b58338d7c624a5c1c73d1d1"
+        },
+        "scope": "Static package support and schema inspection; TCP success is a separate run result"
+      },
+      "policy": {
+        "fresh13DefaultsVerified": true,
+        "freshDefaultRuleCount": 39,
+        "freshDefaultDeny": 35,
+        "freshDefaultAlert": 4,
+        "strict13RestoredByteForByte": true,
+        "qaOverrides": {
+          "limits.max-accounts-per-ip": "100",
+          "limits.attempts-per-minute": "1000",
+          "companion.timeout-seconds": "4 (10 for the operator gate)",
+          "vm.action": "ALERT initially; DENY in VM cases",
+          "ip.deny": "127.0.0.0/8 in CIDR case",
+          "limits.max-online-per-ip": "2 in final quota cases"
+        },
+        "policyBeforeRestore": {
+          "limits.max-online-per-ip": "2",
+          "limits.max-online-per-ip-device": "1",
+          "limits.max-accounts-per-ip": "100",
+          "limits.account-window-hours": "720",
+          "limits.attempts-per-minute": "1000",
+          "ip.allow": "",
+          "ip.deny": "",
+          "companion.required": "true",
+          "companion.timeout-seconds": "4",
+          "device.required": "true",
+          "vm.action": "ALERT",
+          "blacklist.action": "DENY",
+          "sanctions.on-deny": "BAN"
+        },
+        "defaultRuleTableUnchangedAfterTest": false,
+        "finalLegacyRows": 38,
+        "finalAdministratorRows": 2,
+        "finalEffectiveRules": 40,
+        "boundary": "Only guard.properties is restored. The rule-edit cases remove the legacy meteor-client row and add an exact administrator replacement plus a test*cheat glob; this isolated fixture is not a deployment template."
+      },
+      "mixin": {
+        "required": true,
+        "defaultRequire": 1,
+        "appliedLines": [
+          {
+            "line": 463,
+            "text": "[23:58:02] [Worker-Main-2/INFO]: Mixing CommandGate12111Mixin from qizhangverdict.mixins.json into net.minecraft.class_2170"
+          }
+        ]
+      },
+      "operatorGate": {
+        "passed": true,
+        "executedBeforeReport": false,
+        "executedAfterReport": true,
+        "operatorGrantAndRemovalObserved": true,
+        "serverLogLines": [
+          {
+            "line": 560,
+            "text": "[23:58:12] [Server thread/INFO]: Made GateAccount a server operator"
+          },
+          {
+            "line": 561,
+            "text": "[23:58:14] [Server thread/INFO]: [Not Secure] [GateAccount] QZ_POST_GATE"
+          },
+          {
+            "line": 564,
+            "text": "[23:58:15] [Server thread/INFO]: Made GateAccount no longer a server operator"
+          }
+        ]
+      },
+      "nodeDecoderObservations": {
+        "consoleObservedErrors": 0,
+        "tracedConnections": 4,
+        "traceObservedErrorEvents": 0,
+        "traceErrorStateCount": 0,
+        "traceDroppedEvents": 0,
+        "traces": [
+          {
+            "name": "CheatAccount",
+            "eventCount": 115,
+            "eventsDropped": 0,
+            "eventCounts": {
+              "decoder-attached": 4,
+              "socket-attached": 1,
+              "trace-created": 1,
+              "state": 3,
+              "connect": 1,
+              "decoder-data": 98,
+              "client-end": 1,
+              "socket-end": 1,
+              "decoder-end": 1,
+              "decoder-finish": 1,
+              "decoder-close": 1,
+              "socket-close": 1,
+              "trace-final-state": 1
+            },
+            "totalDecoderInstances": 4,
+            "finalState": {
+              "joined": true,
+              "sent": true,
+              "ended": true,
+              "kickedPresent": true,
+              "errorPresent": false
+            }
+          },
+          {
+            "name": "CheatAccount",
+            "eventCount": 52,
+            "eventsDropped": 0,
+            "eventCounts": {
+              "decoder-attached": 4,
+              "socket-attached": 1,
+              "trace-created": 1,
+              "state": 3,
+              "connect": 1,
+              "decoder-data": 35,
+              "client-end": 1,
+              "socket-end": 1,
+              "decoder-end": 1,
+              "decoder-finish": 1,
+              "decoder-close": 1,
+              "socket-close": 1,
+              "trace-final-state": 1
+            },
+            "totalDecoderInstances": 4,
+            "finalState": {
+              "joined": true,
+              "sent": false,
+              "ended": true,
+              "kickedPresent": true,
+              "errorPresent": false
+            }
+          },
+          {
+            "name": "CheatAccount",
+            "eventCount": 113,
+            "eventsDropped": 0,
+            "eventCounts": {
+              "decoder-attached": 4,
+              "socket-attached": 1,
+              "trace-created": 1,
+              "state": 3,
+              "connect": 1,
+              "decoder-data": 96,
+              "client-end": 1,
+              "socket-end": 1,
+              "decoder-end": 1,
+              "decoder-finish": 1,
+              "decoder-close": 1,
+              "socket-close": 1,
+              "trace-final-state": 1
+            },
+            "totalDecoderInstances": 4,
+            "finalState": {
+              "joined": true,
+              "sent": true,
+              "ended": true,
+              "kickedPresent": false,
+              "errorPresent": false
+            }
+          },
+          {
+            "name": "QVBot14",
+            "eventCount": 52,
+            "eventsDropped": 0,
+            "eventCounts": {
+              "decoder-attached": 4,
+              "socket-attached": 1,
+              "trace-created": 1,
+              "state": 3,
+              "connect": 1,
+              "decoder-data": 35,
+              "client-end": 1,
+              "socket-end": 1,
+              "decoder-end": 1,
+              "decoder-finish": 1,
+              "decoder-close": 1,
+              "socket-close": 1,
+              "trace-final-state": 1
+            },
+            "totalDecoderInstances": 4,
+            "finalState": {
+              "joined": true,
+              "sent": false,
+              "ended": true,
+              "kickedPresent": true,
+              "errorPresent": false
+            }
+          }
+        ],
+        "actualDecodedDisconnects": 13,
+        "scope": "No decoder errors observed in the full Node console and the 4 retained diagnostic connection traces; traces cover CheatAccount (3) and QVBot14 (1), not every packet or connection."
+      },
+      "closure": {
+        "normalStopFromSubprocessWait": true,
+        "savedAllDimensions": true,
+        "pidAudit": {
+          "pid": 77244,
+          "presentAtAudit": false,
+          "absentAtAudit": true,
+          "win32OpenProcessError": 87,
+          "method": "OpenProcess(PROCESS_QUERY_LIMITED_INFORMATION), ERROR_INVALID_PARAMETER indicates no such current PID"
+        },
+        "port": 25731,
+        "historicalPostStopBindReceiptAvailable": false,
+        "portProbedDuringThisAudit": false,
+        "boundary": "No historical post-stop port-bind receipt was saved. Do not infer one from exitCode=0; the later GUI fixture is a separate run and may reuse this port."
+      },
+      "warnings": {
+        "rawWarningAndErrorLines": [
+          "[23:57:52] [main/WARN]: Ignoring invalid library path \"",
+          "[23:57:52] [main/WARN]: Ignoring invalid library path D:\\Program Files\\Node.js\\\"",
+          "[23:57:52] [main/WARN]: Compatibility level JAVA_21 specified by fabric-api-lookup-api-v1.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).",
+          "[23:57:55] [main/INFO]: Renaming synthetic method lambda$remap$5()Lnet/fabricmc/fabric/impl/registry/sync/RemapException; to md56d210$fabric-registry-sync-v0$lambda$remap$5$0 in fabric-registry-sync-v0.mixins.json:MappedRegistryMixin from mod fabric-registry-sync-v0",
+          "[23:57:55] [main/INFO]: Renaming synthetic method lambda$getStacks$0(Lnet/minecraft/class_1761;)Ljava/lang/IllegalStateException; to md56d210$fabric-item-group-api-v1$lambda$getStacks$0$0 in fabric-item-group-api-v1.mixins.json:CreativeModeTabMixin from mod fabric-item-group-api-v1",
+          "[23:57:56] [main/WARN]: @Shadow target fabric-transfer-api-v1.mixins.json:ChiseledBookShelfBlockEntityMixin from mod fabric-transfer-api-v1::field_41314 is final but shadow is not decorated with @Final",
+          "[23:57:56] [main/WARN]: Write access to @Mutable @Final field field_19315:Ljava/util/Set; in fabric-object-builder-v1.mixins.json:BlockEntityTypeMixin from mod fabric-object-builder-api-v1::handler$zgp000$fabric-object-builder-api-v1$mutableBlocks",
+          "[23:57:57] [main/WARN]: Write access to @Mutable @Final field field_54119:Lnet/minecraft/class_10162; in fabric-item-api-v1.mixins.json:ItemPropertiesMixin from mod fabric-item-api-v1::modelId",
+          "[23:57:59] [main/WARN]: Write access to @Mutable @Final field field_46095:Lcom/mojang/serialization/Codec; in fabric-recipe-api-v1.mixins.json:ingredient.IngredientMixin from mod fabric-recipe-api-v1::handler$zib000$fabric-recipe-api-v1$injectCodec",
+          "[23:58:00] [main/WARN]: Write access to @Mutable @Final field field_24730:Lcom/mojang/serialization/MapCodec; in fabric-biome-api-v1.mixins.json:TheEndBiomeSourceMixin from mod fabric-biome-api-v1::handler$zze000$fabric-biome-api-v1$modifyCodec",
+          "[23:58:00] [main/WARN]: Write access to @Mutable @Final field field_23730:Ljava/util/Map; in fabric-object-builder-v1.mixins.json:DefaultAttributesMixin from mod fabric-object-builder-api-v1::handler$zha000$fabric-object-builder-api-v1$injectAttributes",
+          "[23:58:00] [main/WARN]: Write access to @Mutable @Final field field_949:Lcom/google/common/collect/ImmutableList$Builder; in fabric-loot-api-v3.mixins.json:LootTableBuilderMixin from mod fabric-loot-api-v3::modifyPools",
+          "[23:58:00] [main/WARN]: @Shadow field fabric-events-interaction-v0.mixins.json:ServerGamePacketListenerImplMixin from mod fabric-events-interaction-v0::field_14140 is decorated with @Final but target is not final",
+          "[23:58:00] [main/WARN]: @At(\"STORE\" implicit List) has invalid IMPLICIT discriminator for opcode 6 in net/minecraft/class_3288::method_45274(Lnet/minecraft/class_9224;Lnet/minecraft/class_3288$class_7680;Lnet/minecraft/class_11555;Lnet/minecraft/class_3264;)Lnet/minecraft/class_3288$class_7679;: Found 0 candidate variables but exactly 1 is required.",
+          "[23:58:00] [main/WARN]: @At(\"STORE\" implicit List) has invalid IMPLICIT discriminator for opcode 14 in net/minecraft/class_3288::method_45274(Lnet/minecraft/class_9224;Lnet/minecraft/class_3288$class_7680;Lnet/minecraft/class_11555;Lnet/minecraft/class_3264;)Lnet/minecraft/class_3288$class_7679;: Found 0 candidate variables but exactly 1 is required.",
+          "[23:58:00] [main/WARN]: @At(\"STORE\" implicit List) has invalid IMPLICIT discriminator for opcode 25 in net/minecraft/class_3288::method_45274(Lnet/minecraft/class_9224;Lnet/minecraft/class_3288$class_7680;Lnet/minecraft/class_11555;Lnet/minecraft/class_3264;)Lnet/minecraft/class_3288$class_7679;: Found 0 candidate variables but exactly 1 is required.",
+          "[23:58:00] [main/WARN]: @At(\"STORE\" implicit List) has invalid IMPLICIT discriminator for opcode 41 in net/minecraft/class_3288::method_45274(Lnet/minecraft/class_9224;Lnet/minecraft/class_3288$class_7680;Lnet/minecraft/class_11555;Lnet/minecraft/class_3264;)Lnet/minecraft/class_3288$class_7679;: Found 0 candidate variables but exactly 1 is required.",
+          "[23:58:00] [main/WARN]: @At(\"STORE\" implicit List) has invalid IMPLICIT discriminator for opcode 60 in net/minecraft/class_3288::method_45274(Lnet/minecraft/class_9224;Lnet/minecraft/class_3288$class_7680;Lnet/minecraft/class_11555;Lnet/minecraft/class_3264;)Lnet/minecraft/class_3288$class_7679;: Found 0 candidate variables but exactly 1 is required.",
+          "[23:58:00] [main/WARN]: @At(\"STORE\" implicit List) has invalid IMPLICIT discriminator for opcode 73 in net/minecraft/class_3288::method_45274(Lnet/minecraft/class_9224;Lnet/minecraft/class_3288$class_7680;Lnet/minecraft/class_11555;Lnet/minecraft/class_3264;)Lnet/minecraft/class_3288$class_7679;: Found 0 candidate variables but exactly 1 is required.",
+          "[23:58:00] [main/WARN]: @At(\"STORE\" implicit List) has invalid IMPLICIT discriminator for opcode 80 in net/minecraft/class_3288::method_45274(Lnet/minecraft/class_9224;Lnet/minecraft/class_3288$class_7680;Lnet/minecraft/class_11555;Lnet/minecraft/class_3264;)Lnet/minecraft/class_3288$class_7679;: Found 0 candidate variables but exactly 1 is required.",
+          "[23:58:00] [main/WARN]: @At(\"STORE\" implicit List) has invalid IMPLICIT discriminator for opcode 88 in net/minecraft/class_3288::method_45274(Lnet/minecraft/class_9224;Lnet/minecraft/class_3288$class_7680;Lnet/minecraft/class_11555;Lnet/minecraft/class_3264;)Lnet/minecraft/class_3288$class_7679;: Found 0 candidate variables but exactly 1 is required.",
+          "[23:58:00] [main/WARN]: @At(\"STORE\" implicit List) has invalid IMPLICIT discriminator for opcode 128 in net/minecraft/class_3288::method_45274(Lnet/minecraft/class_9224;Lnet/minecraft/class_3288$class_7680;Lnet/minecraft/class_11555;Lnet/minecraft/class_3264;)Lnet/minecraft/class_3288$class_7679;: Found 0 candidate variables but exactly 1 is required.",
+          "[23:58:00] [main/WARN]: @At(\"STORE\" implicit List) has invalid IMPLICIT discriminator for opcode 139 in net/minecraft/class_3288::method_45274(Lnet/minecraft/class_9224;Lnet/minecraft/class_3288$class_7680;Lnet/minecraft/class_11555;Lnet/minecraft/class_3264;)Lnet/minecraft/class_3288$class_7679;: Found 0 candidate variables but exactly 1 is required.",
+          "[23:58:00] [main/WARN]: @At(\"STORE\" implicit List) has invalid IMPLICIT discriminator for opcode 151 in net/minecraft/class_3288::method_45274(Lnet/minecraft/class_9224;Lnet/minecraft/class_3288$class_7680;Lnet/minecraft/class_11555;Lnet/minecraft/class_3264;)Lnet/minecraft/class_3288$class_7679;: Found 0 candidate variables but exactly 1 is required.",
+          "[23:58:00] [main/WARN]: Write access to @Mutable @Final field field_14227:Ljava/util/Set; in fabric-resource-loader-v1.mixins.json:PackRepositoryMixin from mod fabric-resource-loader-v1::handler$zjk000$fabric-resource-loader-v1$construct",
+          "[23:58:02] [Worker-Main-2/INFO]: Renaming @Accessor method getFailedException()Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType; to getFailedException$fabric-command-api-v2_$md$56d210$0 in fabric-command-api-v2.mixins.json:HelpCommandAccessor from mod fabric-command-api-v2",
+          "[23:58:03] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!",
+          "[23:58:03] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.",
+          "[23:58:03] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.",
+          "[23:58:03] [Server thread/WARN]: To change this, set \"online-mode\" to \"true\" in the server.properties file.",
+          "[23:59:01] [Server thread/WARN]: handleDisconnection() called twice"
+        ],
+        "zeroErrorLogClaim": false,
+        "summary": "Fabric upstream path/Mixin compatibility, shadow/final and discriminator warnings plus offline fixture warning are retained.",
+        "nioTransportLines": []
+      },
+      "thirdPartyAnticheat": {
+        "grimEnabled": false,
+        "antiXrayEnabled": false,
+        "orePaletteTestEnabled": false
+      },
+      "raw": {
+        "smoke-result.json": "runtime-server-1.21.11/fabric-smoke-result.json",
+        "console.log": "runtime-server-1.21.11/fabric-console.log",
+        "protocol-result.json": "runtime-server-1.21.11/fabric-protocol-result.json",
+        "protocol-console.log": "runtime-server-1.21.11/fabric-protocol-console.log",
+        "protocol-disconnect-observations.json": "runtime-server-1.21.11/fabric-protocol-disconnect-observations.json",
+        "protocol-metadata-trace.json": "runtime-server-1.21.11/fabric-protocol-metadata-trace.json",
+        "install-result.json": "runtime-server-1.21.11/fabric-install-result.json",
+        "install-console.log": "runtime-server-1.21.11/fabric-install-console.log",
+        ".qizhang-modern12111-smoke.json": "runtime-server-1.21.11/fabric-qizhang-modern12111-smoke.json",
+        "guard-default.properties": "runtime-server-1.21.11/fabric-guard-default.properties",
+        "blacklist-default.tsv": "runtime-server-1.21.11/fabric-blacklist-default.tsv",
+        "config/qizhangverdict/guard.properties": "runtime-server-1.21.11/fabric-after-guard.properties",
+        "config/qizhangverdict/blacklist.tsv": "runtime-server-1.21.11/fabric-after-blacklist.tsv",
+        "config/qizhangverdict/rules.tsv": "runtime-server-1.21.11/fabric-after-rules.tsv",
+        "commands.queue": "runtime-server-1.21.11/fabric-commands.queue"
+      }
+    },
+    {
+      "profile": "neoforge-1.21.11",
+      "minecraft": "1.21.11",
+      "loader": "neoforge",
+      "loaderVersion": "21.11.45",
+      "attempt": "neoforge-01",
+      "passed": true,
+      "artifact": {
+        "path": "platforms/1.21.11/neoforge/build/libs/qizhangverdict-neoforge-1.21.11-0.4.0-dev.jar",
+        "sha256": "47dc8edff5faeb9c41ce19575bd37f49a2205877d99f814aa7acc33c0440d789",
+        "bytes": 95394,
+        "version": "0.4.0-dev"
+      },
+      "java": {
+        "major": 21,
+        "executable": {
+          "path": "D:\\Java\\jdk-21\\bin\\java.exe",
+          "bytes": 54376,
+          "sha256": "f3d26e4f17c45da613a4676b5b0c6a387bf36d990be0835d60a177234b2f28ba"
+        },
+        "runtimeMajorLogEvidence": [
+          {
+            "line": 25,
+            "text": "/*                                        Java Version : 21.0 (supports compatibility 6-21)                                                                                                                              */"
+          }
+        ]
+      },
+      "officialInstaller": {
+        "exitCode": 0,
+        "sha256": "e54350cc68d7dec6cb0523a0597a6a2fa664c1acd878b456af4564ee126da00a",
+        "inputReceiptSha256": "d524e9e812891c4fccf6fa7a09ec1eb4d119361d2b5adac474800e5d8c1709ad"
+      },
+      "passedCaseGroups": 26,
+      "cases": [
+        "normal companion joins",
+        "privileged commands blocked before report and restored afterward",
+        "missing companion expires",
+        "malformed report rejected",
+        "malformed report does not permanently ban account",
+        "first account on device allowed",
+        "same IP same device second account rejected",
+        "same IP second different device allowed",
+        "same IP third different device allowed",
+        "same IP fourth account rejected",
+        "disconnect releases device and IP quota",
+        "known cheat denied and sanctioned",
+        "same banned device different account denied",
+        "banned account denied with new device",
+        "administrator account and device unban restores access",
+        "administrator glob rule enforced",
+        "whitelist overrides matching blacklist item",
+        "removed whitelist takes effect",
+        "administrator removes default rule with colon ID",
+        "administrator restores removed blacklist entry",
+        "CIDR deny rejects login",
+        "known VM signal denied",
+        "VBS hypervisor alone does not ban physical machine",
+        "two-device setting first account",
+        "two-device setting second account",
+        "two-device setting rejects third account"
+      ],
+      "protocolExitCode": 0,
+      "protocolElapsedSeconds": 76.732,
+      "serverExitCode": 0,
+      "normalStop": true,
+      "forcedTermination": false,
+      "elapsedSeconds": 90.299,
+      "protocol": {
+        "minecraftProtocolVersion": "1.66.2",
+        "minecraftDataVersion": "3.117.0",
+        "protocol": 774,
+        "versionMetadata": {
+          "path": "E:\\CodexTemp\\QiZhangGuard\\bot\\node_modules\\minecraft-data\\minecraft-data\\data\\pc\\1.21.11\\version.json",
+          "bytes": 107,
+          "sha256": "1f49acfc6a9ba00995b3ac6653550b9258ffaca1f2833aac10c902b3df92c28e"
+        },
+        "schema": {
+          "path": "E:\\CodexTemp\\QiZhangGuard\\bot\\node_modules\\minecraft-data\\minecraft-data\\data\\pc\\1.21.11\\protocol.json",
+          "bytes": 330792,
+          "sha256": "34d280120eef9090c66abc502d43d5305ffa2f592c1d2b0eb7a96b71048b81f7"
+        },
+        "versionList": {
+          "path": "E:\\CodexTemp\\QiZhangGuard\\bot\\node_modules\\minecraft-protocol\\src\\version.js",
+          "bytes": 368,
+          "sha256": "5b473bdb689c2fedf505b545be2096ab997d152f3b58338d7c624a5c1c73d1d1"
+        },
+        "scope": "Static package support and schema inspection; TCP success is a separate run result"
+      },
+      "policy": {
+        "fresh13DefaultsVerified": true,
+        "freshDefaultRuleCount": 39,
+        "freshDefaultDeny": 35,
+        "freshDefaultAlert": 4,
+        "strict13RestoredByteForByte": true,
+        "qaOverrides": {
+          "limits.max-accounts-per-ip": "100",
+          "limits.attempts-per-minute": "1000",
+          "companion.timeout-seconds": "4 (10 for the operator gate)",
+          "vm.action": "ALERT initially; DENY in VM cases",
+          "ip.deny": "127.0.0.0/8 in CIDR case",
+          "limits.max-online-per-ip": "2 in final quota cases"
+        },
+        "policyBeforeRestore": {
+          "limits.max-online-per-ip": "2",
+          "limits.max-online-per-ip-device": "1",
+          "limits.max-accounts-per-ip": "100",
+          "limits.account-window-hours": "720",
+          "limits.attempts-per-minute": "1000",
+          "ip.allow": "",
+          "ip.deny": "",
+          "companion.required": "true",
+          "companion.timeout-seconds": "4",
+          "device.required": "true",
+          "vm.action": "ALERT",
+          "blacklist.action": "DENY",
+          "sanctions.on-deny": "BAN"
+        },
+        "defaultRuleTableUnchangedAfterTest": false,
+        "finalLegacyRows": 38,
+        "finalAdministratorRows": 2,
+        "finalEffectiveRules": 40,
+        "boundary": "Only guard.properties is restored. The rule-edit cases remove the legacy meteor-client row and add an exact administrator replacement plus a test*cheat glob; this isolated fixture is not a deployment template."
+      },
+      "mixin": {
+        "required": true,
+        "defaultRequire": 1,
+        "appliedLines": [
+          {
+            "line": 96,
+            "text": "[00:00:17] [Worker-Main-3/INFO] [mixin/]: Mixing CommandGate12111Mixin from qizhangverdict.mixins.json into net.minecraft.commands.Commands"
+          }
+        ]
+      },
+      "operatorGate": {
+        "passed": true,
+        "executedBeforeReport": false,
+        "executedAfterReport": true,
+        "operatorGrantAndRemovalObserved": true,
+        "serverLogLines": [
+          {
+            "line": 231,
+            "text": "[00:00:28] [Server thread/INFO] [minecraft/MinecraftServer]: Made GateAccount a server operator"
+          },
+          {
+            "line": 232,
+            "text": "[00:00:30] [Server thread/INFO] [minecraft/MinecraftServer]: [Not Secure] [GateAccount] QZ_POST_GATE"
+          },
+          {
+            "line": 235,
+            "text": "[00:00:31] [Server thread/INFO] [minecraft/MinecraftServer]: Made GateAccount no longer a server operator"
+          }
+        ]
+      },
+      "nodeDecoderObservations": {
+        "consoleObservedErrors": 0,
+        "tracedConnections": 4,
+        "traceObservedErrorEvents": 0,
+        "traceErrorStateCount": 0,
+        "traceDroppedEvents": 0,
+        "traces": [
+          {
+            "name": "CheatAccount",
+            "eventCount": 125,
+            "eventsDropped": 0,
+            "eventCounts": {
+              "decoder-attached": 4,
+              "socket-attached": 1,
+              "trace-created": 1,
+              "state": 3,
+              "connect": 1,
+              "decoder-data": 108,
+              "client-end": 1,
+              "socket-end": 1,
+              "decoder-end": 1,
+              "decoder-finish": 1,
+              "decoder-close": 1,
+              "socket-close": 1,
+              "trace-final-state": 1
+            },
+            "totalDecoderInstances": 4,
+            "finalState": {
+              "joined": true,
+              "sent": true,
+              "ended": true,
+              "kickedPresent": true,
+              "errorPresent": false
+            }
+          },
+          {
+            "name": "CheatAccount",
+            "eventCount": 78,
+            "eventsDropped": 0,
+            "eventCounts": {
+              "decoder-attached": 4,
+              "socket-attached": 1,
+              "trace-created": 1,
+              "state": 3,
+              "connect": 1,
+              "decoder-data": 61,
+              "client-end": 1,
+              "socket-end": 1,
+              "decoder-end": 1,
+              "decoder-finish": 1,
+              "decoder-close": 1,
+              "socket-close": 1,
+              "trace-final-state": 1
+            },
+            "totalDecoderInstances": 4,
+            "finalState": {
+              "joined": true,
+              "sent": false,
+              "ended": true,
+              "kickedPresent": true,
+              "errorPresent": false
+            }
+          },
+          {
+            "name": "CheatAccount",
+            "eventCount": 120,
+            "eventsDropped": 0,
+            "eventCounts": {
+              "decoder-attached": 4,
+              "socket-attached": 1,
+              "trace-created": 1,
+              "state": 3,
+              "connect": 1,
+              "decoder-data": 103,
+              "client-end": 1,
+              "socket-end": 1,
+              "decoder-end": 1,
+              "decoder-finish": 1,
+              "decoder-close": 1,
+              "socket-close": 1,
+              "trace-final-state": 1
+            },
+            "totalDecoderInstances": 4,
+            "finalState": {
+              "joined": true,
+              "sent": true,
+              "ended": true,
+              "kickedPresent": false,
+              "errorPresent": false
+            }
+          },
+          {
+            "name": "QVBot14",
+            "eventCount": 78,
+            "eventsDropped": 0,
+            "eventCounts": {
+              "decoder-attached": 4,
+              "socket-attached": 1,
+              "trace-created": 1,
+              "state": 3,
+              "connect": 1,
+              "decoder-data": 61,
+              "client-end": 1,
+              "socket-end": 1,
+              "decoder-end": 1,
+              "decoder-finish": 1,
+              "decoder-close": 1,
+              "socket-close": 1,
+              "trace-final-state": 1
+            },
+            "totalDecoderInstances": 4,
+            "finalState": {
+              "joined": true,
+              "sent": false,
+              "ended": true,
+              "kickedPresent": true,
+              "errorPresent": false
+            }
+          }
+        ],
+        "actualDecodedDisconnects": 13,
+        "scope": "No decoder errors observed in the full Node console and the 4 retained diagnostic connection traces; traces cover CheatAccount (3) and QVBot14 (1), not every packet or connection."
+      },
+      "closure": {
+        "normalStopFromSubprocessWait": true,
+        "savedAllDimensions": true,
+        "pidAudit": {
+          "pid": 89740,
+          "presentAtAudit": false,
+          "absentAtAudit": true,
+          "win32OpenProcessError": 87,
+          "method": "OpenProcess(PROCESS_QUERY_LIMITED_INFORMATION), ERROR_INVALID_PARAMETER indicates no such current PID"
+        },
+        "port": 25732,
+        "historicalPostStopBindReceiptAvailable": false,
+        "portProbedDuringThisAudit": false,
+        "boundary": "No historical post-stop port-bind receipt was saved. Do not infer one from exitCode=0; the later GUI fixture is a separate run and may reuse this port."
+      },
+      "warnings": {
+        "rawWarningAndErrorLines": [
+          "2026-09-25T15:00:08.068631Z main WARN Advanced terminal features are not available in this environment",
+          "2026-09-25T15:00:18.954821300Z Server thread ERROR An exception occurred processing Appender DebugFile",
+          "org.apache.logging.log4j.core.appender.AppenderLoggingException: java.lang.NoClassDefFoundError: Could not initialize class io.netty.channel.kqueue.Native",
+          "Caused by: java.lang.ExceptionInInitializerError: Exception java.lang.IllegalStateException: Only supported on OSX/BSD [in thread \"Server thread\"]",
+          "2026-09-25T15:00:18.964901100Z Server thread ERROR An exception occurred processing Appender DebugFile",
+          "org.apache.logging.log4j.core.appender.AppenderLoggingException: java.lang.NoClassDefFoundError: Could not initialize class io.netty.channel.epoll.Native",
+          "Caused by: java.lang.ExceptionInInitializerError: Exception java.lang.IllegalStateException: Only supported on Linux [in thread \"Server thread\"]",
+          "[00:00:19] [Server thread/WARN] [minecraft/DedicatedServer]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!",
+          "[00:00:19] [Server thread/WARN] [minecraft/DedicatedServer]: The server will make no attempt to authenticate usernames. Beware.",
+          "[00:00:19] [Server thread/WARN] [minecraft/DedicatedServer]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.",
+          "[00:00:19] [Server thread/WARN] [minecraft/DedicatedServer]: To change this, set \"online-mode\" to \"true\" in the server.properties file.",
+          "[00:01:12] [Server thread/WARN] [minecraft/Connection]: handleDisconnection() called twice"
+        ],
+        "zeroErrorLogClaim": false,
+        "summary": "NeoForge DebugFile Appender exceptions from kqueue/epoll platform initialization (OSX/BSD/Linux on Windows) are retained; subsequent NIO connections, 26 cases and normal exit0 are independently observed.",
+        "nioTransportLines": [
+          {
+            "line": 242,
+            "text": "[269月2026 00:00:22.416] [Netty NIO IO #1/DEBUG] [net.neoforged.neoforge.network.filters.NetworkFilters/]: Injected net.neoforged.neoforge.network.filters.VanillaConnectionNetworkFilter@2d440317 into net.minecraft.network.Connection@4fc1934c"
+          },
+          {
+            "line": 243,
+            "text": "[269月2026 00:00:23.065] [Netty NIO IO #1/DEBUG] [net.neoforged.neoforge.network.filters.NetworkFilters/]: Injected net.neoforged.neoforge.network.filters.VanillaConnectionNetworkFilter@39823c13 into net.minecraft.network.Connection@4fc1934c"
+          },
+          {
+            "line": 250,
+            "text": "[269月2026 00:00:26.797] [Netty NIO IO #2/DEBUG] [net.neoforged.neoforge.network.filters.NetworkFilters/]: Injected net.neoforged.neoforge.network.filters.VanillaConnectionNetworkFilter@5185c269 into net.minecraft.network.Connection@1487563d"
+          },
+          {
+            "line": 251,
+            "text": "[269月2026 00:00:27.034] [Netty NIO IO #2/DEBUG] [net.neoforged.neoforge.network.filters.NetworkFilters/]: Injected net.neoforged.neoforge.network.filters.VanillaConnectionNetworkFilter@76289d8a into net.minecraft.network.Connection@1487563d"
+          }
+        ]
+      },
+      "thirdPartyAnticheat": {
+        "grimEnabled": false,
+        "antiXrayEnabled": false,
+        "orePaletteTestEnabled": false
+      },
+      "raw": {
+        "smoke-result.json": "runtime-server-1.21.11/neoforge-smoke-result.json",
+        "console.log": "runtime-server-1.21.11/neoforge-console.log",
+        "protocol-result.json": "runtime-server-1.21.11/neoforge-protocol-result.json",
+        "protocol-console.log": "runtime-server-1.21.11/neoforge-protocol-console.log",
+        "protocol-disconnect-observations.json": "runtime-server-1.21.11/neoforge-protocol-disconnect-observations.json",
+        "protocol-metadata-trace.json": "runtime-server-1.21.11/neoforge-protocol-metadata-trace.json",
+        "install-result.json": "runtime-server-1.21.11/neoforge-install-result.json",
+        "install-console.log": "runtime-server-1.21.11/neoforge-install-console.log",
+        ".qizhang-modern12111-smoke.json": "runtime-server-1.21.11/neoforge-qizhang-modern12111-smoke.json",
+        "guard-default.properties": "runtime-server-1.21.11/neoforge-guard-default.properties",
+        "blacklist-default.tsv": "runtime-server-1.21.11/neoforge-blacklist-default.tsv",
+        "config/qizhangverdict/guard.properties": "runtime-server-1.21.11/neoforge-after-guard.properties",
+        "config/qizhangverdict/blacklist.tsv": "runtime-server-1.21.11/neoforge-after-blacklist.tsv",
+        "config/qizhangverdict/rules.tsv": "runtime-server-1.21.11/neoforge-after-rules.tsv",
+        "commands.queue": "runtime-server-1.21.11/neoforge-commands.queue",
+        "logs/debug.log": "runtime-server-1.21.11/neoforge-debug.log"
+      }
+    }
+  ],
+  "executedHelperSnapshots": {
+    "modern12111_mod_smoke.py": "runtime-server-1.21.11/shared-modern12111_mod_smoke.py",
+    "protocol_smoke.cjs": "runtime-server-1.21.11/shared-protocol_smoke.cjs",
+    "protocol_disconnect_observer.cjs": "runtime-server-1.21.11/shared-protocol_disconnect_observer.cjs",
+    "protocol_player_loaded.cjs": "runtime-server-1.21.11/shared-protocol_player_loaded.cjs",
+    "package-lock.json": "runtime-server-1.21.11/shared-package-lock.json",
+    "catalog.tsv": "runtime-server-1.21.11/shared-catalog.tsv"
+  },
+  "privacyReview": {
+    "explicitFileAllowlist": true,
+    "originalBytesPreserved": true,
+    "privateServerScopeValuesCheckedInMemory": 2,
+    "persistedDeviceRowsConfirmedSynthetic": 38,
+    "privateScopeMatchesInPublicFiles": 0,
+    "privateStateFilesIncluded": false,
+    "serverIdFilesIncluded": false,
+    "installationIdFilesIncluded": false,
+    "rawMachineGuidRead": false,
+    "worldFilesIncluded": false,
+    "minecraftOrThirdPartyBinariesIncluded": false,
+    "thirdPartySourceIncluded": false,
+    "traceSchemaInspectedForPayloadLeakage": true,
+    "knownSyntheticDeviceDigestsMayAppearInQaLogs": true
+  },
+  "boundaries": [
+    "Fresh initialization was verified with 39 rules and all 13 strict defaults. The TCP suite temporarily changes quotas, timeout and VM mode; full defaults are restored only at the end.",
+    "Rules are intentionally left at 40 effective rows (38 legacy plus 2 administrator rules). Neither the post-test rule table nor this test fixture is advertised as an untouched default deployment.",
+    "Both retained consoles include upstream warnings/errors. A zero-error-log claim is not made.",
+    "No post-stop port-bind receipt exists for these original runs; normal subprocess exit and saved worlds are proven, and PID absence is checked later without binding ports.",
+    "Known VM and VBS cases inject synthetic signal strings; no real virtual machine or hardware attestation was exercised.",
+    "Only startup, policy/command gates, report parsing, IP/device/account quotas, sanctions and rule handling are covered; no ore-obfuscation or external anti-cheat behavior is tested."
+  ],
+  "evidence": [
+    {
+      "file": "runtime-server-1.21.11/fabric-smoke-result.json",
+      "sha256": "c1dcd6e918d005061cd3d25f60230f8314aa6a3fb3546e308e3a6d3a1bb9f1f1",
+      "bytes": 18421,
+      "originalBytes": true,
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\fabric-01\\smoke-result.json",
+      "role": "raw runtime receipt",
+      "profile": "fabric-1.21.11"
+    },
+    {
+      "file": "runtime-server-1.21.11/fabric-console.log",
+      "sha256": "cc2a8fedc8b7a7dd0976a62b7bb0dddd8d6b8fd2836dbbd0fb452235bbb5e9f2",
+      "bytes": 99769,
+      "originalBytes": true,
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\fabric-01\\console.log",
+      "role": "raw server console with warnings",
+      "profile": "fabric-1.21.11"
+    },
+    {
+      "file": "runtime-server-1.21.11/fabric-protocol-result.json",
+      "sha256": "d398e2ed6cc2d3bb987abff1fccd5346267f79d63285041ac88ab93bc13daeaf",
+      "bytes": 5274,
+      "originalBytes": true,
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\fabric-01\\protocol-result.json",
+      "role": "raw 26-case protocol result",
+      "profile": "fabric-1.21.11"
+    },
+    {
+      "file": "runtime-server-1.21.11/fabric-protocol-console.log",
+      "sha256": "b45211657f12a5fa065ee25f137b133acb83a3e1b0dceb94352aacd4f2dfbfd0",
+      "bytes": 4356,
+      "originalBytes": true,
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\fabric-01\\protocol-console.log",
+      "role": "raw Node console",
+      "profile": "fabric-1.21.11"
+    },
+    {
+      "file": "runtime-server-1.21.11/fabric-protocol-disconnect-observations.json",
+      "sha256": "313acef09159ab740a4fddd6eba58037c74f212152858a55c1bc8536a46cbe22",
+      "bytes": 3918,
+      "originalBytes": true,
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\fabric-01\\protocol-disconnect-observations.json",
+      "role": "actual decoded disconnect observations",
+      "profile": "fabric-1.21.11"
+    },
+    {
+      "file": "runtime-server-1.21.11/fabric-protocol-metadata-trace.json",
+      "sha256": "c0edc1826d7a8483fde1629d7e2e801cd921fe3ca2bd43c7bd546e94156ae10a",
+      "bytes": 103721,
+      "originalBytes": true,
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\fabric-01\\protocol-metadata-trace.json",
+      "role": "bounded metadata-only diagnostic traces",
+      "profile": "fabric-1.21.11"
+    },
+    {
+      "file": "runtime-server-1.21.11/fabric-install-result.json",
+      "sha256": "90e29be791799ade1221409abb3d5948386f1c577d93b716d38fc9b09db98327",
+      "bytes": 977,
+      "originalBytes": true,
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\fabric-01\\install-result.json",
+      "role": "official installer result",
+      "profile": "fabric-1.21.11"
+    },
+    {
+      "file": "runtime-server-1.21.11/fabric-install-console.log",
+      "sha256": "4398cfd8db96a1f735c374838cb17691d0fbc0a0939dbe8fdfde4a05f8f879ca",
+      "bytes": 534,
+      "originalBytes": true,
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\fabric-01\\install-console.log",
+      "role": "official installer log",
+      "profile": "fabric-1.21.11"
+    },
+    {
+      "file": "runtime-server-1.21.11/fabric-qizhang-modern12111-smoke.json",
+      "sha256": "56c8d1f9a91662adc2edc1240429e351b3bd462fe733333272cf7e67495096cd",
+      "bytes": 4282,
+      "originalBytes": true,
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\fabric-01\\.qizhang-modern12111-smoke.json",
+      "role": "installed fixture marker; javaStarted is historical stage flag",
+      "profile": "fabric-1.21.11"
+    },
+    {
+      "file": "runtime-server-1.21.11/fabric-guard-default.properties",
+      "sha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+      "bytes": 396,
+      "originalBytes": true,
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\fabric-01\\guard-default.properties",
+      "role": "fresh strict default policy",
+      "profile": "fabric-1.21.11"
+    },
+    {
+      "file": "runtime-server-1.21.11/fabric-blacklist-default.tsv",
+      "sha256": "0f6df7344b7f123ae0fb0d2ff36293ee3c41ba2f769d893d65d263d571be35ec",
+      "bytes": 6115,
+      "originalBytes": true,
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\fabric-01\\blacklist-default.tsv",
+      "role": "fresh 39 exact default rules",
+      "profile": "fabric-1.21.11"
+    },
+    {
+      "file": "runtime-server-1.21.11/fabric-after-guard.properties",
+      "sha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+      "bytes": 396,
+      "originalBytes": true,
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\fabric-01\\config\\qizhangverdict\\guard.properties",
+      "role": "post-TCP restored strict policy",
+      "profile": "fabric-1.21.11"
+    },
+    {
+      "file": "runtime-server-1.21.11/fabric-after-blacklist.tsv",
+      "sha256": "3edf7a39da37f4179e5be3b0d9539f40dfce4b6ca9cd575b36976642cc2a0107",
+      "bytes": 5950,
+      "originalBytes": true,
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\fabric-01\\config\\qizhangverdict\\blacklist.tsv",
+      "role": "post-TCP 38 legacy rows",
+      "profile": "fabric-1.21.11"
+    },
+    {
+      "file": "runtime-server-1.21.11/fabric-after-rules.tsv",
+      "sha256": "9065131e8a3b5ded8e0b86c34ad9c5d959ffa0164c56594cff09dc668d342b91",
+      "bytes": 193,
+      "originalBytes": true,
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\fabric-01\\config\\qizhangverdict\\rules.tsv",
+      "role": "post-TCP 2 administrator rules",
+      "profile": "fabric-1.21.11"
+    },
+    {
+      "file": "runtime-server-1.21.11/fabric-commands.queue",
+      "sha256": "0de1fcf3bb69e66facc0fd5b9f53f82913346adf484b4c9896ad4693e036c5ad",
+      "bytes": 564,
+      "originalBytes": true,
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\fabric-01\\commands.queue",
+      "role": "synthetic QA console commands",
+      "profile": "fabric-1.21.11"
+    },
+    {
+      "file": "runtime-server-1.21.11/shared-modern12111_mod_smoke.py",
+      "sha256": "3de1db2ce6f97fc3cf5a55bf346e2875b2659c88a93ec7296eafdc0db78b3431",
+      "bytes": 30142,
+      "originalBytes": true,
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\fabric-01\\qa\\modern12111_mod_smoke.py",
+      "role": "exact executed first-party helper / dependency-lock / catalog snapshot",
+      "additionalSources": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\neoforge-01\\qa\\modern12111_mod_smoke.py"
+      ]
+    },
+    {
+      "file": "runtime-server-1.21.11/shared-protocol_smoke.cjs",
+      "sha256": "237ac7d2ec4aa5fc95a79575de06aa5b23d31a96ac8c04801dc3c6be5fef2939",
+      "bytes": 17854,
+      "originalBytes": true,
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\fabric-01\\qa\\protocol_smoke.cjs",
+      "role": "exact executed first-party helper / dependency-lock / catalog snapshot",
+      "additionalSources": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\neoforge-01\\qa\\protocol_smoke.cjs"
+      ]
+    },
+    {
+      "file": "runtime-server-1.21.11/shared-protocol_disconnect_observer.cjs",
+      "sha256": "c4496beaa3d43c13ff946821aae5f2c62cd7623e09ed21300af66e5e58c68dbc",
+      "bytes": 2374,
+      "originalBytes": true,
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\fabric-01\\qa\\protocol_disconnect_observer.cjs",
+      "role": "exact executed first-party helper / dependency-lock / catalog snapshot",
+      "additionalSources": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\neoforge-01\\qa\\protocol_disconnect_observer.cjs"
+      ]
+    },
+    {
+      "file": "runtime-server-1.21.11/shared-protocol_player_loaded.cjs",
+      "sha256": "9bb049190eab7d10734eb0385756edbed4e7185332c7e65cf4599f4d1eefda51",
+      "bytes": 701,
+      "originalBytes": true,
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\fabric-01\\qa\\protocol_player_loaded.cjs",
+      "role": "exact executed first-party helper / dependency-lock / catalog snapshot",
+      "additionalSources": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\neoforge-01\\qa\\protocol_player_loaded.cjs"
+      ]
+    },
+    {
+      "file": "runtime-server-1.21.11/shared-package-lock.json",
+      "sha256": "48d3f0428d10fd389f085060dedd28e71db8c851cb6ffd032d08b66a238ce49a",
+      "bytes": 53330,
+      "originalBytes": true,
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\fabric-01\\qa\\package-lock.json",
+      "role": "exact executed first-party helper / dependency-lock / catalog snapshot",
+      "additionalSources": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\neoforge-01\\qa\\package-lock.json"
+      ]
+    },
+    {
+      "file": "runtime-server-1.21.11/shared-catalog.tsv",
+      "sha256": "1531b4bd34a6d2fc1d2d6ecde86c4d202d8f66881db77a66f56e330404e606af",
+      "bytes": 5931,
+      "originalBytes": true,
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\fabric-01\\qa\\catalog.tsv",
+      "role": "exact executed first-party helper / dependency-lock / catalog snapshot",
+      "additionalSources": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\neoforge-01\\qa\\catalog.tsv"
+      ]
+    },
+    {
+      "file": "runtime-server-1.21.11/neoforge-smoke-result.json",
+      "sha256": "85baa7fdfcf87cb4bde812a13285ae4d530f682b69b6abca7c6e16c7a70bc94f",
+      "bytes": 12257,
+      "originalBytes": true,
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\neoforge-01\\smoke-result.json",
+      "role": "raw runtime receipt",
+      "profile": "neoforge-1.21.11"
+    },
+    {
+      "file": "runtime-server-1.21.11/neoforge-console.log",
+      "sha256": "60a363294dc4a537b99e21f00142467d15be4626214d7eacb6645312ade0341e",
+      "bytes": 45951,
+      "originalBytes": true,
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\neoforge-01\\console.log",
+      "role": "raw server console with warnings",
+      "profile": "neoforge-1.21.11"
+    },
+    {
+      "file": "runtime-server-1.21.11/neoforge-protocol-result.json",
+      "sha256": "d398e2ed6cc2d3bb987abff1fccd5346267f79d63285041ac88ab93bc13daeaf",
+      "bytes": 5274,
+      "originalBytes": true,
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\neoforge-01\\protocol-result.json",
+      "role": "raw 26-case protocol result",
+      "profile": "neoforge-1.21.11"
+    },
+    {
+      "file": "runtime-server-1.21.11/neoforge-protocol-console.log",
+      "sha256": "b45211657f12a5fa065ee25f137b133acb83a3e1b0dceb94352aacd4f2dfbfd0",
+      "bytes": 4356,
+      "originalBytes": true,
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\neoforge-01\\protocol-console.log",
+      "role": "raw Node console",
+      "profile": "neoforge-1.21.11"
+    },
+    {
+      "file": "runtime-server-1.21.11/neoforge-protocol-disconnect-observations.json",
+      "sha256": "313acef09159ab740a4fddd6eba58037c74f212152858a55c1bc8536a46cbe22",
+      "bytes": 3918,
+      "originalBytes": true,
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\neoforge-01\\protocol-disconnect-observations.json",
+      "role": "actual decoded disconnect observations",
+      "profile": "neoforge-1.21.11"
+    },
+    {
+      "file": "runtime-server-1.21.11/neoforge-protocol-metadata-trace.json",
+      "sha256": "93e9d770b645fef8d80ef23a0550037ea6e12486747eb4a346b8165cb60140f6",
+      "bytes": 125519,
+      "originalBytes": true,
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\neoforge-01\\protocol-metadata-trace.json",
+      "role": "bounded metadata-only diagnostic traces",
+      "profile": "neoforge-1.21.11"
+    },
+    {
+      "file": "runtime-server-1.21.11/neoforge-install-result.json",
+      "sha256": "1982c46fe435c66c0a18601c7ed8a46f9463205eb4127a7db30c64980221fc89",
+      "bytes": 922,
+      "originalBytes": true,
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\neoforge-01\\install-result.json",
+      "role": "official installer result",
+      "profile": "neoforge-1.21.11"
+    },
+    {
+      "file": "runtime-server-1.21.11/neoforge-install-console.log",
+      "sha256": "8b5054b9e17d1d81f94b710f75d58c00a8b981a1379ff1b164fa3d4118de22af",
+      "bytes": 19102,
+      "originalBytes": true,
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\neoforge-01\\install-console.log",
+      "role": "official installer log",
+      "profile": "neoforge-1.21.11"
+    },
+    {
+      "file": "runtime-server-1.21.11/neoforge-qizhang-modern12111-smoke.json",
+      "sha256": "8c7b82077dafff84bc3996038cce568e16b200a3655b0c6f196e5919abcafc83",
+      "bytes": 4376,
+      "originalBytes": true,
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\neoforge-01\\.qizhang-modern12111-smoke.json",
+      "role": "installed fixture marker; javaStarted is historical stage flag",
+      "profile": "neoforge-1.21.11"
+    },
+    {
+      "file": "runtime-server-1.21.11/neoforge-guard-default.properties",
+      "sha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+      "bytes": 396,
+      "originalBytes": true,
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\neoforge-01\\guard-default.properties",
+      "role": "fresh strict default policy",
+      "profile": "neoforge-1.21.11"
+    },
+    {
+      "file": "runtime-server-1.21.11/neoforge-blacklist-default.tsv",
+      "sha256": "0f6df7344b7f123ae0fb0d2ff36293ee3c41ba2f769d893d65d263d571be35ec",
+      "bytes": 6115,
+      "originalBytes": true,
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\neoforge-01\\blacklist-default.tsv",
+      "role": "fresh 39 exact default rules",
+      "profile": "neoforge-1.21.11"
+    },
+    {
+      "file": "runtime-server-1.21.11/neoforge-after-guard.properties",
+      "sha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+      "bytes": 396,
+      "originalBytes": true,
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\neoforge-01\\config\\qizhangverdict\\guard.properties",
+      "role": "post-TCP restored strict policy",
+      "profile": "neoforge-1.21.11"
+    },
+    {
+      "file": "runtime-server-1.21.11/neoforge-after-blacklist.tsv",
+      "sha256": "3edf7a39da37f4179e5be3b0d9539f40dfce4b6ca9cd575b36976642cc2a0107",
+      "bytes": 5950,
+      "originalBytes": true,
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\neoforge-01\\config\\qizhangverdict\\blacklist.tsv",
+      "role": "post-TCP 38 legacy rows",
+      "profile": "neoforge-1.21.11"
+    },
+    {
+      "file": "runtime-server-1.21.11/neoforge-after-rules.tsv",
+      "sha256": "432b284fb9bf0d31d7e6ddc9dbdae1e7663efa72778b96329d7c542777a47cf1",
+      "bytes": 193,
+      "originalBytes": true,
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\neoforge-01\\config\\qizhangverdict\\rules.tsv",
+      "role": "post-TCP 2 administrator rules",
+      "profile": "neoforge-1.21.11"
+    },
+    {
+      "file": "runtime-server-1.21.11/neoforge-commands.queue",
+      "sha256": "a30bf05a0aa49e3e4fe6f1b9593d9aa6c024d8e5b54e7fb5b34dc0c5731c8ac3",
+      "bytes": 564,
+      "originalBytes": true,
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\neoforge-01\\commands.queue",
+      "role": "synthetic QA console commands",
+      "profile": "neoforge-1.21.11"
+    },
+    {
+      "file": "runtime-server-1.21.11/neoforge-debug.log",
+      "sha256": "a24a0393900e933688c0b7b2376b72cd9af6e1089afb94d88b7cf29d92de799a",
+      "bytes": 83682,
+      "originalBytes": true,
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.21.11\\servers\\neoforge-01\\logs\\debug.log",
+      "role": "upstream debug log including active NIO transport",
+      "profile": "neoforge-1.21.11"
+    }
+  ]
+}

@@ -2,6 +2,8 @@
 
 插件标识 **QiZhangVerdict**，模组 ID `qizhangverdict`，管理命令 `/qzverdict`。本项目提供 IP/账号/设备准入、可管理的黑白名单、客户端协作检查和设备关联封禁。行为预测与矿物混淆使用独立安装、固定版本的开源组件，具体见 [集成安装](integrations/README.md)。
 
+当前开发分支新增 Minecraft **1.21.11 Fabric / NeoForge**，组件版本 `0.4.0-dev`，使用 Java 21 和 GPL-3.0-only。两份候选已经通过构建及成品内各 99 项核心检查；构建阶段的具体范围和失败修复记录见[适配报告](docs/adapter-1.21.11.md)。该开发记录不会更新下方已发布附件，也不代表其他 1.21 小版本已通过验证。
+
 ## 测试预览 0.3.0-dev-preview.1
 
 18 个安装包及对应源码：[GitHub](https://github.com/EeryFrank/QiZhangVerdict/releases/tag/v0.3.0-dev-preview.1) · [GitLab](https://gitlab.com/EeryFrank/QiZhangVerdict/-/releases/v0.3.0-dev-preview.1)。继续使用 **GPL-3.0-only**。
@@ -103,7 +105,7 @@ sanctions.on-deny=BAN
 
 0.2.0-test.1 首次生成的 `blacklist.tsv` 包含 **37 个精确 ID：33 条 DENY、4 条 ALERT**。`baritone`、`baritoe`、`atianxray`、`keystrokesmod` 默认仅告警，服主可按玩法调整。不会因 `xray` 子串封掉正常的 `antixray`，也不默认封 Sodium、Iris、JEI、地图、投影等正常模组；存在正常项目重名的 `bigrat` 和通用 `template` ID 未设为默认拒绝。
 
-完整 [37 条可核验目录与合并工具](docs/catalog.md) 包含固定源码提交和描述符证据。已有安装的名单文件保持原样，包括管理员的 OFF 设置和删除记录；升级不会自动回填。管理员可审阅后显式合并新增规则。历史发布包的默认规则与目录数量以对应 tag 为准。
+当前开发目录已扩展为 [39 条可核验规则与合并工具](docs/catalog.md)，新增 `ferox`、`wurstplusthree` 两条精确 DENY，合计 35 条 DENY、4 条 ALERT；每条附固定源码提交和描述符证据。已有安装的名单文件保持原样，包括管理员的 OFF 设置和删除记录；升级不会自动回填。管理员可审阅后显式合并新增规则。已发布 0.2.0-test.1 / 0.3.0-dev-preview.1 成品仍为原来的 37 条，历史发布包的默认规则与目录数量以对应 tag 为准。
 
 名单不是全市场数据库，也无法发现所有改名、注入或伪造上报的作弊。资源包透视和未知外挂需要服务端矿物混淆及行为检测；[锁定依赖与配置](integrations/README.md) 提供 Paper、Fabric、Forge、NeoForge 安装组合。Forge/NeoForge 组合含矿物混淆，目前没有 Grim 行为预测引擎，不能宣称各平台行为检测能力相同。
 
