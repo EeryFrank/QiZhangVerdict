@@ -10,6 +10,8 @@
 
 五个新模组分别通过成品内核心检查、各 26 项连接检查及严格默认配置下的真实客户端验证。新 Bukkit 通过 97 项核心检查、两版共 52 项连接检查与受控登录重载回归。NeoForge 初次挑战接收问题已修复并用新成品重测。旧 12 个模组沿用相同散列的历史验证；失败尝试与测试工具告警保留在[本预览汇总](outputs/validation-0.3.0-dev-preview.1.json)。这些结果不代表所有小版本、整合包或作弊类型均已验证。
 
+两站各 26 个附件已匿名下载并核对 SHA256，见[发布回执](outputs/publish-receipt-0.3.0-dev-preview.1.json)。安装及对应源码 ZIP 通过[独立审查](outputs/packaging-validation-0.3.0-dev-preview.1.json)。发布标签的 GitHub 11 项构建通过；GitLab 11 项因 `ci_quota_exceeded` 未启动，不能视为通过。源码固定为 `f633a30badb882cfdb8606a7fefd88e5ce28bb2b`，发布后的文档和回执补录不改动标签或附件。
+
 ## 测试版 0.2.0-test.1
 
 公开源码及 13 个安装包：[GitHub](https://github.com/EeryFrank/QiZhangVerdict/releases/tag/v0.2.0-test.1) · [GitLab](https://gitlab.com/EeryFrank/QiZhangVerdict/-/releases/v0.2.0-test.1)。原创代码使用 **GPL-3.0-only**，附完整许可证、对应源码 ZIP 和 SHA256 校验文件。

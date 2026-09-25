@@ -4,6 +4,8 @@
 
 这次合集增加 Minecraft 1.19.2、1.20.4 适配，并修复 Bukkit 登录期间重载配置时，旧延迟任务再次发送过期挑战的问题。共 18 个独立 JAR，内部组件版本分别保留。原创实现采用 **GPL-3.0-only**；安装 ZIP、对应源码 ZIP、LICENSE、NOTICE 和 SHA256 校验文件随正式预览发布。
 
+发布后核验：两站各 26 个附件已匿名下载并核对 SHA256，见[发布回执](../outputs/publish-receipt-0.3.0-dev-preview.1.json)。安装 ZIP 和对应源码 ZIP 通过[独立审查](../outputs/packaging-validation-0.3.0-dev-preview.1.json)。标签固定源码为 `f633a30badb882cfdb8606a7fefd88e5ce28bb2b`；GitHub 同标签 11 项构建成功，GitLab 11 项因额度不足未启动，准确状态见 [CI 记录](ci.md)。后续文档补录不会改动已发布附件。
+
 ## 选择安装包
 
 每台服务器只选一个适合其平台的 Verdict 实现；每位玩家只装一个适合其游戏版本和加载器的配套模组。插件服玩家也需要配套模组完成设备与规则报告。不能把合集中的所有 JAR 一起放入服务器或客户端。

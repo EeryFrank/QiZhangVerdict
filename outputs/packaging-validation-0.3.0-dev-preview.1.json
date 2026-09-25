@@ -1,0 +1,187 @@
+{
+  "passed": true,
+  "sourceCommit": "f633a30badb882cfdb8606a7fefd88e5ce28bb2b",
+  "manifestSha256": "d518709fffd1152fd79ce96743bc62e4612582f67f481da62a50eaeebea320f8",
+  "packagingReceipt": {
+    "file": "QiZhangVerdict-0.3.0-dev-preview.1-packaging.json",
+    "sha256": "42dae22f358d4cb68fb1eb73c6b1e51976486f1ff110596cd03ad3f36ccda4a9"
+  },
+  "artifactCount": 18,
+  "allArtifactsMatchRootFrozenPins": true,
+  "inheritedOriginalModArtifacts": 12,
+  "newArtifacts": 6,
+  "artifactLockSha256": "9220c5ee77b4e035bd42608a0852cdb90bf7ddf06aac1afd3857b3f2c125d060",
+  "privateInputCounts": {
+    "stateFiles": 21,
+    "scopeFiles": 34,
+    "installationIdFiles": 0
+  },
+  "newRuntimeEvidenceGate": {
+    "inherited": {
+      "inheritedOriginalModArtifacts": 12,
+      "inheritedMatchingServerCases": 12,
+      "oldBukkitInteroperabilityCasesCountedAsNewBukkit": 0,
+      "pngBytesVerified": 12,
+      "historicalManifestBasis": "Exact final-commit source Git blob; remains in source ZIP",
+      "clientReport": "outputs/client-validation-0.2.0-test.1.json",
+      "retestedDuringThisReleaseByThisAuditor": false
+    },
+    "newBukkit": {
+      "report": "outputs/bukkit-validation-0.2.1-dev.json",
+      "exactJarCoreAssertions": 97,
+      "newTcpAssertionGroups": 52,
+      "minecraftVersions": [
+        "1.20.1",
+        "1.21.1"
+      ],
+      "artifactSha256": "9849a60374ea1bb18aae2af0ee479593312437a9665b803a3f847a07c570b2c8",
+      "retainedDecoderPartialReadErrors": {
+        "1.20.1": 0,
+        "1.21.1": 22
+      },
+      "completePacketDecodingClaimed": false,
+      "syntheticReports": true,
+      "unchangedPolicyThroughoutTcpClaimed": false
+    },
+    "bukkitRaceHistory": {
+      "report": "outputs/bukkit-challenge-race-validation.json",
+      "newArtifactSha256": "9849a60374ea1bb18aae2af0ee479593312437a9665b803a3f847a07c570b2c8",
+      "newFixedExperimentObservationGroups": 6,
+      "oldReproductionObservationGroups": 5,
+      "oldBukkit75GroupsCountedAsNewRuntime": 0,
+      "scope": "One Purpur 1.21.1 build2329 real-server/TCP regression comparing the published old Bukkit JAR with the new development JAR. TCP client models delayed/latest-request coalescing, not the production ClientReporter implementation.",
+      "realRenderedClientValidation": false
+    },
+    "newModBuilds": {
+      "reports": [
+        "outputs/adapter-build-1.19.2.json",
+        "outputs/adapter-build-1.20.4.json"
+      ],
+      "neoforgeFixReport": "outputs/neoforge-1.20.4-client-fix-validation.json",
+      "exactNewJarCount": 5,
+      "otherFourArtifactsStillOriginal": true,
+      "originalNeoCandidateRetainedAsHistory": true,
+      "finalArtifactCoreExecutions": 485,
+      "distinctCoreAssertions": 97,
+      "additionalNeoDispatchAssertions": 9,
+      "workingDirectoryAppendixRebuiltJar": false
+    },
+    "newModClients": {
+      "report": "outputs/next-platform-client-validation.json",
+      "finalArtifactProfiles": [
+        "fabric-1.19.2",
+        "fabric-1.20.4",
+        "forge-1.19.2",
+        "forge-1.20.4",
+        "neoforge-1.20.4"
+      ],
+      "finalRenderedClientCases": 5,
+      "retainedFailedAttempts": 2,
+      "historicalOldNeoCountedAsFinal": false,
+      "pngBytesVerified": 5,
+      "actualJavaMajors": [
+        17
+      ],
+      "minimumOnlineSeconds": 60.3758719000034,
+      "defaultPolicyKeys": 13,
+      "catalogRows": 37,
+      "privateScopedDevicePredicatesVerified": true,
+      "scope": [
+        "Actual production mod clients and matching dedicated servers under unchanged 13 defaults and 37 catalog rows.",
+        "Each accepted profile requires independent scoped-device recomputation, fresh console response suffixes at least 60 seconds apart, double normal exit zero, PNG CRC/decompression and exact-hash manual visual review.",
+        "The historical first Fabric1.19.2 client failed before guard handshake due to a 17-character QA username; exit zero alone is not acceptance.",
+        "Formal acceptance is derived in this aggregate; original automated result formalAcceptancePassed=false is preserved.",
+        "This is not proof of real-VM rejection, all-cheat coverage, performance, online authenticated accounts, cross-loader joins, old-world migration or third-party anti-cheat integration.",
+        "NeoForge1.20.4 candidate01 on c3e742 actually joined but timed out without an accepted report. Both cleanup processes returned zero, but normal-exit flags are false and this is a retained failure. A replacement digest requires its own accepted candidate and cannot inherit old dedicated-server TCP results."
+      ]
+    },
+    "newModServers": {
+      "report": "outputs/next-platform-server-validation.json",
+      "finalArtifactProfiles": [
+        "fabric-1.19.2",
+        "fabric-1.20.4",
+        "forge-1.19.2",
+        "forge-1.20.4",
+        "neoforge-1.20.4"
+      ],
+      "finalSelectedServerCases": 5,
+      "finalSelectedProtocolCaseGroups": 130,
+      "historicalAdditionalPassingCaseGroups": 26,
+      "historicalOldNeoCountedAsFinal": false,
+      "retainedFailedRuntimeAttempts": 3,
+      "retainedPreparedOnlyAttempts": 1,
+      "syntheticReports": true,
+      "unchangedPolicyThroughoutTcpClaimed": false,
+      "completePacketDecodingClaimed": false
+    },
+    "finalTagCiCheckedHere": false,
+    "finalTagCiBasis": "Separate release helpers must validate exact tag/ref/event/source/SHA and 11 named jobs; source CI cannot substitute for tag CI or runtime JAR bytes."
+  },
+  "explicitPublicEvidenceReferencesVerified": 3161,
+  "sourceTrackedFiles": 1640,
+  "archives": [
+    {
+      "file": "QiZhangVerdict-0.3.0-dev-preview.1.zip",
+      "bytes": 10646381,
+      "sha256": "ac6bb7cf59fe37f5d5abcb14b08124b21627c54b379f48c4d6a58053d48f320d",
+      "crc": "PASS",
+      "entries": 1411,
+      "allEntriesByteEqualToExpected": true,
+      "expectedBasis": "Committed explicit manifest plus eighteen exact root-frozen mixed-version JARs",
+      "markdownLocalLinksVerified": 269,
+      "missingMarkdownLinks": 0,
+      "jarFiles": [
+        "qizhangverdict-bukkit-0.2.1-dev.jar",
+        "qizhangverdict-fabric-1.20.1-0.2.0-test.1.jar",
+        "qizhangverdict-forge-1.20.1-0.2.0-test.1.jar",
+        "qizhangverdict-fabric-1.21.1-0.2.0-test.1.jar",
+        "qizhangverdict-neoforge-1.21.1-0.2.0-test.1.jar",
+        "qizhangverdict-fabric-1.19.4-0.2.0-test.1.jar",
+        "qizhangverdict-forge-1.19.4-0.2.0-test.1.jar",
+        "qizhangverdict-fabric-1.18.2-0.2.0-test.1.jar",
+        "qizhangverdict-forge-1.18.2-0.2.0-test.1.jar",
+        "qizhangverdict-fabric-1.16.5-0.2.0-test.1.jar",
+        "qizhangverdict-forge-1.16.5-0.2.0-test.1.jar",
+        "qizhangverdict-forge-1.12.2-0.2.0-test.1.jar",
+        "qizhangverdict-forge-1.8.9-0.2.0-test.1.jar",
+        "qizhangverdict-fabric-1.19.2-0.3.0-dev.jar",
+        "qizhangverdict-forge-1.19.2-0.3.0-dev.jar",
+        "qizhangverdict-fabric-1.20.4-0.3.0-dev.jar",
+        "qizhangverdict-forge-1.20.4-0.3.0-dev.jar",
+        "qizhangverdict-neoforge-1.20.4-0.3.0-dev.jar"
+      ],
+      "privateStateAndIdentifierPatterns": 0,
+      "minecraftDistributionClassesOrJarsIncluded": false
+    },
+    {
+      "file": "QiZhangVerdict-0.3.0-dev-preview.1-sources.zip",
+      "bytes": 9725615,
+      "sha256": "75f59676ebd7c033ab051705e6214b2e0fea5f2a0c00311cdc69908593e22940",
+      "crc": "PASS",
+      "entries": 1640,
+      "allEntriesByteEqualToExpected": true,
+      "expectedBasis": "1640 fixed-commit Git blobs",
+      "markdownLocalLinksVerified": 269,
+      "missingMarkdownLinks": 0,
+      "jarFiles": [
+        "gradle/wrapper/gradle-wrapper.jar",
+        "platforms/1.12.2/gradle/wrapper/gradle-wrapper.jar",
+        "platforms/1.16.5/gradle/wrapper/gradle-wrapper.jar",
+        "platforms/1.18.2/gradle/wrapper/gradle-wrapper.jar",
+        "platforms/1.19.2/gradle/wrapper/gradle-wrapper.jar",
+        "platforms/1.20.1/gradle/wrapper/gradle-wrapper.jar",
+        "platforms/1.20.4/gradle/wrapper/gradle-wrapper.jar",
+        "platforms/1.21.1/gradle/wrapper/gradle-wrapper.jar",
+        "platforms/1.8.9/gradle/wrapper/gradle-wrapper.jar"
+      ],
+      "privateStateAndIdentifierPatterns": 0,
+      "minecraftDistributionClassesOrJarsIncluded": false
+    }
+  ],
+  "privateClientDeviceDigestsChecked": 53,
+  "knownPrivateDeviceDigestLeaks": 0,
+  "expandedPackageDirectoryByteEqual": true,
+  "auditScriptSha256": "649ee74fc8fb95c9f4af8eabc2432810ada43eb56bc4326b402023db90efc56d",
+  "method": "Independent Git cat-file, ZIP CRC/entry/byte/mode, manifest and receipt, GPL/NOTICE, eighteen root-frozen mixed-version JARs, descriptor/class-major, Markdown link and bounded privacy audit. No Java, build, repackage or publishing.",
+  "limits": "Pattern and known-private-token scans do not prove absence of every possible secret format. This archive audit does not expand runtime or gameplay acceptance."
+}
