@@ -20,7 +20,7 @@
 
 ## 旧版开发预览
 
-1.12.2 Forge，以及 1.16.5 / 1.18.2 / 1.19.4 Fabric、Forge 的七个模组已完成构建与真实客户端/专服测试；另有 1.12.2 Forge 客户端连接 Paper 的验收。`0.2.0-dev-preview.1` 的安装组合、证据和限制见 [旧版测试包说明](docs/preview-0.2.0-dev-preview.1.md)。1.8.x 尚未纳入可安装模组范围。预览不改变已发布 0.1.1 的文件。
+1.12.2 Forge，以及 1.16.5 / 1.18.2 / 1.19.4 Fabric、Forge 的七个模组已完成构建与真实客户端/专服测试；另有 1.12.2 Forge 客户端连接 Paper 的验收。公开下载：[GitHub 0.2.0-dev-preview.1](https://github.com/EeryFrank/QiZhangVerdict/releases/tag/v0.2.0-dev-preview.1) · [GitLab 0.2.0-dev-preview.1](https://gitlab.com/EeryFrank/QiZhangVerdict/-/releases/v0.2.0-dev-preview.1)。安装组合、证据和限制见 [旧版测试包说明](docs/preview-0.2.0-dev-preview.1.md)。1.8.x 尚未纳入可安装模组范围。预览不改变已发布 0.1.1 的文件。
 
 ## 默认登录规则
 

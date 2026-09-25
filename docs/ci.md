@@ -25,3 +25,5 @@ GitHub 使用固定 SHA 的官方 actions；GitLab 开发任务使用[官方 Tem
 开发提交 `34e323b656af4f7a49edcf646e0d5b8d62ebb919` 的[旧版四任务](https://github.com/EeryFrank/QiZhangVerdict/actions/runs/36111380288)与[现代版四任务](https://github.com/EeryFrank/QiZhangVerdict/actions/runs/36111380421)均通过。已实际下载七个旧版 CI JAR，核对校验和、内置 GPL / NOTICE、Manifest 和 class 版本；见[独立 CI 记录](../outputs/legacy-ci-validation-0.2.0-dev.json)。首轮 1.19.4 因未使用仓库共享 wrapper 而失败，原运行保留，修正仅涉及 CI 路径。同提交 GitLab 的八个任务仍因额度不足未执行。
 
 配置依据：[setup-java](https://github.com/actions/setup-java)、[Gradle setup action](https://github.com/gradle/actions/blob/main/setup-gradle/README.md)、[GitLab CI YAML](https://docs.gitlab.com/ci/yaml/)。首次远端 pipeline 的执行结果应单独核验；仅完成配置静态校验不等于 CI 已通过。
+
+`v0.2.0-dev-preview.1` 的固定提交 `0f5335649573a2cb3f0ee4c11d264cd17a116c6e` 已完成 [GitHub 旧版四任务](https://github.com/EeryFrank/QiZhangVerdict/actions/runs/36115223222)和[现代四任务](https://github.com/EeryFrank/QiZhangVerdict/actions/runs/36115223292)，全部通过。同提交 [GitLab tag pipeline](https://gitlab.com/EeryFrank/QiZhangVerdict/-/pipelines/2881654692) 的八任务均为 `ci_quota_exceeded`，未执行。发布成品另经本机运行和两站下载校验，见 [预览回执](../outputs/publish-receipt-0.2.0-dev-preview.1.json)。
