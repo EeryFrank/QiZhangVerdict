@@ -1,0 +1,15 @@
+// SPDX-License-Identifier: GPL-3.0-only
+// Include the first-party license in each independently distributed binary/source JAR.
+def qvLicenseRoot = project.property('qvLicenseRoot') as File
+plugins.withId('java') {
+    tasks.withType(org.gradle.jvm.tasks.Jar).configureEach {
+        from(new File(qvLicenseRoot, 'LICENSE'))
+        from(new File(qvLicenseRoot, 'NOTICE'))
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+        manifest {
+            attributes 'License': 'GPL-3.0-only',
+                       'Bundle-License': 'https://www.gnu.org/licenses/gpl-3.0.html',
+                       'Implementation-URL': 'https://github.com/EeryFrank/QiZhangVerdict'
+        }
+    }
+}

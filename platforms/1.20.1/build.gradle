@@ -3,10 +3,12 @@ plugins {
  id 'architectury-plugin' version '3.4.164'
 }
 architectury { minecraft = '1.20.1' }
-allprojects { group = 'cn.qizhang.guard'; version = '0.1.0' }
+allprojects { group = 'cn.qizhang.guard'; version = '0.1.1' }
 subprojects {
  apply plugin: 'dev.architectury.loom'
  apply plugin: 'architectury-plugin'
+ ext.qvLicenseRoot = rootProject.file('../..')
+ apply from: new File(qvLicenseRoot, 'gradle/license-resources.gradle')
  base { archivesName = "qizhangverdict-${project.name}-1.20.1" }
  repositories { mavenCentral(); maven { url 'https://maven.fabricmc.net/' }; maven { url 'https://maven.architectury.dev/' }; maven { url 'https://maven.neoforged.net/releases/' }; maven { url 'https://maven.minecraftforge.net/' } }
  dependencies { minecraft 'com.mojang:minecraft:1.20.1'; mappings loom.officialMojangMappings() }

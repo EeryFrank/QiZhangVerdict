@@ -1,0 +1,45 @@
+plugins {
+ id 'dev.architectury.loom' version '1.11.456' apply false
+ id 'architectury-plugin' version '3.4.164'
+}
+architectury { minecraft = '1.19.4' }
+allprojects { group = 'cn.qizhang.guard'; version = '0.2.0-dev' }
+def runtimeRoot = providers.gradleProperty('qzRuntimeRoot').getOrElse(
+ System.getProperty('os.name').toLowerCase().contains('windows')
+ ? 'E:/CodexTemp/QiZhangVerdict/runtime/1.19.4'
+ : new File(System.getProperty('java.io.tmpdir'), 'qizhangverdict-1.19.4-runtime').absolutePath)
+subprojects {
+ apply plugin: 'dev.architectury.loom'
+ apply plugin: 'architectury-plugin'
+ ext.qvLicenseRoot = rootProject.file('../..')
+ apply from: new File(qvLicenseRoot, 'gradle/license-resources.gradle')
+ base { archivesName = "qizhangverdict-${project.name}-1.19.4" }
+ repositories { mavenCentral(); maven { url 'https://maven.fabricmc.net/' }; maven { url 'https://maven.architectury.dev/' }; maven { url 'https://maven.neoforged.net/releases/' }; maven { url 'https://maven.minecraftforge.net/' } }
+ dependencies { minecraft 'com.mojang:minecraft:1.19.4'; mappings loom.officialMojangMappings() }
+ // Mojang 1.19.4 mappings: ServerPlayer.getLevel(), and sendSuccess(Component, boolean).
+ // Generate only this target's shared sources, leaving tested 1.20/1.21 outputs intact.
+ def adapted = layout.buildDirectory.dir('generated/sources/shared1194')
+ def adaptShared = tasks.register('adaptSharedSources', Sync) {
+  from(rootProject.file('../shared/src/main/java')) { exclude '**/CommandGate121Mixin.java' }
+  into adapted
+  filteringCharset = 'UTF-8'
+  filter { line -> line.replace('.serverLevel()', '.getLevel()').replace('sendSuccess(() -> Component.literal(', 'sendSuccess(Component.literal(') }
+ }
+ sourceSets.main.java.srcDirs += [rootProject.file('../../core/src/main/java'), rootProject.file('../../client-common/src/main/java'), rootProject.file("../1.20.1/${project.name}/src/main/java"), adapted]
+ sourceSets.main.resources.srcDir rootProject.file('../../core/src/main/resources')
+ sourceSets.test.java.srcDir rootProject.file('../shared/src/test/java')
+ tasks.named('compileJava') { dependsOn adaptShared }
+ tasks.register('commandParserSmoke', JavaExec) {
+  dependsOn tasks.named('testClasses'); classpath = sourceSets.test.runtimeClasspath
+  mainClass = 'cn.qizhang.guard.minecraft.CommandParserSmoke'
+  javaLauncher = javaToolchains.launcherFor { languageVersion = JavaLanguageVersion.of(17) }
+  workingDir = new File(runtimeRoot, project.name + '-parser')
+  doFirst { workingDir.mkdirs() }
+ }
+ tasks.named('check') { dependsOn tasks.named('commandParserSmoke') }
+ tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8'; options.release = 17 }
+ java { toolchain.languageVersion = JavaLanguageVersion.of(17); withSourcesJar() }
+ tasks.named('sourcesJar') { dependsOn adaptShared }
+ processResources { inputs.property 'version', project.version; filesMatching(['fabric.mod.json','META-INF/mods.toml']) { expand version: project.version } }
+ loom { runs { server { runDir(new File(runtimeRoot, project.name + '-server').absolutePath) }; client { runDir(new File(runtimeRoot, project.name + '-client').absolutePath) } } }
+}

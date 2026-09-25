@@ -1,0 +1,486 @@
+{
+  "schema": 1,
+  "candidate_version": "0.1.1",
+  "license": "GPL-3.0-only",
+  "generated_utc": "2026-09-25T07:04:45.902916+00:00",
+  "scope": "Four actual production rendered clients, each joining the matching dedicated server with the same exact artifact SHA256. Isolated loopback offline-auth fixtures. No dev-classpath client was used.",
+  "all_passed": true,
+  "expected_default_policy": {
+    "limits.max-online-per-ip": "3",
+    "limits.max-online-per-ip-device": "1",
+    "limits.max-accounts-per-ip": "5",
+    "limits.account-window-hours": "720",
+    "limits.attempts-per-minute": "20",
+    "ip.allow": "",
+    "ip.deny": "",
+    "companion.required": "true",
+    "companion.timeout-seconds": "20",
+    "vm.action": "DENY",
+    "blacklist.action": "DENY",
+    "sanctions.on-deny": "BAN",
+    "device.required": "true"
+  },
+  "cases": [
+    {
+      "profile": "forge-1.20.1",
+      "guard_sha256": "96c5dd4ea030f9c18f6db140a12f98ad7d8a391bf5c8092ce86a070afea8dee8",
+      "minecraft": "1.20.1",
+      "loader_version": "47.4.23",
+      "launch_main": "cpw.mods.bootstraplauncher.BootstrapLauncher",
+      "vanilla_client_sha1": "0c3ec587af28e5a785c0b4a7b8a30f9a8f78f838",
+      "passed": true,
+      "client_exit_code": 0,
+      "server_exit_code": 0,
+      "confirmed_online_after_join_seconds": 60,
+      "strict_defaults": true,
+      "restored_survival": true,
+      "persisted_device_association": true,
+      "resource_pack_metadata_warning": false,
+      "rendered_client_confirmed": true,
+      "policy_unchanged": true,
+      "policy_before_sha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+      "policy_after_sha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+      "raw_evidence": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\forge-1.20.1\\candidate-0.1.1-gpl-02\\result.json",
+          "sha256": "f08e541d5a86061adbedbdb351bb0a178dd34380cb6efcaf05343f864dbc5be6",
+          "bytes": 5318
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\forge-1.20.1\\candidate-0.1.1-gpl-02\\server-console.log",
+          "sha256": "51683ff648bd10a291afd99236364ed66ff87cacdd915567bf0c76dd899875e3",
+          "bytes": 11340
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\forge-1.20.1\\candidate-0.1.1-gpl-02\\client-console.log",
+          "sha256": "aee420006aae85511c6fde6863e68f09c606a2f38b8b87f20d3e18f30a1fa89d",
+          "bytes": 7898
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\forge-1.20.1\\candidate-0.1.1-gpl-02\\screenshots\\2026-09-25_15.55.50.png",
+          "sha256": "90cc4465749c2c9303df787866d877a969a6c8ffb338299b3dae6c2f9df4a69c",
+          "bytes": 205421
+        }
+      ],
+      "rendered_frame": {
+        "path": "E:\\Codex_work\\QiZhangVerdict\\outputs\\client-matrix\\0.1.1-gpl\\forge-1.20.1.png",
+        "sha256": "90cc4465749c2c9303df787866d877a969a6c8ffb338299b3dae6c2f9df4a69c",
+        "bytes": 205421,
+        "width": 640,
+        "height": 360,
+        "crc_verified": true,
+        "image_data_inflated": true
+      },
+      "report_or_restored_mode_excerpts": [
+        "[15:55:22] [Server thread/INFO] [QiZhangVerdict/]: Report decision player=86f10d93-6a7a-3707-bf5f-b5decc1e46a7 code=VM_UNKNOWN message=VM status is unknown or has only inconclusive indicators",
+        "[15:55:50] [Server thread/INFO] [minecraft/MinecraftServer]: There are 1 of a max of 5 players online: VerdictClient",
+        "[15:55:50] [Server thread/INFO] [minecraft/MinecraftServer]: VerdictClient has the following entity data: 0",
+        "[15:56:05] [Server thread/INFO] [minecraft/MinecraftServer]: There are 1 of a max of 5 players online: VerdictClient",
+        "[15:56:05] [Server thread/INFO] [minecraft/MinecraftServer]: VerdictClient has the following entity data: 0",
+        "[15:56:20] [Server thread/INFO] [minecraft/MinecraftServer]: There are 1 of a max of 5 players online: VerdictClient",
+        "[15:56:20] [Server thread/INFO] [minecraft/MinecraftServer]: VerdictClient has the following entity data: 0"
+      ],
+      "public_evidence": [
+        {
+          "profile": "forge-1.20.1",
+          "run": "candidate-0.1.1-gpl-02",
+          "passed": true,
+          "file": "evidence/0.1.1-gpl-client-forge-1.20.1-02-result.json",
+          "sha256": "f08e541d5a86061adbedbdb351bb0a178dd34380cb6efcaf05343f864dbc5be6",
+          "bytes": 5318,
+          "original_path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\forge-1.20.1\\candidate-0.1.1-gpl-02\\result.json",
+          "copied_without_byte_changes": true
+        },
+        {
+          "profile": "forge-1.20.1",
+          "run": "candidate-0.1.1-gpl-02",
+          "passed": true,
+          "file": "evidence/0.1.1-gpl-client-forge-1.20.1-02-client-console.log",
+          "sha256": "aee420006aae85511c6fde6863e68f09c606a2f38b8b87f20d3e18f30a1fa89d",
+          "bytes": 7898,
+          "original_path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\forge-1.20.1\\candidate-0.1.1-gpl-02\\client-console.log",
+          "copied_without_byte_changes": true
+        },
+        {
+          "profile": "forge-1.20.1",
+          "run": "candidate-0.1.1-gpl-02",
+          "passed": true,
+          "file": "evidence/0.1.1-gpl-client-forge-1.20.1-02-server-console.log",
+          "sha256": "51683ff648bd10a291afd99236364ed66ff87cacdd915567bf0c76dd899875e3",
+          "bytes": 11340,
+          "original_path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\forge-1.20.1\\candidate-0.1.1-gpl-02\\server-console.log",
+          "copied_without_byte_changes": true
+        }
+      ]
+    },
+    {
+      "profile": "fabric-1.20.1",
+      "guard_sha256": "befb27baf8e567f0802bcc4372916dd45ee16052f18080d7829f4fff02add6c1",
+      "minecraft": "1.20.1",
+      "loader_version": "0.16.14",
+      "launch_main": "net.fabricmc.loader.impl.launch.knot.KnotClient",
+      "vanilla_client_sha1": "0c3ec587af28e5a785c0b4a7b8a30f9a8f78f838",
+      "passed": true,
+      "client_exit_code": 0,
+      "server_exit_code": 0,
+      "confirmed_online_after_join_seconds": 61,
+      "strict_defaults": true,
+      "restored_survival": true,
+      "persisted_device_association": true,
+      "resource_pack_metadata_warning": false,
+      "rendered_client_confirmed": true,
+      "policy_unchanged": true,
+      "policy_before_sha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+      "policy_after_sha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+      "raw_evidence": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\fabric-1.20.1\\candidate-0.1.1-gpl-02\\result.json",
+          "sha256": "3714dd68909e0bafed6df441da2e1f381c1887cbe0571a1c38753e864d234bb7",
+          "bytes": 4990
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\fabric-1.20.1\\candidate-0.1.1-gpl-02\\server-console.log",
+          "sha256": "c5c79d36e0629132daa5e9562c5e32aa659e809c1d88d4d989020bbed2a7e30a",
+          "bytes": 12244
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\fabric-1.20.1\\candidate-0.1.1-gpl-02\\client-console.log",
+          "sha256": "7a54a95d717b38a3fbe6e00ad4638d8c0510050b267ea47abd71576873c4c793",
+          "bytes": 9336
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\fabric-1.20.1\\candidate-0.1.1-gpl-02\\screenshots\\2026-09-25_16.00.03.png",
+          "sha256": "65ba66892da6cf49c185f8cad266a2ff63050fe496b7541bbaf97d5a510f9edd",
+          "bytes": 211543
+        }
+      ],
+      "rendered_frame": {
+        "path": "E:\\Codex_work\\QiZhangVerdict\\outputs\\client-matrix\\0.1.1-gpl\\fabric-1.20.1.png",
+        "sha256": "65ba66892da6cf49c185f8cad266a2ff63050fe496b7541bbaf97d5a510f9edd",
+        "bytes": 211543,
+        "width": 640,
+        "height": 360,
+        "crc_verified": true,
+        "image_data_inflated": true
+      },
+      "report_or_restored_mode_excerpts": [
+        "[15:59:36] [Server thread/INFO]: Report decision player=86f10d93-6a7a-3707-bf5f-b5decc1e46a7 code=VM_UNKNOWN message=VM status is unknown or has only inconclusive indicators",
+        "[16:00:03] [Server thread/INFO]: There are 1 of a max of 5 players online: VerdictClient",
+        "[16:00:03] [Server thread/INFO]: VerdictClient has the following entity data: 0",
+        "[16:00:18] [Server thread/INFO]: There are 1 of a max of 5 players online: VerdictClient",
+        "[16:00:18] [Server thread/INFO]: VerdictClient has the following entity data: 0",
+        "[16:00:34] [Server thread/INFO]: There are 1 of a max of 5 players online: VerdictClient",
+        "[16:00:34] [Server thread/INFO]: VerdictClient has the following entity data: 0"
+      ],
+      "public_evidence": [
+        {
+          "profile": "fabric-1.20.1",
+          "run": "candidate-0.1.1-gpl-02",
+          "passed": true,
+          "file": "evidence/0.1.1-gpl-client-fabric-1.20.1-02-result.json",
+          "sha256": "3714dd68909e0bafed6df441da2e1f381c1887cbe0571a1c38753e864d234bb7",
+          "bytes": 4990,
+          "original_path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\fabric-1.20.1\\candidate-0.1.1-gpl-02\\result.json",
+          "copied_without_byte_changes": true
+        },
+        {
+          "profile": "fabric-1.20.1",
+          "run": "candidate-0.1.1-gpl-02",
+          "passed": true,
+          "file": "evidence/0.1.1-gpl-client-fabric-1.20.1-02-client-console.log",
+          "sha256": "7a54a95d717b38a3fbe6e00ad4638d8c0510050b267ea47abd71576873c4c793",
+          "bytes": 9336,
+          "original_path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\fabric-1.20.1\\candidate-0.1.1-gpl-02\\client-console.log",
+          "copied_without_byte_changes": true
+        },
+        {
+          "profile": "fabric-1.20.1",
+          "run": "candidate-0.1.1-gpl-02",
+          "passed": true,
+          "file": "evidence/0.1.1-gpl-client-fabric-1.20.1-02-server-console.log",
+          "sha256": "c5c79d36e0629132daa5e9562c5e32aa659e809c1d88d4d989020bbed2a7e30a",
+          "bytes": 12244,
+          "original_path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\fabric-1.20.1\\candidate-0.1.1-gpl-02\\server-console.log",
+          "copied_without_byte_changes": true
+        }
+      ]
+    },
+    {
+      "profile": "fabric-1.21.1",
+      "guard_sha256": "f16ccdf24296b58fe6593b99617e87b10a9a72c476909d9c8de5cc0cf3f8f989",
+      "minecraft": "1.21.1",
+      "loader_version": "0.16.14",
+      "launch_main": "net.fabricmc.loader.impl.launch.knot.KnotClient",
+      "vanilla_client_sha1": "30c73b1c5da787909b2f73340419fdf13b9def88",
+      "passed": true,
+      "client_exit_code": 0,
+      "server_exit_code": 0,
+      "confirmed_online_after_join_seconds": 60,
+      "strict_defaults": true,
+      "restored_survival": true,
+      "persisted_device_association": true,
+      "resource_pack_metadata_warning": false,
+      "rendered_client_confirmed": true,
+      "policy_unchanged": true,
+      "policy_before_sha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+      "policy_after_sha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+      "raw_evidence": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\fabric-1.21.1\\candidate-0.1.1-gpl-01\\result.json",
+          "sha256": "adbd9cee19ef253ace8df6dd4b457e0341b673a2922bda24e6c5e0af731b5652",
+          "bytes": 4990
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\fabric-1.21.1\\candidate-0.1.1-gpl-01\\server-console.log",
+          "sha256": "d19d10aef8b2760ad38b1cbdadfb75a23f0032a79713cb9dac3eee6b603519a6",
+          "bytes": 12077
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\fabric-1.21.1\\candidate-0.1.1-gpl-01\\client-console.log",
+          "sha256": "d24389ba50aeb5009eb7d713b6310347da254a59d315ef472e7339b901785909",
+          "bytes": 7494
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\fabric-1.21.1\\candidate-0.1.1-gpl-01\\screenshots\\2026-09-25_16.02.04.png",
+          "sha256": "91977f427543650fce151473fa3f7283946a349e52139b1e65f7a335749d9218",
+          "bytes": 270161
+        }
+      ],
+      "rendered_frame": {
+        "path": "E:\\Codex_work\\QiZhangVerdict\\outputs\\client-matrix\\0.1.1-gpl\\fabric-1.21.1.png",
+        "sha256": "91977f427543650fce151473fa3f7283946a349e52139b1e65f7a335749d9218",
+        "bytes": 270161,
+        "width": 640,
+        "height": 360,
+        "crc_verified": true,
+        "image_data_inflated": true
+      },
+      "report_or_restored_mode_excerpts": [
+        "[16:01:36] [Server thread/INFO]: Report decision player=86f10d93-6a7a-3707-bf5f-b5decc1e46a7 code=VM_UNKNOWN message=VM status is unknown or has only inconclusive indicators",
+        "[16:02:04] [Server thread/INFO]: There are 1 of a max of 5 players online: VerdictClient",
+        "[16:02:04] [Server thread/INFO]: VerdictClient has the following entity data: 0",
+        "[16:02:19] [Server thread/INFO]: There are 1 of a max of 5 players online: VerdictClient",
+        "[16:02:19] [Server thread/INFO]: VerdictClient has the following entity data: 0",
+        "[16:02:34] [Server thread/INFO]: There are 1 of a max of 5 players online: VerdictClient",
+        "[16:02:34] [Server thread/INFO]: VerdictClient has the following entity data: 0"
+      ],
+      "public_evidence": [
+        {
+          "profile": "fabric-1.21.1",
+          "run": "candidate-0.1.1-gpl-01",
+          "passed": true,
+          "file": "evidence/0.1.1-gpl-client-fabric-1.21.1-01-result.json",
+          "sha256": "adbd9cee19ef253ace8df6dd4b457e0341b673a2922bda24e6c5e0af731b5652",
+          "bytes": 4990,
+          "original_path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\fabric-1.21.1\\candidate-0.1.1-gpl-01\\result.json",
+          "copied_without_byte_changes": true
+        },
+        {
+          "profile": "fabric-1.21.1",
+          "run": "candidate-0.1.1-gpl-01",
+          "passed": true,
+          "file": "evidence/0.1.1-gpl-client-fabric-1.21.1-01-client-console.log",
+          "sha256": "d24389ba50aeb5009eb7d713b6310347da254a59d315ef472e7339b901785909",
+          "bytes": 7494,
+          "original_path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\fabric-1.21.1\\candidate-0.1.1-gpl-01\\client-console.log",
+          "copied_without_byte_changes": true
+        },
+        {
+          "profile": "fabric-1.21.1",
+          "run": "candidate-0.1.1-gpl-01",
+          "passed": true,
+          "file": "evidence/0.1.1-gpl-client-fabric-1.21.1-01-server-console.log",
+          "sha256": "d19d10aef8b2760ad38b1cbdadfb75a23f0032a79713cb9dac3eee6b603519a6",
+          "bytes": 12077,
+          "original_path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\fabric-1.21.1\\candidate-0.1.1-gpl-01\\server-console.log",
+          "copied_without_byte_changes": true
+        }
+      ]
+    },
+    {
+      "profile": "neoforge-1.21.1",
+      "guard_sha256": "de6d25ccff28dcc94e705f4531d6e7ac9e11805e27fbf0c9af174624cd6a0602",
+      "minecraft": "1.21.1",
+      "loader_version": "21.1.244",
+      "launch_main": "cpw.mods.bootstraplauncher.BootstrapLauncher",
+      "vanilla_client_sha1": "30c73b1c5da787909b2f73340419fdf13b9def88",
+      "passed": true,
+      "client_exit_code": 0,
+      "server_exit_code": 0,
+      "confirmed_online_after_join_seconds": 61,
+      "strict_defaults": true,
+      "restored_survival": true,
+      "persisted_device_association": true,
+      "resource_pack_metadata_warning": false,
+      "rendered_client_confirmed": true,
+      "policy_unchanged": true,
+      "policy_before_sha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+      "policy_after_sha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+      "raw_evidence": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\neoforge-1.21.1\\candidate-0.1.1-gpl-01\\result.json",
+          "sha256": "2482b3da59b7d663e94606a7b0259bbdfe6d52006142eb49bbb30300b1fae53a",
+          "bytes": 5143
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\neoforge-1.21.1\\candidate-0.1.1-gpl-01\\server-console.log",
+          "sha256": "9742cbdbd7d6520829967e0588f37a03c12f3decadd835f3917e3d1c3f8b4422",
+          "bytes": 10832
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\neoforge-1.21.1\\candidate-0.1.1-gpl-01\\client-console.log",
+          "sha256": "a854f909e1eec7ddfa4961ed9918131dca6c5987464cbf8428e714b1c6fcc18b",
+          "bytes": 8629
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\neoforge-1.21.1\\candidate-0.1.1-gpl-01\\screenshots\\2026-09-25_16.04.01.png",
+          "sha256": "70c0b82f7c7146f99bcd95216e4bca70712abdc9f654aa12779019cc17c69e9b",
+          "bytes": 117527
+        }
+      ],
+      "rendered_frame": {
+        "path": "E:\\Codex_work\\QiZhangVerdict\\outputs\\client-matrix\\0.1.1-gpl\\neoforge-1.21.1.png",
+        "sha256": "70c0b82f7c7146f99bcd95216e4bca70712abdc9f654aa12779019cc17c69e9b",
+        "bytes": 117527,
+        "width": 640,
+        "height": 360,
+        "crc_verified": true,
+        "image_data_inflated": true
+      },
+      "report_or_restored_mode_excerpts": [
+        "[16:04:01] [Server thread/INFO] [minecraft/MinecraftServer]: There are 1 of a max of 5 players online: VerdictClient",
+        "[16:04:01] [Server thread/INFO] [minecraft/MinecraftServer]: VerdictClient has the following entity data: 0",
+        "[16:04:16] [Server thread/INFO] [minecraft/MinecraftServer]: There are 1 of a max of 5 players online: VerdictClient",
+        "[16:04:16] [Server thread/INFO] [minecraft/MinecraftServer]: VerdictClient has the following entity data: 0",
+        "[16:04:31] [Server thread/INFO] [minecraft/MinecraftServer]: There are 1 of a max of 5 players online: VerdictClient",
+        "[16:04:31] [Server thread/INFO] [minecraft/MinecraftServer]: VerdictClient has the following entity data: 0"
+      ],
+      "public_evidence": [
+        {
+          "profile": "neoforge-1.21.1",
+          "run": "candidate-0.1.1-gpl-01",
+          "passed": true,
+          "file": "evidence/0.1.1-gpl-client-neoforge-1.21.1-01-result.json",
+          "sha256": "2482b3da59b7d663e94606a7b0259bbdfe6d52006142eb49bbb30300b1fae53a",
+          "bytes": 5143,
+          "original_path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\neoforge-1.21.1\\candidate-0.1.1-gpl-01\\result.json",
+          "copied_without_byte_changes": true
+        },
+        {
+          "profile": "neoforge-1.21.1",
+          "run": "candidate-0.1.1-gpl-01",
+          "passed": true,
+          "file": "evidence/0.1.1-gpl-client-neoforge-1.21.1-01-client-console.log",
+          "sha256": "a854f909e1eec7ddfa4961ed9918131dca6c5987464cbf8428e714b1c6fcc18b",
+          "bytes": 8629,
+          "original_path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\neoforge-1.21.1\\candidate-0.1.1-gpl-01\\client-console.log",
+          "copied_without_byte_changes": true
+        },
+        {
+          "profile": "neoforge-1.21.1",
+          "run": "candidate-0.1.1-gpl-01",
+          "passed": true,
+          "file": "evidence/0.1.1-gpl-client-neoforge-1.21.1-01-server-console.log",
+          "sha256": "9742cbdbd7d6520829967e0588f37a03c12f3decadd835f3917e3d1c3f8b4422",
+          "bytes": 10832,
+          "original_path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\neoforge-1.21.1\\candidate-0.1.1-gpl-01\\server-console.log",
+          "copied_without_byte_changes": true
+        }
+      ]
+    }
+  ],
+  "retained_unsuccessful_attempts": [
+    {
+      "profile": "forge-1.20.1",
+      "reason": "First attempt timed out in the Forge login handshake before joining; unchanged artifact and policy passed the next isolated run. Cause not established.",
+      "evidence": {
+        "path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\forge-1.20.1\\candidate-0.1.1-gpl-01\\result.json",
+        "sha256": "9f614412bfac4e2b698636ec55e760b0adceab71512a1e754554ed8ae259721c",
+        "bytes": 3661
+      },
+      "public_evidence": [
+        {
+          "profile": "forge-1.20.1",
+          "run": "candidate-0.1.1-gpl-01",
+          "passed": false,
+          "file": "evidence/0.1.1-gpl-client-forge-1.20.1-01-result.json",
+          "sha256": "9f614412bfac4e2b698636ec55e760b0adceab71512a1e754554ed8ae259721c",
+          "bytes": 3661,
+          "original_path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\forge-1.20.1\\candidate-0.1.1-gpl-01\\result.json",
+          "copied_without_byte_changes": true
+        },
+        {
+          "profile": "forge-1.20.1",
+          "run": "candidate-0.1.1-gpl-01",
+          "passed": false,
+          "file": "evidence/0.1.1-gpl-client-forge-1.20.1-01-client-console.log",
+          "sha256": "628ddfcda8c7100b10907834c4c34ddae1820cc23a1f9e46cba3be73578a7fda",
+          "bytes": 7721,
+          "original_path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\forge-1.20.1\\candidate-0.1.1-gpl-01\\client-console.log",
+          "copied_without_byte_changes": true
+        },
+        {
+          "profile": "forge-1.20.1",
+          "run": "candidate-0.1.1-gpl-01",
+          "passed": false,
+          "file": "evidence/0.1.1-gpl-client-forge-1.20.1-01-server-console.log",
+          "sha256": "f480aa2846a1bf398ca2ce7aa2d8e1515f5d3a01a5963f376ef2de69082755c6",
+          "bytes": 9632,
+          "original_path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\forge-1.20.1\\candidate-0.1.1-gpl-01\\server-console.log",
+          "copied_without_byte_changes": true
+        }
+      ]
+    },
+    {
+      "profile": "fabric-1.20.1",
+      "reason": "First attempt timed out during login before joining; unchanged artifact and policy passed the next isolated run. Cause not established.",
+      "evidence": {
+        "path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\fabric-1.20.1\\candidate-0.1.1-gpl-01\\result.json",
+        "sha256": "eded53475f72dff8134d1a22dcab5a39b6a8c550fd146b5ea3af1143e3106b85",
+        "bytes": 3894
+      },
+      "public_evidence": [
+        {
+          "profile": "fabric-1.20.1",
+          "run": "candidate-0.1.1-gpl-01",
+          "passed": false,
+          "file": "evidence/0.1.1-gpl-client-fabric-1.20.1-01-result.json",
+          "sha256": "eded53475f72dff8134d1a22dcab5a39b6a8c550fd146b5ea3af1143e3106b85",
+          "bytes": 3894,
+          "original_path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\fabric-1.20.1\\candidate-0.1.1-gpl-01\\result.json",
+          "copied_without_byte_changes": true
+        },
+        {
+          "profile": "fabric-1.20.1",
+          "run": "candidate-0.1.1-gpl-01",
+          "passed": false,
+          "file": "evidence/0.1.1-gpl-client-fabric-1.20.1-01-client-console.log",
+          "sha256": "62098a5d1f5339db81a4f1622eceb753fdf707708c2c7bb497103d1b608ab811",
+          "bytes": 9375,
+          "original_path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\fabric-1.20.1\\candidate-0.1.1-gpl-01\\client-console.log",
+          "copied_without_byte_changes": true
+        },
+        {
+          "profile": "fabric-1.20.1",
+          "run": "candidate-0.1.1-gpl-01",
+          "passed": false,
+          "file": "evidence/0.1.1-gpl-client-fabric-1.20.1-01-server-console.log",
+          "sha256": "10117f71ca152c8979085dcccb7a636dc4ec40a93a0dc5c05e1ab863f42ece9d",
+          "bytes": 10541,
+          "original_path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\fabric-1.20.1\\candidate-0.1.1-gpl-01\\server-console.log",
+          "copied_without_byte_changes": true
+        }
+      ]
+    }
+  ],
+  "not_covered": [
+    "Cheat-client penetration testing or detection accuracy",
+    "Real VM vendor/OS matrix",
+    "Gameplay performance or large modpack compatibility",
+    "Authenticated online-account infrastructure"
+  ],
+  "public_evidence_index": {
+    "file": "client-evidence-index-0.1.1-gpl.json",
+    "sha256": "bb6c326f1a80002e0532a63f0456d1b296e2faf02e28477adf8b6c2e080ce003"
+  }
+}

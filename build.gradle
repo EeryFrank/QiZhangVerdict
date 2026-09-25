@@ -1,5 +1,9 @@
 allprojects {
     group = 'cn.qizhang.guard'
-    version = '0.1.0'
+    version = '0.1.1'
     repositories { mavenCentral() }
+}
+subprojects {
+    ext.qvLicenseRoot = rootProject.projectDir
+    apply from: rootProject.file('gradle/license-resources.gradle')
 }

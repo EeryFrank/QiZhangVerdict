@@ -1,0 +1,77 @@
+{
+  "version": "1.8.8",
+  "source": {
+    "version": "1.8.8",
+    "distribution": "Paper",
+    "build": 445,
+    "buildTime": "2021-12-20T00:10:48.936Z",
+    "metadataUrl": "https://fill.papermc.io/v3/projects/paper/versions/1.8.8/builds",
+    "sourceUrl": "https://fill-data.papermc.io/v1/objects/7ff6d2cec671ef0d95b3723b5c92890118fb882d73b7f8fa0a2cd31d97c55f86/paper-1.8.8-445.jar",
+    "sha256": "7ff6d2cec671ef0d95b3723b5c92890118fb882d73b7f8fa0a2cd31d97c55f86",
+    "size": 19520829,
+    "filename": "paper-1.8.8-445.jar",
+    "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\downloads\\paper-1.8.8-445.jar"
+  },
+  "pluginFile": "qizhangverdict-bukkit-0.1.1.jar",
+  "pluginSha256": "5688683392ff59aee0bfbbe3f1f41ca056cebc06a063afad608714848d7d7639",
+  "javaExecutable": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\java8\\jdk8u504-b01-jre\\bin\\java.exe",
+  "javaVersion": "openjdk version \"1.8.0_504\"\nOpenJDK Runtime Environment (Temurin)(build 1.8.0_504-b01)\nOpenJDK 64-Bit Server VM (Temurin)(build 25.504-b01, mixed mode)",
+  "directory": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\paper-1.8.8-20260925-152413",
+  "serverHost": "127.0.0.1",
+  "port": 25600,
+  "onlineMode": false,
+  "log": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\paper-1.8.8-20260925-152413\\console.log",
+  "defaultGuardPolicyUnmodified": true,
+  "scope": "Unmodified strict Bukkit defaults, real TCP synthetic reports, startup/status/clean stop; no external anticheat or graphical companion validation.",
+  "protocolScriptSha256": "f7dcdbe252de5dd0610d40554af131b5ce038c9e895640ea0813c1058b7b3ca0",
+  "policy": {
+    "limits.max-online-per-ip": "3",
+    "limits.max-online-per-ip-device": "1",
+    "limits.max-accounts-per-ip": "5",
+    "companion.required": "true",
+    "device.required": "true",
+    "vm.action": "DENY",
+    "companion.timeout-seconds": "20"
+  },
+  "guardPropertiesSha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+  "startupPassed": true,
+  "protocolExitCode": 0,
+  "protocol": {
+    "passed": true,
+    "cases": [
+      "strict default companion report accepted on expected plugin channel",
+      "valid report keeps account online for at least 22 seconds with strict server status",
+      "same IP and same device second account rejected",
+      "same IP second distinct device accepted",
+      "same IP third distinct device accepted",
+      "default fourth concurrent account rejected",
+      "disconnect releases IP and device concurrent slots",
+      "strict default rejects missing device identifier",
+      "malformed report rejected",
+      "invalid report does not permanently ban account",
+      "default required companion timeout enforced",
+      "timeout releases session and does not permanently ban account"
+    ],
+    "caseCount": 12,
+    "version": "1.8.8",
+    "channel": "QZGuard",
+    "registerChannel": "REGISTER",
+    "defaultPolicyUnmodified": true,
+    "waits": [
+      {
+        "case": "valid companion stays online beyond default deadline",
+        "elapsedMilliseconds": 22130
+      },
+      {
+        "case": "default required report timeout",
+        "elapsedMilliseconds": 20686
+      }
+    ],
+    "scope": "Real loopback TCP clients with synthetic self-reports; not a rendered companion, real VM, external anticheat or general gameplay compatibility test."
+  },
+  "statusCommandObserved": true,
+  "passed": true,
+  "serverExitCode": 0,
+  "elapsedSeconds": 68.04,
+  "consoleSha256": "d29594e5ec8d46c0a9b5128b4446451394282d15a5803fc8662cf8bdd0de2e32"
+}

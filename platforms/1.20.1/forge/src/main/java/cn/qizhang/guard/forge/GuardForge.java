@@ -18,6 +18,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.loading.FMLEnvironment;
 import net.minecraftforge.fml.loading.FMLPaths;
 import net.minecraftforge.network.NetworkEvent;
+import net.minecraftforge.network.NetworkDirection;
 import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.event.EventNetworkChannel;
 
@@ -27,8 +28,8 @@ public final class GuardForge {
     private final EventNetworkChannel channel = NetworkRegistry.newEventChannel(CHANNEL_ID, () -> "1", version -> true, version -> true);
     private MinecraftGuard guard;
     public GuardForge() {
-        channel.addListener(this::serverPayload);
-        channel.addListener(this::clientPayload);
+        channel.addListener(this::serverboundPayload);
+        channel.addListener(this::clientboundPayload);
         MinecraftForge.EVENT_BUS.addListener(this::start);
         MinecraftForge.EVENT_BUS.addListener(this::stop);
         MinecraftForge.EVENT_BUS.addListener(this::joined);
@@ -36,16 +37,21 @@ public final class GuardForge {
         MinecraftForge.EVENT_BUS.addListener(this::tick);
         MinecraftForge.EVENT_BUS.addListener(this::commands);
     }
-    private void serverPayload(NetworkEvent.ServerCustomPayloadEvent event) {
+    // Forge names these events for the sending side, not the receiving side.
+    // PLAY_TO_SERVER creates ClientCustomPayloadEvent; PLAY_TO_CLIENT creates
+    // ServerCustomPayloadEvent. Also exclude their login-phase subclasses.
+    private void serverboundPayload(NetworkEvent.ClientCustomPayloadEvent event) {
         var context = event.getSource().get(); var buffer = event.getPayload();
+        if (context.getDirection() != NetworkDirection.PLAY_TO_SERVER) return;
         if (buffer == null) return;
         context.setPacketHandled(true);
         if (buffer.readableBytes() > 30000) { context.enqueueWork(() -> { var p = context.getSender(); if (p != null) p.connection.disconnect(Component.literal("QiZhangVerdict payload too large")); }); return; }
         byte[] bytes = new byte[buffer.readableBytes()]; buffer.readBytes(bytes);
         context.enqueueWork(() -> { var p = context.getSender(); if (p != null && guard != null) guard.report(p, bytes); });
     }
-    private void clientPayload(NetworkEvent.ClientCustomPayloadEvent event) {
+    private void clientboundPayload(NetworkEvent.ServerCustomPayloadEvent event) {
         var context = event.getSource().get(); var buffer = event.getPayload();
+        if (context.getDirection() != NetworkDirection.PLAY_TO_CLIENT) return;
         if (buffer == null || buffer.readableBytes() > 30000) return;
         context.setPacketHandled(true);
         byte[] bytes = new byte[buffer.readableBytes()]; buffer.readBytes(bytes);

@@ -1,0 +1,91 @@
+{
+  "scope": "Additional real production client tests for frozen v0.1.0-test.1; original release evidence is unchanged.",
+  "cases": [
+    {
+      "profile": "fabric-1.20.1",
+      "guard_sha256": "5162552b204b5487ffaecc88c5a796de8d558fdb40988cb2a6a76e369cc2fe60",
+      "passed": true,
+      "strict_defaults": true,
+      "restored_survival": true,
+      "persisted_device_association": true,
+      "confirmed_online_after_join_seconds": 61,
+      "client_exit_code": 0,
+      "server_exit_code": 0,
+      "evidence": {
+        "path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\fabric-1.20.1\\run-01\\result.json",
+        "sha256": "ebab5b5e2766d94adb954b405c130c864134a2b1f3a1ee6c5aa96a12415a710d"
+      },
+      "raw_evidence": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\fabric-1.20.1\\run-01\\server-console.log",
+          "sha256": "9d537c97f2b7626b6503636ba1fec4f9c73e83035d276dc2b7fa2bad652a48b6",
+          "bytes": 12345
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\fabric-1.20.1\\run-01\\client-console.log",
+          "sha256": "592b0b43a0a745003ce319930540e31a0de6278c5f22e175c32de92c2aa4d71e",
+          "bytes": 9340
+        }
+      ]
+    },
+    {
+      "profile": "forge-1.20.1",
+      "guard_sha256": "78e056b90b39483dfce5487cb76dfa8671ea8fe21e27182a735498f9a5be059a",
+      "passed": false,
+      "strict_defaults": true,
+      "restored_survival": false,
+      "persisted_device_association": false,
+      "confirmed_online_after_join_seconds": 0,
+      "client_exit_code": 0,
+      "server_exit_code": 0,
+      "evidence": {
+        "path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\forge-1.20.1\\run-02\\result.json",
+        "sha256": "223b3be53df8b76bbfe693af73dc975cdb13993e321c3e9f71caa702cb772cec"
+      },
+      "raw_evidence": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\forge-1.20.1\\run-02\\server-console.log",
+          "sha256": "a8e9ffb76835e08cc34a8d1b9d9944880dcfa3044bf9b41657b88c2f8154e9d3",
+          "bytes": 10420
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\forge-1.20.1\\run-02\\client-console.log",
+          "sha256": "9b36ac11a1842fe5230a7c042cc472256981225e449694e2aecf8d09461359a6",
+          "bytes": 10134
+        }
+      ]
+    },
+    {
+      "profile": "neoforge-1.21.1",
+      "guard_sha256": "c9f53e0d0540e90900ef2277f24af88813dd4d5a12c16e64a7a1a6459dcaa932",
+      "passed": true,
+      "strict_defaults": true,
+      "restored_survival": true,
+      "persisted_device_association": true,
+      "confirmed_online_after_join_seconds": 61,
+      "client_exit_code": 0,
+      "server_exit_code": 0,
+      "evidence": {
+        "path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\neoforge-1.21.1\\run-01\\result.json",
+        "sha256": "cf89fdc2fe93ff03faf5d70c73e2400cb4ed8639af44f91157711a64a2b6dbed"
+      },
+      "raw_evidence": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\neoforge-1.21.1\\run-01\\server-console.log",
+          "sha256": "1d62e78c142b7252c531a31fcbfabaf4ace719ecdb9e8e68a5ca2045b299a3e0",
+          "bytes": 10462
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\neoforge-1.21.1\\run-01\\client-console.log",
+          "sha256": "25203bbc090c8fd51b31c884a2354c9b21f7faa81bc2c5135e84ad038de187f1",
+          "bytes": 8509
+        }
+      ]
+    }
+  ],
+  "known_failure": "Forge client direction handlers were reversed, so strict companion reports timed out; also missing pack metadata prompted a loading warning. Both are scheduled for 0.1.1.",
+  "harness_failure_before_product_test": {
+    "path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\forge-1.20.1\\run-01\\result.json",
+    "reason": "Inherited vanilla JAR filename did not match official loader ignoreList; corrected in QA runner without changing game JAR bytes."
+  }
+}

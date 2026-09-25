@@ -4,7 +4,15 @@ gradlew text eol=lf
 *.bat text eol=crlf
 *.jar binary
 *.zip binary
+LICENSE -text
+LICENSES/** -text
 # Validation hashes refer to the original evidence bytes, including newlines.
 outputs/evidence/** -text whitespace=cr-at-eol
 outputs/*.json -text whitespace=cr-at-eol
 outputs/*.txt -text whitespace=cr-at-eol
+outputs/client-matrix/** -text whitespace=cr-at-eol
+outputs/legacy-client-matrix/** -text whitespace=cr-at-eol
+# These source snapshots include byte hashes; preserve reviewed newline bytes.
+catalog/** -text whitespace=cr-at-eol
+docs/catalog.md -text
+platforms/1.18.2/** -text whitespace=cr-at-eol

@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "cases": [
+    "strict default companion report accepted on expected plugin channel",
+    "valid report keeps account online for at least 22 seconds with strict server status",
+    "same IP and same device second account rejected",
+    "same IP second distinct device accepted",
+    "same IP third distinct device accepted",
+    "default fourth concurrent account rejected",
+    "disconnect releases IP and device concurrent slots",
+    "strict default rejects missing device identifier",
+    "malformed report rejected",
+    "invalid report does not permanently ban account",
+    "default required companion timeout enforced",
+    "timeout releases session and does not permanently ban account"
+  ],
+  "caseCount": 12,
+  "version": "1.18.2",
+  "channel": "qzguard:main",
+  "registerChannel": "minecraft:register",
+  "defaultPolicyUnmodified": true,
+  "waits": [
+    {
+      "case": "valid companion stays online beyond default deadline",
+      "elapsedMilliseconds": 22139
+    },
+    {
+      "case": "default required report timeout",
+      "elapsedMilliseconds": 20861
+    }
+  ],
+  "scope": "Real loopback TCP clients with synthetic self-reports; not a rendered companion, real VM, external anticheat or general gameplay compatibility test."
+}

@@ -1,0 +1,269 @@
+{
+  "schema": 1,
+  "candidate_version": "0.1.1",
+  "generated_utc": "2026-09-25T06:37:18.142811+00:00",
+  "scope": "Four actual production rendered clients, each joining the matching dedicated server with the same exact artifact SHA256. Isolated loopback offline-auth fixtures. No dev-classpath client was used.",
+  "all_passed": true,
+  "expected_default_policy": {
+    "limits.max-online-per-ip": "3",
+    "limits.max-online-per-ip-device": "1",
+    "limits.max-accounts-per-ip": "5",
+    "limits.account-window-hours": "720",
+    "limits.attempts-per-minute": "20",
+    "ip.allow": "",
+    "ip.deny": "",
+    "companion.required": "true",
+    "companion.timeout-seconds": "20",
+    "vm.action": "DENY",
+    "blacklist.action": "DENY",
+    "sanctions.on-deny": "BAN",
+    "device.required": "true"
+  },
+  "cases": [
+    {
+      "profile": "forge-1.20.1",
+      "guard_sha256": "4461e38ee79aa83aaadac31d74fc1c5e0e75d3267d5612a52f199529f5fd4b9f",
+      "minecraft": "1.20.1",
+      "loader_version": "47.4.23",
+      "launch_main": "cpw.mods.bootstraplauncher.BootstrapLauncher",
+      "vanilla_client_sha1": "0c3ec587af28e5a785c0b4a7b8a30f9a8f78f838",
+      "passed": true,
+      "client_exit_code": 0,
+      "server_exit_code": 0,
+      "confirmed_online_after_join_seconds": 61,
+      "strict_defaults": true,
+      "restored_survival": true,
+      "persisted_device_association": true,
+      "resource_pack_metadata_warning": false,
+      "rendered_client_confirmed": true,
+      "policy_unchanged": true,
+      "policy_before_sha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+      "policy_after_sha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+      "raw_evidence": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\forge-1.20.1\\candidate-0.1.1-02\\result.json",
+          "sha256": "ec64af11a8be27213fa42bea5a653c1b1bffecf27fbaa3acb25bf40c8d42b294",
+          "bytes": 5298
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\forge-1.20.1\\candidate-0.1.1-02\\server-console.log",
+          "sha256": "ee72d5f1b75b4f7ce00ebab5e6a27147fa0fbcbcdc9bd02a4d1b701b0a654070",
+          "bytes": 11113
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\forge-1.20.1\\candidate-0.1.1-02\\client-console.log",
+          "sha256": "3a104fd57fa58d24cd0fef1cd19bc9d9059067eb1dafda860525c5ead870c692",
+          "bytes": 7898
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\forge-1.20.1\\candidate-0.1.1-02\\screenshots\\2026-09-25_15.29.03.png",
+          "sha256": "312f4e27dc7cb2e82ce04bf083b7c60151d56474b30448cba00b977f3808003d",
+          "bytes": 194152
+        }
+      ],
+      "rendered_frame": {
+        "path": "E:\\Codex_work\\QiZhangVerdict\\outputs\\client-matrix\\0.1.1\\forge-1.20.1.png",
+        "sha256": "312f4e27dc7cb2e82ce04bf083b7c60151d56474b30448cba00b977f3808003d",
+        "bytes": 194152,
+        "width": 640,
+        "height": 360,
+        "crc_verified": true,
+        "image_data_inflated": true
+      },
+      "report_or_restored_mode_excerpts": [
+        "[15:28:35] [Server thread/INFO] [QiZhangVerdict/]: Report decision player=86f10d93-6a7a-3707-bf5f-b5decc1e46a7 code=VM_UNKNOWN message=VM status is unknown or has only inconclusive indicators",
+        "[15:29:03] [Server thread/INFO] [minecraft/MinecraftServer]: There are 1 of a max of 5 players online: VerdictClient",
+        "[15:29:03] [Server thread/INFO] [minecraft/MinecraftServer]: VerdictClient has the following entity data: 0",
+        "[15:29:18] [Server thread/INFO] [minecraft/MinecraftServer]: There are 1 of a max of 5 players online: VerdictClient",
+        "[15:29:18] [Server thread/INFO] [minecraft/MinecraftServer]: VerdictClient has the following entity data: 0",
+        "[15:29:33] [Server thread/INFO] [minecraft/MinecraftServer]: There are 1 of a max of 5 players online: VerdictClient",
+        "[15:29:33] [Server thread/INFO] [minecraft/MinecraftServer]: VerdictClient has the following entity data: 0"
+      ]
+    },
+    {
+      "profile": "fabric-1.20.1",
+      "guard_sha256": "2be6a1b6745e19beb5f30039ff15063a1def31834ae2d81e86591040df5c0b79",
+      "minecraft": "1.20.1",
+      "loader_version": "0.16.14",
+      "launch_main": "net.fabricmc.loader.impl.launch.knot.KnotClient",
+      "vanilla_client_sha1": "0c3ec587af28e5a785c0b4a7b8a30f9a8f78f838",
+      "passed": true,
+      "client_exit_code": 0,
+      "server_exit_code": 0,
+      "confirmed_online_after_join_seconds": 61,
+      "strict_defaults": true,
+      "restored_survival": true,
+      "persisted_device_association": true,
+      "resource_pack_metadata_warning": false,
+      "rendered_client_confirmed": true,
+      "policy_unchanged": true,
+      "policy_before_sha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+      "policy_after_sha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+      "raw_evidence": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\fabric-1.20.1\\candidate-0.1.1-02\\result.json",
+          "sha256": "15b8f8617ce32f40d0119728b26fbdccd804a8f863f6a79277872e684ddd9245",
+          "bytes": 4970
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\fabric-1.20.1\\candidate-0.1.1-02\\server-console.log",
+          "sha256": "11d32da5f3d36d5d08395cf189c974e1f5e41a71d9f6c65c5284a356f438a0b4",
+          "bytes": 12179
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\fabric-1.20.1\\candidate-0.1.1-02\\client-console.log",
+          "sha256": "862a3f791608a7f73c0bba9c8089233c5911f94fbfcaa40e31e140dcb9012707",
+          "bytes": 9337
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\fabric-1.20.1\\candidate-0.1.1-02\\screenshots\\2026-09-25_15.31.24.png",
+          "sha256": "f2090e83465cc83a3bfab306e7415483679429c44a6f831d1c9d31458b6805c3",
+          "bytes": 180817
+        }
+      ],
+      "rendered_frame": {
+        "path": "E:\\Codex_work\\QiZhangVerdict\\outputs\\client-matrix\\0.1.1\\fabric-1.20.1.png",
+        "sha256": "f2090e83465cc83a3bfab306e7415483679429c44a6f831d1c9d31458b6805c3",
+        "bytes": 180817,
+        "width": 640,
+        "height": 360,
+        "crc_verified": true,
+        "image_data_inflated": true
+      },
+      "report_or_restored_mode_excerpts": [
+        "[15:30:56] [Server thread/INFO]: Report decision player=86f10d93-6a7a-3707-bf5f-b5decc1e46a7 code=VM_UNKNOWN message=VM status is unknown or has only inconclusive indicators",
+        "[15:31:24] [Server thread/INFO]: There are 1 of a max of 5 players online: VerdictClient",
+        "[15:31:24] [Server thread/INFO]: VerdictClient has the following entity data: 0",
+        "[15:31:39] [Server thread/INFO]: There are 1 of a max of 5 players online: VerdictClient",
+        "[15:31:39] [Server thread/INFO]: VerdictClient has the following entity data: 0",
+        "[15:31:54] [Server thread/INFO]: There are 1 of a max of 5 players online: VerdictClient",
+        "[15:31:54] [Server thread/INFO]: VerdictClient has the following entity data: 0"
+      ]
+    },
+    {
+      "profile": "fabric-1.21.1",
+      "guard_sha256": "33a9a911248e7da890bc048d22075910b42471e6ad97445acb71fc6a851c1cc8",
+      "minecraft": "1.21.1",
+      "loader_version": "0.16.14",
+      "launch_main": "net.fabricmc.loader.impl.launch.knot.KnotClient",
+      "vanilla_client_sha1": "30c73b1c5da787909b2f73340419fdf13b9def88",
+      "passed": true,
+      "client_exit_code": 0,
+      "server_exit_code": 0,
+      "confirmed_online_after_join_seconds": 60,
+      "strict_defaults": true,
+      "restored_survival": true,
+      "persisted_device_association": true,
+      "resource_pack_metadata_warning": false,
+      "rendered_client_confirmed": true,
+      "policy_unchanged": true,
+      "policy_before_sha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+      "policy_after_sha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+      "raw_evidence": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\fabric-1.21.1\\candidate-0.1.1-02\\result.json",
+          "sha256": "88d887121361b2d0bdccf70ad48af1902b1497f5cfeeedc920e59de78cb47bac",
+          "bytes": 4788
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\fabric-1.21.1\\candidate-0.1.1-02\\server-console.log",
+          "sha256": "8a4368acf5a22f0c9145bd33e3d672a3d15b5fe9a6cf363cb516facd2499e72c",
+          "bytes": 11900
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\fabric-1.21.1\\candidate-0.1.1-02\\client-console.log",
+          "sha256": "47de3f13c6a1fae5cdfeb5666dc7500ce32a78043b549ea7ec3ed10ec588b3a6",
+          "bytes": 7592
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\fabric-1.21.1\\candidate-0.1.1-02\\screenshots\\2026-09-25_15.34.01.png",
+          "sha256": "7f9f78ec6d58a5751e68e983d48bd0a5f6957309ae2f76cb58f4c4734d8fef02",
+          "bytes": 220829
+        }
+      ],
+      "rendered_frame": {
+        "path": "E:\\Codex_work\\QiZhangVerdict\\outputs\\client-matrix\\0.1.1\\fabric-1.21.1.png",
+        "sha256": "7f9f78ec6d58a5751e68e983d48bd0a5f6957309ae2f76cb58f4c4734d8fef02",
+        "bytes": 220829,
+        "width": 640,
+        "height": 360,
+        "crc_verified": true,
+        "image_data_inflated": true
+      },
+      "report_or_restored_mode_excerpts": [
+        "[15:34:01] [Server thread/INFO]: There are 1 of a max of 5 players online: VerdictClient",
+        "[15:34:01] [Server thread/INFO]: VerdictClient has the following entity data: 0",
+        "[15:34:16] [Server thread/INFO]: There are 1 of a max of 5 players online: VerdictClient",
+        "[15:34:16] [Server thread/INFO]: VerdictClient has the following entity data: 0",
+        "[15:34:31] [Server thread/INFO]: There are 1 of a max of 5 players online: VerdictClient",
+        "[15:34:31] [Server thread/INFO]: VerdictClient has the following entity data: 0"
+      ]
+    },
+    {
+      "profile": "neoforge-1.21.1",
+      "guard_sha256": "d3a9ffb275062b3da0135ab2b894d8e46fca889ba71977d44a669d5cc23d6bed",
+      "minecraft": "1.21.1",
+      "loader_version": "21.1.244",
+      "launch_main": "cpw.mods.bootstraplauncher.BootstrapLauncher",
+      "vanilla_client_sha1": "30c73b1c5da787909b2f73340419fdf13b9def88",
+      "passed": true,
+      "client_exit_code": 0,
+      "server_exit_code": 0,
+      "confirmed_online_after_join_seconds": 60,
+      "strict_defaults": true,
+      "restored_survival": true,
+      "persisted_device_association": true,
+      "resource_pack_metadata_warning": false,
+      "rendered_client_confirmed": true,
+      "policy_unchanged": true,
+      "policy_before_sha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+      "policy_after_sha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+      "raw_evidence": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\neoforge-1.21.1\\candidate-0.1.1-02\\result.json",
+          "sha256": "16f886b1409cdb4e18b594001fa0cfbff8c7c65dd622d6c07b400dad20d8b234",
+          "bytes": 5322
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\neoforge-1.21.1\\candidate-0.1.1-02\\server-console.log",
+          "sha256": "c4620eb841b2de58d8297b52004090dd11d99ee477f782ceafd4ffd702664f37",
+          "bytes": 11143
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\neoforge-1.21.1\\candidate-0.1.1-02\\client-console.log",
+          "sha256": "c4763f3213ec188a91d4d2ebe6ea148dcddd4c33096155b74bf21ad272508205",
+          "bytes": 8629
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\client-matrix\\neoforge-1.21.1\\candidate-0.1.1-02\\screenshots\\2026-09-25_15.36.09.png",
+          "sha256": "6736f76e4974ff4c25e9846cd121b52757bdf587efaa1f5436aa08168e995cd2",
+          "bytes": 187510
+        }
+      ],
+      "rendered_frame": {
+        "path": "E:\\Codex_work\\QiZhangVerdict\\outputs\\client-matrix\\0.1.1\\neoforge-1.21.1.png",
+        "sha256": "6736f76e4974ff4c25e9846cd121b52757bdf587efaa1f5436aa08168e995cd2",
+        "bytes": 187510,
+        "width": 640,
+        "height": 360,
+        "crc_verified": true,
+        "image_data_inflated": true
+      },
+      "report_or_restored_mode_excerpts": [
+        "[15:35:42] [Server thread/INFO] [QiZhangVerdict/]: Report decision player=86f10d93-6a7a-3707-bf5f-b5decc1e46a7 code=VM_UNKNOWN message=VM status is unknown or has only inconclusive indicators",
+        "[15:36:09] [Server thread/INFO] [minecraft/MinecraftServer]: There are 1 of a max of 5 players online: VerdictClient",
+        "[15:36:09] [Server thread/INFO] [minecraft/MinecraftServer]: VerdictClient has the following entity data: 0",
+        "[15:36:24] [Server thread/INFO] [minecraft/MinecraftServer]: There are 1 of a max of 5 players online: VerdictClient",
+        "[15:36:24] [Server thread/INFO] [minecraft/MinecraftServer]: VerdictClient has the following entity data: 0",
+        "[15:36:39] [Server thread/INFO] [minecraft/MinecraftServer]: There are 1 of a max of 5 players online: VerdictClient",
+        "[15:36:39] [Server thread/INFO] [minecraft/MinecraftServer]: VerdictClient has the following entity data: 0"
+      ]
+    }
+  ],
+  "not_covered": [
+    "Cheat-client penetration testing or detection accuracy",
+    "Real VM vendor/OS matrix",
+    "Gameplay performance or large modpack compatibility",
+    "Authenticated online-account infrastructure"
+  ]
+}

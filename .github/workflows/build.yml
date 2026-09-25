@@ -59,7 +59,8 @@ jobs:
             sh ./gradlew "${gradle_options[@]}" build :core:securityTest 2>&1 | tee ci-logs/gradle.log
             python3 -B integrations/test_integrations.py 2>&1 | tee ci-logs/integration-tests.log
             python3 -B integrations/test_runtime_evidence.py 2>&1 | tee ci-logs/evidence-parser-tests.log
-            cp bukkit/build/libs/qizhangverdict-bukkit-0.1.0.jar ci-artifacts/
+            python3 -B -m unittest discover -s catalog -p test_catalog.py -v 2>&1 | tee ci-logs/catalog-tests.log
+            cp bukkit/build/libs/qizhangverdict-bukkit-0.1.1.jar ci-artifacts/
           else
             qv_mc="${QV_TARGET#mods-}"
             case "$qv_mc" in
@@ -69,7 +70,7 @@ jobs:
             esac
             (cd "platforms/$qv_mc" && sh ./gradlew "${gradle_options[@]}" build :fabric:commandParserSmoke) 2>&1 | tee ci-logs/gradle.log
             for qv_loader in fabric "$qv_other_loader"; do
-              cp "platforms/$qv_mc/$qv_loader/build/libs/qizhangverdict-$qv_loader-$qv_mc-0.1.0.jar" ci-artifacts/
+              cp "platforms/$qv_mc/$qv_loader/build/libs/qizhangverdict-$qv_loader-$qv_mc-0.1.1.jar" ci-artifacts/
             done
           fi
           (cd ci-artifacts && sha256sum ./*.jar > SHA256SUMS)

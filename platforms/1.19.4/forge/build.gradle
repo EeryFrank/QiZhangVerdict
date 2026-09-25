@@ -1,0 +1,4 @@
+architectury { platformSetupLoomIde(); forge() }
+dependencies { forge 'net.minecraftforge:forge:1.19.4-45.4.5' }
+loom { mixin { defaultRefmapName = 'qizhangverdict.refmap.json' } }
+tasks.named('jar') { manifest { attributes 'MixinConfigs': 'qizhangverdict.mixins.json' } }

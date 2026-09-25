@@ -13,3 +13,11 @@ tasks.register('securityTest', JavaExec) {
     mainClass = 'cn.qizhang.guard.core.SecurityRegressionTest'
 }
 tasks.named('check') { dependsOn tasks.named('securityTest') }
+
+tasks.register('catalogCompatibilityTest', JavaExec) {
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'cn.qizhang.guard.core.CatalogCompatibilityTest'
+    args rootProject.file('catalog/blacklist-extension.tsv').absolutePath
+}
+tasks.named('check') { dependsOn tasks.named('catalogCompatibilityTest') }

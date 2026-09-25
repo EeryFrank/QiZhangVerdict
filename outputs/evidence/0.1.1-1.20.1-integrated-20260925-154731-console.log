@@ -1,0 +1,293 @@
+Applying patches
+Starting org.bukkit.craftbukkit.Main
+System Info: Java 17 (OpenJDK 64-Bit Server VM 17.0.20.1+1) Host: Windows 11 10.0 (amd64)
+Loading libraries, please wait...
+2026-09-25 15:47:36,937 ServerMain WARN Advanced terminal features are not available in this environment
+[15:47:45 ERROR]: [SparkProviderSource] Purpur: Failed to download and install spark plugin
+java.net.SocketTimeoutException: Read timed out
+	at sun.nio.ch.NioSocketImpl.timedRead(Unknown Source) ~[?:?]
+	at sun.nio.ch.NioSocketImpl.implRead(Unknown Source) ~[?:?]
+	at sun.nio.ch.NioSocketImpl.read(Unknown Source) ~[?:?]
+	at sun.nio.ch.NioSocketImpl$1.read(Unknown Source) ~[?:?]
+	at java.net.Socket$SocketInputStream.read(Unknown Source) ~[?:?]
+	at sun.security.ssl.SSLSocketInputRecord.read(Unknown Source) ~[?:?]
+	at sun.security.ssl.SSLSocketInputRecord.readHeader(Unknown Source) ~[?:?]
+	at sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(Unknown Source) ~[?:?]
+	at sun.security.ssl.SSLSocketImpl.readApplicationRecord(Unknown Source) ~[?:?]
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(Unknown Source) ~[?:?]
+	at java.io.BufferedInputStream.fill(Unknown Source) ~[?:?]
+	at java.io.BufferedInputStream.read1(Unknown Source) ~[?:?]
+	at java.io.BufferedInputStream.read(Unknown Source) ~[?:?]
+	at sun.net.www.http.HttpClient.parseHTTPHeader(Unknown Source) ~[?:?]
+	at sun.net.www.http.HttpClient.parseHTTP(Unknown Source) ~[?:?]
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(Unknown Source) ~[?:?]
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(Unknown Source) ~[?:?]
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(Unknown Source) ~[?:?]
+	at io.papermc.paper.plugin.provider.source.SparkProviderSource.registerProviders(SparkProviderSource.java:70) ~[purpur-1.20.1.jar:git-Purpur-2062]
+	at io.papermc.paper.plugin.provider.source.SparkProviderSource.registerProviders(SparkProviderSource.java:22) ~[purpur-1.20.1.jar:git-Purpur-2062]
+	at io.papermc.paper.plugin.util.EntrypointUtil.registerProvidersFromSource(EntrypointUtil.java:14) ~[purpur-1.20.1.jar:git-Purpur-2062]
+	at io.papermc.paper.plugin.PluginInitializerManager.load(PluginInitializerManager.java:105) ~[purpur-1.20.1.jar:git-Purpur-2062]
+	at net.minecraft.server.Main.main(Main.java:137) ~[purpur-1.20.1.jar:git-Purpur-2062]
+	at org.bukkit.craftbukkit.Main.main(Main.java:338) ~[purpur-1.20.1.jar:git-Purpur-2062]
+	at io.papermc.paperclip.Paperclip.lambda$main$0(Paperclip.java:42) ~[app:?]
+	at java.lang.Thread.run(Unknown Source) ~[?:?]
+[15:47:51 INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[15:47:51 INFO]: Found new data pack file/bukkit, loading it automatically
+[15:47:54 INFO]: Loaded 7 recipes
+[15:47:55 INFO]: Starting minecraft server version 1.20.1
+[15:47:55 INFO]: Loading properties
+[15:47:55 INFO]: This server is running Purpur version git-Purpur-2062 (MC: 1.20.1) (Implementing API version 1.20.1-R0.1-SNAPSHOT) (Git: f6fd5f6 on HEAD)
+[15:47:56 INFO]: Using 4 threads for Netty based IO
+[15:47:56 INFO]: Server Ping Player Sample Count: 12
+[15:47:56 INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 4 worker threads, and gen parallelism of 4 threads
+[15:47:56 WARN]: [PaperConfigurations] The world config file for __world_defaults__ didn't have a version set, assuming latest
+[15:47:57 WARN]: [Pufferfish] SIMD operations are available for your server, but are not configured!
+[15:47:57 WARN]: [Pufferfish] To enable additional optimizations, add "--add-modules=jdk.incubator.vector" to your startup flags, BEFORE the "-jar".
+[15:47:57 WARN]: [Pufferfish] If you have already added this flag, then SIMD operations are not supported on your JVM or CPU.
+[15:47:57 WARN]: [Pufferfish] Debug: Java: 17.0.20.1, test run: true
+[15:47:57 INFO]: Default game type: SURVIVAL
+[15:47:57 INFO]: Generating keypair
+[15:47:57 INFO]: Starting Minecraft server on 127.0.0.1:25581
+[15:47:57 INFO]: Using default channel type
+[15:47:57 INFO]: Paper: Using Java compression from Velocity.
+[15:47:57 INFO]: Paper: Using Java cipher from Velocity.
+[15:47:58 WARN]: [org.bukkit.craftbukkit.v1_20_R1.legacy.CraftLegacy] Initializing Legacy Material Support. Unless you have legacy plugins and/or data this is a bug!
+[15:48:01 WARN]: Legacy plugin QiZhangVerdict v0.1.1 does not specify an api-version.
+[15:48:01 INFO]: [GrimAC] Loading server plugin GrimAC v2.3.71
+[15:48:01 INFO]: [GrimAC] Loading PacketEvents...
+[15:48:02 INFO]: [QiZhangVerdict] Loading server plugin QiZhangVerdict v0.1.1
+[15:48:02 WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[15:48:02 WARN]: The server will make no attempt to authenticate usernames. Beware.
+[15:48:02 WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[15:48:02 WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[15:48:02 INFO]: Preparing level "world"
+[15:48:04 WARN]: [PaperConfigurations] The world config file for world_nether didn't have a version set, assuming latest
+[15:48:05 WARN]: [PaperConfigurations] The world config file for world_the_end didn't have a version set, assuming latest
+[15:48:06 INFO]: Preparing start region for dimension minecraft:overworld
+[15:48:06 INFO]: Time elapsed: 32 ms
+[15:48:06 INFO]: Preparing start region for dimension minecraft:the_nether
+[15:48:06 INFO]: Time elapsed: 9 ms
+[15:48:06 INFO]: Preparing start region for dimension minecraft:the_end
+[15:48:06 INFO]: Time elapsed: 13 ms
+[15:48:06 INFO]: [GrimAC] Enabling GrimAC v2.3.71
+[15:48:06 INFO]: [GrimAC] Registering singular bukkit event... (PistonEvent)
+[15:48:06 INFO]: [GrimAC] Registering packets...
+[15:48:06 INFO]: [GrimAC] Registering tick schedulers...
+[15:48:06 INFO]: [GrimAC] [ACF] Enabled Asynchronous Tab Completion Support!
+[15:48:07 INFO]: [37mGrim Version: [96m2.3.71[0m
+[15:48:07 INFO]: [QiZhangVerdict] Enabling QiZhangVerdict v0.1.1*
+[15:48:07 WARN]: [QiZhangVerdict] Offline mode: UUID/account ownership needs external authentication; IP limits are not proof of identity. Secure proxy forwarding and firewall the backend.
+[15:48:07 INFO]: [QiZhangVerdict] QiZhangVerdict sessions=0, trackedIPs=0, accountPairs=0, rules=11, companion=required, vm=DENY, blacklist=DENY, rateBuckets=0, accountBans=0, deviceBans=0, deviceRequired=true
+[15:48:07 INFO]: [QiZhangVerdict] Integrations: GrimAC=2.3.71 enabled (check configuration); Orebfuscator=absent; Paper Anti-Xray=available; enable and verify per-world config. These engines are installed separately.
+[15:48:07 INFO]: Running delayed init tasks
+[15:48:07 INFO]: Done (12.675s)! For help, type "help"
+[15:48:08 INFO]: QiZhangVerdict sessions=0, trackedIPs=0, accountPairs=0, rules=11, companion=required, vm=DENY, blacklist=DENY, rateBuckets=0, accountBans=0, deviceBans=0, deviceRequired=true
+[15:48:08 INFO]: Integrations: GrimAC=2.3.71 enabled (check configuration); Orebfuscator=absent; Paper Anti-Xray=available; enable and verify per-world config. These engines are installed separately.
+[15:48:09 INFO]: [91mFailed to check latest version.[0m
+[15:48:09 ERROR]: [GrimAC] Failed to check latest GrimAC version.
+[15:48:09 WARN]: java.lang.NumberFormatException: For input string: "74-8eb5f28"
+[15:48:09 WARN]: 	at java.base/java.lang.NumberFormatException.forInputString(Unknown Source)
+[15:48:09 WARN]: 	at java.base/java.lang.Integer.parseInt(Unknown Source)
+[15:48:09 WARN]: 	at java.base/java.lang.Integer.parseInt(Unknown Source)
+[15:48:09 WARN]: 	at grimac-2.3.71.jar//ac.grim.grimac.commands.GrimVersion.compareVersions(GrimVersion.java:120)
+[15:48:09 WARN]: 	at grimac-2.3.71.jar//ac.grim.grimac.commands.GrimVersion.checkForUpdates(GrimVersion.java:84)
+[15:48:09 WARN]: 	at grimac-2.3.71.jar//ac.grim.grimac.commands.GrimVersion.lambda$checkForUpdatesAsync$0(GrimVersion.java:56)
+[15:48:09 WARN]: 	at grimac-2.3.71.jar//ac.grim.grimac.shaded.io.github.retrooper.packetevents.util.folia.AsyncScheduler.lambda$runNow$0(AsyncScheduler.java:54)
+[15:48:09 WARN]: 	at org.bukkit.craftbukkit.v1_20_R1.scheduler.CraftTask.run(CraftTask.java:101)
+[15:48:09 WARN]: 	at org.bukkit.craftbukkit.v1_20_R1.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+[15:48:09 WARN]: 	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+[15:48:09 WARN]: 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+[15:48:09 WARN]: 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+[15:48:09 WARN]: 	at java.base/java.lang.Thread.run(Unknown Source)
+[15:48:09 INFO]: QiZhangVerdict configuration reloaded. QiZhangVerdict sessions=0, trackedIPs=0, accountPairs=0, rules=11, companion=required, vm=ALERT, blacklist=DENY, rateBuckets=0, accountBans=0, deviceBans=0, deviceRequired=true
+[15:48:11 INFO]: UUID of player QVBot1 is 302e3316-040a-3ba8-bc0a-8af19ee4c69f
+[15:48:11 INFO]: [93mQVBot1 joined the game[0m
+[15:48:11 INFO]: QVBot1[/127.0.0.1:14195] logged in with entity id 27 at ([world]4.5, 0.0, -4.5)
+[15:48:12 INFO]: QVBot1 lost connection: Disconnected
+[15:48:12 INFO]: [93mQVBot1 left the game[0m
+[15:48:13 INFO]: QiZhangVerdict configuration reloaded. QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=1, rules=11, companion=required, vm=ALERT, blacklist=DENY, rateBuckets=1, accountBans=0, deviceBans=0, deviceRequired=true
+[15:48:14 INFO]: UUID of player GateAccount is fc6bd56e-8019-3db1-9715-951d22c2222e
+[15:48:14 INFO]: [93mGateAccount joined the game[0m
+[15:48:14 INFO]: GateAccount[/127.0.0.1:1264] logged in with entity id 28 at ([world]-9.5, 0.0, 0.5)
+[15:48:16 INFO]: Made GateAccount a server operator
+[15:48:17 INFO]: GateAccount issued server command: /say QZ_PRE_GATE
+[15:48:18 INFO]: GateAccount issued server command: /say QZ_POST_GATE
+[15:48:18 INFO]: [Not Secure] [GateAccount] QZ_POST_GATE
+[15:48:19 INFO]: GateAccount lost connection: Disconnected
+[15:48:19 INFO]: [93mGateAccount left the game[0m
+[15:48:19 INFO]: Made GateAccount no longer a server operator
+[15:48:20 INFO]: QiZhangVerdict configuration reloaded. QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=2, rules=11, companion=required, vm=ALERT, blacklist=DENY, rateBuckets=1, accountBans=0, deviceBans=0, deviceRequired=true
+[15:48:22 INFO]: UUID of player QVBot2 is c391ec56-9486-3bb0-a127-16b65599b3c3
+[15:48:22 INFO]: [93mQVBot2 joined the game[0m
+[15:48:22 INFO]: QVBot2[/127.0.0.1:7435] logged in with entity id 29 at ([world]0.5, 0.0, 10.5)
+[15:48:26 INFO]: QVBot2 lost connection: [QiZhangVerdict] Required companion report timed out.
+[15:48:26 INFO]: [93mQVBot2 left the game[0m
+[15:48:27 INFO]: UUID of player BadWire is b8f65aa8-4bef-3209-a0b4-51413fc5f805
+[15:48:27 INFO]: [93mBadWire joined the game[0m
+[15:48:27 INFO]: BadWire[/127.0.0.1:7439] logged in with entity id 30 at ([world]-9.5, 0.0, -2.5)
+[15:48:27 INFO]: BadWire lost connection: [QiZhangVerdict] Malformed or oversized companion report
+[15:48:27 INFO]: [93mBadWire left the game[0m
+[15:48:29 INFO]: UUID of player BadWire is b8f65aa8-4bef-3209-a0b4-51413fc5f805
+[15:48:29 INFO]: [93mBadWire joined the game[0m
+[15:48:29 INFO]: BadWire[/127.0.0.1:7440] logged in with entity id 31 at ([world]-9.5, 0.0, -2.5)
+[15:48:30 INFO]: BadWire lost connection: Disconnected
+[15:48:30 INFO]: [93mBadWire left the game[0m
+[15:48:31 INFO]: UUID of player QVBot3 is 50924b6f-987d-38d4-90b1-a22ee93c8820
+[15:48:31 INFO]: [93mQVBot3 joined the game[0m
+[15:48:31 INFO]: QVBot3[/127.0.0.1:7442] logged in with entity id 32 at ([world]2.5, 0.0, 1.5)
+[15:48:32 INFO]: UUID of player QVBot4 is 4beec275-1c73-35e7-bdf1-2c126d646551
+[15:48:32 INFO]: [93mQVBot4 joined the game[0m
+[15:48:32 INFO]: QVBot4[/127.0.0.1:7444] logged in with entity id 33 at ([world]-1.5, 0.0, -1.5)
+[15:48:32 INFO]: QVBot4 lost connection: [QiZhangVerdict] Only the configured number of accounts may use the same IP and device concurrently
+[15:48:32 INFO]: [93mQVBot4 left the game[0m
+[15:48:33 INFO]: UUID of player QVBot5 is 2df28731-e970-3777-bfb2-78713237f548
+[15:48:34 INFO]: [93mQVBot5 joined the game[0m
+[15:48:34 INFO]: QVBot5[/127.0.0.1:7449] logged in with entity id 34 at ([world]2.5, 0.0, 10.5)
+[15:48:35 INFO]: UUID of player QVBot6 is 85caf31d-3ffc-3dd3-957f-9ee2fb681f1a
+[15:48:35 INFO]: [93mQVBot6 joined the game[0m
+[15:48:35 INFO]: QVBot6[/127.0.0.1:7455] logged in with entity id 35 at ([world]4.5, 0.0, -4.5)
+[15:48:36 INFO]: UUID of player QVBot7 is bec7ecc5-18ca-3eec-8bee-da5c34d433ac
+[15:48:36 INFO]: Disconnecting com.mojang.authlib.GameProfile@59e8b360[id=bec7ecc5-18ca-3eec-8bee-da5c34d433ac,name=QVBot7,properties={},legacy=false] (/127.0.0.1:7459): Too many simultaneous accounts from this IP
+[15:48:36 INFO]: com.mojang.authlib.GameProfile@59e8b360[id=bec7ecc5-18ca-3eec-8bee-da5c34d433ac,name=QVBot7,properties={},legacy=false] (/127.0.0.1:7459) lost connection: Too many simultaneous accounts from this IP
+[15:48:38 INFO]: QVBot3 lost connection: Disconnected
+[15:48:38 INFO]: [93mQVBot3 left the game[0m
+[15:48:38 INFO]: QVBot5 lost connection: Disconnected
+[15:48:38 INFO]: [93mQVBot5 left the game[0m
+[15:48:38 INFO]: QVBot6 lost connection: Disconnected
+[15:48:38 INFO]: [93mQVBot6 left the game[0m
+[15:48:38 INFO]: UUID of player QVBot8 is 62f6cf9b-2c3f-3396-8660-cdcd2f7aa16c
+[15:48:38 INFO]: [93mQVBot8 joined the game[0m
+[15:48:38 INFO]: QVBot8[/127.0.0.1:7463] logged in with entity id 37 at ([world]9.5, 0.0, 10.5)
+[15:48:39 INFO]: QVBot8 lost connection: Disconnected
+[15:48:39 INFO]: [93mQVBot8 left the game[0m
+[15:48:40 INFO]: UUID of player CheatAccount is ee8edd50-8e16-3b59-8145-e657af823101
+[15:48:40 INFO]: [93mCheatAccount joined the game[0m
+[15:48:40 INFO]: CheatAccount[/127.0.0.1:7466] logged in with entity id 38 at ([world]6.5, 0.0, 9.5)
+[15:48:40 INFO]: CheatAccount lost connection: [QiZhangVerdict] Reported mod matches an exact server blacklist rule
+[15:48:40 INFO]: [93mCheatAccount left the game[0m
+[15:48:41 INFO]: UUID of player LinkedAccount is b791d91a-dbdc-3a65-a036-fc39d6993ac9
+[15:48:41 INFO]: [93mLinkedAccount joined the game[0m
+[15:48:41 INFO]: LinkedAccount[/127.0.0.1:7468] logged in with entity id 39 at ([world]8.5, 0.0, 1.5)
+[15:48:41 INFO]: LinkedAccount lost connection: [QiZhangVerdict] This reported device identifier is banned
+[15:48:41 INFO]: [93mLinkedAccount left the game[0m
+[15:48:43 INFO]: UUID of player CheatAccount is ee8edd50-8e16-3b59-8145-e657af823101
+[15:48:43 INFO]: Disconnecting com.mojang.authlib.GameProfile@66bc3daa[id=ee8edd50-8e16-3b59-8145-e657af823101,name=CheatAccount,properties={},legacy=false] (/127.0.0.1:7469): This account is banned by the server
+[15:48:43 INFO]: com.mojang.authlib.GameProfile@66bc3daa[id=ee8edd50-8e16-3b59-8145-e657af823101,name=CheatAccount,properties={},legacy=false] (/127.0.0.1:7469) lost connection: This account is banned by the server
+[15:48:44 INFO]: Unbanned target. Account and device bans are separate; check /qzverdict bans.
+[15:48:45 INFO]: Unbanned target. Account and device bans are separate; check /qzverdict bans.
+[15:48:46 INFO]: UUID of player CheatAccount is ee8edd50-8e16-3b59-8145-e657af823101
+[15:48:46 INFO]: [93mCheatAccount joined the game[0m
+[15:48:46 INFO]: CheatAccount[/127.0.0.1:11769] logged in with entity id 41 at ([world]6.5, 0.0, 9.5)
+[15:48:48 INFO]: CheatAccount lost connection: Disconnected
+[15:48:48 INFO]: [93mCheatAccount left the game[0m
+[15:48:48 INFO]: Added rule and rechecking online players: d07a4761-b684-4907-88b9-22519f9ce454
+[15:48:50 INFO]: UUID of player QVBot9 is 06205eb0-363d-35e3-8c60-8c1ef8b83c9c
+[15:48:50 INFO]: [93mQVBot9 joined the game[0m
+[15:48:50 INFO]: QVBot9[/127.0.0.1:11772] logged in with entity id 43 at ([world]-3.5, 0.0, -5.5)
+[15:48:50 INFO]: QVBot9 lost connection: [QiZhangVerdict] Reported mod matches a server blacklist rule
+[15:48:50 INFO]: [93mQVBot9 left the game[0m
+[15:48:51 INFO]: Added rule and rechecking online players: 83db6c1f-0c3d-4d68-be97-700b92c00ce8
+[15:48:52 INFO]: UUID of player QVBot10 is 9a4b403a-cc6a-3641-9784-37b412ff6bc4
+[15:48:52 INFO]: [93mQVBot10 joined the game[0m
+[15:48:52 INFO]: QVBot10[/127.0.0.1:11779] logged in with entity id 44 at ([world]-1.5, 0.0, 6.5)
+[15:48:54 INFO]: QVBot10 lost connection: Disconnected
+[15:48:54 INFO]: [93mQVBot10 left the game[0m
+[15:48:54 INFO]: Removed rule.
+[15:48:55 INFO]: UUID of player QVBot11 is 15519aaa-3950-3430-bc9c-c0c7c47a9cf3
+[15:48:55 INFO]: [93mQVBot11 joined the game[0m
+[15:48:55 INFO]: QVBot11[/127.0.0.1:11787] logged in with entity id 45 at ([world]-2.5, 0.0, 5.5)
+[15:48:55 INFO]: QVBot11 lost connection: [QiZhangVerdict] Reported mod matches a server blacklist rule
+[15:48:55 INFO]: [93mQVBot11 left the game[0m
+[15:48:57 INFO]: Removed rule.
+[15:48:58 INFO]: UUID of player QVBot12 is 382cf52e-061b-3184-9e85-252b22220c31
+[15:48:58 INFO]: [93mQVBot12 joined the game[0m
+[15:48:58 INFO]: QVBot12[/127.0.0.1:11790] logged in with entity id 46 at ([world]-8.5, 0.0, 9.5)
+[15:48:59 INFO]: QVBot12 lost connection: Disconnected
+[15:48:59 INFO]: [93mQVBot12 left the game[0m
+[15:49:00 INFO]: Added rule and rechecking online players: 591f081b-06e6-4753-9db5-f0b2d63a206f
+[15:49:01 INFO]: UUID of player QVBot13 is d8c92e3a-17df-39d2-a36d-e08c0d1aab2e
+[15:49:01 INFO]: [93mQVBot13 joined the game[0m
+[15:49:01 INFO]: QVBot13[/127.0.0.1:11811] logged in with entity id 49 at ([world]-5.5, 0.0, 6.5)
+[15:49:01 INFO]: QVBot13 lost connection: [QiZhangVerdict] Reported mod matches a server blacklist rule
+[15:49:01 INFO]: [93mQVBot13 left the game[0m
+[15:49:02 INFO]: QiZhangVerdict configuration reloaded. QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=16, rules=12, companion=required, vm=ALERT, blacklist=DENY, rateBuckets=1, accountBans=4, deviceBans=3, deviceRequired=true
+[15:49:04 INFO]: UUID of player QVBot14 is 51a7c2a8-2650-354e-a968-802471be0458
+[15:49:04 INFO]: Disconnecting com.mojang.authlib.GameProfile@2bd2cb02[id=51a7c2a8-2650-354e-a968-802471be0458,name=QVBot14,properties={},legacy=false] (/127.0.0.1:11813): This IP is denied by server policy
+[15:49:04 INFO]: com.mojang.authlib.GameProfile@2bd2cb02[id=51a7c2a8-2650-354e-a968-802471be0458,name=QVBot14,properties={},legacy=false] (/127.0.0.1:11813) lost connection: This IP is denied by server policy
+[15:49:05 INFO]: QiZhangVerdict configuration reloaded. QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=16, rules=12, companion=required, vm=DENY, blacklist=DENY, rateBuckets=1, accountBans=4, deviceBans=3, deviceRequired=true
+[15:49:06 INFO]: UUID of player QVBot15 is 87b706ea-8c04-3118-b4cc-2d720ee925df
+[15:49:06 INFO]: [93mQVBot15 joined the game[0m
+[15:49:06 INFO]: QVBot15[/127.0.0.1:11816] logged in with entity id 51 at ([world]7.5, 0.0, -4.5)
+[15:49:06 INFO]: QVBot15 lost connection: [QiZhangVerdict] Companion reported a virtual machine indicator
+[15:49:06 INFO]: [93mQVBot15 left the game[0m
+[15:49:08 INFO]: UUID of player QVBot16 is edc8f3dc-ba2e-3999-9748-0637a3718bb0
+[15:49:08 INFO]: [93mQVBot16 joined the game[0m
+[15:49:08 INFO]: QVBot16[/127.0.0.1:11817] logged in with entity id 52 at ([world]7.5, 0.0, -9.5)
+[15:49:08 WARN]: [QiZhangVerdict] Client policy VM_UNKNOWN player=edc8f3dc-ba2e-3999-9748-0637a3718bb0 VM status is unknown or has only inconclusive indicators
+[15:49:09 INFO]: QVBot16 lost connection: Disconnected
+[15:49:09 INFO]: [93mQVBot16 left the game[0m
+[15:49:10 INFO]: QiZhangVerdict configuration reloaded. QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=18, rules=12, companion=required, vm=ALERT, blacklist=DENY, rateBuckets=1, accountBans=5, deviceBans=4, deviceRequired=true
+[15:49:11 INFO]: UUID of player QVBot17 is 5b533659-05b5-39b0-a6a9-ac5e86e8b029
+[15:49:11 INFO]: [93mQVBot17 joined the game[0m
+[15:49:11 INFO]: QVBot17[/127.0.0.1:14842] logged in with entity id 53 at ([world]-1.5, 0.0, -6.5)
+[15:49:12 INFO]: UUID of player QVBot18 is ecfd3357-b8aa-3614-aea7-77c554dcd1fe
+[15:49:12 INFO]: [93mQVBot18 joined the game[0m
+[15:49:12 INFO]: QVBot18[/127.0.0.1:14845] logged in with entity id 55 at ([world]9.5, 0.0, -8.5)
+[15:49:13 INFO]: UUID of player QVBot19 is c5edb108-f1cd-3216-b9e2-d8d5de97270f
+[15:49:13 INFO]: Disconnecting com.mojang.authlib.GameProfile@2de3e7c2[id=c5edb108-f1cd-3216-b9e2-d8d5de97270f,name=QVBot19,properties={},legacy=false] (/127.0.0.1:14848): Too many simultaneous accounts from this IP
+[15:49:14 INFO]: com.mojang.authlib.GameProfile@2de3e7c2[id=c5edb108-f1cd-3216-b9e2-d8d5de97270f,name=QVBot19,properties={},legacy=false] (/127.0.0.1:14848) lost connection: Too many simultaneous accounts from this IP
+[15:49:15 INFO]: QVBot17 lost connection: Disconnected
+[15:49:15 INFO]: [93mQVBot17 left the game[0m
+[15:49:15 INFO]: QVBot18 lost connection: Disconnected
+[15:49:15 INFO]: [93mQVBot18 left the game[0m
+[15:49:15 INFO]: bans page 1/1
+[15:49:15 INFO]: 06205eb0-363d-35e3-8c60-8c1ef8b83c9c	BLACKLIST_DENIED
+[15:49:15 INFO]: 15519aaa-3950-3430-bc9c-c0c7c47a9cf3	BLACKLIST_DENIED
+[15:49:15 INFO]: 87b706ea-8c04-3118-b4cc-2d720ee925df	VM_DENIED
+[15:49:15 INFO]: b791d91a-dbdc-3a65-a036-fc39d6993ac9	DEVICE_BANNED
+[15:49:15 INFO]: d8c92e3a-17df-39d2-a36d-e08c0d1aab2e	BLACKLIST_DENIED
+[15:49:15 INFO]: device:0723e1710c0a08646895f23b3eaf0153e6fb1d316ec121abe3e842cbff565460	VM_DENIED
+[15:49:15 INFO]: device:746caab8fda1c4e339d0724f9fb70b2d52b533cbfce2a0a2b98a039648cbf174	BLACKLIST_DENIED
+[15:49:15 INFO]: device:d6578071b2c3a3ef93925882a0215c31812b6db116703c2082e07adec5a2499e	BLACKLIST_DENIED
+[15:49:15 INFO]: device:fb7f23f1518fc50a1bfa07fc581a2f340c89a3596042f418617b9dd66614e239	BLACKLIST_DENIED
+[15:49:17 INFO]: rules page 1/2
+[15:49:17 INFO]: legacy:automation:baritone	BLACK	MOD	EXACT	baritone	ALERT
+[15:49:17 INFO]: legacy:mod:advanced-xray-fabric	BLACK	MOD	EXACT	advanced-xray-fabric	DENY
+[15:49:17 INFO]: legacy:mod:bleachhack	BLACK	MOD	EXACT	bleachhack	DENY
+[15:49:17 INFO]: legacy:mod:earthhack	BLACK	MOD	EXACT	earthhack	DENY
+[15:49:17 INFO]: legacy:mod:kamiblue	BLACK	MOD	EXACT	kamiblue	DENY
+[15:49:17 INFO]: legacy:mod:liquidbounce	BLACK	MOD	EXACT	liquidbounce	DENY
+[15:49:17 INFO]: legacy:mod:salhack	BLACK	MOD	EXACT	salhack	DENY
+[15:49:17 INFO]: legacy:mod:thunderhack	BLACK	MOD	EXACT	thunderhack	DENY
+[15:49:17 INFO]: legacy:mod:wurst	BLACK	MOD	EXACT	wurst	DENY
+[15:49:17 INFO]: legacy:mod:xray	BLACK	MOD	EXACT	xray	DENY
+[15:49:18 INFO]: Stopping the server
+[15:49:18 INFO]: Stopping server
+[15:49:18 INFO]: [QiZhangVerdict] Disabling QiZhangVerdict v0.1.1
+[15:49:18 INFO]: [GrimAC] Disabling GrimAC v2.3.71
+[15:49:18 INFO]: [GrimAC] Terminating PacketEvents...
+[15:49:18 INFO]: Saving players
+[15:49:18 INFO]: Saving worlds
+[15:49:18 INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[15:49:18 INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world'
+[15:49:18 INFO]: [ChunkHolderManager] Halted chunk system for world 'world'
+[15:49:18 INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world'
+[15:49:19 INFO]: [ChunkHolderManager] Saved 1089 block chunks, 144 entity chunks, 0 poi chunks in world 'world' in 0.57s
+[15:49:19 INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[15:49:19 INFO]: Saving chunks for level 'ServerLevel[world_nether]'/minecraft:the_nether
+[15:49:19 INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_nether'
+[15:49:19 INFO]: [ChunkHolderManager] Halted chunk system for world 'world_nether'
+[15:49:19 INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_nether'
+[15:49:19 INFO]: [ChunkHolderManager] Saved 961 block chunks, 81 entity chunks, 0 poi chunks in world 'world_nether' in 0.48s
+[15:49:19 INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[15:49:19 INFO]: Saving chunks for level 'ServerLevel[world_the_end]'/minecraft:the_end
+[15:49:19 INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_the_end'
+[15:49:19 INFO]: [ChunkHolderManager] Halted chunk system for world 'world_the_end'
+[15:49:19 INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_the_end'
+[15:49:20 INFO]: [ChunkHolderManager] Saved 961 block chunks, 81 entity chunks, 0 poi chunks in world 'world_the_end' in 0.31s
+[15:49:20 INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[15:49:20 INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
+[15:49:20 INFO]: Flushing Chunk IO
+[15:49:20 INFO]: Closing Thread Pool
+2026-09-25 15:49:20,306 Log4j2-AsyncAppenderEventDispatcher-1-Async WARN Advanced terminal features are not available in this environment
+[15:49:20 INFO]: Closing Server

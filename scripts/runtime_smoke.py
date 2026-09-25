@@ -16,14 +16,19 @@ def wait_for(path, marker, process, timeout=240):
         time.sleep(.5)
     raise TimeoutError(f"Server did not reach {marker}: {data[-6000:]}")
 
-def run(version, mode, grim_path=None, compression=256):
+def run(version, mode, grim_path=None, compression=256, guard_path=None, expected_guard_sha256=None):
     servers = json.loads((CACHE / "downloads/servers.json").read_text())
     source = next(x for x in servers if x["version"] == version)
     folder = CACHE / "runtime" / (version + "-" + mode + ("-" + time.strftime("%Y%m%d-%H%M%S") if mode != "startup" else ""))
     folder.mkdir(parents=True, exist_ok=True)
-    plugin = PROJECT / "bukkit/build/libs/qizhangverdict-bukkit-0.1.0.jar"
+    plugin = pathlib.Path(guard_path).resolve() if guard_path else PROJECT / "bukkit/build/libs/qizhangverdict-bukkit-0.1.0.jar"
+    plugin_hash = hashlib.sha256(plugin.read_bytes()).hexdigest()
+    if expected_guard_sha256 and plugin_hash != expected_guard_sha256.lower():
+        raise ValueError("Guard artifact differs from requested SHA-256")
     (folder / "plugins").mkdir(exist_ok=True)
     shutil.copy2(plugin, folder / "plugins" / plugin.name)
+    if hashlib.sha256((folder / "plugins" / plugin.name).read_bytes()).hexdigest() != plugin_hash or hashlib.sha256(plugin.read_bytes()).hexdigest() != plugin_hash:
+        raise ValueError("Guard artifact changed while preparing isolated test")
     shutil.copy2(source["path"], folder / "server.jar")
     bootstrap_cache = CACHE / "runtime" / (version + "-startup") / "cache"
     if mode != "startup" and bootstrap_cache.exists(): shutil.copytree(bootstrap_cache, folder / "cache", dirs_exist_ok=True)
@@ -42,7 +47,7 @@ def run(version, mode, grim_path=None, compression=256):
     (folder / "server.properties").write_text(f"server-ip=127.0.0.1\nserver-port={port}\nonline-mode=false\nenforce-secure-profile=false\nnetwork-compression-threshold={compression}\nspawn-protection=0\nview-distance=2\nsimulation-distance=2\nmax-players=20\nlevel-type=minecraft:flat\ngenerator-settings={generator}\ngenerate-structures=false\nlevel-seed=12955\n")
     log = folder / "console.log"
     started = time.time()
-    result = {"version": version, "distribution": "Purpur", "build": source["build"], "serverSha256": source["sha256"], "pluginSha256": hashlib.sha256(plugin.read_bytes()).hexdigest(), "log": str(log), "mode": mode}
+    result = {"version": version, "distribution": "Purpur", "build": source["build"], "serverSha256": source["sha256"], "pluginFile": plugin.name, "pluginSource": str(plugin), "pluginSha256": plugin_hash, "log": str(log), "mode": mode}
     result["networkCompressionThreshold"] = compression
     with log.open("w", encoding="utf-8") as output:
         java = JAVA17 if version == "1.20.1" else JAVA
@@ -94,5 +99,7 @@ if __name__ == "__main__":
     parser.add_argument("--mode", choices=["startup", "full", "integrated"], default="startup")
     parser.add_argument("--grim", help="Explicit already verified candidate JAR for isolated integration testing")
     parser.add_argument("--compression", type=int, default=256, help="Explicit network compression threshold; recorded in evidence")
+    parser.add_argument("--guard-jar", help="Explicit built/published plugin; omitted retains the original 0.1.0 path")
+    parser.add_argument("--expected-guard-sha256", help="Reject a plugin that differs from the intended test artifact")
     args = parser.parse_args()
-    run(args.version, args.mode, args.grim, args.compression)
+    run(args.version, args.mode, args.grim, args.compression, args.guard_jar, args.expected_guard_sha256)
