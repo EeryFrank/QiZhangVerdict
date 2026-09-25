@@ -2,6 +2,8 @@
 
 这些组件保持独立 JAR，不会打入 QiZhangVerdict 自身产物。`dependencies.lock.json` 保存官方 Modrinth 项目和不可变版本 ID、下载地址、许可证/源码地址、平台范围、真实 JAR 描述符、官方 SHA-512 和下载后计算的 SHA-256。清单已实际下载核验；启动、玩家联机和反作弊准确率是不同层次的验证。
 
+旧版组件使用独立的 `legacy-dependencies.lock.json`，目前仅完成七个 JAR 输入与八个文件暂存组合的检查，尚未运行。其 Java 要求、补齐的 Architectury 依赖和配置缺口见[旧版候选说明](../docs/legacy-integration-candidates.md)；不能把下面现代组合的实测结果套用到旧版。
+
 | profile | 已固定组件 | 能力范围 |
 | --- | --- | --- |
 | `paper-1.20.1` | Grim Bukkit 2.3.71 + Paper 内置 Anti-Xray 配置片段 | 行为检测与矿物混淆；已验证 Purpur 1.20.1 |
