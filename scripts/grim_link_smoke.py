@@ -66,7 +66,12 @@ def run_phase(args, folder, phase):
         save(folder / ('resource-gate-' + phase + '.json'), {'launched':False, 'availableBytes':available, 'minimumGiB':3.5})
         raise RuntimeError('Insufficient available memory for the 1536M JVM')
     with socket.socket() as probe:
+        # Match POSIX server rebinding after our previous JVM has exited: sockets
+        # in TIME_WAIT are not another live listener. Do not enable this on Windows.
+        if os.name != 'nt':
+            probe.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         probe.bind(('127.0.0.1', args.port))
+        probe.listen(1)  # Still reject a port owned by an active listening server.
     log = folder / ('console-' + phase + '.log')
     queue = folder / 'commands.queue'; queue.write_text('', encoding='utf-8')
     result = {'phase':phase, 'passed':False, 'availableBytesBeforeJava':available}
