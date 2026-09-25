@@ -1,0 +1,279 @@
+{
+  "schema": 1,
+  "product": "QiZhang's Verdict / 七章的裁决",
+  "artifactVersion": "0.1.0",
+  "releaseTag": "v0.1.0-test.1",
+  "checkedAtUtc": "2026-09-25T05:42:18.297051+00:00",
+  "releaseScope": "First public test build for Java 1.20.1 and 1.21.1; no all-version or all-cheat coverage claim",
+  "artifacts": [
+    {
+      "file": "qizhangverdict-bukkit-0.1.0.jar",
+      "source": "bukkit/build/libs/qizhangverdict-bukkit-0.1.0.jar",
+      "bytes": 56921,
+      "sha256": "b752cac809c9247c7f8fc14560d1f06236b12f627cb6342e6afa684712362141"
+    },
+    {
+      "file": "qizhangverdict-fabric-1.20.1-0.1.0.jar",
+      "source": "platforms/1.20.1/fabric/build/libs/qizhangverdict-fabric-1.20.1-0.1.0.jar",
+      "bytes": 75782,
+      "sha256": "5162552b204b5487ffaecc88c5a796de8d558fdb40988cb2a6a76e369cc2fe60"
+    },
+    {
+      "file": "qizhangverdict-forge-1.20.1-0.1.0.jar",
+      "source": "platforms/1.20.1/forge/build/libs/qizhangverdict-forge-1.20.1-0.1.0.jar",
+      "bytes": 76538,
+      "sha256": "78e056b90b39483dfce5487cb76dfa8671ea8fe21e27182a735498f9a5be059a"
+    },
+    {
+      "file": "qizhangverdict-fabric-1.21.1-0.1.0.jar",
+      "source": "platforms/1.21.1/fabric/build/libs/qizhangverdict-fabric-1.21.1-0.1.0.jar",
+      "bytes": 77413,
+      "sha256": "c878c510bfb0c0cc1815f34ef327b73cb4ce45eddeeb2d9e7bcac1b476fda182"
+    },
+    {
+      "file": "qizhangverdict-neoforge-1.21.1-0.1.0.jar",
+      "source": "platforms/1.21.1/neoforge/build/libs/qizhangverdict-neoforge-1.21.1-0.1.0.jar",
+      "bytes": 77131,
+      "sha256": "c9f53e0d0540e90900ef2277f24af88813dd4d5a12c16e64a7a1a6459dcaa932"
+    }
+  ],
+  "checks": [
+    {
+      "kind": "core-security-regression",
+      "passed": 55,
+      "evidence": "evidence/core-55-regressions.log"
+    },
+    {
+      "kind": "mod-build-and-brigadier-parser",
+      "minecraft": "1.20.1",
+      "passed": 7,
+      "evidence": "evidence/mods-1.20.1-build-parser.log"
+    },
+    {
+      "kind": "bukkit-real-tcp-integration",
+      "minecraft": "1.20.1",
+      "distribution": "Purpur",
+      "serverBuild": "2062",
+      "passed": 25,
+      "fakeOreTypes": 16,
+      "grimVersion": "2.3.71",
+      "artifactSha256": "b752cac809c9247c7f8fc14560d1f06236b12f627cb6342e6afa684712362141",
+      "evidence": "evidence/bukkit-1.20.1-protocol.json"
+    },
+    {
+      "kind": "mod-build-and-brigadier-parser",
+      "minecraft": "1.21.1",
+      "passed": 7,
+      "evidence": "evidence/mods-1.21.1-build-parser.log"
+    },
+    {
+      "kind": "bukkit-real-tcp-integration",
+      "minecraft": "1.21.1",
+      "distribution": "Purpur",
+      "serverBuild": "2329",
+      "passed": 25,
+      "fakeOreTypes": 16,
+      "grimVersion": "2.3.73",
+      "artifactSha256": "b752cac809c9247c7f8fc14560d1f06236b12f627cb6342e6afa684712362141",
+      "evidence": "evidence/bukkit-1.21.1-protocol.json"
+    },
+    {
+      "kind": "dedicated-server-start-status-stop",
+      "minecraft": "1.20.1",
+      "loader": "fabric",
+      "passed": true,
+      "protocolCases": 0,
+      "artifactSha256": "5162552b204b5487ffaecc88c5a796de8d558fdb40988cb2a6a76e369cc2fe60",
+      "grimLoaded": true,
+      "antixrayLoaded": true,
+      "evidence": "evidence/fabric-1.20.1-dedicated.json"
+    },
+    {
+      "kind": "dedicated-server-start-status-stop",
+      "minecraft": "1.20.1",
+      "loader": "forge",
+      "passed": true,
+      "protocolCases": 0,
+      "artifactSha256": "78e056b90b39483dfce5487cb76dfa8671ea8fe21e27182a735498f9a5be059a",
+      "grimLoaded": false,
+      "antixrayLoaded": true,
+      "evidence": "evidence/forge-1.20.1-dedicated.json"
+    },
+    {
+      "kind": "dedicated-server-start-status-stop",
+      "minecraft": "1.21.1",
+      "loader": "fabric",
+      "passed": true,
+      "protocolCases": 26,
+      "artifactSha256": "c878c510bfb0c0cc1815f34ef327b73cb4ce45eddeeb2d9e7bcac1b476fda182",
+      "grimLoaded": true,
+      "antixrayLoaded": true,
+      "evidence": "evidence/fabric-1.21.1-dedicated.json"
+    },
+    {
+      "kind": "dedicated-server-start-status-stop",
+      "minecraft": "1.21.1",
+      "loader": "neoforge",
+      "passed": true,
+      "protocolCases": 0,
+      "artifactSha256": "c9f53e0d0540e90900ef2277f24af88813dd4d5a12c16e64a7a1a6459dcaa932",
+      "grimLoaded": false,
+      "antixrayLoaded": true,
+      "evidence": "evidence/neoforge-1.21.1-dedicated.json"
+    },
+    {
+      "kind": "invalid-startup-policy-fails-closed",
+      "passed": true,
+      "evidence": "evidence/bukkit-1.21.1-failclosed.json"
+    },
+    {
+      "kind": "rendered-production-client",
+      "case": "singleplayer",
+      "minecraft": "1.21.1",
+      "loader": "fabric",
+      "passed": true,
+      "secondsObservedAfterJoin": 55,
+      "clientArtifactSha256": "c878c510bfb0c0cc1815f34ef327b73cb4ce45eddeeb2d9e7bcac1b476fda182",
+      "evidence": "evidence/client-release-final.json"
+    },
+    {
+      "kind": "rendered-production-client",
+      "case": "fabric",
+      "minecraft": "1.21.1",
+      "loader": "fabric",
+      "passed": true,
+      "secondsObservedAfterJoin": 75,
+      "clientArtifactSha256": "c878c510bfb0c0cc1815f34ef327b73cb4ce45eddeeb2d9e7bcac1b476fda182",
+      "evidence": "evidence/client-release-final.json"
+    },
+    {
+      "kind": "rendered-production-client",
+      "case": "bukkit",
+      "minecraft": "1.21.1",
+      "loader": "fabric",
+      "passed": true,
+      "secondsObservedAfterJoin": 74,
+      "clientArtifactSha256": "c878c510bfb0c0cc1815f34ef327b73cb4ce45eddeeb2d9e7bcac1b476fda182",
+      "evidence": "evidence/client-release-final.json"
+    },
+    {
+      "kind": "final-jar-client-reporter-concurrency-and-scope",
+      "passed": true,
+      "artifactSha256": "c878c510bfb0c0cc1815f34ef327b73cb4ce45eddeeb2d9e7bcac1b476fda182",
+      "evidence": "evidence/client-reporter-final.log"
+    },
+    {
+      "kind": "ci-yaml-actionlint-and-official-action-pins",
+      "passed": true,
+      "scope": "Static validation only; remote pipeline results are separate",
+      "evidence": "evidence/ci-static-validation.json"
+    }
+  ],
+  "evidence": [
+    {
+      "file": "evidence/bukkit-1.20.1-protocol.json",
+      "sha256": "4705139235b9727f26dd8914a61ab4b45badedd32cae6dc0f63fe721197eff8f",
+      "bytes": 2588
+    },
+    {
+      "file": "evidence/bukkit-1.21.1-failclosed.json",
+      "sha256": "879e87ea1c3a7a50dcc80455f02b6a8e39cefe98b00e0e9c1db36f22525f115d",
+      "bytes": 945
+    },
+    {
+      "file": "evidence/bukkit-1.21.1-protocol.json",
+      "sha256": "6207b492363b358c236d7adc26c9f806457337fd503095fb91f965dcb87b3e4a",
+      "bytes": 2519
+    },
+    {
+      "file": "evidence/bukkit-1.21.1-realclient-observation.json",
+      "sha256": "08817f21f228968a4cdbf53b1e28abc7630f135fd26b1dc078693552eab5d116",
+      "bytes": 974
+    },
+    {
+      "file": "evidence/bukkit-1.21.1-realclient-server.json",
+      "sha256": "8617b7819f121c3386b7ffad1fc761fcf1fbc953b19bb67ca54657019cac6f08",
+      "bytes": 705
+    },
+    {
+      "file": "evidence/bukkit-final-build.log",
+      "sha256": "98213bf58b75e183ed6e411d4c33a4b3fee46f61c6911fe571fbe2a7d4acf583",
+      "bytes": 1231
+    },
+    {
+      "file": "evidence/ci-static-validation.json",
+      "sha256": "3f081f306ce2056dfbaf957a15a12ddc9135c644995bed0f129d2c8e53ee07b1",
+      "bytes": 933
+    },
+    {
+      "file": "evidence/client-release-final.json",
+      "sha256": "0f753c9cf51b81c4040ada45e26aaa0e1aa82a38dc8392bd91857834eb9a8638",
+      "bytes": 10662
+    },
+    {
+      "file": "evidence/client-reporter-final.log",
+      "sha256": "0951eff717b8ccb243a348dd0d4bbc81fe789b6eff1d06dd71f3ee192ff6753e",
+      "bytes": 163
+    },
+    {
+      "file": "evidence/core-55-regressions.log",
+      "sha256": "6873c9498f1116349ec21e3bac32eaf1054c657167eaca2062358b2ef19e572b",
+      "bytes": 5377
+    },
+    {
+      "file": "evidence/fabric-1.20.1-dedicated.json",
+      "sha256": "d9164799fe0f7160972174fc92ee06b7fbb6993ad828e96e18317edd4b563d4f",
+      "bytes": 6441
+    },
+    {
+      "file": "evidence/fabric-1.21.1-dedicated.json",
+      "sha256": "011b9ea44badfc4830ed96d5bc694390b0a6f5f3633983e6d7cd86d717121816",
+      "bytes": 12088
+    },
+    {
+      "file": "evidence/fabric-1.21.1-realclient-observation.json",
+      "sha256": "6e3e591f617ae5b796f289440697e389d2959108bc330d484d7a3e2849354eb7",
+      "bytes": 896
+    },
+    {
+      "file": "evidence/fabric-1.21.1-realclient-server.json",
+      "sha256": "b6ba7414979be512d138ba5855db844fac2dd10d243fc78c8bab225252d87d6e",
+      "bytes": 705
+    },
+    {
+      "file": "evidence/forge-1.20.1-dedicated.json",
+      "sha256": "213ec1c19e1caad4c6951df4a2b66b643e042f2c8815078435963daf2cb81d3c",
+      "bytes": 6927
+    },
+    {
+      "file": "evidence/mixin-artifact-review.json",
+      "sha256": "340484243619138252c3e4eda34ecb9132f3d4b07cc6c37e78aa0b68d6d38510",
+      "bytes": 1228
+    },
+    {
+      "file": "evidence/mods-1.20.1-build-parser.log",
+      "sha256": "2be722754d3947b41ef3133e058b7f28c932c1c67c06fd0672993d36fa0cf3a7",
+      "bytes": 2674
+    },
+    {
+      "file": "evidence/mods-1.21.1-build-parser.log",
+      "sha256": "11ed15f7e083a46d64faa564fbf51ba2a01e79b5cbb4ef3047e98916b1b13c54",
+      "bytes": 2789
+    },
+    {
+      "file": "evidence/neoforge-1.21.1-dedicated.json",
+      "sha256": "ee3fc5c99006a130ed27bede9de2d3b55a677334f98f4e6bafe817b61b1ca6fd",
+      "bytes": 5873
+    }
+  ],
+  "runtimeDirectories": "E:/CodexTemp/QiZhangGuard",
+  "remoteCI": "Recorded separately from these local final-JAR runtime checks",
+  "limitations": [
+    "Self-reported installation digests, inventories and VM indicators are forgeable; they are not hardware attestation.",
+    "Only Fabric 1.21.1 rendered client was exercised. Other three mod adapters have dedicated startup/status/stop evidence, not full multiplayer gameplay acceptance.",
+    "Bukkit tests used Purpur, not every Paper/Spigot fork. Other Minecraft versions, Folia, proxies, hybrids, Geyser, large packs and performance require separate verification.",
+    "Grim Fabric emits known nonfatal upstream PacketEvents refmap errors. Protocol bots emit 1.21.1 recipe decoding errors; raw evidence keeps them.",
+    "Forge/NeoForge have AntiXray integration but no Grim behavior engine. Fabric 1.20.1 Grim native commands are unavailable.",
+    "Real VM/physical-machine false-positive matrices, X-ray clients, behavioral cheat efficacy and optional Grim autoban thresholds were not tested."
+  ]
+}

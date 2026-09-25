@@ -1,0 +1,92 @@
+stages: [build, collect]
+
+workflow:
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+    - if: '$CI_COMMIT_TAG'
+    - if: '$CI_COMMIT_BRANCH && $CI_OPEN_MERGE_REQUESTS'
+      when: never
+    - if: '$CI_COMMIT_BRANCH'
+
+default:
+  image: eclipse-temurin:21-jdk-jammy
+  interruptible: true
+
+variables:
+  CI: 'true'
+  GRADLE_USER_HOME: '$CI_PROJECT_DIR/.gradle-user'
+
+build:
+  stage: build
+  timeout: 1h
+  parallel:
+    matrix:
+      - QV_TARGET: [core-bukkit, mods-1.20.1, mods-1.21.1]
+  cache:
+    key: 'gradle-8.14.1-${CI_COMMIT_REF_SLUG}-${QV_TARGET}'
+    paths:
+      - .gradle-user/caches/
+      - .gradle-user/wrapper/
+  before_script:
+    - apt-get update -qq
+    - DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends openjdk-17-jdk-headless python3
+  script:
+    - |
+      set -euo pipefail
+      qv_jdk17="/usr/lib/jvm/java-17-openjdk-$(dpkg --print-architecture)"
+      test -x "$qv_jdk17/bin/javac"
+      test -x "$JAVA_HOME/bin/javac"
+      "$JAVA_HOME/bin/java" -version
+      "$qv_jdk17/bin/java" -version
+      export JAVA_TOOL_OPTIONS="${JAVA_TOOL_OPTIONS:+$JAVA_TOOL_OPTIONS }-Dqzguard.testDir=$CI_PROJECT_DIR/.ci-tests/core"
+      export GRADLE_USER_HOME="$CI_PROJECT_DIR/.gradle-user"
+      gradle_options=(--no-daemon --console=plain --stacktrace "-Porg.gradle.java.installations.paths=$qv_jdk17,$JAVA_HOME" -Porg.gradle.java.installations.auto-detect=false -Porg.gradle.java.installations.auto-download=false)
+      mkdir -p "ci-logs/$QV_TARGET" "ci-artifacts/$QV_TARGET"
+      if [[ "$QV_TARGET" == core-bukkit ]]; then
+        sh ./gradlew "${gradle_options[@]}" build :core:securityTest 2>&1 | tee "ci-logs/$QV_TARGET/gradle.log"
+        python3 -B integrations/test_integrations.py 2>&1 | tee "ci-logs/$QV_TARGET/integration-tests.log"
+        python3 -B integrations/test_runtime_evidence.py 2>&1 | tee "ci-logs/$QV_TARGET/evidence-parser-tests.log"
+        cp bukkit/build/libs/qizhangverdict-bukkit-0.1.0.jar "ci-artifacts/$QV_TARGET/"
+      else
+        qv_mc="${QV_TARGET#mods-}"
+        case "$qv_mc" in
+          1.20.1) qv_other_loader=forge ;;
+          1.21.1) qv_other_loader=neoforge ;;
+          *) exit 1 ;;
+        esac
+        (cd "platforms/$qv_mc" && sh ./gradlew "${gradle_options[@]}" build :fabric:commandParserSmoke) 2>&1 | tee "ci-logs/$QV_TARGET/gradle.log"
+        for qv_loader in fabric "$qv_other_loader"; do
+          cp "platforms/$qv_mc/$qv_loader/build/libs/qizhangverdict-$qv_loader-$qv_mc-0.1.0.jar" "ci-artifacts/$QV_TARGET/"
+        done
+      fi
+      (cd "ci-artifacts/$QV_TARGET" && sha256sum ./*.jar > SHA256SUMS)
+  artifacts:
+    name: 'qizhangverdict-${QV_TARGET}-${CI_COMMIT_SHORT_SHA}'
+    when: always
+    expire_in: 14 days
+    paths:
+      - ci-artifacts/$QV_TARGET/
+      - ci-logs/$QV_TARGET/
+
+collect:
+  stage: collect
+  timeout: 10m
+  needs:
+    - job: build
+      artifacts: true
+  script:
+    - |
+      set -euo pipefail
+      for qv_folder in ci-artifacts/*; do
+        (cd "$qv_folder" && sha256sum --check SHA256SUMS)
+      done
+      qv_jars=(ci-artifacts/*/*.jar)
+      test "${#qv_jars[@]}" -eq 5
+      mkdir ci-release
+      cp -- "${qv_jars[@]}" ci-release/
+      (cd ci-release && sha256sum ./*.jar > SHA256SUMS)
+  artifacts:
+    name: 'qizhangverdict-five-jars-${CI_COMMIT_SHORT_SHA}'
+    expire_in: 30 days
+    paths:
+      - ci-release/

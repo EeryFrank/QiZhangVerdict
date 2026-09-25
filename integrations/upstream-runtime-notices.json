@@ -1,0 +1,38 @@
+{
+  "grim_fabric_sha256": "159587b5ecb303b687b325c1892847ec537f7ee70d3e597d2664a08b19f36cd5",
+  "affected_mixin_descriptors": [
+    {
+      "path": "grimac-fabric-2.3.73.jar!/META-INF/jars/packetevents-fabric-2.11.2+675bc5c-SNAPSHOT.jar!/META-INF/jars/packetevents-fabric-mc1140-2.11.2+675bc5c-SNAPSHOT.jar!/packetevents-mc1140.mixins.json",
+      "plugin": "io.github.retrooper.packetevents.manager.PacketEventsMixinManager",
+      "package": "io.github.retrooper.packetevents.mc1140.mixin",
+      "containing_jar_sha256": "8a70d09459102cea2e83621f209b7b44eb3866bbff49c3e7d35d5a4646a4d4e9"
+    },
+    {
+      "path": "grimac-fabric-2.3.73.jar!/META-INF/jars/packetevents-fabric-2.11.2+675bc5c-SNAPSHOT.jar!/META-INF/jars/packetevents-fabric-mc1194-2.11.2+675bc5c-SNAPSHOT.jar!/packetevents-mc1914.mixins.json",
+      "plugin": "io.github.retrooper.packetevents.manager.PacketEventsMixinManager",
+      "package": "io.github.retrooper.packetevents.mc1914.mixin",
+      "containing_jar_sha256": "d3f50c02b17640c3fbd798e1b73f4a26776fed1e826c40cac19c5c83accf61a9"
+    },
+    {
+      "path": "grimac-fabric-2.3.73.jar!/META-INF/jars/packetevents-fabric-2.11.2+675bc5c-SNAPSHOT.jar!/META-INF/jars/packetevents-fabric-mc1202-2.11.2+675bc5c-SNAPSHOT.jar!/packetevents-mc1202.mixins.json",
+      "plugin": "io.github.retrooper.packetevents.manager.PacketEventsMixinManager",
+      "package": "io.github.retrooper.packetevents.mc1202.mixin",
+      "containing_jar_sha256": "dc3a14183cd3e8e3dcca0dc476e25fe2c552ce3db00517fe2531eea8cfc8b6d9"
+    }
+  ],
+  "embedded_packetevents_sha256": "9a37f7f5fd19f8b740d50ff17b2753e9f5033249e2cd98c8f9ca3106e3fc8ce3",
+  "javap_verified_class": "io.github.retrooper.packetevents.manager.PacketEventsMixinManager",
+  "javap_verified_method": "public java.lang.String getRefMapperConfig(): ldc String(empty); areturn",
+  "cause": "Mixin manager in bundled PacketEvents returns an empty refmap filename. JSON descriptors select this plugin.",
+  "impact": "Fabric logs nonfatal refmap JSON NPE for these bundled PacketEvents modules. Preserve logs; startup passing does not claim no errors or validate every Grim check.",
+  "scope": "Inspected real downloaded nested JAR JSON and javap bytecode; not QiZhangVerdict mixin metadata",
+  "antixray_forge_missing_min_version": {
+    "jar": "antixray-forge-1.4.6+1.20.1.jar",
+    "sha256": "d8ced4101b1d90adfc4df223f9e28bbc0884b43fd83a0820ea8caab1e3918e23",
+    "descriptors": [
+      "antixray.common.mixins.json",
+      "antixray.forge.mixins.json"
+    ],
+    "impact": "Mixin logs missing minVersion ERROR messages; AntiXray subsequently logs successful initialization and server exits normally. No claim that logs contain no errors."
+  }
+}

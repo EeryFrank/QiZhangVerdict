@@ -1,0 +1,10 @@
+* text=auto
+gradlew text eol=lf
+**/gradlew text eol=lf
+*.bat text eol=crlf
+*.jar binary
+*.zip binary
+# Validation hashes refer to the original evidence bytes, including newlines.
+outputs/evidence/** -text whitespace=cr-at-eol
+outputs/*.json -text whitespace=cr-at-eol
+outputs/*.txt -text whitespace=cr-at-eol

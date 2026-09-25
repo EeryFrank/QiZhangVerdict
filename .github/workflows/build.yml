@@ -1,0 +1,120 @@
+name: Build and check
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: build-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  CI: 'true'
+
+jobs:
+  build:
+    name: ${{ matrix.target }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        target: [core-bukkit, mods-1.20.1, mods-1.21.1]
+    env:
+      QV_TARGET: ${{ matrix.target }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Install JDK 17 toolchain
+        id: jdk17
+        uses: actions/setup-java@de7274f081f381c8f8158605e0321c36c376e2e6 # v6.0.1
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Run Gradle on JDK 21
+        id: jdk21
+        uses: actions/setup-java@de7274f081f381c8f8158605e0321c36c376e2e6 # v6.0.1
+        with:
+          distribution: temurin
+          java-version: '21'
+      - uses: gradle/actions/setup-gradle@9c971963bec38e04b3d30dcc455b5382be2fdbfb # v6.3.0
+        with:
+          validate-wrappers: true
+          cache-read-only: ${{ github.event_name == 'pull_request' }}
+      - name: Build and run required regressions
+        shell: bash
+        env:
+          QV_JAVA_PATHS: ${{ steps.jdk17.outputs.path }},${{ steps.jdk21.outputs.path }}
+        run: |
+          set -euo pipefail
+          mkdir -p ci-logs ci-artifacts
+          export JAVA_TOOL_OPTIONS="${JAVA_TOOL_OPTIONS:+$JAVA_TOOL_OPTIONS }-Dqzguard.testDir=$RUNNER_TEMP/qizhang-core-tests"
+          gradle_options=(--no-daemon --console=plain --stacktrace "-Porg.gradle.java.installations.paths=$QV_JAVA_PATHS" -Porg.gradle.java.installations.auto-detect=false -Porg.gradle.java.installations.auto-download=false)
+          if [[ "$QV_TARGET" == core-bukkit ]]; then
+            sh ./gradlew "${gradle_options[@]}" build :core:securityTest 2>&1 | tee ci-logs/gradle.log
+            python3 -B integrations/test_integrations.py 2>&1 | tee ci-logs/integration-tests.log
+            python3 -B integrations/test_runtime_evidence.py 2>&1 | tee ci-logs/evidence-parser-tests.log
+            cp bukkit/build/libs/qizhangverdict-bukkit-0.1.0.jar ci-artifacts/
+          else
+            qv_mc="${QV_TARGET#mods-}"
+            case "$qv_mc" in
+              1.20.1) qv_other_loader=forge ;;
+              1.21.1) qv_other_loader=neoforge ;;
+              *) exit 1 ;;
+            esac
+            (cd "platforms/$qv_mc" && sh ./gradlew "${gradle_options[@]}" build :fabric:commandParserSmoke) 2>&1 | tee ci-logs/gradle.log
+            for qv_loader in fabric "$qv_other_loader"; do
+              cp "platforms/$qv_mc/$qv_loader/build/libs/qizhangverdict-$qv_loader-$qv_mc-0.1.0.jar" ci-artifacts/
+            done
+          fi
+          (cd ci-artifacts && sha256sum ./*.jar > SHA256SUMS)
+      - name: Save build logs
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: qizhang-logs-${{ matrix.target }}
+          path: ci-logs/
+          if-no-files-found: ignore
+          retention-days: 14
+      - name: Save checked JARs
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: qizhang-ci-${{ matrix.target }}
+          path: ci-artifacts/
+          if-no-files-found: error
+          retention-days: 14
+
+  collect:
+    name: Collect five JARs
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          pattern: qizhang-ci-*
+          path: ci-input
+          merge-multiple: false
+      - name: Verify all five deliverables
+        shell: bash
+        run: |
+          set -euo pipefail
+          for qv_folder in ci-input/*; do
+            (cd "$qv_folder" && sha256sum --check SHA256SUMS)
+          done
+          qv_jars=(ci-input/*/*.jar)
+          test "${#qv_jars[@]}" -eq 5
+          mkdir ci-release
+          cp -- "${qv_jars[@]}" ci-release/
+          (cd ci-release && sha256sum ./*.jar > SHA256SUMS)
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: qizhangverdict-five-jars-${{ github.sha }}
+          path: ci-release/
+          if-no-files-found: error
+          retention-days: 30

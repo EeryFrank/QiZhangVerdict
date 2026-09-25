@@ -1,0 +1,150 @@
+{
+  "checked_at_utc": "2026-09-25T05:33:59.165855+00:00",
+  "scope": "Downloaded third-party artifacts and configuration syntax; runtime tests reported separately",
+  "downloaded_artifacts": [
+    {
+      "file": "grimac-bukkit-2.3.73.jar",
+      "sha256": "a095331a8ba47286b27bdb9b51f0d35ae4a227632a2c50b25cedba85439f1810",
+      "sha512_verified": true,
+      "size": 10578230
+    },
+    {
+      "file": "grimac-fabric-2.3.73.jar",
+      "sha256": "159587b5ecb303b687b325c1892847ec537f7ee70d3e597d2664a08b19f36cd5",
+      "sha512_verified": true,
+      "size": 7337589
+    },
+    {
+      "file": "antixray-fabric-1.4.6+1.20.1.jar",
+      "sha256": "78db3501e25d0ca79e6b48d2802bedc7e16374f350dd5e34d831a31de53e0c53",
+      "sha512_verified": true,
+      "size": 121516
+    },
+    {
+      "file": "antixray-forge-1.4.6+1.20.1.jar",
+      "sha256": "d8ced4101b1d90adfc4df223f9e28bbc0884b43fd83a0820ea8caab1e3918e23",
+      "sha512_verified": true,
+      "size": 304769
+    },
+    {
+      "file": "antixray-fabric-1.4.8+1.21.1.jar",
+      "sha256": "2bcc655529e243eb8773caf8f2e7bc0f550ac70e7d392d96fb48e924b51a61cc",
+      "sha512_verified": true,
+      "size": 131714
+    },
+    {
+      "file": "antixray-neoforge-1.4.8+1.21.1.jar",
+      "sha256": "5420a6ff3bc2d53db330583e09d6b5bf43bdd67e2aea2a5f43add3c9bbd5104f",
+      "sha512_verified": true,
+      "size": 128621
+    },
+    {
+      "file": "fabric-api-0.92.12+1.20.1.jar",
+      "sha256": "4197ff4fbdac13cffccd267c1bc59e9fbabb2b5683a9d5f8023f4b5ea16a1c1e",
+      "sha512_verified": true,
+      "size": 2137232
+    },
+    {
+      "file": "fabric-api-0.116.17+1.21.1.jar",
+      "sha256": "79ac44b40780acbd884b34c50be1e39af682847e5f5cb3b1fddeeaa768dce800",
+      "sha512_verified": true,
+      "size": 2452735
+    },
+    {
+      "file": "sqlite-jdbc-3.53.2.0+2026-06-06-all.jar",
+      "sha256": "b5b98b45e459d4af10952ba04e1bc285e06b785037d053794c7500201c186224",
+      "sha512_verified": true,
+      "size": 11997526
+    },
+    {
+      "file": "cloud-fabric-2.0.0-beta.10.jar",
+      "sha256": "e4e6327ebe7c9fe4e2448ef2a8cf17a2569f2c23297b54dd1ca303395829d5ab",
+      "sha512_verified": true,
+      "size": 684575
+    },
+    {
+      "file": "grimac-2.3.71.jar",
+      "sha256": "8bbe54877f1adec32b180862579fcb720a4a5905c16ce0578b676b1a87fa8f2d",
+      "sha512_verified": true,
+      "size": 8628869
+    }
+  ],
+  "toml_profiles_checked": 4,
+  "python_scripts_parsed": 4,
+  "security_regressions": {
+    "passed": 5,
+    "skipped": 1,
+    "skip_reason": "Windows symlink privilege unavailable",
+    "junction_regression": "Real Windows junction ancestor redirected toward an existing-server sentinel; staging refused without mutation"
+  },
+  "paper_yaml_validation": "Keys checked against official Paper Anti-Xray documentation; runtime application is separate.",
+  "staged_profiles": [
+    {
+      "profile": "paper-1.20.1",
+      "receipt": "E:\\CodexTemp\\QiZhangGuard\\integration-stage\\paper-1.20.1\\integration-receipt.json"
+    },
+    {
+      "profile": "paper-1.21.1",
+      "receipt": "E:\\CodexTemp\\QiZhangGuard\\integration-stage\\paper-1.21.1\\integration-receipt.json"
+    },
+    {
+      "profile": "fabric-1.20.1",
+      "receipt": "E:\\CodexTemp\\QiZhangGuard\\runtime-smoke\\fabric-1.20.1-wire2-01\\integration-receipt.json"
+    },
+    {
+      "profile": "fabric-1.21.1",
+      "receipt": "E:\\CodexTemp\\QiZhangGuard\\runtime-smoke\\fabric-1.21.1-wire2-01\\integration-receipt.json"
+    },
+    {
+      "profile": "forge-1.20.1",
+      "receipt": "E:\\CodexTemp\\QiZhangGuard\\runtime-smoke\\forge-1.20.1-wire2-01\\integration-receipt.json"
+    },
+    {
+      "profile": "neoforge-1.21.1",
+      "receipt": "E:\\CodexTemp\\QiZhangGuard\\runtime-smoke\\neoforge-1.21.1-wire2-01\\integration-receipt.json"
+    },
+    {
+      "profile": "paper-1.20.1",
+      "receipt": "E:\\CodexTemp\\QiZhangGuard\\integration-stage\\paper-1.20.1-grim271-final\\integration-receipt.json",
+      "note": "Final 2.3.71 dependency choice after real TCP tests"
+    }
+  ],
+  "integration_correction": "Real Fabric startup found Grim SQLite history driver missing; pinned independent Apache-2.0 sqlite-jdbc mod was added. Old stage receipts may predate this correction; final runtime receipts identify actual files.",
+  "runtime_corrections": [
+    "Grim Fabric requires separate Minecraft SQLite JDBC for the default history database.",
+    "Grim embedded Cloud beta15 only supports >=1.21.11. Fabric 1.21.1 now stages compatible Cloud beta10; Fabric 1.20.1 Grim own commands remain unavailable.",
+    "Earlier six staging receipts predate SQLite/Cloud additions; final runtime integration receipts identify exact combinations.",
+    "Purpur 1.20.1 with Grim Bukkit 2.3.73 reproducibly fails in LOGIN; paper-1.20.1 now pins official stable 2.3.71 that passed 25 real TCP checks with compression 256."
+  ],
+  "optional_grim_template": {
+    "path": "grim-punishments-verdict.example.yml",
+    "checked_against": [
+      "grimac-bukkit-2.3.73.jar!/punishments/en.yml",
+      "grimac-2.3.71.jar!/punishments/en.yml"
+    ],
+    "sha256": "a8d67c5ff47eda932b6b9c0f50489283ebf5cc4dcbbfc68c02b72746e234c047",
+    "enabled_by_default": false
+  },
+  "paper_runtime_evidence": {
+    "profile": "paper-1.20.1",
+    "report": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-integrated-20260925-142038\\result.json",
+    "distribution": "Purpur",
+    "build": "2062",
+    "grim": "2.3.71",
+    "compression": 256,
+    "cases_passed": 25,
+    "exit_code": 0,
+    "scope": "loopback TCP protocol clients with synthetic reports plus controlled fake-ore chunk palettes"
+  },
+  "runtime_parser_regressions": {
+    "passed": 3,
+    "scope": "false dependency presence log, real initialization against receipt, startup banner versus console reply"
+  },
+  "runtime_summary": "runtime-verification.json",
+  "python_script_files": [
+    "integrations\\manage_integrations.py",
+    "integrations\\test_integrations.py",
+    "integrations\\test_runtime_evidence.py",
+    "scripts\\mod_runtime_smoke.py"
+  ]
+}

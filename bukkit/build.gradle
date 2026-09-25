@@ -1,0 +1,14 @@
+plugins { id 'java' }
+evaluationDependsOn(':core')
+repositories { maven { url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/' } }
+dependencies {
+    implementation project(':core')
+    compileOnly('org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT') { transitive = false }
+}
+tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8'; options.release = 8 }
+jar {
+    archiveBaseName = 'qizhangverdict-bukkit'
+    from project(':core').sourceSets.main.output
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+processResources { filesMatching('plugin.yml') { expand(version: project.version) } }

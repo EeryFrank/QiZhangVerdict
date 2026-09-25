@@ -1,0 +1,147 @@
+{
+  "schema": 1,
+  "product": "七章的裁决 / QiZhang's Verdict",
+  "reviewed_on": "2026-09-25",
+  "artifacts": [
+    {
+      "key": "grim-bukkit",
+      "project": "grimac",
+      "version_id": "1FIGlM6Q",
+      "folder": "plugins",
+      "license_url": "https://github.com/GrimAnticheat/Grim/blob/2.0/LICENSE"
+    },
+    {
+      "key": "grim-fabric",
+      "project": "grimac",
+      "version_id": "SNnHVoFr",
+      "folder": "mods",
+      "license_url": "https://github.com/GrimAnticheat/Grim/blob/2.0/LICENSE"
+    },
+    {
+      "key": "antixray-fabric-1.20.1",
+      "project": "anti-xray",
+      "version_id": "6vxHsVZq",
+      "folder": "mods",
+      "license_url": "https://github.com/DrexHD/AntiXray/blob/1.20.1/LICENSE"
+    },
+    {
+      "key": "antixray-forge-1.20.1",
+      "project": "anti-xray",
+      "version_id": "ruAUEszF",
+      "folder": "mods",
+      "license_url": "https://github.com/DrexHD/AntiXray/blob/1.20.1/LICENSE"
+    },
+    {
+      "key": "antixray-fabric-1.21.1",
+      "project": "anti-xray",
+      "version_id": "KlJq0gHr",
+      "folder": "mods",
+      "license_url": "https://github.com/DrexHD/AntiXray/blob/1.21/LICENSE"
+    },
+    {
+      "key": "antixray-neoforge-1.21.1",
+      "project": "anti-xray",
+      "version_id": "XUpyMp6c",
+      "folder": "mods",
+      "license_url": "https://github.com/DrexHD/AntiXray/blob/1.21/LICENSE"
+    },
+    {
+      "key": "fabric-api-1.20.1",
+      "project": "fabric-api",
+      "version_id": "rvI2dfzR",
+      "folder": "mods",
+      "license_url": "https://github.com/FabricMC/fabric/blob/1.20.1/LICENSE"
+    },
+    {
+      "key": "fabric-api-1.21.1",
+      "project": "fabric-api",
+      "version_id": "Mys3P7lK",
+      "folder": "mods",
+      "license_url": "https://github.com/FabricMC/fabric/blob/1.21.1/LICENSE"
+    },
+    {
+      "key": "sqlite-jdbc-fabric",
+      "project": "minecraft-sqlite-jdbc",
+      "version_id": "EEE7nXWy",
+      "folder": "mods",
+      "license_url": "https://github.com/Axionize/minecraft-sqlite-jdbc/blob/master/LICENSE"
+    },
+    {
+      "key": "cloud-fabric-1.21.1",
+      "project": "cloud-minecraft-modded",
+      "version_id": "WGE6VNhn",
+      "folder": "mods",
+      "license_url": "https://github.com/Incendo/cloud-minecraft-modded/blob/master/LICENSE"
+    },
+    {
+      "key": "grim-bukkit-1.20.1",
+      "project": "grimac",
+      "version_id": "4CqWKZph",
+      "folder": "plugins",
+      "license_url": "https://github.com/GrimAnticheat/Grim/blob/2.0/LICENSE"
+    }
+  ],
+  "profiles": {
+    "paper-1.20.1": {
+      "minecraft": "1.20.1",
+      "loader": "paper",
+      "artifacts": [
+        "grim-bukkit-1.20.1"
+      ],
+      "configuration": "paper-1.20.1",
+      "coverage": "Pinned Grim 2.3.71 plus built-in Paper Anti-Xray; verified with Purpur 1.20.1. Grim 2.3.73 LOGIN regression reproduced in this combination."
+    },
+    "paper-1.21.1": {
+      "minecraft": "1.21.1",
+      "loader": "paper",
+      "artifacts": [
+        "grim-bukkit"
+      ],
+      "configuration": "paper-1.21.1",
+      "coverage": "Grim behavior checks plus built-in Paper Anti-Xray after fragment merge and restart"
+    },
+    "fabric-1.20.1": {
+      "minecraft": "1.20.1",
+      "loader": "fabric",
+      "artifacts": [
+        "grim-fabric",
+        "antixray-fabric-1.20.1",
+        "fabric-api-1.20.1",
+        "sqlite-jdbc-fabric"
+      ],
+      "configuration": "fabric-1.20.1",
+      "coverage": "Grim behavior checks plus server-side AntiXray; modded movement requires testing"
+    },
+    "fabric-1.21.1": {
+      "minecraft": "1.21.1",
+      "loader": "fabric",
+      "artifacts": [
+        "grim-fabric",
+        "antixray-fabric-1.21.1",
+        "fabric-api-1.21.1",
+        "sqlite-jdbc-fabric",
+        "cloud-fabric-1.21.1"
+      ],
+      "configuration": "fabric-1.21.1",
+      "coverage": "Grim behavior checks plus server-side AntiXray; modded movement requires testing"
+    },
+    "forge-1.20.1": {
+      "minecraft": "1.20.1",
+      "loader": "forge",
+      "artifacts": [
+        "antixray-forge-1.20.1"
+      ],
+      "configuration": "forge-1.20.1",
+      "coverage": "AntiXray only; no Grim Forge build and no equivalent movement-check claim"
+    },
+    "neoforge-1.21.1": {
+      "minecraft": "1.21.1",
+      "loader": "neoforge",
+      "artifacts": [
+        "antixray-neoforge-1.21.1"
+      ],
+      "configuration": "neoforge-1.21.1",
+      "coverage": "AntiXray only; no Grim NeoForge build and no equivalent movement-check claim"
+    }
+  }
+}

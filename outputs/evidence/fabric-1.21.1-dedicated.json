@@ -1,0 +1,164 @@
+{
+  "product": "QiZhangVerdict",
+  "profile": "fabric-1.21.1",
+  "java": "D:\\Java\\jdk-21\\bin\\java.exe",
+  "guard_source": "E:\\Codex_work\\QiZhangGuard\\platforms\\1.21.1\\fabric\\build\\libs\\qizhangverdict-fabric-1.21.1-0.1.0.jar",
+  "guard_sha256": "c878c510bfb0c0cc1815f34ef327b73cb4ce45eddeeb2d9e7bcac1b476fda182",
+  "guard_target": "E:\\CodexTemp\\QiZhangGuard\\runtime-smoke\\fabric-1.21.1-final-06\\mods\\qizhangverdict-fabric-1.21.1-0.1.0.jar",
+  "scope": "Dedicated server startup + console status + clean shutdown, no player/client gameplay; real loopback TCP protocol clients with synthetic self-reports, not rendered mod clients",
+  "mods": [
+    {
+      "filename": "antixray-fabric-1.4.8+1.21.1.jar",
+      "sha256": "2bcc655529e243eb8773caf8f2e7bc0f550ac70e7d392d96fb48e924b51a61cc"
+    },
+    {
+      "filename": "cloud-fabric-2.0.0-beta.10.jar",
+      "sha256": "e4e6327ebe7c9fe4e2448ef2a8cf17a2569f2c23297b54dd1ca303395829d5ab"
+    },
+    {
+      "filename": "fabric-api-0.116.17+1.21.1.jar",
+      "sha256": "79ac44b40780acbd884b34c50be1e39af682847e5f5cb3b1fddeeaa768dce800"
+    },
+    {
+      "filename": "grimac-fabric-2.3.73.jar",
+      "sha256": "159587b5ecb303b687b325c1892847ec537f7ee70d3e597d2664a08b19f36cd5"
+    },
+    {
+      "filename": "qizhangverdict-fabric-1.21.1-0.1.0.jar",
+      "sha256": "c878c510bfb0c0cc1815f34ef327b73cb4ce45eddeeb2d9e7bcac1b476fda182"
+    },
+    {
+      "filename": "sqlite-jdbc-3.53.2.0+2026-06-06-all.jar",
+      "sha256": "b5b98b45e459d4af10952ba04e1bc285e06b785037d053794c7500201c186224"
+    }
+  ],
+  "started": true,
+  "console_status_verified": true,
+  "timed_out": false,
+  "started_utc": "2026-09-25T05:29:10Z",
+  "offline_mode_for_isolated_protocol_test": true,
+  "console_path": "E:\\CodexTemp\\QiZhangGuard\\runtime-smoke\\fabric-1.21.1-final-06\\console.log",
+  "protocol_script_sha256": "4f88bcd526337d9c911f26d7a79c6435cf0b94a2814acd11dcf0338f3f1f78be",
+  "protocol_data_directory": "E:\\CodexTemp\\QiZhangGuard\\runtime-smoke\\fabric-1.21.1-final-06\\config\\qizhangverdict",
+  "protocol_exit_code": 0,
+  "protocol_elapsed_seconds": 72.99,
+  "protocol_forwarded_commands": 17,
+  "protocol_console_sha256": "b39e1d9c16cc1aa4941bcc6b3f8570dd1183919706781c0c269270e21882acc5",
+  "protocol_result": {
+    "passed": 26,
+    "cases": [
+      "normal companion joins",
+      "privileged commands blocked before report and restored afterward",
+      "missing companion expires",
+      "malformed report rejected",
+      "malformed report does not permanently ban account",
+      "first account on device allowed",
+      "same IP same device second account rejected",
+      "same IP second different device allowed",
+      "same IP third different device allowed",
+      "same IP fourth account rejected",
+      "disconnect releases device and IP quota",
+      "known cheat denied and sanctioned",
+      "same banned device different account denied",
+      "banned account denied with new device",
+      "administrator account and device unban restores access",
+      "administrator glob rule enforced",
+      "whitelist overrides matching blacklist item",
+      "removed whitelist takes effect",
+      "administrator removes default rule with colon ID",
+      "administrator restores removed blacklist entry",
+      "CIDR deny rejects login",
+      "known VM signal denied",
+      "VBS hypervisor alone does not ban physical machine",
+      "two-device setting first account",
+      "two-device setting second account",
+      "two-device setting rejects third account"
+    ],
+    "orePalette": [],
+    "maxChunkZeroPadding": 0,
+    "kind": "real TCP clients using synthetic self-reports; not rendered mod client or real VM",
+    "version": "1.21.1"
+  },
+  "protocol_result_sha256": "7ab8ce050538b1b05452b5f0e6f54798cda614580e2f0df53106897ba775c3cb",
+  "exit_code": 0,
+  "elapsed_seconds": 137.1,
+  "console_sha256": "70b02f5441c48128a94d7354d89ebcc52d2679cce43caa4ac3cb76875af74d96",
+  "guard_log_lines": [
+    "\t- qizhangverdict 0.1.0",
+    "[14:29:31] [main/INFO]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/E:/CodexTemp/QiZhangGuard/runtime-smoke/fabric-1.21.1-final-06/libraries/net/fabricmc/sponge-mixin/0.15.5+mixin.0.8.7/sponge-mixin-0.15.5+mixin.0.8.7.jar Service=Knot/Fabric Env=SERVER",
+    "[14:30:01] [Server thread/INFO]: QiZhangGuard started: QiZhangVerdict sessions=0, trackedIPs=0, accountPairs=0, rules=11, companion=required, vm=DENY, blacklist=DENY, rateBuckets=0, accountBans=0, deviceBans=0, deviceRequired=true. Reports are self-reported, not trusted attestation.",
+    "[14:30:12] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=0, accountPairs=0, rules=11, companion=required, vm=DENY, blacklist=DENY, rateBuckets=0, accountBans=0, deviceBans=0, deviceRequired=true",
+    "[14:30:14] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=0, accountPairs=0, rules=11, companion=required, vm=ALERT, blacklist=DENY, rateBuckets=0, accountBans=0, deviceBans=0, deviceRequired=true",
+    "[14:30:18] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=1, rules=11, companion=required, vm=ALERT, blacklist=DENY, rateBuckets=1, accountBans=0, deviceBans=0, deviceRequired=true",
+    "[14:30:26] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=2, rules=11, companion=required, vm=ALERT, blacklist=DENY, rateBuckets=1, accountBans=0, deviceBans=0, deviceRequired=true",
+    "[14:30:33] [Server thread/INFO]: QVBot2 lost connection: QiZhangGuard: required companion report timed out",
+    "[14:31:09] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=16, rules=12, companion=required, vm=ALERT, blacklist=DENY, rateBuckets=1, accountBans=4, deviceBans=3, deviceRequired=true",
+    "[14:31:12] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=16, rules=12, companion=required, vm=DENY, blacklist=DENY, rateBuckets=1, accountBans=4, deviceBans=3, deviceRequired=true",
+    "[14:31:16] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=18, rules=12, companion=required, vm=ALERT, blacklist=DENY, rateBuckets=1, accountBans=5, deviceBans=4, deviceRequired=true"
+  ],
+  "antixray_log_lines": [
+    "\t- antixray 1.4.8",
+    "[14:29:51] [main/INFO]: Successfully initialized antixray for fabric",
+    "[14:29:54] [main/INFO]: External mod presence only: grimac=true, antixray=true; actual function must be tested separately"
+  ],
+  "grim_log_lines": [
+    " - 模组 'GrimAC' (grimac) 2.3.73 建议安装 fabric-permissions-api-v0 的 任意版本，但没有安装它！",
+    "\t- grimac 2.3.73",
+    "\t   |-- ac_grim_grimac_common 2.3.73",
+    "\t   |-- ac_grim_grimac_grim-internal 1.2.4.0",
+    "\t   |-- ac_grim_grimac_grimapi 1.2.4.0",
+    "\t   |-- grimac-mc1161 2.3.73",
+    "\t   |-- grimac-mc1171 2.3.73",
+    "\t   |-- grimac-mc1194 2.3.73",
+    "\t   |-- grimac-mc1205 2.3.73",
+    "[14:29:54] [main/INFO]: External mod presence only: grimac=true, antixray=true; actual function must be tested separately",
+    "[14:30:01] [Server thread/INFO]: Grim Version: 2.3.73",
+    "[14:30:01] [Thread-2/INFO]: New GrimAC version found! Version 2.3.74-8eb5f28 is available to be downloaded here: https://modrinth.com/plugin/grimac"
+  ],
+  "error_lines": [
+    "[14:29:31] [main/ERROR]: Failed reading REFMAP JSON from : java.lang.NullPointerException Cannot invoke \"org.spongepowered.asm.mixin.refmap.ReferenceMapper.setResourceName(String)\" because \"mapper\" is null",
+    "[14:29:31] [main/ERROR]: Failed reading REFMAP JSON from : java.lang.NullPointerException Cannot invoke \"org.spongepowered.asm.mixin.refmap.ReferenceMapper.setResourceName(String)\" because \"mapper\" is null",
+    "[14:29:31] [main/ERROR]: Failed reading REFMAP JSON from : java.lang.NullPointerException Cannot invoke \"org.spongepowered.asm.mixin.refmap.ReferenceMapper.setResourceName(String)\" because \"mapper\" is null"
+  ],
+  "nonfatal_upstream_notices": [
+    "[14:29:31] [main/ERROR]: Failed reading REFMAP JSON from : java.lang.NullPointerException Cannot invoke \"org.spongepowered.asm.mixin.refmap.ReferenceMapper.setResourceName(String)\" because \"mapper\" is null",
+    "[14:29:31] [main/WARN]: Reference map '' for packetevents-mc1140.mixins.json could not be read. If this is a development environment you can ignore this message",
+    "[14:29:31] [main/ERROR]: Failed reading REFMAP JSON from : java.lang.NullPointerException Cannot invoke \"org.spongepowered.asm.mixin.refmap.ReferenceMapper.setResourceName(String)\" because \"mapper\" is null",
+    "[14:29:31] [main/WARN]: Reference map '' for packetevents-mc1914.mixins.json could not be read. If this is a development environment you can ignore this message",
+    "[14:29:31] [main/ERROR]: Failed reading REFMAP JSON from : java.lang.NullPointerException Cannot invoke \"org.spongepowered.asm.mixin.refmap.ReferenceMapper.setResourceName(String)\" because \"mapper\" is null",
+    "[14:29:31] [main/WARN]: Reference map '' for packetevents-mc1202.mixins.json could not be read. If this is a development environment you can ignore this message"
+  ],
+  "pass_definition": "Done + QiZhangVerdict console status + dependency initialization + clean stop; not an error-free log or anticheat accuracy claim",
+  "integration_startup_errors": [],
+  "guard_status_observed": true,
+  "antixray_loaded": true,
+  "grim_loaded": true,
+  "grim_command_framework_available": true,
+  "passed_startup_only": true,
+  "all_requested_checks_passed": true,
+  "parser_version": 2,
+  "expected_integrations": {
+    "grim": true,
+    "antixray": true
+  },
+  "status_response_lines": [
+    "[14:30:12] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=0, accountPairs=0, rules=11, companion=required, vm=DENY, blacklist=DENY, rateBuckets=0, accountBans=0, deviceBans=0, deviceRequired=true",
+    "[14:30:14] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=0, accountPairs=0, rules=11, companion=required, vm=ALERT, blacklist=DENY, rateBuckets=0, accountBans=0, deviceBans=0, deviceRequired=true",
+    "[14:30:18] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=1, rules=11, companion=required, vm=ALERT, blacklist=DENY, rateBuckets=1, accountBans=0, deviceBans=0, deviceRequired=true",
+    "[14:30:26] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=2, rules=11, companion=required, vm=ALERT, blacklist=DENY, rateBuckets=1, accountBans=0, deviceBans=0, deviceRequired=true",
+    "[14:31:09] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=16, rules=12, companion=required, vm=ALERT, blacklist=DENY, rateBuckets=1, accountBans=4, deviceBans=3, deviceRequired=true",
+    "[14:31:12] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=16, rules=12, companion=required, vm=DENY, blacklist=DENY, rateBuckets=1, accountBans=4, deviceBans=3, deviceRequired=true",
+    "[14:31:16] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=18, rules=12, companion=required, vm=ALERT, blacklist=DENY, rateBuckets=1, accountBans=5, deviceBans=4, deviceRequired=true"
+  ],
+  "protocol_client_decoder_error_count": 22,
+  "protocol_client_decoder_error_examples": [
+    "PartialReadError: Read error for undefined : Missing characters in string, found size is 108271 expected size was 114153"
+  ],
+  "parser_refresh": {
+    "method": "mod_runtime_smoke.py refresh; no new server execution",
+    "previous_report": "E:\\CodexTemp\\QiZhangGuard\\runtime-smoke\\fabric-1.21.1-final-06\\smoke-result.pre-parser-v2.json",
+    "previous_report_sha256": "a496463ff99da3a475a00f96f5529feea6ecd1d37edd7040c4a9a483d35755fc",
+    "unchanged_console_sha256": "70b02f5441c48128a94d7354d89ebcc52d2679cce43caa4ac3cb76875af74d96",
+    "parser_script_sha256": "a15e49bfef5e67d7d7c4471d85fc665be637777889b9ea2032461c417db1e9e2"
+  }
+}

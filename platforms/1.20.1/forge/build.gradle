@@ -1,0 +1,5 @@
+architectury { platformSetupLoomIde(); forge() }
+dependencies { forge 'net.minecraftforge:forge:1.20.1-47.4.23' }
+sourceSets.main.java.exclude '**/CommandGate121Mixin.java'
+loom { mixin { defaultRefmapName = 'qizhangverdict.refmap.json' } }
+tasks.named('jar') { manifest { attributes 'MixinConfigs': 'qizhangverdict.mixins.json' } }

@@ -1,0 +1,15 @@
+name: QiZhangVerdict
+main: cn.qizhang.guard.bukkit.QiZhangVerdictPlugin
+version: ${version}
+description: IP admission policy, optional client reports and defense integration status
+authors: [QiZhang]
+softdepend: [GrimAC, Orebfuscator]
+commands:
+  qzverdict:
+    description: QiZhang's Verdict administration
+    aliases: [verdict]
+    usage: /qzverdict <status|reload|integrations|rules|rule|bans|ban|unban>
+    permission: qzverdict.admin
+permissions:
+  qzverdict.admin:
+    default: op

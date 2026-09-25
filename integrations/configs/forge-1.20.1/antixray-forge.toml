@@ -1,0 +1,25 @@
+# QiZhang's Verdict - apply to config/antixray-forge.toml on a NEW/test server.
+# Explicit vanilla ores plus loader ore tags; test every custom dimension and modded ore separately.
+# Verified against actual AntiXray 1.4.6 JAR descriptors and bundled config.
+enabled = false
+usePermission = false
+
+[overworld]
+enabled = true
+engineMode = 3
+maxBlockHeight = 320
+updateRadius = 2
+lavaObscures = false
+hiddenBlocks = ["copper_ore", "deepslate_copper_ore", "coal_ore", "deepslate_coal_ore", "iron_ore", "deepslate_iron_ore", "gold_ore", "deepslate_gold_ore", "redstone_ore", "deepslate_redstone_ore", "lapis_ore", "deepslate_lapis_ore", "diamond_ore", "deepslate_diamond_ore", "emerald_ore", "deepslate_emerald_ore", "raw_copper_block", "raw_iron_block", "raw_gold_block", "#forge:ores"]
+replacementBlocks = ["stone", "deepslate", "andesite", "calcite", "diorite", "dirt", "granite", "gravel", "sand", "tuff", "mossy_cobblestone", "obsidian", "clay", "infested_stone", "amethyst_block", "budding_amethyst", "chest"]
+
+[the_nether]
+enabled = true
+engineMode = 1
+maxBlockHeight = 128
+updateRadius = 2
+lavaObscures = true
+hiddenBlocks = ["ancient_debris", "nether_quartz_ore", "nether_gold_ore", "gold_block", "gilded_blackstone"]
+
+[the_end]
+enabled = false
