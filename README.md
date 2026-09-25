@@ -12,6 +12,8 @@
 
 1.8.9 本机图形验收需关闭 Forge 启动画面；Paper 1.8.8 使用 Forge 1.8.9 配套客户端，没有原生 Forge 1.8.8 成品。Grim / AntiXray 独立安装，不包含在这 13 个 JAR 中。
 
+两站各 21 个附件均已匿名下载并核对 SHA256，见[发布回执](outputs/publish-receipt-0.2.0-test.1.json)。安装和源码 ZIP 通过[独立审查](outputs/packaging-validation-0.2.0-test.1.json)。同标签 GitHub 9 项构建通过；GitLab 9 项因 `ci_quota_exceeded` 未执行，不能视为通过。
+
 历史版本保持原字节和原验证范围：[0.1.1](docs/validation-0.1.1.md)、[preview.1](docs/preview-0.2.0-dev-preview.1.md)、[preview.2](docs/preview-0.2.0-dev-preview.2.md)。
 
 ## 默认登录规则

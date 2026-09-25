@@ -39,3 +39,9 @@ GitHub 使用固定 SHA 的官方 actions；GitLab 开发任务使用[官方 Tem
 `grim-link-qa.yml` 仅通过 `workflow_dispatch` 启动，在临时的 Linux runner 上创建绑定 `127.0.0.1` 的两个独立测试服。它下载并校验已发布 GPL Bukkit 0.1.1、固定 Purpur 与 Grim，接受该隔离夹具的 Minecraft EULA，实际启动 JVM；不会连接现存服务器。测试使用原样处罚模板的 `120:0` 阈值，通过重复物品栏槽位包触发 Grim 检查，验证关联账号/设备封禁、重启持久化和管理员解封。Node 22 依赖通过固定 npm lock 安装。只有该运行的实际日志和结果可证明通过；配置存在不代表测试已执行。上传路径明确限定为夹具元数据、日志与结果，不上传世界、Minecraft JAR 或账号状态文件。
 
 实际第三次运行 [36120803733](https://github.com/EeryFrank/QiZhangVerdict/actions/runs/36120803733) 在 `ed609744dedbab03f779beda43ec0442ef5575a3` 完成两个版本、四次 JVM、24 组断言，全部正常退出。前两次 QA 失败、上游警告和验证边界保留在 [联动验收](grim-linked-ban-validation.md)，不能将单个 BadPacketsA 用例推断为所有作弊检测效果。
+
+## 0.2.0-test.1 发布标签
+
+`v0.2.0-test.1` 固定提交 `310e20b117183182d7767e349aa81cb1d935075c` 的 [GitHub 现代四任务](https://github.com/EeryFrank/QiZhangVerdict/actions/runs/36131892038)及[旧版五任务](https://github.com/EeryFrank/QiZhangVerdict/actions/runs/36131892033)全部通过。[GitLab 同标签流水线](https://gitlab.com/EeryFrank/QiZhangVerdict/-/pipelines/2882204914)：GitLab 9 项因 `ci_quota_exceeded` 未执行，不能视为通过。
+
+13 个发行 JAR 使用本机完成核心回归、14 组图形客户端和 75 组插件协议检查的原始文件；未以 CI 重编产物替换。两站各 21 个附件经匿名下载核对散列，见[发布回执](../outputs/publish-receipt-0.2.0-test.1.json)、[远程 CI 记录](../outputs/release-ci-validation-0.2.0-test.1.json)及[ZIP 独立审查](../outputs/packaging-validation-0.2.0-test.1.json)。首轮未发布试包缺少五个文档链接的 QA 脚本，补齐显式文件清单后第二轮审查通过；产品 JAR 与运行证据没有改变，失败记录保留。

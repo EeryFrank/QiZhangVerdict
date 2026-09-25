@@ -1,0 +1,16 @@
+Decoded text transcript returned by exec_command for the original audit attempt.
+This records the tool-returned exception text; it is not asserted to preserve the original process stream's byte encoding or line endings.
+Process exit code: 1
+Auditor SHA256: 33d3e825ced974fe1f254cf4d518b516518b1a93194da8c1eef8cedb3bb9d6f4
+Source commit: a3b38b5e64ea958a35b10ec0d6e3ff75ecb88e55
+
+Traceback (most recent call last):
+  File "E:\CodexTemp\QiZhangVerdict\release-0.2.0-test.1\audit-packaged.py", line 347, in <module>
+    main()
+    ~~~~^^
+  File "E:\CodexTemp\QiZhangVerdict\release-0.2.0-test.1\audit-packaged.py", line 320, in main
+    links = local_markdown_links(payloads)
+  File "E:\CodexTemp\QiZhangVerdict\release-0.2.0-test.1\audit-packaged.py", line 131, in local_markdown_links
+    assert target in payloads, (name, link, target)
+           ^^^^^^^^^^^^^^^^^^
+AssertionError: ('docs/legacy-fabric116-antixray110-java17.md', '../scripts/legacy_fabric_antixray_smoke.py', 'scripts/legacy_fabric_antixray_smoke.py')
