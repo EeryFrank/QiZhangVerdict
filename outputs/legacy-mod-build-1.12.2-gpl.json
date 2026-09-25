@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "minecraft": "1.12.2",
+  "loader": "Forge 14.23.5.2864",
+  "artifactVersion": "0.2.0-dev",
+  "license": "GPL-3.0-only",
+  "checkedAtUTC": "2026-09-25T07:41:56.929701+00:00",
+  "buildPassed": true,
+  "javaBuildAndTests": "Temurin JDK8u504-b01",
+  "gradle": "5.6.4",
+  "published": false,
+  "dedicatedServerTested": false,
+  "renderedClientTested": false,
+  "checks": {
+    "coreSecurity": 55,
+    "productionCatalogRules": 31,
+    "legacyCommandAssertions": 13,
+    "clientReporterSmoke": true
+  },
+  "buildLog": "E:\\CodexTemp\\QiZhangVerdict\\legacy-build\\1.12.2\\build-final.log",
+  "buildLogSHA256": "657452435cc2e798b15d80e07cdf1a0152161b8d3344f892c098c5d8f0061823",
+  "artifacts": [
+    {
+      "file": "platforms/1.12.2/forge/build/libs/qizhangverdict-forge-1.12.2-0.2.0-dev-sources.jar",
+      "bytes": 48191,
+      "sha256": "0e81961fbf8cccfc56743e757101abc2ebec16975bfe5e5758363b3d2c54ce3f",
+      "classCount": 0,
+      "maximumClassMajor": null,
+      "embeddedLicenseMatches": true
+    },
+    {
+      "file": "platforms/1.12.2/forge/build/libs/qizhangverdict-forge-1.12.2-0.2.0-dev.jar",
+      "bytes": 90871,
+      "sha256": "7ee00ced99919281e2d6851e123c6bcb2d8ddd3e46338870b2034d5a5dcf0966",
+      "classCount": 31,
+      "maximumClassMajor": 52,
+      "embeddedLicenseMatches": true
+    }
+  ],
+  "limitations": [
+    "Compilation/native-Java8 tests only; old Forge payload integration and command event behavior require dedicated/client tests.",
+    "During pending verification a dimension change disconnects the player instead of attempting legacy cross-dimension teleport.",
+    "The first build attempt failed because Gradle5 treated trustStore NONE as a literal file; final builds used JDK8 default trust with TLS verification intact."
+  ]
+}

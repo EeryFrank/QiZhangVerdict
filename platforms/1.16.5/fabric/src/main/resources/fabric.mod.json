@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "id": "qizhangverdict",
+  "version": "${version}",
+  "name": "QiZhang's Verdict / 七章的裁决",
+  "description": "Development adapter: IP rules and privacy-limited companion reports; not trusted attestation.",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["cn.qizhang.guard.fabric.GuardFabric"],
+    "client": ["cn.qizhang.guard.fabric.GuardFabricClient"]
+  },
+  "mixins": ["qizhangverdict.mixins.json"],
+  "license": "GPL-3.0-only",
+  "depends": {"fabricloader": ">=0.16.14", "fabric": ">=0.42.0", "minecraft": "1.16.5", "java": ">=8"}
+}

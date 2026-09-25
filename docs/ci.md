@@ -10,6 +10,16 @@ CI 是重新构建和静态/逻辑回归，不会自动接受 Minecraft EULA、�
 
 GitHub 的 `qizhangverdict-five-jars-<commit>`、GitLab 的 `collect` job artifacts 为五 JAR 汇总，保留 30 天；中间构建与日志保留 14 天。GitLab 项目需要可用的 Linux Docker runner，并允许下载 Maven/Gradle/Minecraft 依赖及 Ubuntu 软件包。
 
-0.1.1 起额外执行扩展目录的 25 项 Python 回归，以及 Java 生产解析器对 31 条导出规则的兼容检查。GitLab 镜像改用 Temurin 21 Noble（Ubuntu 24.04），以满足标准库 `tomllib` 所需的 Python 3.11+；原 Jammy 默认 Python 3.10 不满足该工具要求。1.18.2 / 1.19.4 开发适配不属于这条五产物发布流水线，需各自运行构建和独立运行验收。
+0.1.1 起额外执行扩展目录的 25 项 Python 回归，以及 Java 生产解析器对 31 条导出规则的兼容检查。GitLab 镜像改用 Temurin 21 Noble（Ubuntu 24.04），以满足标准库 `tomllib` 所需的 Python 3.11+；原 Jammy 默认 Python 3.10 不满足该工具要求。
+
+## 旧版开发构建
+
+独立的 GitHub `legacy-build.yml` 与 GitLab `legacy-build` 矩阵检查 1.12.2、1.16.5、1.18.2、1.19.4，共七个开发 JAR。两站共用 `scripts/ci_legacy_build.sh`，不会把开发成品混入五 JAR 的 0.1.1 汇总，也不会自动发布测试版。
+
+1.12.2 用 JDK 8 运行官方 MDK 对应的 Gradle 5.6.4 / ForgeGradle 3；其他三版用 JDK 21 运行 Gradle 8.14.1，再以 JDK 17 编译。1.16.5 以 `--release 8` 编译并在真实 Java 8 上执行核心、报告器及两端命令解析检查；1.18.2 / 1.19.4 的命令检查使用 Java 17。所有必需检查都由各自 `build → check` 依赖执行。CI 安装三个完整 JDK，并关闭 Gradle 工具链的隐式下载。
+
+GitHub 使用固定 SHA 的官方 actions；GitLab 开发任务使用[官方 Temurin 8 Noble 镜像](https://github.com/adoptium/containers/blob/main/8/jdk/ubuntu/noble/Dockerfile)，另安装 Ubuntu 24.04 的 JDK 17 / 21。独立任务保留日志及带 SHA256 的开发产物 14 天。CI 构建成功仍不能替代指定 Windows 成品的专服或客户端实测。
+
+0.1.1 发布提交 `d485e597827dd8544fc8cc183df19389a1db06e1` 的 [GitHub tag 构建](https://github.com/EeryFrank/QiZhangVerdict/actions/runs/36106352623)四个任务全部通过；同提交 [GitLab pipeline](https://gitlab.com/EeryFrank/QiZhangVerdict/-/pipelines/2881378657) 因 `ci_quota_exceeded` 未执行。新加入的旧版流水线结果须按新提交单独核验，不能借用此历史结果。
 
 配置依据：[setup-java](https://github.com/actions/setup-java)、[Gradle setup action](https://github.com/gradle/actions/blob/main/setup-gradle/README.md)、[GitLab CI YAML](https://docs.gitlab.com/ci/yaml/)。首次远端 pipeline 的执行结果应单独核验；仅完成配置静态校验不等于 CI 已通过。

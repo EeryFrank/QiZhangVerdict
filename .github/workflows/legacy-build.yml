@@ -1,0 +1,72 @@
+name: Build legacy development targets
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: legacy-build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: MC ${{ matrix.minecraft }} development
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        minecraft: ['1.12.2', '1.16.5', '1.18.2', '1.19.4']
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Install JDK 8
+        id: jdk8
+        uses: actions/setup-java@de7274f081f381c8f8158605e0321c36c376e2e6 # v6.0.1
+        with:
+          distribution: temurin
+          java-version: '8'
+      - name: Install JDK 17
+        id: jdk17
+        uses: actions/setup-java@de7274f081f381c8f8158605e0321c36c376e2e6 # v6.0.1
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Install JDK 21
+        id: jdk21
+        uses: actions/setup-java@de7274f081f381c8f8158605e0321c36c376e2e6 # v6.0.1
+        with:
+          distribution: temurin
+          java-version: '21'
+      - uses: gradle/actions/setup-gradle@9c971963bec38e04b3d30dcc455b5382be2fdbfb # v6.3.0
+        with:
+          validate-wrappers: true
+          cache-read-only: ${{ github.event_name == 'pull_request' }}
+      - name: Build and execute required checks
+        shell: bash
+        env:
+          QV_MC: ${{ matrix.minecraft }}
+          QV_JDK8: ${{ steps.jdk8.outputs.path }}
+          QV_JDK17: ${{ steps.jdk17.outputs.path }}
+          QV_JDK21: ${{ steps.jdk21.outputs.path }}
+        run: bash scripts/ci_legacy_build.sh
+      - name: Save logs
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: qizhang-legacy-logs-${{ matrix.minecraft }}
+          path: ci-logs/
+          if-no-files-found: ignore
+          retention-days: 14
+      - name: Save development JARs
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: qizhang-legacy-jars-${{ matrix.minecraft }}
+          path: ci-artifacts/
+          if-no-files-found: error
+          retention-days: 14

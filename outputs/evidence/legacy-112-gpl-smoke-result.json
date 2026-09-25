@@ -1,0 +1,94 @@
+{
+  "product": "QiZhangVerdict",
+  "minecraft": "1.12.2",
+  "forge": "1.12.2-14.23.5.2864",
+  "artifactVersion": "0.2.0-dev",
+  "license": "GPL-3.0-only",
+  "guardSha256": "7ee00ced99919281e2d6851e123c6bcb2d8ddd3e46338870b2034d5a5dcf0966",
+  "serverEntrySha256": "ff578d670d2c720a72f8fff31ea3d6868595c7e980ecdecba3254f307ef2c2a9",
+  "java": "E:\\CodexTemp\\QiZhangVerdict\\toolchains\\jdk8\\jdk8u504-b01\\bin\\java.exe",
+  "javaVersion": "openjdk version \"1.8.0_504\"\r\nOpenJDK Runtime Environment (Temurin)(build 1.8.0_504-b01)\r\nOpenJDK 64-Bit Server VM (Temurin)(build 25.504-b01, mixed mode)",
+  "javaExecutableSha256": "65ebee06ec47df0c41c4483ac5aa408e55adb47a1613bad56be30bccc4317e85",
+  "command": [
+    "E:\\CodexTemp\\QiZhangVerdict\\toolchains\\jdk8\\jdk8u504-b01\\bin\\java.exe",
+    "-Xms256M",
+    "-Xmx1536M",
+    "-XX:+UseG1GC",
+    "-Dfile.encoding=UTF-8",
+    "-jar",
+    "forge-1.12.2-14.23.5.2864.jar",
+    "nogui"
+  ],
+  "freeBytesBeforeJava": 6104465408,
+  "runtime": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\forge-1.12.2-guard-01",
+  "helperSha256": "66a5a9abca361f7c8cb4370d401389fc79baa9edb22ba4f5d348a2e62040c0e1",
+  "protocolSha256": "2335491891b70541cf16910d76e0f3de73b92723bbe24d614a79d6b9f1835cea",
+  "started": true,
+  "strictConsoleStatus": true,
+  "serverExitCode": 0,
+  "normalStop": true,
+  "elapsedSeconds": 76.66,
+  "timedOut": false,
+  "protocolRequested": true,
+  "protocolExitCode": 0,
+  "protocol": {
+    "passed": true,
+    "cases": [
+      "real operator command blocked while pending and restored after native QZGuard report",
+      "strict default companion report accepted on native Forge QZGuard channel",
+      "valid report keeps account online for at least 22 seconds with strict server status",
+      "same IP and same device second account rejected",
+      "same IP second distinct device accepted",
+      "same IP third distinct device accepted",
+      "default fourth concurrent account rejected",
+      "disconnect releases IP and device concurrent slots",
+      "strict default rejects missing device identifier",
+      "malformed report rejected",
+      "invalid report does not permanently ban account",
+      "default required companion timeout enforced",
+      "timeout releases session and does not permanently ban account"
+    ],
+    "caseCount": 13,
+    "version": "1.12.2",
+    "channel": "QZGuard",
+    "registerChannel": "REGISTER",
+    "defaultPolicyUnmodified": true,
+    "waits": [
+      {
+        "case": "valid companion stays online beyond default deadline",
+        "elapsedMilliseconds": 22072
+      },
+      {
+        "case": "default required report timeout",
+        "elapsedMilliseconds": 20393
+      }
+    ],
+    "loader": "Forge 14.23.5.2864",
+    "scope": "Real loopback TCP clients with synthetic self-reports; not a rendered companion, real VM, external anticheat or general gameplay compatibility test."
+  },
+  "defaultPolicyBeforeSha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+  "defaultPolicyAfterSha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+  "defaultPolicyUnmodified": true,
+  "statusResponses": [
+    "[16:53:29] [Server thread/INFO] [minecraft/DedicatedServer]: QiZhangVerdict sessions=0, trackedIPs=0, accountPairs=0, rules=11, companion=required, vm=DENY, blacklist=DENY, rateBuckets=0, accountBans=0, deviceBans=0, deviceRequired=true",
+    "[16:53:58] [Server thread/INFO] [minecraft/DedicatedServer]: QiZhangVerdict sessions=1, trackedIPs=1, accountPairs=2, rules=11, companion=required, vm=DENY, blacklist=DENY, rateBuckets=1, accountBans=0, deviceBans=0, deviceRequired=true",
+    "[16:54:30] [Server thread/INFO] [minecraft/DedicatedServer]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=5, rules=11, companion=required, vm=DENY, blacklist=DENY, rateBuckets=1, accountBans=0, deviceBans=0, deviceRequired=true",
+    "[16:54:31] [Server thread/INFO] [minecraft/DedicatedServer]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=5, rules=11, companion=required, vm=DENY, blacklist=DENY, rateBuckets=1, accountBans=0, deviceBans=0, deviceRequired=true"
+  ],
+  "warnings": [
+    "[16:53:17] [main/WARN] [FML]: The coremod FMLCorePlugin (net.minecraftforge.fml.relauncher.FMLCorePlugin) is not signed!",
+    "[16:53:17] [main/WARN] [FML]: The coremod FMLForgePlugin (net.minecraftforge.classloading.FMLForgePlugin) is not signed!",
+    "[16:53:23] [Server thread/WARN] [FML]: Missing English translation for FML: assets/fml/lang/en_us.lang",
+    "[16:53:23] [Server thread/WARN] [FML]: Missing English translation for qizhangverdict: assets/qizhangverdict/lang/en_us.lang",
+    "[16:53:26] [Server thread/WARN] [minecraft/DedicatedServer]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!",
+    "[16:53:26] [Server thread/WARN] [minecraft/DedicatedServer]: The server will make no attempt to authenticate usernames. Beware.",
+    "[16:53:26] [Server thread/WARN] [minecraft/DedicatedServer]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.",
+    "[16:53:26] [Server thread/WARN] [minecraft/DedicatedServer]: To change this, set \"online-mode\" to \"true\" in the server.properties file."
+  ],
+  "errors": [
+    "[16:53:18] [main/ERROR] [FML]: FML appears to be missing any signature data. This is not a good thing"
+  ],
+  "failure": null,
+  "passed": true,
+  "scope": "Official Forge dedicated adapter; synthetic TCP reports if requested. No rendered client, real VM detection, cheat accuracy, external anticheat, modpack or performance acceptance."
+}

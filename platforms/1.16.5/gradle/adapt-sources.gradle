@@ -1,0 +1,63 @@
+// SPDX-License-Identifier: GPL-3.0-only
+// Exact, reviewed Java 8/API bridges. Policy, wire, scope, VM rules and async ownership stay shared.
+// Anchored counts fail the build when upstream source changes require a new adaptation review.
+def checkedReplace = { String source, String before, String after, int expected ->
+    int count = source.count(before)
+    if (count != expected) throw new GradleException("1.16.5 bridge expected ${expected} occurrences of '${before}', found ${count}; review shared-source drift")
+    source.replace(before, after)
+}
+
+def adaptations = [
+    [input: '../../client-common/src/main/java/cn/qizhang/guard/client/ClientReporter.java', output: 'client/main/cn/qizhang/guard/client/ClientReporter.java', changes: [
+        ['stream.readNBytes(', 'LegacyJava8.readBounded(stream, ', 3],
+        ['input.readNBytes(', 'LegacyJava8.readBounded(input, ', 2],
+        ['ProcessBuilder.Redirect.DISCARD', 'LegacyJava8.discardError()', 2],
+        ['Files.writeString(file, UUID.randomUUID().toString(), StandardCharsets.UTF_8, StandardOpenOption.CREATE_NEW)', 'Files.write(file, UUID.randomUUID().toString().getBytes(StandardCharsets.UTF_8), StandardOpenOption.CREATE_NEW)', 1]
+    ]],
+    [input: '../shared/src/main/java/cn/qizhang/guard/minecraft/MinecraftGuard.java', output: 'shared/main/cn/qizhang/guard/minecraft/MinecraftGuard.java', changes: [
+        ['import org.slf4j.Logger;', 'import org.apache.logging.log4j.Logger;', 1],
+        ['import org.slf4j.LoggerFactory;', 'import org.apache.logging.log4j.LogManager;', 1],
+        ['LoggerFactory.getLogger(', 'LogManager.getLogger(', 1],
+        ['Component.literal(', 'new net.minecraft.network.chat.TextComponent(', 2],
+        ['.serverLevel()', '.getLevel()', 2],
+        ['p.getYRot()', 'p.yRot', 1],
+        ['p.getXRot()', 'p.xRot', 1]
+    ]],
+    [input: '../shared/src/main/java/cn/qizhang/guard/minecraft/GuardCommands.java', output: 'shared/main/cn/qizhang/guard/minecraft/GuardCommands.java', changes: [
+        ['var source =', 'CommandSourceStack source =', 1],
+        ['sendSuccess(() -> ', 'sendSuccess(', 2],
+        ['Component.literal(', 'new net.minecraft.network.chat.TextComponent(', 2]
+    ]],
+    [input: '../shared/src/test/java/cn/qizhang/guard/minecraft/CommandParserSmoke.java', output: 'shared/test/cn/qizhang/guard/minecraft/CommandParserSmoke.java', changes: [
+        ['var dispatcher =', 'CommandDispatcher<CommandSourceStack> dispatcher =', 1],
+        ['var admin =', 'CommandSourceStack admin =', 1],
+        ['var parsed =', 'com.mojang.brigadier.ParseResults<CommandSourceStack> parsed =', 1],
+        ['"a".repeat(64)', 'String.join("", java.util.Collections.nCopies(64, "a"))', 1],
+        ['Component.literal(', 'new net.minecraft.network.chat.TextComponent(', 1]
+    ]],
+    [input: '../../client-common/src/test/java/cn/qizhang/guard/client/ClientReporterSmoke.java', output: 'client/test/cn/qizhang/guard/client/ClientReporterSmoke.java', changes: [
+        ['var directory =', 'java.nio.file.Path directory =', 1],
+        ['var accepted =', 'AtomicReference<byte[]> accepted =', 1],
+        ['var complete =', 'CountDownLatch complete =', 1],
+        ['var envelope =', 'cn.qizhang.guard.core.ReportEnvelope envelope =', 1],
+        ['var reporter =', 'ClientReporter reporter =', 1],
+        ['var mainThread =', 'LinkedBlockingQueue<Runnable> mainThread =', 1],
+        ['var newest =', 'AtomicReference<byte[]> newest =', 1]
+    ]]
+]
+ext.qvAdaptations = adaptations
+tasks.register('generateLegacySources') {
+    inputs.files(adaptations.collect { rootProject.file(it.input) })
+    inputs.file(rootProject.file('gradle/adapt-sources.gradle'))
+    outputs.dir(layout.buildDirectory.dir('generated/legacy'))
+    doLast {
+        File destination = layout.buildDirectory.dir('generated/legacy').get().asFile
+        adaptations.each { entry ->
+            String source = rootProject.file(entry.input).getText('UTF-8')
+            entry.changes.each { change -> source = checkedReplace(source, change[0], change[1], change[2]) }
+            File output = new File(destination, entry.output)
+            output.parentFile.mkdirs()
+            output.setText(source, 'UTF-8')
+        }
+    }
+}

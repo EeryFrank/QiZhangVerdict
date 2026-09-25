@@ -1,0 +1,28 @@
+// Java-only verification of the exact core and generated reporter used by both loader JARs.
+base { archivesName = 'qizhangverdict-compat-1.16.5-internal' }
+sourceSets.test.java.srcDirs += [
+    rootProject.file('../../core/src/test/java'),
+    rootProject.file('src/compatTest/java'),
+    rootProject.layout.buildDirectory.dir('generated/legacy/client/test')
+]
+tasks.named('compileTestJava') { dependsOn rootProject.tasks.named('generateLegacySources') }
+
+def checks = [
+    securityTest: 'cn.qizhang.guard.core.SecurityRegressionTest',
+    catalogCompatibilityTest: 'cn.qizhang.guard.core.CatalogCompatibilityTest',
+    clientReporterSmoke: 'cn.qizhang.guard.client.ClientReporterSmoke',
+    boundedIoSmoke: 'cn.qizhang.guard.client.LegacyJava8Smoke'
+]
+checks.each { taskName, entryPoint ->
+    tasks.register(taskName, JavaExec) {
+        dependsOn tasks.named('testClasses')
+        classpath = sourceSets.test.runtimeClasspath
+        mainClass = entryPoint
+        workingDir = new File(rootProject.qvRuntimeRoot, 'compat-tests')
+        systemProperty 'qzguard.testDir', new File(rootProject.qvRuntimeRoot, 'core-tests').absolutePath
+        if (taskName == 'catalogCompatibilityTest') args rootProject.file('../../catalog/blacklist-extension.tsv').absolutePath
+        if (taskName == 'clientReporterSmoke') args new File(rootProject.qvRuntimeRoot, 'client-test-config').absolutePath
+        doFirst { workingDir.mkdirs() }
+    }
+}
+tasks.named('check') { dependsOn checks.keySet() }

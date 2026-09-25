@@ -1,0 +1,174 @@
+{
+  "schemaVersion": 1,
+  "recordedAtUtc": "2026-09-25T07:56:57Z",
+  "product": "QiZhangVerdict",
+  "minecraft": "1.12.2",
+  "release": "0.2.0-dev",
+  "license": "GPL-3.0-only",
+  "published": false,
+  "allRequestedDedicatedChecksPassed": true,
+  "runtime": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\forge-1.12.2-guard-01",
+  "guard": {
+    "path": "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.12.2\\forge\\build\\libs\\qizhangverdict-forge-1.12.2-0.2.0-dev.jar",
+    "sha256": "7ee00ced99919281e2d6851e123c6bcb2d8ddd3e46338870b2034d5a5dcf0966",
+    "bytes": 90871
+  },
+  "loader": {
+    "name": "Forge",
+    "version": "14.23.5.2864",
+    "installer": {
+      "url": "https://maven.minecraftforge.net/net/minecraftforge/forge/1.12.2-14.23.5.2864/forge-1.12.2-14.23.5.2864-installer.jar",
+      "checksumUrl": "https://maven.minecraftforge.net/net/minecraftforge/forge/1.12.2-14.23.5.2864/forge-1.12.2-14.23.5.2864-installer.jar.sha1",
+      "officialSha1": "b5ec0016c292830f2325e39417d1ec4d9e166cab",
+      "sha256": "2c0065938de6df6f3deb4a08a3018940a1cc86111adb34a3be55d657857a11cc",
+      "bytes": 4532339
+    },
+    "serverEntrySha256": "ff578d670d2c720a72f8fff31ea3d6868595c7e980ecdecba3254f307ef2c2a9",
+    "installerExitCode": 0
+  },
+  "officialMinecraftServer": {
+    "sha1": "886945bfb2b978778c3a0288fd7fab09d315b25f",
+    "size": 30222121,
+    "url": "https://piston-data.mojang.com/v1/objects/886945bfb2b978778c3a0288fd7fab09d315b25f/server.jar",
+    "sha256": "fe1f9274e6dad9191bf6e6e8e36ee6ebc737f373603df0946aafcded0d53167e",
+    "versionMetadataUrl": "https://piston-meta.mojang.com/v1/packages/832d95b9f40699d4961394dcf6cf549e65f15dc5/1.12.2.json",
+    "versionMetadataSha1": "832d95b9f40699d4961394dcf6cf549e65f15dc5"
+  },
+  "java": {
+    "executable": "E:\\CodexTemp\\QiZhangVerdict\\toolchains\\jdk8\\jdk8u504-b01\\bin\\java.exe",
+    "version": "openjdk version \"1.8.0_504\"\r\nOpenJDK Runtime Environment (Temurin)(build 1.8.0_504-b01)\r\nOpenJDK 64-Bit Server VM (Temurin)(build 25.504-b01, mixed mode)",
+    "sha256": "65ebee06ec47df0c41c4483ac5aa408e55adb47a1613bad56be30bccc4317e85"
+  },
+  "startupPassed": true,
+  "strictConsoleStatusVerified": true,
+  "serverExitCode": 0,
+  "normalStop": true,
+  "serverProcessAndPortReleased": true,
+  "elapsedSeconds": 76.66,
+  "tcp": {
+    "passed": true,
+    "cases": [
+      "real operator command blocked while pending and restored after native QZGuard report",
+      "strict default companion report accepted on native Forge QZGuard channel",
+      "valid report keeps account online for at least 22 seconds with strict server status",
+      "same IP and same device second account rejected",
+      "same IP second distinct device accepted",
+      "same IP third distinct device accepted",
+      "default fourth concurrent account rejected",
+      "disconnect releases IP and device concurrent slots",
+      "strict default rejects missing device identifier",
+      "malformed report rejected",
+      "invalid report does not permanently ban account",
+      "default required companion timeout enforced",
+      "timeout releases session and does not permanently ban account"
+    ],
+    "caseCount": 13,
+    "version": "1.12.2",
+    "channel": "QZGuard",
+    "registerChannel": "REGISTER",
+    "defaultPolicyUnmodified": true,
+    "waits": [
+      {
+        "case": "valid companion stays online beyond default deadline",
+        "elapsedMilliseconds": 22072
+      },
+      {
+        "case": "default required report timeout",
+        "elapsedMilliseconds": 20393
+      }
+    ],
+    "loader": "Forge 14.23.5.2864",
+    "scope": "Real loopback TCP clients with synthetic self-reports; not a rendered companion, real VM, external anticheat or general gameplay compatibility test.",
+    "exitCode": 0
+  },
+  "defaultPolicyUnmodified": true,
+  "strictDefaultsVerified": {
+    "limits.max-online-per-ip": "3",
+    "limits.max-online-per-ip-device": "1",
+    "limits.max-accounts-per-ip": "5",
+    "companion.required": "true",
+    "companion.timeout-seconds": "20",
+    "device.required": "true",
+    "vm.action": "DENY",
+    "sanctions.on-deny": "BAN"
+  },
+  "defaultPolicyBeforeSha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+  "defaultPolicyAfterSha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+  "helper": {
+    "file": "scripts/legacy112_mod_smoke.py",
+    "sha256": "66a5a9abca361f7c8cb4370d401389fc79baa9edb22ba4f5d348a2e62040c0e1",
+    "executedEmbeddedProtocolSha256": "2335491891b70541cf16910d76e0f3de73b92723bbe24d614a79d6b9f1835cea"
+  },
+  "commandGateMechanism": "Forge cancellable CommandEvent; no Mixin in this 1.12.2 adapter",
+  "statusResponses": [
+    "[16:53:29] [Server thread/INFO] [minecraft/DedicatedServer]: QiZhangVerdict sessions=0, trackedIPs=0, accountPairs=0, rules=11, companion=required, vm=DENY, blacklist=DENY, rateBuckets=0, accountBans=0, deviceBans=0, deviceRequired=true",
+    "[16:53:58] [Server thread/INFO] [minecraft/DedicatedServer]: QiZhangVerdict sessions=1, trackedIPs=1, accountPairs=2, rules=11, companion=required, vm=DENY, blacklist=DENY, rateBuckets=1, accountBans=0, deviceBans=0, deviceRequired=true",
+    "[16:54:30] [Server thread/INFO] [minecraft/DedicatedServer]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=5, rules=11, companion=required, vm=DENY, blacklist=DENY, rateBuckets=1, accountBans=0, deviceBans=0, deviceRequired=true",
+    "[16:54:31] [Server thread/INFO] [minecraft/DedicatedServer]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=5, rules=11, companion=required, vm=DENY, blacklist=DENY, rateBuckets=1, accountBans=0, deviceBans=0, deviceRequired=true"
+  ],
+  "warningLineCount": 8,
+  "errorSeverityLineCount": 1,
+  "failure": null,
+  "evidence": [
+    {
+      "original": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\forge-1.12.2-guard-01\\smoke-result.json",
+      "file": "evidence/legacy-112-gpl-smoke-result.json",
+      "sha256": "f8483ff62ca8b31eb1cf3bd6eec8c0bab46e6ed2d9f98ebe0f99956b06d444f7",
+      "bytes": 5726
+    },
+    {
+      "original": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\forge-1.12.2-guard-01\\console.log",
+      "file": "evidence/legacy-112-gpl-console.log",
+      "sha256": "058223ca43c040f5b2f9eec1033cf7963712b4d09b537819eef34b76683f8aa2",
+      "bytes": 18998
+    },
+    {
+      "original": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\forge-1.12.2-guard-01\\protocol-result.json",
+      "file": "evidence/legacy-112-gpl-protocol-result.json",
+      "sha256": "890de32e880bea8759f7214e39e4053bfb244b5c6e77e3683e2a2c70d134e695",
+      "bytes": 1383
+    },
+    {
+      "original": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\forge-1.12.2-guard-01\\protocol-console.log",
+      "file": "evidence/legacy-112-gpl-protocol-console.log",
+      "sha256": "a646b00a0f5209a1978d02f6d20a5e8f0a994f0083587babbaed0b3210c1d1ab",
+      "bytes": 1220
+    },
+    {
+      "original": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\forge-1.12.2-guard-01\\install-result.json",
+      "file": "evidence/legacy-112-gpl-install-result.json",
+      "sha256": "07b2096e127c43d8c0b9e237f0c991c7e78daf456559faedcc3f9e61a82a015d",
+      "bytes": 421
+    },
+    {
+      "original": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\forge-1.12.2-guard-01\\install-console.log",
+      "file": "evidence/legacy-112-gpl-install-console.log",
+      "sha256": "f825046b0923016541d6c8b9192f09c5d6f50301e062f37b25781ed4b443c15d",
+      "bytes": 5755
+    },
+    {
+      "original": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\forge-1.12.2-guard-01\\.qizhang-112-smoke.json",
+      "file": "evidence/legacy-112-gpl-qizhang-112-smoke.json",
+      "sha256": "96924d55b2611bdac91364f0f177dbeb352105b8564124d325c5904cc4b44dfe",
+      "bytes": 1863
+    }
+  ],
+  "privacy": {
+    "players": "synthetic offline accounts and UUIDs; listener127.0.0.1 only",
+    "deviceIdentifiers": "synthetic SHA256 fixture labels, no OS/hardware probe by these TCP clients",
+    "excluded": [
+      "accounts.state",
+      "world files",
+      "operator state",
+      "server-id.txt"
+    ]
+  },
+  "limitations": [
+    "Native real TCP clients use synthetic self-reports, not the production graphical companion or actual VM hardware detection.",
+    "Thirteen grouped TCP acceptance checks, not exhaustive anti-cheat attacks, modpack integration, combat, performance or real-world false-positive testing.",
+    "No external Grim/AntiXray is installed.",
+    "OP command gate was checked through official Forge CommandEvent; this old adapter does not use Mixin.",
+    "The default guard policy was not edited; server is an isolated offline-mode loopback fixture."
+  ],
+  "retainedStartupError": "Official installed Forge logs FML appears to be missing any signature data. This is not a good thing at ERROR severity. It is retained, not counted as a clean error-free startup; dedicated startup, guard lifecycle and the 13 TCP assertions nevertheless passed."
+}

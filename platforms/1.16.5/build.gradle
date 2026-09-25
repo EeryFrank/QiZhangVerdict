@@ -1,0 +1,69 @@
+plugins {
+    id 'dev.architectury.loom' version '1.11.456' apply false
+    id 'architectury-plugin' version '3.4.164'
+}
+
+architectury { minecraft = '1.16.5' }
+allprojects { group = 'cn.qizhang.guard'; version = '0.2.0-dev' }
+
+def cacheDefault = System.getProperty('os.name').toLowerCase().contains('windows')
+    ? 'E:/CodexTemp/QiZhangVerdict/legacy-build/1.16.5/runtime'
+    : new File(System.getProperty('java.io.tmpdir'), 'qizhangverdict-1.16.5-runtime').absolutePath
+ext.qvRuntimeRoot = providers.gradleProperty('qzRuntimeRoot').getOrElse(cacheDefault)
+apply from: 'gradle/adapt-sources.gradle'
+
+subprojects {
+    apply plugin: 'java'
+    ext.qvLicenseRoot = rootProject.file('../..')
+    apply from: new File(qvLicenseRoot, 'gradle/license-resources.gradle')
+    repositories { mavenCentral() }
+    // A modern compiler with --release 8 checks both syntax and Java API availability.
+    java { toolchain.languageVersion = JavaLanguageVersion.of(17); withSourcesJar() }
+    tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8'; options.release = 8 }
+    sourceSets.main.java.srcDirs += [
+        rootProject.file('../../core/src/main/java'),
+        rootProject.file('src/compat/java'),
+        rootProject.layout.buildDirectory.dir('generated/legacy/client/main')
+    ]
+    sourceSets.main.resources.srcDir rootProject.file('../../core/src/main/resources')
+    tasks.named('compileJava') { dependsOn rootProject.tasks.named('generateLegacySources') }
+    tasks.named('sourcesJar') { dependsOn rootProject.tasks.named('generateLegacySources') }
+    tasks.withType(JavaExec).configureEach {
+        javaLauncher = javaToolchains.launcherFor { languageVersion = JavaLanguageVersion.of(8) }
+    }
+}
+
+configure([project(':fabric'), project(':forge')]) {
+    final String runtimeRoot = rootProject.qvRuntimeRoot
+    apply plugin: 'dev.architectury.loom'
+    apply plugin: 'architectury-plugin'
+    base { archivesName = "qizhangverdict-${project.name}-1.16.5" }
+    repositories {
+        maven { url 'https://maven.fabricmc.net/' }
+        maven { url 'https://maven.architectury.dev/' }
+        maven { url 'https://maven.minecraftforge.net/' }
+    }
+    dependencies { minecraft 'com.mojang:minecraft:1.16.5'; mappings loom.officialMojangMappings() }
+    sourceSets.main.java.srcDirs += [rootProject.file('src/main/java'), rootProject.layout.buildDirectory.dir('generated/legacy/shared/main')]
+    sourceSets.test.java.srcDir rootProject.layout.buildDirectory.dir('generated/legacy/shared/test')
+    tasks.named('compileTestJava') { dependsOn rootProject.tasks.named('generateLegacySources') }
+    tasks.register('commandParserSmoke', JavaExec) {
+        dependsOn tasks.named('testClasses')
+        classpath = sourceSets.test.runtimeClasspath
+        mainClass = 'cn.qizhang.guard.minecraft.CommandParserSmoke'
+        workingDir = new File(runtimeRoot, project.name + '-parser')
+        doFirst { workingDir.mkdirs() }
+    }
+    tasks.named('check') { dependsOn tasks.named('commandParserSmoke'), ':compat:check' }
+    processResources {
+        inputs.property 'version', project.version
+        filesMatching(['fabric.mod.json', 'META-INF/mods.toml']) { expand version: project.version }
+    }
+    loom {
+        mixin { defaultRefmapName = 'qizhangverdict.refmap.json' }
+        runs {
+            server { runDir(new File(runtimeRoot, project.name + '-server').absolutePath) }
+            client { runDir(new File(runtimeRoot, project.name + '-client').absolutePath) }
+        }
+    }
+}

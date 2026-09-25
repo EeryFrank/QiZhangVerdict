@@ -1,0 +1,71 @@
+// SPDX-License-Identifier: GPL-3.0-only
+buildscript {
+    repositories { maven { url = 'https://maven.minecraftforge.net/' }; mavenCentral() }
+    dependencies { classpath 'net.minecraftforge.gradle:ForgeGradle:3.0.197' }
+}
+if (JavaVersion.current() != JavaVersion.VERSION_1_8) {
+    throw new GradleException('Minecraft 1.12.2 ForgeGradle 3 / Gradle 5.6.4 requires JDK 8 for this build; set JAVA_HOME to a JDK 8 installation.')
+}
+allprojects { group = 'cn.qizhang.guard'; version = '0.2.0-dev' }
+ext.qvRuntimeRoot = findProperty('qzRuntimeRoot') ?: (System.getProperty('os.name').toLowerCase().contains('windows')
+    ? 'E:/CodexTemp/QiZhangVerdict/legacy-build/1.12.2/runtime'
+    : new File(System.getProperty('java.io.tmpdir'), 'qizhangverdict-1.12.2-runtime').absolutePath)
+apply from: 'gradle/adapt-sources.gradle'
+
+subprojects {
+    apply plugin: 'net.minecraftforge.gradle'
+    ext.qvLicenseRoot = rootProject.file('../..')
+    apply from: new File(qvLicenseRoot, 'gradle/license-resources.gradle')
+    archivesBaseName = 'qizhangverdict-forge-1.12.2'
+    sourceCompatibility = targetCompatibility = '1.8'
+    repositories { mavenCentral(); maven { url = 'https://maven.minecraftforge.net/' } }
+    minecraft {
+        mappings channel: 'snapshot', version: '20171003-1.12'
+        runs {
+            client { workingDirectory new File(rootProject.qvRuntimeRoot, 'forge-client') }
+            server { workingDirectory new File(rootProject.qvRuntimeRoot, 'forge-server') }
+        }
+    }
+    dependencies { minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2864' }
+    sourceSets.main.java.srcDirs += [rootProject.file('../../core/src/main/java'), rootProject.file('src/compat/java'), rootProject.file('build/generated/legacy/main')]
+    sourceSets.main.resources.srcDir rootProject.file('../../core/src/main/resources')
+    sourceSets.test.java.srcDirs += [rootProject.file('../../core/src/test/java'), rootProject.file('src/compatTest/java'), rootProject.file('build/generated/legacy/test')]
+    compileJava.dependsOn rootProject.tasks.generateLegacySources
+    compileTestJava.dependsOn rootProject.tasks.generateLegacySources
+    tasks.withType(JavaCompile) { options.encoding = 'UTF-8' }
+    processResources {
+        inputs.property 'version', project.version
+        filesMatching('mcmod.info') { expand version: project.version }
+    }
+    jar.finalizedBy('reobfJar')
+    task sourcesJar(type: Jar) {
+        dependsOn rootProject.tasks.generateLegacySources
+        archiveClassifier = 'sources'
+        from sourceSets.main.allSource
+    }
+    assemble.dependsOn sourcesJar
+    def checks = [securityTest: 'cn.qizhang.guard.core.SecurityRegressionTest',
+        catalogCompatibilityTest: 'cn.qizhang.guard.core.CatalogCompatibilityTest',
+        clientReporterSmoke: 'cn.qizhang.guard.client.ClientReporterSmoke',
+        legacyCommandSmoke: 'cn.qizhang.guard.forge112.LegacyCommandSmoke']
+    checks.each { taskName, entryPoint ->
+        tasks.register(taskName, JavaExec) {
+            dependsOn testClasses
+            classpath = sourceSets.test.runtimeClasspath
+            main = entryPoint
+            workingDir = new File(rootProject.qvRuntimeRoot, 'checks')
+            systemProperty 'qzguard.testDir', new File(rootProject.qvRuntimeRoot, 'core-tests').absolutePath
+            if (taskName == 'catalogCompatibilityTest') args rootProject.file('../../catalog/blacklist-extension.tsv').absolutePath
+            if (taskName == 'clientReporterSmoke') args new File(rootProject.qvRuntimeRoot, 'client-config').absolutePath
+            doFirst { workingDir.mkdirs() }
+        }
+    }
+    check.dependsOn checks.keySet()
+    // FML 1.12 development launches discover classes and mcmod.info from one directory.
+    // This follows the pinned official MDK; release acceptance still uses reobfuscated JARs.
+    sourceSets.each { sourceSet ->
+        def outputDirectory = layout.buildDirectory.dir("sourceSets/${sourceSet.name}").get().asFile
+        sourceSet.output.resourcesDir = outputDirectory
+        sourceSet.java.outputDir = outputDirectory
+    }
+}

@@ -16,6 +16,36 @@ variables:
   CI: 'true'
   GRADLE_USER_HOME: '$CI_PROJECT_DIR/.gradle-user'
 
+# Independent development checks; these JARs are not added to the five-JAR release job.
+legacy-build:
+  stage: build
+  image: eclipse-temurin:8-jdk-noble
+  timeout: 1h
+  parallel:
+    matrix:
+      - QV_MC: ['1.12.2', '1.16.5', '1.18.2', '1.19.4']
+  cache:
+    key: 'legacy-gradle-${CI_COMMIT_REF_SLUG}-${QV_MC}'
+    paths:
+      - .gradle-user/caches/
+      - .gradle-user/wrapper/
+  before_script:
+    - apt-get update -qq
+    - DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends openjdk-17-jdk-headless openjdk-21-jdk-headless
+  script:
+    - |
+      export QV_JDK8="$JAVA_HOME"
+      export QV_JDK17="/usr/lib/jvm/java-17-openjdk-$(dpkg --print-architecture)"
+      export QV_JDK21="/usr/lib/jvm/java-21-openjdk-$(dpkg --print-architecture)"
+      bash scripts/ci_legacy_build.sh
+  artifacts:
+    name: 'qizhangverdict-legacy-${QV_MC}-${CI_COMMIT_SHORT_SHA}'
+    when: always
+    expire_in: 14 days
+    paths:
+      - ci-artifacts/legacy-$QV_MC/
+      - ci-logs/legacy-$QV_MC/
+
 build:
   stage: build
   timeout: 1h

@@ -1,0 +1,263 @@
+{
+  "schema": 1,
+  "status": "STATIC_API_AUDIT_NOT_BUILT",
+  "checkedAtUTC": "2026-09-25T07:27:44.321294+00:00",
+  "productVersion": "0.2.0-dev",
+  "minecraft": "1.16.5",
+  "license": "GPL-3.0-only",
+  "cacheRoot": "E:\\CodexTemp\\QiZhangVerdict\\legacy-build\\1.16.5",
+  "selectedBuild": {
+    "gradle": "8.14.1",
+    "architecturyLoom": "1.11.456",
+    "architecturyPlugin": "3.4.164",
+    "buildJvm": 21,
+    "compilerJdk": 17,
+    "javaRelease": 8,
+    "testAndBaselineGameJvm": 8,
+    "reason": "Full Mojmap on both targets; official Loom source supplies SRG-to-named merging and old Forge support. Loom plugin class major 65 requires Java 21. First dependency resolution/build remains pending."
+  },
+  "officialForgeMdkAlternative": {
+    "forge": "36.2.42",
+    "forgeGradleRange": "[6.0,6.2)",
+    "gradle": "8.4",
+    "javaToolchain": 8,
+    "selected": false,
+    "note": "The actual upstream MDK is an alternative, not the configuration used by this Loom project."
+  },
+  "loaders": {
+    "fabric": {
+      "loader": "0.16.14",
+      "api": "0.42.0+1.16",
+      "apiDescriptorId": "fabric",
+      "apiProvides": []
+    },
+    "forge": {
+      "version": "36.2.42",
+      "networkPackage": "net.minecraftforge.fml.network",
+      "lifecyclePackage": "net.minecraftforge.fml.event.server",
+      "serverEvent": "FMLServerStartingEvent",
+      "stopEvent": "FMLServerStoppingEvent",
+      "tickRequiresStoredServer": true,
+      "playerEventAccessor": "getPlayer",
+      "serverboundEvent": "NetworkEvent.ClientCustomPayloadEvent",
+      "clientboundEvent": "NetworkEvent.ServerCustomPayloadEvent",
+      "fmlLauncherApiBytecodeMajor": 52,
+      "resourcePackFormat": 6
+    }
+  },
+  "mappings": {
+    "namespaceInSource": "full Mojmap",
+    "mixinOwner": "net.minecraft.commands.Commands",
+    "mixinDescriptor": "performCommand(Lnet/minecraft/commands/CommandSourceStack;Ljava/lang/String;)I",
+    "forgeSrgEquivalent": "net.minecraft.command.Commands.func_197059_a(Lnet/minecraft/command/CommandSource;Ljava/lang/String;)I",
+    "verifiedSignatures": {
+      "Commands.performCommand": "int performCommand(net.minecraft.commands.CommandSourceStack,java.lang.String)",
+      "CommandSourceStack.sendSuccess": "void sendSuccess(net.minecraft.network.chat.Component,boolean)",
+      "ServerPlayer.getLevel": "net.minecraft.server.level.ServerLevel getLevel()",
+      "ServerPlayer.teleportTo": "void teleportTo(net.minecraft.server.level.ServerLevel,double,double,double,float,float)",
+      "MinecraftServer.isSingleplayerOwner": "boolean isSingleplayerOwner(com.mojang.authlib.GameProfile)",
+      "Minecraft.getConnection": "net.minecraft.client.multiplayer.ClientPacketListener getConnection()",
+      "Minecraft.getResourcePackRepository": "net.minecraft.server.packs.repository.PackRepository getResourcePackRepository()",
+      "PackRepository.getSelectedPacks": "java.util.Collection getSelectedPacks()",
+      "Pack.getId": "java.lang.String getId()",
+      "Entity.yRot": "float yRot ->",
+      "Entity.xRot": "float xRot ->",
+      "CommandSource.NULL": "net.minecraft.commands.CommandSource NULL ->"
+    },
+    "remappingRequired": true,
+    "refmapProduced": false,
+    "exactForgeMcpConfig": "1.16.5-20210115.111550",
+    "exactMcpJoinedTsrgEqualsAuditedAlias": true
+  },
+  "reporting": {
+    "wire": "unchanged shared wire2",
+    "channel": "qzguard:main",
+    "legacy112ChannelNotUsed": "QZGuard",
+    "requiredPolicyUnchanged": true,
+    "reporterSourceGenerated": true,
+    "boundedReadLimits": [
+      128,
+      256,
+      1024,
+      4096,
+      8192
+    ],
+    "installedIdCreateNewPreserved": true
+  },
+  "sources": [
+    {
+      "name": "1.16.5/client-mappings.txt",
+      "url": "https://piston-data.mojang.com/v1/objects/374c6b789574afbdc901371207155661e0509e17/client.txt",
+      "sha256": "7931ed6d723eceb1d621d05a76e10ddf643bf468c6ecf1c4ecf377bd72cf8b8c",
+      "sha1Verified": true,
+      "cacheFile": "client-mappings.txt"
+    },
+    {
+      "name": "1.16.5/server-mappings.txt",
+      "url": "https://piston-data.mojang.com/v1/objects/41285beda6d251d190f2bf33beadd4fee187df7a/server.txt",
+      "sha256": "b3732b0f031abce7083cac8e594427e70d2e19674b8de2c682630c39b64228a7",
+      "sha1Verified": true,
+      "cacheFile": "server-mappings.txt"
+    },
+    {
+      "name": "1.16.5/fabric-api-0.42.0+1.16.jar",
+      "url": "https://maven.fabricmc.net/net/fabricmc/fabric-api/fabric-api/0.42.0+1.16/fabric-api-0.42.0+1.16.jar",
+      "sha256": "046d07bc088477a8e3511fb7d5f8d4e02b51e97769e4e5f2d7d48047806d4862",
+      "sha1Verified": false,
+      "cacheFile": "fabric-api-0.42.0+1.16.jar",
+      "upstreamSha1": "e964db8bc254c8b55e96a395b1c36c6220d19280",
+      "upstreamSha1Url": "https://maven.fabricmc.net/net/fabricmc/fabric-api/fabric-api/0.42.0+1.16/fabric-api-0.42.0+1.16.jar.sha1"
+    },
+    {
+      "name": "1.16.5/forge-1.16.5-36.2.42-mdk.zip",
+      "url": "https://maven.minecraftforge.net/net/minecraftforge/forge/1.16.5-36.2.42/forge-1.16.5-36.2.42-mdk.zip",
+      "sha256": "02774cc07855111ee58936319bc39416c31df899b649748f089afd7ec51d5568",
+      "sha1Verified": false,
+      "cacheFile": "forge-1.16.5-36.2.42-mdk.zip",
+      "upstreamSha1": "3d95dac7c4f3ec7a0bdafed3f3c5cb6d284cec06",
+      "upstreamSha1Url": "https://maven.minecraftforge.net/net/minecraftforge/forge/1.16.5-36.2.42/forge-1.16.5-36.2.42-mdk.zip.sha1"
+    },
+    {
+      "name": "1.16.5/fabric-api.pom",
+      "url": "https://maven.fabricmc.net/net/fabricmc/fabric-api/fabric-api/0.42.0+1.16/fabric-api-0.42.0+1.16.pom",
+      "sha256": "5f268948ab6cb1af149fa11984fa0e7523f0201c727f7a52cfd71cb9324b3e34",
+      "sha1Verified": false,
+      "cacheFile": "fabric-api.pom"
+    },
+    {
+      "name": "1.16.5/fabric-loader-profile.json",
+      "url": "https://meta.fabricmc.net/v2/versions/loader/1.16.5/0.16.14/profile/json",
+      "sha256": "f2d30e744c330a99c44bb9bc92e296833d0d47d4bf1782d7f7625110e1253e13",
+      "sha1Verified": false,
+      "cacheFile": "fabric-loader-profile.json"
+    },
+    {
+      "name": "1.16.5/forge-1.16.5-36.2.42-sources.jar",
+      "url": "https://maven.minecraftforge.net/net/minecraftforge/forge/1.16.5-36.2.42/forge-1.16.5-36.2.42-sources.jar",
+      "sha256": "e56a7fdeb9b7ee74831b3809a57c0231c513295be71b4fb3eeb1a7b7f9927ba7",
+      "sha1Verified": false,
+      "cacheFile": "forge-1.16.5-36.2.42-sources.jar",
+      "upstreamSha1": "f6c48cc9ccccf091a0115b3d9d307980c107ec60",
+      "upstreamSha1Url": "https://maven.minecraftforge.net/net/minecraftforge/forge/1.16.5-36.2.42/forge-1.16.5-36.2.42-sources.jar.sha1"
+    },
+    {
+      "name": "1.16.5/mcp-config.zip",
+      "url": "https://maven.minecraftforge.net/de/oceanlabs/mcp/mcp_config/1.16.5/mcp_config-1.16.5.zip",
+      "sha256": "80216a0f4ae79d81a5e11ceccaa97582a1f6a2cf079b7703b88a99a26547b342",
+      "cacheFile": "mcp-config.zip",
+      "upstreamSha1": "a81464c686be42933aacac7898f8c0d50edccf51",
+      "upstreamSha1Url": "https://maven.minecraftforge.net/de/oceanlabs/mcp/mcp_config/1.16.5/mcp_config-1.16.5.zip.sha1"
+    },
+    {
+      "name": "architectury-loom-1.11.456-sources.jar",
+      "url": "https://maven.architectury.dev/dev/architectury/architectury-loom/1.11.456/architectury-loom-1.11.456-sources.jar",
+      "cacheFile": "architectury-loom-1.11.456-sources.jar",
+      "sha256": "8373897a7d6594f71a547f2fbc9f72ba343e5332ba305a5c687d71def666cf77",
+      "bytes": 847628,
+      "upstreamSha1": "155712526a26a0d4bf332e435fe52f3dfbf598c9",
+      "upstreamSha1Url": "https://maven.architectury.dev/dev/architectury/architectury-loom/1.11.456/architectury-loom-1.11.456-sources.jar.sha1"
+    },
+    {
+      "name": "architectury-loom-1.11.456.pom",
+      "url": "https://maven.architectury.dev/dev/architectury/architectury-loom/1.11.456/architectury-loom-1.11.456.pom",
+      "cacheFile": "architectury-loom-1.11.456.pom",
+      "sha256": "6449a4b416a44ea0dfdec223d3e003e12c2eecebe8f7b0edffc788d397162f5a",
+      "bytes": 5984
+    },
+    {
+      "name": "loom-issue-320.json",
+      "url": "https://api.github.com/repos/architectury/architectury-loom/issues/320",
+      "cacheFile": "loom-issue-320.json",
+      "sha256": "737dc618bc0a3f8aecbe5b8a0e279d445f2286e4dbcced8e61905ba41d6cdf11",
+      "bytes": 3176
+    },
+    {
+      "name": "fabric-api-0.42.0+1.16-sources.jar",
+      "url": "https://maven.fabricmc.net/net/fabricmc/fabric-api/fabric-api/0.42.0+1.16/fabric-api-0.42.0+1.16-sources.jar",
+      "cacheFile": "fabric-api-0.42.0+1.16-sources.jar",
+      "sha256": "e0c03b0a6fffcbb6ea90b68eb3198f3afab38b652033b35e1b6a3ccb2913f118",
+      "bytes": 2164,
+      "upstreamSha1": "13dd64e93b9dbc66f89bd01b9befd0c56b434c23",
+      "upstreamSha1Url": "https://maven.fabricmc.net/net/fabricmc/fabric-api/fabric-api/0.42.0+1.16/fabric-api-0.42.0+1.16-sources.jar.sha1"
+    },
+    {
+      "name": "forge-userdev.jar",
+      "cacheFile": "forge-userdev.jar",
+      "url": "https://maven.minecraftforge.net/net/minecraftforge/forge/1.16.5-36.2.42/forge-1.16.5-36.2.42-userdev.jar",
+      "sha256": "f9604460d8e21f8c8ed18f846e3e4eb9fb83e1bb3651574b64bae65a476967f7",
+      "bytes": 2842193,
+      "upstreamSha1": "9d5c2141274d4396a9eccda74f78d45842d1cbfd",
+      "upstreamSha1Url": "https://maven.minecraftforge.net/net/minecraftforge/forge/1.16.5-36.2.42/forge-1.16.5-36.2.42-userdev.jar.sha1"
+    },
+    {
+      "name": "architectury-loom-1.11.456.jar",
+      "cacheFile": "architectury-loom-1.11.456.jar",
+      "url": "https://maven.architectury.dev/dev/architectury/architectury-loom/1.11.456/architectury-loom-1.11.456.jar",
+      "sha256": "43b3d3e16d71341ef6dc4da54945e9a29c36ac62a2b14676145b813f4fea6ad9",
+      "bytes": 1540642,
+      "upstreamSha1": "9a8a8dc4054a62b332168b39b05d09af3bc9d928",
+      "upstreamSha1Url": "https://maven.architectury.dev/dev/architectury/architectury-loom/1.11.456/architectury-loom-1.11.456.jar.sha1"
+    },
+    {
+      "name": "forge-universal.jar",
+      "cacheFile": "forge-universal.jar",
+      "url": "https://maven.minecraftforge.net/net/minecraftforge/forge/1.16.5-36.2.42/forge-1.16.5-36.2.42-universal.jar",
+      "sha256": "e30870c45e9b14e46cd38b4e1c2c0898d1079a4cb4a08046881fd946458c49b9",
+      "bytes": 2540080,
+      "upstreamSha1": "fd07fe6c2c1cc7d3e403a1db7eadfa935ca7640d",
+      "upstreamSha1Url": "https://maven.minecraftforge.net/net/minecraftforge/forge/1.16.5-36.2.42/forge-1.16.5-36.2.42-universal.jar.sha1"
+    },
+    {
+      "name": "fabric-command-api-v1",
+      "version": "1.1.3+3cc0f0907d",
+      "url": "https://maven.fabricmc.net/net/fabricmc/fabric-api/fabric-command-api-v1/1.1.3+3cc0f0907d/fabric-command-api-v1-1.1.3+3cc0f0907d-sources.jar",
+      "sha256": "065d5cce2f4b118caa954319fd4cceb227b56a0d1f70beefde6d74d0df94571b",
+      "cacheFile": "fabric-command-api-v1-sources.jar",
+      "upstreamSha1": "b1c35b1bef90efc95da9cfdb6b1a3d94c9909104",
+      "upstreamSha1Url": "https://maven.fabricmc.net/net/fabricmc/fabric-api/fabric-command-api-v1/1.1.3+3cc0f0907d/fabric-command-api-v1-1.1.3+3cc0f0907d-sources.jar.sha1"
+    },
+    {
+      "name": "fabric-lifecycle-events-v1",
+      "version": "1.2.2+3cc0f0907d",
+      "url": "https://maven.fabricmc.net/net/fabricmc/fabric-api/fabric-lifecycle-events-v1/1.2.2+3cc0f0907d/fabric-lifecycle-events-v1-1.2.2+3cc0f0907d-sources.jar",
+      "sha256": "0fe52a71cf36d19ec59492b82076f39a23fe9165b8f93ac676bd9db226aaffd3",
+      "cacheFile": "fabric-lifecycle-events-v1-sources.jar",
+      "upstreamSha1": "11abdbc0ad3cc8e9f61b26084c6f428e07858987",
+      "upstreamSha1Url": "https://maven.fabricmc.net/net/fabricmc/fabric-api/fabric-lifecycle-events-v1/1.2.2+3cc0f0907d/fabric-lifecycle-events-v1-1.2.2+3cc0f0907d-sources.jar.sha1"
+    },
+    {
+      "name": "fabric-networking-api-v1",
+      "version": "1.0.5+3cc0f0907d",
+      "url": "https://maven.fabricmc.net/net/fabricmc/fabric-api/fabric-networking-api-v1/1.0.5+3cc0f0907d/fabric-networking-api-v1-1.0.5+3cc0f0907d-sources.jar",
+      "sha256": "7c37afb7eb9702053caddbe0a634085948d86f8d70ac75071d47f4520830f440",
+      "cacheFile": "fabric-networking-api-v1-sources.jar",
+      "upstreamSha1": "67199979f1ee1d6a33b3c5be0b1f0f4aec4b80f4",
+      "upstreamSha1Url": "https://maven.fabricmc.net/net/fabricmc/fabric-api/fabric-networking-api-v1/1.0.5+3cc0f0907d/fabric-networking-api-v1-1.0.5+3cc0f0907d-sources.jar.sha1"
+    },
+    {
+      "name": "forge-launcher.jar",
+      "cacheFile": "forge-launcher.jar",
+      "url": "https://maven.minecraftforge.net/net/minecraftforge/forge/1.16.5-36.2.42/forge-1.16.5-36.2.42-launcher.jar",
+      "sha256": "dfeab9c7d582fce5b1112e9d3038fa0e7075296e467031ce1e2c0ba9fdcf441f",
+      "upstreamSha1": "caca08d22543cbe101d64d171738e1ff6eef4de3",
+      "upstreamSha1Url": "https://maven.minecraftforge.net/net/minecraftforge/forge/1.16.5-36.2.42/forge-1.16.5-36.2.42-launcher.jar.sha1",
+      "bytes": 212563
+    },
+    {
+      "name": "mcp-config-userdev-exact.zip",
+      "cacheFile": "mcp-config-userdev-exact.zip",
+      "url": "https://maven.minecraftforge.net/de/oceanlabs/mcp/mcp_config/1.16.5-20210115.111550/mcp_config-1.16.5-20210115.111550.zip",
+      "sha256": "80216a0f4ae79d81a5e11ceccaa97582a1f6a2cf079b7703b88a99a26547b342",
+      "upstreamSha1": "a81464c686be42933aacac7898f8c0d50edccf51",
+      "upstreamSha1Url": "https://maven.minecraftforge.net/de/oceanlabs/mcp/mcp_config/1.16.5-20210115.111550/mcp_config-1.16.5-20210115.111550.zip.sha1",
+      "bytes": 777652
+    }
+  ],
+  "limits": [
+    "No Gradle or Java process started. No compile, JAR, refmap or runtime acceptance claimed.",
+    "Loom source supports legacy Forge machinery but exact 1.16.5/36.2.42 resolution and SRG remapping need the first build.",
+    "Upstream issue 320 concerns Loom 1.13.467 on 1.16.5; it does not establish this pinned 1.11.456 is runtime-tested.",
+    "No Grim/AntiXray combination selected or run for this target.",
+    "Java 17 game runtime and proxies/ViaVersion not verified."
+  ]
+}

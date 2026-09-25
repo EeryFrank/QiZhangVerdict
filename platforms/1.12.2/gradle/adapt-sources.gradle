@@ -1,0 +1,66 @@
+// SPDX-License-Identifier: GPL-3.0-only
+// Keep policy/wire/async ownership unchanged; adapt only JDK and Minecraft APIs.
+def replaceChecked = { String text, String before, String after, int expected ->
+    if (text.count(before) != expected) throw new GradleException('1.12.2 bridge drift: ' + before)
+    text.replace(before, after)
+}
+def adaptInputs = [
+    client: rootProject.file('../../client-common/src/main/java/cn/qizhang/guard/client/ClientReporter.java'),
+    clientTest: rootProject.file('../../client-common/src/test/java/cn/qizhang/guard/client/ClientReporterSmoke.java'),
+    guard: rootProject.file('../shared/src/main/java/cn/qizhang/guard/minecraft/MinecraftGuard.java')
+]
+tasks.register('generateLegacySources') {
+    inputs.files(adaptInputs.values())
+    inputs.file(rootProject.file('gradle/adapt-sources.gradle'))
+    outputs.dir(rootProject.file('build/generated/legacy'))
+    doLast {
+        def write = { String relative, String data ->
+            File target = rootProject.file('build/generated/legacy/' + relative)
+            target.parentFile.mkdirs(); target.setText(data, 'UTF-8')
+        }
+        String client = adaptInputs.client.getText('UTF-8')
+        [
+            ['stream.readNBytes(', 'LegacyJava8.readBounded(stream, ', 3],
+            ['input.readNBytes(', 'LegacyJava8.readBounded(input, ', 2],
+            ['ProcessBuilder.Redirect.DISCARD', 'LegacyJava8.discardError()', 2],
+            ['Files.writeString(file, UUID.randomUUID().toString(), StandardCharsets.UTF_8, StandardOpenOption.CREATE_NEW)', 'Files.write(file, UUID.randomUUID().toString().getBytes(StandardCharsets.UTF_8), StandardOpenOption.CREATE_NEW)', 1]
+        ].each { client = replaceChecked(client, it[0], it[1], it[2]) }
+        write('main/cn/qizhang/guard/client/ClientReporter.java', client)
+        String test = adaptInputs.clientTest.getText('UTF-8')
+        [
+            ['var directory =', 'java.nio.file.Path directory =', 1],
+            ['var accepted =', 'AtomicReference<byte[]> accepted =', 1],
+            ['var complete =', 'CountDownLatch complete =', 1],
+            ['var envelope =', 'cn.qizhang.guard.core.ReportEnvelope envelope =', 1],
+            ['var reporter =', 'ClientReporter reporter =', 1],
+            ['var mainThread =', 'LinkedBlockingQueue<Runnable> mainThread =', 1],
+            ['var newest =', 'AtomicReference<byte[]> newest =', 1]
+        ].each { test = replaceChecked(test, it[0], it[1], it[2]) }
+        write('test/cn/qizhang/guard/client/ClientReporterSmoke.java', test)
+        String guard = adaptInputs.guard.getText('UTF-8')
+        [
+            ['import org.slf4j.Logger;', 'import org.apache.logging.log4j.Logger;', 1],
+            ['import org.slf4j.LoggerFactory;', 'import org.apache.logging.log4j.LogManager;', 1],
+            ['LoggerFactory.getLogger(', 'LogManager.getLogger(', 1],
+            ['import net.minecraft.network.chat.Component;', 'import net.minecraft.util.text.TextComponentString;', 1],
+            ['import net.minecraft.server.level.ServerPlayer;', 'import net.minecraft.entity.player.EntityPlayerMP;', 1],
+            ['import net.minecraft.server.level.ServerLevel;', 'import net.minecraft.world.WorldServer;', 1],
+            ['import net.minecraft.world.level.GameType;', 'import net.minecraft.world.GameType;', 1],
+            ['Component.literal(', 'new TextComponentString(', 2],
+            ['String ip = player.getIpAddress();', 'String ip = cn.qizhang.guard.forge112.LegacyAddress.address(player);', 1],
+            ['player.getServer().isSingleplayerOwner(player.getGameProfile())', 'player.getGameProfile().getName().equals(player.getServer().getServerOwner())', 1],
+            ['player.setCamera(player);', 'player.setSpectatingEntity(player);', 1],
+            ['if (player.serverLevel() != gate.level) player.teleportTo(gate.level, gate.x, gate.y, gate.z, gate.yaw, gate.pitch);', 'if (player.getServerWorld() != gate.level) { kick(player, "QiZhangVerdict: dimension changed during verification"); continue; }', 1],
+            ['player.connection.teleport(', 'player.connection.setPlayerLocation(', 1],
+            ['p.gameMode.getGameModeForPlayer()', 'p.interactionManager.getGameType()', 1],
+            ['p.serverLevel()', 'p.getServerWorld()', 1],
+            ['p.getX()', 'p.posX', 1], ['p.getY()', 'p.posY', 1], ['p.getZ()', 'p.posZ', 1],
+            ['p.getYRot()', 'p.rotationYaw', 1], ['p.getXRot()', 'p.rotationPitch', 1],
+            ['server.execute(', 'server.addScheduledTask(', 1]
+        ].each { guard = replaceChecked(guard, it[0], it[1], it[2]) }
+        guard = guard.replace('ServerPlayer', 'EntityPlayerMP').replace('ServerLevel', 'WorldServer')
+            .replace('.getUUID()', '.getUniqueID()').replace('.setGameMode(', '.setGameType(')
+            .replace('.getPlayer(', '.getPlayerByUUID(').replace('.getPlayerByName(', '.getPlayerByUsername(')
+        write('main/cn/qizhang/guard/minecraft/MinecraftGuard.java', guard)
+    }
+}
