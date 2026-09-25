@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "checkedAtUTC": "2026-09-25T09:28:29.415579+00:00",
+  "status": "EXACT_FAILURE_REPRODUCED_AND_MINIMAL_FIX_LOCALLY_VERIFIED",
+  "failedRun": {
+    "url": "https://github.com/EeryFrank/QiZhangVerdict/actions/runs/36117499051",
+    "jobUrl": "https://github.com/EeryFrank/QiZhangVerdict/actions/runs/36117499051/job/108014919038",
+    "runId": 36117499051,
+    "jobId": 108014919038,
+    "headSha": "281fa7a25fbc7015bcf079dde4f67e8f4ca88937",
+    "failedStep": "Build and execute required checks",
+    "startedAtUTC": "2026-09-25T09:16:34Z",
+    "finishedAtUTC": "2026-09-25T09:16:36Z",
+    "exitCode": 2,
+    "exactFailure": "gradle-2.7/bin/gradle: 154: Syntax error: \"(\" unexpected",
+    "java8VersionPrintedBeforeFailure": true,
+    "otherLegacyJobsSucceeded": [
+      "1.12.2",
+      "1.16.5",
+      "1.18.2",
+      "1.19.4"
+    ],
+    "rawLog": {
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-build\\1.8.9\\ci-failure-36117499051\\failed-step.log",
+      "sha256": "b9c887779e406231734ac96e99eeae2cea7ca09f27096e3014b7af065c56ee48",
+      "bytes": 3446
+    }
+  },
+  "rootCause": {
+    "officialLauncherShebang": "#!/usr/bin/env bash",
+    "officialLauncherSha256": "848568d0bfb9db8e4870dabe70020eb2cde00af9f51d58f6718b7a3fcb1be01d",
+    "line154": "function splitJvmOpts() {",
+    "line155": "    JVM_OPTS=(\"$@\")",
+    "explanation": "The verified official Gradle 2.7 launcher contains Bash syntax. CI invoked it with sh, which is dash on the Ubuntu runner. Parsing failed before Gradle started; the distribution hash check and extraction had already succeeded."
+  },
+  "fix": {
+    "file": "scripts/ci_legacy_build.sh",
+    "beforeSha256": "29fe11d8e9cd61cc414466d26df462ef78ed89c0a87c72b59ae64c349ae9da2c",
+    "afterSha256": "373f19d4ea66be43a97248f078132ceada944801c87eb6296fd5d4c71cb4eb3d",
+    "defaultLauncherShell": "sh",
+    "minecraft189LauncherShell": "bash",
+    "onlyLauncherShellSelectionChanged": true,
+    "embeddedShaValidationAndExtractionUnchanged": true,
+    "allOtherTargetBranchesUnchanged": true,
+    "checksAndFailurePropagationPreserved": true,
+    "workflowYamlChanged": false
+  },
+  "targetedValidation": {
+    "passed": true,
+    "javaProcessesLaunched": 0,
+    "realGradleBuildExecuted": false,
+    "officialLauncherSha256": "848568d0bfb9db8e4870dabe70020eb2cde00af9f51d58f6718b7a3fcb1be01d",
+    "shellSyntaxExitCode": 0,
+    "dashReproduction": {
+      "exitCode": 2,
+      "error": "E:\\CodexTemp\\QiZhangVerdict\\legacy-build\\1.8.9\\ci-failure-36117499051\\gradle-launcher: 154: Syntax error: \"(\" unexpected",
+      "fakeJvmExecuted": false
+    },
+    "bashLauncherWithFakeJava": {
+      "exitCode": 0,
+      "interpreter": "Bundled GNU Bash 5.2.37, installed as sh.exe",
+      "stubOnly": true,
+      "requiredArgsForwardedExactly": [
+        "--no-daemon",
+        "--stacktrace",
+        "--max-workers=1",
+        "-Dorg.gradle.jvmargs=-Xmx1536M -Dfile.encoding=UTF-8",
+        "setupCIWorkspace",
+        "build"
+      ],
+      "mainClassForwarded": "org.gradle.launcher.GradleMain"
+    },
+    "checks": [
+      "fixed CI Bash script parses",
+      "official launcher reproduces dash failure before Java stub executes",
+      "same unchanged official launcher succeeds under Bash using fake Java",
+      "space-containing JVM option and both required tasks reach stub unchanged"
+    ]
+  },
+  "reusedPreflight": {
+    "file": "outputs/legacy-ci-preflight-1.8.9.json",
+    "sha256": "163a3158012e770bda2dd4ffd9b2aeb0e798eca029db745e5ec4dcaa9d543ea1",
+    "scope": "Prior ZIP integrity/fresh extraction/corrupt cache and GitLab lint checks remain relevant; they did not execute the extracted launcher under Ubuntu dash. The earlier preflight does not establish CI build success."
+  },
+  "cacheEvidence": [
+    {
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-build\\1.8.9\\ci-failure-36117499051\\failed-step.log",
+      "sha256": "b9c887779e406231734ac96e99eeae2cea7ca09f27096e3014b7af065c56ee48",
+      "bytes": 3446
+    },
+    {
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-build\\1.8.9\\ci-failure-36117499051\\dash-reproduction.log",
+      "sha256": "33e9a50004fd8b00ba46d349e772c68f7978583c10c324a936c858f10356c165",
+      "bytes": 121
+    },
+    {
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-build\\1.8.9\\ci-failure-36117499051\\bash-stub-launch.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-build\\1.8.9\\ci-failure-36117499051\\targeted-validation.json",
+      "sha256": "1569bce2fbe2182d72357ed71e2398e63c207110fad405ddfcaeffe55c74be54",
+      "bytes": 1168
+    }
+  ],
+  "javaProcessesLaunchedForDiagnosis": 0,
+  "actualGradleBuildExecutedForDiagnosis": false,
+  "remoteFixBuildVerified": false,
+  "committedOrPushedByThisTask": false,
+  "limitations": [
+    "The corrected CI needs a new remote run to prove a full Linux Gradle/Forge build and all five checks.",
+    "The local positive test executed the unchanged official launcher with a synthetic Java stub; no JVM or product artifact was built.",
+    "No prior failed result or historical preflight record was rewritten."
+  ]
+}
