@@ -1,0 +1,340 @@
+{
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-09-25T10:47:08.990114+00:00",
+  "status": "PASS",
+  "baseCommit": "1182de57a4c7a4e9a9485cc4913957a230272af2",
+  "scope": "Source-level Java 8 core regression and fresh-install catalog behavior; no product JAR build or Minecraft runtime acceptance",
+  "productionChange": {
+    "path": "core/src/main/java/cn/qizhang/guard/core/Blacklist.java",
+    "summary": "Blacklist.DEFAULTS is a Java 8 constant containing all 37 reviewed exact catalog rows, including pinned sources.",
+    "newInstall": {
+      "rules": 37,
+      "deny": 33,
+      "alert": 4
+    },
+    "existingInstall": "Existing administrator blacklist.tsv is retained byte-for-byte by constructor and reload; no automatic merge or restoration of OFF/deleted entries.",
+    "runtimeDependenciesAdded": [],
+    "runtimeNetworkRequired": false,
+    "caveat": "A verified identifier catalog is neither an exhaustive database of every cheat nor proof that a client cannot hide its report."
+  },
+  "catalog": {
+    "path": "catalog/blacklist-extension.tsv",
+    "sha256": "66a633ad3faa2d7d666c43e2b3b544437054345e102103d90fe3b5db022c46a3",
+    "bytes": 5641,
+    "rules": 37,
+    "deny": 33,
+    "alert": 4,
+    "gitNormalizedBlobId": "aea4b59be4a7f9f91356b6e80f6426cd991456f2"
+  },
+  "validation": {
+    "securityCasesPassed": 57,
+    "catalogRowsPassed": 37,
+    "additionalControlsPassed": 3,
+    "perRowChecks": [
+      "Fresh GuardService writes exactly the catalog row set with no missing or extra identities.",
+      "Production Blacklist parser retains kind and action for both the catalog TSV and generated defaults.",
+      "Every generated source string equals the reviewed catalog source and names an immutable 40-hex Git commit.",
+      "A valid challenged report is denied for each of the 33 DENY IDs and creates exactly one account plus one device ban record.",
+      "The four ALERT IDs remain allowed with an alert decision and zero permanent bans."
+    ],
+    "alertOnlyIds": [
+      "baritoe",
+      "baritone",
+      "atianxray",
+      "keystrokesmod"
+    ],
+    "ordinaryIdsAllowedWithoutBans": [
+      "bigrat",
+      "template",
+      "antixray",
+      "sodium",
+      "iris",
+      "jei",
+      "fabricloader",
+      "meteor-client-helper"
+    ],
+    "controls": [
+      "Ordinary/ambiguous IDs have no exact default row and a real core report returns OK without bans.",
+      "Administrator meteor-client OFF and API removal of xray survive reload and a new GuardService; file bytes and effective report behavior remain unchanged.",
+      "A pre-existing sparse CRLF administrator policy is not expanded or normalized by the updated constructor or reload."
+    ],
+    "negativeControl": {
+      "scope": "Same new tests and current other core source, replacing only Blacklist.java with the base-commit Git blob containing the old defaults.",
+      "oldBlacklistSha256": "006b900ad82af2530ae906d59e995a234470ee94af2eaec4798f30286678c00e",
+      "expectedFailureObserved": true,
+      "exitCode": 1,
+      "failingAssertion": "Fresh defaults must preserve every catalog kind, ID, action and pinned source without extra entries"
+    }
+  },
+  "runtime": {
+    "java": "Temurin OpenJDK 1.8.0_504-b01 / 25.504-b01",
+    "compiler": "javac 1.8.0_504",
+    "maxHeapMiB": 128,
+    "maxMetaspaceMiB": 64,
+    "execution": "Sequential, dependency-free core runners; no Minecraft JVM."
+  },
+  "sourceFiles": [
+    {
+      "path": "core/src/main/java/cn/qizhang/guard/core/Blacklist.java",
+      "sha256": "b09082ca1c04d1d4e9605d3b98134729885fcc61f645ce5485bf76c0d81b97a4",
+      "bytes": 10356,
+      "gitNormalizedBlobId": "657e525798981d9dd10862773e6979894e36baac"
+    },
+    {
+      "path": "core/src/main/java/cn/qizhang/guard/core/Cidr.java",
+      "sha256": "72c6933cb0b0c03111d350840fe269300a5f102c593019ff874a09aaaeff8818",
+      "bytes": 1454,
+      "gitNormalizedBlobId": "9495c55d738dae3f1946ed254108a1c91261d34d"
+    },
+    {
+      "path": "core/src/main/java/cn/qizhang/guard/core/ClientReport.java",
+      "sha256": "d74eab23e646635ac1bfa65cb7bd6b1533d30cee3d2a38894c4ea603ddf71236",
+      "bytes": 1869,
+      "gitNormalizedBlobId": "e0968ae5a5df390cafbc458591d8286362be5889"
+    },
+    {
+      "path": "core/src/main/java/cn/qizhang/guard/core/Decision.java",
+      "sha256": "4c6e6505fa6614dd505cf321e62fcda15ea03ec6373b3e6683d8a926d3f78053",
+      "bytes": 900,
+      "gitNormalizedBlobId": "13895f1caf44022e24cb6d032d3afefce057a904"
+    },
+    {
+      "path": "core/src/main/java/cn/qizhang/guard/core/GuardConfig.java",
+      "sha256": "51b14d5398c94573f0b561e33726fe1b6c322bbacb4434a6aab7c32111b0ff22",
+      "bytes": 5418,
+      "gitNormalizedBlobId": "db45a654079ed9810cb47e4c8034bd2bfe6a7508"
+    },
+    {
+      "path": "core/src/main/java/cn/qizhang/guard/core/GuardService.java",
+      "sha256": "d6f38d9301ff0214124285afd59440a075649435349718ef721db569de1a1aea",
+      "bytes": 37450,
+      "gitNormalizedBlobId": "bd08b3497cf6f0efa659fe07c7f50465d0d9fa9a"
+    },
+    {
+      "path": "core/src/main/java/cn/qizhang/guard/core/IpAddress.java",
+      "sha256": "13b506502c2227c64ee0e66e864c510d4be748888b51dc2d8664354a694ff8bd",
+      "bytes": 3649,
+      "gitNormalizedBlobId": "19a78224ba73d71de3b7cc5ded165755d43e4bfd"
+    },
+    {
+      "path": "core/src/main/java/cn/qizhang/guard/core/ReportEnvelope.java",
+      "sha256": "da333d36ced077e3c93c509a62a4a53f33a8acd85438279e54a42591888780da",
+      "bytes": 344,
+      "gitNormalizedBlobId": "21e93fa9a12ce4d35ff39296e3c4f8bf4631fc9e"
+    },
+    {
+      "path": "core/src/main/java/cn/qizhang/guard/core/RuleRegistry.java",
+      "sha256": "957e31b7c26ff6d0b9679e9557233b2f7212431fb33738716c5f74c008df9f4c",
+      "bytes": 6201,
+      "gitNormalizedBlobId": "f35ae260d93d597e540958fe9df670f903904a98"
+    },
+    {
+      "path": "core/src/main/java/cn/qizhang/guard/core/Wire.java",
+      "sha256": "c799100c30630c4378a0537aba4a6a82320c94179d2d86f8b005d9a157a169c2",
+      "bytes": 7726,
+      "gitNormalizedBlobId": "16a7f407c523cac8a01670550ad123badec9aa64"
+    },
+    {
+      "path": "core/src/test/java/cn/qizhang/guard/core/SecurityRegressionTest.java",
+      "sha256": "f1b0c445eaf5229e889b94d4c5176dbbe72eccebd81febe58b78ff980d716985",
+      "bytes": 45337,
+      "gitNormalizedBlobId": "0a90ca290bad866bc68ac9e17ded5daae09c0c7c"
+    },
+    {
+      "path": "core/src/test/java/cn/qizhang/guard/core/CatalogCompatibilityTest.java",
+      "sha256": "29ddd1bed5f88c5917d9dfd8f67454f476ac3e2bd26b3bb404e29b4503268980",
+      "bytes": 9418,
+      "gitNormalizedBlobId": "24df5ac59eef87822db612b3b0ddd880acec0c1d"
+    }
+  ],
+  "runs": {
+    "java-version": {
+      "command": [
+        "E:\\CodexTemp\\QiZhangVerdict\\toolchains\\jdk8\\jdk8u504-b01\\bin\\java.exe",
+        "-Xmx128m",
+        "-version"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 0.101,
+      "log": "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\default-catalog-01\\java-version.log",
+      "logSha256": "9d65a43706f49fcfdbcece91e737f759110493e82fd1c4886cf49104c2017b0e",
+      "logBytes": 155
+    },
+    "javac-version": {
+      "command": [
+        "E:\\CodexTemp\\QiZhangVerdict\\toolchains\\jdk8\\jdk8u504-b01\\bin\\javac.exe",
+        "-J-Xmx128m",
+        "-version"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 0.192,
+      "log": "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\default-catalog-01\\javac-version.log",
+      "logSha256": "534dcc2c38e65c8f5fbd70ff2bbc9b7c89df6fda5ada56818a17d8ca4a272a68",
+      "logBytes": 17
+    },
+    "fixed-compile": {
+      "command": [
+        "E:\\CodexTemp\\QiZhangVerdict\\toolchains\\jdk8\\jdk8u504-b01\\bin\\javac.exe",
+        "-J-Xmx128m",
+        "-J-XX:MaxMetaspaceSize=64m",
+        "-encoding",
+        "UTF-8",
+        "-d",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\default-catalog-01\\fixed\\classes",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\default-catalog-01\\fixed\\core\\src\\main\\java\\cn\\qizhang\\guard\\core\\Blacklist.java",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\default-catalog-01\\fixed\\core\\src\\main\\java\\cn\\qizhang\\guard\\core\\Cidr.java",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\default-catalog-01\\fixed\\core\\src\\main\\java\\cn\\qizhang\\guard\\core\\ClientReport.java",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\default-catalog-01\\fixed\\core\\src\\main\\java\\cn\\qizhang\\guard\\core\\Decision.java",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\default-catalog-01\\fixed\\core\\src\\main\\java\\cn\\qizhang\\guard\\core\\GuardConfig.java",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\default-catalog-01\\fixed\\core\\src\\main\\java\\cn\\qizhang\\guard\\core\\GuardService.java",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\default-catalog-01\\fixed\\core\\src\\main\\java\\cn\\qizhang\\guard\\core\\IpAddress.java",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\default-catalog-01\\fixed\\core\\src\\main\\java\\cn\\qizhang\\guard\\core\\ReportEnvelope.java",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\default-catalog-01\\fixed\\core\\src\\main\\java\\cn\\qizhang\\guard\\core\\RuleRegistry.java",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\default-catalog-01\\fixed\\core\\src\\main\\java\\cn\\qizhang\\guard\\core\\Wire.java",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\default-catalog-01\\fixed\\core\\src\\test\\java\\cn\\qizhang\\guard\\core\\SecurityRegressionTest.java",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\default-catalog-01\\fixed\\core\\src\\test\\java\\cn\\qizhang\\guard\\core\\CatalogCompatibilityTest.java"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 1.149,
+      "log": "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\default-catalog-01\\fixed-compile.log",
+      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "logBytes": 0
+    },
+    "fixed-SecurityRegressionTest": {
+      "command": [
+        "E:\\CodexTemp\\QiZhangVerdict\\toolchains\\jdk8\\jdk8u504-b01\\bin\\java.exe",
+        "-Xmx128m",
+        "-XX:MaxMetaspaceSize=64m",
+        "-Dqzguard.testDir=E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\default-catalog-01\\fixed\\private-state-SecurityRegressionTest",
+        "-cp",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\default-catalog-01\\fixed\\classes",
+        "cn.qizhang.guard.core.SecurityRegressionTest"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 1.484,
+      "log": "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\default-catalog-01\\fixed-SecurityRegressionTest.log",
+      "logSha256": "1e26be45a2a53ee19e208f27f4e32b96db5c32f3c0dd7582a88d36147338e1fb",
+      "logBytes": 3229,
+      "passedCases": 57
+    },
+    "fixed-CatalogCompatibilityTest": {
+      "command": [
+        "E:\\CodexTemp\\QiZhangVerdict\\toolchains\\jdk8\\jdk8u504-b01\\bin\\java.exe",
+        "-Xmx128m",
+        "-XX:MaxMetaspaceSize=64m",
+        "-Dqzguard.testDir=E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\default-catalog-01\\fixed\\private-state-CatalogCompatibilityTest",
+        "-cp",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\default-catalog-01\\fixed\\classes",
+        "cn.qizhang.guard.core.CatalogCompatibilityTest",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\default-catalog-01\\fixed\\blacklist-extension.tsv"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 1.007,
+      "log": "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\default-catalog-01\\fixed-CatalogCompatibilityTest.log",
+      "logSha256": "1df88d7a85a7481da4a7ab479ac5ef7085d6f440dfcc8fb0ad8a19950ae9855e",
+      "logBytes": 3262,
+      "passedRules": 37,
+      "passedControls": 3
+    },
+    "old-defaults-control-compile": {
+      "command": [
+        "E:\\CodexTemp\\QiZhangVerdict\\toolchains\\jdk8\\jdk8u504-b01\\bin\\javac.exe",
+        "-J-Xmx128m",
+        "-J-XX:MaxMetaspaceSize=64m",
+        "-encoding",
+        "UTF-8",
+        "-d",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\default-catalog-01\\old-defaults-control\\classes",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\default-catalog-01\\old-defaults-control\\core\\src\\main\\java\\cn\\qizhang\\guard\\core\\Blacklist.java",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\default-catalog-01\\old-defaults-control\\core\\src\\main\\java\\cn\\qizhang\\guard\\core\\Cidr.java",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\default-catalog-01\\old-defaults-control\\core\\src\\main\\java\\cn\\qizhang\\guard\\core\\ClientReport.java",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\default-catalog-01\\old-defaults-control\\core\\src\\main\\java\\cn\\qizhang\\guard\\core\\Decision.java",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\default-catalog-01\\old-defaults-control\\core\\src\\main\\java\\cn\\qizhang\\guard\\core\\GuardConfig.java",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\default-catalog-01\\old-defaults-control\\core\\src\\main\\java\\cn\\qizhang\\guard\\core\\GuardService.java",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\default-catalog-01\\old-defaults-control\\core\\src\\main\\java\\cn\\qizhang\\guard\\core\\IpAddress.java",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\default-catalog-01\\old-defaults-control\\core\\src\\main\\java\\cn\\qizhang\\guard\\core\\ReportEnvelope.java",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\default-catalog-01\\old-defaults-control\\core\\src\\main\\java\\cn\\qizhang\\guard\\core\\RuleRegistry.java",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\default-catalog-01\\old-defaults-control\\core\\src\\main\\java\\cn\\qizhang\\guard\\core\\Wire.java",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\default-catalog-01\\old-defaults-control\\core\\src\\test\\java\\cn\\qizhang\\guard\\core\\SecurityRegressionTest.java",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\default-catalog-01\\old-defaults-control\\core\\src\\test\\java\\cn\\qizhang\\guard\\core\\CatalogCompatibilityTest.java"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 1.204,
+      "log": "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\default-catalog-01\\old-defaults-control-compile.log",
+      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "logBytes": 0
+    },
+    "old-defaults-control-CatalogCompatibilityTest": {
+      "command": [
+        "E:\\CodexTemp\\QiZhangVerdict\\toolchains\\jdk8\\jdk8u504-b01\\bin\\java.exe",
+        "-Xmx128m",
+        "-XX:MaxMetaspaceSize=64m",
+        "-Dqzguard.testDir=E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\default-catalog-01\\old-defaults-control\\private-state-CatalogCompatibilityTest",
+        "-cp",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\default-catalog-01\\old-defaults-control\\classes",
+        "cn.qizhang.guard.core.CatalogCompatibilityTest",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\default-catalog-01\\old-defaults-control\\blacklist-extension.tsv"
+      ],
+      "exitCode": 1,
+      "elapsedSeconds": 0.708,
+      "log": "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\default-catalog-01\\old-defaults-control-CatalogCompatibilityTest.log",
+      "logSha256": "57403df8b7096954847e235ec7f563837f4167c5aebb3952d5d14037ee1ea847",
+      "logBytes": 340,
+      "expectedFailureObserved": true
+    }
+  },
+  "evidence": [
+    {
+      "file": "evidence/core-default-catalog-fixed-SecurityRegressionTest.log",
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\default-catalog-01\\fixed-SecurityRegressionTest.log",
+      "sha256": "1e26be45a2a53ee19e208f27f4e32b96db5c32f3c0dd7582a88d36147338e1fb",
+      "bytes": 3229,
+      "rawBytesUnchanged": true
+    },
+    {
+      "file": "evidence/core-default-catalog-fixed-CatalogCompatibilityTest.log",
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\default-catalog-01\\fixed-CatalogCompatibilityTest.log",
+      "sha256": "1df88d7a85a7481da4a7ab479ac5ef7085d6f440dfcc8fb0ad8a19950ae9855e",
+      "bytes": 3262,
+      "rawBytesUnchanged": true
+    },
+    {
+      "file": "evidence/core-default-catalog-old-defaults-control-CatalogCompatibilityTest.log",
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\default-catalog-01\\old-defaults-control-CatalogCompatibilityTest.log",
+      "sha256": "57403df8b7096954847e235ec7f563837f4167c5aebb3952d5d14037ee1ea847",
+      "bytes": 340,
+      "rawBytesUnchanged": true
+    },
+    {
+      "file": "evidence/core-default-catalog-java-version.log",
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\default-catalog-01\\java-version.log",
+      "sha256": "9d65a43706f49fcfdbcece91e737f759110493e82fd1c4886cf49104c2017b0e",
+      "bytes": 155,
+      "rawBytesUnchanged": true
+    },
+    {
+      "file": "evidence/core-default-catalog-javac-version.log",
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\default-catalog-01\\javac-version.log",
+      "sha256": "534dcc2c38e65c8f5fbd70ff2bbc9b7c89df6fda5ada56818a17d8ca4a272a68",
+      "bytes": 17,
+      "rawBytesUnchanged": true
+    },
+    {
+      "file": "evidence/core-default-catalog-run-validation.py",
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\default-catalog-01\\run-validation.py",
+      "sha256": "dcea47a92372f116ab6256c2ec384fd214b2f8f6d15048a99df236d1dc31edaf",
+      "bytes": 5458,
+      "rawBytesUnchanged": true
+    }
+  ],
+  "privacy": {
+    "publication": "Six explicit raw-byte logs/harness files only; no generated state, server salt, compiled classes, or private identifier values.",
+    "testData": "Synthetic random UUIDs, reserved documentation IP, fixed synthetic device; none of the generated state is published."
+  },
+  "limits": [
+    "These results validate modified source snapshots, not previously released or newly rebuilt Bukkit/Fabric/Forge/NeoForge artifacts.",
+    "No product version or product JAR was changed by this validation task.",
+    "Earlier core-automation-sanction-validation.json remains unchanged and describes its earlier source snapshot.",
+    "Source-URL byte equality and commit pinning were checked here; fresh upstream descriptor verification belongs to the separate catalog research evidence."
+  ]
+}

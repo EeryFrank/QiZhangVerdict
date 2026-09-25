@@ -2,6 +2,8 @@
 
 插件标识 **QiZhangVerdict**，模组 ID `qizhangverdict`，管理命令 `/qzverdict`。本项目提供 IP/账号/设备准入、可管理的黑白名单、客户端协作检查和设备关联封禁。行为预测与矿物混淆使用独立安装、固定版本的开源组件，具体见 [集成安装](integrations/README.md)。
 
+开发分支版本为 **0.2.0-test.1**，正在对新构建的各平台 JAR 重新验收；下方下载链接仍对应各自已经发布的历史版本。开发版将首次安装的默认名单扩展到 37 条，并修复管理员将自动化规则设为 DENY 后，BAN 策略漏记账号及设备关联封禁的问题。源码回归见 [默认名单检查](outputs/core-default-catalog-validation.json) 和 [自动化封禁回归](outputs/core-automation-sanction-validation.json)，这些报告本身不代表新版已发布。
+
 ## 测试版本 0.1.1
 
 公开源码及测试安装包：[GitHub](https://github.com/EeryFrank/QiZhangVerdict/releases/tag/v0.1.1-test.1) · [GitLab](https://gitlab.com/EeryFrank/QiZhangVerdict/-/releases/v0.1.1-test.1)。当前版本采用 **GPL-3.0-only**，附完整许可证、对应源码包和 SHA256 校验文件。
@@ -97,13 +99,13 @@ sanctions.on-deny=BAN
 
 ## 黑名单与防透视
 
-默认精确拒绝 Meteor、Wurst、LiquidBounce、BleachHack、Advanced XRay Fabric、Advanced XRay、ThunderHack、3arthh4ck、KAMI Blue、SalHack 的已核验标识。Baritone 默认仅告警，服主可按玩法添加拒绝规则。不会因 `xray` 子串封掉正常的 `antixray`，也不默认封 Sodium、Iris、JEI、地图、投影等正常模组。
+开发版首次生成的 `blacklist.tsv` 包含 **37 个精确 ID：33 条 DENY、4 条 ALERT**。`baritone`、`baritoe`、`atianxray`、`keystrokesmod` 默认仅告警，服主可按玩法调整。不会因 `xray` 子串封掉正常的 `antixray`，也不默认封 Sodium、Iris、JEI、地图、投影等正常模组；存在正常项目重名的 `bigrat` 和通用 `template` ID 未设为默认拒绝。
 
-另提供 [31 个可核验精确 ID 的扩展目录与合并工具](docs/catalog.md)，包含固定源码提交和描述符证据；新增条目由服主显式选用，保留现有规则与白名单。原有安装不会被自动覆盖。
+完整 [37 条可核验目录与合并工具](docs/catalog.md) 包含固定源码提交和描述符证据。已有安装的名单文件保持原样，包括管理员的 OFF 设置和删除记录；升级不会自动回填。管理员可审阅后显式合并新增规则。历史发布包的默认规则与目录数量以对应 tag 为准。
 
 名单不是全市场数据库，也无法发现所有改名、注入或伪造上报的作弊。资源包透视和未知外挂需要服务端矿物混淆及行为检测；[锁定依赖与配置](integrations/README.md) 提供 Paper、Fabric、Forge、NeoForge 安装组合。Forge/NeoForge 组合含矿物混淆，目前没有 Grim 行为预测引擎，不能宣称各平台行为检测能力相同。
 
-1.20.1 / 1.21.1 插件组合还完成了真实 Grim 检查触发、账号与设备关联封禁、重启持久化及解封验证，共 24 组断言；具体上游版本、固定处罚阈值及限制见 [联动验收](docs/grim-linked-ban-validation.md)。旧版第三方集成目前只有依赖审计与安装准备，不能套用这份现代版本的运行结论。
+1.20.1 / 1.21.1 插件组合完成了真实 Grim 检查触发、账号与设备关联封禁、重启持久化及解封验证，共 24 组断言；具体版本、处罚阈值及限制见 [现代联动验收](docs/grim-linked-ban-validation.md)。Paper 1.8.8 / 1.12.2 / 1.16.5 另通过 42 组联动与明确坐标矿石隐藏检查，见 [旧版 Paper 记录](docs/legacy-paper-integration-validation.md)。两份报告均使用历史 Bukkit 0.1.1，不替代开发版的成品验收。
 
 ## 构建与验证
 

@@ -1,6 +1,6 @@
 # 可核验标识扩展目录
 
-本目录供七章的裁决管理员审阅、按服规选用。2026-09-25 快照包含 **33 个公开源码仓库、30 个归并条目、31 个精确 ID（27 DENY / 4 ALERT）**，另有 **8 个待验证品牌或资源包**。它不改变程序原有的 11 条默认规则，也不会连接服务器、修改服务器配置或自动恢复管理员删除的规则。
+本目录供七章的裁决管理员审阅、按服规选用。2026-09-25 更新包含 **39 个公开源码仓库、36 个归并条目、37 个精确 ID（33 DENY / 4 ALERT）**，另有 **8 个待验证品牌或资源包**。本次更新属于下一版本源码，不能据此认定新 JAR 已构建、测试或交付。目录工具不会连接服务器、修改服务器配置或自动恢复管理员删除的规则；已发布版本的目录和默认规则以各自 tag 与发布包为准。
 
 这里的 HIGH 表示“固定官方源码能证明这个标识和相应功能”，不表示服务端能可靠证明玩家运行了未经修改的原版客户端。目录覆盖本次有一手证据的已知项目，不声称囊括全部商业客户端、私有分支、注入器或未来版本。
 
@@ -16,7 +16,7 @@
 | `catalog/minecraft-versions.json` | Mojang 官方版本元数据快照和候选测试矩阵，不代表本项目已支持这些版本 |
 | `catalog/verification.json` | 本次来源核验和工具测试的摘要与文件哈希 |
 
-`identifierProofs` 仅提取 loader 描述符中的主体字段：Fabric `/id`，旧 Forge `/0/modid`，Forge/NeoForge `/mods/0/modId`。Lambda/TrollHack 的模板 ID 从**同仓库同提交**的 `gradle.properties` 读取，不执行 Gradle 或源码。LiquidBounce 描述符中的裸 JSON 模板值只替换为 `null` 后读取 ID，不执行模板表达式。版本项分别保留 `sourceBuildTarget` 和原样的 `descriptorRange`；模板范围、宽泛下限和遗留描述符均不等于实际运行兼容性。本次没有下载、构建或运行作弊二进制。
+`identifierProofs` 仅提取 loader 描述符中的主体字段：Fabric `/id`，旧 Forge `/0/modid`，Forge/NeoForge `/mods/0/modId`。Lambda/TrollHack/CheatUtils 的模板 ID 从**同仓库同提交**的 `gradle.properties` 读取，不执行 Gradle 或源码。LiquidBounce 描述符中的裸 JSON 模板值只替换为 `null` 后读取 ID，不执行模板表达式。版本项分别保留 `sourceBuildTarget` 和原样的 `descriptorRange`；模板范围、宽泛下限和遗留描述符均不等于实际运行兼容性。本次没有下载、构建或运行作弊二进制。
 
 源文件只存在校验者指定的缓存目录。本仓库记录事实、哈希、链接和自行撰写的说明，没有移植 GPL/AGPL/LGPL 客户端实现，也不分发作弊 JAR。`githubLicenseMetadata` 是抓取时 GitHub 仓库级许可证分类，不能替代逐文件授权；若描述符与仓库声明不一致，不据此推断可重新分发源码。
 
@@ -35,6 +35,9 @@
 | Meteor Rejects / Trouser Streak / BlackOut 扩展 | `meteor-rejects`, `streak-addon`, `blackout` | DENY |
 | Alien / Aoba / TrollHack / Jex | `alien`, `aoba`, `trollhack`, `jex` | DENY |
 | Aegis / MasterMind / Hypnotic | `aegis`, `mastermind`, `hypnotic` | DENY |
+| CheatUtils / GameSense | `cheatutils`, `gamesense` | DENY |
+| NightX / Krs / Cigarette | `nightx`, `krs`, `cigarette` | DENY；NightX 的上报限制见下文 |
+| Meteor+ 扩展 | `meteorplus` | DENY；不是展示名 `Meteor+` 或产物名 `meteor-plus` |
 | Advanced XRay 旧 Fabric 实现 | `advanced-xray-fabric` | DENY |
 | Advanced XRay、ate47 和 Deltinha 的独立实现共用身份 | `xray` | DENY |
 | ate47 遗留 Forge 描述符 | `atianxray` | ALERT：尚未核验该旧 Forge 发布包 |
@@ -49,6 +52,11 @@
 - 不将性能优化、地图、配方查看、投影或无障碍辅助整类默认封禁。Sodium、Iris、JEI、REI、Litematica 等不是本目录的 DENY 条目。
 - `wurst_testmod`、`lambda-tests` 等开发测试描述符不导出。
 - ThunderHack 开源分支已声明停止开发；这不证明闭源后继使用同一个 ID。
+- NightX 的 [`mcmod.info`](https://raw.githubusercontent.com/Aspw-w/NightX-Client/1c771444a9120d8c06fe7d88a3f5849402849bb4/src/main/resources/mcmod.info) 确实声明 `nightx`，但其 [IFMLLoadingPlugin 入口](https://raw.githubusercontent.com/Aspw-w/NightX-Client/1c771444a9120d8c06fe7d88a3f5849402849bb4/src/main/java/net/aspw/client/injection/forge/TransformerLoader.java) 使用 Mixin 且 `getModContainerClass` 返回 `null`。本次未证明普通 Forge Loader 列表一定包含它；该规则只会匹配实际收到的精确 ID，不能把加入规则说成能识别所有注入形式。
+- `bigrat` **不加入规则**：[作弊衍生客户端](https://raw.githubusercontent.com/ZimnyCat/BigRat/3dc274a18e5912f904f30734fdcf858b0aaf964f/src/main/resources/fabric.mod.json) 与[正常实体/物品模组](https://raw.githubusercontent.com/dodogang/bigrat/68bf3add5a5f73f39c0a7248acb3b9bf9b1da879/src/main/resources/fabric.mod.json) 在 Fabric 1.16.5 使用完全相同的 ID，不能据此默认封禁。
+- Achilles 的[实际描述符](https://raw.githubusercontent.com/NoboKik/Achilles/b63a84fdec014ed8015559671cda9f4ea2721103/client/src/main/resources/fabric.mod.json) 使用通用 ID `template`。`template` 和猜测出的 `achilles` 均不加入规则。
+
+新增来源保留许可差异：Meteor+ 根 [LICENSE](https://raw.githubusercontent.com/MeteorClientPlus/MeteorPlus/657959e9b46faa0c1228c5978d3afe844351c911/LICENSE) 为 AGPL-3.0，而同提交描述符写 GPL-3.0，不能消除冲突后冒称有统一再分发许可。CheatUtils 现代源码为 MIT；所读 1.16.5 历史描述符写 All rights reserved 且该提交没有根 LICENSE，不把现代授权追溯套用到旧源码。这些标准许可证文本也纳入来源 SHA256 核验。Cigarette 记录的是其官方 GitHub 仓库固定提交，仓库声明已迁移，不能据此宣称掌握新托管站的最新状态。
 
 Aristois、Impact、Future、RusherHack、Inertia、CatLean、Raven b+ 和 Xray Ultimate 留在 `pending`。官网、产品名或功能说明不足以证明真实 mod ID；其中 Aristois 官网抓取失败，Raven b+ 官方 API 返回 451，未绕过访问限制。资源包没有可推断的稳定 mod ID，文件名和本地 pack ID 都可修改，所以没有虚构 PACK/BRAND 封禁规则。验证器目前只允许 MOD 身份进入已验证列表。
 
@@ -67,7 +75,7 @@ $env:QV_CATALOG_TEST_TEMP = 'E:\CodexTemp\QiZhangVerdict\catalog\tests'
 python -B -m unittest discover -s catalog -p 'test_catalog.py' -v
 ```
 
-`validate` 校验 JSON 结构、重复身份、精确匹配语法、用途/标识来源、固定提交、默认动作与模板绑定。`verify-sources` 仅请求固定提交下的文本源码/元数据，限制 1 MiB、拒绝重定向和二进制路径，校验 SHA256 后解析每个标识。`export`、`merge` 必须指定已有缓存并重新离线核验来源，缺失或损坏时停止。校验器不擅自更新上游提交或现有哈希。
+`validate` 校验 JSON 结构、重复身份、精确匹配语法、用途/标识来源、固定提交、默认动作与模板绑定。`verify-sources` 仅请求固定提交下的文本源码/元数据，以及明确允许的 `LICENSE`、`LICENSE.txt`、`COPYING`、`COPYING.txt` 文件，限制 1 MiB、拒绝重定向和二进制路径，校验 SHA256 后解析每个标识。`export`、`merge` 必须指定已有缓存并重新离线核验来源，缺失或损坏时停止。校验器不擅自更新上游提交或现有哈希。
 
 新增条目时，人工确认官方仓库和用途，再固定完整提交，记录真实主体描述符及同提交构建属性。遇到相同 ID 应归并证据或解释歧义，不能新增冲突规则；同一源码中出现的普通依赖不得一并封禁。取得新的固定提交后重新执行来源核验和全部工具测试，再审阅 TSV 差异。
 

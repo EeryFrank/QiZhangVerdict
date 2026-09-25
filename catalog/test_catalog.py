@@ -29,8 +29,8 @@ class CatalogTests(unittest.TestCase):
 
     def test_reviewed_catalog(self):
         result = tool.validate(self.data)
-        self.assertEqual(31, result["exactIds"])
-        self.assertEqual(41, sum(len(e["identifierProofs"]) for e in self.data["entries"]))
+        self.assertEqual(37, result["exactIds"])
+        self.assertEqual(51, sum(len(e["identifierProofs"]) for e in self.data["entries"]))
 
     def test_duplicate_conflicting_identity_rejected(self):
         duplicate = copy.deepcopy(self.entry("meteor-client"))
@@ -80,10 +80,16 @@ class CatalogTests(unittest.TestCase):
 
     def test_source_cannot_be_a_binary(self):
         source = next(iter(self.data["sources"].values()))
-        source["path"] = "client.jar"
-        source["url"] = f"https://raw.githubusercontent.com/{source['repository']}/{source['revision']}/client.jar"
-        with self.assertRaisesRegex(tool.CatalogError, "only text"):
-            tool.validate(self.data)
+        for path in ("LICENSE", "LICENSE.txt", "COPYING", "COPYING.txt"):
+            source["path"] = path
+            source["url"] = f"https://raw.githubusercontent.com/{source['repository']}/{source['revision']}/{path}"
+            with self.subTest(allowed=path):
+                tool.check_source(source)
+        for path in ("client.jar", "LICENSE.jar", "COPYING.exe", "license.bin", "other.txt"):
+            source["path"] = path
+            source["url"] = f"https://raw.githubusercontent.com/{source['repository']}/{source['revision']}/{path}"
+            with self.subTest(rejected=path), self.assertRaisesRegex(tool.CatalogError, "only text"):
+                tool.check_source(source)
 
     def test_descriptor_value_is_checked(self):
         proof = {"source": "descriptor", "format": "json", "selector": "/id", "id": "real-id"}
@@ -115,6 +121,10 @@ class CatalogTests(unittest.TestCase):
         self.assertNotIn(("mod", "antixray"), parsed)
         self.assertNotIn(("mod", "schematica"), parsed)
         self.assertNotIn(("brand", "future"), parsed)
+        self.assertNotIn(("mod", "bigrat"), parsed)
+        self.assertNotIn(("mod", "template"), parsed)
+        for identifier in ("cheatutils", "gamesense", "nightx", "krs", "cigarette", "meteorplus"):
+            self.assertEqual("DENY", parsed[("mod", identifier)][2])
         self.assertEqual("ALERT", parsed[("mod", "baritoe")][2])
 
     def test_export_refuses_existing_file(self):

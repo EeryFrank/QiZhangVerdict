@@ -1,23 +1,33 @@
 {
-  "scope": "Source metadata and maintenance tooling only; no cheat binaries downloaded, built or run; no server configuration changed.",
-  "checkedAtUTC": "2026-09-25T06:18:25.525209+00:00",
+  "scope": "Source metadata and maintenance tooling only; six new exact IDs for next-version source. No cheat binaries downloaded, built or run; no server configuration changed; no new JAR delivery claimed.",
+  "checkedAtUTC": "2026-09-25T10:46:17.947698+00:00",
   "counts": {
-    "entries": 30,
-    "exactIds": 31,
+    "entries": 36,
+    "exactIds": 37,
     "pending": 8,
-    "sources": 196
+    "sources": 233
   },
-  "publicRepositories": 33,
+  "publicRepositories": 39,
   "actionsByExactId": {
-    "DENY": 27,
+    "DENY": 33,
     "ALERT": 4
   },
+  "newExactIds": [
+    "cheatutils",
+    "cigarette",
+    "gamesense",
+    "krs",
+    "meteorplus",
+    "nightx"
+  ],
   "sourceVerification": {
     "freshNetworkFetchCompleted": true,
-    "verifiedSources": 196,
-    "verifiedDescriptorProofs": 41,
+    "independentlyRequestedURLs": 233,
+    "verifiedSources": 233,
+    "verifiedDescriptorProofs": 51,
     "offline": true,
-    "note": "196 sources were independently refetched into fresh-network-verified; final offline recheck uses those bytes."
+    "note": "All 233 pinned URLs were independently fetched without hash-cache skipping; each matched the catalog SHA256 and the fresh cache. Offline verification and both exports also passed.",
+    "independentNetworkReceiptSHA256": "2a56aa73cd7ac935fa10958fe53fd1bb5e9accab9a1f6ff0435079f3df9c636a"
   },
   "tests": {
     "command": "python -B -m unittest discover -s catalog -p test_catalog.py -v",
@@ -25,15 +35,70 @@
     "failures": 0,
     "errors": 0,
     "exitCode": 0,
-    "logSHA256": "b1bfd05b34345512d1898021fe50cbe0378465ea38e01ccbe3171d40379511c8"
+    "logSHA256": "94e9472b85dbaf3454b3e78b9c7d746ab85f3815b5c53d1976fb54e8a1e85934"
   },
+  "preservation": {
+    "previous31RulesUnchanged": true,
+    "previous30EntriesUnchanged": true,
+    "previous196SourcesUnchanged": true,
+    "previous8PendingEntriesUnchanged": true,
+    "publishedOutputsModified": false,
+    "previousCatalogSHA256": "e5574a6f2c979cbd1fd890d844938c04f946432b4438c2cf0b44cc3abda1673f",
+    "previousVerificationSHA256": "3d9a717e568da10b962852157346c9dbdeed04281e6b5be5308ccbb69acffd4f"
+  },
+  "boundaries": [
+    "NightX has a descriptor ID but its IFMLLoadingPlugin does not establish a normal Forge mod container; detection presence is unverified.",
+    "bigrat collides with an ordinary entity/item mod and is excluded; generic template and guessed achilles are excluded.",
+    "Meteor+ root LICENSE says AGPL-3.0 while its descriptor says GPL-3.0; conflict preserved.",
+    "CheatUtils 1.16.5 historical descriptor says All rights reserved; modern MIT is not applied retroactively.",
+    "This is not exhaustive coverage or runtime verification; administrators existing rule files were not modified."
+  ],
   "filesSHA256": {
-    "catalog/identifiers.json": "e5574a6f2c979cbd1fd890d844938c04f946432b4438c2cf0b44cc3abda1673f",
-    "catalog/catalog_tool.py": "c8a0ecad5dc11b3a478f378b6b6d74097ce9744d8aefa064d75ff769404ced16",
-    "catalog/test_catalog.py": "cddb97adccfc6749a2b6993e65ae1cf80b34ca709d9be754088ec5638d444f08",
-    "catalog/blacklist-extension.tsv": "51cef16e26582226c3718064c17c92041ce2ef67e73ec11096660c5913158d2b",
-    "catalog/identifiers.tsv": "3907b6e9cd242af7a1dbff393107a23d7ac5423c40b5055a95a64ac75f586a07",
+    "catalog/identifiers.json": "c81528540dc695b5279fa4833f2a64836268f145759e873a7bb669343e5a0642",
+    "catalog/catalog_tool.py": "885ae41eee413f8f16f81fc20f99f7058eb2762ba55c5deec48065e9365a0dba",
+    "catalog/test_catalog.py": "ac868be289ba66e854f386c7e3e0ecee2dfd9d44cc48440186fa711b37fd0280",
+    "catalog/blacklist-extension.tsv": "66a633ad3faa2d7d666c43e2b3b544437054345e102103d90fe3b5db022c46a3",
+    "catalog/identifiers.tsv": "780624a2801343bbe2a29e4a927ed677b4ccc8def96297e3d287eef950f69cb7",
     "catalog/minecraft-versions.json": "9a3fbda8aace469fc042f89f1a181e956f49cc27e0910a1607b9ee50864a3fab",
-    "docs/catalog.md": "c9d67fca7114c72d12df0dd815fe3812b632ff87a6953dda5b7a7c8efca1d73b"
-  }
+    "docs/catalog.md": "f3c1d72f28558a3b860649ed8411a910c64b3a9480c37704da6e9f07dbd71169"
+  },
+  "checkEvidence": [
+    {
+      "check": "validate",
+      "exitCode": 0,
+      "stdoutSHA256": "69b745ef29c633a4cfa2164617026c57272cb74811513c867cae7035e5f4ea7b",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "check": "verify-network",
+      "exitCode": 0,
+      "stdoutSHA256": "573dfd0fc8c70eefbebbcdde09c7e41f909ffa8202a88518f73289be46f62f67",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "check": "verify-offline",
+      "exitCode": 0,
+      "stdoutSHA256": "d75e737d20a4807f5cf19c2b8ad1965d6434a74df153c12b76f0afd5c620cc4c",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "check": "export-blacklist",
+      "exitCode": 0,
+      "stdoutSHA256": "2e973c6f78ea09a2560f4f5000609e2fd7ca35af600a322e4e6fdfcf0d57814d",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "check": "export-catalog",
+      "exitCode": 0,
+      "stdoutSHA256": "9b84ca18c495e37c1946297ac55b6501928bff1055a24950fe8bfe5ead6734ca",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "check": "tests",
+      "exitCode": 0,
+      "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSHA256": "94e9472b85dbaf3454b3e78b9c7d746ab85f3815b5c53d1976fb54e8a1e85934"
+    }
+  ],
+  "localEvidenceDirectory": "E:\\CodexTemp\\QiZhangVerdict\\catalog-followup-02"
 }

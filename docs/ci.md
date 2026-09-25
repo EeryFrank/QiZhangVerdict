@@ -10,11 +10,11 @@ GitHub Actions 与 GitLab CI 都在 Linux 上分三个任务执行：核心+Bukk
 
 GitHub 的 `qizhangverdict-five-jars-<commit>`、GitLab 的 `collect` job artifacts 为五 JAR 汇总，保留 30 天；中间构建与日志保留 14 天。GitLab 项目需要可用的 Linux Docker runner，并允许下载 Maven/Gradle/Minecraft 依赖及 Ubuntu 软件包。
 
-0.1.1 起额外执行扩展目录的 25 项 Python 回归，以及 Java 生产解析器对 31 条导出规则的兼容检查。GitLab 镜像改用 Temurin 21 Noble（Ubuntu 24.04），以满足标准库 `tomllib` 所需的 Python 3.11+；原 Jammy 默认 Python 3.10 不满足该工具要求。
+当前 0.2.0-test.1 分支执行目录的 25 项 Python 回归、57 项核心回归，以及 Java 生产解析器对 37 条导出规则和首次默认配置的检查；还检查已有 OFF、删除记录和稀疏配置文件保留。0.1.1 当时的检查数量为 55 项核心、31 条目录。GitLab 镜像使用 Temurin 21 Noble（Ubuntu 24.04），以满足标准库 `tomllib` 所需的 Python 3.11+；原 Jammy 默认 Python 3.10 不满足该工具要求。
 
 ## 旧版开发构建
 
-独立的 GitHub `legacy-build.yml` 与 GitLab `legacy-build` 矩阵检查 1.8.9、1.12.2、1.16.5、1.18.2、1.19.4，共八个开发 JAR。两站共用 `scripts/ci_legacy_build.sh`，不会把开发成品混入五 JAR 的 0.1.1 汇总，也不会自动发布测试版。
+独立的 GitHub `legacy-build.yml` 与 GitLab `legacy-build` 矩阵检查 1.8.9、1.12.2、1.16.5、1.18.2、1.19.4，共八个 JAR。两站共用 `scripts/ci_legacy_build.sh`。当前八个工程的产物版本统一为 0.2.0-test.1；CI 仍分别保存现代五包和旧版八包，独立发布流程验证明确列出的 13 个成品后才能合并发布。流水线不会自动创建测试版。
 
 1.12.2 用 JDK 8 运行官方 MDK 对应的 Gradle 5.6.4 / ForgeGradle 3；其他三版用 JDK 21 运行 Gradle 8.14.1，再以 JDK 17 编译。1.16.5 以 `--release 8` 编译并在真实 Java 8 上执行核心、报告器及两端命令解析检查；1.18.2 / 1.19.4 的命令检查使用 Java 17。所有必需检查都由各自 `build → check` 依赖执行。CI 安装三个完整 JDK，并关闭 Gradle 工具链的隐式下载。
 

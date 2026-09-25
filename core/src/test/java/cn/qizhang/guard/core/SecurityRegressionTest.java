@@ -57,6 +57,8 @@ public final class SecurityRegressionTest {
         run("client report owns immutable copied lists", SecurityRegressionTest::defensiveCopies);
         run("blacklist uses exact normalized identifiers", SecurityRegressionTest::exactBlacklist);
         run("automation default only alerts", SecurityRegressionTest::automationAlert);
+        run("explicit automation denial bans associated accounts and device across restart", SecurityRegressionTest::automationDenied);
+        run("explicit automation denial honors KICK without persistent bans", SecurityRegressionTest::automationKick);
         run("VM DENY requires companion", SecurityRegressionTest::vmRequiresCompanion);
         run("VM evidence and unknown are distinguished", SecurityRegressionTest::vmEvidence);
         run("global blacklist OFF and ALERT are honored", SecurityRegressionTest::blacklistActions);
@@ -286,6 +288,39 @@ public final class SecurityRegressionTest {
     private static void automationAlert() throws Exception {
         GuardService guard = new GuardService(fresh()); UUID id = join(guard, "192.0.2.1", NOW); Decision result = send(guard, id, report("baritone"));
         require(result.allowed(), "Automation banned by default"); code(result, "AUTOMATION_ALERT");
+        require(guard.listBans().isEmpty(), "Default automation alert created persistent bans");
+    }
+    private static void automationDenied() throws Exception {
+        Path directory = fresh(); GuardService guard = automationDeny(directory, "BAN");
+        UUID historical = join(guard, "192.0.2.1", NOW); require(send(guard, historical, report()).allowed(), "Historical device association failed"); guard.closeSession(historical);
+        UUID offender = join(guard, "192.0.2.1", NOW); code(send(guard, offender, report("baritone")), "AUTOMATION_DENIED");
+        require(guard.listBans().size() == 3, "Explicit automation denial must ban two accounts and one device");
+        for (String target : Arrays.asList(historical.toString(), offender.toString(), "device:" + DEVICE_A))
+            require(guard.listBans().contains(target + "\tAUTOMATION_DENIED"), "Missing automation ban target or reason");
+        guard.closeSession(offender); guard.save();
+        GuardService restored = new GuardService(directory);
+        code(restored.openSession(historical, "198.51.100.1", NOW), "ACCOUNT_BANNED");
+        code(restored.openSession(offender, "198.51.100.2", NOW), "ACCOUNT_BANNED");
+        require(restored.listBans().size() == 3, "Automation bans did not survive restart");
+        UUID newcomer = join(restored, "203.0.113.1", NOW); code(send(restored, newcomer, report()), "DEVICE_BANNED");
+    }
+    private static void automationKick() throws Exception {
+        Path directory = fresh(); GuardService guard = automationDeny(directory, "KICK");
+        UUID historical = join(guard, "192.0.2.1", NOW); require(send(guard, historical, report()).allowed(), "Historical device association failed"); guard.closeSession(historical);
+        UUID offender = join(guard, "192.0.2.1", NOW); code(send(guard, offender, report("baritone")), "AUTOMATION_DENIED");
+        require(guard.listBans().isEmpty(), "KICK automation denial created persistent bans"); guard.closeSession(offender); guard.save();
+        GuardService restored = new GuardService(directory);
+        require(restored.openSession(offender, "192.0.2.1", NOW).allowed(), "KICK permanently banned the account"); restored.confirmSession(offender, NOW);
+        code(send(restored, offender, report("baritone")), "AUTOMATION_DENIED");
+        require(restored.listBans().isEmpty(), "KICK policy changed after restart"); restored.closeSession(offender);
+        require(restored.openSession(historical, "192.0.2.1", NOW).allowed(), "KICK banned the historical account");
+    }
+    private static GuardService automationDeny(Path directory, String sanctions) throws Exception {
+        GuardService guard = guard(directory, "sanctions.on-deny", sanctions);
+        Path rules = directory.resolve("blacklist.tsv");
+        String text = new String(Files.readAllBytes(rules), StandardCharsets.UTF_8);
+        Files.write(rules, text.replace("automation\tbaritone\tALERT\t", "automation\tbaritone\tDENY\t").getBytes(StandardCharsets.UTF_8));
+        guard.reload(); return guard;
     }
     private static void vmRequiresCompanion() throws Exception { Path directory = fresh(); GuardService guard = new GuardService(directory); configure(directory, "vm.action", "DENY", "companion.required", "false", "device.required", "false"); expectFailure(guard::reload); }
     private static void vmEvidence() throws Exception {

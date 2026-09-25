@@ -61,7 +61,8 @@ def check_source(source):
     path = source["path"]
     require(not path.startswith("/") and not any(p in ("", ".", "..") for p in path.split("/")), "unsafe source path")
     require("\\" not in path and "%" not in path and "?" not in path and "#" not in path, "unsafe source path")
-    require(path.endswith((".json", ".toml", ".properties", ".md", ".java", ".kt", ".gradle", ".kts", ".info")), "only text metadata/source is allowed")
+    standard_license = path.rsplit("/", 1)[-1] in {"LICENSE", "LICENSE.txt", "COPYING", "COPYING.txt"}
+    require(standard_license or path.endswith((".json", ".toml", ".properties", ".md", ".java", ".kt", ".gradle", ".kts", ".info")), "only text metadata/source is allowed")
     expected = f"https://raw.githubusercontent.com/{source['repository']}/{source['revision']}/{path}"
     require(source["url"] == expected, "source URL must match the pinned official repository path")
     dt.date.fromisoformat(source["retrievedAt"])

@@ -1,0 +1,33 @@
+# SPDX-License-Identifier: GPL-3.0-only
+# OPTIONAL QiZhangVerdict command integration for pinned Grim 2.3.67 only.
+# Merge these groups into your active punishments.yml; preserve other groups.
+# Local example thresholds, not defaults or recommendations from Grim authors.
+# Installing Grim alone does not activate these Verdict sanctions.
+# This older Grim supports [alert] but does not implement the newer [log] token.
+# Validate with your gameplay and latency before enabling persistent bans.
+Punishments:
+  Simulation:
+    remove-violations-after: 300
+    checks:
+      - "Simulation"
+      - "GroundSpoof"
+      - "Timer"
+      - "NoFall"
+    commands:
+      - "100:40 [alert]"
+      - "250:0 qzverdict ban %player% Grim-Simulation"
+  Reach:
+    remove-violations-after: 300
+    checks:
+      - "Reach"
+    commands:
+      - "1:1 [alert]"
+      - "30:0 qzverdict ban %player% Grim-Reach"
+  BadPackets:
+    remove-violations-after: 300
+    checks:
+      - "BadPackets"
+      - "Crash"
+    commands:
+      - "20:20 [alert]"
+      - "120:0 qzverdict ban %player% Grim-BadPackets"

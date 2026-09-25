@@ -1,0 +1,297 @@
+{
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-09-25T10:35:55.927937+00:00",
+  "status": "PASS",
+  "scope": "Source-level core Java 8 security regression; no rebuilt product JAR or Minecraft runtime acceptance",
+  "baseCommit": "1182de57a4c7a4e9a9485cc4913957a230272af2",
+  "change": {
+    "severity": "P2",
+    "file": "core/src/main/java/cn/qizhang/guard/core/GuardService.java",
+    "method": "sanction",
+    "behavior": "Explicit automation DENY now participates in the existing BAN sanction path using the exact AUTOMATION_DENIED decision code.",
+    "productionChange": "One condition added; no new match rule or blanket sanction category."
+  },
+  "tests": {
+    "previousSecurityCases": 55,
+    "addedSecurityCases": 2,
+    "executedSecurityCases": 57,
+    "passedSecurityCases": 57,
+    "newCases": [
+      {
+        "name": "explicit automation denial bans associated accounts and device across restart",
+        "assertions": [
+          "Clean historical account first associates one synthetic device.",
+          "Second account on that device reports baritone with automation DENY and sanctions BAN.",
+          "Decision is AUTOMATION_DENIED and exactly two account rows plus one device row carry that reason.",
+          "After save and a new GuardService instance, both accounts are denied on different IPs.",
+          "A new account reporting the same device is denied DEVICE_BANNED."
+        ]
+      },
+      {
+        "name": "explicit automation denial honors KICK without persistent bans",
+        "assertions": [
+          "Same historical device association and explicit automation DENY use sanctions KICK.",
+          "Decision remains AUTOMATION_DENIED with zero permanent bans before and after restart.",
+          "Offender can open another session, is denied again only after the automation report, and the historical account can open."
+        ]
+      }
+    ],
+    "strengthenedExistingCase": "Default automation ALERT remains allowed and now explicitly asserts zero permanent bans.",
+    "negativeControl": {
+      "scope": "The same new tests and other current core sources with only GuardService replaced by the base-commit Git blob.",
+      "guardServiceSha256": "4e2db30dfed6cba25178fc64e1d07664df81770c24732211c89602757f902e3c",
+      "expectedFailureObserved": true,
+      "exitCode": 1,
+      "passedBeforeFailure": 28,
+      "failingAssertion": "Explicit automation denial must ban two accounts and one device"
+    }
+  },
+  "runtime": {
+    "java": "Temurin OpenJDK 1.8.0_504-b01 / 25.504-b01",
+    "compiler": "javac 1.8.0_504",
+    "maxHeapMiB": 128,
+    "maxMetaspaceMiB": 64,
+    "concurrency": "Sequential compilation and dependency-free unit/security runners; no Minecraft JVM."
+  },
+  "sourceFiles": [
+    {
+      "path": "core/src/main/java/cn/qizhang/guard/core/Blacklist.java",
+      "sha256": "006b900ad82af2530ae906d59e995a234470ee94af2eaec4798f30286678c00e",
+      "bytes": 5387,
+      "gitNormalizedBlobId": "74e7d957dc1214d1c3b3fee5e8e5cfffe501113e"
+    },
+    {
+      "path": "core/src/main/java/cn/qizhang/guard/core/Cidr.java",
+      "sha256": "72c6933cb0b0c03111d350840fe269300a5f102c593019ff874a09aaaeff8818",
+      "bytes": 1454,
+      "gitNormalizedBlobId": "9495c55d738dae3f1946ed254108a1c91261d34d"
+    },
+    {
+      "path": "core/src/main/java/cn/qizhang/guard/core/ClientReport.java",
+      "sha256": "d74eab23e646635ac1bfa65cb7bd6b1533d30cee3d2a38894c4ea603ddf71236",
+      "bytes": 1869,
+      "gitNormalizedBlobId": "e0968ae5a5df390cafbc458591d8286362be5889"
+    },
+    {
+      "path": "core/src/main/java/cn/qizhang/guard/core/Decision.java",
+      "sha256": "4c6e6505fa6614dd505cf321e62fcda15ea03ec6373b3e6683d8a926d3f78053",
+      "bytes": 900,
+      "gitNormalizedBlobId": "13895f1caf44022e24cb6d032d3afefce057a904"
+    },
+    {
+      "path": "core/src/main/java/cn/qizhang/guard/core/GuardConfig.java",
+      "sha256": "51b14d5398c94573f0b561e33726fe1b6c322bbacb4434a6aab7c32111b0ff22",
+      "bytes": 5418,
+      "gitNormalizedBlobId": "db45a654079ed9810cb47e4c8034bd2bfe6a7508"
+    },
+    {
+      "path": "core/src/main/java/cn/qizhang/guard/core/GuardService.java",
+      "sha256": "d6f38d9301ff0214124285afd59440a075649435349718ef721db569de1a1aea",
+      "bytes": 37450,
+      "gitNormalizedBlobId": "bd08b3497cf6f0efa659fe07c7f50465d0d9fa9a"
+    },
+    {
+      "path": "core/src/main/java/cn/qizhang/guard/core/IpAddress.java",
+      "sha256": "13b506502c2227c64ee0e66e864c510d4be748888b51dc2d8664354a694ff8bd",
+      "bytes": 3649,
+      "gitNormalizedBlobId": "19a78224ba73d71de3b7cc5ded165755d43e4bfd"
+    },
+    {
+      "path": "core/src/main/java/cn/qizhang/guard/core/ReportEnvelope.java",
+      "sha256": "da333d36ced077e3c93c509a62a4a53f33a8acd85438279e54a42591888780da",
+      "bytes": 344,
+      "gitNormalizedBlobId": "21e93fa9a12ce4d35ff39296e3c4f8bf4631fc9e"
+    },
+    {
+      "path": "core/src/main/java/cn/qizhang/guard/core/RuleRegistry.java",
+      "sha256": "957e31b7c26ff6d0b9679e9557233b2f7212431fb33738716c5f74c008df9f4c",
+      "bytes": 6201,
+      "gitNormalizedBlobId": "f35ae260d93d597e540958fe9df670f903904a98"
+    },
+    {
+      "path": "core/src/main/java/cn/qizhang/guard/core/Wire.java",
+      "sha256": "c799100c30630c4378a0537aba4a6a82320c94179d2d86f8b005d9a157a169c2",
+      "bytes": 7726,
+      "gitNormalizedBlobId": "16a7f407c523cac8a01670550ad123badec9aa64"
+    },
+    {
+      "path": "core/src/test/java/cn/qizhang/guard/core/SecurityRegressionTest.java",
+      "sha256": "f1b0c445eaf5229e889b94d4c5176dbbe72eccebd81febe58b78ff980d716985",
+      "bytes": 45337,
+      "gitNormalizedBlobId": "0a90ca290bad866bc68ac9e17ded5daae09c0c7c"
+    }
+  ],
+  "runs": {
+    "java-version": {
+      "command": [
+        "E:\\CodexTemp\\QiZhangVerdict\\toolchains\\jdk8\\jdk8u504-b01\\bin\\java.exe",
+        "-Xmx128m",
+        "-version"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 0.101,
+      "log": "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\automation-fix-01\\java-version.log",
+      "logSha256": "9d65a43706f49fcfdbcece91e737f759110493e82fd1c4886cf49104c2017b0e",
+      "logBytes": 155
+    },
+    "javac-version": {
+      "command": [
+        "E:\\CodexTemp\\QiZhangVerdict\\toolchains\\jdk8\\jdk8u504-b01\\bin\\javac.exe",
+        "-J-Xmx128m",
+        "-version"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 0.194,
+      "log": "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\automation-fix-01\\javac-version.log",
+      "logSha256": "534dcc2c38e65c8f5fbd70ff2bbc9b7c89df6fda5ada56818a17d8ca4a272a68",
+      "logBytes": 17
+    },
+    "fixed-compile": {
+      "command": [
+        "E:\\CodexTemp\\QiZhangVerdict\\toolchains\\jdk8\\jdk8u504-b01\\bin\\javac.exe",
+        "-J-Xmx128m",
+        "-J-XX:MaxMetaspaceSize=64m",
+        "-encoding",
+        "UTF-8",
+        "-d",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\automation-fix-01\\fixed\\classes",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\automation-fix-01\\fixed\\core\\src\\main\\java\\cn\\qizhang\\guard\\core\\Blacklist.java",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\automation-fix-01\\fixed\\core\\src\\main\\java\\cn\\qizhang\\guard\\core\\Cidr.java",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\automation-fix-01\\fixed\\core\\src\\main\\java\\cn\\qizhang\\guard\\core\\ClientReport.java",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\automation-fix-01\\fixed\\core\\src\\main\\java\\cn\\qizhang\\guard\\core\\Decision.java",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\automation-fix-01\\fixed\\core\\src\\main\\java\\cn\\qizhang\\guard\\core\\GuardConfig.java",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\automation-fix-01\\fixed\\core\\src\\main\\java\\cn\\qizhang\\guard\\core\\GuardService.java",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\automation-fix-01\\fixed\\core\\src\\main\\java\\cn\\qizhang\\guard\\core\\IpAddress.java",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\automation-fix-01\\fixed\\core\\src\\main\\java\\cn\\qizhang\\guard\\core\\ReportEnvelope.java",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\automation-fix-01\\fixed\\core\\src\\main\\java\\cn\\qizhang\\guard\\core\\RuleRegistry.java",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\automation-fix-01\\fixed\\core\\src\\main\\java\\cn\\qizhang\\guard\\core\\Wire.java",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\automation-fix-01\\fixed\\core\\src\\test\\java\\cn\\qizhang\\guard\\core\\SecurityRegressionTest.java"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 1.204,
+      "log": "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\automation-fix-01\\fixed-compile.log",
+      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "logBytes": 0
+    },
+    "fixed-security": {
+      "command": [
+        "E:\\CodexTemp\\QiZhangVerdict\\toolchains\\jdk8\\jdk8u504-b01\\bin\\java.exe",
+        "-Xmx128m",
+        "-XX:MaxMetaspaceSize=64m",
+        "-Dqzguard.testDir=E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\automation-fix-01\\fixed\\private-test-state",
+        "-cp",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\automation-fix-01\\fixed\\classes",
+        "cn.qizhang.guard.core.SecurityRegressionTest"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 1.535,
+      "log": "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\automation-fix-01\\fixed-security.log",
+      "logSha256": "1e26be45a2a53ee19e208f27f4e32b96db5c32f3c0dd7582a88d36147338e1fb",
+      "logBytes": 3229,
+      "passedCasesBeforeExit": 57
+    },
+    "pre-fix-control-compile": {
+      "command": [
+        "E:\\CodexTemp\\QiZhangVerdict\\toolchains\\jdk8\\jdk8u504-b01\\bin\\javac.exe",
+        "-J-Xmx128m",
+        "-J-XX:MaxMetaspaceSize=64m",
+        "-encoding",
+        "UTF-8",
+        "-d",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\automation-fix-01\\pre-fix-control\\classes",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\automation-fix-01\\pre-fix-control\\core\\src\\main\\java\\cn\\qizhang\\guard\\core\\Blacklist.java",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\automation-fix-01\\pre-fix-control\\core\\src\\main\\java\\cn\\qizhang\\guard\\core\\Cidr.java",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\automation-fix-01\\pre-fix-control\\core\\src\\main\\java\\cn\\qizhang\\guard\\core\\ClientReport.java",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\automation-fix-01\\pre-fix-control\\core\\src\\main\\java\\cn\\qizhang\\guard\\core\\Decision.java",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\automation-fix-01\\pre-fix-control\\core\\src\\main\\java\\cn\\qizhang\\guard\\core\\GuardConfig.java",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\automation-fix-01\\pre-fix-control\\core\\src\\main\\java\\cn\\qizhang\\guard\\core\\GuardService.java",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\automation-fix-01\\pre-fix-control\\core\\src\\main\\java\\cn\\qizhang\\guard\\core\\IpAddress.java",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\automation-fix-01\\pre-fix-control\\core\\src\\main\\java\\cn\\qizhang\\guard\\core\\ReportEnvelope.java",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\automation-fix-01\\pre-fix-control\\core\\src\\main\\java\\cn\\qizhang\\guard\\core\\RuleRegistry.java",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\automation-fix-01\\pre-fix-control\\core\\src\\main\\java\\cn\\qizhang\\guard\\core\\Wire.java",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\automation-fix-01\\pre-fix-control\\core\\src\\test\\java\\cn\\qizhang\\guard\\core\\SecurityRegressionTest.java"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 1.119,
+      "log": "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\automation-fix-01\\pre-fix-control-compile.log",
+      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "logBytes": 0
+    },
+    "pre-fix-control-security": {
+      "command": [
+        "E:\\CodexTemp\\QiZhangVerdict\\toolchains\\jdk8\\jdk8u504-b01\\bin\\java.exe",
+        "-Xmx128m",
+        "-XX:MaxMetaspaceSize=64m",
+        "-Dqzguard.testDir=E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\automation-fix-01\\pre-fix-control\\private-test-state",
+        "-cp",
+        "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\automation-fix-01\\pre-fix-control\\classes",
+        "cn.qizhang.guard.core.SecurityRegressionTest"
+      ],
+      "exitCode": 1,
+      "elapsedSeconds": 1.144,
+      "log": "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\automation-fix-01\\pre-fix-control-security.log",
+      "logSha256": "47ee019f183a1b3a7859877a85d8ec9f78d4a170a2521726d2b4493a01deed63",
+      "logBytes": 1910,
+      "passedCasesBeforeExit": 28
+    }
+  },
+  "evidence": [
+    {
+      "file": "evidence/core-automation-sanction-fixed-security.log",
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\automation-fix-01\\fixed-security.log",
+      "sha256": "1e26be45a2a53ee19e208f27f4e32b96db5c32f3c0dd7582a88d36147338e1fb",
+      "bytes": 3229,
+      "rawBytesUnchanged": true
+    },
+    {
+      "file": "evidence/core-automation-sanction-pre-fix-control-security.log",
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\automation-fix-01\\pre-fix-control-security.log",
+      "sha256": "47ee019f183a1b3a7859877a85d8ec9f78d4a170a2521726d2b4493a01deed63",
+      "bytes": 1910,
+      "rawBytesUnchanged": true
+    },
+    {
+      "file": "evidence/core-automation-sanction-java-version.log",
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\automation-fix-01\\java-version.log",
+      "sha256": "9d65a43706f49fcfdbcece91e737f759110493e82fd1c4886cf49104c2017b0e",
+      "bytes": 155,
+      "rawBytesUnchanged": true
+    },
+    {
+      "file": "evidence/core-automation-sanction-javac-version.log",
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\automation-fix-01\\javac-version.log",
+      "sha256": "534dcc2c38e65c8f5fbd70ff2bbc9b7c89df6fda5ada56818a17d8ca4a272a68",
+      "bytes": 17,
+      "rawBytesUnchanged": true
+    },
+    {
+      "file": "evidence/core-automation-sanction-run-validation.py",
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\security-review-20260925\\automation-fix-01\\run-validation.py",
+      "sha256": "625c6cf5dee575c548761f4a46865a6e2f3027b5f72b5793d9808a3f2f2d39d5",
+      "bytes": 4117,
+      "rawBytesUnchanged": true
+    }
+  ],
+  "privacy": {
+    "published": "Five explicit raw-byte files: fixed and expected-failure logs, two version logs, and the standalone validation harness.",
+    "excluded": [
+      "All generated account/device state",
+      "server-id.txt",
+      "Generated policy files",
+      "Temporary compiled classes"
+    ],
+    "testData": "Synthetic UUIDs, reserved documentation IPs and synthetic devices; no generated state is published.",
+    "scan": "Inspected selected logs; no device digest, UUID value, access token, credential, or full Minecraft decompilation/disassembly is present."
+  },
+  "limits": [
+    "The Java runner validates core behavior only. Bukkit/Fabric/Forge/NeoForge JARs were not rebuilt or runtime-tested with this source change.",
+    "Published packages and prior validation reports were not changed.",
+    "The frozen Bukkit 0.1.1 JAR remains e1194b8b694763afbc431e22799f40d357dd80493d194f680edfb219afe94845 and does not contain this new source fix."
+  ],
+  "frozenBukkitArtifact": {
+    "path": "bukkit/build/libs/qizhangverdict-bukkit-0.1.1.jar",
+    "sha256": "e1194b8b694763afbc431e22799f40d357dd80493d194f680edfb219afe94845",
+    "bytes": 70007,
+    "rebuilt": false
+  }
+}

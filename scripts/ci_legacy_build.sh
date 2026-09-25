@@ -73,7 +73,7 @@ mkdir -p "ci-logs/legacy-$QV_MC" "ci-artifacts/legacy-$QV_MC"
 (cd "platforms/$QV_MC" && "$qv_launcher_shell" "$qv_wrapper" "${gradle_options[@]}" "${qv_tasks[@]}") \
   2>&1 | tee "ci-logs/legacy-$QV_MC/gradle.log"
 for qv_loader in "${qv_loaders[@]}"; do
-  cp "platforms/$QV_MC/$qv_loader/build/libs/qizhangverdict-$qv_loader-$QV_MC-0.2.0-dev.jar" \
+  cp "platforms/$QV_MC/$qv_loader/build/libs/qizhangverdict-$qv_loader-$QV_MC-0.2.0-test.1.jar" \
     "ci-artifacts/legacy-$QV_MC/"
 done
 (cd "ci-artifacts/legacy-$QV_MC" && sha256sum ./*.jar > SHA256SUMS)

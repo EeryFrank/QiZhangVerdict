@@ -6,7 +6,7 @@ buildscript {
 if (JavaVersion.current() != JavaVersion.VERSION_1_8) {
     throw new GradleException('Minecraft 1.12.2 ForgeGradle 3 / Gradle 5.6.4 requires JDK 8 for this build; set JAVA_HOME to a JDK 8 installation.')
 }
-allprojects { group = 'cn.qizhang.guard'; version = '0.2.0-dev' }
+allprojects { group = 'cn.qizhang.guard'; version = '0.2.0-test.1' }
 ext.qvRuntimeRoot = findProperty('qzRuntimeRoot') ?: (System.getProperty('os.name').toLowerCase().contains('windows')
     ? 'E:/CodexTemp/QiZhangVerdict/legacy-build/1.12.2/runtime'
     : new File(System.getProperty('java.io.tmpdir'), 'qizhangverdict-1.12.2-runtime').absolutePath)

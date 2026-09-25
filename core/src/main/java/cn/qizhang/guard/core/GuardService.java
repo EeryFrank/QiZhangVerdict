@@ -401,7 +401,7 @@ public final class GuardService {
     }
 
     private Decision sanction(UUID player, Decision result) {
-        if (!result.allowed() && config.banOnDeny && (result.code().equals("BLACKLIST_DENIED") || result.code().equals("VM_DENIED") || result.code().equals("DEVICE_BANNED")))
+        if (!result.allowed() && config.banOnDeny && (result.code().equals("BLACKLIST_DENIED") || result.code().equals("AUTOMATION_DENIED") || result.code().equals("VM_DENIED") || result.code().equals("DEVICE_BANNED")))
             if (!banAssociated(player, safeReason(result.code()))) return Decision.deny("SANCTION_CAPACITY", "Ban capacity reached; connection denied without new permanent records");
         return result;
     }
