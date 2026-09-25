@@ -1,0 +1,221 @@
+{
+  "product": "QiZhangVerdict",
+  "profile": "fabric-1.20.4",
+  "java": "E:\\CodexTemp\\mods-danzi\\java\\jdk-17.0.20.1+1-jre\\bin\\java.exe",
+  "guard_source": "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.20.4\\fabric\\build\\libs\\qizhangverdict-fabric-1.20.4-0.3.0-dev.jar",
+  "guard_sha256": "b8d1d1ad6e2afd41acd15aeb2fb93221b9b5a8803da5e8be0c2da86805c571e4",
+  "guard_target": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-03\\mods\\qizhangverdict-fabric-1.20.4-0.3.0-dev.jar",
+  "scope": "Dedicated server startup + console status + clean shutdown, no player/client gameplay; real loopback TCP protocol clients with synthetic self-reports, not rendered mod clients",
+  "mods": [
+    {
+      "filename": "fabric-api-0.97.3+1.20.4.jar",
+      "sha256": "5c11c93b21e0fbcd83dd11c6059479143f3d422bceac4153c3e55806ba9371f1"
+    },
+    {
+      "filename": "qizhangverdict-fabric-1.20.4-0.3.0-dev.jar",
+      "sha256": "b8d1d1ad6e2afd41acd15aeb2fb93221b9b5a8803da5e8be0c2da86805c571e4"
+    }
+  ],
+  "started": true,
+  "console_status_verified": true,
+  "timed_out": false,
+  "started_utc": "2026-09-25T13:22:38Z",
+  "offline_mode_for_isolated_protocol_test": true,
+  "console_path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-03\\console.log",
+  "protocol_script_sha256": "4180ca0fe087283f500aae1c26ca68354712db30c0774f238f0b758f6c409534",
+  "protocol_data_directory": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-03\\config\\qizhangverdict",
+  "protocol_exit_code": 0,
+  "protocol_elapsed_seconds": 68.27,
+  "protocol_forwarded_commands": 17,
+  "protocol_console_sha256": "a4af390b755ecc9ba01ec70f804aa6a7b1a946831fe61c09e4425088e100b1dc",
+  "protocol_result": {
+    "passed": 26,
+    "cases": [
+      "normal companion joins",
+      "privileged commands blocked before report and restored afterward",
+      "missing companion expires",
+      "malformed report rejected",
+      "malformed report does not permanently ban account",
+      "first account on device allowed",
+      "same IP same device second account rejected",
+      "same IP second different device allowed",
+      "same IP third different device allowed",
+      "same IP fourth account rejected",
+      "disconnect releases device and IP quota",
+      "known cheat denied and sanctioned",
+      "same banned device different account denied",
+      "banned account denied with new device",
+      "administrator account and device unban restores access",
+      "administrator glob rule enforced",
+      "whitelist overrides matching blacklist item",
+      "removed whitelist takes effect",
+      "administrator removes default rule with colon ID",
+      "administrator restores removed blacklist entry",
+      "CIDR deny rejects login",
+      "known VM signal denied",
+      "VBS hypervisor alone does not ban physical machine",
+      "two-device setting first account",
+      "two-device setting second account",
+      "two-device setting rejects third account"
+    ],
+    "orePalette": [],
+    "maxChunkZeroPadding": 0,
+    "disconnectObservations": [
+      {
+        "name": "QVBot2",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"QiZhangGuard: required companion report timed out\"}"
+      },
+      {
+        "name": "BadWire",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"Malformed or oversized companion report\"}"
+      },
+      {
+        "name": "QVBot4",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"Only the configured number of accounts may use the same IP and device concurrently\"}"
+      },
+      {
+        "name": "QVBot7",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"Too many simultaneous accounts from this IP\"}"
+      },
+      {
+        "name": "CheatAccount",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"Reported mod matches an exact server blacklist rule\"}"
+      },
+      {
+        "name": "LinkedAccount",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"This reported device identifier is banned\"}"
+      },
+      {
+        "name": "CheatAccount",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"This account is banned by the server\"}"
+      },
+      {
+        "name": "QVBot9",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"Reported mod matches a server blacklist rule\"}"
+      },
+      {
+        "name": "QVBot11",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"Reported mod matches a server blacklist rule\"}"
+      },
+      {
+        "name": "QVBot13",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"Reported mod matches a server blacklist rule\"}"
+      },
+      {
+        "name": "QVBot14",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"This IP is denied by server policy\"}"
+      },
+      {
+        "name": "QVBot15",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"Companion reported a virtual machine indicator\"}"
+      }
+    ],
+    "kind": "real TCP clients using synthetic self-reports; not rendered mod client or real VM",
+    "version": "1.20.4"
+  },
+  "protocol_result_sha256": "b7057d668ed54190a69c7249993e2116377dcc6c8dc9b943837e332d950606c9",
+  "exit_code": 0,
+  "elapsed_seconds": 91.81,
+  "parser_version": 2,
+  "expected_integrations": {
+    "grim": false,
+    "antixray": false
+  },
+  "console_sha256": "73e3ea9b5e7f303b6604b28475c785ec82bd6e0eb19a2fae77d6691ceaaf2f75",
+  "guard_log_lines": [
+    "Picked up JAVA_TOOL_OPTIONS: -Djava.io.tmpdir=E:/CodexTemp/QiZhangVerdict/next-platforms/1.20.4/servers/fabric-03/runtime-temp",
+    "\t- qizhangverdict 0.3.0-dev",
+    "[22:22:45] [main/INFO]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/E:/CodexTemp/QiZhangVerdict/next-platforms/1.20.4/servers/fabric-03/libraries/net/fabricmc/sponge-mixin/0.15.5+mixin.0.8.7/sponge-mixin-0.15.5+mixin.0.8.7.jar Service=Knot/Fabric Env=SERVER",
+    "/*                                         Code source : file:/E:/CodexTemp/QiZhangVerdict/next-platforms/1.20.4/servers/fabric-03/libraries/net/fabricmc/sponge-mixin/0.15.5+mixin.0.8.7/sponge-mixin-0.15.5+mixin.0.8.7.jar */",
+    "[22:22:46] [main/INFO]: Selecting config qizhangverdict.mixins.json",
+    "[22:22:46] [main/INFO]: Preparing qizhangverdict.mixins.json (1)",
+    "[22:22:55] [main/INFO]: Mixing CommandGate1204Mixin from qizhangverdict.mixins.json into net.minecraft.class_2170",
+    "[22:22:57] [Server thread/INFO]: QiZhangGuard started: QiZhangVerdict sessions=0, trackedIPs=0, accountPairs=0, rules=37, companion=required, vm=DENY, blacklist=DENY, rateBuckets=0, accountBans=0, deviceBans=0, deviceRequired=true. Reports are self-reported, not trusted attestation.",
+    "[22:23:00] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=0, accountPairs=0, rules=37, companion=required, vm=DENY, blacklist=DENY, rateBuckets=0, accountBans=0, deviceBans=0, deviceRequired=true",
+    "[22:23:01] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=0, accountPairs=0, rules=37, companion=required, vm=ALERT, blacklist=DENY, rateBuckets=0, accountBans=0, deviceBans=0, deviceRequired=true",
+    "[22:23:04] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=1, rules=37, companion=required, vm=ALERT, blacklist=DENY, rateBuckets=1, accountBans=0, deviceBans=0, deviceRequired=true",
+    "[22:23:12] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=2, rules=37, companion=required, vm=ALERT, blacklist=DENY, rateBuckets=1, accountBans=0, deviceBans=0, deviceRequired=true",
+    "[22:23:18] [Server thread/INFO]: QVBot2 lost connection: QiZhangGuard: required companion report timed out",
+    "[22:23:53] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=16, rules=38, companion=required, vm=ALERT, blacklist=DENY, rateBuckets=1, accountBans=4, deviceBans=3, deviceRequired=true",
+    "[22:23:56] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=16, rules=38, companion=required, vm=DENY, blacklist=DENY, rateBuckets=1, accountBans=4, deviceBans=3, deviceRequired=true",
+    "[22:24:00] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=18, rules=38, companion=required, vm=ALERT, blacklist=DENY, rateBuckets=1, accountBans=5, deviceBans=4, deviceRequired=true"
+  ],
+  "antixray_log_lines": [
+    "[22:22:54] [main/INFO]: External mod presence only: grimac=false, antixray=false; actual function must be tested separately"
+  ],
+  "grim_log_lines": [
+    "[22:22:54] [main/INFO]: External mod presence only: grimac=false, antixray=false; actual function must be tested separately"
+  ],
+  "error_lines": [
+    "[22:22:48] [main/INFO]: Renaming synthetic method lambda$getStacks$0(Lnet/minecraft/class_1761;)Ljava/lang/IllegalStateException; to md059c77$fabric-item-group-api-v1$lambda$getStacks$0$0 in fabric-item-group-api-v1.mixins.json:ItemGroupMixin from mod fabric-item-group-api-v1",
+    "[22:22:55] [main/INFO]: Renaming @Accessor method getFailedException()Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType; to getFailedException$fabric-command-api-v2_$md$059c77$0 in fabric-command-api-v2.mixins.json:HelpCommandAccessor from mod fabric-command-api-v2"
+  ],
+  "nonfatal_upstream_notices": [],
+  "pass_definition": "Done + QiZhangVerdict console status + dependency initialization + clean stop; not an error-free log or anticheat accuracy claim",
+  "integration_startup_errors": [],
+  "status_response_lines": [
+    "[22:23:00] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=0, accountPairs=0, rules=37, companion=required, vm=DENY, blacklist=DENY, rateBuckets=0, accountBans=0, deviceBans=0, deviceRequired=true",
+    "[22:23:01] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=0, accountPairs=0, rules=37, companion=required, vm=ALERT, blacklist=DENY, rateBuckets=0, accountBans=0, deviceBans=0, deviceRequired=true",
+    "[22:23:04] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=1, rules=37, companion=required, vm=ALERT, blacklist=DENY, rateBuckets=1, accountBans=0, deviceBans=0, deviceRequired=true",
+    "[22:23:12] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=2, rules=37, companion=required, vm=ALERT, blacklist=DENY, rateBuckets=1, accountBans=0, deviceBans=0, deviceRequired=true",
+    "[22:23:53] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=16, rules=38, companion=required, vm=ALERT, blacklist=DENY, rateBuckets=1, accountBans=4, deviceBans=3, deviceRequired=true",
+    "[22:23:56] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=16, rules=38, companion=required, vm=DENY, blacklist=DENY, rateBuckets=1, accountBans=4, deviceBans=3, deviceRequired=true",
+    "[22:24:00] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=18, rules=38, companion=required, vm=ALERT, blacklist=DENY, rateBuckets=1, accountBans=5, deviceBans=4, deviceRequired=true"
+  ],
+  "guard_status_observed": true,
+  "antixray_loaded": false,
+  "grim_loaded": false,
+  "grim_command_framework_available": false,
+  "passed_startup_only": true,
+  "all_requested_checks_passed": true,
+  "protocol_client_decoder_error_count": 0,
+  "protocol_client_decoder_error_examples": []
+}

@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "scope": "In-memory official dependency serializer/deserializer tests; no sockets, Java, Minecraft or original-run packet replay.",
+  "passed": true,
+  "javaStarted": false,
+  "minecraftStarted": false,
+  "socketsOpened": false,
+  "syntheticReasonsOnly": true,
+  "originalFabricFailureRootCauseConfirmed": false,
+  "originalFailureBoundary": "This proves the dependency bundle/event behavior, not that the original fabric-01 run contained an unfinished bundle; that run had no decoder trace.",
+  "cases": [
+    {
+      "name": "1.20.4 normal PLAY event and observer both receive exact decoded reason",
+      "passed": true
+    },
+    {
+      "name": "Observer payload is detached from the library event payload",
+      "passed": true
+    },
+    {
+      "name": "Unclosed bundle withholds normal event while observer captures actual decoded kick",
+      "passed": true
+    },
+    {
+      "name": "Socket end neither fabricates another reason nor flushes the library queue",
+      "passed": true
+    },
+    {
+      "name": "Closing bundle retains normal library delivery without duplicate observer capture",
+      "passed": true
+    },
+    {
+      "name": "Fresh LOGIN CONFIGURATION PLAY deserializers are observed once each",
+      "passed": true
+    },
+    {
+      "name": "Repeated state notification does not add a duplicate decoder listener",
+      "passed": true
+    },
+    {
+      "name": "1.12.2 legacy string reason and normal event remain unchanged",
+      "passed": true
+    },
+    {
+      "name": "1.19.2 legacy string reason and normal event remain unchanged",
+      "passed": true
+    },
+    {
+      "name": "End-only, fabricated named event and actual unrelated packet produce no observation",
+      "passed": true
+    },
+    {
+      "name": "Idempotent detach stops current and future decoder observation without altering normal delivery",
+      "passed": true
+    }
+  ],
+  "files": [
+    {
+      "path": "E:\\Codex_work\\QiZhangVerdict\\scripts\\test_protocol_disconnect_observer.cjs",
+      "sha256": "098f44c6fc8b76dd41142eab52cdbf412d038cf4282b546832fa7dcdbb68ad90",
+      "bytes": 8969
+    },
+    {
+      "path": "E:\\Codex_work\\QiZhangVerdict\\scripts\\protocol_disconnect_observer.cjs",
+      "sha256": "c4496beaa3d43c13ff946821aae5f2c62cd7623e09ed21300af66e5e58c68dbc",
+      "bytes": 2374
+    },
+    {
+      "path": "E:\\CodexTemp\\QiZhangGuard\\bot\\node_modules\\minecraft-protocol\\src\\client.js",
+      "sha256": "e75a716a2ccc98bc94b537b4cb39f2a50249e9924f91a1809e2744df05dcbe65",
+      "bytes": 9290
+    },
+    {
+      "path": "E:\\CodexTemp\\QiZhangGuard\\bot\\node_modules\\minecraft-protocol\\src\\client\\play.js",
+      "sha256": "23b72dbc92c1d26ac5fa9cd161ee7098a69a24bcdd09b534dd6280e31693f493",
+      "bytes": 3565
+    },
+    {
+      "path": "E:\\CodexTemp\\QiZhangGuard\\bot\\node_modules\\minecraft-protocol\\package.json",
+      "sha256": "f863f45ead2fed090c993a529f3720a45a41a7ec970d7488ba9a3ce28253fd0f",
+      "bytes": 1805
+    }
+  ],
+  "withheldBundleProof": {
+    "publicDisconnectEvents": 0,
+    "decodedDisconnectObservations": 1,
+    "queuedPacketNames": [
+      "bundle_delimiter",
+      "kick_disconnect"
+    ]
+  },
+  "dependencyVersion": "1.66.2",
+  "completedAt": "2026-09-25T12:48:27.600Z"
+}

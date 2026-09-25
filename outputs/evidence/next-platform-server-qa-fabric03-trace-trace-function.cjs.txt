@@ -1,0 +1,68 @@
+
+// Diagnostic-only metadata observer: no packet body or private identifier is read
+// or copied. It stays attached after client.end until the existing final 300ms
+// drain completes, so late decoder events remain visible without altering them.
+function createMetadataTrace(client, name, stateSnapshot) {
+  const events = [], decoders = new Map(), cleanups = [], counts = {};
+  let sequence = 0, dropped = 0, clientEnded = false;
+  const started = process.hrtime.bigint();
+  const safeState = value => ['handshaking','status','login','configuration','play'].includes(value) ? value : 'other';
+  const trace = {name, maxRetainedEvents:200};
+  function record(event, metadata = {}) {
+    counts[event] = (counts[event] || 0) + 1;
+    if (events.length === 200) {events.shift(); dropped++;}
+    events.push({sequence:++sequence, elapsedMs:Number(process.hrtime.bigint()-started)/1e6,
+      event, clientState:safeState(client.state), afterClientEnd:clientEnded, ...metadata});
+  }
+  function listen(emitter, event, callback) {
+    emitter.on(event, callback); cleanups.push(() => emitter.removeListener(event, callback));
+  }
+  function errorMetadata(error) {
+    const message = String(error?.message || '');
+    const field = typeof error?.field === 'string' && /^[A-Za-z0-9_.-]{1,160}$/.test(error.field) ? error.field : null;
+    const code = typeof error?.code === 'string' && /^[A-Z0-9_]{1,80}$/.test(error.code) ? error.code : null;
+    return {errorClass:['Error','TypeError','RangeError','SyntaxError'].includes(error?.name) ? error.name : 'other',
+      field, code, partialReadError:!!error?.partialReadError, messageLength:message.length,
+      messageSha256:hash(message), category:message.startsWith('Parse error') ? 'parse' : message.startsWith('Serialization error') ? 'serialize' : 'other'};
+  }
+  function attachDecoder() {
+    const decoder = client.deserializer;
+    if (!decoder || decoders.has(decoder)) return;
+    const id = decoders.size + 1; decoders.set(decoder,id);
+    record('decoder-attached',{decoderId:id,dataListenersBefore:decoder.listenerCount('data')});
+    listen(decoder,'data',packet => {
+      const packetName = typeof packet?.metadata?.name === 'string' && /^[a-z0-9_]{1,80}$/.test(packet.metadata.name) ? packet.metadata.name : 'other';
+      const size = Number.isSafeInteger(packet?.metadata?.size) ? packet.metadata.size : null;
+      record('decoder-data',{decoderId:id,packetName,packetState:safeState(packet?.metadata?.state),decodedBytes:size});
+    });
+    listen(decoder,'error',error => record('decoder-error',{decoderId:id,...errorMetadata(error)}));
+    for (const event of ['end','finish','close']) listen(decoder,event,() => record('decoder-'+event,{decoderId:id}));
+  }
+  let observedSocket;
+  function attachSocket() {
+    const socket=client.socket;
+    if (!socket || observedSocket===socket) return;
+    observedSocket=socket;
+    record('socket-attached');
+    listen(socket,'end',()=>record('socket-end'));
+    listen(socket,'close',hadError=>record('socket-close',{hadError:!!hadError}));
+    listen(socket,'error',error=>record('socket-error',errorMetadata(error)));
+  }
+  listen(client,'state',(next,previous)=>{record('state',{previous:safeState(previous),next:safeState(next)});attachDecoder();attachSocket();});
+  listen(client,'connect',()=>{record('connect');attachSocket();});
+  listen(client,'error',error=>record('client-error',errorMetadata(error)));
+  listen(client,'end',reason=>{
+    clientEnded=true;
+    const endKind=['socketClosed','test complete','test finished','differentVersionError'].includes(reason) ? reason : 'other (not copied)';
+    record('client-end',{endKind,...stateSnapshot()});
+  });
+  attachDecoder();attachSocket();record('trace-created');
+  trace.finish=()=>{
+    record('trace-final-state',stateSnapshot());
+    for (const cleanup of cleanups) cleanup();
+    return {name,maxRetainedEvents:200,eventCount:sequence,eventsDropped:dropped,eventCounts:counts,events,
+      totalDecoderInstances:decoders.size,finalState:stateSnapshot(),packetBodiesRecorded:false,
+      reasonTextRecorded:false,nonceScopeDeviceRecorded:false};
+  };
+  return trace;
+}

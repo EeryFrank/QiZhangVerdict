@@ -1,0 +1,80 @@
+{
+  "preparedOnly": true,
+  "javaInvoked": false,
+  "artifact": {
+    "path": "E:\\Codex_work\\QiZhangVerdict\\bukkit\\build\\libs\\qizhangverdict-bukkit-0.2.1-dev.jar",
+    "sha256": "9849a60374ea1bb18aae2af0ee479593312437a9665b803a3f847a07c570b2c8",
+    "bytes": 74976
+  },
+  "command": [
+    "python",
+    "-B",
+    "E:\\Codex_work\\QiZhangVerdict\\scripts\\artifact_core_checks.py",
+    "--jar",
+    "E:\\Codex_work\\QiZhangVerdict\\bukkit\\build\\libs\\qizhangverdict-bukkit-0.2.1-dev.jar",
+    "--sha256",
+    "9849a60374ea1bb18aae2af0ee479593312437a9665b803a3f847a07c570b2c8",
+    "--java",
+    "E:\\CodexTemp\\QiZhangVerdict\\toolchains\\jdk8\\jdk8u504-b01\\bin\\java.exe",
+    "--javac",
+    "D:\\Java\\jdk-21\\bin\\javac.exe",
+    "--output",
+    "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\bukkit-artifact-core\\01"
+  ],
+  "expectedSecurityCases": 57,
+  "expectedCatalogRules": 37,
+  "expectedCatalogControlCases": 3,
+  "expectedTotalCases": 97,
+  "executionScope": "Compile only test runners for Java8; production GuardService must load from the exact Bukkit JAR. Native Java8 runtime, no Minecraft or Gradle.",
+  "javaRuntime": {
+    "path": "E:\\CodexTemp\\QiZhangVerdict\\toolchains\\jdk8\\jdk8u504-b01\\bin\\java.exe",
+    "sha256": "65ebee06ec47df0c41c4483ac5aa408e55adb47a1613bad56be30bccc4317e85",
+    "bytes": 304768
+  },
+  "javac": {
+    "path": "D:\\Java\\jdk-21\\bin\\javac.exe",
+    "sha256": "2892dac5a040cf2f29496a416a74991fdfff5ba7a436712dd69797932a3800fb",
+    "bytes": 23656
+  },
+  "pinnedInputs": [
+    {
+      "path": "E:\\Codex_work\\QiZhangVerdict\\scripts\\artifact_core_checks.py",
+      "sha256": "0a5ee2cf65a53865f2c2c2fe310b106cd27d85f11295dcf0bdef637407580191",
+      "bytes": 5365
+    },
+    {
+      "path": "E:\\Codex_work\\QiZhangVerdict\\integrations\\manage_integrations.py",
+      "sha256": "dcd216a78a848e2a07fbbeb11496c0af46000ad082ae1c2c631b3bf8d653f795",
+      "bytes": 12080
+    },
+    {
+      "path": "E:\\Codex_work\\QiZhangVerdict\\core\\src\\test\\java\\cn\\qizhang\\guard\\core\\SecurityRegressionTest.java",
+      "sha256": "f1b0c445eaf5229e889b94d4c5176dbbe72eccebd81febe58b78ff980d716985",
+      "bytes": 45337
+    },
+    {
+      "path": "E:\\Codex_work\\QiZhangVerdict\\core\\src\\test\\java\\cn\\qizhang\\guard\\core\\CatalogCompatibilityTest.java",
+      "sha256": "29ddd1bed5f88c5917d9dfd8f67454f476ac3e2bd26b3bb404e29b4503268980",
+      "bytes": 9418
+    },
+    {
+      "path": "E:\\Codex_work\\QiZhangVerdict\\catalog\\blacklist-extension.tsv",
+      "sha256": "66a633ad3faa2d7d666c43e2b3b544437054345e102103d90fe3b5db022c46a3",
+      "bytes": 5641
+    },
+    {
+      "path": "E:\\Codex_work\\QiZhangVerdict\\LICENSE",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "bytes": 35149
+    },
+    {
+      "path": "E:\\Codex_work\\QiZhangVerdict\\NOTICE",
+      "sha256": "47514206d1ef6b6e26de075747b19c9aca8ae77b2b68d3f101dd4675c4b14155",
+      "bytes": 1210
+    }
+  ],
+  "beforeExecution": "Require explicit parent Java-slot handoff; recheck pinned inputs and jar SHA; output 01 must not exist. Do not invoke this plan during client/server runtime window.",
+  "testJvmHeapMiB": 128,
+  "testJvmMetaspaceMiB": 64,
+  "sourceSnapshotDirectory": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\bukkit-artifact-core\\preparation-01"
+}

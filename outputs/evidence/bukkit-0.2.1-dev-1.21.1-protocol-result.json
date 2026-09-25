@@ -1,0 +1,141 @@
+{
+  "passed": 26,
+  "cases": [
+    "normal companion joins",
+    "privileged commands blocked before report and restored afterward",
+    "missing companion expires",
+    "malformed report rejected",
+    "malformed report does not permanently ban account",
+    "first account on device allowed",
+    "same IP same device second account rejected",
+    "same IP second different device allowed",
+    "same IP third different device allowed",
+    "same IP fourth account rejected",
+    "disconnect releases device and IP quota",
+    "known cheat denied and sanctioned",
+    "same banned device different account denied",
+    "banned account denied with new device",
+    "administrator account and device unban restores access",
+    "administrator glob rule enforced",
+    "whitelist overrides matching blacklist item",
+    "removed whitelist takes effect",
+    "administrator removes default rule with colon ID",
+    "administrator restores removed blacklist entry",
+    "CIDR deny rejects login",
+    "known VM signal denied",
+    "VBS hypervisor alone does not ban physical machine",
+    "two-device setting first account",
+    "two-device setting second account",
+    "two-device setting rejects third account"
+  ],
+  "orePalette": [],
+  "maxChunkZeroPadding": 0,
+  "disconnectObservations": [
+    {
+      "name": "QVBot2",
+      "source": "minecraft-protocol.deserializer.data",
+      "packetName": "kick_disconnect",
+      "packetState": "play",
+      "clientState": "play",
+      "reasonJson": "{\"type\":\"compound\",\"value\":{\"extra\":{\"type\":\"list\",\"value\":{\"type\":\"string\",\"value\":[\"[QiZhangVerdict] Required companion report timed out.\"]}},\"text\":{\"type\":\"string\",\"value\":\"\"}}}"
+    },
+    {
+      "name": "BadWire",
+      "source": "minecraft-protocol.deserializer.data",
+      "packetName": "kick_disconnect",
+      "packetState": "play",
+      "clientState": "play",
+      "reasonJson": "{\"type\":\"compound\",\"value\":{\"extra\":{\"type\":\"list\",\"value\":{\"type\":\"string\",\"value\":[\"[QiZhangVerdict] Malformed or oversized companion report\"]}},\"text\":{\"type\":\"string\",\"value\":\"\"}}}"
+    },
+    {
+      "name": "QVBot4",
+      "source": "minecraft-protocol.deserializer.data",
+      "packetName": "kick_disconnect",
+      "packetState": "play",
+      "clientState": "play",
+      "reasonJson": "{\"type\":\"compound\",\"value\":{\"extra\":{\"type\":\"list\",\"value\":{\"type\":\"string\",\"value\":[\"[QiZhangVerdict] Only the configured number of accounts may use the same IP and device concurrently\"]}},\"text\":{\"type\":\"string\",\"value\":\"\"}}}"
+    },
+    {
+      "name": "QVBot7",
+      "source": "minecraft-protocol.deserializer.data",
+      "packetName": "disconnect",
+      "packetState": "login",
+      "clientState": "login",
+      "reasonJson": "\"\\\"Too many simultaneous accounts from this IP\\\"\""
+    },
+    {
+      "name": "CheatAccount",
+      "source": "minecraft-protocol.deserializer.data",
+      "packetName": "kick_disconnect",
+      "packetState": "play",
+      "clientState": "play",
+      "reasonJson": "{\"type\":\"compound\",\"value\":{\"extra\":{\"type\":\"list\",\"value\":{\"type\":\"string\",\"value\":[\"[QiZhangVerdict] Reported mod matches an exact server blacklist rule\"]}},\"text\":{\"type\":\"string\",\"value\":\"\"}}}"
+    },
+    {
+      "name": "LinkedAccount",
+      "source": "minecraft-protocol.deserializer.data",
+      "packetName": "kick_disconnect",
+      "packetState": "play",
+      "clientState": "play",
+      "reasonJson": "{\"type\":\"compound\",\"value\":{\"extra\":{\"type\":\"list\",\"value\":{\"type\":\"string\",\"value\":[\"[QiZhangVerdict] This reported device identifier is banned\"]}},\"text\":{\"type\":\"string\",\"value\":\"\"}}}"
+    },
+    {
+      "name": "CheatAccount",
+      "source": "minecraft-protocol.deserializer.data",
+      "packetName": "disconnect",
+      "packetState": "login",
+      "clientState": "login",
+      "reasonJson": "\"\\\"This account is banned by the server\\\"\""
+    },
+    {
+      "name": "QVBot9",
+      "source": "minecraft-protocol.deserializer.data",
+      "packetName": "kick_disconnect",
+      "packetState": "play",
+      "clientState": "play",
+      "reasonJson": "{\"type\":\"compound\",\"value\":{\"extra\":{\"type\":\"list\",\"value\":{\"type\":\"string\",\"value\":[\"[QiZhangVerdict] Reported mod matches a server blacklist rule\"]}},\"text\":{\"type\":\"string\",\"value\":\"\"}}}"
+    },
+    {
+      "name": "QVBot11",
+      "source": "minecraft-protocol.deserializer.data",
+      "packetName": "kick_disconnect",
+      "packetState": "play",
+      "clientState": "play",
+      "reasonJson": "{\"type\":\"compound\",\"value\":{\"extra\":{\"type\":\"list\",\"value\":{\"type\":\"string\",\"value\":[\"[QiZhangVerdict] Reported mod matches a server blacklist rule\"]}},\"text\":{\"type\":\"string\",\"value\":\"\"}}}"
+    },
+    {
+      "name": "QVBot13",
+      "source": "minecraft-protocol.deserializer.data",
+      "packetName": "kick_disconnect",
+      "packetState": "play",
+      "clientState": "play",
+      "reasonJson": "{\"type\":\"compound\",\"value\":{\"extra\":{\"type\":\"list\",\"value\":{\"type\":\"string\",\"value\":[\"[QiZhangVerdict] Reported mod matches a server blacklist rule\"]}},\"text\":{\"type\":\"string\",\"value\":\"\"}}}"
+    },
+    {
+      "name": "QVBot14",
+      "source": "minecraft-protocol.deserializer.data",
+      "packetName": "disconnect",
+      "packetState": "login",
+      "clientState": "login",
+      "reasonJson": "\"\\\"This IP is denied by server policy\\\"\""
+    },
+    {
+      "name": "QVBot15",
+      "source": "minecraft-protocol.deserializer.data",
+      "packetName": "kick_disconnect",
+      "packetState": "play",
+      "clientState": "play",
+      "reasonJson": "{\"type\":\"compound\",\"value\":{\"extra\":{\"type\":\"list\",\"value\":{\"type\":\"string\",\"value\":[\"[QiZhangVerdict] Companion reported a virtual machine indicator\"]}},\"text\":{\"type\":\"string\",\"value\":\"\"}}}"
+    },
+    {
+      "name": "QVBot19",
+      "source": "minecraft-protocol.deserializer.data",
+      "packetName": "disconnect",
+      "packetState": "login",
+      "clientState": "login",
+      "reasonJson": "\"\\\"Too many simultaneous accounts from this IP\\\"\""
+    }
+  ],
+  "kind": "real TCP clients using synthetic self-reports; not rendered mod client or real VM",
+  "version": "1.21.1"
+}

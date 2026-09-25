@@ -1,0 +1,954 @@
+{
+  "schemaVersion": 1,
+  "preparedOnly": true,
+  "javaStarted": false,
+  "createdUtc": "2026-09-25T13:07:03.829698+00:00",
+  "minecraft": "1.20.1",
+  "mode": "full",
+  "port": 25685,
+  "host": "127.0.0.1",
+  "networkCompressionThreshold": 256,
+  "guard": {
+    "filename": "qizhangverdict-bukkit-0.2.1-dev.jar",
+    "path": "E:\\Codex_work\\QiZhangVerdict\\bukkit\\build\\libs\\qizhangverdict-bukkit-0.2.1-dev.jar",
+    "sha256": "9849a60374ea1bb18aae2af0ee479593312437a9665b803a3f847a07c570b2c8",
+    "bytes": 74976
+  },
+  "server": {
+    "version": "1.20.1",
+    "build": "2062",
+    "url": "https://api.purpurmc.org/v2/purpur/1.20.1/2062/download",
+    "path": "E:\\CodexTemp\\QiZhangGuard\\downloads\\purpur-1.20.1-2062.jar",
+    "size": 46903164,
+    "sha256": "238e64b33e5c7c9b87506cf1a23f239e6ce7fb71edd9d31837f229c94f4dfa1a"
+  },
+  "java": "E:\\CodexTemp\\mods-danzi\\java\\jdk-17.0.20.1+1-jre\\bin\\java.exe",
+  "node": "E:\\CodexTemp\\Codex\\RuntimeCache\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+  "externalExecutables": [
+    {
+      "path": "E:\\CodexTemp\\mods-danzi\\java\\jdk-17.0.20.1+1-jre\\bin\\java.exe",
+      "sha256": "1977f302375adbb920d41dac65c7e22eb9c2ed8e1e8d6258964154ff16f14406",
+      "bytes": 50296
+    },
+    {
+      "path": "E:\\CodexTemp\\Codex\\RuntimeCache\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+      "sha256": "3602f2bb1a10f2cbab4c36886218a33c1ab3db87290e73b033c46c77147d0237",
+      "bytes": 92825416
+    }
+  ],
+  "nodeModules": "E:\\CodexTemp\\QiZhangGuard\\bot\\node_modules",
+  "nodeLock": {
+    "path": "E:\\CodexTemp\\QiZhangGuard\\bot\\package-lock.json",
+    "sha256": "3e1f393e371f52c524a9256309cbef6665137f6312c4a0bd6848e3ee3959b814",
+    "bytes": 53375
+  },
+  "dependencies": {
+    "minecraft-protocol": {
+      "version": "1.66.2",
+      "packageJsonPath": "E:\\CodexTemp\\QiZhangGuard\\bot\\node_modules\\minecraft-protocol\\package.json",
+      "packageJsonSha256": "f863f45ead2fed090c993a529f3720a45a41a7ec970d7488ba9a3ce28253fd0f"
+    },
+    "minecraft-data": {
+      "version": "3.117.0",
+      "packageJsonPath": "E:\\CodexTemp\\QiZhangGuard\\bot\\node_modules\\minecraft-data\\package.json",
+      "packageJsonSha256": "80a56aae4008d52d962b8b0ca16cbc68ae11691860542bd9b879fd9e6506ff4f"
+    },
+    "protodef": {
+      "version": "1.19.0",
+      "packageJsonPath": "E:\\CodexTemp\\QiZhangGuard\\bot\\node_modules\\protodef\\package.json",
+      "packageJsonSha256": "c0858db530f3a514b63c4f4629b4bc1677e3bb4454deeee23a42bbc8a722d0ee"
+    }
+  },
+  "expectedDefaultPolicy": {
+    "limits.max-online-per-ip": "3",
+    "limits.max-online-per-ip-device": "1",
+    "limits.max-accounts-per-ip": "5",
+    "limits.account-window-hours": "720",
+    "limits.attempts-per-minute": "20",
+    "ip.allow": "",
+    "ip.deny": "",
+    "companion.required": "true",
+    "companion.timeout-seconds": "20",
+    "device.required": "true",
+    "vm.action": "DENY",
+    "blacklist.action": "DENY",
+    "sanctions.on-deny": "BAN"
+  },
+  "expectedCases": [
+    "normal companion joins",
+    "privileged commands blocked before report and restored afterward",
+    "missing companion expires",
+    "malformed report rejected",
+    "malformed report does not permanently ban account",
+    "first account on device allowed",
+    "same IP same device second account rejected",
+    "same IP second different device allowed",
+    "same IP third different device allowed",
+    "same IP fourth account rejected",
+    "disconnect releases device and IP quota",
+    "known cheat denied and sanctioned",
+    "same banned device different account denied",
+    "banned account denied with new device",
+    "administrator account and device unban restores access",
+    "administrator glob rule enforced",
+    "whitelist overrides matching blacklist item",
+    "removed whitelist takes effect",
+    "administrator removes default rule with colon ID",
+    "administrator restores removed blacklist entry",
+    "CIDR deny rejects login",
+    "known VM signal denied",
+    "VBS hypervisor alone does not ban physical machine",
+    "two-device setting first account",
+    "two-device setting second account",
+    "two-device setting rejects third account"
+  ],
+  "expectedCaseCount": 26,
+  "policyDisclosure": {
+    "firstStartup": "No plugin data or properties copied. Runner verifies all 13 generated defaults before protocol starts.",
+    "protocolBaseOverrides": {
+      "limits.max-accounts-per-ip": "5 -> 100",
+      "limits.attempts-per-minute": "20 -> 1000",
+      "companion.timeout-seconds": "20 -> 4",
+      "vm.action": "DENY -> ALERT"
+    },
+    "namedTestChanges": [
+      "command-gate timeout temporarily 10 seconds",
+      "CIDR deny 127.0.0.0/8 case",
+      "VM policy DENY for known VM / VBS control",
+      "max online per IP reduced to 2 for final quota checks"
+    ],
+    "unchangedProtection": [
+      "companion.required=true",
+      "device.required=true",
+      "limits.max-online-per-ip-device=1",
+      "blacklist.action=DENY",
+      "sanctions.on-deny=BAN"
+    ],
+    "scope": "Synthetic reports; not strict untouched-policy real-client/real-VM evidence."
+  },
+  "thirdPartyAnticheatInstalled": false,
+  "antiXrayTestEnabled": false,
+  "commandGateTestEnabled": true,
+  "sourceCommitAtPreparation": "33bc0ac9070d4d20bb080af5d6209455058938c5",
+  "inputs": [
+    {
+      "source": "E:\\Codex_work\\QiZhangVerdict\\bukkit\\build\\libs\\qizhangverdict-bukkit-0.2.1-dev.jar",
+      "target": "plugins/qizhangverdict-bukkit-0.2.1-dev.jar",
+      "sha256": "9849a60374ea1bb18aae2af0ee479593312437a9665b803a3f847a07c570b2c8",
+      "bytes": 74976
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\downloads\\purpur-1.20.1-2062.jar",
+      "target": "server.jar",
+      "sha256": "238e64b33e5c7c9b87506cf1a23f239e6ce7fb71edd9d31837f229c94f4dfa1a",
+      "bytes": 46903164
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\cache\\mojang_1.20.1.jar",
+      "target": "cache/mojang_1.20.1.jar",
+      "sha256": "3af73a9dc5a102e38147946360dd27d4d70bae7055bf91cf2151cd5d121b79e0",
+      "bytes": 47791053
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\cache\\spark.jar",
+      "target": "cache/spark.jar",
+      "sha256": "7e1b1c38f131f04da32c86cee6af519fd8ec40c5af54dcbab77921e82bded852",
+      "bytes": 4352165
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\com\\github\\carleslc\\Simple-YAML\\Simple-Configuration\\1.8.4\\Simple-Configuration-1.8.4.jar",
+      "target": "libraries/com/github/carleslc/Simple-YAML/Simple-Configuration/1.8.4/Simple-Configuration-1.8.4.jar",
+      "sha256": "86882deb5f810571027415ed33a0465840e444e3fc1e2f6d0abcaac845ab4769",
+      "bytes": 57569
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\com\\github\\carleslc\\Simple-YAML\\Simple-Yaml\\1.8.4\\Simple-Yaml-1.8.4.jar",
+      "target": "libraries/com/github/carleslc/Simple-YAML/Simple-Yaml/1.8.4/Simple-Yaml-1.8.4.jar",
+      "sha256": "7eacf7ff031d8679dd6add3e4b52809f2db342d847e8e1b12b9cb7c61bb45b11",
+      "bytes": 486168
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\com\\github\\oshi\\oshi-core\\6.2.2\\oshi-core-6.2.2.jar",
+      "target": "libraries/com/github/oshi/oshi-core/6.2.2/oshi-core-6.2.2.jar",
+      "sha256": "efbca93df18f3eb16964a92d8342f0674dd5d90da575ef8e04ef2e4eabec6910",
+      "bytes": 947865
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\com\\google\\code\\findbugs\\jsr305\\3.0.2\\jsr305-3.0.2.jar",
+      "target": "libraries/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar",
+      "sha256": "766ad2a0783f2687962c8ad74ceecc38a28b9f72a2d085ee438b7813e928d0c7",
+      "bytes": 19936
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\com\\google\\code\\gson\\gson\\2.10\\gson-2.10.jar",
+      "target": "libraries/com/google/code/gson/gson/2.10/gson-2.10.jar",
+      "sha256": "0cdd163ce3598a20fc04eee71b140b24f6f2a3b35f0a499dbbdd9852e83fbfaf",
+      "bytes": 286235
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\com\\google\\errorprone\\error_prone_annotations\\2.11.0\\error_prone_annotations-2.11.0.jar",
+      "target": "libraries/com/google/errorprone/error_prone_annotations/2.11.0/error_prone_annotations-2.11.0.jar",
+      "sha256": "721cb91842b46fa056847d104d5225c8b8e1e8b62263b993051e1e5a0137b7ec",
+      "bytes": 15979
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\com\\google\\guava\\failureaccess\\1.0.1\\failureaccess-1.0.1.jar",
+      "target": "libraries/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar",
+      "sha256": "a171ee4c734dd2da837e4b16be9df4661afab72a41adaf31eb84dfdaf936ca26",
+      "bytes": 4617
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\com\\google\\guava\\guava\\31.1-jre\\guava-31.1-jre.jar",
+      "target": "libraries/com/google/guava/guava/31.1-jre/guava-31.1-jre.jar",
+      "sha256": "a42edc9cab792e39fe39bb94f3fca655ed157ff87a8af78e1d6ba5b07c4a00ab",
+      "bytes": 2959479
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\com\\google\\guava\\listenablefuture\\9999.0-empty-to-avoid-conflict-with-guava\\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar",
+      "target": "libraries/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar",
+      "sha256": "b372a037d4230aa57fbeffdef30fd6123f9c0c2db85d0aced00c91b974f33f99",
+      "bytes": 2199
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\com\\google\\j2objc\\j2objc-annotations\\1.3\\j2objc-annotations-1.3.jar",
+      "target": "libraries/com/google/j2objc/j2objc-annotations/1.3/j2objc-annotations-1.3.jar",
+      "sha256": "21af30c92267bd6122c0e0b4d20cccb6641a37eaf956c6540ec471d584e64a7b",
+      "bytes": 8781
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\com\\google\\protobuf\\protobuf-java\\3.21.9\\protobuf-java-3.21.9.jar",
+      "target": "libraries/com/google/protobuf/protobuf-java/3.21.9/protobuf-java-3.21.9.jar",
+      "sha256": "1b78b4a76a71512debfdff8f8fc5aef6bfd459f65758fecf7aff245e6e6301e4",
+      "bytes": 1671409
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\com\\googlecode\\json-simple\\json-simple\\1.1.1\\json-simple-1.1.1.jar",
+      "target": "libraries/com/googlecode/json-simple/json-simple/1.1.1/json-simple-1.1.1.jar",
+      "sha256": "4e69696892b88b41c55d49ab2fdcc21eead92bf54acc588c0050596c3b75199c",
+      "bytes": 23931
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\com\\lmax\\disruptor\\3.4.4\\disruptor-3.4.4.jar",
+      "target": "libraries/com/lmax/disruptor/3.4.4/disruptor-3.4.4.jar",
+      "sha256": "1524ed31f13bcabee1b6146e67be30c6317cb94fcd0c7c2f7c7a1f3e82087c51",
+      "bytes": 84626
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\com\\mojang\\authlib\\4.0.43\\authlib-4.0.43.jar",
+      "target": "libraries/com/mojang/authlib/4.0.43/authlib-4.0.43.jar",
+      "sha256": "697043d19e0b84b04f011dbec1bec3d80c04d8c468e7e4c6b221c0183bc1c0ef",
+      "bytes": 121766
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\com\\mojang\\brigadier\\1.1.8\\brigadier-1.1.8.jar",
+      "target": "libraries/com/mojang/brigadier/1.1.8/brigadier-1.1.8.jar",
+      "sha256": "cf65afa612fffbe4dc976115dac0312f48b9c84b3ddaf58bec8018a9454440d7",
+      "bytes": 77121
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\com\\mojang\\datafixerupper\\6.0.8\\datafixerupper-6.0.8.jar",
+      "target": "libraries/com/mojang/datafixerupper/6.0.8/datafixerupper-6.0.8.jar",
+      "sha256": "6e38e9fc5404be7e45189aa14ca6058bc85df20d6760a212b6d48e666abf0fef",
+      "bytes": 689960
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\com\\mojang\\logging\\1.1.1\\logging-1.1.1.jar",
+      "target": "libraries/com/mojang/logging/1.1.1/logging-1.1.1.jar",
+      "sha256": "c1756eaf0685da94142bacc84309bb7ccddf65e004638c3299ab645710b5938c",
+      "bytes": 15343
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\com\\mysql\\mysql-connector-j\\8.0.33\\mysql-connector-j-8.0.33.jar",
+      "target": "libraries/com/mysql/mysql-connector-j/8.0.33/mysql-connector-j-8.0.33.jar",
+      "sha256": "e2a3b2fc726a1ac64e998585db86b30fa8bf3f706195b78bb77c5f99bf877bd9",
+      "bytes": 2481560
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\com\\velocitypowered\\velocity-native\\3.1.2-SNAPSHOT\\velocity-native-3.1.2-SNAPSHOT.jar",
+      "target": "libraries/com/velocitypowered/velocity-native/3.1.2-SNAPSHOT/velocity-native-3.1.2-SNAPSHOT.jar",
+      "sha256": "d9966589c23e738241bb0981accf77f7553d6c3437c432d60def3be91fd4242b",
+      "bytes": 131432
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\commons-codec\\commons-codec\\1.11\\commons-codec-1.11.jar",
+      "target": "libraries/commons-codec/commons-codec/1.11/commons-codec-1.11.jar",
+      "sha256": "e599d5318e97aa48f42136a2927e6dfa4e8881dff0e6c8e3109ddbbff51d7b7d",
+      "bytes": 335042
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\commons-io\\commons-io\\2.11.0\\commons-io-2.11.0.jar",
+      "target": "libraries/commons-io/commons-io/2.11.0/commons-io-2.11.0.jar",
+      "sha256": "961b2f6d87dbacc5d54abf45ab7a6e2495f89b75598962d8c723cea9bc210908",
+      "bytes": 327135
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\commons-lang\\commons-lang\\2.6\\commons-lang-2.6.jar",
+      "target": "libraries/commons-lang/commons-lang/2.6/commons-lang-2.6.jar",
+      "sha256": "50f11b09f877c294d56f24463f47d28f929cf5044f648661c0f0cfbae9a2f49c",
+      "bytes": 284220
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\dev\\omega24\\upnp4j\\1.0\\upnp4j-1.0.jar",
+      "target": "libraries/dev/omega24/upnp4j/1.0/upnp4j-1.0.jar",
+      "sha256": "6b2d82f9eeb0b9cc6786f4f3b442fa4d359a68fc9361b65a2d091dcc29bf549a",
+      "bytes": 11418
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\io\\leangen\\geantyref\\geantyref\\1.3.11\\geantyref-1.3.11.jar",
+      "target": "libraries/io/leangen/geantyref/geantyref/1.3.11/geantyref-1.3.11.jar",
+      "sha256": "c26274474b3844bcdb7d83cf73a785366f84b453bc17a191cfa4f8fc3e022234",
+      "bytes": 68784
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\io\\netty\\netty-all\\4.1.87.Final\\netty-all-4.1.87.Final.jar",
+      "target": "libraries/io/netty/netty-all/4.1.87.Final/netty-all-4.1.87.Final.jar",
+      "sha256": "c3d3915eb8c7f6a2b18dfce2ba67d4a7dc01fcde1854a4b622d91ca187ae73cd",
+      "bytes": 4407
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\io\\netty\\netty-buffer\\4.1.87.Final\\netty-buffer-4.1.87.Final.jar",
+      "target": "libraries/io/netty/netty-buffer/4.1.87.Final/netty-buffer-4.1.87.Final.jar",
+      "sha256": "4e3abdf4ddb8810f5fb4a2b57c9144407873b359faa1894007673ed1465dd3e8",
+      "bytes": 305018
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\io\\netty\\netty-codec\\4.1.87.Final\\netty-codec-4.1.87.Final.jar",
+      "target": "libraries/io/netty/netty-codec/4.1.87.Final/netty-codec-4.1.87.Final.jar",
+      "sha256": "c643fe8318b7c7405acec13ed98e8f634f917960b20486295efbc5a690bac694",
+      "bytes": 348147
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\io\\netty\\netty-codec-dns\\4.1.87.Final\\netty-codec-dns-4.1.87.Final.jar",
+      "target": "libraries/io/netty/netty-codec-dns/4.1.87.Final/netty-codec-dns-4.1.87.Final.jar",
+      "sha256": "c19f96d217e91ddf76a122d4d542566239b64399a2b5f49533ca37acf63ef74f",
+      "bytes": 66887
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\io\\netty\\netty-codec-haproxy\\4.1.87.Final\\netty-codec-haproxy-4.1.87.Final.jar",
+      "target": "libraries/io/netty/netty-codec-haproxy/4.1.87.Final/netty-codec-haproxy-4.1.87.Final.jar",
+      "sha256": "a684a7b46703cdf1f08cbca334766309712f93b5efd52d5353024f6d42192d7a",
+      "bytes": 37774
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\io\\netty\\netty-codec-http\\4.1.87.Final\\netty-codec-http-4.1.87.Final.jar",
+      "target": "libraries/io/netty/netty-codec-http/4.1.87.Final/netty-codec-http-4.1.87.Final.jar",
+      "sha256": "39368c15595b791dbe26e7639cf2e71b6647bab8838fa5781cf7a80762eac927",
+      "bytes": 651047
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\io\\netty\\netty-codec-http2\\4.1.87.Final\\netty-codec-http2-4.1.87.Final.jar",
+      "target": "libraries/io/netty/netty-codec-http2/4.1.87.Final/netty-codec-http2-4.1.87.Final.jar",
+      "sha256": "e5d01b8db385b23103de67d3666c6fa9fa144d42217a3c8266b2a5efe425f093",
+      "bytes": 480057
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\io\\netty\\netty-codec-memcache\\4.1.87.Final\\netty-codec-memcache-4.1.87.Final.jar",
+      "target": "libraries/io/netty/netty-codec-memcache/4.1.87.Final/netty-codec-memcache-4.1.87.Final.jar",
+      "sha256": "2655110d752da92d84ad1d5b9d3c86863577267bf7b31a100f18cbec525412f3",
+      "bytes": 44689
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\io\\netty\\netty-codec-mqtt\\4.1.87.Final\\netty-codec-mqtt-4.1.87.Final.jar",
+      "target": "libraries/io/netty/netty-codec-mqtt/4.1.87.Final/netty-codec-mqtt-4.1.87.Final.jar",
+      "sha256": "7176cb7cfb25d0aca061dda99f72a2240fdab439cdc39eb6b5422279ab2e03c3",
+      "bytes": 100902
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\io\\netty\\netty-codec-redis\\4.1.87.Final\\netty-codec-redis-4.1.87.Final.jar",
+      "target": "libraries/io/netty/netty-codec-redis/4.1.87.Final/netty-codec-redis-4.1.87.Final.jar",
+      "sha256": "dcf895ccc8aa6c016cc5f94c9e696f7cb001a5b5e1d014a968c2706fd2738e8a",
+      "bytes": 45957
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\io\\netty\\netty-codec-smtp\\4.1.87.Final\\netty-codec-smtp-4.1.87.Final.jar",
+      "target": "libraries/io/netty/netty-codec-smtp/4.1.87.Final/netty-codec-smtp-4.1.87.Final.jar",
+      "sha256": "6fc31bad8d1703672c19fb1f5da9dea0cfdf754a4b0af51f58083099de545b3c",
+      "bytes": 21290
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\io\\netty\\netty-codec-socks\\4.1.87.Final\\netty-codec-socks-4.1.87.Final.jar",
+      "target": "libraries/io/netty/netty-codec-socks/4.1.87.Final/netty-codec-socks-4.1.87.Final.jar",
+      "sha256": "41a76a64514f8f8f50ab8527254073521394138e8a96191905e8c143368b2006",
+      "bytes": 120707
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\io\\netty\\netty-codec-stomp\\4.1.87.Final\\netty-codec-stomp-4.1.87.Final.jar",
+      "target": "libraries/io/netty/netty-codec-stomp/4.1.87.Final/netty-codec-stomp-4.1.87.Final.jar",
+      "sha256": "cb93738ce91a774fbef5273ed4e86e88ea0621c4732a474d342c95611c6b2aa2",
+      "bytes": 34544
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\io\\netty\\netty-codec-xml\\4.1.87.Final\\netty-codec-xml-4.1.87.Final.jar",
+      "target": "libraries/io/netty/netty-codec-xml/4.1.87.Final/netty-codec-xml-4.1.87.Final.jar",
+      "sha256": "795a6cf319b252cf365ec732521dca4d966f462599c77aa4553340e4bf266f52",
+      "bytes": 19769
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\io\\netty\\netty-common\\4.1.87.Final\\netty-common-4.1.87.Final.jar",
+      "target": "libraries/io/netty/netty-common/4.1.87.Final/netty-common-4.1.87.Final.jar",
+      "sha256": "811443fc1411a9ef7c1f7b02a750e2a6688f1eec0ae7361ed07812a85d982c86",
+      "bytes": 656419
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\io\\netty\\netty-handler\\4.1.87.Final\\netty-handler-4.1.87.Final.jar",
+      "target": "libraries/io/netty/netty-handler/4.1.87.Final/netty-handler-4.1.87.Final.jar",
+      "sha256": "31a20e1de13b06a677a4719fd5aa95635982114a32c1d034739a48cceada2383",
+      "bytes": 542535
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\io\\netty\\netty-handler-proxy\\4.1.87.Final\\netty-handler-proxy-4.1.87.Final.jar",
+      "target": "libraries/io/netty/netty-handler-proxy/4.1.87.Final/netty-handler-proxy-4.1.87.Final.jar",
+      "sha256": "65276b2ab687b1b7c1ceabcc941d6e2cce1038f35b581218d7dbf46b16c5b4ac",
+      "bytes": 25412
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\io\\netty\\netty-handler-ssl-ocsp\\4.1.87.Final\\netty-handler-ssl-ocsp-4.1.87.Final.jar",
+      "target": "libraries/io/netty/netty-handler-ssl-ocsp/4.1.87.Final/netty-handler-ssl-ocsp-4.1.87.Final.jar",
+      "sha256": "db35aa9a1dfe366b491cbd1a3310871a8b22be09da63e6f71f8ad425bf41cc58",
+      "bytes": 26513
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\io\\netty\\netty-resolver\\4.1.87.Final\\netty-resolver-4.1.87.Final.jar",
+      "target": "libraries/io/netty/netty-resolver/4.1.87.Final/netty-resolver-4.1.87.Final.jar",
+      "sha256": "ee11d22d240b4b125edaed23ec7cc35ad9241b1b8fdd50630de20411ec345fc7",
+      "bytes": 37788
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\io\\netty\\netty-resolver-dns\\4.1.87.Final\\netty-resolver-dns-4.1.87.Final.jar",
+      "target": "libraries/io/netty/netty-resolver-dns/4.1.87.Final/netty-resolver-dns-4.1.87.Final.jar",
+      "sha256": "33eaaf06577eb2b56d69dd6c8b82ebb0439c2e3d30c2d46608c90c6748dc0608",
+      "bytes": 159471
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\io\\netty\\netty-resolver-dns-classes-macos\\4.1.87.Final\\netty-resolver-dns-classes-macos-4.1.87.Final.jar",
+      "target": "libraries/io/netty/netty-resolver-dns-classes-macos/4.1.87.Final/netty-resolver-dns-classes-macos-4.1.87.Final.jar",
+      "sha256": "6a0f588181e3dcbac76c057b924af94c46b358d8ca8214f18ceb620d50474b5d",
+      "bytes": 9093
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\io\\netty\\netty-resolver-dns-native-macos\\4.1.87.Final\\netty-resolver-dns-native-macos-4.1.87.Final-osx-aarch_64.jar",
+      "target": "libraries/io/netty/netty-resolver-dns-native-macos/4.1.87.Final/netty-resolver-dns-native-macos-4.1.87.Final-osx-aarch_64.jar",
+      "sha256": "2343b21bb32f8ad0d6395967abb0155402564f4db987e30ce728c3e8726ff8a8",
+      "bytes": 19203
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\io\\netty\\netty-resolver-dns-native-macos\\4.1.87.Final\\netty-resolver-dns-native-macos-4.1.87.Final-osx-x86_64.jar",
+      "target": "libraries/io/netty/netty-resolver-dns-native-macos/4.1.87.Final/netty-resolver-dns-native-macos-4.1.87.Final-osx-x86_64.jar",
+      "sha256": "412637fccd57159ffea99556cdbb50c0959e582992c966a38cf938975d263958",
+      "bytes": 19425
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\io\\netty\\netty-transport\\4.1.87.Final\\netty-transport-4.1.87.Final.jar",
+      "target": "libraries/io/netty/netty-transport/4.1.87.Final/netty-transport-4.1.87.Final.jar",
+      "sha256": "17ed465cf5b1579b72379e47be3ba7fccb09dda8d95d47c8d668118483b08f43",
+      "bytes": 488388
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\io\\netty\\netty-transport-classes-epoll\\4.1.87.Final\\netty-transport-classes-epoll-4.1.87.Final.jar",
+      "target": "libraries/io/netty/netty-transport-classes-epoll/4.1.87.Final/netty-transport-classes-epoll-4.1.87.Final.jar",
+      "sha256": "0b50ae7e1cb32f89c3a8b38a29605cfe6bd797693b3374fbf2577fbc03719297",
+      "bytes": 142255
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\io\\netty\\netty-transport-classes-kqueue\\4.1.87.Final\\netty-transport-classes-kqueue-4.1.87.Final.jar",
+      "target": "libraries/io/netty/netty-transport-classes-kqueue/4.1.87.Final/netty-transport-classes-kqueue-4.1.87.Final.jar",
+      "sha256": "94abb9234691ce082bbc0d1d533e186cfd1a312d7515a47647896945e7fdbf87",
+      "bytes": 108286
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\io\\netty\\netty-transport-native-epoll\\4.1.87.Final\\netty-transport-native-epoll-4.1.87.Final-linux-aarch_64.jar",
+      "target": "libraries/io/netty/netty-transport-native-epoll/4.1.87.Final/netty-transport-native-epoll-4.1.87.Final-linux-aarch_64.jar",
+      "sha256": "e83c645de0623d28d6fc72a5a2b6322b2758f01aee83fa5af73f353bebdf028e",
+      "bytes": 39515
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\io\\netty\\netty-transport-native-epoll\\4.1.87.Final\\netty-transport-native-epoll-4.1.87.Final-linux-x86_64.jar",
+      "target": "libraries/io/netty/netty-transport-native-epoll/4.1.87.Final/netty-transport-native-epoll-4.1.87.Final-linux-x86_64.jar",
+      "sha256": "bb3752881a027efa99388bef21f3287a6553299930f4226a6ea683da21c957f2",
+      "bytes": 37919
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\io\\netty\\netty-transport-native-kqueue\\4.1.87.Final\\netty-transport-native-kqueue-4.1.87.Final-osx-aarch_64.jar",
+      "target": "libraries/io/netty/netty-transport-native-kqueue/4.1.87.Final/netty-transport-native-kqueue-4.1.87.Final-osx-aarch_64.jar",
+      "sha256": "27e5bd891a4b8b70db2bf1a4c419fc666714a385d98194fbe3c856cac99610bd",
+      "bytes": 25098
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\io\\netty\\netty-transport-native-kqueue\\4.1.87.Final\\netty-transport-native-kqueue-4.1.87.Final-osx-x86_64.jar",
+      "target": "libraries/io/netty/netty-transport-native-kqueue/4.1.87.Final/netty-transport-native-kqueue-4.1.87.Final-osx-x86_64.jar",
+      "sha256": "dba5794dabbbfa7d97f659b135a14f37544b20cf4438165f4b0ff65bbe525f51",
+      "bytes": 26132
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\io\\netty\\netty-transport-native-unix-common\\4.1.87.Final\\netty-transport-native-unix-common-4.1.87.Final.jar",
+      "target": "libraries/io/netty/netty-transport-native-unix-common/4.1.87.Final/netty-transport-native-unix-common-4.1.87.Final.jar",
+      "sha256": "cc2d013c933c206605da01be39f4c2c1f4586a1b9103a665bd724bdd46d9cd0c",
+      "bytes": 43699
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\io\\netty\\netty-transport-rxtx\\4.1.87.Final\\netty-transport-rxtx-4.1.87.Final.jar",
+      "target": "libraries/io/netty/netty-transport-rxtx/4.1.87.Final/netty-transport-rxtx-4.1.87.Final.jar",
+      "sha256": "01f3d6f437e3181d7ea8bc0e0ad55edbdeb24fc064f9cc1447601ab658c55308",
+      "bytes": 18188
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\io\\netty\\netty-transport-sctp\\4.1.87.Final\\netty-transport-sctp-4.1.87.Final.jar",
+      "target": "libraries/io/netty/netty-transport-sctp/4.1.87.Final/netty-transport-sctp-4.1.87.Final.jar",
+      "sha256": "600bc9b708885dd8807b09afaae0a848c4192bace1fc91802066bf6a2e643005",
+      "bytes": 50762
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\io\\netty\\netty-transport-udt\\4.1.87.Final\\netty-transport-udt-4.1.87.Final.jar",
+      "target": "libraries/io/netty/netty-transport-udt/4.1.87.Final/netty-transport-udt-4.1.87.Final.jar",
+      "sha256": "0491942fe6c1eeb70e3332fbbc129dbe690fcae9fd3af8b1a466dd72490804f1",
+      "bytes": 32133
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\io\\papermc\\paper\\paper-mojangapi\\1.20.1-R0.1-SNAPSHOT\\paper-mojangapi-1.20.1-R0.1-SNAPSHOT.jar",
+      "target": "libraries/io/papermc/paper/paper-mojangapi/1.20.1-R0.1-SNAPSHOT/paper-mojangapi-1.20.1-R0.1-SNAPSHOT.jar",
+      "sha256": "72b92626d3c0b3244bb31a1c156ad49c84135303f35b9385bb56eac897d1e347",
+      "bytes": 8476
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\io\\sentry\\sentry\\5.4.0\\sentry-5.4.0.jar",
+      "target": "libraries/io/sentry/sentry/5.4.0/sentry-5.4.0.jar",
+      "sha256": "67e14eee65fe155b6b7179a15836e847bf3f5de2ed445f320f043d7941e007e7",
+      "bytes": 347311
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\it\\unimi\\dsi\\fastutil\\8.5.9\\fastutil-8.5.9.jar",
+      "target": "libraries/it/unimi/dsi/fastutil/8.5.9/fastutil-8.5.9.jar",
+      "sha256": "9578bf2a1700cf20d21746a2ee89e57ba1abbd37fa9feda68ff5e9a28473a7f9",
+      "bytes": 23376043
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\javax\\inject\\javax.inject\\1\\javax.inject-1.jar",
+      "target": "libraries/javax/inject/javax.inject/1/javax.inject-1.jar",
+      "sha256": "91c77044a50c481636c32d916fd89c9118a72195390452c81065080f957de7ff",
+      "bytes": 2497
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\net\\fabricmc\\mapping-io\\0.3.0\\mapping-io-0.3.0.jar",
+      "target": "libraries/net/fabricmc/mapping-io/0.3.0/mapping-io-0.3.0.jar",
+      "sha256": "71046e987cdbfeac43a23d256060ef2d74f69bfed64e4011917751b7a61981a2",
+      "bytes": 120036
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\net\\java\\dev\\jna\\jna\\5.12.1\\jna-5.12.1.jar",
+      "target": "libraries/net/java/dev/jna/jna/5.12.1/jna-5.12.1.jar",
+      "sha256": "91a814ac4f40d60dee91d842e1a8ad874c62197984403d0e3c30d39e55cf53b3",
+      "bytes": 1866196
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\net\\java\\dev\\jna\\jna-platform\\5.12.1\\jna-platform-5.12.1.jar",
+      "target": "libraries/net/java/dev/jna/jna-platform/5.12.1/jna-platform-5.12.1.jar",
+      "sha256": "8ce969116cac95bd61b07a8d5e07174b352e63301473caac72c395e3c08488d2",
+      "bytes": 1356627
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\net\\kyori\\adventure-api\\4.14.0\\adventure-api-4.14.0.jar",
+      "target": "libraries/net/kyori/adventure-api/4.14.0/adventure-api-4.14.0.jar",
+      "sha256": "1d4cc85babc49917469362fdb4bcd28efbc81c86e52bf473d167ee97c0ec5c76",
+      "bytes": 346214
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\net\\kyori\\adventure-key\\4.14.0\\adventure-key-4.14.0.jar",
+      "target": "libraries/net/kyori/adventure-key/4.14.0/adventure-key-4.14.0.jar",
+      "sha256": "0b2bd74353932595c857af7d637210fb7819dfb1fc5b52a04eefb938ea847972",
+      "bytes": 11070
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\net\\kyori\\adventure-text-logger-slf4j\\4.14.0\\adventure-text-logger-slf4j-4.14.0.jar",
+      "target": "libraries/net/kyori/adventure-text-logger-slf4j/4.14.0/adventure-text-logger-slf4j-4.14.0.jar",
+      "sha256": "fedde3ed2151d2b5d25e77cbe16333f69f615daa49a2b0c6d5e09d6e24ba140d",
+      "bytes": 19845
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\net\\kyori\\adventure-text-minimessage\\4.14.0\\adventure-text-minimessage-4.14.0.jar",
+      "target": "libraries/net/kyori/adventure-text-minimessage/4.14.0/adventure-text-minimessage-4.14.0.jar",
+      "sha256": "b51364a8d0613331d488c8055491ea180f4d84b60401fd348deeda1a4ff6f8c8",
+      "bytes": 158732
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\net\\kyori\\adventure-text-serializer-ansi\\4.14.0\\adventure-text-serializer-ansi-4.14.0.jar",
+      "target": "libraries/net/kyori/adventure-text-serializer-ansi/4.14.0/adventure-text-serializer-ansi-4.14.0.jar",
+      "sha256": "71ea80a792c5cd51d3478a28a67c2acb65476448fd04490a68e5d514a2ffb339",
+      "bytes": 11089
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\net\\kyori\\adventure-text-serializer-gson\\4.14.0\\adventure-text-serializer-gson-4.14.0.jar",
+      "target": "libraries/net/kyori/adventure-text-serializer-gson/4.14.0/adventure-text-serializer-gson-4.14.0.jar",
+      "sha256": "15b4bc3b0ec6c4ebe722889fb8be586ad3db1e7f88c4e8c72d3ff43e8ceccd18",
+      "bytes": 40705
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\net\\kyori\\adventure-text-serializer-json\\4.14.0\\adventure-text-serializer-json-4.14.0.jar",
+      "target": "libraries/net/kyori/adventure-text-serializer-json/4.14.0/adventure-text-serializer-json-4.14.0.jar",
+      "sha256": "62d15c970c8f336890f11f0f7492c7c01016bcd2b186356435c155cbdf609ccb",
+      "bytes": 9261
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\net\\kyori\\adventure-text-serializer-legacy\\4.14.0\\adventure-text-serializer-legacy-4.14.0.jar",
+      "target": "libraries/net/kyori/adventure-text-serializer-legacy/4.14.0/adventure-text-serializer-legacy-4.14.0.jar",
+      "sha256": "47a98f816c9d3bd9fb5746a7b3333984621c0be44506b0d7a9a21fabfe9dad8f",
+      "bytes": 28902
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\net\\kyori\\adventure-text-serializer-plain\\4.14.0\\adventure-text-serializer-plain-4.14.0.jar",
+      "target": "libraries/net/kyori/adventure-text-serializer-plain/4.14.0/adventure-text-serializer-plain-4.14.0.jar",
+      "sha256": "db1d114b50f76c1b1d433dce42e5217a6bf35acdc2842161afb8ca9cfd9ec900",
+      "bytes": 12952
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\net\\kyori\\ansi\\1.0.3\\ansi-1.0.3.jar",
+      "target": "libraries/net/kyori/ansi/1.0.3/ansi-1.0.3.jar",
+      "sha256": "26239e8fd349d6a166d7c73623518b44dbac819b80530546724cb20ee5e38243",
+      "bytes": 22638
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\net\\kyori\\examination-api\\1.3.0\\examination-api-1.3.0.jar",
+      "target": "libraries/net/kyori/examination-api/1.3.0/examination-api-1.3.0.jar",
+      "sha256": "c9237ffecb05428f6eff86216246ac70ce0b47b04c08ea7ca35020fde57f8492",
+      "bytes": 23446
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\net\\kyori\\examination-string\\1.3.0\\examination-string-1.3.0.jar",
+      "target": "libraries/net/kyori/examination-string/1.3.0/examination-string-1.3.0.jar",
+      "sha256": "7d01fc25a4bb3af0e1662685455f4541fbf4626216ea5846e455c1491e156b8c",
+      "bytes": 13135
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\net\\md-5\\bungeecord-chat\\1.20-R0.1-deprecated+build.14\\bungeecord-chat-1.20-R0.1-deprecated+build.14.jar",
+      "target": "libraries/net/md-5/bungeecord-chat/1.20-R0.1-deprecated+build.14/bungeecord-chat-1.20-R0.1-deprecated+build.14.jar",
+      "sha256": "793e12e65953d0e49756478172200a0eb586c908761e9b2d538b904c109252b5",
+      "bytes": 151235
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\net\\minecrell\\terminalconsoleappender\\1.3.0\\terminalconsoleappender-1.3.0.jar",
+      "target": "libraries/net/minecrell/terminalconsoleappender/1.3.0/terminalconsoleappender-1.3.0.jar",
+      "sha256": "1afea1bca095068f7f4483f061feed94753be34233ddb0df9ec380fc14d5a985",
+      "bytes": 16949
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\net\\sf\\jopt-simple\\jopt-simple\\5.0.4\\jopt-simple-5.0.4.jar",
+      "target": "libraries/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar",
+      "sha256": "df26cc58f235f477db07f753ba5a3ab243ebe5789d9f89ecf68dd62ea9a66c28",
+      "bytes": 78146
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\org\\apache\\commons\\commons-lang3\\3.12.0\\commons-lang3-3.12.0.jar",
+      "target": "libraries/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar",
+      "sha256": "d919d904486c037f8d193412da0c92e22a9fa24230b9d67a57855c5c31c7e94e",
+      "bytes": 587402
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\org\\apache\\httpcomponents\\httpclient\\4.5.13\\httpclient-4.5.13.jar",
+      "target": "libraries/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar",
+      "sha256": "6fe9026a566c6a5001608cf3fc32196641f6c1e5e1986d1037ccdbd5f31ef743",
+      "bytes": 780321
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\org\\apache\\httpcomponents\\httpcore\\4.4.14\\httpcore-4.4.14.jar",
+      "target": "libraries/org/apache/httpcomponents/httpcore/4.4.14/httpcore-4.4.14.jar",
+      "sha256": "f956209e450cb1d0c51776dfbd23e53e9dd8db9a1298ed62b70bf0944ba63b28",
+      "bytes": 328436
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\org\\apache\\logging\\log4j\\log4j-api\\2.19.0\\log4j-api-2.19.0.jar",
+      "target": "libraries/org/apache/logging/log4j/log4j-api/2.19.0/log4j-api-2.19.0.jar",
+      "sha256": "5ccb24ad9f92e768d0bc456d3061a737951262df803e004d2cad096b75a88d60",
+      "bytes": 317566
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\org\\apache\\logging\\log4j\\log4j-core\\2.19.0\\log4j-core-2.19.0.jar",
+      "target": "libraries/org/apache/logging/log4j/log4j-core/2.19.0/log4j-core-2.19.0.jar",
+      "sha256": "b4a1796fab7bfc36df015c1b4052459147997e8d215a7199d71d05f9e747e4f4",
+      "bytes": 1864386
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\org\\apache\\logging\\log4j\\log4j-iostreams\\2.19.0\\log4j-iostreams-2.19.0.jar",
+      "target": "libraries/org/apache/logging/log4j/log4j-iostreams/2.19.0/log4j-iostreams-2.19.0.jar",
+      "sha256": "e5c1c4c4160b90e0abe6dfee97124bfb4c08472ae233e2168af5f8e6023b2bc5",
+      "bytes": 50063
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\org\\apache\\logging\\log4j\\log4j-slf4j2-impl\\2.19.0\\log4j-slf4j2-impl-2.19.0.jar",
+      "target": "libraries/org/apache/logging/log4j/log4j-slf4j2-impl/2.19.0/log4j-slf4j2-impl-2.19.0.jar",
+      "sha256": "825605eacb2d5605b105c53d4108c18125e0f82f62960d0be583278b9c524f3c",
+      "bytes": 27721
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\org\\apache\\maven\\maven-artifact\\3.8.5\\maven-artifact-3.8.5.jar",
+      "target": "libraries/org/apache/maven/maven-artifact/3.8.5/maven-artifact-3.8.5.jar",
+      "sha256": "91172bc294d6eab02fc9f45f4ea01fd0e418962d128cf489abea7b6957d988ee",
+      "bytes": 58077
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\org\\apache\\maven\\maven-builder-support\\3.8.5\\maven-builder-support-3.8.5.jar",
+      "target": "libraries/org/apache/maven/maven-builder-support/3.8.5/maven-builder-support-3.8.5.jar",
+      "sha256": "a205eaa76609ae0039bf38fe9a9c024c646eded05d176effbef524f04a2c2761",
+      "bytes": 14298
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\org\\apache\\maven\\maven-model\\3.8.5\\maven-model-3.8.5.jar",
+      "target": "libraries/org/apache/maven/maven-model/3.8.5/maven-model-3.8.5.jar",
+      "sha256": "7c9eeb30ac1941ea9bdf76c08c162ed98c005913e5bff66de3f1027a304546dc",
+      "bytes": 215280
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\org\\apache\\maven\\maven-model-builder\\3.8.5\\maven-model-builder-3.8.5.jar",
+      "target": "libraries/org/apache/maven/maven-model-builder/3.8.5/maven-model-builder-3.8.5.jar",
+      "sha256": "6bcd688b4700bc0d9046c531c316e75674f53b345d4432d6a7f62812b2424bef",
+      "bytes": 195825
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\org\\apache\\maven\\maven-repository-metadata\\3.8.5\\maven-repository-metadata-3.8.5.jar",
+      "target": "libraries/org/apache/maven/maven-repository-metadata/3.8.5/maven-repository-metadata-3.8.5.jar",
+      "sha256": "24d89a1b23dc0427ac67895a741802fd23897bdf135d87fe586d718b38a3e924",
+      "bytes": 28416
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\org\\apache\\maven\\maven-resolver-provider\\3.8.5\\maven-resolver-provider-3.8.5.jar",
+      "target": "libraries/org/apache/maven/maven-resolver-provider/3.8.5/maven-resolver-provider-3.8.5.jar",
+      "sha256": "4b9f827efb393696431978dc0354651f1a95d4c52ba07c92d830efe5dc9b1012",
+      "bytes": 67173
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\org\\apache\\maven\\resolver\\maven-resolver-api\\1.7.3\\maven-resolver-api-1.7.3.jar",
+      "target": "libraries/org/apache/maven/resolver/maven-resolver-api/1.7.3/maven-resolver-api-1.7.3.jar",
+      "sha256": "068bdab0cb4534cf8fa5e8b26e23898f26393e0e20c97c3a1a6b59ce86a9acdb",
+      "bytes": 149908
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\org\\apache\\maven\\resolver\\maven-resolver-connector-basic\\1.7.3\\maven-resolver-connector-basic-1.7.3.jar",
+      "target": "libraries/org/apache/maven/resolver/maven-resolver-connector-basic/1.7.3/maven-resolver-connector-basic-1.7.3.jar",
+      "sha256": "29beb02541adb82873d7bdeed2aaea03eaf3123720dbd1b5d96d058849364c66",
+      "bytes": 45777
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\org\\apache\\maven\\resolver\\maven-resolver-impl\\1.6.3\\maven-resolver-impl-1.6.3.jar",
+      "target": "libraries/org/apache/maven/resolver/maven-resolver-impl/1.6.3/maven-resolver-impl-1.6.3.jar",
+      "sha256": "17aaebe6e3e59df8cb5b4ec210196f7084637312b9bc4ff14cb77ad1ae3c381b",
+      "bytes": 179555
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\org\\apache\\maven\\resolver\\maven-resolver-spi\\1.7.3\\maven-resolver-spi-1.7.3.jar",
+      "target": "libraries/org/apache/maven/resolver/maven-resolver-spi/1.7.3/maven-resolver-spi-1.7.3.jar",
+      "sha256": "26df4115fb0a33770ca00166a197ba95d378296a5ac86d2a4253747498f7a1a9",
+      "bytes": 39312
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\org\\apache\\maven\\resolver\\maven-resolver-transport-http\\1.7.3\\maven-resolver-transport-http-1.7.3.jar",
+      "target": "libraries/org/apache/maven/resolver/maven-resolver-transport-http/1.7.3/maven-resolver-transport-http-1.7.3.jar",
+      "sha256": "558cbdf4d76f7cf3699b59fb22fd65614870e19b42983585b42ce84f336b348f",
+      "bytes": 42580
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\org\\apache\\maven\\resolver\\maven-resolver-util\\1.7.3\\maven-resolver-util-1.7.3.jar",
+      "target": "libraries/org/apache/maven/resolver/maven-resolver-util/1.7.3/maven-resolver-util-1.7.3.jar",
+      "sha256": "62839a6a3df08b6d5a98edce8fc26840a3f6e849e58618cd0917c0d4a3381e04",
+      "bytes": 171424
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\org\\checkerframework\\checker-qual\\3.12.0\\checker-qual-3.12.0.jar",
+      "target": "libraries/org/checkerframework/checker-qual/3.12.0/checker-qual-3.12.0.jar",
+      "sha256": "ff10785ac2a357ec5de9c293cb982a2cbb605c0309ea4cc1cb9b9bc6dbe7f3cb",
+      "bytes": 208835
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\org\\codehaus\\plexus\\plexus-interpolation\\1.26\\plexus-interpolation-1.26.jar",
+      "target": "libraries/org/codehaus/plexus/plexus-interpolation/1.26/plexus-interpolation-1.26.jar",
+      "sha256": "b3b5412ce17889103ea564bcdfcf9fb3dfa540344ffeac6b538a73c9d7182662",
+      "bytes": 85348
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\org\\codehaus\\plexus\\plexus-utils\\3.3.0\\plexus-utils-3.3.0.jar",
+      "target": "libraries/org/codehaus/plexus/plexus-utils/3.3.0/plexus-utils-3.3.0.jar",
+      "sha256": "76d174792540e2775af94d03d10fb2d3c776e2cd0ac0ebf427d3e570072bb9ce",
+      "bytes": 263253
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\org\\eclipse\\sisu\\org.eclipse.sisu.inject\\0.3.5\\org.eclipse.sisu.inject-0.3.5.jar",
+      "target": "libraries/org/eclipse/sisu/org.eclipse.sisu.inject/0.3.5/org.eclipse.sisu.inject-0.3.5.jar",
+      "sha256": "c5994010bcdce1d2bd603a4d50c47191ddbd7875d1157b23aaa26d33c82fda13",
+      "bytes": 379348
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\org\\fusesource\\jansi\\jansi\\2.4.0\\jansi-2.4.0.jar",
+      "target": "libraries/org/fusesource/jansi/jansi/2.4.0/jansi-2.4.0.jar",
+      "sha256": "6cd91991323dd7b2fb28ca93d7ac12af5a86a2f53279e2b35827b30313fd0b9f",
+      "bytes": 221009
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\org\\jline\\jline-reader\\3.20.0\\jline-reader-3.20.0.jar",
+      "target": "libraries/org/jline/jline-reader/3.20.0/jline-reader-3.20.0.jar",
+      "sha256": "acd1c94d1e228aa7b7962f69b21ed3a9fd828eb3a63e4baf9086954e626af1f0",
+      "bytes": 171052
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\org\\jline\\jline-terminal\\3.21.0\\jline-terminal-3.21.0.jar",
+      "target": "libraries/org/jline/jline-terminal/3.21.0/jline-terminal-3.21.0.jar",
+      "sha256": "3a05a1602f9d51428908879350f2cf5be87fcefced2f56c6e88d9d76f41a73fe",
+      "bytes": 228777
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\org\\jline\\jline-terminal-jansi\\3.21.0\\jline-terminal-jansi-3.21.0.jar",
+      "target": "libraries/org/jline/jline-terminal-jansi/3.21.0/jline-terminal-jansi-3.21.0.jar",
+      "sha256": "dc7a0b2f1577623048c514615ca14dd81e3220fc97ff1ea44b7d230ad830beec",
+      "bytes": 39477
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\org\\joml\\joml\\1.10.5\\joml-1.10.5.jar",
+      "target": "libraries/org/joml/joml/1.10.5/joml-1.10.5.jar",
+      "sha256": "cac9f22f83a7aa33eebda73c16ff5261e3cb4911b6bafcf4c79ea486099d0c9a",
+      "bytes": 712082
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\org\\mozilla\\rhino\\1.7.14\\rhino-1.7.14.jar",
+      "target": "libraries/org/mozilla/rhino/1.7.14/rhino-1.7.14.jar",
+      "sha256": "c9290b0d801bf0dbbbc44338e0f769b7650a0c5d04e6bb1aeb85775c0211b003",
+      "bytes": 1383644
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\org\\mozilla\\rhino-engine\\1.7.14\\rhino-engine-1.7.14.jar",
+      "target": "libraries/org/mozilla/rhino-engine/1.7.14/rhino-engine-1.7.14.jar",
+      "sha256": "961ed9bb342419d6cbf9a2064508c359e9a25cd636182030584b1b742c3f9928",
+      "bytes": 19597
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\org\\mozilla\\rhino-runtime\\1.7.14\\rhino-runtime-1.7.14.jar",
+      "target": "libraries/org/mozilla/rhino-runtime/1.7.14/rhino-runtime-1.7.14.jar",
+      "sha256": "8708d7502734391957d93773fff77914397b69f4302e6ef5a641164c6e9c971d",
+      "bytes": 1202659
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\org\\ow2\\asm\\asm\\9.5\\asm-9.5.jar",
+      "target": "libraries/org/ow2/asm/asm/9.5/asm-9.5.jar",
+      "sha256": "b62e84b5980729751b0458c534cf1366f727542bb8d158621335682a460f0353",
+      "bytes": 121863
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\org\\ow2\\asm\\asm-commons\\9.5\\asm-commons-9.5.jar",
+      "target": "libraries/org/ow2/asm/asm-commons/9.5/asm-commons-9.5.jar",
+      "sha256": "72eee9fbafb9de8d9463f20dd584a48ceeb7e5152ad4c987bfbe17dd4811c9ae",
+      "bytes": 72209
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\org\\ow2\\asm\\asm-tree\\9.5\\asm-tree-9.5.jar",
+      "target": "libraries/org/ow2/asm/asm-tree/9.5/asm-tree-9.5.jar",
+      "sha256": "3c33a648191079aeaeaeb7c19a49b153952f9e40fe86fbac5205554ddd9acd94",
+      "bytes": 51944
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\org\\purpurmc\\purpur\\purpur-api\\1.20.1-R0.1-SNAPSHOT\\purpur-api-1.20.1-R0.1-SNAPSHOT.jar",
+      "target": "libraries/org/purpurmc/purpur/purpur-api/1.20.1-R0.1-SNAPSHOT/purpur-api-1.20.1-R0.1-SNAPSHOT.jar",
+      "sha256": "47497ed2d7a275aac0c6610e842506f111712161583eb20af2cc94d86a481a89",
+      "bytes": 1983659
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\org\\slf4j\\jcl-over-slf4j\\1.7.32\\jcl-over-slf4j-1.7.32.jar",
+      "target": "libraries/org/slf4j/jcl-over-slf4j/1.7.32/jcl-over-slf4j-1.7.32.jar",
+      "sha256": "60f3bda5922e3912889cca1311d1b227753610bf60cb4e5e914e8b2eaa0326b4",
+      "bytes": 16630
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\org\\slf4j\\slf4j-api\\2.0.1\\slf4j-api-2.0.1.jar",
+      "target": "libraries/org/slf4j/slf4j-api/2.0.1/slf4j-api-2.0.1.jar",
+      "sha256": "b36b99b8d99ea7857554d9b25dfdbd1fb25378c926f7b9e0249983c99335b2c4",
+      "bytes": 61388
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\org\\spongepowered\\configurate-core\\4.1.2\\configurate-core-4.1.2.jar",
+      "target": "libraries/org/spongepowered/configurate-core/4.1.2/configurate-core-4.1.2.jar",
+      "sha256": "bd6a7bae8b01ccccc24119f6db32f5b1bf7ca33de6586f6d9b8ecd26afe146ac",
+      "bytes": 326457
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\org\\spongepowered\\configurate-yaml\\4.1.2\\configurate-yaml-4.1.2.jar",
+      "target": "libraries/org/spongepowered/configurate-yaml/4.1.2/configurate-yaml-4.1.2.jar",
+      "sha256": "01bc57ca7bf5995a6c085f71c6c3bb37809737f0bf423da99b4b8cf2721b732b",
+      "bytes": 26753
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\org\\xerial\\sqlite-jdbc\\3.42.0.0\\sqlite-jdbc-3.42.0.0.jar",
+      "target": "libraries/org/xerial/sqlite-jdbc/3.42.0.0/sqlite-jdbc-3.42.0.0.jar",
+      "sha256": "53174d76087bb73cc29db9c02766fb921fd7fc652f7952f3609e0018e3dd5ded",
+      "bytes": 13030515
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\libraries\\org\\yaml\\snakeyaml\\2.0\\snakeyaml-2.0.jar",
+      "target": "libraries/org/yaml/snakeyaml/2.0/snakeyaml-2.0.jar",
+      "sha256": "880c9d896e4b74a06c549c15ca496450165d6909fa15d7e662bee8f6a66d7afa",
+      "bytes": 334803
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-startup\\versions\\1.20.1\\purpur-1.20.1.jar",
+      "target": "versions/1.20.1/purpur-1.20.1.jar",
+      "sha256": "8300f5734964e51f14a9ccb2155d90564328a712835155c2967044cc3520c7d3",
+      "bytes": 21616873
+    },
+    {
+      "source": "E:\\Codex_work\\QiZhangVerdict\\scripts\\runtime_smoke.py",
+      "target": "qa/runtime_smoke.py",
+      "sha256": "986ac17ddfea111f025267b4d6a499a9a4f6da03a0ea381c12d8dd0a0bdb86d9",
+      "bytes": 8395
+    },
+    {
+      "source": "E:\\Codex_work\\QiZhangVerdict\\scripts\\protocol_smoke.cjs",
+      "target": "qa/protocol_smoke.cjs",
+      "sha256": "d133f0c0e84a2f0170b8cac42f18d5a241d868b855e3b290617b7edd018e8408",
+      "bytes": 13115
+    },
+    {
+      "source": "E:\\Codex_work\\QiZhangVerdict\\scripts\\protocol_disconnect_observer.cjs",
+      "target": "qa/protocol_disconnect_observer.cjs",
+      "sha256": "c4496beaa3d43c13ff946821aae5f2c62cd7623e09ed21300af66e5e58c68dbc",
+      "bytes": 2374
+    },
+    {
+      "source": "E:\\CodexTemp\\QiZhangGuard\\bot\\package-lock.json",
+      "target": "qa/package-lock.json",
+      "sha256": "3e1f393e371f52c524a9256309cbef6665137f6312c4a0bd6848e3ee3959b814",
+      "bytes": 53375
+    },
+    {
+      "source": "E:\\Codex_work\\QiZhangVerdict\\core\\src\\main\\java\\cn\\qizhang\\guard\\core\\GuardConfig.java",
+      "target": "qa/GuardConfig-source.java",
+      "sha256": "51b14d5398c94573f0b561e33726fe1b6c322bbacb4434a6aab7c32111b0ff22",
+      "bytes": 5418
+    },
+    {
+      "source": "generated isolated QA configuration",
+      "target": "server.properties",
+      "sha256": "9f71f7bf2f65427ebfcb66dd41ff69a8ebadfbdf1c3babd20753083145a5ca89",
+      "bytes": 483
+    },
+    {
+      "source": "generated isolated QA configuration",
+      "target": "eula.txt",
+      "sha256": "ee27072e4a23e088522f740ddaab0c7c4145c186969e90a86254faa3a5ec5ce6",
+      "bytes": 10
+    }
+  ],
+  "runnerSha256": "c153a4f8dd079d5890937776d7e591476986d89f7ed01481d1c3ba407c3ab91b",
+  "prepareScriptSha256": "6c0842b88acf17fa703d3fb1dca5a087b54202bf2f3d0807548c54ccffa94154",
+  "doNotCopy": [
+    "world",
+    "world_nether",
+    "world_the_end",
+    "plugins/QiZhangVerdict",
+    "accounts.state",
+    "server-id.txt",
+    "ops.json",
+    "logs",
+    "old server configuration"
+  ],
+  "command": [
+    "python",
+    "-B",
+    "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\bukkit-full\\run_prepared.py",
+    "1.20.1",
+    "--run-authorized"
+  ],
+  "executionPrecondition": "Explicit root Java-slot handoff, physical free >=3.5 GiB, one owned server at a time, fresh unused fixture, port free; Xmx1536M and CREATE_NO_WINDOW."
+}

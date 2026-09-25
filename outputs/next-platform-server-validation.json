@@ -1,0 +1,3241 @@
+{
+  "schemaVersion": 1,
+  "generatedUtc": "2026-09-25T13:39:29.557058+00:00",
+  "stageOnly": false,
+  "product": "QiZhangVerdict",
+  "artifactVersion": "0.3.0-dev",
+  "expectedProfiles": [
+    "fabric-1.19.2",
+    "forge-1.19.2",
+    "fabric-1.20.4",
+    "forge-1.20.4",
+    "neoforge-1.20.4"
+  ],
+  "allFiveProfilesPassed": true,
+  "successfulProfiles": [
+    "fabric-1.19.2",
+    "fabric-1.20.4",
+    "forge-1.19.2",
+    "forge-1.20.4",
+    "neoforge-1.20.4"
+  ],
+  "actualRuntimeAttemptCount": 9,
+  "successfulFullProtocolAttemptCount": 6,
+  "failedProtocolAttemptCount": 3,
+  "passingProtocolCaseGroups": 156,
+  "preparedOnlyAttempts": [
+    {
+      "attempt": "1.20.4/forge-01",
+      "preparedOnly": true,
+      "javaStarted": false,
+      "installed": false,
+      "reason": "Initial bundle-path QA preparation abandoned before installer execution; not a runtime failure.",
+      "raw": "evidence/next-platform-server-1.20.4-forge-01-prepared-only.json"
+    }
+  ],
+  "attempts": [
+    {
+      "attempt": "1.19.2/fabric-01",
+      "profile": "fabric-1.19.2",
+      "minecraft": "1.19.2",
+      "loader": "fabric",
+      "loaderVersion": "0.16.14",
+      "artifactVersion": "0.3.0-dev",
+      "guardSha256": "305560f297b785acc3047638415138e763d7f1d73947b67e2fb627d587fe2d9d",
+      "guardBytes": 92462,
+      "javaExecutable": "E:\\CodexTemp\\mods-danzi\\java\\jdk-17.0.20.1+1-jre\\bin\\java.exe",
+      "startupPassed": true,
+      "mixinRequired": true,
+      "defaultRequire": 1,
+      "mixinAppliedEvidence": [
+        {
+          "line": 410,
+          "text": "[21:37:55] [main/INFO]: Mixing CommandGate119Mixin from qizhangverdict.mixins.json into net.minecraft.class_2170"
+        }
+      ],
+      "startupPolicyEvidence": [
+        {
+          "line": 431,
+          "text": "[21:37:57] [Server thread/INFO]: QiZhangGuard started: QiZhangVerdict sessions=0, trackedIPs=0, accountPairs=0, rules=37, companion=required, vm=DENY, blacklist=DENY, rateBuckets=0, accountBans=0, deviceBans=0, deviceRequired=true. Reports are self-reported, not trusted attestation."
+        }
+      ],
+      "fullProtocolPassed": true,
+      "protocolCaseCount": 26,
+      "partialCaseCount": null,
+      "cases": [
+        "normal companion joins",
+        "privileged commands blocked before report and restored afterward",
+        "missing companion expires",
+        "malformed report rejected",
+        "malformed report does not permanently ban account",
+        "first account on device allowed",
+        "same IP same device second account rejected",
+        "same IP second different device allowed",
+        "same IP third different device allowed",
+        "same IP fourth account rejected",
+        "disconnect releases device and IP quota",
+        "known cheat denied and sanctioned",
+        "same banned device different account denied",
+        "banned account denied with new device",
+        "administrator account and device unban restores access",
+        "administrator glob rule enforced",
+        "whitelist overrides matching blacklist item",
+        "removed whitelist takes effect",
+        "administrator removes default rule with colon ID",
+        "administrator restores removed blacklist entry",
+        "CIDR deny rejects login",
+        "known VM signal denied",
+        "VBS hypervisor alone does not ban physical machine",
+        "two-device setting first account",
+        "two-device setting second account",
+        "two-device setting rejects third account"
+      ],
+      "protocolExitCode": 0,
+      "driverExitCode": 0,
+      "serverExitCode": 0,
+      "normalStopObserved": true,
+      "elapsedSeconds": 97.83,
+      "protocolElapsedSeconds": 69.64,
+      "protocolDecoderErrorCount": 0,
+      "failureObserved": [],
+      "scripts": {
+        "next_mod_smoke.py": "682dc675eb752b6171bf8ef53877b8857d981d005d6159e93bc34802e5308a73",
+        "mod_runtime_smoke.py": "a15e49bfef5e67d7d7c4471d85fc665be637777889b9ea2032461c417db1e9e2",
+        "protocol_smoke.cjs": "4f88bcd526337d9c911f26d7a79c6435cf0b94a2814acd11dcf0338f3f1f78be"
+      },
+      "fixtureMetadataNote": "java_started=false describes preparation, not later execution; use this attempt result/log for actual runtime.",
+      "raw": {
+        "smoke-result.json": "evidence/next-platform-server-1.19.2-fabric-01-smoke-result.json",
+        ".qizhang-verdict-smoke.json": "evidence/next-platform-server-1.19.2-fabric-01-fixture.json",
+        "batch-plan.json": "evidence/next-platform-server-1.19.2-fabric-01-batch-plan.json",
+        "batch-run-result.json": "evidence/next-platform-server-1.19.2-fabric-01-batch-run-result.json",
+        "batch-run.log": "evidence/next-platform-server-1.19.2-fabric-01-batch-run.log",
+        "run-plan.json": "evidence/next-platform-server-1.19.2-fabric-01-run-plan.json",
+        "install-result.json": "evidence/next-platform-server-1.19.2-fabric-01-install-result.json",
+        "console.log": "evidence/next-platform-server-1.19.2-fabric-01-console.log",
+        "protocol-console.log": "evidence/next-platform-server-1.19.2-fabric-01-protocol-console.log",
+        "protocol-result.json": "evidence/next-platform-server-1.19.2-fabric-01-protocol-result.json",
+        "server.properties": "evidence/next-platform-server-1.19.2-fabric-01-server.properties",
+        "commands.queue": "evidence/next-platform-server-1.19.2-fabric-01-commands.queue",
+        "integration-receipt.json": "evidence/next-platform-server-1.19.2-fabric-01-integration-receipt.json",
+        "executed-next_mod_smoke.py": "evidence/next-platform-server-1.19.2-fabric-01-executed-next_mod_smoke.py",
+        "executed-mod_runtime_smoke.py": "evidence/next-platform-server-1.19.2-fabric-01-executed-mod_runtime_smoke.py",
+        "executed-protocol_smoke.cjs": "evidence/next-platform-server-1.19.2-fabric-01-executed-protocol_smoke.cjs",
+        "config/qizhangverdict/guard.properties": "evidence/next-platform-server-1.19.2-fabric-01-config-qizhangverdict-guard.properties"
+      },
+      "warningOrErrorLineCount": 63,
+      "finalQaPolicy": {
+        "limits.max-online-per-ip": "2",
+        "limits.max-online-per-ip-device": "1",
+        "limits.max-accounts-per-ip": "100",
+        "limits.account-window-hours": "720",
+        "limits.attempts-per-minute": "1000",
+        "ip.allow": "",
+        "ip.deny": "",
+        "companion.required": "true",
+        "companion.timeout-seconds": "4",
+        "device.required": "true",
+        "vm.action": "ALERT",
+        "blacklist.action": "DENY",
+        "sanctions.on-deny": "BAN"
+      }
+    },
+    {
+      "attempt": "1.19.2/forge-01",
+      "profile": "forge-1.19.2",
+      "minecraft": "1.19.2",
+      "loader": "forge",
+      "loaderVersion": "43.5.2",
+      "artifactVersion": "0.3.0-dev",
+      "guardSha256": "2ed923a874817d9176c7c5e4499fbad91273e755ce23f358e5e0462ff2a966da",
+      "guardBytes": 93520,
+      "javaExecutable": "E:\\CodexTemp\\mods-danzi\\java\\jdk-17.0.20.1+1-jre\\bin\\java.exe",
+      "startupPassed": true,
+      "mixinRequired": true,
+      "defaultRequire": 1,
+      "mixinAppliedEvidence": [
+        {
+          "line": 82,
+          "text": "[21:40:10] [main/INFO] [mixin/]: Mixing CommandGate119Mixin from qizhangverdict.mixins.json into net.minecraft.commands.Commands"
+        }
+      ],
+      "startupPolicyEvidence": [
+        {
+          "line": 122,
+          "text": "[21:40:23] [Server thread/INFO] [QiZhangVerdict/]: QiZhangGuard started: QiZhangVerdict sessions=0, trackedIPs=0, accountPairs=0, rules=37, companion=required, vm=DENY, blacklist=DENY, rateBuckets=0, accountBans=0, deviceBans=0, deviceRequired=true. Reports are self-reported, not trusted attestation."
+        }
+      ],
+      "fullProtocolPassed": false,
+      "protocolCaseCount": 0,
+      "partialCaseCount": "not recorded by failed helper",
+      "cases": [],
+      "protocolExitCode": 1,
+      "driverExitCode": 1,
+      "serverExitCode": 0,
+      "normalStopObserved": true,
+      "elapsedSeconds": 33.72,
+      "protocolElapsedSeconds": 3.88,
+      "protocolDecoderErrorCount": 0,
+      "failureObserved": [
+        "AssertionError [ERR_ASSERTION]: normal companion joins: {\"name\":\"QVBot1\",\"kicked\":\"\",\"ended\":false,\"joined\":true,\"sent\":false,\"error\":\"\"}",
+        "    at allowed (E:\\Codex_work\\QiZhangVerdict\\scripts\\protocol_smoke.cjs:61:29)"
+      ],
+      "scripts": {
+        "next_mod_smoke.py": "682dc675eb752b6171bf8ef53877b8857d981d005d6159e93bc34802e5308a73",
+        "mod_runtime_smoke.py": "a15e49bfef5e67d7d7c4471d85fc665be637777889b9ea2032461c417db1e9e2",
+        "protocol_smoke.cjs": "4f88bcd526337d9c911f26d7a79c6435cf0b94a2814acd11dcf0338f3f1f78be"
+      },
+      "fixtureMetadataNote": "java_started=false describes preparation, not later execution; use this attempt result/log for actual runtime.",
+      "raw": {
+        "smoke-result.json": "evidence/next-platform-server-1.19.2-forge-01-smoke-result.json",
+        ".qizhang-verdict-smoke.json": "evidence/next-platform-server-1.19.2-forge-01-fixture.json",
+        "batch-plan.json": "evidence/next-platform-server-1.19.2-forge-01-batch-plan.json",
+        "batch-run-result.json": "evidence/next-platform-server-1.19.2-forge-01-batch-run-result.json",
+        "batch-run.log": "evidence/next-platform-server-1.19.2-forge-01-batch-run.log",
+        "run-plan.json": "evidence/next-platform-server-1.19.2-forge-01-run-plan.json",
+        "install-result.json": "evidence/next-platform-server-1.19.2-forge-01-install-result.json",
+        "console.log": "evidence/next-platform-server-1.19.2-forge-01-console.log",
+        "protocol-console.log": "evidence/next-platform-server-1.19.2-forge-01-protocol-console.log",
+        "server.properties": "evidence/next-platform-server-1.19.2-forge-01-server.properties",
+        "commands.queue": "evidence/next-platform-server-1.19.2-forge-01-commands.queue",
+        "integration-receipt.json": "evidence/next-platform-server-1.19.2-forge-01-integration-receipt.json",
+        "executed-next_mod_smoke.py": "evidence/next-platform-server-1.19.2-fabric-01-executed-next_mod_smoke.py",
+        "executed-mod_runtime_smoke.py": "evidence/next-platform-server-1.19.2-fabric-01-executed-mod_runtime_smoke.py",
+        "executed-protocol_smoke.cjs": "evidence/next-platform-server-1.19.2-fabric-01-executed-protocol_smoke.cjs",
+        "config/qizhangverdict/guard.properties": "evidence/next-platform-server-1.19.2-forge-01-config-qizhangverdict-guard.properties"
+      },
+      "warningOrErrorLineCount": 29,
+      "finalQaPolicy": {
+        "limits.max-online-per-ip": "3",
+        "limits.max-online-per-ip-device": "1",
+        "limits.max-accounts-per-ip": "100",
+        "limits.account-window-hours": "720",
+        "limits.attempts-per-minute": "1000",
+        "ip.allow": "",
+        "ip.deny": "",
+        "companion.required": "true",
+        "companion.timeout-seconds": "4",
+        "device.required": "true",
+        "vm.action": "ALERT",
+        "blacklist.action": "DENY",
+        "sanctions.on-deny": "BAN"
+      }
+    },
+    {
+      "attempt": "1.19.2/forge-02",
+      "profile": "forge-1.19.2",
+      "minecraft": "1.19.2",
+      "loader": "forge",
+      "loaderVersion": "43.5.2",
+      "artifactVersion": "0.3.0-dev",
+      "guardSha256": "2ed923a874817d9176c7c5e4499fbad91273e755ce23f358e5e0462ff2a966da",
+      "guardBytes": 93520,
+      "javaExecutable": "E:\\CodexTemp\\mods-danzi\\java\\jdk-17.0.20.1+1-jre\\bin\\java.exe",
+      "startupPassed": true,
+      "mixinRequired": true,
+      "defaultRequire": 1,
+      "mixinAppliedEvidence": [
+        {
+          "line": 82,
+          "text": "[21:45:15] [main/INFO] [mixin/]: Mixing CommandGate119Mixin from qizhangverdict.mixins.json into net.minecraft.commands.Commands"
+        }
+      ],
+      "startupPolicyEvidence": [
+        {
+          "line": 123,
+          "text": "[21:45:29] [Server thread/INFO] [QiZhangVerdict/]: QiZhangGuard started: QiZhangVerdict sessions=0, trackedIPs=0, accountPairs=0, rules=37, companion=required, vm=DENY, blacklist=DENY, rateBuckets=0, accountBans=0, deviceBans=0, deviceRequired=true. Reports are self-reported, not trusted attestation."
+        }
+      ],
+      "fullProtocolPassed": true,
+      "protocolCaseCount": 26,
+      "partialCaseCount": null,
+      "cases": [
+        "normal companion joins",
+        "privileged commands blocked before report and restored afterward",
+        "missing companion expires",
+        "malformed report rejected",
+        "malformed report does not permanently ban account",
+        "first account on device allowed",
+        "same IP same device second account rejected",
+        "same IP second different device allowed",
+        "same IP third different device allowed",
+        "same IP fourth account rejected",
+        "disconnect releases device and IP quota",
+        "known cheat denied and sanctioned",
+        "same banned device different account denied",
+        "banned account denied with new device",
+        "administrator account and device unban restores access",
+        "administrator glob rule enforced",
+        "whitelist overrides matching blacklist item",
+        "removed whitelist takes effect",
+        "administrator removes default rule with colon ID",
+        "administrator restores removed blacklist entry",
+        "CIDR deny rejects login",
+        "known VM signal denied",
+        "VBS hypervisor alone does not ban physical machine",
+        "two-device setting first account",
+        "two-device setting second account",
+        "two-device setting rejects third account"
+      ],
+      "protocolExitCode": 0,
+      "driverExitCode": 0,
+      "serverExitCode": 0,
+      "normalStopObserved": true,
+      "elapsedSeconds": 100.27,
+      "protocolElapsedSeconds": 69.61,
+      "protocolDecoderErrorCount": 0,
+      "failureObserved": [],
+      "scripts": {
+        "next_mod_smoke.py": "682dc675eb752b6171bf8ef53877b8857d981d005d6159e93bc34802e5308a73",
+        "mod_runtime_smoke.py": "a15e49bfef5e67d7d7c4471d85fc665be637777889b9ea2032461c417db1e9e2",
+        "protocol_smoke.cjs": "1fa01f6b08b8680eea2453db024ba41944e8d789aa5e2d11a871517229c43cc8"
+      },
+      "fixtureMetadataNote": "java_started=false describes preparation, not later execution; use this attempt result/log for actual runtime.",
+      "raw": {
+        "smoke-result.json": "evidence/next-platform-server-1.19.2-forge-02-smoke-result.json",
+        ".qizhang-verdict-smoke.json": "evidence/next-platform-server-1.19.2-forge-02-fixture.json",
+        "batch-plan.json": "evidence/next-platform-server-1.19.2-forge-02-batch-plan.json",
+        "batch-run-result.json": "evidence/next-platform-server-1.19.2-forge-02-batch-run-result.json",
+        "batch-run.log": "evidence/next-platform-server-1.19.2-forge-02-batch-run.log",
+        "run-plan.json": "evidence/next-platform-server-1.19.2-forge-01-run-plan.json",
+        "install-result.json": "evidence/next-platform-server-1.19.2-forge-02-install-result.json",
+        "console.log": "evidence/next-platform-server-1.19.2-forge-02-console.log",
+        "protocol-console.log": "evidence/next-platform-server-1.19.2-fabric-01-protocol-console.log",
+        "protocol-result.json": "evidence/next-platform-server-1.19.2-fabric-01-protocol-result.json",
+        "server.properties": "evidence/next-platform-server-1.19.2-forge-02-server.properties",
+        "commands.queue": "evidence/next-platform-server-1.19.2-forge-02-commands.queue",
+        "integration-receipt.json": "evidence/next-platform-server-1.19.2-forge-01-integration-receipt.json",
+        "executed-next_mod_smoke.py": "evidence/next-platform-server-1.19.2-fabric-01-executed-next_mod_smoke.py",
+        "executed-mod_runtime_smoke.py": "evidence/next-platform-server-1.19.2-fabric-01-executed-mod_runtime_smoke.py",
+        "executed-protocol_smoke.cjs": "evidence/next-platform-server-1.19.2-forge-02-executed-protocol_smoke.cjs",
+        "config/qizhangverdict/guard.properties": "evidence/next-platform-server-1.19.2-fabric-01-config-qizhangverdict-guard.properties"
+      },
+      "warningOrErrorLineCount": 30,
+      "finalQaPolicy": {
+        "limits.max-online-per-ip": "2",
+        "limits.max-online-per-ip-device": "1",
+        "limits.max-accounts-per-ip": "100",
+        "limits.account-window-hours": "720",
+        "limits.attempts-per-minute": "1000",
+        "ip.allow": "",
+        "ip.deny": "",
+        "companion.required": "true",
+        "companion.timeout-seconds": "4",
+        "device.required": "true",
+        "vm.action": "ALERT",
+        "blacklist.action": "DENY",
+        "sanctions.on-deny": "BAN"
+      }
+    },
+    {
+      "attempt": "1.20.4/fabric-01",
+      "profile": "fabric-1.20.4",
+      "minecraft": "1.20.4",
+      "loader": "fabric",
+      "loaderVersion": "0.16.14",
+      "artifactVersion": "0.3.0-dev",
+      "guardSha256": "b8d1d1ad6e2afd41acd15aeb2fb93221b9b5a8803da5e8be0c2da86805c571e4",
+      "guardBytes": 93904,
+      "javaExecutable": "E:\\CodexTemp\\mods-danzi\\java\\jdk-17.0.20.1+1-jre\\bin\\java.exe",
+      "startupPassed": true,
+      "mixinRequired": true,
+      "defaultRequire": 1,
+      "mixinAppliedEvidence": [
+        {
+          "line": 403,
+          "text": "[21:41:34] [main/INFO]: Mixing CommandGate1204Mixin from qizhangverdict.mixins.json into net.minecraft.class_2170"
+        }
+      ],
+      "startupPolicyEvidence": [
+        {
+          "line": 426,
+          "text": "[21:41:36] [Server thread/INFO]: QiZhangGuard started: QiZhangVerdict sessions=0, trackedIPs=0, accountPairs=0, rules=37, companion=required, vm=DENY, blacklist=DENY, rateBuckets=0, accountBans=0, deviceBans=0, deviceRequired=true. Reports are self-reported, not trusted attestation."
+        }
+      ],
+      "fullProtocolPassed": false,
+      "protocolCaseCount": 0,
+      "partialCaseCount": "not recorded by failed helper",
+      "cases": [],
+      "protocolExitCode": 1,
+      "driverExitCode": 1,
+      "serverExitCode": 0,
+      "normalStopObserved": true,
+      "elapsedSeconds": 55.51,
+      "protocolElapsedSeconds": 28.38,
+      "protocolDecoderErrorCount": 0,
+      "failureObserved": [
+        "AssertionError [ERR_ASSERTION]: same IP fourth account rejected: ",
+        "    at denied (E:\\Codex_work\\QiZhangVerdict\\scripts\\protocol_smoke.cjs:62:101)"
+      ],
+      "scripts": {
+        "next_mod_smoke.py": "682dc675eb752b6171bf8ef53877b8857d981d005d6159e93bc34802e5308a73",
+        "mod_runtime_smoke.py": "a15e49bfef5e67d7d7c4471d85fc665be637777889b9ea2032461c417db1e9e2",
+        "protocol_smoke.cjs": "4f88bcd526337d9c911f26d7a79c6435cf0b94a2814acd11dcf0338f3f1f78be"
+      },
+      "fixtureMetadataNote": "java_started=false describes preparation, not later execution; use this attempt result/log for actual runtime.",
+      "raw": {
+        "smoke-result.json": "evidence/next-platform-server-1.20.4-fabric-01-smoke-result.json",
+        ".qizhang-verdict-smoke.json": "evidence/next-platform-server-1.20.4-fabric-01-fixture.json",
+        "batch-plan.json": "evidence/next-platform-server-1.20.4-fabric-01-batch-plan.json",
+        "batch-run-result.json": "evidence/next-platform-server-1.20.4-fabric-01-batch-run-result.json",
+        "batch-run.log": "evidence/next-platform-server-1.20.4-fabric-01-batch-run.log",
+        "run-plan.json": "evidence/next-platform-server-1.20.4-fabric-01-run-plan.json",
+        "install-result.json": "evidence/next-platform-server-1.20.4-fabric-01-install-result.json",
+        "console.log": "evidence/next-platform-server-1.20.4-fabric-01-console.log",
+        "protocol-console.log": "evidence/next-platform-server-1.20.4-fabric-01-protocol-console.log",
+        "server.properties": "evidence/next-platform-server-1.20.4-fabric-01-server.properties",
+        "commands.queue": "evidence/next-platform-server-1.20.4-fabric-01-commands.queue",
+        "integration-receipt.json": "evidence/next-platform-server-1.20.4-fabric-01-integration-receipt.json",
+        "executed-next_mod_smoke.py": "evidence/next-platform-server-1.19.2-fabric-01-executed-next_mod_smoke.py",
+        "executed-mod_runtime_smoke.py": "evidence/next-platform-server-1.19.2-fabric-01-executed-mod_runtime_smoke.py",
+        "executed-protocol_smoke.cjs": "evidence/next-platform-server-1.19.2-fabric-01-executed-protocol_smoke.cjs",
+        "config/qizhangverdict/guard.properties": "evidence/next-platform-server-1.19.2-forge-01-config-qizhangverdict-guard.properties"
+      },
+      "warningOrErrorLineCount": 11,
+      "finalQaPolicy": {
+        "limits.max-online-per-ip": "3",
+        "limits.max-online-per-ip-device": "1",
+        "limits.max-accounts-per-ip": "100",
+        "limits.account-window-hours": "720",
+        "limits.attempts-per-minute": "1000",
+        "ip.allow": "",
+        "ip.deny": "",
+        "companion.required": "true",
+        "companion.timeout-seconds": "4",
+        "device.required": "true",
+        "vm.action": "ALERT",
+        "blacklist.action": "DENY",
+        "sanctions.on-deny": "BAN"
+      }
+    },
+    {
+      "attempt": "1.20.4/fabric-02",
+      "profile": "fabric-1.20.4",
+      "minecraft": "1.20.4",
+      "loader": "fabric",
+      "loaderVersion": "0.16.14",
+      "artifactVersion": "0.3.0-dev",
+      "guardSha256": "b8d1d1ad6e2afd41acd15aeb2fb93221b9b5a8803da5e8be0c2da86805c571e4",
+      "guardBytes": 93904,
+      "javaExecutable": "E:\\CodexTemp\\mods-danzi\\java\\jdk-17.0.20.1+1-jre\\bin\\java.exe",
+      "startupPassed": true,
+      "mixinRequired": true,
+      "defaultRequire": 1,
+      "mixinAppliedEvidence": [
+        {
+          "line": 403,
+          "text": "[22:03:09] [main/INFO]: Mixing CommandGate1204Mixin from qizhangverdict.mixins.json into net.minecraft.class_2170"
+        }
+      ],
+      "startupPolicyEvidence": [
+        {
+          "line": 426,
+          "text": "[22:03:11] [Server thread/INFO]: QiZhangGuard started: QiZhangVerdict sessions=0, trackedIPs=0, accountPairs=0, rules=37, companion=required, vm=DENY, blacklist=DENY, rateBuckets=0, accountBans=0, deviceBans=0, deviceRequired=true. Reports are self-reported, not trusted attestation."
+        }
+      ],
+      "fullProtocolPassed": false,
+      "protocolCaseCount": 0,
+      "partialCaseCount": "not recorded by failed helper",
+      "cases": [],
+      "protocolExitCode": 1,
+      "driverExitCode": 1,
+      "serverExitCode": 0,
+      "normalStopObserved": true,
+      "elapsedSeconds": 76.95,
+      "protocolElapsedSeconds": 55.37,
+      "protocolDecoderErrorCount": 0,
+      "failureObserved": [
+        "AssertionError [ERR_ASSERTION]: CIDR deny rejects login: ",
+        "    at denied (E:\\Codex_work\\QiZhangVerdict\\scripts\\protocol_smoke.cjs:73:101)"
+      ],
+      "scripts": {
+        "next_mod_smoke.py": "682dc675eb752b6171bf8ef53877b8857d981d005d6159e93bc34802e5308a73",
+        "mod_runtime_smoke.py": "a15e49bfef5e67d7d7c4471d85fc665be637777889b9ea2032461c417db1e9e2",
+        "protocol_smoke.cjs": "d133f0c0e84a2f0170b8cac42f18d5a241d868b855e3b290617b7edd018e8408",
+        "protocol_disconnect_observer.cjs": "c4496beaa3d43c13ff946821aae5f2c62cd7623e09ed21300af66e5e58c68dbc"
+      },
+      "fixtureMetadataNote": "java_started=false describes preparation, not later execution; use this attempt result/log for actual runtime.",
+      "raw": {
+        "smoke-result.json": "evidence/next-platform-server-1.20.4-fabric-02-smoke-result.json",
+        ".qizhang-verdict-smoke.json": "evidence/next-platform-server-1.20.4-fabric-02-fixture.json",
+        "batch-plan.json": "evidence/next-platform-server-1.20.4-fabric-02-batch-plan.json",
+        "batch-run-result.json": "evidence/next-platform-server-1.20.4-fabric-02-batch-run-result.json",
+        "batch-run.log": "evidence/next-platform-server-1.20.4-fabric-02-batch-run.log",
+        "run-plan.json": "evidence/next-platform-server-1.20.4-fabric-01-run-plan.json",
+        "install-result.json": "evidence/next-platform-server-1.20.4-fabric-02-install-result.json",
+        "console.log": "evidence/next-platform-server-1.20.4-fabric-02-console.log",
+        "protocol-console.log": "evidence/next-platform-server-1.20.4-fabric-02-protocol-console.log",
+        "protocol-disconnect-observations.json": "evidence/next-platform-server-1.20.4-fabric-02-protocol-disconnect-observations.json",
+        "server.properties": "evidence/next-platform-server-1.20.4-fabric-02-server.properties",
+        "commands.queue": "evidence/next-platform-server-1.20.4-fabric-02-commands.queue",
+        "integration-receipt.json": "evidence/next-platform-server-1.20.4-fabric-01-integration-receipt.json",
+        "executed-next_mod_smoke.py": "evidence/next-platform-server-1.19.2-fabric-01-executed-next_mod_smoke.py",
+        "executed-mod_runtime_smoke.py": "evidence/next-platform-server-1.19.2-fabric-01-executed-mod_runtime_smoke.py",
+        "executed-protocol_smoke.cjs": "evidence/next-platform-server-1.20.4-fabric-02-executed-protocol_smoke.cjs",
+        "executed-protocol_disconnect_observer.cjs": "evidence/next-platform-server-1.20.4-fabric-02-executed-protocol_disconnect_observer.cjs",
+        "config/qizhangverdict/guard.properties": "evidence/next-platform-server-1.20.4-fabric-02-config-qizhangverdict-guard.properties"
+      },
+      "warningOrErrorLineCount": 12,
+      "finalQaPolicy": {
+        "limits.max-online-per-ip": "3",
+        "limits.max-online-per-ip-device": "1",
+        "limits.max-accounts-per-ip": "100",
+        "limits.account-window-hours": "720",
+        "limits.attempts-per-minute": "1000",
+        "ip.allow": "",
+        "ip.deny": "127.0.0.0/8",
+        "companion.required": "true",
+        "companion.timeout-seconds": "4",
+        "device.required": "true",
+        "vm.action": "ALERT",
+        "blacklist.action": "DENY",
+        "sanctions.on-deny": "BAN"
+      }
+    },
+    {
+      "attempt": "1.20.4/forge-02",
+      "profile": "forge-1.20.4",
+      "minecraft": "1.20.4",
+      "loader": "forge",
+      "loaderVersion": "49.2.9",
+      "artifactVersion": "0.3.0-dev",
+      "guardSha256": "9e8ad322c83469b686671bda0e6d86207cd8a2e838085dcf53b0c65253a7b9cf",
+      "guardBytes": 94793,
+      "javaExecutable": "E:\\CodexTemp\\mods-danzi\\java\\jdk-17.0.20.1+1-jre\\bin\\java.exe",
+      "startupPassed": true,
+      "mixinRequired": true,
+      "defaultRequire": 1,
+      "mixinAppliedEvidence": [
+        {
+          "line": 79,
+          "text": "[22:04:58] [main/INFO] [mixin/]: Mixing CommandGate1204Mixin from qizhangverdict.mixins.json into net.minecraft.commands.Commands"
+        }
+      ],
+      "startupPolicyEvidence": [
+        {
+          "line": 167,
+          "text": "[22:05:01] [Server thread/INFO] [QiZhangVerdict/]: QiZhangGuard started: QiZhangVerdict sessions=0, trackedIPs=0, accountPairs=0, rules=37, companion=required, vm=DENY, blacklist=DENY, rateBuckets=0, accountBans=0, deviceBans=0, deviceRequired=true. Reports are self-reported, not trusted attestation."
+        }
+      ],
+      "fullProtocolPassed": true,
+      "protocolCaseCount": 26,
+      "partialCaseCount": null,
+      "cases": [
+        "normal companion joins",
+        "privileged commands blocked before report and restored afterward",
+        "missing companion expires",
+        "malformed report rejected",
+        "malformed report does not permanently ban account",
+        "first account on device allowed",
+        "same IP same device second account rejected",
+        "same IP second different device allowed",
+        "same IP third different device allowed",
+        "same IP fourth account rejected",
+        "disconnect releases device and IP quota",
+        "known cheat denied and sanctioned",
+        "same banned device different account denied",
+        "banned account denied with new device",
+        "administrator account and device unban restores access",
+        "administrator glob rule enforced",
+        "whitelist overrides matching blacklist item",
+        "removed whitelist takes effect",
+        "administrator removes default rule with colon ID",
+        "administrator restores removed blacklist entry",
+        "CIDR deny rejects login",
+        "known VM signal denied",
+        "VBS hypervisor alone does not ban physical machine",
+        "two-device setting first account",
+        "two-device setting second account",
+        "two-device setting rejects third account"
+      ],
+      "protocolExitCode": 0,
+      "driverExitCode": 0,
+      "serverExitCode": 0,
+      "normalStopObserved": true,
+      "elapsedSeconds": 85.62,
+      "protocolElapsedSeconds": 68.15,
+      "protocolDecoderErrorCount": 0,
+      "failureObserved": [],
+      "scripts": {
+        "next_mod_smoke.py": "682dc675eb752b6171bf8ef53877b8857d981d005d6159e93bc34802e5308a73",
+        "mod_runtime_smoke.py": "a15e49bfef5e67d7d7c4471d85fc665be637777889b9ea2032461c417db1e9e2",
+        "protocol_smoke.cjs": "d133f0c0e84a2f0170b8cac42f18d5a241d868b855e3b290617b7edd018e8408",
+        "protocol_disconnect_observer.cjs": "c4496beaa3d43c13ff946821aae5f2c62cd7623e09ed21300af66e5e58c68dbc"
+      },
+      "fixtureMetadataNote": "java_started=false describes preparation, not later execution; use this attempt result/log for actual runtime.",
+      "raw": {
+        "smoke-result.json": "evidence/next-platform-server-1.20.4-forge-02-smoke-result.json",
+        ".qizhang-verdict-smoke.json": "evidence/next-platform-server-1.20.4-forge-02-fixture.json",
+        "batch-plan.json": "evidence/next-platform-server-1.20.4-forge-02-batch-plan.json",
+        "batch-run-result.json": "evidence/next-platform-server-1.20.4-forge-02-batch-run-result.json",
+        "batch-run.log": "evidence/next-platform-server-1.20.4-forge-02-batch-run.log",
+        "run-plan.json": "evidence/next-platform-server-1.20.4-forge-02-run-plan.json",
+        "install-result.json": "evidence/next-platform-server-1.20.4-forge-02-install-result.json",
+        "console.log": "evidence/next-platform-server-1.20.4-forge-02-console.log",
+        "protocol-console.log": "evidence/next-platform-server-1.20.4-forge-02-protocol-console.log",
+        "protocol-result.json": "evidence/next-platform-server-1.20.4-forge-02-protocol-result.json",
+        "protocol-disconnect-observations.json": "evidence/next-platform-server-1.20.4-forge-02-protocol-disconnect-observations.json",
+        "server.properties": "evidence/next-platform-server-1.20.4-forge-02-server.properties",
+        "commands.queue": "evidence/next-platform-server-1.20.4-forge-02-commands.queue",
+        "integration-receipt.json": "evidence/next-platform-server-1.20.4-forge-02-integration-receipt.json",
+        "executed-next_mod_smoke.py": "evidence/next-platform-server-1.19.2-fabric-01-executed-next_mod_smoke.py",
+        "executed-mod_runtime_smoke.py": "evidence/next-platform-server-1.19.2-fabric-01-executed-mod_runtime_smoke.py",
+        "executed-protocol_smoke.cjs": "evidence/next-platform-server-1.20.4-fabric-02-executed-protocol_smoke.cjs",
+        "executed-protocol_disconnect_observer.cjs": "evidence/next-platform-server-1.20.4-fabric-02-executed-protocol_disconnect_observer.cjs",
+        "config/qizhangverdict/guard.properties": "evidence/next-platform-server-1.19.2-fabric-01-config-qizhangverdict-guard.properties"
+      },
+      "warningOrErrorLineCount": 19,
+      "finalQaPolicy": {
+        "limits.max-online-per-ip": "2",
+        "limits.max-online-per-ip-device": "1",
+        "limits.max-accounts-per-ip": "100",
+        "limits.account-window-hours": "720",
+        "limits.attempts-per-minute": "1000",
+        "ip.allow": "",
+        "ip.deny": "",
+        "companion.required": "true",
+        "companion.timeout-seconds": "4",
+        "device.required": "true",
+        "vm.action": "ALERT",
+        "blacklist.action": "DENY",
+        "sanctions.on-deny": "BAN"
+      }
+    },
+    {
+      "attempt": "1.20.4/neoforge-01",
+      "profile": "neoforge-1.20.4",
+      "minecraft": "1.20.4",
+      "loader": "neoforge",
+      "loaderVersion": "20.4.251",
+      "artifactVersion": "0.3.0-dev",
+      "guardSha256": "c3e742892ef723d035b81e165eed3ef4a560aa249349183298dd0f9b45e48f66",
+      "guardBytes": 93937,
+      "javaExecutable": "E:\\CodexTemp\\mods-danzi\\java\\jdk-17.0.20.1+1-jre\\bin\\java.exe",
+      "startupPassed": true,
+      "mixinRequired": true,
+      "defaultRequire": 1,
+      "mixinAppliedEvidence": [
+        {
+          "line": 80,
+          "text": "[22:07:10] [main/INFO] [mixin/]: Mixing CommandGate1204Mixin from qizhangverdict.mixins.json into net.minecraft.commands.Commands"
+        }
+      ],
+      "startupPolicyEvidence": [
+        {
+          "line": 111,
+          "text": "[22:07:14] [Server thread/INFO] [QiZhangVerdict/]: QiZhangGuard started: QiZhangVerdict sessions=0, trackedIPs=0, accountPairs=0, rules=37, companion=required, vm=DENY, blacklist=DENY, rateBuckets=0, accountBans=0, deviceBans=0, deviceRequired=true. Reports are self-reported, not trusted attestation."
+        }
+      ],
+      "fullProtocolPassed": true,
+      "protocolCaseCount": 26,
+      "partialCaseCount": null,
+      "cases": [
+        "normal companion joins",
+        "privileged commands blocked before report and restored afterward",
+        "missing companion expires",
+        "malformed report rejected",
+        "malformed report does not permanently ban account",
+        "first account on device allowed",
+        "same IP same device second account rejected",
+        "same IP second different device allowed",
+        "same IP third different device allowed",
+        "same IP fourth account rejected",
+        "disconnect releases device and IP quota",
+        "known cheat denied and sanctioned",
+        "same banned device different account denied",
+        "banned account denied with new device",
+        "administrator account and device unban restores access",
+        "administrator glob rule enforced",
+        "whitelist overrides matching blacklist item",
+        "removed whitelist takes effect",
+        "administrator removes default rule with colon ID",
+        "administrator restores removed blacklist entry",
+        "CIDR deny rejects login",
+        "known VM signal denied",
+        "VBS hypervisor alone does not ban physical machine",
+        "two-device setting first account",
+        "two-device setting second account",
+        "two-device setting rejects third account"
+      ],
+      "protocolExitCode": 0,
+      "driverExitCode": 0,
+      "serverExitCode": 0,
+      "normalStopObserved": true,
+      "elapsedSeconds": 87.95,
+      "protocolElapsedSeconds": 67.95,
+      "protocolDecoderErrorCount": 0,
+      "failureObserved": [],
+      "scripts": {
+        "next_mod_smoke.py": "682dc675eb752b6171bf8ef53877b8857d981d005d6159e93bc34802e5308a73",
+        "mod_runtime_smoke.py": "a15e49bfef5e67d7d7c4471d85fc665be637777889b9ea2032461c417db1e9e2",
+        "protocol_smoke.cjs": "d133f0c0e84a2f0170b8cac42f18d5a241d868b855e3b290617b7edd018e8408",
+        "protocol_disconnect_observer.cjs": "c4496beaa3d43c13ff946821aae5f2c62cd7623e09ed21300af66e5e58c68dbc"
+      },
+      "fixtureMetadataNote": "java_started=false describes preparation, not later execution; use this attempt result/log for actual runtime.",
+      "raw": {
+        "smoke-result.json": "evidence/next-platform-server-1.20.4-neoforge-01-smoke-result.json",
+        ".qizhang-verdict-smoke.json": "evidence/next-platform-server-1.20.4-neoforge-01-fixture.json",
+        "batch-plan.json": "evidence/next-platform-server-1.20.4-neoforge-01-batch-plan.json",
+        "batch-run-result.json": "evidence/next-platform-server-1.20.4-neoforge-01-batch-run-result.json",
+        "batch-run.log": "evidence/next-platform-server-1.20.4-neoforge-01-batch-run.log",
+        "run-plan.json": "evidence/next-platform-server-1.20.4-neoforge-01-run-plan.json",
+        "install-result.json": "evidence/next-platform-server-1.20.4-neoforge-01-install-result.json",
+        "console.log": "evidence/next-platform-server-1.20.4-neoforge-01-console.log",
+        "protocol-console.log": "evidence/next-platform-server-1.20.4-forge-02-protocol-console.log",
+        "protocol-result.json": "evidence/next-platform-server-1.20.4-forge-02-protocol-result.json",
+        "protocol-disconnect-observations.json": "evidence/next-platform-server-1.20.4-forge-02-protocol-disconnect-observations.json",
+        "server.properties": "evidence/next-platform-server-1.20.4-neoforge-01-server.properties",
+        "commands.queue": "evidence/next-platform-server-1.20.4-neoforge-01-commands.queue",
+        "integration-receipt.json": "evidence/next-platform-server-1.20.4-neoforge-01-integration-receipt.json",
+        "executed-next_mod_smoke.py": "evidence/next-platform-server-1.19.2-fabric-01-executed-next_mod_smoke.py",
+        "executed-mod_runtime_smoke.py": "evidence/next-platform-server-1.19.2-fabric-01-executed-mod_runtime_smoke.py",
+        "executed-protocol_smoke.cjs": "evidence/next-platform-server-1.20.4-fabric-02-executed-protocol_smoke.cjs",
+        "executed-protocol_disconnect_observer.cjs": "evidence/next-platform-server-1.20.4-fabric-02-executed-protocol_disconnect_observer.cjs",
+        "config/qizhangverdict/guard.properties": "evidence/next-platform-server-1.19.2-fabric-01-config-qizhangverdict-guard.properties"
+      },
+      "warningOrErrorLineCount": 17,
+      "finalQaPolicy": {
+        "limits.max-online-per-ip": "2",
+        "limits.max-online-per-ip-device": "1",
+        "limits.max-accounts-per-ip": "100",
+        "limits.account-window-hours": "720",
+        "limits.attempts-per-minute": "1000",
+        "ip.allow": "",
+        "ip.deny": "",
+        "companion.required": "true",
+        "companion.timeout-seconds": "4",
+        "device.required": "true",
+        "vm.action": "ALERT",
+        "blacklist.action": "DENY",
+        "sanctions.on-deny": "BAN"
+      }
+    },
+    {
+      "attempt": "1.20.4/fabric-03",
+      "profile": "fabric-1.20.4",
+      "minecraft": "1.20.4",
+      "loader": "fabric",
+      "loaderVersion": "0.16.14",
+      "artifactVersion": "0.3.0-dev",
+      "guardSha256": "b8d1d1ad6e2afd41acd15aeb2fb93221b9b5a8803da5e8be0c2da86805c571e4",
+      "guardBytes": 93904,
+      "javaExecutable": "E:\\CodexTemp\\mods-danzi\\java\\jdk-17.0.20.1+1-jre\\bin\\java.exe",
+      "startupPassed": true,
+      "mixinRequired": true,
+      "defaultRequire": 1,
+      "mixinAppliedEvidence": [
+        {
+          "line": 403,
+          "text": "[22:22:55] [main/INFO]: Mixing CommandGate1204Mixin from qizhangverdict.mixins.json into net.minecraft.class_2170"
+        }
+      ],
+      "startupPolicyEvidence": [
+        {
+          "line": 426,
+          "text": "[22:22:57] [Server thread/INFO]: QiZhangGuard started: QiZhangVerdict sessions=0, trackedIPs=0, accountPairs=0, rules=37, companion=required, vm=DENY, blacklist=DENY, rateBuckets=0, accountBans=0, deviceBans=0, deviceRequired=true. Reports are self-reported, not trusted attestation."
+        }
+      ],
+      "fullProtocolPassed": true,
+      "protocolCaseCount": 26,
+      "partialCaseCount": null,
+      "cases": [
+        "normal companion joins",
+        "privileged commands blocked before report and restored afterward",
+        "missing companion expires",
+        "malformed report rejected",
+        "malformed report does not permanently ban account",
+        "first account on device allowed",
+        "same IP same device second account rejected",
+        "same IP second different device allowed",
+        "same IP third different device allowed",
+        "same IP fourth account rejected",
+        "disconnect releases device and IP quota",
+        "known cheat denied and sanctioned",
+        "same banned device different account denied",
+        "banned account denied with new device",
+        "administrator account and device unban restores access",
+        "administrator glob rule enforced",
+        "whitelist overrides matching blacklist item",
+        "removed whitelist takes effect",
+        "administrator removes default rule with colon ID",
+        "administrator restores removed blacklist entry",
+        "CIDR deny rejects login",
+        "known VM signal denied",
+        "VBS hypervisor alone does not ban physical machine",
+        "two-device setting first account",
+        "two-device setting second account",
+        "two-device setting rejects third account"
+      ],
+      "protocolExitCode": 0,
+      "driverExitCode": 0,
+      "serverExitCode": 0,
+      "normalStopObserved": true,
+      "elapsedSeconds": 91.81,
+      "protocolElapsedSeconds": 68.27,
+      "protocolDecoderErrorCount": 0,
+      "failureObserved": [],
+      "scripts": {
+        "next_mod_smoke.py": "682dc675eb752b6171bf8ef53877b8857d981d005d6159e93bc34802e5308a73",
+        "mod_runtime_smoke.py": "a15e49bfef5e67d7d7c4471d85fc665be637777889b9ea2032461c417db1e9e2",
+        "protocol_smoke.cjs": "4180ca0fe087283f500aae1c26ca68354712db30c0774f238f0b758f6c409534",
+        "protocol_disconnect_observer.cjs": "c4496beaa3d43c13ff946821aae5f2c62cd7623e09ed21300af66e5e58c68dbc"
+      },
+      "fixtureMetadataNote": "java_started=false describes preparation, not later execution; use this attempt result/log for actual runtime.",
+      "raw": {
+        "smoke-result.json": "evidence/next-platform-server-1.20.4-fabric-03-smoke-result.json",
+        ".qizhang-verdict-smoke.json": "evidence/next-platform-server-1.20.4-fabric-03-fixture.json",
+        "batch-plan.json": "evidence/next-platform-server-1.20.4-fabric-03-batch-plan.json",
+        "batch-run-result.json": "evidence/next-platform-server-1.20.4-fabric-03-batch-run-result.json",
+        "batch-run.log": "evidence/next-platform-server-1.20.4-fabric-03-batch-run.log",
+        "run-plan.json": "evidence/next-platform-server-1.20.4-fabric-01-run-plan.json",
+        "install-result.json": "evidence/next-platform-server-1.20.4-fabric-03-install-result.json",
+        "console.log": "evidence/next-platform-server-1.20.4-fabric-03-console.log",
+        "protocol-console.log": "evidence/next-platform-server-1.20.4-fabric-03-protocol-console.log",
+        "protocol-result.json": "evidence/next-platform-server-1.20.4-fabric-03-protocol-result.json",
+        "protocol-disconnect-observations.json": "evidence/next-platform-server-1.20.4-fabric-03-protocol-disconnect-observations.json",
+        "protocol-metadata-trace.json": "evidence/next-platform-server-1.20.4-fabric-03-protocol-metadata-trace.json",
+        "server.properties": "evidence/next-platform-server-1.20.4-fabric-03-server.properties",
+        "commands.queue": "evidence/next-platform-server-1.20.4-fabric-03-commands.queue",
+        "integration-receipt.json": "evidence/next-platform-server-1.20.4-fabric-01-integration-receipt.json",
+        "executed-next_mod_smoke.py": "evidence/next-platform-server-1.19.2-fabric-01-executed-next_mod_smoke.py",
+        "executed-mod_runtime_smoke.py": "evidence/next-platform-server-1.19.2-fabric-01-executed-mod_runtime_smoke.py",
+        "executed-protocol_smoke.cjs": "evidence/next-platform-server-1.20.4-fabric-03-executed-protocol_smoke.cjs",
+        "executed-protocol_disconnect_observer.cjs": "evidence/next-platform-server-1.20.4-fabric-02-executed-protocol_disconnect_observer.cjs",
+        "config/qizhangverdict/guard.properties": "evidence/next-platform-server-1.19.2-fabric-01-config-qizhangverdict-guard.properties"
+      },
+      "warningOrErrorLineCount": 11,
+      "finalQaPolicy": {
+        "limits.max-online-per-ip": "2",
+        "limits.max-online-per-ip-device": "1",
+        "limits.max-accounts-per-ip": "100",
+        "limits.account-window-hours": "720",
+        "limits.attempts-per-minute": "1000",
+        "ip.allow": "",
+        "ip.deny": "",
+        "companion.required": "true",
+        "companion.timeout-seconds": "4",
+        "device.required": "true",
+        "vm.action": "ALERT",
+        "blacklist.action": "DENY",
+        "sanctions.on-deny": "BAN"
+      }
+    },
+    {
+      "attempt": "1.20.4/neoforge-02",
+      "profile": "neoforge-1.20.4",
+      "minecraft": "1.20.4",
+      "loader": "neoforge",
+      "loaderVersion": "20.4.251",
+      "artifactVersion": "0.3.0-dev",
+      "guardSha256": "1552dabe78c522daf615922a0644e357884f6909a8925f94c6a8b16618f5132b",
+      "guardBytes": 95633,
+      "javaExecutable": "E:\\CodexTemp\\mods-danzi\\java\\jdk-17.0.20.1+1-jre\\bin\\java.exe",
+      "startupPassed": true,
+      "mixinRequired": true,
+      "defaultRequire": 1,
+      "mixinAppliedEvidence": [
+        {
+          "line": 80,
+          "text": "[22:35:06] [main/INFO] [mixin/]: Mixing CommandGate1204Mixin from qizhangverdict.mixins.json into net.minecraft.commands.Commands"
+        }
+      ],
+      "startupPolicyEvidence": [
+        {
+          "line": 111,
+          "text": "[22:35:10] [Server thread/INFO] [QiZhangVerdict/]: QiZhangGuard started: QiZhangVerdict sessions=0, trackedIPs=0, accountPairs=0, rules=37, companion=required, vm=DENY, blacklist=DENY, rateBuckets=0, accountBans=0, deviceBans=0, deviceRequired=true. Reports are self-reported, not trusted attestation."
+        }
+      ],
+      "fullProtocolPassed": true,
+      "protocolCaseCount": 26,
+      "partialCaseCount": null,
+      "cases": [
+        "normal companion joins",
+        "privileged commands blocked before report and restored afterward",
+        "missing companion expires",
+        "malformed report rejected",
+        "malformed report does not permanently ban account",
+        "first account on device allowed",
+        "same IP same device second account rejected",
+        "same IP second different device allowed",
+        "same IP third different device allowed",
+        "same IP fourth account rejected",
+        "disconnect releases device and IP quota",
+        "known cheat denied and sanctioned",
+        "same banned device different account denied",
+        "banned account denied with new device",
+        "administrator account and device unban restores access",
+        "administrator glob rule enforced",
+        "whitelist overrides matching blacklist item",
+        "removed whitelist takes effect",
+        "administrator removes default rule with colon ID",
+        "administrator restores removed blacklist entry",
+        "CIDR deny rejects login",
+        "known VM signal denied",
+        "VBS hypervisor alone does not ban physical machine",
+        "two-device setting first account",
+        "two-device setting second account",
+        "two-device setting rejects third account"
+      ],
+      "protocolExitCode": 0,
+      "driverExitCode": 0,
+      "serverExitCode": 0,
+      "normalStopObserved": true,
+      "elapsedSeconds": 87.62,
+      "protocolElapsedSeconds": 68.09,
+      "protocolDecoderErrorCount": 0,
+      "failureObserved": [],
+      "scripts": {
+        "next_mod_smoke.py": "682dc675eb752b6171bf8ef53877b8857d981d005d6159e93bc34802e5308a73",
+        "mod_runtime_smoke.py": "a15e49bfef5e67d7d7c4471d85fc665be637777889b9ea2032461c417db1e9e2",
+        "protocol_smoke.cjs": "4180ca0fe087283f500aae1c26ca68354712db30c0774f238f0b758f6c409534",
+        "protocol_disconnect_observer.cjs": "c4496beaa3d43c13ff946821aae5f2c62cd7623e09ed21300af66e5e58c68dbc"
+      },
+      "fixtureMetadataNote": "java_started=false describes preparation, not later execution; use this attempt result/log for actual runtime.",
+      "raw": {
+        "smoke-result.json": "evidence/next-platform-server-1.20.4-neoforge-02-smoke-result.json",
+        ".qizhang-verdict-smoke.json": "evidence/next-platform-server-1.20.4-neoforge-02-fixture.json",
+        "batch-plan.json": "evidence/next-platform-server-1.20.4-neoforge-02-batch-plan.json",
+        "batch-run-result.json": "evidence/next-platform-server-1.20.4-neoforge-02-batch-run-result.json",
+        "batch-run.log": "evidence/next-platform-server-1.20.4-neoforge-02-batch-run.log",
+        "run-plan.json": "evidence/next-platform-server-1.20.4-neoforge-02-run-plan.json",
+        "install-result.json": "evidence/next-platform-server-1.20.4-neoforge-02-install-result.json",
+        "console.log": "evidence/next-platform-server-1.20.4-neoforge-02-console.log",
+        "protocol-console.log": "evidence/next-platform-server-1.20.4-forge-02-protocol-console.log",
+        "protocol-result.json": "evidence/next-platform-server-1.20.4-forge-02-protocol-result.json",
+        "protocol-disconnect-observations.json": "evidence/next-platform-server-1.20.4-forge-02-protocol-disconnect-observations.json",
+        "protocol-metadata-trace.json": "evidence/next-platform-server-1.20.4-neoforge-02-protocol-metadata-trace.json",
+        "server.properties": "evidence/next-platform-server-1.20.4-neoforge-02-server.properties",
+        "commands.queue": "evidence/next-platform-server-1.20.4-neoforge-02-commands.queue",
+        "integration-receipt.json": "evidence/next-platform-server-1.20.4-neoforge-01-integration-receipt.json",
+        "executed-next_mod_smoke.py": "evidence/next-platform-server-1.19.2-fabric-01-executed-next_mod_smoke.py",
+        "executed-mod_runtime_smoke.py": "evidence/next-platform-server-1.19.2-fabric-01-executed-mod_runtime_smoke.py",
+        "executed-protocol_smoke.cjs": "evidence/next-platform-server-1.20.4-fabric-03-executed-protocol_smoke.cjs",
+        "executed-protocol_disconnect_observer.cjs": "evidence/next-platform-server-1.20.4-fabric-02-executed-protocol_disconnect_observer.cjs",
+        "config/qizhangverdict/guard.properties": "evidence/next-platform-server-1.19.2-fabric-01-config-qizhangverdict-guard.properties"
+      },
+      "warningOrErrorLineCount": 17,
+      "finalQaPolicy": {
+        "limits.max-online-per-ip": "2",
+        "limits.max-online-per-ip-device": "1",
+        "limits.max-accounts-per-ip": "100",
+        "limits.account-window-hours": "720",
+        "limits.attempts-per-minute": "1000",
+        "ip.allow": "",
+        "ip.deny": "",
+        "companion.required": "true",
+        "companion.timeout-seconds": "4",
+        "device.required": "true",
+        "vm.action": "ALERT",
+        "blacklist.action": "DENY",
+        "sanctions.on-deny": "BAN"
+      }
+    }
+  ],
+  "officialInputs": [
+    {
+      "minecraft": "1.19.2",
+      "pins": {
+        "fabric": "0.16.14",
+        "fapi": "0.77.0+1.19.2",
+        "forge": "43.5.2"
+      },
+      "vanillaServer": {
+        "minecraft": "1.19.2",
+        "role": "vanilla-server",
+        "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\runtime-inputs\\minecraft\\minecraft-1.19.2-server.jar",
+        "url": "https://piston-data.mojang.com/v1/objects/f69c284232d7c7580bd89a5a4931c3581eae1378/server.jar",
+        "bytes": 45609512,
+        "sha1": "f69c284232d7c7580bd89a5a4931c3581eae1378",
+        "sha256": "b26727069ef5f61c704add9a378ac90e3d271fd7876c0bd3dcfbe9fd0bec4d96",
+        "expectedOfficialSha1": "f69c284232d7c7580bd89a5a4931c3581eae1378",
+        "expectedOfficialSha512": null,
+        "officialHashVerified": true,
+        "verificationSource": "https://piston-meta.mojang.com/v1/packages/ed548106acf3ac7e8205a6ee8fd2710facfa164f/1.19.2.json#/downloads/server",
+        "origin": "E:\\CodexTemp\\Gradle\\QiZhang_Games\\caches\\fabric-loom\\1.19.2\\minecraft-server.jar"
+      },
+      "installers": {
+        "fabric": {
+          "minecraft": "1.19.2",
+          "role": "official-loader-installer",
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\runtime-inputs\\installers\\fabric-installer-1.1.1.jar",
+          "url": "https://maven.fabricmc.net/net/fabricmc/fabric-installer/1.1.1/fabric-installer-1.1.1.jar",
+          "bytes": 209151,
+          "sha1": "3ffdd4dc315f620960ca5eae26bffca9b7e52804",
+          "sha256": "2487a69dd6f9d9c2605265a7142d77c26ab62edc620e6bcf810d581d2ee31b79",
+          "expectedOfficialSha1": "3ffdd4dc315f620960ca5eae26bffca9b7e52804",
+          "expectedOfficialSha512": null,
+          "officialHashVerified": true,
+          "verificationSource": "https://maven.fabricmc.net/net/fabricmc/fabric-installer/1.1.1/fabric-installer-1.1.1.jar.sha1",
+          "origin": "E:\\CodexTemp\\QiZhangGuard\\runtime-smoke\\fabric-1.20.1-final-02\\loader-installer.jar"
+        },
+        "forge": {
+          "minecraft": "1.19.2",
+          "role": "official-loader-installer",
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\runtime-inputs\\installers\\forge-1.19.2-43.5.2-installer.jar",
+          "url": "https://maven.minecraftforge.net/net/minecraftforge/forge/1.19.2-43.5.2/forge-1.19.2-43.5.2-installer.jar",
+          "bytes": 7130043,
+          "sha1": "d242b6786039d4acb9ea7579624772b6809bda91",
+          "sha256": "cee6837e368a579e10b6c9677a29e789b5a7e424ea6143996e1c8794d0b01cf1",
+          "expectedOfficialSha1": "d242b6786039d4acb9ea7579624772b6809bda91",
+          "expectedOfficialSha512": null,
+          "officialHashVerified": true,
+          "verificationSource": "https://maven.minecraftforge.net/net/minecraftforge/forge/1.19.2-43.5.2/forge-1.19.2-43.5.2-installer.jar.sha1",
+          "origin": "downloaded"
+        }
+      },
+      "fabricApi": {
+        "minecraft": "1.19.2",
+        "role": "fabric-api-full-distribution",
+        "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\runtime-inputs\\mods\\fabric-api-0.77.0+1.19.2.jar",
+        "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/6g95K303/fabric-api-0.77.0%2B1.19.2.jar",
+        "bytes": 1892953,
+        "sha1": "558cd912d95c9dec513eb87cc813d3a68aa93fa5",
+        "sha256": "0fc62744a38f629fe0840893713e6a111ed1263719f93e499c990688811824ec",
+        "expectedOfficialSha1": "558cd912d95c9dec513eb87cc813d3a68aa93fa5",
+        "expectedOfficialSha512": "1b8f180fe24a971b1a28758f1fa2cb4afa7f52d8bac6c9e68e6dcf0c4fc6cf2024becb1dabfa17e5a24b7c47aecd945af3531d1b3c72319d986011f1d0067338",
+        "officialHashVerified": true,
+        "verificationSource": "https://api.modrinth.com/v2/version/6g95K303",
+        "origin": "downloaded"
+      },
+      "fabricApiDescriptor": {
+        "minecraft": "1.19.2",
+        "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\runtime-inputs\\mods\\fabric-api-0.77.0+1.19.2.jar",
+        "modrinthVersion": "6g95K303",
+        "descriptorId": "fabric-api",
+        "version": "0.77.0+1.19.2",
+        "nestedJarCount": 50,
+        "dependencies": {
+          "fabricloader": ">=0.14.9",
+          "java": ">=17",
+          "minecraft": "1.19.2"
+        },
+        "sha256": "0fc62744a38f629fe0840893713e6a111ed1263719f93e499c990688811824ec"
+      },
+      "source": {
+        "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\runtime-inputs\\prepared-inputs.json",
+        "sha256": "0644a35d216b3ce4d1b344c40909f715ff9a1382de086cc0794c63bc8189e928",
+        "bytes": 15283
+      },
+      "recheckedCachedOfficialDigests": true
+    },
+    {
+      "minecraft": "1.20.4",
+      "pins": {
+        "fabric": "0.16.14",
+        "fapi": "0.97.3+1.20.4",
+        "forge": "49.2.9",
+        "neoforge": "20.4.251"
+      },
+      "vanillaServer": {
+        "minecraft": "1.20.4",
+        "role": "vanilla-server",
+        "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\runtime-inputs\\minecraft\\minecraft-1.20.4-server.jar",
+        "url": "https://piston-data.mojang.com/v1/objects/8dd1a28015f51b1803213892b50b7b4fc76e594d/server.jar",
+        "bytes": 49150256,
+        "sha1": "8dd1a28015f51b1803213892b50b7b4fc76e594d",
+        "sha256": "c03fa6f39daa69ddf413c965a3a83084db746a7a138ce535a693293b5472d363",
+        "expectedOfficialSha1": "8dd1a28015f51b1803213892b50b7b4fc76e594d",
+        "expectedOfficialSha512": null,
+        "officialHashVerified": true,
+        "verificationSource": "https://piston-meta.mojang.com/v1/packages/a8203fe4dde85f7ff8fa480a6fbf645d9d29b04f/1.20.4.json#/downloads/server",
+        "origin": "E:\\CodexTemp\\Gradle\\XiuXianZhuan\\caches\\fabric-loom\\1.20.4\\minecraft-server.jar"
+      },
+      "installers": {
+        "fabric": {
+          "minecraft": "1.20.4",
+          "role": "official-loader-installer",
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\runtime-inputs\\installers\\fabric-installer-1.1.1.jar",
+          "url": "https://maven.fabricmc.net/net/fabricmc/fabric-installer/1.1.1/fabric-installer-1.1.1.jar",
+          "bytes": 209151,
+          "sha1": "3ffdd4dc315f620960ca5eae26bffca9b7e52804",
+          "sha256": "2487a69dd6f9d9c2605265a7142d77c26ab62edc620e6bcf810d581d2ee31b79",
+          "expectedOfficialSha1": "3ffdd4dc315f620960ca5eae26bffca9b7e52804",
+          "expectedOfficialSha512": null,
+          "officialHashVerified": true,
+          "verificationSource": "https://maven.fabricmc.net/net/fabricmc/fabric-installer/1.1.1/fabric-installer-1.1.1.jar.sha1",
+          "origin": "E:\\CodexTemp\\QiZhangGuard\\runtime-smoke\\fabric-1.20.1-final-02\\loader-installer.jar"
+        },
+        "forge": {
+          "minecraft": "1.20.4",
+          "role": "official-loader-installer",
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\runtime-inputs\\installers\\forge-1.20.4-49.2.9-installer.jar",
+          "url": "https://maven.minecraftforge.net/net/minecraftforge/forge/1.20.4-49.2.9/forge-1.20.4-49.2.9-installer.jar",
+          "bytes": 7989099,
+          "sha1": "b8a0e3da14fd59522c1b4977bf38a51f26ba9a25",
+          "sha256": "da58931c54f7c2a3d1e7036a5cb2cc90f559cb0c4676e97ba33a6695fac9ba11",
+          "expectedOfficialSha1": "b8a0e3da14fd59522c1b4977bf38a51f26ba9a25",
+          "expectedOfficialSha512": null,
+          "officialHashVerified": true,
+          "verificationSource": "https://maven.minecraftforge.net/net/minecraftforge/forge/1.20.4-49.2.9/forge-1.20.4-49.2.9-installer.jar.sha1",
+          "origin": "downloaded"
+        },
+        "neoforge": {
+          "minecraft": "1.20.4",
+          "role": "official-loader-installer",
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\runtime-inputs\\installers\\neoforge-20.4.251-installer.jar",
+          "url": "https://maven.neoforged.net/releases/net/neoforged/neoforge/20.4.251/neoforge-20.4.251-installer.jar",
+          "bytes": 6534683,
+          "sha1": "8b80db7063076a31be74dc3df3506185cbb370b9",
+          "sha256": "ba50598a03d733d7483fdcefd49e3acf4667210fd84ca9531f90cba68897fe44",
+          "expectedOfficialSha1": "8b80db7063076a31be74dc3df3506185cbb370b9",
+          "expectedOfficialSha512": null,
+          "officialHashVerified": true,
+          "verificationSource": "https://maven.neoforged.net/releases/net/neoforged/neoforge/20.4.251/neoforge-20.4.251-installer.jar.sha1",
+          "origin": "downloaded"
+        }
+      },
+      "fabricApi": {
+        "minecraft": "1.20.4",
+        "role": "fabric-api-full-distribution",
+        "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\runtime-inputs\\mods\\fabric-api-0.97.3+1.20.4.jar",
+        "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/BPX6fK06/fabric-api-0.97.3%2B1.20.4.jar",
+        "bytes": 2187523,
+        "sha1": "a21f3c7e700b9fc3a28e896979a07ec489507143",
+        "sha256": "5c11c93b21e0fbcd83dd11c6059479143f3d422bceac4153c3e55806ba9371f1",
+        "expectedOfficialSha1": "a21f3c7e700b9fc3a28e896979a07ec489507143",
+        "expectedOfficialSha512": "ea1e47672a1e0fef7fa3fd7f7b396b5a8fb2c46e6ce33dbc4cc2b8d320bc7b775a0de42a478302419c8063c47fbc18bb2ad7551772f54af8059132ac2cb4f108",
+        "officialHashVerified": true,
+        "verificationSource": "https://api.modrinth.com/v2/version/BPX6fK06",
+        "origin": "downloaded"
+      },
+      "fabricApiDescriptor": {
+        "minecraft": "1.20.4",
+        "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\runtime-inputs\\mods\\fabric-api-0.97.3+1.20.4.jar",
+        "modrinthVersion": "BPX6fK06",
+        "descriptorId": "fabric-api",
+        "version": "0.97.3+1.20.4",
+        "nestedJarCount": 50,
+        "dependencies": {
+          "fabricloader": ">=0.15.1",
+          "java": ">=17",
+          "minecraft": ">=1.20.3- <1.20.5-"
+        },
+        "sha256": "5c11c93b21e0fbcd83dd11c6059479143f3d422bceac4153c3e55806ba9371f1"
+      },
+      "source": {
+        "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\runtime-inputs\\prepared-inputs.json",
+        "sha256": "1198f92a558e761750608280bb3ea45377f44b72bd80fbd800e40be27e389034",
+        "bytes": 21257
+      },
+      "recheckedCachedOfficialDigests": true
+    }
+  ],
+  "diagnosticReferences": {
+    "forge1192RegistrationDiagnosis": "evidence/next-platform-server-forge1192-registration-diagnosis.json"
+  },
+  "policyDisclosure": {
+    "startup": "Each actual console shows 37 rules, companion required, device required and VM DENY. No claim of captured all-13-key default file before protocol: helper overwrites guard.properties for QA.",
+    "syntheticProtocolDefaults": {
+      "limits.max-online-per-ip": 3,
+      "limits.max-online-per-ip-device": 1,
+      "limits.max-accounts-per-ip": 100,
+      "limits.account-window-hours": 720,
+      "limits.attempts-per-minute": 1000,
+      "ip.allow": "",
+      "ip.deny": "",
+      "companion.required": true,
+      "companion.timeout-seconds": 4,
+      "device.required": true,
+      "vm.action": "ALERT",
+      "blacklist.action": "DENY",
+      "sanctions.on-deny": "BAN"
+    },
+    "namedChanges": "10-second OP gate, IP deny 127.0.0.0/8, VM DENY/VBS control, and final max-online-per-IP=2; source snapshots preserve exact sequence.",
+    "scope": "Real loopback TCP, synthetic self-reports/accounts/devices. No graphical companion, physical VM, third-party Grim/Anti-Xray, load/performance, or all-cheat accuracy proof."
+  },
+  "failureBoundaries": [
+    "Forge 1.19.2 attempt01 lacked trailing NUL in bot minecraft:register. Stock Forge43/45 parser evidence and unchanged-product attempt02 full pass are retained.",
+    "Fabric 1.20.4 attempt01/02 fail at expected kick-reason observation. Neither is recorded as a full pass; later diagnosis and runtime outcomes must be separately appended.",
+    "Fabric1.20.4 attempt03 records observed kick reasons and 26 passing groups on the unchanged product. The root cause of missing reasons in attempts01/02 remains unconfirmed; diagnostic tracing is not claimed as a product fix."
+  ],
+  "privacy": {
+    "serverScopesComparedPrivately": true,
+    "unknownDeviceDigestsComparedPrivately": true,
+    "syntheticDeviceHashBasis": "Allowed only values derivable from fixture constant labels and synthetic account names; no hardware-derived identifiers.",
+    "excluded": "No accounts.state/server-id.txt, raw actual device identifiers, world/playerdata, JAR/class files or Minecraft class disassembly included.",
+    "actualPrivateValueMatchesInPublicFiles": 0
+  },
+  "evidence": [
+    {
+      "file": "evidence/next-platform-server-1.19.2-fabric-01-smoke-result.json",
+      "sha256": "62b113d611764fc1f7ed24803ff8ef3fe5e29a69c7b9ae7c47bfac5639ae60bc",
+      "bytes": 9238,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\fabric-01\\smoke-result.json",
+          "sha256": "62b113d611764fc1f7ed24803ff8ef3fe5e29a69c7b9ae7c47bfac5639ae60bc",
+          "bytes": 9238
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.19.2-fabric-01-fixture.json",
+      "sha256": "f09b44e63cc54b73e5f8e289c4a7b0437076b9ecdec28e1d91081bc950342441",
+      "bytes": 1619,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\fabric-01\\.qizhang-verdict-smoke.json",
+          "sha256": "f09b44e63cc54b73e5f8e289c4a7b0437076b9ecdec28e1d91081bc950342441",
+          "bytes": 1619
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.19.2-fabric-01-batch-plan.json",
+      "sha256": "86b937347c7f358f96a819d4ada0bbe7afcc45350fcb29f5bd3c39dae36d96d5",
+      "bytes": 565,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\fabric-01\\batch-plan.json",
+          "sha256": "86b937347c7f358f96a819d4ada0bbe7afcc45350fcb29f5bd3c39dae36d96d5",
+          "bytes": 565
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.19.2-fabric-01-batch-run-result.json",
+      "sha256": "04dce686260e31d69d572b3b22a41201edec4c0d27858cbeb7ef864ac5606a8c",
+      "bytes": 791,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\fabric-01\\batch-run-result.json",
+          "sha256": "04dce686260e31d69d572b3b22a41201edec4c0d27858cbeb7ef864ac5606a8c",
+          "bytes": 791
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.19.2-fabric-01-batch-run.log",
+      "sha256": "6e0babd56166b64ee4ebdd3165d7dbbfdb5e8a5308815120c5f02c75d589d8ec",
+      "bytes": 202,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\fabric-01\\batch-run.log",
+          "sha256": "6e0babd56166b64ee4ebdd3165d7dbbfdb5e8a5308815120c5f02c75d589d8ec",
+          "bytes": 202
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.19.2-fabric-01-run-plan.json",
+      "sha256": "091c7f7d6f688777afbce12508d4ffc3570e9601abe9f0d481e513fd4918a11f",
+      "bytes": 696,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\fabric-01\\run-plan.json",
+          "sha256": "091c7f7d6f688777afbce12508d4ffc3570e9601abe9f0d481e513fd4918a11f",
+          "bytes": 696
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.19.2-fabric-01-install-result.json",
+      "sha256": "bf4562ff5b564e4578e7dfe5d5a56c81dbb465ef681fa78c22c09cccb89a289c",
+      "bytes": 1219,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\fabric-01\\install-result.json",
+          "sha256": "bf4562ff5b564e4578e7dfe5d5a56c81dbb465ef681fa78c22c09cccb89a289c",
+          "bytes": 1219
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.19.2-fabric-01-console.log",
+      "sha256": "ce6a5bce9034e41e8eec037161e272fd49c15ac44c7c28bba7290901920e15d7",
+      "bytes": 81724,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\fabric-01\\console.log",
+          "sha256": "ce6a5bce9034e41e8eec037161e272fd49c15ac44c7c28bba7290901920e15d7",
+          "bytes": 81724
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.19.2-fabric-01-protocol-console.log",
+      "sha256": "5029ea9a30fc848e91d540b3a1b634478ee8263473b14eec935c39df6fbc7792",
+      "bytes": 1224,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\fabric-01\\protocol-console.log",
+          "sha256": "5029ea9a30fc848e91d540b3a1b634478ee8263473b14eec935c39df6fbc7792",
+          "bytes": 1224
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\forge-02\\protocol-console.log",
+          "sha256": "5029ea9a30fc848e91d540b3a1b634478ee8263473b14eec935c39df6fbc7792",
+          "bytes": 1224
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.19.2-fabric-01-protocol-result.json",
+      "sha256": "9ac43a279a366ed8e6d1826fb5c467de94b43481f8cd0d779d5a6eadac46a549",
+      "bytes": 1381,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\fabric-01\\protocol-result.json",
+          "sha256": "9ac43a279a366ed8e6d1826fb5c467de94b43481f8cd0d779d5a6eadac46a549",
+          "bytes": 1381
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\forge-02\\protocol-result.json",
+          "sha256": "9ac43a279a366ed8e6d1826fb5c467de94b43481f8cd0d779d5a6eadac46a549",
+          "bytes": 1381
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.19.2-fabric-01-server.properties",
+      "sha256": "482d255db2e88cb15922bc16110af38544ad970018fbbd3805e2ec4edbe50431",
+      "bytes": 1483,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\fabric-01\\server.properties",
+          "sha256": "482d255db2e88cb15922bc16110af38544ad970018fbbd3805e2ec4edbe50431",
+          "bytes": 1483
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.19.2-fabric-01-commands.queue",
+      "sha256": "58c5a41e735a412213de0194dee308979d97c0ec512d4b2e30a04a2a86d32ddf",
+      "bytes": 564,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\fabric-01\\commands.queue",
+          "sha256": "58c5a41e735a412213de0194dee308979d97c0ec512d4b2e30a04a2a86d32ddf",
+          "bytes": 564
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.19.2-fabric-01-integration-receipt.json",
+      "sha256": "e883db34104fb2ad2206a2f9d4630eb962f8fdd9e28091d1acff4a092e43e4d8",
+      "bytes": 154,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\fabric-01\\integration-receipt.json",
+          "sha256": "e883db34104fb2ad2206a2f9d4630eb962f8fdd9e28091d1acff4a092e43e4d8",
+          "bytes": 154
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.19.2-fabric-01-executed-next_mod_smoke.py",
+      "sha256": "682dc675eb752b6171bf8ef53877b8857d981d005d6159e93bc34802e5308a73",
+      "bytes": 11164,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\fabric-01\\executed-next_mod_smoke.py",
+          "sha256": "682dc675eb752b6171bf8ef53877b8857d981d005d6159e93bc34802e5308a73",
+          "bytes": 11164
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\forge-01\\executed-next_mod_smoke.py",
+          "sha256": "682dc675eb752b6171bf8ef53877b8857d981d005d6159e93bc34802e5308a73",
+          "bytes": 11164
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\forge-02\\executed-next_mod_smoke.py",
+          "sha256": "682dc675eb752b6171bf8ef53877b8857d981d005d6159e93bc34802e5308a73",
+          "bytes": 11164
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-01\\executed-next_mod_smoke.py",
+          "sha256": "682dc675eb752b6171bf8ef53877b8857d981d005d6159e93bc34802e5308a73",
+          "bytes": 11164
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-02\\executed-next_mod_smoke.py",
+          "sha256": "682dc675eb752b6171bf8ef53877b8857d981d005d6159e93bc34802e5308a73",
+          "bytes": 11164
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\forge-02\\executed-next_mod_smoke.py",
+          "sha256": "682dc675eb752b6171bf8ef53877b8857d981d005d6159e93bc34802e5308a73",
+          "bytes": 11164
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\neoforge-01\\executed-next_mod_smoke.py",
+          "sha256": "682dc675eb752b6171bf8ef53877b8857d981d005d6159e93bc34802e5308a73",
+          "bytes": 11164
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-03\\executed-next_mod_smoke.py",
+          "sha256": "682dc675eb752b6171bf8ef53877b8857d981d005d6159e93bc34802e5308a73",
+          "bytes": 11164
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\neoforge-02\\executed-next_mod_smoke.py",
+          "sha256": "682dc675eb752b6171bf8ef53877b8857d981d005d6159e93bc34802e5308a73",
+          "bytes": 11164
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.19.2-fabric-01-executed-mod_runtime_smoke.py",
+      "sha256": "a15e49bfef5e67d7d7c4471d85fc665be637777889b9ea2032461c417db1e9e2",
+      "bytes": 18905,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\fabric-01\\executed-mod_runtime_smoke.py",
+          "sha256": "a15e49bfef5e67d7d7c4471d85fc665be637777889b9ea2032461c417db1e9e2",
+          "bytes": 18905
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\forge-01\\executed-mod_runtime_smoke.py",
+          "sha256": "a15e49bfef5e67d7d7c4471d85fc665be637777889b9ea2032461c417db1e9e2",
+          "bytes": 18905
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\forge-02\\executed-mod_runtime_smoke.py",
+          "sha256": "a15e49bfef5e67d7d7c4471d85fc665be637777889b9ea2032461c417db1e9e2",
+          "bytes": 18905
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-01\\executed-mod_runtime_smoke.py",
+          "sha256": "a15e49bfef5e67d7d7c4471d85fc665be637777889b9ea2032461c417db1e9e2",
+          "bytes": 18905
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-02\\executed-mod_runtime_smoke.py",
+          "sha256": "a15e49bfef5e67d7d7c4471d85fc665be637777889b9ea2032461c417db1e9e2",
+          "bytes": 18905
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\forge-02\\executed-mod_runtime_smoke.py",
+          "sha256": "a15e49bfef5e67d7d7c4471d85fc665be637777889b9ea2032461c417db1e9e2",
+          "bytes": 18905
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\neoforge-01\\executed-mod_runtime_smoke.py",
+          "sha256": "a15e49bfef5e67d7d7c4471d85fc665be637777889b9ea2032461c417db1e9e2",
+          "bytes": 18905
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-03\\executed-mod_runtime_smoke.py",
+          "sha256": "a15e49bfef5e67d7d7c4471d85fc665be637777889b9ea2032461c417db1e9e2",
+          "bytes": 18905
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\neoforge-02\\executed-mod_runtime_smoke.py",
+          "sha256": "a15e49bfef5e67d7d7c4471d85fc665be637777889b9ea2032461c417db1e9e2",
+          "bytes": 18905
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.19.2-fabric-01-executed-protocol_smoke.cjs",
+      "sha256": "4f88bcd526337d9c911f26d7a79c6435cf0b94a2814acd11dcf0338f3f1f78be",
+      "bytes": 12087,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\fabric-01\\executed-protocol_smoke.cjs",
+          "sha256": "4f88bcd526337d9c911f26d7a79c6435cf0b94a2814acd11dcf0338f3f1f78be",
+          "bytes": 12087
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\forge-01\\executed-protocol_smoke.cjs",
+          "sha256": "4f88bcd526337d9c911f26d7a79c6435cf0b94a2814acd11dcf0338f3f1f78be",
+          "bytes": 12087
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-01\\executed-protocol_smoke.cjs",
+          "sha256": "4f88bcd526337d9c911f26d7a79c6435cf0b94a2814acd11dcf0338f3f1f78be",
+          "bytes": 12087
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.19.2-fabric-01-config-qizhangverdict-guard.properties",
+      "sha256": "c5cbabcffaaefe72b8ef4e65a979834f9888d70c627ff5354e9267b82c69360f",
+      "bytes": 308,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\fabric-01\\config\\qizhangverdict\\guard.properties",
+          "sha256": "c5cbabcffaaefe72b8ef4e65a979834f9888d70c627ff5354e9267b82c69360f",
+          "bytes": 308
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\forge-02\\config\\qizhangverdict\\guard.properties",
+          "sha256": "c5cbabcffaaefe72b8ef4e65a979834f9888d70c627ff5354e9267b82c69360f",
+          "bytes": 308
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\forge-02\\config\\qizhangverdict\\guard.properties",
+          "sha256": "c5cbabcffaaefe72b8ef4e65a979834f9888d70c627ff5354e9267b82c69360f",
+          "bytes": 308
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\neoforge-01\\config\\qizhangverdict\\guard.properties",
+          "sha256": "c5cbabcffaaefe72b8ef4e65a979834f9888d70c627ff5354e9267b82c69360f",
+          "bytes": 308
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-03\\config\\qizhangverdict\\guard.properties",
+          "sha256": "c5cbabcffaaefe72b8ef4e65a979834f9888d70c627ff5354e9267b82c69360f",
+          "bytes": 308
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\neoforge-02\\config\\qizhangverdict\\guard.properties",
+          "sha256": "c5cbabcffaaefe72b8ef4e65a979834f9888d70c627ff5354e9267b82c69360f",
+          "bytes": 308
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.19.2-forge-01-smoke-result.json",
+      "sha256": "7ce5086b387336a6916b94f68eb860b9b77d5ab7d61c4d0d9e97c9792bbb3647",
+      "bytes": 7451,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\forge-01\\smoke-result.json",
+          "sha256": "7ce5086b387336a6916b94f68eb860b9b77d5ab7d61c4d0d9e97c9792bbb3647",
+          "bytes": 7451
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.19.2-forge-01-fixture.json",
+      "sha256": "096b9f7377003bc5135dad4673c5fc297403ee119d5f0ba3c706891ee5551fc0",
+      "bytes": 1425,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\forge-01\\.qizhang-verdict-smoke.json",
+          "sha256": "096b9f7377003bc5135dad4673c5fc297403ee119d5f0ba3c706891ee5551fc0",
+          "bytes": 1425
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.19.2-forge-01-batch-plan.json",
+      "sha256": "722d8011b626f802e2e3031ff7f3ab3afbf835587b65a5957d03e0d1d48cd4c3",
+      "bytes": 562,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\forge-01\\batch-plan.json",
+          "sha256": "722d8011b626f802e2e3031ff7f3ab3afbf835587b65a5957d03e0d1d48cd4c3",
+          "bytes": 562
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.19.2-forge-01-batch-run-result.json",
+      "sha256": "b0c083b44b9ae8dd79113476acde7f67e967377965b4f025479452d417fc8a0f",
+      "bytes": 787,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\forge-01\\batch-run-result.json",
+          "sha256": "b0c083b44b9ae8dd79113476acde7f67e967377965b4f025479452d417fc8a0f",
+          "bytes": 787
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.19.2-forge-01-batch-run.log",
+      "sha256": "ca0273a5af415504e2e85ad33b4ae970410a466f16a46cb44c6c29a9690985e9",
+      "bytes": 201,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\forge-01\\batch-run.log",
+          "sha256": "ca0273a5af415504e2e85ad33b4ae970410a466f16a46cb44c6c29a9690985e9",
+          "bytes": 201
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.19.2-forge-01-run-plan.json",
+      "sha256": "7e7d39fe9c3f8cc193ca586160bb1b286556281952b21629be8af4b8b12dead7",
+      "bytes": 694,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\forge-01\\run-plan.json",
+          "sha256": "7e7d39fe9c3f8cc193ca586160bb1b286556281952b21629be8af4b8b12dead7",
+          "bytes": 694
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\forge-02\\run-plan.json",
+          "sha256": "7e7d39fe9c3f8cc193ca586160bb1b286556281952b21629be8af4b8b12dead7",
+          "bytes": 694
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.19.2-forge-01-install-result.json",
+      "sha256": "62e05ca096802fac4165c06d11d11fce790365c224715cd101f2bb5e64571b90",
+      "bytes": 1149,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\forge-01\\install-result.json",
+          "sha256": "62e05ca096802fac4165c06d11d11fce790365c224715cd101f2bb5e64571b90",
+          "bytes": 1149
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.19.2-forge-01-console.log",
+      "sha256": "739f15872f0bc22f9ff59da82b9479614a5989845adbe45606106062b6364983",
+      "bytes": 22232,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\forge-01\\console.log",
+          "sha256": "739f15872f0bc22f9ff59da82b9479614a5989845adbe45606106062b6364983",
+          "bytes": 22232
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.19.2-forge-01-protocol-console.log",
+      "sha256": "0eb978eeaab9454cb502de253316e7fe29c4060026026b9d0c045a290dadeccf",
+      "bytes": 419,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\forge-01\\protocol-console.log",
+          "sha256": "0eb978eeaab9454cb502de253316e7fe29c4060026026b9d0c045a290dadeccf",
+          "bytes": 419
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.19.2-forge-01-server.properties",
+      "sha256": "6b1cee1c2efd41ce39b2f09779dd928c1a5c4bf04d16539de6288d7572737a06",
+      "bytes": 1483,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\forge-01\\server.properties",
+          "sha256": "6b1cee1c2efd41ce39b2f09779dd928c1a5c4bf04d16539de6288d7572737a06",
+          "bytes": 1483
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.19.2-forge-01-commands.queue",
+      "sha256": "78979ba6fe9982f8b6895cddeff2d53c517e0411db06a8a713893bca941412d3",
+      "bytes": 17,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\forge-01\\commands.queue",
+          "sha256": "78979ba6fe9982f8b6895cddeff2d53c517e0411db06a8a713893bca941412d3",
+          "bytes": 17
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.19.2-forge-01-integration-receipt.json",
+      "sha256": "8924ae6e89222b01fe9ef5f3f72830304f203d1e0dcd05cd92225b2a826c6695",
+      "bytes": 153,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\forge-01\\integration-receipt.json",
+          "sha256": "8924ae6e89222b01fe9ef5f3f72830304f203d1e0dcd05cd92225b2a826c6695",
+          "bytes": 153
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\forge-02\\integration-receipt.json",
+          "sha256": "8924ae6e89222b01fe9ef5f3f72830304f203d1e0dcd05cd92225b2a826c6695",
+          "bytes": 153
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.19.2-forge-01-config-qizhangverdict-guard.properties",
+      "sha256": "2f88867a765e7167c4124f08f6137b86b9b20a884fda9939b4c630b09776e674",
+      "bytes": 308,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\forge-01\\config\\qizhangverdict\\guard.properties",
+          "sha256": "2f88867a765e7167c4124f08f6137b86b9b20a884fda9939b4c630b09776e674",
+          "bytes": 308
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-01\\config\\qizhangverdict\\guard.properties",
+          "sha256": "2f88867a765e7167c4124f08f6137b86b9b20a884fda9939b4c630b09776e674",
+          "bytes": 308
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.19.2-forge-02-smoke-result.json",
+      "sha256": "cee21a72e854d4d5ed9260c3d6139f5e93a31363e7b368f19e0180060aa5f36a",
+      "bytes": 11877,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\forge-02\\smoke-result.json",
+          "sha256": "cee21a72e854d4d5ed9260c3d6139f5e93a31363e7b368f19e0180060aa5f36a",
+          "bytes": 11877
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.19.2-forge-02-fixture.json",
+      "sha256": "b2cecf6fe1b2f486766d43bc87713d1fc2490471213827034971f4a44e2a010a",
+      "bytes": 1426,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\forge-02\\.qizhang-verdict-smoke.json",
+          "sha256": "b2cecf6fe1b2f486766d43bc87713d1fc2490471213827034971f4a44e2a010a",
+          "bytes": 1426
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.19.2-forge-02-batch-plan.json",
+      "sha256": "d7b2c3fb0f6dbad490613fda098f6e9f6f26d8699da7491425f1bd9970b3d2b6",
+      "bytes": 562,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\forge-02\\batch-plan.json",
+          "sha256": "d7b2c3fb0f6dbad490613fda098f6e9f6f26d8699da7491425f1bd9970b3d2b6",
+          "bytes": 562
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.19.2-forge-02-batch-run-result.json",
+      "sha256": "c2a26963878adbaf22da2c7d979be8b7e9052cf467cbe2ef58f62cfe7f4358b3",
+      "bytes": 787,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\forge-02\\batch-run-result.json",
+          "sha256": "c2a26963878adbaf22da2c7d979be8b7e9052cf467cbe2ef58f62cfe7f4358b3",
+          "bytes": 787
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.19.2-forge-02-batch-run.log",
+      "sha256": "d7e15e0c029db7bc1a697d7ac4931eb2227683dae9754ba3334f859a003dc35b",
+      "bytes": 202,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\forge-02\\batch-run.log",
+          "sha256": "d7e15e0c029db7bc1a697d7ac4931eb2227683dae9754ba3334f859a003dc35b",
+          "bytes": 202
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.19.2-forge-02-install-result.json",
+      "sha256": "3e3f3ddc0924a499b3a16e9ba2907d461b26a7cf43399724b8aa784b9140b977",
+      "bytes": 1149,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\forge-02\\install-result.json",
+          "sha256": "3e3f3ddc0924a499b3a16e9ba2907d461b26a7cf43399724b8aa784b9140b977",
+          "bytes": 1149
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.19.2-forge-02-console.log",
+      "sha256": "f45109b97a9293da1a4ee6d3f11ac70bed2d3006bb2099304d882f04e2bd8d40",
+      "bytes": 40616,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\forge-02\\console.log",
+          "sha256": "f45109b97a9293da1a4ee6d3f11ac70bed2d3006bb2099304d882f04e2bd8d40",
+          "bytes": 40616
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.19.2-forge-02-server.properties",
+      "sha256": "6643ded44008407a0a42ea13a10f21c4deb7275c88f5c14534a38bd9763b146e",
+      "bytes": 1484,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\forge-02\\server.properties",
+          "sha256": "6643ded44008407a0a42ea13a10f21c4deb7275c88f5c14534a38bd9763b146e",
+          "bytes": 1484
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.19.2-forge-02-commands.queue",
+      "sha256": "3d6bd177d475f91f81700ef38eede4dbf93ca16e9a8c9e317f94ce27aaeaafd5",
+      "bytes": 564,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\forge-02\\commands.queue",
+          "sha256": "3d6bd177d475f91f81700ef38eede4dbf93ca16e9a8c9e317f94ce27aaeaafd5",
+          "bytes": 564
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.19.2-forge-02-executed-protocol_smoke.cjs",
+      "sha256": "1fa01f6b08b8680eea2453db024ba41944e8d789aa5e2d11a871517229c43cc8",
+      "bytes": 12244,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\forge-02\\executed-protocol_smoke.cjs",
+          "sha256": "1fa01f6b08b8680eea2453db024ba41944e8d789aa5e2d11a871517229c43cc8",
+          "bytes": 12244
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-fabric-01-smoke-result.json",
+      "sha256": "877dc460b06773177392d87c8205531075d2fd53ac8d7675eece5904424fc70e",
+      "bytes": 6608,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-01\\smoke-result.json",
+          "sha256": "877dc460b06773177392d87c8205531075d2fd53ac8d7675eece5904424fc70e",
+          "bytes": 6608
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-fabric-01-fixture.json",
+      "sha256": "9d05f475a55efd017ae2c506d773f0df159da4956fae1b907f7ae6aa8d56b0c4",
+      "bytes": 1619,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-01\\.qizhang-verdict-smoke.json",
+          "sha256": "9d05f475a55efd017ae2c506d773f0df159da4956fae1b907f7ae6aa8d56b0c4",
+          "bytes": 1619
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-fabric-01-batch-plan.json",
+      "sha256": "45a2194c30890dfcba2af1968210fbfdfaef963056272a4cad8969d2298c0170",
+      "bytes": 565,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-01\\batch-plan.json",
+          "sha256": "45a2194c30890dfcba2af1968210fbfdfaef963056272a4cad8969d2298c0170",
+          "bytes": 565
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-fabric-01-batch-run-result.json",
+      "sha256": "2a97a72a0660496f4bd1fa7fa1ca9d0748654f8e99afa8097b5347ec5f89952c",
+      "bytes": 791,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-01\\batch-run-result.json",
+          "sha256": "2a97a72a0660496f4bd1fa7fa1ca9d0748654f8e99afa8097b5347ec5f89952c",
+          "bytes": 791
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-fabric-01-batch-run.log",
+      "sha256": "a39c06227eb13ac884f0cb7f10c4cc2c31f844cf79fba15f1b24059d631d1c9e",
+      "bytes": 202,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-01\\batch-run.log",
+          "sha256": "a39c06227eb13ac884f0cb7f10c4cc2c31f844cf79fba15f1b24059d631d1c9e",
+          "bytes": 202
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-fabric-01-run-plan.json",
+      "sha256": "025dcf5c7c70146963d4b866393a66bb013b596cf02af0a70360ff967ecb3339",
+      "bytes": 696,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-01\\run-plan.json",
+          "sha256": "025dcf5c7c70146963d4b866393a66bb013b596cf02af0a70360ff967ecb3339",
+          "bytes": 696
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-02\\run-plan.json",
+          "sha256": "025dcf5c7c70146963d4b866393a66bb013b596cf02af0a70360ff967ecb3339",
+          "bytes": 696
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-03\\run-plan.json",
+          "sha256": "025dcf5c7c70146963d4b866393a66bb013b596cf02af0a70360ff967ecb3339",
+          "bytes": 696
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-fabric-01-install-result.json",
+      "sha256": "4340c844746c1e7a1db0a33f4417d205396f08997ad463c1532fc38859f471d2",
+      "bytes": 1219,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-01\\install-result.json",
+          "sha256": "4340c844746c1e7a1db0a33f4417d205396f08997ad463c1532fc38859f471d2",
+          "bytes": 1219
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-fabric-01-console.log",
+      "sha256": "df37eb4b71ca9b267331f5c66b7d0144c3e2f1f1072e47df8b2d73939dd3bd9a",
+      "bytes": 72293,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-01\\console.log",
+          "sha256": "df37eb4b71ca9b267331f5c66b7d0144c3e2f1f1072e47df8b2d73939dd3bd9a",
+          "bytes": 72293
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-fabric-01-protocol-console.log",
+      "sha256": "d51cbc60499807e3069ccb06b79bd1c7ac8cf28c427e0f30b3507851d4c182fa",
+      "bytes": 347,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-01\\protocol-console.log",
+          "sha256": "d51cbc60499807e3069ccb06b79bd1c7ac8cf28c427e0f30b3507851d4c182fa",
+          "bytes": 347
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-fabric-01-server.properties",
+      "sha256": "0be5a3bcbaa9b2bf385d5d627c12c7349dbd5cfa0d63eb707102cbe51f5b3caa",
+      "bytes": 1584,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-01\\server.properties",
+          "sha256": "0be5a3bcbaa9b2bf385d5d627c12c7349dbd5cfa0d63eb707102cbe51f5b3caa",
+          "bytes": 1584
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-fabric-01-commands.queue",
+      "sha256": "5732f63c5e96f91056354cfe3af85436554049458fde228ce5e3cdf3cdb22863",
+      "bytes": 83,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-01\\commands.queue",
+          "sha256": "5732f63c5e96f91056354cfe3af85436554049458fde228ce5e3cdf3cdb22863",
+          "bytes": 83
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-fabric-01-integration-receipt.json",
+      "sha256": "f53692051adfd36dbd45c3d21651519788dbabdbe6221e97bd9156d6c38eebfe",
+      "bytes": 154,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-01\\integration-receipt.json",
+          "sha256": "f53692051adfd36dbd45c3d21651519788dbabdbe6221e97bd9156d6c38eebfe",
+          "bytes": 154
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-02\\integration-receipt.json",
+          "sha256": "f53692051adfd36dbd45c3d21651519788dbabdbe6221e97bd9156d6c38eebfe",
+          "bytes": 154
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-03\\integration-receipt.json",
+          "sha256": "f53692051adfd36dbd45c3d21651519788dbabdbe6221e97bd9156d6c38eebfe",
+          "bytes": 154
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-fabric-02-smoke-result.json",
+      "sha256": "42cb17d5ad70551768dd195c688f481a95e4086e2afee61e2295e3c165968f79",
+      "bytes": 7047,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-02\\smoke-result.json",
+          "sha256": "42cb17d5ad70551768dd195c688f481a95e4086e2afee61e2295e3c165968f79",
+          "bytes": 7047
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-fabric-02-fixture.json",
+      "sha256": "f782b86812c80c73566188bdbfd80786318f30736410a845fe8fe7c85fb3e510",
+      "bytes": 1619,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-02\\.qizhang-verdict-smoke.json",
+          "sha256": "f782b86812c80c73566188bdbfd80786318f30736410a845fe8fe7c85fb3e510",
+          "bytes": 1619
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-fabric-02-batch-plan.json",
+      "sha256": "f566d3629d2e01d6804536296b6ebc2b168ef77f7d94dd8ba219b62ade5232a8",
+      "bytes": 674,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-02\\batch-plan.json",
+          "sha256": "f566d3629d2e01d6804536296b6ebc2b168ef77f7d94dd8ba219b62ade5232a8",
+          "bytes": 674
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-fabric-02-batch-run-result.json",
+      "sha256": "17ae1ede0a159405050e1fe4790ff36bf39e80669ad189640b0196979ae75552",
+      "bytes": 791,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-02\\batch-run-result.json",
+          "sha256": "17ae1ede0a159405050e1fe4790ff36bf39e80669ad189640b0196979ae75552",
+          "bytes": 791
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-fabric-02-batch-run.log",
+      "sha256": "956746caade8680bb21792938d03390b169ec88390006451182161457bddd935",
+      "bytes": 202,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-02\\batch-run.log",
+          "sha256": "956746caade8680bb21792938d03390b169ec88390006451182161457bddd935",
+          "bytes": 202
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-fabric-02-install-result.json",
+      "sha256": "81146d8dc8e27e40d47871873c8629dfcf15d1a030f1f5d7d6107ab46ff690e8",
+      "bytes": 1219,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-02\\install-result.json",
+          "sha256": "81146d8dc8e27e40d47871873c8629dfcf15d1a030f1f5d7d6107ab46ff690e8",
+          "bytes": 1219
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-fabric-02-console.log",
+      "sha256": "81a84a968383f9621ef3fc1918e08c3522be9033992f66017a53168e52ab5977",
+      "bytes": 76495,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-02\\console.log",
+          "sha256": "81a84a968383f9621ef3fc1918e08c3522be9033992f66017a53168e52ab5977",
+          "bytes": 76495
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-fabric-02-protocol-console.log",
+      "sha256": "eaa6b4d739aea6c0d2c7ce69a08081a98cc4ae917c2736f38219cd281051146c",
+      "bytes": 340,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-02\\protocol-console.log",
+          "sha256": "eaa6b4d739aea6c0d2c7ce69a08081a98cc4ae917c2736f38219cd281051146c",
+          "bytes": 340
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-fabric-02-protocol-disconnect-observations.json",
+      "sha256": "a784672bd144232f48d7484c1354d240e93479b9885760b9379ae19578ef1fca",
+      "bytes": 2753,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-02\\protocol-disconnect-observations.json",
+          "sha256": "a784672bd144232f48d7484c1354d240e93479b9885760b9379ae19578ef1fca",
+          "bytes": 2753
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-fabric-02-server.properties",
+      "sha256": "c233e01484807563c26c0e5d53d199084b457e00b2fe587140ea64d7f20a91c8",
+      "bytes": 1584,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-02\\server.properties",
+          "sha256": "c233e01484807563c26c0e5d53d199084b457e00b2fe587140ea64d7f20a91c8",
+          "bytes": 1584
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-fabric-02-commands.queue",
+      "sha256": "18b2b82e8613ebf034a44ed026d48c4a9a726a9f711df7917f67565ec936c403",
+      "bytes": 495,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-02\\commands.queue",
+          "sha256": "18b2b82e8613ebf034a44ed026d48c4a9a726a9f711df7917f67565ec936c403",
+          "bytes": 495
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-fabric-02-executed-protocol_smoke.cjs",
+      "sha256": "d133f0c0e84a2f0170b8cac42f18d5a241d868b855e3b290617b7edd018e8408",
+      "bytes": 13115,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-02\\executed-protocol_smoke.cjs",
+          "sha256": "d133f0c0e84a2f0170b8cac42f18d5a241d868b855e3b290617b7edd018e8408",
+          "bytes": 13115
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\forge-02\\executed-protocol_smoke.cjs",
+          "sha256": "d133f0c0e84a2f0170b8cac42f18d5a241d868b855e3b290617b7edd018e8408",
+          "bytes": 13115
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\neoforge-01\\executed-protocol_smoke.cjs",
+          "sha256": "d133f0c0e84a2f0170b8cac42f18d5a241d868b855e3b290617b7edd018e8408",
+          "bytes": 13115
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\protocol-observer\\02-integration\\protocol_smoke.cjs",
+          "sha256": "d133f0c0e84a2f0170b8cac42f18d5a241d868b855e3b290617b7edd018e8408",
+          "bytes": 13115
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\diagnosis\\fabric03-protocol\\protocol_smoke.base-d133f0.cjs",
+          "sha256": "d133f0c0e84a2f0170b8cac42f18d5a241d868b855e3b290617b7edd018e8408",
+          "bytes": 13115
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-fabric-02-executed-protocol_disconnect_observer.cjs",
+      "sha256": "c4496beaa3d43c13ff946821aae5f2c62cd7623e09ed21300af66e5e58c68dbc",
+      "bytes": 2374,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-02\\executed-protocol_disconnect_observer.cjs",
+          "sha256": "c4496beaa3d43c13ff946821aae5f2c62cd7623e09ed21300af66e5e58c68dbc",
+          "bytes": 2374
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\forge-02\\executed-protocol_disconnect_observer.cjs",
+          "sha256": "c4496beaa3d43c13ff946821aae5f2c62cd7623e09ed21300af66e5e58c68dbc",
+          "bytes": 2374
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\neoforge-01\\executed-protocol_disconnect_observer.cjs",
+          "sha256": "c4496beaa3d43c13ff946821aae5f2c62cd7623e09ed21300af66e5e58c68dbc",
+          "bytes": 2374
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-03\\executed-protocol_disconnect_observer.cjs",
+          "sha256": "c4496beaa3d43c13ff946821aae5f2c62cd7623e09ed21300af66e5e58c68dbc",
+          "bytes": 2374
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\neoforge-02\\executed-protocol_disconnect_observer.cjs",
+          "sha256": "c4496beaa3d43c13ff946821aae5f2c62cd7623e09ed21300af66e5e58c68dbc",
+          "bytes": 2374
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\protocol-observer\\01\\protocol_disconnect_observer.cjs",
+          "sha256": "c4496beaa3d43c13ff946821aae5f2c62cd7623e09ed21300af66e5e58c68dbc",
+          "bytes": 2374
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\protocol-observer\\02-integration\\protocol_disconnect_observer.cjs",
+          "sha256": "c4496beaa3d43c13ff946821aae5f2c62cd7623e09ed21300af66e5e58c68dbc",
+          "bytes": 2374
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\diagnosis\\fabric03-protocol\\protocol_disconnect_observer.cjs",
+          "sha256": "c4496beaa3d43c13ff946821aae5f2c62cd7623e09ed21300af66e5e58c68dbc",
+          "bytes": 2374
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-fabric-02-config-qizhangverdict-guard.properties",
+      "sha256": "353450061d13525e045767b465abce09a9952151655d84c4d5d53f997c6b779f",
+      "bytes": 319,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-02\\config\\qizhangverdict\\guard.properties",
+          "sha256": "353450061d13525e045767b465abce09a9952151655d84c4d5d53f997c6b779f",
+          "bytes": 319
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-forge-02-smoke-result.json",
+      "sha256": "503fb14d829ed638aa403298756631b89bae2e9d40db99f7a33f0cf11cd94cdd",
+      "bytes": 16150,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\forge-02\\smoke-result.json",
+          "sha256": "503fb14d829ed638aa403298756631b89bae2e9d40db99f7a33f0cf11cd94cdd",
+          "bytes": 16150
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-forge-02-fixture.json",
+      "sha256": "5f1d6c5a598c88993545e630666fbce2b009d814b128ff3633096f018b31a76b",
+      "bytes": 1425,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\forge-02\\.qizhang-verdict-smoke.json",
+          "sha256": "5f1d6c5a598c88993545e630666fbce2b009d814b128ff3633096f018b31a76b",
+          "bytes": 1425
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-forge-02-batch-plan.json",
+      "sha256": "9396f9b1697f707b9bb7baef4ce55a46a26b1b57bd0e8e6756690ab56a99ebef",
+      "bytes": 899,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\forge-02\\batch-plan.json",
+          "sha256": "9396f9b1697f707b9bb7baef4ce55a46a26b1b57bd0e8e6756690ab56a99ebef",
+          "bytes": 899
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-forge-02-batch-run-result.json",
+      "sha256": "bf0cab8437205295a5f9ea79b619c05dd4f8bee9b51ec3dc1bca9bb28a1cccbf",
+      "bytes": 787,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\forge-02\\batch-run-result.json",
+          "sha256": "bf0cab8437205295a5f9ea79b619c05dd4f8bee9b51ec3dc1bca9bb28a1cccbf",
+          "bytes": 787
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-forge-02-batch-run.log",
+      "sha256": "47127933b0ea284d806a30006184f187e96ea32d8f684d71211fad2eac6f902f",
+      "bytes": 201,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\forge-02\\batch-run.log",
+          "sha256": "47127933b0ea284d806a30006184f187e96ea32d8f684d71211fad2eac6f902f",
+          "bytes": 201
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-forge-02-run-plan.json",
+      "sha256": "fa55738deb09cdbe4dc7c901e953980708d49fa0fd003d0506e25473931b8f4f",
+      "bytes": 694,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\forge-02\\run-plan.json",
+          "sha256": "fa55738deb09cdbe4dc7c901e953980708d49fa0fd003d0506e25473931b8f4f",
+          "bytes": 694
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-forge-02-install-result.json",
+      "sha256": "0b5aff24e19ff6403bf94af813f86580709cc240289ef1a913d17af0429e3854",
+      "bytes": 1149,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\forge-02\\install-result.json",
+          "sha256": "0b5aff24e19ff6403bf94af813f86580709cc240289ef1a913d17af0429e3854",
+          "bytes": 1149
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-forge-02-console.log",
+      "sha256": "a9f47549f54348f56ab1b52751748fd746daaf4789468403ac5afdbbac47c1a7",
+      "bytes": 38381,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\forge-02\\console.log",
+          "sha256": "a9f47549f54348f56ab1b52751748fd746daaf4789468403ac5afdbbac47c1a7",
+          "bytes": 38381
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-forge-02-protocol-console.log",
+      "sha256": "f0d90423d7e9fa1d676004724a9ca6077066ab7de2fc5533ab6b481590fb3f58",
+      "bytes": 4355,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\forge-02\\protocol-console.log",
+          "sha256": "f0d90423d7e9fa1d676004724a9ca6077066ab7de2fc5533ab6b481590fb3f58",
+          "bytes": 4355
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\neoforge-01\\protocol-console.log",
+          "sha256": "f0d90423d7e9fa1d676004724a9ca6077066ab7de2fc5533ab6b481590fb3f58",
+          "bytes": 4355
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\neoforge-02\\protocol-console.log",
+          "sha256": "f0d90423d7e9fa1d676004724a9ca6077066ab7de2fc5533ab6b481590fb3f58",
+          "bytes": 4355
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-forge-02-protocol-result.json",
+      "sha256": "2b35c313330e9ad48c44c750eace03c43256ae3f7eb21d9e45f8a1a95d69bb6a",
+      "bytes": 5273,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\forge-02\\protocol-result.json",
+          "sha256": "2b35c313330e9ad48c44c750eace03c43256ae3f7eb21d9e45f8a1a95d69bb6a",
+          "bytes": 5273
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\neoforge-01\\protocol-result.json",
+          "sha256": "2b35c313330e9ad48c44c750eace03c43256ae3f7eb21d9e45f8a1a95d69bb6a",
+          "bytes": 5273
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\neoforge-02\\protocol-result.json",
+          "sha256": "2b35c313330e9ad48c44c750eace03c43256ae3f7eb21d9e45f8a1a95d69bb6a",
+          "bytes": 5273
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-forge-02-protocol-disconnect-observations.json",
+      "sha256": "fa01ab61be8228f0c649359c424785611e19dc127beef7679a234088e07e8da2",
+      "bytes": 3917,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\forge-02\\protocol-disconnect-observations.json",
+          "sha256": "fa01ab61be8228f0c649359c424785611e19dc127beef7679a234088e07e8da2",
+          "bytes": 3917
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\neoforge-01\\protocol-disconnect-observations.json",
+          "sha256": "fa01ab61be8228f0c649359c424785611e19dc127beef7679a234088e07e8da2",
+          "bytes": 3917
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\neoforge-02\\protocol-disconnect-observations.json",
+          "sha256": "fa01ab61be8228f0c649359c424785611e19dc127beef7679a234088e07e8da2",
+          "bytes": 3917
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-forge-02-server.properties",
+      "sha256": "734cfd996e62f094c14d6d9532daa94e20968ec1de6b0267bf5920d6fc527094",
+      "bytes": 1551,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\forge-02\\server.properties",
+          "sha256": "734cfd996e62f094c14d6d9532daa94e20968ec1de6b0267bf5920d6fc527094",
+          "bytes": 1551
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-forge-02-commands.queue",
+      "sha256": "e2bb41cc6a8c7a3262864d7c57c0d7c3ab0df1fdc8933950c3afeb2c2c479a44",
+      "bytes": 564,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\forge-02\\commands.queue",
+          "sha256": "e2bb41cc6a8c7a3262864d7c57c0d7c3ab0df1fdc8933950c3afeb2c2c479a44",
+          "bytes": 564
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-forge-02-integration-receipt.json",
+      "sha256": "e247a48584c189d58ff69413d355f01260474c0af87ce15bb0767882c99b67f2",
+      "bytes": 153,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\forge-02\\integration-receipt.json",
+          "sha256": "e247a48584c189d58ff69413d355f01260474c0af87ce15bb0767882c99b67f2",
+          "bytes": 153
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-neoforge-01-smoke-result.json",
+      "sha256": "1b281224d5c0f362e133fe1a7cfa1bd45ec1b1aa618bcbf4df6e7cfc66ca76a0",
+      "bytes": 15440,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\neoforge-01\\smoke-result.json",
+          "sha256": "1b281224d5c0f362e133fe1a7cfa1bd45ec1b1aa618bcbf4df6e7cfc66ca76a0",
+          "bytes": 15440
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-neoforge-01-fixture.json",
+      "sha256": "c5ade386203419473bc1c803e16d4cbc7f68cce00d43630f4d10afe4962d7b9c",
+      "bytes": 1424,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\neoforge-01\\.qizhang-verdict-smoke.json",
+          "sha256": "c5ade386203419473bc1c803e16d4cbc7f68cce00d43630f4d10afe4962d7b9c",
+          "bytes": 1424
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-neoforge-01-batch-plan.json",
+      "sha256": "49baa742005615ebee9dc1451f9c1bc9bd0b8cd48d122e381e596317c847e5d6",
+      "bytes": 680,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\neoforge-01\\batch-plan.json",
+          "sha256": "49baa742005615ebee9dc1451f9c1bc9bd0b8cd48d122e381e596317c847e5d6",
+          "bytes": 680
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-neoforge-01-batch-run-result.json",
+      "sha256": "8fc4dce6d2512863292f46ae074988b27299d492bcdead282a792263f8278565",
+      "bytes": 799,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\neoforge-01\\batch-run-result.json",
+          "sha256": "8fc4dce6d2512863292f46ae074988b27299d492bcdead282a792263f8278565",
+          "bytes": 799
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-neoforge-01-batch-run.log",
+      "sha256": "bded8f1305fb8a0021e4a5cd77fb6f91118b5684d30fce2fcc45ef1c7c4bb4f9",
+      "bytes": 204,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\neoforge-01\\batch-run.log",
+          "sha256": "bded8f1305fb8a0021e4a5cd77fb6f91118b5684d30fce2fcc45ef1c7c4bb4f9",
+          "bytes": 204
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-neoforge-01-run-plan.json",
+      "sha256": "765dec5bd67dadca8a3cf8a664fafea88b8d79befd29177470e3462bcfc150cd",
+      "bytes": 700,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\neoforge-01\\run-plan.json",
+          "sha256": "765dec5bd67dadca8a3cf8a664fafea88b8d79befd29177470e3462bcfc150cd",
+          "bytes": 700
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-neoforge-01-install-result.json",
+      "sha256": "d34a05f11461205a59f93631f80c419820c8bda30372ff1b692d51da6e434751",
+      "bytes": 1160,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\neoforge-01\\install-result.json",
+          "sha256": "d34a05f11461205a59f93631f80c419820c8bda30372ff1b692d51da6e434751",
+          "bytes": 1160
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-neoforge-01-console.log",
+      "sha256": "1aae79c130350fe264b942cc28047511d2d78f5215aba7113b915ec5e682dcfc",
+      "bytes": 36895,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\neoforge-01\\console.log",
+          "sha256": "1aae79c130350fe264b942cc28047511d2d78f5215aba7113b915ec5e682dcfc",
+          "bytes": 36895
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-neoforge-01-server.properties",
+      "sha256": "ec7bb5335d04e4ba9cf848d9b09656ebf73c8747b93ea84a117e263f9ba63668",
+      "bytes": 1551,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\neoforge-01\\server.properties",
+          "sha256": "ec7bb5335d04e4ba9cf848d9b09656ebf73c8747b93ea84a117e263f9ba63668",
+          "bytes": 1551
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-neoforge-01-commands.queue",
+      "sha256": "fd7f1c6bfc6d50cf086e7b041e4eaf9745bcd46f1588f793b93118cbe6f1243e",
+      "bytes": 564,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\neoforge-01\\commands.queue",
+          "sha256": "fd7f1c6bfc6d50cf086e7b041e4eaf9745bcd46f1588f793b93118cbe6f1243e",
+          "bytes": 564
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-neoforge-01-integration-receipt.json",
+      "sha256": "36348385ffbc239e06d0a3f8436517b1c62e06b5045b6b2861506693d772516d",
+      "bytes": 156,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\neoforge-01\\integration-receipt.json",
+          "sha256": "36348385ffbc239e06d0a3f8436517b1c62e06b5045b6b2861506693d772516d",
+          "bytes": 156
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\neoforge-02\\integration-receipt.json",
+          "sha256": "36348385ffbc239e06d0a3f8436517b1c62e06b5045b6b2861506693d772516d",
+          "bytes": 156
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-fabric-03-smoke-result.json",
+      "sha256": "4470028c38934ea967f3d9878d37a5c010dfcad18f5dabedf08f414a4a238e21",
+      "bytes": 13417,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-03\\smoke-result.json",
+          "sha256": "4470028c38934ea967f3d9878d37a5c010dfcad18f5dabedf08f414a4a238e21",
+          "bytes": 13417
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-fabric-03-fixture.json",
+      "sha256": "8e849ddf85fc6dc3d26fc08a50bb8a6eb7cc67a3344965c97bef25e79e7b5a94",
+      "bytes": 1620,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-03\\.qizhang-verdict-smoke.json",
+          "sha256": "8e849ddf85fc6dc3d26fc08a50bb8a6eb7cc67a3344965c97bef25e79e7b5a94",
+          "bytes": 1620
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-fabric-03-batch-plan.json",
+      "sha256": "7f441dc313e9b0233501bcbb7fa125ec617f2a866652fa449c2d18bb8a9894a7",
+      "bytes": 674,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-03\\batch-plan.json",
+          "sha256": "7f441dc313e9b0233501bcbb7fa125ec617f2a866652fa449c2d18bb8a9894a7",
+          "bytes": 674
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-fabric-03-batch-run-result.json",
+      "sha256": "fc656a3d691a12cae2f658da23c1f35d0d8e86194a7e8f81c5c8b9c0cddc945f",
+      "bytes": 791,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-03\\batch-run-result.json",
+          "sha256": "fc656a3d691a12cae2f658da23c1f35d0d8e86194a7e8f81c5c8b9c0cddc945f",
+          "bytes": 791
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-fabric-03-batch-run.log",
+      "sha256": "c0a53298b9a3f28cc4dbc08ab2f590763dd9e19d9e757d44bc0b3ce6229b03ed",
+      "bytes": 202,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-03\\batch-run.log",
+          "sha256": "c0a53298b9a3f28cc4dbc08ab2f590763dd9e19d9e757d44bc0b3ce6229b03ed",
+          "bytes": 202
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-fabric-03-install-result.json",
+      "sha256": "633b9297394d5b8cc147681670ceabbda5338303223eab6b429c1a2c9d22cfbe",
+      "bytes": 1219,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-03\\install-result.json",
+          "sha256": "633b9297394d5b8cc147681670ceabbda5338303223eab6b429c1a2c9d22cfbe",
+          "bytes": 1219
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-fabric-03-console.log",
+      "sha256": "73e3ea9b5e7f303b6604b28475c785ec82bd6e0eb19a2fae77d6691ceaaf2f75",
+      "bytes": 79834,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-03\\console.log",
+          "sha256": "73e3ea9b5e7f303b6604b28475c785ec82bd6e0eb19a2fae77d6691ceaaf2f75",
+          "bytes": 79834
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-fabric-03-protocol-console.log",
+      "sha256": "a4af390b755ecc9ba01ec70f804aa6a7b1a946831fe61c09e4425088e100b1dc",
+      "bytes": 4120,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-03\\protocol-console.log",
+          "sha256": "a4af390b755ecc9ba01ec70f804aa6a7b1a946831fe61c09e4425088e100b1dc",
+          "bytes": 4120
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-fabric-03-protocol-result.json",
+      "sha256": "b7057d668ed54190a69c7249993e2116377dcc6c8dc9b943837e332d950606c9",
+      "bytes": 4980,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-03\\protocol-result.json",
+          "sha256": "b7057d668ed54190a69c7249993e2116377dcc6c8dc9b943837e332d950606c9",
+          "bytes": 4980
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-fabric-03-protocol-disconnect-observations.json",
+      "sha256": "5a547f9e56a064dcf6d92e249022e58c28597ffaa210beae1a3e10c93b077bf3",
+      "bytes": 3624,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-03\\protocol-disconnect-observations.json",
+          "sha256": "5a547f9e56a064dcf6d92e249022e58c28597ffaa210beae1a3e10c93b077bf3",
+          "bytes": 3624
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-fabric-03-protocol-metadata-trace.json",
+      "sha256": "f5273e8cda5b3abd3118182cf822e6b317f14519f24ff2d2a02f54efb60414da",
+      "bytes": 68521,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-03\\protocol-metadata-trace.json",
+          "sha256": "f5273e8cda5b3abd3118182cf822e6b317f14519f24ff2d2a02f54efb60414da",
+          "bytes": 68521
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-fabric-03-server.properties",
+      "sha256": "35ed11abf95599f2c94322c7694ccdd93c7fd59d0f08669e657f54018b706033",
+      "bytes": 1585,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-03\\server.properties",
+          "sha256": "35ed11abf95599f2c94322c7694ccdd93c7fd59d0f08669e657f54018b706033",
+          "bytes": 1585
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-fabric-03-commands.queue",
+      "sha256": "e512eec0e162a270988a58ee937994b75b397c1a3c452e1955dd2110bf22a4ec",
+      "bytes": 564,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-03\\commands.queue",
+          "sha256": "e512eec0e162a270988a58ee937994b75b397c1a3c452e1955dd2110bf22a4ec",
+          "bytes": 564
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-fabric-03-executed-protocol_smoke.cjs",
+      "sha256": "4180ca0fe087283f500aae1c26ca68354712db30c0774f238f0b758f6c409534",
+      "bytes": 17798,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-03\\executed-protocol_smoke.cjs",
+          "sha256": "4180ca0fe087283f500aae1c26ca68354712db30c0774f238f0b758f6c409534",
+          "bytes": 17798
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\neoforge-02\\executed-protocol_smoke.cjs",
+          "sha256": "4180ca0fe087283f500aae1c26ca68354712db30c0774f238f0b758f6c409534",
+          "bytes": 17798
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\diagnosis\\fabric03-protocol\\protocol_smoke.cjs",
+          "sha256": "4180ca0fe087283f500aae1c26ca68354712db30c0774f238f0b758f6c409534",
+          "bytes": 17798
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-neoforge-02-smoke-result.json",
+      "sha256": "a0c8c8873a99c21f276e3599b8db4574fbdec8eb18b1d401c0017142b1191da3",
+      "bytes": 15440,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\neoforge-02\\smoke-result.json",
+          "sha256": "a0c8c8873a99c21f276e3599b8db4574fbdec8eb18b1d401c0017142b1191da3",
+          "bytes": 15440
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-neoforge-02-fixture.json",
+      "sha256": "1f8e1206b9d712a20458c882a17dbc3436a607b7cffa48d230b68c3680fcc3a7",
+      "bytes": 1424,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\neoforge-02\\.qizhang-verdict-smoke.json",
+          "sha256": "1f8e1206b9d712a20458c882a17dbc3436a607b7cffa48d230b68c3680fcc3a7",
+          "bytes": 1424
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-neoforge-02-batch-plan.json",
+      "sha256": "c4109e697578eebfdc2c08e91e407e82dcc38107e80488148eedd8d72a6dfac4",
+      "bytes": 680,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\neoforge-02\\batch-plan.json",
+          "sha256": "c4109e697578eebfdc2c08e91e407e82dcc38107e80488148eedd8d72a6dfac4",
+          "bytes": 680
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-neoforge-02-batch-run-result.json",
+      "sha256": "dc1c70a4a35814cb9707b38f09f3b53c558bceaa0756482223ae9e6cdef6e898",
+      "bytes": 799,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\neoforge-02\\batch-run-result.json",
+          "sha256": "dc1c70a4a35814cb9707b38f09f3b53c558bceaa0756482223ae9e6cdef6e898",
+          "bytes": 799
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-neoforge-02-batch-run.log",
+      "sha256": "2f3ddfa716847297b1dafb8685ec6b37e83fd1fc9eb281c0d5af3cf99b1e9e5e",
+      "bytes": 204,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\neoforge-02\\batch-run.log",
+          "sha256": "2f3ddfa716847297b1dafb8685ec6b37e83fd1fc9eb281c0d5af3cf99b1e9e5e",
+          "bytes": 204
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-neoforge-02-run-plan.json",
+      "sha256": "6ae891b245d2f20ef1303bdaf660f9b71284388d67712f88e547b6aa79d3f00f",
+      "bytes": 700,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\neoforge-02\\run-plan.json",
+          "sha256": "6ae891b245d2f20ef1303bdaf660f9b71284388d67712f88e547b6aa79d3f00f",
+          "bytes": 700
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-neoforge-02-install-result.json",
+      "sha256": "98ca757029d9f3a55e82f99182c8a18e2b4c7bfe8eb880a24ac12e9a9d049871",
+      "bytes": 1160,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\neoforge-02\\install-result.json",
+          "sha256": "98ca757029d9f3a55e82f99182c8a18e2b4c7bfe8eb880a24ac12e9a9d049871",
+          "bytes": 1160
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-neoforge-02-console.log",
+      "sha256": "9b7e455a2af5866a81a79192839a40a0e67e783794f01b6a67cddc63c0b205bd",
+      "bytes": 36875,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\neoforge-02\\console.log",
+          "sha256": "9b7e455a2af5866a81a79192839a40a0e67e783794f01b6a67cddc63c0b205bd",
+          "bytes": 36875
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-neoforge-02-protocol-metadata-trace.json",
+      "sha256": "b4d06edaecaea11bed03691878c648dfe753efe384931697292de36bc362051f",
+      "bytes": 92087,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\neoforge-02\\protocol-metadata-trace.json",
+          "sha256": "b4d06edaecaea11bed03691878c648dfe753efe384931697292de36bc362051f",
+          "bytes": 92087
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-neoforge-02-server.properties",
+      "sha256": "e2d1d09f618f438ce4cf2c3432d67e9e3de93d9b9c41cb3efcea110ad4ac898b",
+      "bytes": 1551,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\neoforge-02\\server.properties",
+          "sha256": "e2d1d09f618f438ce4cf2c3432d67e9e3de93d9b9c41cb3efcea110ad4ac898b",
+          "bytes": 1551
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-neoforge-02-commands.queue",
+      "sha256": "01e9b524f33bb0e64b0c8a098f04968091e3b01aa4271446234173fb2cb9a6f1",
+      "bytes": 564,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\neoforge-02\\commands.queue",
+          "sha256": "01e9b524f33bb0e64b0c8a098f04968091e3b01aa4271446234173fb2cb9a6f1",
+          "bytes": 564
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-forge1192-registration-diagnosis.json",
+      "sha256": "7767130801da993c243f6dfcfb5efe77496fec1c3196d93ebb4777c96a844243",
+      "bytes": 36927,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\diagnosis.json",
+          "sha256": "7767130801da993c243f6dfcfb5efe77496fec1c3196d93ebb4777c96a844243",
+          "bytes": 36927
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-qa-observer01-result.json",
+      "sha256": "6a13d41d62d2c7a9791cbe59a18ee2b2ef15a04f6e2f1e052c7bbd5691059918",
+      "bytes": 3272,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\protocol-observer\\01\\result.json",
+          "sha256": "6a13d41d62d2c7a9791cbe59a18ee2b2ef15a04f6e2f1e052c7bbd5691059918",
+          "bytes": 3272
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-qa-observer01-test_protocol_disconnect_observer.cjs",
+      "sha256": "098f44c6fc8b76dd41142eab52cdbf412d038cf4282b546832fa7dcdbb68ad90",
+      "bytes": 8969,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\protocol-observer\\01\\test_protocol_disconnect_observer.cjs",
+          "sha256": "098f44c6fc8b76dd41142eab52cdbf412d038cf4282b546832fa7dcdbb68ad90",
+          "bytes": 8969
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\protocol-observer\\02-integration\\test_protocol_disconnect_observer.cjs",
+          "sha256": "098f44c6fc8b76dd41142eab52cdbf412d038cf4282b546832fa7dcdbb68ad90",
+          "bytes": 8969
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-qa-observer02-result.json",
+      "sha256": "dc70296b788e105ff964b4930baf113f0854421cc99603f0b9c27cb578787078",
+      "bytes": 1630,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\protocol-observer\\02-integration\\result.json",
+          "sha256": "dc70296b788e105ff964b4930baf113f0854421cc99603f0b9c27cb578787078",
+          "bytes": 1630
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-qa-observer02-protocol_disconnect_observer.cjs.syntax.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\protocol-observer\\02-integration\\protocol_disconnect_observer.cjs.syntax.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\protocol-observer\\02-integration\\test_protocol_disconnect_observer.cjs.syntax.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\protocol-observer\\02-integration\\protocol_smoke.cjs.syntax.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-qa-fabric03-trace-trace-selftest.json",
+      "sha256": "43659907699914087bc12f6f537cd93a5205976a9de3b75432b59ad7eb585dcd",
+      "bytes": 1688,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\diagnosis\\fabric03-protocol\\trace-selftest.json",
+          "sha256": "43659907699914087bc12f6f537cd93a5205976a9de3b75432b59ad7eb585dcd",
+          "bytes": 1688
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-qa-fabric03-trace-test-trace.cjs",
+      "sha256": "e19fe575d10f9f18edb13b311a549113e4a7b8d82393c0ab7bdde678c973fcb7",
+      "bytes": 5700,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\diagnosis\\fabric03-protocol\\test-trace.cjs",
+          "sha256": "e19fe575d10f9f18edb13b311a549113e4a7b8d82393c0ab7bdde678c973fcb7",
+          "bytes": 5700
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-qa-fabric03-trace-candidate.diff",
+      "sha256": "ccb049dcd5bf012ec91c4cce2e569adaa6898307ace5f1f5fc994ae1aa74d70a",
+      "bytes": 6172,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\diagnosis\\fabric03-protocol\\candidate.diff",
+          "sha256": "ccb049dcd5bf012ec91c4cce2e569adaa6898307ace5f1f5fc994ae1aa74d70a",
+          "bytes": 6172
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-qa-fabric03-trace-trace-function.cjs.txt",
+      "sha256": "627c39c701bd9d5b2528798da583313a44b1ba19832d4b0fc98d981d3955b255",
+      "bytes": 4216,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\diagnosis\\fabric03-protocol\\trace-function.cjs.txt",
+          "sha256": "627c39c701bd9d5b2528798da583313a44b1ba19832d4b0fc98d981d3955b255",
+          "bytes": 4216
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-qa-fabric03-trace-preparation.json",
+      "sha256": "9d69db288553c09d02c548ba696f2b9fbabbba04c665c28ad85de1a02db611c3",
+      "bytes": 1272,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\diagnosis\\fabric03-protocol\\preparation.json",
+          "sha256": "9d69db288553c09d02c548ba696f2b9fbabbba04c665c28ad85de1a02db611c3",
+          "bytes": 1272
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-1.20.4-forge-01-prepared-only.json",
+      "sha256": "fa9641feeae940baa0e55199547fda59f01323f6c35c19ee05b39014fe9f8606",
+      "bytes": 1171,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\forge-01\\.qizhang-verdict-smoke.json",
+          "sha256": "fa9641feeae940baa0e55199547fda59f01323f6c35c19ee05b39014fe9f8606",
+          "bytes": 1171
+        }
+      ]
+    },
+    {
+      "file": "evidence/next-platform-server-final-artifact-pins.json",
+      "sha256": "a9f9d4f536f29fe61b0c6935a6d0af6344d783ac482c1b7b1c846b60bb117575",
+      "bytes": 445,
+      "originalBytes": true,
+      "sources": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\server-final-artifacts.json",
+          "sha256": "a9f9d4f536f29fe61b0c6935a6d0af6344d783ac482c1b7b1c846b60bb117575",
+          "bytes": 445
+        }
+      ]
+    }
+  ],
+  "evidenceFileCount": 128,
+  "evidenceBytes": 1003271,
+  "cacheOnlyExcludedLargeLogs": [
+    {
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\fabric-01\\install-console.log",
+      "sha256": "410e87f99d17a55e0834ac68fcfa808147bb9a1bbcdcc6746a6d9800c877ead8",
+      "bytes": 519,
+      "reason": "Verbose successful installer log retained in cache; public install-result contains exit/hash/command. Game runtime logs and all actual protocol failures are included."
+    },
+    {
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\forge-01\\install-console.log",
+      "sha256": "405d90694e71f49e8a3ac146ada8daf392112b7e7a534d2a4b15463f649a5221",
+      "bytes": 1071071,
+      "reason": "Verbose successful installer log retained in cache; public install-result contains exit/hash/command. Game runtime logs and all actual protocol failures are included."
+    },
+    {
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\forge-02\\install-console.log",
+      "sha256": "c582166bf2d5634c83386daf4e127cb1ff5dbe973cfa6ebc38b5f3a164b85cf0",
+      "bytes": 1071068,
+      "reason": "Verbose successful installer log retained in cache; public install-result contains exit/hash/command. Game runtime logs and all actual protocol failures are included."
+    },
+    {
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-01\\install-console.log",
+      "sha256": "5d49edf6f9a54082f9aba93695919db649db6d2e115f2ad505a2896a799e8e0f",
+      "bytes": 519,
+      "reason": "Verbose successful installer log retained in cache; public install-result contains exit/hash/command. Game runtime logs and all actual protocol failures are included."
+    },
+    {
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-02\\install-console.log",
+      "sha256": "5d49edf6f9a54082f9aba93695919db649db6d2e115f2ad505a2896a799e8e0f",
+      "bytes": 519,
+      "reason": "Verbose successful installer log retained in cache; public install-result contains exit/hash/command. Game runtime logs and all actual protocol failures are included."
+    },
+    {
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\forge-02\\install-console.log",
+      "sha256": "adb0396dc0861ba8ccf93f71115f775f6d444c9a648eecc18a555290b47d95b4",
+      "bytes": 2021382,
+      "reason": "Verbose successful installer log retained in cache; public install-result contains exit/hash/command. Game runtime logs and all actual protocol failures are included."
+    },
+    {
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\neoforge-01\\install-console.log",
+      "sha256": "ba47bbe3b08cd3bda68bc2eac8e267e9ae8dc5df32e591670936a3148e187ea1",
+      "bytes": 494446,
+      "reason": "Verbose successful installer log retained in cache; public install-result contains exit/hash/command. Game runtime logs and all actual protocol failures are included."
+    },
+    {
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\fabric-03\\install-console.log",
+      "sha256": "5d49edf6f9a54082f9aba93695919db649db6d2e115f2ad505a2896a799e8e0f",
+      "bytes": 519,
+      "reason": "Verbose successful installer log retained in cache; public install-result contains exit/hash/command. Game runtime logs and all actual protocol failures are included."
+    },
+    {
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\neoforge-02\\install-console.log",
+      "sha256": "78f8b550f6c94a37827e6ff1984b600e0e5f3ae5f1dfabaad999c78a0203192e",
+      "bytes": 494475,
+      "reason": "Verbose successful installer log retained in cache; public install-result contains exit/hash/command. Game runtime logs and all actual protocol failures are included."
+    }
+  ],
+  "collector": {
+    "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\collect_server_evidence.py",
+    "sha256": "820a363860e348b3721ea574d68827f5880ad48e3d7c8bee7f62049b11848148",
+    "bytes": 22815
+  },
+  "qaSupportingEvidence": [
+    {
+      "name": "observer-memory-tests",
+      "cases": 11,
+      "scope": "In-memory official dependency serializer/deserializer tests; no sockets, Java, Minecraft or original-run packet replay.",
+      "originalFabricFailureRootCauseConfirmed": false,
+      "raw": {
+        "result.json": "evidence/next-platform-server-qa-observer01-result.json",
+        "protocol_disconnect_observer.cjs": "evidence/next-platform-server-1.20.4-fabric-02-executed-protocol_disconnect_observer.cjs",
+        "test_protocol_disconnect_observer.cjs": "evidence/next-platform-server-qa-observer01-test_protocol_disconnect_observer.cjs"
+      }
+    },
+    {
+      "name": "observer-integration-syntax",
+      "checks": 3,
+      "scope": "Node syntax checks and exact executed-script snapshots after observer integration; no network or Minecraft runtime test.",
+      "runtimeProof": false,
+      "raw": {
+        "result": "evidence/next-platform-server-qa-observer02-result.json",
+        "protocol_disconnect_observer.cjs": "evidence/next-platform-server-1.20.4-fabric-02-executed-protocol_disconnect_observer.cjs",
+        "protocol_disconnect_observer.cjs.syntax.log": "evidence/next-platform-server-qa-observer02-protocol_disconnect_observer.cjs.syntax.log",
+        "test_protocol_disconnect_observer.cjs": "evidence/next-platform-server-qa-observer01-test_protocol_disconnect_observer.cjs",
+        "test_protocol_disconnect_observer.cjs.syntax.log": "evidence/next-platform-server-qa-observer02-protocol_disconnect_observer.cjs.syntax.log",
+        "protocol_smoke.cjs": "evidence/next-platform-server-1.20.4-fabric-02-executed-protocol_smoke.cjs",
+        "protocol_smoke.cjs.syntax.log": "evidence/next-platform-server-qa-observer02-protocol_disconnect_observer.cjs.syntax.log"
+      }
+    },
+    {
+      "name": "trace-memory-tests",
+      "cases": 9,
+      "scope": "In-memory actual minecraft-protocol1.66.2 serializer/parser trace-only tests; not a Minecraft/network replay.",
+      "originalFabricFailureRootCauseConfirmed": false,
+      "raw": {
+        "trace-selftest.json": "evidence/next-platform-server-qa-fabric03-trace-trace-selftest.json",
+        "test-trace.cjs": "evidence/next-platform-server-qa-fabric03-trace-test-trace.cjs",
+        "candidate.diff": "evidence/next-platform-server-qa-fabric03-trace-candidate.diff",
+        "protocol_smoke.cjs": "evidence/next-platform-server-1.20.4-fabric-03-executed-protocol_smoke.cjs",
+        "protocol_smoke.base-d133f0.cjs": "evidence/next-platform-server-1.20.4-fabric-02-executed-protocol_smoke.cjs",
+        "protocol_disconnect_observer.cjs": "evidence/next-platform-server-1.20.4-fabric-02-executed-protocol_disconnect_observer.cjs",
+        "trace-function.cjs.txt": "evidence/next-platform-server-qa-fabric03-trace-trace-function.cjs.txt",
+        "preparation.json": "evidence/next-platform-server-qa-fabric03-trace-preparation.json"
+      }
+    }
+  ],
+  "historicalProfilesWithAnyFullProtocolPass": [
+    "fabric-1.19.2",
+    "fabric-1.20.4",
+    "forge-1.19.2",
+    "forge-1.20.4",
+    "neoforge-1.20.4"
+  ],
+  "finalArtifactPins": {
+    "fabric-1.19.2": "305560f297b785acc3047638415138e763d7f1d73947b67e2fb627d587fe2d9d",
+    "forge-1.19.2": "2ed923a874817d9176c7c5e4499fbad91273e755ce23f358e5e0462ff2a966da",
+    "fabric-1.20.4": "b8d1d1ad6e2afd41acd15aeb2fb93221b9b5a8803da5e8be0c2da86805c571e4",
+    "forge-1.20.4": "9e8ad322c83469b686671bda0e6d86207cd8a2e838085dcf53b0c65253a7b9cf",
+    "neoforge-1.20.4": "1552dabe78c522daf615922a0644e357884f6909a8925f94c6a8b16618f5132b"
+  },
+  "finalArtifactsAllVerified": true,
+  "finalSelectedAttempts": [
+    "1.19.2/fabric-01",
+    "1.19.2/forge-02",
+    "1.20.4/fabric-03",
+    "1.20.4/forge-02",
+    "1.20.4/neoforge-02"
+  ],
+  "finalSelectedProtocolCaseGroups": 130,
+  "historicalAdditionalPassingAttempts": [
+    "1.20.4/neoforge-01"
+  ],
+  "historicalAdditionalPassingCaseGroups": 26,
+  "finalArtifactPinsSource": {
+    "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\server-final-artifacts.json",
+    "sha256": "a9f9d4f536f29fe61b0c6935a6d0af6344d783ac482c1b7b1c846b60bb117575",
+    "bytes": 445
+  },
+  "finalArtifactPinsFile": "evidence/next-platform-server-final-artifact-pins.json",
+  "publicationBoundary": "Historical per-profile passes do not verify replacement artifacts. Publication requires explicit final five-profile SHA256 pins and a successful matching run for each digest. Old NeoForge c3e742 server pass predates the actual-client timeout and cannot verify its replacement.",
+  "publishedAtUtc": "2026-09-25T13:39:48.806470+00:00"
+}

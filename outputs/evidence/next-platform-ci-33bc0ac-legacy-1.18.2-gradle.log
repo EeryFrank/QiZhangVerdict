@@ -1,0 +1,68 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+
+> Configure project :
+Architect Plugin: 3.4.164
+Architectury Loom: 1.11.456
+This version of Architectury Loom is in beta! Please report any issues you encounter: https://github.com/architectury/architectury-loom/issues
+
+> Configure project :fabric
+:remapped 47 mods (intermediary -> named) in 1.342 s
+
+> Task :fabric:adaptSharedSources
+> Task :fabric:compileJava FROM-CACHE
+> Task :fabric:processResources
+> Task :fabric:classes
+> Task :fabric:jar
+> Task :fabric:adaptSharedTests
+> Task :fabric:compileTestJava FROM-CACHE
+> Task :fabric:processIncludeJars
+> Task :fabric:sourcesJar
+> Task :fabric:remapJar
+> Task :fabric:processTestResources NO-SOURCE
+> Task :fabric:testClasses UP-TO-DATE
+
+> Task :fabric:commandParserSmoke
+PASS: production command tree accepts unquoted device digests and legacy rule IDs, glob spaces and ban reasons; rejects non-admin access and invalid pages
+
+> Task :fabric:test FROM-CACHE
+> Task :fabric:validateAccessWidener NO-SOURCE
+> Task :fabric:check
+> Task :forge:adaptSharedSources
+> Task :fabric:remapSourcesJar
+> Task :fabric:assemble
+> Task :fabric:build
+> Task :forge:compileJava FROM-CACHE
+> Task :forge:processResources
+> Task :forge:classes
+> Task :forge:jar
+> Task :forge:adaptSharedTests
+> Task :forge:compileTestJava FROM-CACHE
+> Task :forge:processIncludeJars
+> Task :forge:sourcesJar
+> Task :forge:remapJar
+> Task :forge:processTestResources NO-SOURCE
+> Task :forge:testClasses UP-TO-DATE
+
+> Task :forge:commandParserSmoke
+2026-09-25 12:49:04,009 main WARN Advanced terminal features are not available in this environment
+PASS: production command tree accepts unquoted device digests and legacy rule IDs, glob spaces and ban reasons; rejects non-admin access and invalid pages
+
+> Task :forge:test FROM-CACHE
+> Task :forge:validateAccessWidener NO-SOURCE
+> Task :forge:check
+> Task :forge:remapSourcesJar
+> Task :forge:assemble
+> Task :forge:build
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run-1790340526229.json
+
+[Incubating] Problems report is available at: file:///home/runner/work/QiZhangVerdict/QiZhangVerdict/platforms/1.18.2/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.14.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 22s
+24 actionable tasks: 18 executed, 6 from cache

@@ -2,6 +2,14 @@
 
 插件标识 **QiZhangVerdict**，模组 ID `qizhangverdict`，管理命令 `/qzverdict`。本项目提供 IP/账号/设备准入、可管理的黑白名单、客户端协作检查和设备关联封禁。行为预测与矿物混淆使用独立安装、固定版本的开源组件，具体见 [集成安装](integrations/README.md)。
 
+## 测试预览 0.3.0-dev-preview.1
+
+18 个安装包及对应源码：[GitHub](https://github.com/EeryFrank/QiZhangVerdict/releases/tag/v0.3.0-dev-preview.1) · [GitLab](https://gitlab.com/EeryFrank/QiZhangVerdict/-/releases/v0.3.0-dev-preview.1)。继续使用 **GPL-3.0-only**。
+
+本预览新增 1.19.2 Fabric / Forge、1.20.4 Fabric / Forge / NeoForge，并更新 Bukkit 登录重载修复。旧 12 个模组保留 `0.2.0-test.1` 原字节，新 Bukkit 为 `0.2.1-dev`，五个新模组为 `0.3.0-dev`；合集版本与组件版本分别记录。按平台选择安装包，见[本预览指南](docs/preview-0.3.0-dev-preview.1.md)，不要把全部 JAR 一起安装。
+
+五个新模组分别通过成品内核心检查、各 26 项连接检查及严格默认配置下的真实客户端验证。新 Bukkit 通过 97 项核心检查、两版共 52 项连接检查与受控登录重载回归。NeoForge 初次挑战接收问题已修复并用新成品重测。旧 12 个模组沿用相同散列的历史验证；失败尝试与测试工具告警保留在[本预览汇总](outputs/validation-0.3.0-dev-preview.1.json)。这些结果不代表所有小版本、整合包或作弊类型均已验证。
+
 ## 测试版 0.2.0-test.1
 
 公开源码及 13 个安装包：[GitHub](https://github.com/EeryFrank/QiZhangVerdict/releases/tag/v0.2.0-test.1) · [GitLab](https://gitlab.com/EeryFrank/QiZhangVerdict/-/releases/v0.2.0-test.1)。原创代码使用 **GPL-3.0-only**，附完整许可证、对应源码 ZIP 和 SHA256 校验文件。
@@ -16,7 +24,7 @@
 
 历史版本保持原字节和原验证范围：[0.1.1](docs/validation-0.1.1.md)、[preview.1](docs/preview-0.2.0-dev-preview.1.md)、[preview.2](docs/preview-0.2.0-dev-preview.2.md)。
 
-开发分支另有尚未发布的 [1.19.2](docs/adapter-1.19.2.md) 和 [1.20.4](docs/adapter-1.20.4.md) 适配候选，已完成构建及成品内核心回归，专服和客户端验收分开记录。Bukkit `0.2.1-dev` 修复登录期间重载规则可能导致旧挑战覆盖新挑战的问题，已完成[真实服务器对比验证](docs/bukkit-challenge-race.md)。这些开发结果不改变上方已发布安装包的版本、字节和验证范围。
+[1.19.2](docs/adapter-1.19.2.md)、[1.20.4](docs/adapter-1.20.4.md) 的初始构建记录和 [Bukkit 竞态对照](docs/bukkit-challenge-race.md)保留原验证范围。它们与上方新预览的最终成品记录分别列出，不改变 `0.2.0-test.1` 安装包的版本、字节和历史结论。
 
 ## 默认登录规则
 
@@ -103,6 +111,6 @@ sanctions.on-deny=BAN
 
 构建路径及工具链见[CI 说明](docs/ci.md)；1.8.9 / 1.12.2 使用独立旧版 Gradle 和 JDK 8，其余版本各自使用固定工具链。缓存放 `E:\CodexTemp`，成品在对应模块的 `build/libs/`。
 
-本版使用 `scripts/package_preview.py` 的显式清单打包流程。先提交审阅后的源码、报告与 `outputs/release-manifest-0.2.0-test.1.json`，再以完整提交 SHA 执行 `verify` 和 `package`；产物输出 `outputs/`。打包器核对每个 JAR 的原始散列、GPL/NOTICE、固定 Git 源码与证据，拒绝覆盖既有发布目录。`scripts/package_release.py` 保留历史 0.1.1 流程，不用于本版 13 包发行。
+0.3.0-dev-preview.1 的 18 包预览版使用 `scripts/package_preview.py` 的显式清单打包流程。先提交审阅后的源码、报告与 `outputs/preview-manifest-0.3.0-dev-preview.1.json`，再以完整提交 SHA 执行 `verify` 和 `package`；产物输出 `outputs/`。打包器核对每个 JAR 的原始散列、GPL/NOTICE、固定 Git 源码与证据，拒绝覆盖既有发布目录。历史 0.2.0-test.1 的 13 包发行使用 `outputs/release-manifest-0.2.0-test.1.json`；`scripts/package_release.py` 仅保留历史 0.1.1 流程。
 
 当前原始实现按 **GPL-3.0-only** 提供，全文见 [LICENSE](LICENSE)；独立第三方组件保留各自许可证与来源，本项目 JAR 未打包 Grim 或 AntiXray 的实现。

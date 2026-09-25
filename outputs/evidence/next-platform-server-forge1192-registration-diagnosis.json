@@ -1,0 +1,981 @@
+{
+  "schemaVersion": 1,
+  "generatedUtc": "2026-09-25T12:47:00.595596+00:00",
+  "mode": "Read-only source/log diagnosis; Python file inspection only. No Java, Gradle, Minecraft, networking test or product/QA mutation performed by this audit.",
+  "classification": "TCP test registration-format incompatibility with stock Forge 43/45; not established product admission failure. Runtime confirmation after the NUL-only QA change remains separate.",
+  "conclusions": [
+    {
+      "id": "REGISTER_NUL_REQUIRED",
+      "evidence": "Both official sources parse only NUL-delimited segments (65-79) and do not append the trailing unterminated segment. Their writer emits NUL after every channel (52-62). The executed bot at line 46 sent the sole channel with no NUL.",
+      "impact": "remoteLocations remains empty; isRemotePresent false prevents transport send. Waiting longer cannot make those same registration bytes valid."
+    },
+    {
+      "id": "NO_FML_ONLY_GATE",
+      "evidence": "NetworkInstance.isRemotePresent lines 96-101 accepts either FML connection channels OR minecraft:register remoteLocations.",
+      "impact": "Do not bypass/force isRemotePresent, remove companion/device requirements, or change timeout to remedy the format."
+    },
+    {
+      "id": "TIMING_SECONDARY",
+      "evidence": "Executed helper leaves connection loop when joined becomes true (56) and waits only 1200ms (57); product retries send once per second (MinecraftGuard 95-109). The failed client joined at 21:40:26 and disconnected at 21:40:27.",
+      "impact": "The failed attempt did not exercise the full 4-second QA deadline. Fixed 1200ms has scheduling sensitivity; assess challenge reception within unchanged server deadline if the minimal NUL rerun is still timing-sensitive."
+    }
+  ],
+  "sources": [
+    {
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\forge-1.19.2-43.5.2-sources.jar",
+      "sha256": "30435d534a4d66ddfdf056f6e0d2e48cb548fd447914f50f2306d03e4ecb81fe",
+      "bytes": 1560873,
+      "version": "1.19.2-43.5.2",
+      "officialUrl": "https://maven.minecraftforge.net/net/minecraftforge/forge/1.19.2-43.5.2/forge-1.19.2-43.5.2-sources.jar",
+      "entries": [
+        {
+          "entry": "net/minecraftforge/network/MCRegisterPacketHandler.java",
+          "sha256": "b75b9f79337d045776ad322c69f55ce97a3cd007209c9c87955eed51ffec3302",
+          "excerpts": [
+            {
+              "lineStart": 37,
+              "lineEnd": 49,
+              "lines": [
+                {
+                  "line": 37,
+                  "text": "        public void updateFrom(final Supplier<NetworkEvent.Context> source, FriendlyByteBuf buffer, final NetworkEvent.RegistrationChangeType changeType) {"
+                },
+                {
+                  "line": 38,
+                  "text": "            byte[] data = new byte[Math.max(buffer.readableBytes(), 0)];"
+                },
+                {
+                  "line": 39,
+                  "text": "            buffer.readBytes(data);"
+                },
+                {
+                  "line": 40,
+                  "text": "            Set<ResourceLocation> oldLocations = this.locations;"
+                },
+                {
+                  "line": 41,
+                  "text": "            this.locations = bytesToResLocation(data);"
+                },
+                {
+                  "line": 42,
+                  "text": "            this.remoteLocations = Set.copyOf(this.locations);"
+                },
+                {
+                  "line": 43,
+                  "text": "            // ensure all locations receive updates, old and new."
+                },
+                {
+                  "line": 44,
+                  "text": "            oldLocations.addAll(this.locations);"
+                },
+                {
+                  "line": 45,
+                  "text": "            oldLocations.stream()"
+                },
+                {
+                  "line": 46,
+                  "text": "                    .map(NetworkRegistry::findTarget)"
+                },
+                {
+                  "line": 47,
+                  "text": "                    .filter(Optional::isPresent)"
+                },
+                {
+                  "line": 48,
+                  "text": "                    .map(Optional::get)"
+                },
+                {
+                  "line": 49,
+                  "text": "                    .forEach(t->t.dispatchEvent(new NetworkEvent.ChannelRegistrationChangeEvent(source, changeType)));"
+                }
+              ]
+            },
+            {
+              "lineStart": 52,
+              "lineEnd": 80,
+              "lines": [
+                {
+                  "line": 52,
+                  "text": "        byte[] toByteArray() {"
+                },
+                {
+                  "line": 53,
+                  "text": "            ByteArrayOutputStream bos = new ByteArrayOutputStream();"
+                },
+                {
+                  "line": 54,
+                  "text": "            for (ResourceLocation rl : locations) {"
+                },
+                {
+                  "line": 55,
+                  "text": "                try {"
+                },
+                {
+                  "line": 56,
+                  "text": "                    bos.write(rl.toString().getBytes(StandardCharsets.UTF_8));"
+                },
+                {
+                  "line": 57,
+                  "text": "                    bos.write(0);"
+                },
+                {
+                  "line": 58,
+                  "text": "                } catch (IOException e) {"
+                },
+                {
+                  "line": 59,
+                  "text": "                    // fake IOE"
+                },
+                {
+                  "line": 60,
+                  "text": "                }"
+                },
+                {
+                  "line": 61,
+                  "text": "            }"
+                },
+                {
+                  "line": 62,
+                  "text": "            return bos.toByteArray();"
+                },
+                {
+                  "line": 63,
+                  "text": "        }"
+                },
+                {
+                  "line": 64,
+                  "text": ""
+                },
+                {
+                  "line": 65,
+                  "text": "        private Set<ResourceLocation> bytesToResLocation(byte[] all) {"
+                },
+                {
+                  "line": 66,
+                  "text": "            HashSet<ResourceLocation> rl = new HashSet<>();"
+                },
+                {
+                  "line": 67,
+                  "text": "            int last = 0;"
+                },
+                {
+                  "line": 68,
+                  "text": "            for (int cur = 0; cur < all.length; cur++) {"
+                },
+                {
+                  "line": 69,
+                  "text": "                if (all[cur] == '\\0') {"
+                },
+                {
+                  "line": 70,
+                  "text": "                    String s = new String(all, last, cur - last, StandardCharsets.UTF_8);"
+                },
+                {
+                  "line": 71,
+                  "text": "                    try {"
+                },
+                {
+                  "line": 72,
+                  "text": "                        rl.add(new ResourceLocation(s));"
+                },
+                {
+                  "line": 73,
+                  "text": "                    } catch (ResourceLocationException ex) {"
+                },
+                {
+                  "line": 74,
+                  "text": "                        LOGGER.warn(\"Invalid channel name received: {}. Ignoring\", s);"
+                },
+                {
+                  "line": 75,
+                  "text": "                    }"
+                },
+                {
+                  "line": 76,
+                  "text": "                    last = cur + 1;"
+                },
+                {
+                  "line": 77,
+                  "text": "                }"
+                },
+                {
+                  "line": 78,
+                  "text": "            }"
+                },
+                {
+                  "line": 79,
+                  "text": "            return rl;"
+                },
+                {
+                  "line": 80,
+                  "text": "        }"
+                }
+              ]
+            },
+            {
+              "lineStart": 95,
+              "lineEnd": 99,
+              "lines": [
+                {
+                  "line": 95,
+                  "text": "    void registerListener(NetworkEvent evt) {"
+                },
+                {
+                  "line": 96,
+                  "text": "        final ChannelList channelList = getFrom(evt);"
+                },
+                {
+                  "line": 97,
+                  "text": "        channelList.updateFrom(evt.getSource(), evt.getPayload(), NetworkEvent.RegistrationChangeType.REGISTER);"
+                },
+                {
+                  "line": 98,
+                  "text": "        evt.getSource().get().setPacketHandled(true);"
+                },
+                {
+                  "line": 99,
+                  "text": "    }"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "entry": "net/minecraftforge/network/NetworkInstance.java",
+          "sha256": "22a1601f3790a9b2bb9a56a8c8c45bd66345bdc13b1a25a15614e7ff5e81562f",
+          "excerpts": [
+            {
+              "lineStart": 96,
+              "lineEnd": 102,
+              "lines": [
+                {
+                  "line": 96,
+                  "text": "    public boolean isRemotePresent(Connection manager) {"
+                },
+                {
+                  "line": 97,
+                  "text": "        ConnectionData connectionData = NetworkHooks.getConnectionData(manager);"
+                },
+                {
+                  "line": 98,
+                  "text": "        MCRegisterPacketHandler.ChannelList channelList = NetworkHooks.getChannelList(manager);"
+                },
+                {
+                  "line": 99,
+                  "text": "        return (connectionData != null && connectionData.getChannels().containsKey(channelName))"
+                },
+                {
+                  "line": 100,
+                  "text": "                // if it's not in the fml connection data, let's check if it's sent by another modloader."
+                },
+                {
+                  "line": 101,
+                  "text": "                || (channelList != null && channelList.getRemoteLocations().contains(channelName));"
+                },
+                {
+                  "line": 102,
+                  "text": "    }"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "entry": "net/minecraftforge/network/event/EventNetworkChannel.java",
+          "sha256": "f0ad34052451845d95e3f808ee003082d0184c3432aff324478d6c7a8c690170",
+          "excerpts": [
+            {
+              "lineStart": 52,
+              "lineEnd": 54,
+              "lines": [
+                {
+                  "line": 52,
+                  "text": "    public boolean isRemotePresent(Connection manager) {"
+                },
+                {
+                  "line": 53,
+                  "text": "        return instance.isRemotePresent(manager);"
+                },
+                {
+                  "line": 54,
+                  "text": "    }"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\downloads\\forge-1.19.4-45.4.5-sources.jar",
+      "sha256": "d564d73e44eac6060a455e28965e1330e6d77dd7416d6e3188edbe50cdf47192",
+      "bytes": 1597255,
+      "version": "1.19.4-45.4.5",
+      "officialUrl": "https://maven.minecraftforge.net/net/minecraftforge/forge/1.19.4-45.4.5/forge-1.19.4-45.4.5-sources.jar",
+      "entries": [
+        {
+          "entry": "net/minecraftforge/network/MCRegisterPacketHandler.java",
+          "sha256": "b75b9f79337d045776ad322c69f55ce97a3cd007209c9c87955eed51ffec3302",
+          "excerpts": [
+            {
+              "lineStart": 37,
+              "lineEnd": 49,
+              "lines": [
+                {
+                  "line": 37,
+                  "text": "        public void updateFrom(final Supplier<NetworkEvent.Context> source, FriendlyByteBuf buffer, final NetworkEvent.RegistrationChangeType changeType) {"
+                },
+                {
+                  "line": 38,
+                  "text": "            byte[] data = new byte[Math.max(buffer.readableBytes(), 0)];"
+                },
+                {
+                  "line": 39,
+                  "text": "            buffer.readBytes(data);"
+                },
+                {
+                  "line": 40,
+                  "text": "            Set<ResourceLocation> oldLocations = this.locations;"
+                },
+                {
+                  "line": 41,
+                  "text": "            this.locations = bytesToResLocation(data);"
+                },
+                {
+                  "line": 42,
+                  "text": "            this.remoteLocations = Set.copyOf(this.locations);"
+                },
+                {
+                  "line": 43,
+                  "text": "            // ensure all locations receive updates, old and new."
+                },
+                {
+                  "line": 44,
+                  "text": "            oldLocations.addAll(this.locations);"
+                },
+                {
+                  "line": 45,
+                  "text": "            oldLocations.stream()"
+                },
+                {
+                  "line": 46,
+                  "text": "                    .map(NetworkRegistry::findTarget)"
+                },
+                {
+                  "line": 47,
+                  "text": "                    .filter(Optional::isPresent)"
+                },
+                {
+                  "line": 48,
+                  "text": "                    .map(Optional::get)"
+                },
+                {
+                  "line": 49,
+                  "text": "                    .forEach(t->t.dispatchEvent(new NetworkEvent.ChannelRegistrationChangeEvent(source, changeType)));"
+                }
+              ]
+            },
+            {
+              "lineStart": 52,
+              "lineEnd": 80,
+              "lines": [
+                {
+                  "line": 52,
+                  "text": "        byte[] toByteArray() {"
+                },
+                {
+                  "line": 53,
+                  "text": "            ByteArrayOutputStream bos = new ByteArrayOutputStream();"
+                },
+                {
+                  "line": 54,
+                  "text": "            for (ResourceLocation rl : locations) {"
+                },
+                {
+                  "line": 55,
+                  "text": "                try {"
+                },
+                {
+                  "line": 56,
+                  "text": "                    bos.write(rl.toString().getBytes(StandardCharsets.UTF_8));"
+                },
+                {
+                  "line": 57,
+                  "text": "                    bos.write(0);"
+                },
+                {
+                  "line": 58,
+                  "text": "                } catch (IOException e) {"
+                },
+                {
+                  "line": 59,
+                  "text": "                    // fake IOE"
+                },
+                {
+                  "line": 60,
+                  "text": "                }"
+                },
+                {
+                  "line": 61,
+                  "text": "            }"
+                },
+                {
+                  "line": 62,
+                  "text": "            return bos.toByteArray();"
+                },
+                {
+                  "line": 63,
+                  "text": "        }"
+                },
+                {
+                  "line": 64,
+                  "text": ""
+                },
+                {
+                  "line": 65,
+                  "text": "        private Set<ResourceLocation> bytesToResLocation(byte[] all) {"
+                },
+                {
+                  "line": 66,
+                  "text": "            HashSet<ResourceLocation> rl = new HashSet<>();"
+                },
+                {
+                  "line": 67,
+                  "text": "            int last = 0;"
+                },
+                {
+                  "line": 68,
+                  "text": "            for (int cur = 0; cur < all.length; cur++) {"
+                },
+                {
+                  "line": 69,
+                  "text": "                if (all[cur] == '\\0') {"
+                },
+                {
+                  "line": 70,
+                  "text": "                    String s = new String(all, last, cur - last, StandardCharsets.UTF_8);"
+                },
+                {
+                  "line": 71,
+                  "text": "                    try {"
+                },
+                {
+                  "line": 72,
+                  "text": "                        rl.add(new ResourceLocation(s));"
+                },
+                {
+                  "line": 73,
+                  "text": "                    } catch (ResourceLocationException ex) {"
+                },
+                {
+                  "line": 74,
+                  "text": "                        LOGGER.warn(\"Invalid channel name received: {}. Ignoring\", s);"
+                },
+                {
+                  "line": 75,
+                  "text": "                    }"
+                },
+                {
+                  "line": 76,
+                  "text": "                    last = cur + 1;"
+                },
+                {
+                  "line": 77,
+                  "text": "                }"
+                },
+                {
+                  "line": 78,
+                  "text": "            }"
+                },
+                {
+                  "line": 79,
+                  "text": "            return rl;"
+                },
+                {
+                  "line": 80,
+                  "text": "        }"
+                }
+              ]
+            },
+            {
+              "lineStart": 95,
+              "lineEnd": 99,
+              "lines": [
+                {
+                  "line": 95,
+                  "text": "    void registerListener(NetworkEvent evt) {"
+                },
+                {
+                  "line": 96,
+                  "text": "        final ChannelList channelList = getFrom(evt);"
+                },
+                {
+                  "line": 97,
+                  "text": "        channelList.updateFrom(evt.getSource(), evt.getPayload(), NetworkEvent.RegistrationChangeType.REGISTER);"
+                },
+                {
+                  "line": 98,
+                  "text": "        evt.getSource().get().setPacketHandled(true);"
+                },
+                {
+                  "line": 99,
+                  "text": "    }"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "entry": "net/minecraftforge/network/NetworkInstance.java",
+          "sha256": "22a1601f3790a9b2bb9a56a8c8c45bd66345bdc13b1a25a15614e7ff5e81562f",
+          "excerpts": [
+            {
+              "lineStart": 96,
+              "lineEnd": 102,
+              "lines": [
+                {
+                  "line": 96,
+                  "text": "    public boolean isRemotePresent(Connection manager) {"
+                },
+                {
+                  "line": 97,
+                  "text": "        ConnectionData connectionData = NetworkHooks.getConnectionData(manager);"
+                },
+                {
+                  "line": 98,
+                  "text": "        MCRegisterPacketHandler.ChannelList channelList = NetworkHooks.getChannelList(manager);"
+                },
+                {
+                  "line": 99,
+                  "text": "        return (connectionData != null && connectionData.getChannels().containsKey(channelName))"
+                },
+                {
+                  "line": 100,
+                  "text": "                // if it's not in the fml connection data, let's check if it's sent by another modloader."
+                },
+                {
+                  "line": 101,
+                  "text": "                || (channelList != null && channelList.getRemoteLocations().contains(channelName));"
+                },
+                {
+                  "line": 102,
+                  "text": "    }"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "entry": "net/minecraftforge/network/event/EventNetworkChannel.java",
+          "sha256": "f0ad34052451845d95e3f808ee003082d0184c3432aff324478d6c7a8c690170",
+          "excerpts": [
+            {
+              "lineStart": 52,
+              "lineEnd": 54,
+              "lines": [
+                {
+                  "line": 52,
+                  "text": "    public boolean isRemotePresent(Connection manager) {"
+                },
+                {
+                  "line": 53,
+                  "text": "        return instance.isRemotePresent(manager);"
+                },
+                {
+                  "line": 54,
+                  "text": "    }"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "byteIdentical43vs45": {
+    "net/minecraftforge/network/MCRegisterPacketHandler.java": true,
+    "net/minecraftforge/network/NetworkInstance.java": true,
+    "net/minecraftforge/network/event/EventNetworkChannel.java": true
+  },
+  "executedHelper": {
+    "file": {
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\forge-01\\executed-protocol_smoke.cjs",
+      "sha256": "4f88bcd526337d9c911f26d7a79c6435cf0b94a2814acd11dcf0338f3f1f78be",
+      "bytes": 12087
+    },
+    "lineStart": 38,
+    "lineEnd": 59,
+    "lines": [
+      {
+        "line": 38,
+        "text": "  const client = mc.createClient({host:'127.0.0.1',port,username:name,auth:'offline',version,checkTimeoutInterval:10000,disableChatSigning:true});"
+      },
+      {
+        "line": 39,
+        "text": "  state.client = client; active.add(client);"
+      },
+      {
+        "line": 40,
+        "text": "  // Fabric's configuration handshake waits for the standard ping response."
+      },
+      {
+        "line": 41,
+        "text": "  client.on('ping',p=>client.write('pong',{id:p.id}));"
+      },
+      {
+        "line": 42,
+        "text": "  client.on('error',e=>{state.error=String(e);});"
+      },
+      {
+        "line": 43,
+        "text": "  client.on('kick_disconnect',p=>{state.kicked=JSON.stringify(p);});"
+      },
+      {
+        "line": 44,
+        "text": "  client.on('disconnect',p=>{state.kicked=JSON.stringify(p);});"
+      },
+      {
+        "line": 45,
+        "text": "  client.on('end',r=>{state.ended=true;state.endReason=String(r);active.delete(client);});"
+      },
+      {
+        "line": 46,
+        "text": "  client.on('login',()=>{state.joined=true;client.write('custom_payload',{channel:'minecraft:register',data:Buffer.from('qzguard:main')});});"
+      },
+      {
+        "line": 47,
+        "text": "  client.on('position',p=>{if(p.teleportId !== undefined)client.write('teleport_confirm',{teleportId:p.teleportId});});"
+      },
+      {
+        "line": 48,
+        "text": "  client.on('map_chunk',p=>{if(process.env.QV_TEST_ANTIXRAY === '1')inspectChunkPalettes(p.chunkData);});"
+      },
+      {
+        "line": 49,
+        "text": "  client.on('custom_payload',p=>{"
+      },
+      {
+        "line": 50,
+        "text": "    if (p.channel !== 'qzguard:main' || opts.silent || state.sent) return;"
+      },
+      {
+        "line": 51,
+        "text": "    if (opts.hold) {state.challenge=p.data;return;}"
+      },
+      {
+        "line": 52,
+        "text": "    state.sent=true;"
+      },
+      {
+        "line": 53,
+        "text": "    client.write('custom_payload',{channel:p.channel,data:report(p.data,opts)});"
+      },
+      {
+        "line": 54,
+        "text": "  });"
+      },
+      {
+        "line": 55,
+        "text": "  const end=Date.now()+10000;"
+      },
+      {
+        "line": 56,
+        "text": "  while (!state.ended && !state.sent && !state.joined && Date.now()<end) await pause(30);"
+      },
+      {
+        "line": 57,
+        "text": "  await pause(opts.silent ? 5200 : 1200);"
+      },
+      {
+        "line": 58,
+        "text": "  return state;"
+      },
+      {
+        "line": 59,
+        "text": "}"
+      }
+    ]
+  },
+  "productCode": [
+    {
+      "file": {
+        "path": "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.19.2\\forge\\src\\main\\java\\cn\\qizhang\\guard\\forge\\GuardForge.java",
+        "sha256": "ab641aaed0db8e50fab9a35bb9882d380bf432b65c7bdf9e2b2532f147382874",
+        "bytes": 5039
+      },
+      "lineStart": 61,
+      "lineEnd": 66,
+      "lines": [
+        {
+          "line": 61,
+          "text": "    private void start(ServerStartingEvent event) {"
+        },
+        {
+          "line": 62,
+          "text": "        org.slf4j.LoggerFactory.getLogger(\"QiZhangVerdict\").info(\"External mod presence only: grimac={}, antixray={}; actual function must be tested separately\", net.minecraftforge.fml.ModList.get().isLoaded(\"grimac\"), net.minecraftforge.fml.ModList.get().isLoaded(\"antixray\"));"
+        },
+        {
+          "line": 63,
+          "text": "        guard = new MinecraftGuard(FMLPaths.CONFIGDIR.get().resolve(\"qizhangverdict\"), new MinecraftGuard.Transport() {"
+        },
+        {
+          "line": 64,
+          "text": "            public boolean available(ServerPlayer p) { return channel.isRemotePresent(p.connection.connection); }"
+        },
+        {
+          "line": 65,
+          "text": "            public void send(ServerPlayer p, byte[] bytes) { p.connection.send(new ClientboundCustomPayloadPacket(CHANNEL_ID, new FriendlyByteBuf(Unpooled.wrappedBuffer(bytes)))); }"
+        },
+        {
+          "line": 66,
+          "text": "        });"
+        }
+      ]
+    },
+    {
+      "file": {
+        "path": "E:\\Codex_work\\QiZhangVerdict\\platforms\\shared\\src\\main\\java\\cn\\qizhang\\guard\\minecraft\\MinecraftGuard.java",
+        "sha256": "2ee1f6e683f640f0229e2e741ca4747676521e832f2a5079f8a9dd30b467b4ab",
+        "bytes": 11787
+      },
+      "lineStart": 95,
+      "lineEnd": 109,
+      "lines": [
+        {
+          "line": 95,
+          "text": "        long now = System.currentTimeMillis();"
+        },
+        {
+          "line": 96,
+          "text": "        if (now - lastCheck < 1000) return;"
+        },
+        {
+          "line": 97,
+          "text": "        lastCheck = now;"
+        },
+        {
+          "line": 98,
+          "text": "        for (UUID banned : service.bannedSessions()) {"
+        },
+        {
+          "line": 99,
+          "text": "            ServerPlayer player = server.getPlayerList().getPlayer(banned);"
+        },
+        {
+          "line": 100,
+          "text": "            if (player != null) kick(player, \"QiZhangVerdict: account or associated device is banned\");"
+        },
+        {
+          "line": 101,
+          "text": "        }"
+        },
+        {
+          "line": 102,
+          "text": "        for (UUID expired : service.expiredReports(now)) {"
+        },
+        {
+          "line": 103,
+          "text": "            ServerPlayer player = server.getPlayerList().getPlayer(expired);"
+        },
+        {
+          "line": 104,
+          "text": "            if (player != null) kick(player, \"QiZhangGuard: required companion report timed out\");"
+        },
+        {
+          "line": 105,
+          "text": "        }"
+        },
+        {
+          "line": 106,
+          "text": "        for (Map.Entry<UUID, Pending> entry : pending.entrySet()) {"
+        },
+        {
+          "line": 107,
+          "text": "            ServerPlayer player = server.getPlayerList().getPlayer(entry.getKey());"
+        },
+        {
+          "line": 108,
+          "text": "            if (player != null) send(player, entry.getValue());"
+        },
+        {
+          "line": 109,
+          "text": "        }"
+        }
+      ]
+    },
+    {
+      "file": {
+        "path": "E:\\Codex_work\\QiZhangVerdict\\platforms\\shared\\src\\main\\java\\cn\\qizhang\\guard\\minecraft\\MinecraftGuard.java",
+        "sha256": "2ee1f6e683f640f0229e2e741ca4747676521e832f2a5079f8a9dd30b467b4ab",
+        "bytes": 11787
+      },
+      "lineStart": 170,
+      "lineEnd": 172,
+      "lines": [
+        {
+          "line": 170,
+          "text": "    private void send(ServerPlayer player, Pending gate) {"
+        },
+        {
+          "line": 171,
+          "text": "        if (!gate.sent && transport.available(player)) { transport.send(player, gate.challenge); gate.sent = true; }"
+        },
+        {
+          "line": 172,
+          "text": "    }"
+        }
+      ]
+    }
+  ],
+  "failedRunEvidence": [
+    {
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\forge-01\\smoke-result.json",
+      "sha256": "7ce5086b387336a6916b94f68eb860b9b77d5ab7d61c4d0d9e97c9792bbb3647",
+      "bytes": 7451
+    },
+    {
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\forge-01\\protocol-console.log",
+      "sha256": "0eb978eeaab9454cb502de253316e7fe29c4060026026b9d0c045a290dadeccf",
+      "bytes": 419
+    },
+    {
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\forge-01\\console.log",
+      "sha256": "739f15872f0bc22f9ff59da82b9479614a5989845adbe45606106062b6364983",
+      "bytes": 22232
+    }
+  ],
+  "failedRunObserved": {
+    "guard_sha256": "2ed923a874817d9176c7c5e4499fbad91273e755ce23f358e5e0462ff2a966da",
+    "protocol_exit_code": 1,
+    "protocol_elapsed_seconds": 3.88,
+    "exit_code": 0,
+    "started": true,
+    "console_status_verified": true,
+    "all_requested_checks_passed": false,
+    "passed_startup_only": true
+  },
+  "failedRunState": {
+    "joined": true,
+    "sent": false,
+    "ended": false,
+    "kicked": "",
+    "error": ""
+  },
+  "failureTimeline": {
+    "file": {
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.19.2\\servers\\forge-01\\console.log",
+      "sha256": "739f15872f0bc22f9ff59da82b9479614a5989845adbe45606106062b6364983",
+      "bytes": 22232
+    },
+    "lineStart": 119,
+    "lineEnd": 131,
+    "lines": [
+      {
+        "line": 119,
+        "text": "[21:40:23] [Server thread/INFO] [minecraft/DedicatedServer]: Done (6.062s)! For help, type \"help\""
+      },
+      {
+        "line": 120,
+        "text": "[21:40:23] [Server thread/INFO] [ne.mi.se.pe.PermissionAPI/]: Successfully initialized permission handler forge:default_handler"
+      },
+      {
+        "line": 121,
+        "text": "[21:40:23] [Server thread/INFO] [QiZhangVerdict/]: External mod presence only: grimac=false, antixray=false; actual function must be tested separately"
+      },
+      {
+        "line": 122,
+        "text": "[21:40:23] [Server thread/INFO] [QiZhangVerdict/]: QiZhangGuard started: QiZhangVerdict sessions=0, trackedIPs=0, accountPairs=0, rules=37, companion=required, vm=DENY, blacklist=DENY, rateBuckets=0, accountBans=0, deviceBans=0, deviceRequired=true. Reports are self-reported, not trusted attestation."
+      },
+      {
+        "line": 123,
+        "text": "[21:40:23] [Server thread/INFO] [minecraft/MinecraftServer]: QiZhangVerdict sessions=0, trackedIPs=0, accountPairs=0, rules=37, companion=required, vm=DENY, blacklist=DENY, rateBuckets=0, accountBans=0, deviceBans=0, deviceRequired=true"
+      },
+      {
+        "line": 124,
+        "text": "[21:40:24] [Server thread/INFO] [minecraft/MinecraftServer]: QiZhangVerdict sessions=0, trackedIPs=0, accountPairs=0, rules=37, companion=required, vm=ALERT, blacklist=DENY, rateBuckets=0, accountBans=0, deviceBans=0, deviceRequired=true"
+      },
+      {
+        "line": 125,
+        "text": "[21:40:26] [Server thread/INFO] [ne.mi.co.AdvancementLoadFix/]: Using new advancement loading for net.minecraft.server.PlayerAdvancements@3530fbc4"
+      },
+      {
+        "line": 126,
+        "text": "[21:40:26] [Server thread/INFO] [minecraft/PlayerList]: QVBot1[/127.0.0.1:7761] logged in with entity id 1 at (3.5, -60.0, 6.5)"
+      },
+      {
+        "line": 127,
+        "text": "[21:40:26] [Server thread/INFO] [minecraft/MinecraftServer]: QVBot1 joined the game"
+      },
+      {
+        "line": 128,
+        "text": "[21:40:27] [Server thread/INFO] [minecraft/ServerGamePacketListenerImpl]: QVBot1 lost connection: Disconnected"
+      },
+      {
+        "line": 129,
+        "text": "[21:40:27] [Server thread/INFO] [minecraft/MinecraftServer]: QVBot1 left the game"
+      },
+      {
+        "line": 130,
+        "text": "[21:40:27] [Server thread/INFO] [minecraft/MinecraftServer]: Stopping the server"
+      },
+      {
+        "line": 131,
+        "text": "[21:40:27] [Server thread/INFO] [minecraft/MinecraftServer]: Stopping server"
+      }
+    ]
+  },
+  "historicalComparison": {
+    "serverReport": {
+      "path": "E:\\Codex_work\\QiZhangVerdict\\outputs\\legacy-mod-validation.json",
+      "sha256": "6b2c9e05109b198a217bccb85060eb88931ffe1a44dc8e351ec3ba6c2be43e62",
+      "bytes": 9464
+    },
+    "forge1194ProtocolPerformed": false,
+    "forge1194ProtocolCaseCount": 0,
+    "fabric1194ProtocolCaseCount": 26,
+    "realClientReport": {
+      "path": "E:\\Codex_work\\QiZhangVerdict\\outputs\\legacy-client-matrix\\0.2.0-dev-gpl\\acceptance.json",
+      "sha256": "49fb7ff38874dc2bdac0d5d9d3f853e6b0903f2e34b5de1fcd98c414225b592b",
+      "bytes": 9853
+    },
+    "forge1194RealClient": {
+      "guard_sha256": "b4e724bb64514ce75263e9c92f2ebbb9a2b95a90c11855708e76d64cc234d154",
+      "passed": true,
+      "client_exit_code": 0,
+      "server_exit_code": 0,
+      "confirmed_online_seconds_after_first_restored_mode": 66,
+      "strict_defaults": true,
+      "persisted_device_association": true
+    },
+    "boundary": "Historical real Forge 1.19.4 client success does not prove the pure TCP unregistered bot path or a real Forge 1.19.2 client."
+  },
+  "algorithmModel": {
+    "scope": "Python transcription of delimiter loop only; not Forge Java runtime verification.",
+    "unterminatedInputHex": "717a67756172643a6d61696e",
+    "unterminatedChannels": [],
+    "terminatedInputHex": "717a67756172643a6d61696e00",
+    "terminatedChannels": [
+      "qzguard:main"
+    ]
+  },
+  "minimumRuntimeFollowup": {
+    "owner": "root",
+    "freshFixtureRequired": true,
+    "onlyRequiredHelperChange": "minecraft:register data: Buffer.from('qzguard:main\\0')",
+    "productJarSha256MustRemain": "2ed923a874817d9176c7c5e4499fbad91273e755ce23f358e5e0462ff2a966da",
+    "noProductChange": true,
+    "doNotRelax": [
+      "isRemotePresent",
+      "companion.required",
+      "device.required",
+      "VM or blacklist policy",
+      "sanctions"
+    ],
+    "assertions": [
+      "Client observes a valid qzguard:main challenge and sends one report within the configured deadline.",
+      "Report acceptance restores normal mode and persists only synthetic scoped device association.",
+      "Run existing full protocol suite and require clean server exit; retain this original failed attempt."
+    ],
+    "notClaimed": "An unmodified real Forge 1.19.2 client is not exercised by this synthetic TCP run."
+  }
+}

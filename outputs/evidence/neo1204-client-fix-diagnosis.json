@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "derivedDiagnosis": true,
+  "initialCandidate": {
+    "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\neoforge-client-fix\\initial-candidate\\qizhangverdict-neoforge-1.20.4-0.3.0-dev.jar",
+    "sha256": "c3e742892ef723d035b81e165eed3ef4a560aa249349183298dd0f9b45e48f66",
+    "bytes": 93937
+  },
+  "failedClientResult": {
+    "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\future-client-fixtures\\neoforge-1.20.4\\runs\\candidate-0.3.0-dev-01\\result.json",
+    "sha256": "d6a116419a64700790589ec4cefc294cefc7636e02837a5e7f72d6fed8a4aebc",
+    "bytes": 3381
+  },
+  "observedFailure": "Real client joined, then the strict companion report timed out after about 21 seconds. Both processes exited zero. No accepted client report or screenshot acceptance occurred.",
+  "establishedSourceRace": "NeoForge 20.4.251 creates an Optional player snapshot on the network thread. The former client handler tests this same snapshot after queuing, so an empty value remains empty even after preceding queued login work creates the player.",
+  "uniqueCauseOfOriginalRunEstablished": false,
+  "boundary": "The original run did not log the Optional value. The deterministic queued-event test and new exact-JAR runtime must establish the repair scope; no strict defaults are relaxed.",
+  "officialSources": {
+    "url": "https://maven.neoforged.net/releases/net/neoforged/neoforge/20.4.251/neoforge-20.4.251-sources.jar",
+    "archive": {
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\upstream\\neoforge-20.4.251-sources.jar",
+      "sha256": "198df8b25fa20c988459d127ca1f6d3b0c464620009dea2f96a953d22da80612",
+      "bytes": 1490583
+    },
+    "networkRegistryLines": "434-442 capture Optional; IPayloadRegistrar 64-71 documents network-thread invocation",
+    "publicBranchReference": "https://github.com/neoforged/NeoForge/blob/1.20.4/src/main/java/net/neoforged/neoforge/network/registration/NetworkRegistry.java"
+  },
+  "fixScope": "Only NeoForge 1.20.4: route by packet flow, capture original channel, defer client reads to main thread, require current live channel identity, preserve same live listener/channel again in async report sender. Serverbound player ownership remains enforced by MinecraftGuard.",
+  "eventTest": "Production ClientChallengeDispatch.enqueue with queued login, old Optional negative control, connection switch/null/closed-supplier/null-origin/identity equality and later same-connection cases",
+  "eventTestExecuted": false,
+  "jarRebuilt": false,
+  "javaStartedForFix": false
+}

@@ -1,0 +1,188 @@
+{
+  "minecraft": "1.21.1",
+  "guardSha256": "9849a60374ea1bb18aae2af0ee479593312437a9665b803a3f847a07c570b2c8",
+  "fixtureSha256": "b32a5951053107f39f7d8326408ac9dbeaeef3618bccf27d8b3f32cb72191713",
+  "started": true,
+  "passed": true,
+  "normalStop": true,
+  "availablePhysicalBytesBeforeJava": 9936662528,
+  "minimumAvailableGiB": 3.5,
+  "scope": "Real loopback TCP with synthetic reports; no rendered companion or third-party anti-cheat integration.",
+  "serverCommand": [
+    "D:\\Java\\jdk-21\\bin\\java.exe",
+    "-Xms256M",
+    "-Xmx1536M",
+    "-Djava.io.tmpdir=E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\bukkit-full\\purpur-1.21.1-full-01\\runtime-temp",
+    "-jar",
+    "server.jar",
+    "--nogui"
+  ],
+  "ownedServerPid": 43216,
+  "initialDefaultPolicySha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+  "initialAll13DefaultsMatched": true,
+  "ownedNodePid": 33268,
+  "protocolExitCode": 0,
+  "protocol": {
+    "passed": 26,
+    "cases": [
+      "normal companion joins",
+      "privileged commands blocked before report and restored afterward",
+      "missing companion expires",
+      "malformed report rejected",
+      "malformed report does not permanently ban account",
+      "first account on device allowed",
+      "same IP same device second account rejected",
+      "same IP second different device allowed",
+      "same IP third different device allowed",
+      "same IP fourth account rejected",
+      "disconnect releases device and IP quota",
+      "known cheat denied and sanctioned",
+      "same banned device different account denied",
+      "banned account denied with new device",
+      "administrator account and device unban restores access",
+      "administrator glob rule enforced",
+      "whitelist overrides matching blacklist item",
+      "removed whitelist takes effect",
+      "administrator removes default rule with colon ID",
+      "administrator restores removed blacklist entry",
+      "CIDR deny rejects login",
+      "known VM signal denied",
+      "VBS hypervisor alone does not ban physical machine",
+      "two-device setting first account",
+      "two-device setting second account",
+      "two-device setting rejects third account"
+    ],
+    "orePalette": [],
+    "maxChunkZeroPadding": 0,
+    "disconnectObservations": [
+      {
+        "name": "QVBot2",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"compound\",\"value\":{\"extra\":{\"type\":\"list\",\"value\":{\"type\":\"string\",\"value\":[\"[QiZhangVerdict] Required companion report timed out.\"]}},\"text\":{\"type\":\"string\",\"value\":\"\"}}}"
+      },
+      {
+        "name": "BadWire",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"compound\",\"value\":{\"extra\":{\"type\":\"list\",\"value\":{\"type\":\"string\",\"value\":[\"[QiZhangVerdict] Malformed or oversized companion report\"]}},\"text\":{\"type\":\"string\",\"value\":\"\"}}}"
+      },
+      {
+        "name": "QVBot4",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"compound\",\"value\":{\"extra\":{\"type\":\"list\",\"value\":{\"type\":\"string\",\"value\":[\"[QiZhangVerdict] Only the configured number of accounts may use the same IP and device concurrently\"]}},\"text\":{\"type\":\"string\",\"value\":\"\"}}}"
+      },
+      {
+        "name": "QVBot7",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "disconnect",
+        "packetState": "login",
+        "clientState": "login",
+        "reasonJson": "\"\\\"Too many simultaneous accounts from this IP\\\"\""
+      },
+      {
+        "name": "CheatAccount",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"compound\",\"value\":{\"extra\":{\"type\":\"list\",\"value\":{\"type\":\"string\",\"value\":[\"[QiZhangVerdict] Reported mod matches an exact server blacklist rule\"]}},\"text\":{\"type\":\"string\",\"value\":\"\"}}}"
+      },
+      {
+        "name": "LinkedAccount",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"compound\",\"value\":{\"extra\":{\"type\":\"list\",\"value\":{\"type\":\"string\",\"value\":[\"[QiZhangVerdict] This reported device identifier is banned\"]}},\"text\":{\"type\":\"string\",\"value\":\"\"}}}"
+      },
+      {
+        "name": "CheatAccount",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "disconnect",
+        "packetState": "login",
+        "clientState": "login",
+        "reasonJson": "\"\\\"This account is banned by the server\\\"\""
+      },
+      {
+        "name": "QVBot9",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"compound\",\"value\":{\"extra\":{\"type\":\"list\",\"value\":{\"type\":\"string\",\"value\":[\"[QiZhangVerdict] Reported mod matches a server blacklist rule\"]}},\"text\":{\"type\":\"string\",\"value\":\"\"}}}"
+      },
+      {
+        "name": "QVBot11",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"compound\",\"value\":{\"extra\":{\"type\":\"list\",\"value\":{\"type\":\"string\",\"value\":[\"[QiZhangVerdict] Reported mod matches a server blacklist rule\"]}},\"text\":{\"type\":\"string\",\"value\":\"\"}}}"
+      },
+      {
+        "name": "QVBot13",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"compound\",\"value\":{\"extra\":{\"type\":\"list\",\"value\":{\"type\":\"string\",\"value\":[\"[QiZhangVerdict] Reported mod matches a server blacklist rule\"]}},\"text\":{\"type\":\"string\",\"value\":\"\"}}}"
+      },
+      {
+        "name": "QVBot14",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "disconnect",
+        "packetState": "login",
+        "clientState": "login",
+        "reasonJson": "\"\\\"This IP is denied by server policy\\\"\""
+      },
+      {
+        "name": "QVBot15",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"compound\",\"value\":{\"extra\":{\"type\":\"list\",\"value\":{\"type\":\"string\",\"value\":[\"[QiZhangVerdict] Companion reported a virtual machine indicator\"]}},\"text\":{\"type\":\"string\",\"value\":\"\"}}}"
+      },
+      {
+        "name": "QVBot19",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "disconnect",
+        "packetState": "login",
+        "clientState": "login",
+        "reasonJson": "\"\\\"Too many simultaneous accounts from this IP\\\"\""
+      }
+    ],
+    "kind": "real TCP clients using synthetic self-reports; not rendered mod client or real VM",
+    "version": "1.21.1"
+  },
+  "allProtocolCasesPassed": true,
+  "serverExitCode": 0,
+  "elapsedSeconds": 100.358,
+  "console.logSha256": "089ddf0fb1399bbae1564e1867711a54fb5eb1be0cd12c0d88de2bd6f3e5db11",
+  "protocol-console.logSha256": "4bb226405364ef8feb1a0c7810edd803b7c8eac1c0b6e3db87e929399c8b46eb",
+  "protocol-result.jsonSha256": "8dd42488a6d3d069ec4b18da81136a70cb3310991a172255e96c33c42ea8db77",
+  "protocol-disconnect-observations.jsonSha256": "76d874eb1208c10042cc3219ab6ac2fb91122ee56bc99abce64b1f7589a8821e",
+  "finalPolicy": {
+    "limits.max-online-per-ip": "2",
+    "limits.max-online-per-ip-device": "1",
+    "limits.max-accounts-per-ip": "100",
+    "limits.account-window-hours": "720",
+    "limits.attempts-per-minute": "1000",
+    "ip.allow": "",
+    "ip.deny": "",
+    "companion.required": "true",
+    "companion.timeout-seconds": "4",
+    "device.required": "true",
+    "vm.action": "ALERT",
+    "blacklist.action": "DENY",
+    "sanctions.on-deny": "BAN"
+  }
+}

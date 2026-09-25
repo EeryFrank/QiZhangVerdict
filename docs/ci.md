@@ -45,3 +45,9 @@ GitHub 使用固定 SHA 的官方 actions；GitLab 开发任务使用[官方 Tem
 `v0.2.0-test.1` 固定提交 `310e20b117183182d7767e349aa81cb1d935075c` 的 [GitHub 现代四任务](https://github.com/EeryFrank/QiZhangVerdict/actions/runs/36131892038)及[旧版五任务](https://github.com/EeryFrank/QiZhangVerdict/actions/runs/36131892033)全部通过。[GitLab 同标签流水线](https://gitlab.com/EeryFrank/QiZhangVerdict/-/pipelines/2882204914)：GitLab 9 项因 `ci_quota_exceeded` 未执行，不能视为通过。
 
 13 个发行 JAR 使用本机完成核心回归、14 组图形客户端和 75 组插件协议检查的原始文件；未以 CI 重编产物替换。两站各 21 个附件经匿名下载核对散列，见[发布回执](../outputs/publish-receipt-0.2.0-test.1.json)、[远程 CI 记录](../outputs/release-ci-validation-0.2.0-test.1.json)及[ZIP 独立审查](../outputs/packaging-validation-0.2.0-test.1.json)。首轮未发布试包缺少五个文档链接的 QA 脚本，补齐显式文件清单后第二轮审查通过；产品 JAR 与运行证据没有改变，失败记录保留。
+
+## 新适配开发提交 33bc0ac
+
+提交 `33bc0ac9070d4d20bb080af5d6209455058938c5` 的 [GitHub 现代流水线](https://github.com/EeryFrank/QiZhangVerdict/actions/runs/36137067456)完成五个构建任务和一个十 JAR 汇总任务，[旧版流水线](https://github.com/EeryFrank/QiZhangVerdict/actions/runs/36137067512)完成五个构建任务，合计 11 个任务全部通过，均为首次运行。原日志包含 Bukkit 六项挑战调度回归、57 项核心检查、37 条目录及三项保留配置检查，以及 1.20.4 三端的报文编解码检查；各目标实际执行范围以日志为准。[同提交 GitLab 流水线](https://gitlab.com/EeryFrank/QiZhangVerdict/-/pipelines/2882384659)的 11 个任务均为 `ci_quota_exceeded`，`started_at` 全为空，没有执行，不能计为通过。
+
+已通过只读 GitHub Actions API 下载现代十个、旧版八个 CI JAR，逐一核对上传归档散列、SHA256SUMS、ZIP CRC、该提交的原样 LICENSE / NOTICE、Manifest GPL 标记及 class 版本。18 个文件均通过这些静态核验；下载过程使用已有 GitHub 身份，不是公开发行附件的匿名下载测试，也没有替换本机已验收或已发布成品。记录及 28 份明确列出的 API 回执、原日志和校验和见[本次 CI 验收](../outputs/next-platform-ci-validation.json)。构建告警保留；GitHub run 和 GitLab job 的公开回执省略提交者邮箱，原始 API 字节仍留在缓存并记录散列。此结果不替代专服启动、真实客户端或防作弊运行验收。

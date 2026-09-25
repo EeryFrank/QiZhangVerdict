@@ -1,0 +1,133 @@
+[22:38:22.559] [main/INFO] [Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeserver, --fml.neoForgeVersion, 20.4.251, --fml.fmlVersion, 2.0.17, --fml.mcVersion, 1.20.4, --fml.neoFormVersion, 20240627.114801, nogui] 
+[22:38:22.563] [main/INFO] [Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.20.1 by Eclipse Adoptium; OS Windows 11 arch amd64 version 10.0 
+[22:38:22.672] [main/WARN] [loading.FMLConfig/CORE]: Configuration file E:\CodexTemp\QiZhangVerdict\next-platforms\1.20.4\future-client-fixtures\neoforge-1.20.4\runs\candidate-0.3.0-dev-02\server\config\fml.toml is not correct. Correcting 
+[22:38:22.674] [main/INFO] [loading.FMLConfig/CORE]: Incorrect key [disableConfigWatcher] was corrected from null to false 
+[22:38:22.675] [main/INFO] [loading.FMLConfig/CORE]: Incorrect key [earlyWindowSkipGLVersions] was corrected from null to [] 
+[22:38:22.675] [main/INFO] [loading.FMLConfig/CORE]: Incorrect key [earlyWindowSquir] was corrected from null to false 
+[22:38:22.707] [main/INFO] [loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgeserver 
+[22:38:22.761] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/E:/CodexTemp/QiZhangVerdict/next-platforms/1.20.4/future-client-fixtures/neoforge-1.20.4/runs/candidate-0.3.0-dev-02/server/libraries/net/fabricmc/sponge-mixin/0.13.4+mixin.0.8.5/sponge-mixin-0.13.4+mixin.0.8.5.jar%2379!/ Service=ModLauncher Env=SERVER 
+/**********************************************************************************************************************************************************************************************************************************************************************************************/
+/*                                                                                                                      SpongePowered MIXIN (Verbose debugging enabled)                                                                                                                       */
+/**********************************************************************************************************************************************************************************************************************************************************************************************/
+/*                                         Code source : union:/E:/CodexTemp/QiZhangVerdict/next-platforms/1.20.4/future-client-fixtures/neoforge-1.20.4/runs/candidate-0.3.0-dev-02/server/libraries/net/fabricmc/sponge-mixin/0.13.4+mixin.0.8.5/sponge-mixin-0.13.4+mixin.0.8.5.jar%2379!/ */
+/*                                    Internal Version : 0.8.5                                                                                                                                                                                                                                */
+/*                                        Java Version : 17.0 (supports compatibility 6-17)                                                                                                                                                                                                   */
+/*                         Default Compatibility Level : JAVA_16                                                                                                                                                                                                                              */
+/*                                Detected ASM Version : ASM 9.8 (ASM10_EXPERIMENTAL)                                                                                                                                                                                                         */
+/*                          Detected ASM Supports Java : Up to Java 25 (class file version 69.0)                                                                                                                                                                                              */
+/**********************************************************************************************************************************************************************************************************************************************************************************************/
+/*                                        Service Name : ModLauncher                                                                                                                                                                                                                          */
+/*                                 Mixin Service Class : org.spongepowered.asm.service.modlauncher.MixinServiceModLauncher                                                                                                                                                                    */
+/*                       Global Property Service Class : org.spongepowered.asm.service.modlauncher.Blackboard                                                                                                                                                                                 */
+/*                                 Logger Adapter Type : Log4j2 (via ModLauncher)                                                                                                                                                                                                             */
+/**********************************************************************************************************************************************************************************************************************************************************************************************/
+/*                                         mixin.debug : <false>                                                                                                                                                                                                                              */
+/*                                  mixin.debug.export : - <true>                                                                                                                                                                                                                             */
+/*                           mixin.debug.export.filter : - - <null>                                                                                                                                                                                                                           */
+/*                        mixin.debug.export.decompile : - - <true>                                                                                                                                                                                                                           */
+/*                  mixin.debug.export.decompile.async : - - - <true>                                                                                                                                                                                                                         */
+/* mixin.debug.export.decompile.mergeGenericSignatures : - - - <true>                                                                                                                                                                                                                         */
+/*                                  mixin.debug.verify : - <false>                                                                                                                                                                                                                            */
+/*                                 mixin.debug.verbose : - <true>                                                                                                                                                                                                                             */
+/*                         mixin.debug.countInjections : - <true>                                                                                                                                                                                                                             */
+/*                                  mixin.debug.strict : - <false>                                                                                                                                                                                                                            */
+/*                           mixin.debug.strict.unique : - - <false>                                                                                                                                                                                                                          */
+/*                          mixin.debug.strict.targets : - - <false>                                                                                                                                                                                                                          */
+/*                                mixin.debug.profiler : - <false>                                                                                                                                                                                                                            */
+/*                           mixin.dumpTargetOnFailure : <false>                                                                                                                                                                                                                              */
+/*                                        mixin.checks : <false>                                                                                                                                                                                                                              */
+/*                             mixin.checks.interfaces : - <false>                                                                                                                                                                                                                            */
+/*                      mixin.checks.interfaces.strict : - - <false>                                                                                                                                                                                                                          */
+/*                             mixin.ignoreConstraints : <false>                                                                                                                                                                                                                              */
+/*                                       mixin.hotSwap : <false>                                                                                                                                                                                                                              */
+/*                                           mixin.env : <false>                                                                                                                                                                                                                              */
+/*                                       mixin.env.obf : - <false>                                                                                                                                                                                                                            */
+/*                             mixin.env.disableRefMap : - <false>                                                                                                                                                                                                                            */
+/*                               mixin.env.remapRefMap : - <false>                                                                                                                                                                                                                            */
+/*                       mixin.env.refMapRemappingFile : - <>                                                                                                                                                                                                                                 */
+/*                        mixin.env.refMapRemappingEnv : - <searge>                                                                                                                                                                                                                           */
+/*                      mixin.env.allowPermissiveMatch : - <false>                                                                                                                                                                                                                            */
+/*                            mixin.env.ignoreRequired : - <false>                                                                                                                                                                                                                            */
+/*                               mixin.env.compatLevel : - <false>                                                                                                                                                                                                                            */
+/*                          mixin.env.shiftByViolation : - <warn>                                                                                                                                                                                                                             */
+/*                      mixin.initialiserInjectionMode : <default>                                                                                                                                                                                                                            */
+/**********************************************************************************************************************************************************************************************************************************************************************************************/
+/*                                       Detected Side : SERVER                                                                                                                                                                                                                               */
+/**********************************************************************************************************************************************************************************************************************************************************************************************/
+[22:38:22.936] [main/INFO] [loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "qizhangverdict-neoforge-1.20.4-0.3.0-dev.jar" of type MOD with provider {mods folder locator at E:\CodexTemp\QiZhangVerdict\next-platforms\1.20.4\future-client-fixtures\neoforge-1.20.4\runs\candidate-0.3.0-dev-02\server\mods} 
+[22:38:23.082] [main/INFO] [loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "server-1.20.4-20240627.114801-srg.jar" of type MOD with provider net.neoforged.fml.loading.moddiscovery.MinecraftLocator@1b9ea3e3 
+[22:38:23.082] [main/INFO] [loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "neoforge-20.4.251-universal.jar" of type MOD with provider net.neoforged.fml.loading.moddiscovery.MinecraftLocator@1b9ea3e3 
+[22:38:23.186] [main/INFO] [loading.moddiscovery.JarInJarDependencyLocator/]: Found 1 dependencies adding them to mods collection 
+[22:38:23.187] [main/INFO] [loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "mixinextras-neoforge-0.4.1.jar" of type GAMELIBRARY with provider net.neoforged.fml.loading.moddiscovery.JarInJarDependencyLocator@21a5fd96 
+[22:38:24.394] [main/WARN] [mixin/]: Compatibility level JAVA_17 specified by qizhangverdict.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13). 
+[22:38:24.395] [main/INFO] [mixin/]: Compatibility level set to JAVA_17 
+[22:38:24.404] [main/INFO] [LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeserver' with arguments [nogui] 
+[22:38:24.507] [main/INFO] [mixin/]: Attempting to load Fernflower decompiler (Threaded mode) 
+[22:38:24.508] [main/INFO] [mixin/]: Fernflower could not be loaded, exported classes will not be decompiled. NoClassDefFoundError: org/jetbrains/java/decompiler/main/extern/IResultSaver 
+[22:38:24.519] [main/INFO] [mixin/]: Preparing mixins for MixinEnvironment[DEFAULT] 
+[22:38:24.519] [main/INFO] [mixin/]: Selecting config qizhangverdict.mixins.json 
+[22:38:24.526] [main/INFO] [mixin/]: Selecting config mixinextras.init.mixins.json 
+[22:38:24.625] [main/INFO] [mixin/]: Preparing qizhangverdict.mixins.json (1) 
+[22:38:24.654] [main/INFO] [mixin/]: Preparing mixinextras.init.mixins.json (0) 
+2026-09-25 22:38:24,780 main WARN Advanced terminal features are not available in this environment
+[22:38:32] [modloading-worker-0/INFO] [ne.ne.ne.co.NeoForgeMod/NEOFORGE-MOD]: NeoForge mod loading, version 20.4.251, for MC 1.20.4 with MCP 20240627.114801
+[22:38:33] [main/INFO] [mojang/YggdrasilAuthenticationService]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[22:38:33] [main/WARN] [minecraft/VanillaPackResourcesBuilder]: Assets URL 'union:/E:/CodexTemp/QiZhangVerdict/next-platforms/1.20.4/future-client-fixtures/neoforge-1.20.4/runs/candidate-0.3.0-dev-02/server/libraries/net/minecraft/server/1.20.4-20240627.114801/server-1.20.4-20240627.114801-srg.jar%23126!/assets/.mcassetsroot' uses unexpected schema
+[22:38:33] [main/WARN] [minecraft/VanillaPackResourcesBuilder]: Assets URL 'union:/E:/CodexTemp/QiZhangVerdict/next-platforms/1.20.4/future-client-fixtures/neoforge-1.20.4/runs/candidate-0.3.0-dev-02/server/libraries/net/minecraft/server/1.20.4-20240627.114801/server-1.20.4-20240627.114801-srg.jar%23126!/data/.mcassetsroot' uses unexpected schema
+[22:38:34] [main/INFO] [minecraft/Main]: No existing world data, creating new world
+[22:38:34] [main/INFO] [MixinExtras|Service/]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.4.1).
+[22:38:34] [main/INFO] [mixin/]: Mixing CommandGate1204Mixin from qizhangverdict.mixins.json into net.minecraft.commands.Commands
+[22:38:35] [main/INFO] [minecraft/RecipeManager]: Loaded 7 recipes
+[22:38:35] [main/INFO] [minecraft/AdvancementTree]: Loaded 1271 advancements
+[22:38:35] [Server thread/INFO] [minecraft/DedicatedServer]: Starting minecraft server version 1.20.4
+[22:38:35] [Server thread/INFO] [minecraft/DedicatedServer]: Loading properties
+[22:38:35] [Server thread/INFO] [minecraft/DedicatedServer]: Default game type: SURVIVAL
+[22:38:35] [Server thread/INFO] [minecraft/MinecraftServer]: Generating keypair
+[22:38:35] [Server thread/INFO] [minecraft/DedicatedServer]: Starting Minecraft server on 127.0.0.1:25715
+[22:38:35] [Server thread/INFO] [minecraft/ServerConnectionListener]: Using default channel type
+[22:38:35] [Server thread/WARN] [minecraft/DedicatedServer]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[22:38:35] [Server thread/WARN] [minecraft/DedicatedServer]: The server will make no attempt to authenticate usernames. Beware.
+[22:38:35] [Server thread/WARN] [minecraft/DedicatedServer]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[22:38:35] [Server thread/WARN] [minecraft/DedicatedServer]: To change this, set "online-mode" to "true" in the server.properties file.
+[22:38:35] [Server thread/WARN] [ne.ne.ne.co.ModConfigSpec/CORE]: Configuration file E:\CodexTemp\QiZhangVerdict\next-platforms\1.20.4\future-client-fixtures\neoforge-1.20.4\runs\candidate-0.3.0-dev-02\server\config\neoforge-server.toml is not correct. Correcting
+[22:38:35] [Server thread/WARN] [ne.ne.ne.co.ModConfigSpec/CORE]: Incorrect key server was corrected from null to its default, SimpleCommentedConfig:{}. 
+[22:38:35] [Server thread/WARN] [ne.ne.ne.co.ModConfigSpec/CORE]: Incorrect key server.removeErroringBlockEntities was corrected from null to its default, false. 
+[22:38:35] [Server thread/WARN] [ne.ne.ne.co.ModConfigSpec/CORE]: Incorrect key server.removeErroringEntities was corrected from null to its default, false. 
+[22:38:35] [Server thread/WARN] [ne.ne.ne.co.ModConfigSpec/CORE]: Incorrect key server.fullBoundingBoxLadders was corrected from null to its default, false. 
+[22:38:35] [Server thread/WARN] [ne.ne.ne.co.ModConfigSpec/CORE]: Incorrect key server.permissionHandler was corrected from null to its default, neoforge:default_handler. 
+[22:38:35] [Server thread/WARN] [ne.ne.ne.co.ModConfigSpec/CORE]: Incorrect key server.advertiseDedicatedServerToLan was corrected from null to its default, true. 
+[22:38:35] [Server thread/INFO] [minecraft/DedicatedServer]: Preparing level "world"
+[22:38:36] [Server thread/INFO] [minecraft/MinecraftServer]: Preparing start region for dimension minecraft:overworld
+[22:38:37] [Worker-Main-5/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[22:38:37] [Worker-Main-5/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[22:38:37] [Worker-Main-3/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 10%
+[22:38:37] [Worker-Main-3/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 54%
+[22:38:38] [Server thread/INFO] [minecraft/LoggerChunkProgressListener]: Time elapsed: 1826 ms
+[22:38:38] [Server thread/INFO] [minecraft/DedicatedServer]: Done (2.411s)! For help, type "help"
+[22:38:38] [LanServerPinger #1/WARN] [minecraft/LanServerPinger]: LanServerPinger: Network is unreachable: sendto
+[22:38:38] [Server thread/INFO] [ne.ne.ne.se.pe.PermissionAPI/]: Successfully initialized permission handler neoforge:default_handler
+[22:38:38] [Server thread/INFO] [QiZhangVerdict/]: External mod presence only: grimac=false, antixray=false; actual function must be tested separately
+[22:38:38] [Server thread/INFO] [QiZhangVerdict/]: QiZhangGuard started: QiZhangVerdict sessions=0, trackedIPs=0, accountPairs=0, rules=37, companion=required, vm=DENY, blacklist=DENY, rateBuckets=0, accountBans=0, deviceBans=0, deviceRequired=true. Reports are self-reported, not trusted attestation.
+[22:38:38] [Server thread/INFO] [minecraft/MinecraftServer]: The difficulty did not change; it is already set to peaceful
+[22:38:38] [Server thread/INFO] [minecraft/MinecraftServer]: Gamerule doMobSpawning is now set to: false
+[22:38:57] [Server thread/INFO] [minecraft/PlayerList]: VerdictNext[/127.0.0.1:7608] logged in with entity id 1 at (-6.5, -60.0, -3.5)
+[22:38:57] [Server thread/INFO] [minecraft/MinecraftServer]: VerdictNext joined the game
+[22:38:59] [Server thread/INFO] [minecraft/MinecraftServer]: There are 1 of a max of 5 players online: VerdictNext
+[22:38:59] [Server thread/INFO] [minecraft/MinecraftServer]: QiZhangVerdict sessions=1, trackedIPs=1, accountPairs=1, rules=37, companion=required, vm=DENY, blacklist=DENY, rateBuckets=1, accountBans=0, deviceBans=0, deviceRequired=true
+[22:38:59] [Server thread/INFO] [minecraft/MinecraftServer]: VerdictNext has the following entity data: 0
+[22:40:00] [Server thread/INFO] [minecraft/MinecraftServer]: There are 1 of a max of 5 players online: VerdictNext
+[22:40:00] [Server thread/INFO] [minecraft/MinecraftServer]: QiZhangVerdict sessions=1, trackedIPs=1, accountPairs=1, rules=37, companion=required, vm=DENY, blacklist=DENY, rateBuckets=1, accountBans=0, deviceBans=0, deviceRequired=true
+[22:40:00] [Server thread/INFO] [minecraft/MinecraftServer]: VerdictNext has the following entity data: 0
+[22:40:00] [Server thread/INFO] [minecraft/ServerGamePacketListenerImpl]: VerdictNext lost connection: Disconnected
+[22:40:00] [Server thread/INFO] [minecraft/MinecraftServer]: VerdictNext left the game
+[22:40:01] [Server thread/INFO] [minecraft/MinecraftServer]: Stopping the server
+[22:40:01] [Server thread/INFO] [minecraft/MinecraftServer]: Stopping server
+[22:40:01] [Server thread/INFO] [minecraft/MinecraftServer]: Saving players
+[22:40:01] [Server thread/INFO] [minecraft/MinecraftServer]: Saving worlds
+[22:40:01] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[22:40:02] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
+[22:40:02] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[22:40:02] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[22:40:02] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[22:40:02] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[22:40:02] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage: All dimensions are saved

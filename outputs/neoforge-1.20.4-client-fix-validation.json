@@ -1,0 +1,456 @@
+{
+  "schemaVersion": 1,
+  "profile": "neoforge-1.20.4",
+  "loaderVersion": "20.4.251",
+  "version": "0.3.0-dev",
+  "passed": true,
+  "artifact": {
+    "path": "platforms/1.20.4/neoforge/build/libs/qizhangverdict-neoforge-1.20.4-0.3.0-dev.jar",
+    "bytes": 95633,
+    "sha256": "1552dabe78c522daf615922a0644e357884f6909a8925f94c6a8b16618f5132b"
+  },
+  "oldCandidate": {
+    "path": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\neoforge-client-fix\\initial-candidate\\qizhangverdict-neoforge-1.20.4-0.3.0-dev.jar",
+    "sha256": "c3e742892ef723d035b81e165eed3ef4a560aa249349183298dd0f9b45e48f66",
+    "bytes": 93937
+  },
+  "initialFailure": {
+    "passed": false,
+    "kind": "real-client-required-report-timeout",
+    "originalOptionalValueObserved": false,
+    "uniqueOriginalFailureCauseEstablished": false,
+    "result": {
+      "publicFile": "outputs/evidence/neo1204-client-fix-old-client-result.json",
+      "sha256": "d6a116419a64700790589ec4cefc294cefc7636e02837a5e7f72d6fed8a4aebc",
+      "bytes": 3381
+    }
+  },
+  "repair": {
+    "productionScope": "NeoForge 1.20.4 adapter only; shared core and other adapters unchanged",
+    "description": "Clientbound handling no longer depends on a network-time Optional player snapshot. It queues processing, checks the original live channel, and rechecks the same live connection before sending the asynchronous report.",
+    "serverboundOwnershipPreserved": true,
+    "strictPolicyRelaxed": false,
+    "diagnosis": {
+      "publicFile": "outputs/evidence/neo1204-client-fix-diagnosis.json",
+      "sha256": "a7fdcea89c1abfbc42d97e0a9a32263d50c1f9b660441e5e4571a2388d3dc8e3",
+      "bytes": 2575
+    },
+    "officialSourceURL": "https://maven.neoforged.net/releases/net/neoforged/neoforge/20.4.251/neoforge-20.4.251-sources.jar",
+    "oldFailureBoundary": "Official source and queued-event negative control establish a reproducible race consistent with the timeout; the original Optional value was not captured."
+  },
+  "build": {
+    "passed": true,
+    "reportedGradleSeconds": 32,
+    "dispatchAssertions": 9,
+    "parserAndPayloadTasksPassed": true,
+    "otherArtifactHashesUnchanged": true,
+    "result": {
+      "publicFile": "outputs/evidence/neo1204-client-fix-build-result.json",
+      "sha256": "7df6f0d2f29a5bb7fb68baa14444206c4fa276bb2ab4ad4bc6f80c7ff5584b3e",
+      "bytes": 21377
+    },
+    "log": {
+      "publicFile": "outputs/evidence/neo1204-client-fix-build.log",
+      "sha256": "f5a4fce499bf2d630d5cb9843ca8c676d4299a5e9a6c6511b6f0befd8f59fce5",
+      "bytes": 4371
+    }
+  },
+  "packagedCore": {
+    "passed": true,
+    "runtimeJavaMajor": 17,
+    "securityAssertions": 57,
+    "catalogAssertions": 37,
+    "controls": 3,
+    "total": 97,
+    "result": {
+      "publicFile": "outputs/evidence/neo1204-client-fix-core-result.json",
+      "sha256": "cf90be55ac742472d2baff9e5ea1656cb3746c4fa2d7734ad461ce204492ae24",
+      "bytes": 5483
+    }
+  },
+  "jarStaticAudit": {
+    "passed": true,
+    "result": {
+      "publicFile": "outputs/evidence/neo1204-client-fix-jar-delta.json",
+      "sha256": "7755465cb531cba5e2ad4e7d93f1909e59be01e51b176e82ad201ae591e32410",
+      "bytes": 983
+    },
+    "rootLicenseAndNoticeExact": true,
+    "license": "GPL-3.0-only",
+    "classMajor": 61
+  },
+  "dedicatedRuntime": {
+    "passed": true,
+    "protocolAssertions": 26,
+    "serverExitCode": 0,
+    "protocolExitCode": 0,
+    "result": {
+      "publicFile": "outputs/evidence/neo1204-client-fix-server-result.json",
+      "sha256": "a0c8c8873a99c21f276e3599b8db4574fbdec8eb18b1d401c0017142b1191da3",
+      "bytes": 15440
+    },
+    "protocol": {
+      "publicFile": "outputs/evidence/neo1204-client-fix-protocol-result.json",
+      "sha256": "2b35c313330e9ad48c44c750eace03c43256ae3f7eb21d9e45f8a1a95d69bb6a",
+      "bytes": 5273
+    },
+    "boundary": "This synthetic TCP suite deliberately changes isolated policy branches. Default-policy proof comes from the separate real client fixture."
+  },
+  "realClient": {
+    "passed": true,
+    "strictDefaultSettingCount": 13,
+    "strict13DefaultsUnchanged": true,
+    "defaultRuleCount": 37,
+    "default37RulesUnchanged": true,
+    "independentActualScopedDeviceMatch": true,
+    "onlineObservationSeconds": 60.42874260013923,
+    "survivalModeConfirmed": true,
+    "clientExitCode": 0,
+    "serverExitCode": 0,
+    "normalClientExit": true,
+    "normalServerExit": true,
+    "visualPassed": true,
+    "pngSha256": "7901934df5bfd3134a3efdc563b215af560b811eb5edad9f7c988c236f1be47d",
+    "result": {
+      "publicFile": "outputs/evidence/neo1204-client-fix-client-result.json",
+      "sha256": "aa2e88884b17e376ee01f918eaed3be2991d973dbf04825d07e73ce42a09a3b6",
+      "bytes": 7572
+    },
+    "visualReview": {
+      "publicFile": "outputs/evidence/neo1204-client-fix-client-visual-review.json",
+      "sha256": "8d43f7c46f7c194c629b590bb5bb36d6706acf9ed6e37e5a8cc1952f7da12616",
+      "bytes": 1208
+    },
+    "boundary": "Loopback synthetic offline authentication; self-reported device identity is not trusted hardware attestation."
+  },
+  "workingDirectoryAppendix": {
+    "passed": true,
+    "tasks": [
+      ":neoforge:payloadCodecSmoke",
+      ":neoforge:clientChallengeDispatchSmoke"
+    ],
+    "reportedGradleSeconds": 17,
+    "jarRebuilt": false,
+    "allJarHashesUnchanged": true,
+    "result": {
+      "publicFile": "outputs/evidence/neo1204-client-fix-workdir-result.json",
+      "sha256": "b2d52c12a948d6924ea09326f7910913142b26c9f174c70c5c919cb9891616e0",
+      "bytes": 21744
+    },
+    "payloadLogsUnderCodexTemp": true,
+    "dispatchWorkingDirectoryUnderCodexTemp": true,
+    "configurationTiming": "Working-directory-only Gradle edits followed the successful candidate build and runtime. The final sources are pinned by this separate receipt; no product Java or JAR bytes changed."
+  },
+  "runtimeAggregates": [
+    {
+      "publicFile": "outputs/next-platform-server-validation.json",
+      "sha256": "b1f95dc211068857c2333940f2e12f877ff9e5e7e2e11ae6082f67a7d6775a96",
+      "bytes": 153570
+    },
+    {
+      "publicFile": "outputs/next-platform-client-validation.json",
+      "sha256": "fdcf2f9e93160a04fb081e11a4003fefd938b55f4547a851bb188e5c2692e04e",
+      "bytes": 62892
+    }
+  ],
+  "privacy": {
+    "explicitFileWhitelist": true,
+    "rawStateOrIdentifierFilesPublished": false,
+    "privateValueMatches": 0,
+    "fullMinecraftDisassemblyPublished": false,
+    "privateLaunchPlanPublished": false
+  },
+  "publicEvidence": [
+    {
+      "file": "evidence/neo1204-client-fix-diagnosis.json",
+      "publicFile": "outputs/evidence/neo1204-client-fix-diagnosis.json",
+      "sha256": "a7fdcea89c1abfbc42d97e0a9a32263d50c1f9b660441e5e4571a2388d3dc8e3",
+      "bytes": 2575,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\neoforge-client-fix\\source-race-diagnosis.json",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "evidence/neo1204-client-fix-jar-delta.json",
+      "publicFile": "outputs/evidence/neo1204-client-fix-jar-delta.json",
+      "sha256": "7755465cb531cba5e2ad4e7d93f1909e59be01e51b176e82ad201ae591e32410",
+      "bytes": 983,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\neoforge-client-fix\\jar-static-delta.json",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "evidence/neo1204-client-fix-pin-review.json",
+      "publicFile": "outputs/evidence/neo1204-client-fix-pin-review.json",
+      "sha256": "e629e46d9cbab901779795ec0bbacd1092aa16ad5301c07733090ad53786dca4",
+      "bytes": 596,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\neoforge-client-fix\\pin-override-review.json",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "evidence/neo1204-client-fix-build-helper.py",
+      "publicFile": "outputs/evidence/neo1204-client-fix-build-helper.py",
+      "sha256": "f791fb9bd38027d7f31601ef67bf6f1e80824b57b9bdd14afa88fd89cc73f6a8",
+      "bytes": 5651,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\neoforge-client-fix\\build-neoforge.py",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "evidence/neo1204-client-fix-workdir-helper.py",
+      "publicFile": "outputs/evidence/neo1204-client-fix-workdir-helper.py",
+      "sha256": "54bd869320c71ed4c257af095d9166dea2701293d4d13650c52a5d47a2781c0b",
+      "bytes": 5670,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\neoforge-client-fix\\rerun-javaexec.py",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "evidence/neo1204-client-fix-collector.py",
+      "publicFile": "outputs/evidence/neo1204-client-fix-collector.py",
+      "sha256": "2ffc5751eb2ed2be4f450844c1ed3e88d0d4ccd309d0d69d3a2b70b14a643075",
+      "bytes": 11679,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\neoforge-client-fix\\collect-fix-evidence.py",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "evidence/neo1204-client-fix-build-plan.json",
+      "publicFile": "outputs/evidence/neo1204-client-fix-build-plan.json",
+      "sha256": "4780c7e2c6c0b8ad56dcdd8f6d37bc728b431e01bd93453c4bb6f94cfcfe7185",
+      "bytes": 20886,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\builds\\02-neoforge-client-fix\\plan.json",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "evidence/neo1204-client-fix-build-result.json",
+      "publicFile": "outputs/evidence/neo1204-client-fix-build-result.json",
+      "sha256": "7df6f0d2f29a5bb7fb68baa14444206c4fa276bb2ab4ad4bc6f80c7ff5584b3e",
+      "bytes": 21377,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\builds\\02-neoforge-client-fix\\result.json",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "evidence/neo1204-client-fix-build.log",
+      "publicFile": "outputs/evidence/neo1204-client-fix-build.log",
+      "sha256": "f5a4fce499bf2d630d5cb9843ca8c676d4299a5e9a6c6511b6f0befd8f59fce5",
+      "bytes": 4371,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\builds\\02-neoforge-client-fix\\gradle.log",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "evidence/neo1204-client-fix-workdir-plan.json",
+      "publicFile": "outputs/evidence/neo1204-client-fix-workdir-plan.json",
+      "sha256": "990338b0903b42266bb9704316886f16df99ee00572b64bcc5d5c09e4f56bce1",
+      "bytes": 21253,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\builds\\03-javaexec-workdirs\\plan.json",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "evidence/neo1204-client-fix-workdir-result.json",
+      "publicFile": "outputs/evidence/neo1204-client-fix-workdir-result.json",
+      "sha256": "b2d52c12a948d6924ea09326f7910913142b26c9f174c70c5c919cb9891616e0",
+      "bytes": 21744,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\builds\\03-javaexec-workdirs\\result.json",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "evidence/neo1204-client-fix-workdir.log",
+      "publicFile": "outputs/evidence/neo1204-client-fix-workdir.log",
+      "sha256": "0a3a2d15a0f3d2b5aa07ed5356fec4fe0311263b719f27fe3b0492582c6be264",
+      "bytes": 3276,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\builds\\03-javaexec-workdirs\\gradle.log",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "evidence/neo1204-client-fix-core-result.json",
+      "publicFile": "outputs/evidence/neo1204-client-fix-core-result.json",
+      "sha256": "cf90be55ac742472d2baff9e5ea1656cb3746c4fa2d7734ad461ce204492ae24",
+      "bytes": 5483,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\neoforge-client-fix\\artifact-core-01\\result.json",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "evidence/neo1204-client-fix-core-helper.py",
+      "publicFile": "outputs/evidence/neo1204-client-fix-core-helper.py",
+      "sha256": "0a5ee2cf65a53865f2c2c2fe310b106cd27d85f11295dcf0bdef637407580191",
+      "bytes": 5365,
+      "originalPath": "E:\\Codex_work\\QiZhangVerdict\\scripts\\artifact_core_checks.py",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "evidence/neo1204-client-fix-old-client-result.json",
+      "publicFile": "outputs/evidence/neo1204-client-fix-old-client-result.json",
+      "sha256": "d6a116419a64700790589ec4cefc294cefc7636e02837a5e7f72d6fed8a4aebc",
+      "bytes": 3381,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\future-client-fixtures\\neoforge-1.20.4\\runs\\candidate-0.3.0-dev-01\\result.json",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "evidence/neo1204-client-fix-client-result.json",
+      "publicFile": "outputs/evidence/neo1204-client-fix-client-result.json",
+      "sha256": "aa2e88884b17e376ee01f918eaed3be2991d973dbf04825d07e73ce42a09a3b6",
+      "bytes": 7572,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\future-client-fixtures\\neoforge-1.20.4\\runs\\candidate-0.3.0-dev-02\\result.json",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "evidence/neo1204-client-fix-client-visual-review.json",
+      "publicFile": "outputs/evidence/neo1204-client-fix-client-visual-review.json",
+      "sha256": "8d43f7c46f7c194c629b590bb5bb36d6706acf9ed6e37e5a8cc1952f7da12616",
+      "bytes": 1208,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\future-client-fixtures\\neoforge-1.20.4\\runs\\candidate-0.3.0-dev-02\\visual-review-mods.json",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "evidence/neo1204-client-fix-server-result.json",
+      "publicFile": "outputs/evidence/neo1204-client-fix-server-result.json",
+      "sha256": "a0c8c8873a99c21f276e3599b8db4574fbdec8eb18b1d401c0017142b1191da3",
+      "bytes": 15440,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\neoforge-02\\smoke-result.json",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "evidence/neo1204-client-fix-protocol-result.json",
+      "publicFile": "outputs/evidence/neo1204-client-fix-protocol-result.json",
+      "sha256": "2b35c313330e9ad48c44c750eace03c43256ae3f7eb21d9e45f8a1a95d69bb6a",
+      "bytes": 5273,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\servers\\neoforge-02\\protocol-result.json",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "evidence/neo1204-client-fix-initial-GuardNeoForge.java",
+      "publicFile": "outputs/evidence/neo1204-client-fix-initial-GuardNeoForge.java",
+      "sha256": "88dfa60558a668f873901c7599c40e74247d706a0aa7d3d76643eea7c367862e",
+      "bytes": 3598,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\neoforge-client-fix\\initial-candidate\\GuardNeoForge.java",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "evidence/neo1204-client-fix-initial-GuardNeoForgeClient.java",
+      "publicFile": "outputs/evidence/neo1204-client-fix-initial-GuardNeoForgeClient.java",
+      "sha256": "b9f38572aa51e0269adef4d0301b7622a5e709db6131aadd3731925cd5ba4ec3",
+      "bytes": 1318,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\neoforge-client-fix\\initial-candidate\\GuardNeoForgeClient.java",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "evidence/neo1204-client-fix-working-directory-build.gradle",
+      "publicFile": "outputs/evidence/neo1204-client-fix-working-directory-build.gradle",
+      "sha256": "450830c96dbfb84fa6cfcec48f3180ee905a9f9e864fef2fb82521e60e8dbb9d",
+      "bytes": 3071,
+      "originalPath": "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.20.4\\build.gradle",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "evidence/neo1204-client-fix-working-directory-neoforge.gradle",
+      "publicFile": "outputs/evidence/neo1204-client-fix-working-directory-neoforge.gradle",
+      "sha256": "61f3eb694a23c2f9c9531745b982914eba2b53a0bceb6bc239ee066352bfe7f4",
+      "bytes": 1003,
+      "originalPath": "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.20.4\\neoforge\\build.gradle",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "evidence/neo1204-client-fix-core-java-version.log",
+      "publicFile": "outputs/evidence/neo1204-client-fix-core-java-version.log",
+      "sha256": "2c05c59b13a701146c37d79936303eb8080cd353e096756dfab1cd833a306423",
+      "bytes": 196,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\neoforge-client-fix\\artifact-core-01\\java-version.log",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "evidence/neo1204-client-fix-core-compile-runners.log",
+      "publicFile": "outputs/evidence/neo1204-client-fix-core-compile-runners.log",
+      "sha256": "0776deeb6ace85f83d60a9ba535cbe73a21566505b5aec2fd5c75b2bde065172",
+      "bytes": 188,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\neoforge-client-fix\\artifact-core-01\\compile-runners.log",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "evidence/neo1204-client-fix-core-artifact-origin.log",
+      "publicFile": "outputs/evidence/neo1204-client-fix-core-artifact-origin.log",
+      "sha256": "de3373d101bd34efca6d6014acec9d6fb476d4803cfadfa4d52bade4f5cb8c0b",
+      "bytes": 74,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\neoforge-client-fix\\artifact-core-01\\artifact-origin.log",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "evidence/neo1204-client-fix-core-security.log",
+      "publicFile": "outputs/evidence/neo1204-client-fix-core-security.log",
+      "sha256": "1e26be45a2a53ee19e208f27f4e32b96db5c32f3c0dd7582a88d36147338e1fb",
+      "bytes": 3229,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\neoforge-client-fix\\artifact-core-01\\security.log",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "evidence/neo1204-client-fix-core-catalog.log",
+      "publicFile": "outputs/evidence/neo1204-client-fix-core-catalog.log",
+      "sha256": "1df88d7a85a7481da4a7ab479ac5ef7085d6f440dfcc8fb0ad8a19950ae9855e",
+      "bytes": 3262,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\neoforge-client-fix\\artifact-core-01\\catalog.log",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "evidence/neo1204-client-fix-GuardNeoForge.java",
+      "publicFile": "outputs/evidence/neo1204-client-fix-GuardNeoForge.java",
+      "sha256": "bb33a9ee90d45faf49fdc448f90c3f0dc014fdbfdb87d58f8f566a8052d044e2",
+      "bytes": 4106,
+      "originalPath": "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.20.4\\neoforge\\src\\main\\java\\cn\\qizhang\\guard\\neoforge\\GuardNeoForge.java",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "evidence/neo1204-client-fix-GuardNeoForgeClient.java",
+      "publicFile": "outputs/evidence/neo1204-client-fix-GuardNeoForgeClient.java",
+      "sha256": "b52b5eaea98cdebec4e40e3d11e72c2e594fa8710dcf9cebd2e5f072ef09a392",
+      "bytes": 1920,
+      "originalPath": "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.20.4\\neoforge\\src\\main\\java\\cn\\qizhang\\guard\\neoforge\\GuardNeoForgeClient.java",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "evidence/neo1204-client-fix-ClientChallengeDispatch.java",
+      "publicFile": "outputs/evidence/neo1204-client-fix-ClientChallengeDispatch.java",
+      "sha256": "122bac82f722c6a5d9d284fda629660dd478e78f48adb0e5fe7026826b00e64b",
+      "bytes": 606,
+      "originalPath": "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.20.4\\neoforge\\src\\main\\java\\cn\\qizhang\\guard\\neoforge\\ClientChallengeDispatch.java",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "evidence/neo1204-client-fix-ClientChallengeDispatchSmoke.java",
+      "publicFile": "outputs/evidence/neo1204-client-fix-ClientChallengeDispatchSmoke.java",
+      "sha256": "86ef2a997ffba3c6b5143f865c6fded6a6550db04b8a5753b4f594052fcfd2fc",
+      "bytes": 4250,
+      "originalPath": "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.20.4\\neoforge\\src\\test\\java\\cn\\qizhang\\guard\\neoforge\\ClientChallengeDispatchSmoke.java",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "evidence/neo1204-client-fix-SecurityRegressionTest.java",
+      "publicFile": "outputs/evidence/neo1204-client-fix-SecurityRegressionTest.java",
+      "sha256": "f1b0c445eaf5229e889b94d4c5176dbbe72eccebd81febe58b78ff980d716985",
+      "bytes": 45337,
+      "originalPath": "E:\\Codex_work\\QiZhangVerdict\\core\\src\\test\\java\\cn\\qizhang\\guard\\core\\SecurityRegressionTest.java",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "evidence/neo1204-client-fix-CatalogCompatibilityTest.java",
+      "publicFile": "outputs/evidence/neo1204-client-fix-CatalogCompatibilityTest.java",
+      "sha256": "29ddd1bed5f88c5917d9dfd8f67454f476ac3e2bd26b3bb404e29b4503268980",
+      "bytes": 9418,
+      "originalPath": "E:\\Codex_work\\QiZhangVerdict\\core\\src\\test\\java\\cn\\qizhang\\guard\\core\\CatalogCompatibilityTest.java",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "evidence/neo1204-client-fix-payload-workdir-debug.log",
+      "publicFile": "outputs/evidence/neo1204-client-fix-payload-workdir-debug.log",
+      "sha256": "6ab5a004ee2f03144d562caf9abf4b08d4ab2b76e41edb8afee94c8b1da8f546",
+      "bytes": 5767,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\builds\\03-javaexec-workdirs\\runtime\\neoforge-payload\\logs\\debug.log",
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "evidence/neo1204-client-fix-payload-workdir-latest.log",
+      "publicFile": "outputs/evidence/neo1204-client-fix-payload-workdir-latest.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\builds\\03-javaexec-workdirs\\runtime\\neoforge-payload\\logs\\latest.log",
+      "rawBytesPreserved": true
+    }
+  ],
+  "publicEvidenceCount": 36,
+  "publicEvidenceBytes": 251126,
+  "noCommitOrPushPerformedByCollector": true
+}
