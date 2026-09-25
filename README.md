@@ -22,6 +22,8 @@
 
 1.8.9 / 1.12.2 Forge，以及 1.16.5 / 1.18.2 / 1.19.4 Fabric、Forge 的八个模组已完成构建与真实客户端/专服测试；另有 1.8.9 Forge 客户端连接 Paper 1.8.8、1.12.2 Forge 客户端连接 Paper 1.12.2 的验收。下载：[GitHub 0.2.0-dev-preview.2](https://github.com/EeryFrank/QiZhangVerdict/releases/tag/v0.2.0-dev-preview.2) · [GitLab 0.2.0-dev-preview.2](https://gitlab.com/EeryFrank/QiZhangVerdict/-/releases/v0.2.0-dev-preview.2)。安装组合、证据和限制见 [旧版测试包说明](docs/preview-0.2.0-dev-preview.2.md)。本机 1.8.9 图形客户端验收需要关闭 Forge 启动画面，具体设置见说明；没有原生 Forge 1.8.8 模组。预览沿用已发布 0.1.1 Bukkit 和 preview.1 七个模组的原始文件，新增 1.8.9 模组。
 
+preview.2 已在两站公开发布，每站 17 个附件均经匿名下载核对 SHA256，见 [发布回执](outputs/publish-receipt-0.2.0-dev-preview.2.json)。最终标签的 GitHub 9 项构建检查通过；GitLab 9 项因 CI 配额不足未执行。
+
 ## 默认登录规则
 
 - 同一个 IP、同一个设备标识：最多 **1 个同时在线账号**。

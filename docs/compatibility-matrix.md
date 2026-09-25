@@ -6,6 +6,8 @@
 
 新增 1.8.9 的预览为 [GitHub 0.2.0-dev-preview.2](https://github.com/EeryFrank/QiZhangVerdict/releases/tag/v0.2.0-dev-preview.2) / [GitLab 0.2.0-dev-preview.2](https://gitlab.com/EeryFrank/QiZhangVerdict/-/releases/v0.2.0-dev-preview.2)，共八个模组及一个 Bukkit 插件；安装和验证条件见 [preview.2 说明](preview-0.2.0-dev-preview.2.md)。新增的两个 1.8.9 客户端用例需要本地关闭 Forge 启动画面，保留原画面故障和无插件对照记录。
 
+preview.2 已发布，固定源码提交 `c2f2d007d9212b30f42843a641a365e8b352f08b`；两站共 34 个附件匿名下载和 SHA256 核对通过。见 [发布回执](../outputs/publish-receipt-0.2.0-dev-preview.2.json)及 [安装/源码 ZIP 独立审查](../outputs/preview-packaging-validation-0.2.0-dev-preview.2.json)。这次打包保留先前八个 JAR，新增 1.8.9 成品。
+
 | Minecraft | 插件服务端 | 配套模组 |
 |---|---|---|
 | 1.8.8 | Paper 445：最终 GPL Bukkit 0.1.1 + Forge 1.8.9 真实客户端通过；早期 12 项 TCP 检查另有记录 | Forge 1.8.9 客户端跨版连接通过；没有原生 Forge 1.8.8 成品 |

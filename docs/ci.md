@@ -32,6 +32,10 @@ GitHub 使用固定 SHA 的官方 actions；GitLab 开发任务使用[官方 Tem
 
 加入 1.8.9 后，提交 `281fa7a` 的首次远程构建因官方 Gradle 2.7 启动脚本被 `sh` 执行而失败。保持分发校验和必需检查不变，仅该目标改用 Bash 后，提交 `ba7c919ef48298b15fe41fff8bfc222524961291` 的旧版五任务与现代四任务全部通过；GitLab 九任务仍因额度不足未执行。见[故障复现](../outputs/legacy-ci-diagnosis-1.8.9.json)与[远程结果](../outputs/legacy-ci-validation-1.8.9.json)。
 
+`v0.2.0-dev-preview.2` 固定提交 `c2f2d007d9212b30f42843a641a365e8b352f08b` 的 [GitHub 旧版五任务](https://github.com/EeryFrank/QiZhangVerdict/actions/runs/36123149754)及 [现代四任务](https://github.com/EeryFrank/QiZhangVerdict/actions/runs/36123149789)全部通过。[GitLab 同标签流水线](https://gitlab.com/EeryFrank/QiZhangVerdict/-/pipelines/2881920187)九任务均为 `ci_quota_exceeded`，`started_at` 为空，未执行。安装包沿用实际本机验收的 JAR，没有替换为 CI 重编文件；两站共 34 个公开附件的匿名下载验证见 [发布回执](../outputs/publish-receipt-0.2.0-dev-preview.2.json)。
+
 ## 手动 Grim 联动运行测试
 
 `grim-link-qa.yml` 仅通过 `workflow_dispatch` 启动，在临时的 Linux runner 上创建绑定 `127.0.0.1` 的两个独立测试服。它下载并校验已发布 GPL Bukkit 0.1.1、固定 Purpur 与 Grim，接受该隔离夹具的 Minecraft EULA，实际启动 JVM；不会连接现存服务器。测试使用原样处罚模板的 `120:0` 阈值，通过重复物品栏槽位包触发 Grim 检查，验证关联账号/设备封禁、重启持久化和管理员解封。Node 22 依赖通过固定 npm lock 安装。只有该运行的实际日志和结果可证明通过；配置存在不代表测试已执行。上传路径明确限定为夹具元数据、日志与结果，不上传世界、Minecraft JAR 或账号状态文件。
+
+实际第三次运行 [36120803733](https://github.com/EeryFrank/QiZhangVerdict/actions/runs/36120803733) 在 `ed609744dedbab03f779beda43ec0442ef5575a3` 完成两个版本、四次 JVM、24 组断言，全部正常退出。前两次 QA 失败、上游警告和验证边界保留在 [联动验收](grim-linked-ban-validation.md)，不能将单个 BadPacketsA 用例推断为所有作弊检测效果。
