@@ -1,0 +1,103 @@
+{
+  "product": "QiZhangVerdict",
+  "profile": "fabric-1.18.2",
+  "java": "E:\\CodexTemp\\mods-danzi\\java\\jdk-17.0.20.1+1-jre\\bin\\java.exe",
+  "guard_source": "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.18.2\\fabric\\build\\libs\\qizhangverdict-fabric-1.18.2-0.2.0-dev.jar",
+  "guard_sha256": "65ad6fafe4eee0f326d3eebe67465e30022972e800fd1d93ac7c068cf6d613c5",
+  "guard_target": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\fabric-1.18.2-guard-01\\mods\\qizhangverdict-fabric-1.18.2-0.2.0-dev.jar",
+  "scope": "Dedicated server startup + console status + clean shutdown, no player/client gameplay; real loopback TCP protocol clients with synthetic self-reports, not rendered mod clients",
+  "mods": [
+    {
+      "filename": "fabric-api-0.77.0+1.18.2.jar",
+      "sha256": "131c74c0409a004f5227781700de190e97630e0fe0a85dc9a3a88af2bbc5a38c"
+    },
+    {
+      "filename": "qizhangverdict-fabric-1.18.2-0.2.0-dev.jar",
+      "sha256": "65ad6fafe4eee0f326d3eebe67465e30022972e800fd1d93ac7c068cf6d613c5"
+    }
+  ],
+  "started": false,
+  "console_status_verified": false,
+  "timed_out": false,
+  "started_utc": "2026-09-25T07:12:50Z",
+  "offline_mode_for_isolated_protocol_test": true,
+  "console_path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\fabric-1.18.2-guard-01\\console.log",
+  "exit_code": 0,
+  "elapsed_seconds": 12.53,
+  "parser_version": 2,
+  "expected_integrations": {
+    "grim": false,
+    "antixray": false
+  },
+  "console_sha256": "aa0ec33f9778ad5928bc4293adde83b64e12f7ad7932f535dbd6ab228555d18b",
+  "guard_log_lines": [
+    "\t- qizhangverdict 0.2.0-dev",
+    "[16:12:55] [main/INFO]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/E:/CodexTemp/QiZhangVerdict/legacy-runtime/fabric-1.18.2-guard-01/libraries/net/fabricmc/sponge-mixin/0.15.5+mixin.0.8.7/sponge-mixin-0.15.5+mixin.0.8.7.jar Service=Knot/Fabric Env=SERVER",
+    "/*                                         Code source : file:/E:/CodexTemp/QiZhangVerdict/legacy-runtime/fabric-1.18.2-guard-01/libraries/net/fabricmc/sponge-mixin/0.15.5+mixin.0.8.7/sponge-mixin-0.15.5+mixin.0.8.7.jar */",
+    "[16:12:55] [main/WARN]: Compatibility level JAVA_17 specified by qizhangverdict.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).",
+    "[16:12:55] [main/INFO]: Selecting config qizhangverdict.mixins.json",
+    "[16:12:55] [main/INFO]: Preparing qizhangverdict.mixins.json (1)",
+    "java.lang.RuntimeException: Could not execute entrypoint stage 'main' due to errors, provided by 'qizhangverdict' at 'cn.qizhang.guard.fabric.GuardFabric'!",
+    "\tat cn.qizhang.guard.fabric.GuardFabric.onInitialize(GuardFabric.java:23) ~[qizhangverdict-fabric-1.18.2-0.2.0-dev.jar:?]",
+    "\tat cn.qizhang.guard.fabric.GuardFabric.onInitialize(GuardFabric.java:23) ~[qizhangverdict-fabric-1.18.2-0.2.0-dev.jar:?]"
+  ],
+  "antixray_log_lines": [
+    "[16:13:02] [main/INFO]: External mod presence only: grimac=false, antixray=false; actual function must be tested separately"
+  ],
+  "grim_log_lines": [
+    "[16:13:02] [main/INFO]: External mod presence only: grimac=false, antixray=false; actual function must be tested separately"
+  ],
+  "error_lines": [
+    "[16:13:02] [main/ERROR]: Failed to start the minecraft server",
+    "java.lang.RuntimeException: Could not execute entrypoint stage 'main' due to errors, provided by 'qizhangverdict' at 'cn.qizhang.guard.fabric.GuardFabric'!",
+    "\tat net.fabricmc.loader.impl.util.ExceptionUtil.gatherExceptions(ExceptionUtil.java:33) ~[fabric-loader-0.16.14.jar:?]",
+    "Caused by: java.lang.ClassNotFoundException: net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents"
+  ],
+  "nonfatal_upstream_notices": [],
+  "pass_definition": "Done + QiZhangVerdict console status + dependency initialization + clean stop; not an error-free log or anticheat accuracy claim",
+  "integration_startup_errors": [],
+  "status_response_lines": [],
+  "guard_status_observed": false,
+  "antixray_loaded": false,
+  "grim_loaded": false,
+  "grim_command_framework_available": false,
+  "passed_startup_only": false,
+  "all_requested_checks_passed": false,
+  "loader_installation_metadata": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\fabric-1.18.2-guard-01\\.qizhang-verdict-smoke.json",
+  "loader_installation_metadata_sha256": "7b3e1c59af593610388591b229bd0cf4859496cb0eb91252457c89a792bee4f8",
+  "guard_only_adapter_test": true,
+  "grim_antixray_installed": false,
+  "installer_url": "https://maven.fabricmc.net/net/fabricmc/fabric-installer/1.1.1/fabric-installer-1.1.1.jar",
+  "installer_sha256": "2487a69dd6f9d9c2605265a7142d77c26ab62edc620e6bcf810d581d2ee31b79",
+  "javaVersion": "openjdk version \"17.0.20.1\" 2026-08-18\nOpenJDK Runtime Environment Temurin-17.0.20.1+1 (build 17.0.20.1+1)\nOpenJDK 64-Bit Server VM Temurin-17.0.20.1+1 (build 17.0.20.1+1, mixed mode, sharing)",
+  "expected_protocol_case_count": 26,
+  "externalAdapter": {
+    "adapter": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\legacy_mod_1182_adapter.py",
+    "adapterSha256": "5bb210365795f88f68bd3085f0643f7c9a2229f1a29e66e6c43655c36b851770",
+    "frozenHarnessSources": [
+      {
+        "file": "E:\\Codex_work\\QiZhangVerdict\\scripts\\legacy_mod_smoke.py",
+        "sha256": "39bfcd03c0e919add0564e247e6ac569f6842c3b098b25f870efa421c50e7e31"
+      },
+      {
+        "file": "E:\\Codex_work\\QiZhangVerdict\\scripts\\mod_runtime_smoke.py",
+        "sha256": "a15e49bfef5e67d7d7c4471d85fc665be637777889b9ea2032461c417db1e9e2"
+      },
+      {
+        "file": "E:\\Codex_work\\QiZhangVerdict\\scripts\\protocol_smoke.cjs",
+        "sha256": "4f88bcd526337d9c911f26d7a79c6435cf0b94a2814acd11dcf0338f3f1f78be"
+      },
+      {
+        "file": "E:\\Codex_work\\QiZhangVerdict\\integrations\\manage_integrations.py",
+        "sha256": "dcd216a78a848e2a07fbbeb11496c0af46000ad082ae1c2c631b3bf8d653f795"
+      }
+    ],
+    "repoWritten": false,
+    "fixtureOnly": "Guard adapter; no third-party anticheat or AntiXray"
+  },
+  "mixinAudit": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\fabric-1.18.2-guard-01\\mixin-audit.json",
+  "mixinAuditSha256": "8d8e18b6c481a502a6f52d71e2b549512c75ac7f9f582045c62dda8570112de7",
+  "mixinActualTargetExportVerified": false,
+  "productRelease": "0.2.0-dev",
+  "license": "GPL-3.0-only"
+}

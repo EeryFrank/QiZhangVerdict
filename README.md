@@ -4,6 +4,8 @@
 
 ## 测试版本 0.1.1
 
+公开源码及测试安装包：[GitHub](https://github.com/EeryFrank/QiZhangVerdict/releases/tag/v0.1.1-test.1) · [GitLab](https://gitlab.com/EeryFrank/QiZhangVerdict/-/releases/v0.1.1-test.1)。当前版本采用 **GPL-3.0-only**，附完整许可证、对应源码包和 SHA256 校验文件。
+
 | 安装位置 | 文件 |
 |---|---|
 | Paper/Spigot 系插件服 | `qizhangverdict-bukkit-0.1.1.jar` 放 `plugins/` |
@@ -15,6 +17,10 @@
 1.20.1 使用 Java 17；1.21.1 使用 Java 21。新版修复 Forge 1.20.1 的报告事件方向和资源元数据警告；首个 0.1.0 测试版的 Forge 组合未通过后续真实客户端验收。当前验收与开发状态见 [兼容矩阵](docs/compatibility-matrix.md) 和 [客户端记录](docs/client-matrix.md)。插件在 Java 8 上兼容旧 Bukkit API，并已补测五个旧 Paper 版本的准入规则；尚无配套客户端的旧版仍不能直接部署完整设备验证。插件服玩家也需要匹配游戏版本/加载器的客户端模组。
 
 同一服务器只安装插件或服务器模组中的一种。第三方 Grim/AntiXray 是另外的组件。不要把所有平台 JAR 一起放进一个 `mods` 文件夹。服务端插件无法自动安装到玩家客户端。
+
+## 旧版开发预览
+
+1.12.2 Forge，以及 1.16.5 / 1.18.2 / 1.19.4 Fabric、Forge 的七个模组已完成构建与真实客户端/专服测试；另有 1.12.2 Forge 客户端连接 Paper 的验收。`0.2.0-dev-preview.1` 的安装组合、证据和限制见 [旧版测试包说明](docs/preview-0.2.0-dev-preview.1.md)。1.8.x 尚未纳入可安装模组范围。预览不改变已发布 0.1.1 的文件。
 
 ## 默认登录规则
 

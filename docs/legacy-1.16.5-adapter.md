@@ -1,6 +1,6 @@
 # Minecraft 1.16.5 开发适配
 
-截至 2026-09-25，本目标为 `platforms/1.16.5` 下的 **`0.2.0-dev` 开发适配**，包括 Fabric、Forge 和 Java 8 共用逻辑检查子工程。**两端已完整构建并通过真实 Java 8 回归，成品 JAR/refmap 已核验；尚未启动游戏客户端或专服。** 它不属于已冻结的 0.1.1 发布，不表示 1.16.5 游戏运行兼容性已经通过。
+截至 2026-09-25，本目标为 `platforms/1.16.5` 下的 **`0.2.0-dev` 开发适配**，包括 Fabric、Forge 和 Java 8 共用逻辑检查子工程。两端已完整构建、通过真实 Java 8 回归，并完成[独立专服](legacy-mod-validation-1.16.5-gpl.md)及[真实图形客户端](legacy-client-validation-1.16.5.md)验证。它尚未发布，不属于已冻结的 0.1.1 五个安装包。
 
 ## 固定依赖与命名空间
 
@@ -65,4 +65,4 @@ $env:JAVA_TOOL_OPTIONS = '-Djavax.net.ssl.trustStoreType=Windows-ROOT -Djavax.ne
 | Fabric `qizhangverdict-fabric-1.16.5-0.2.0-dev.jar` | `d9bb0837f97ccf30c4b0f19a5cd8b65197eab4b2c5137b246b0e56c94fe6aae6` |
 | Forge `qizhangverdict-forge-1.16.5-0.2.0-dev.jar` | `52e68051478f7e9b257432e895d81f48b54a8974f2a2a03d5f9af14d59e15779` |
 
-构建保留 Loom beta 和 Gradle 9 弃用提示；通过定义是任务执行成功及包体核验，不是日志完全没有提示。下一轮仍需验收每端隔离专服启停、真实 Java 8 客户端连接对应专服及 Bukkit 插件、默认报告期限后的生存模式恢复、OP 等待期间命令拒绝、设备/IP/规则行为、重连及 reload。Java 17 游戏运行、代理/ViaVersion、整合包和第三方 Grim/AntiXray 组合均未验证，不随本开发构建宣称支持。
+构建保留 Loom beta 和 Gradle 9 弃用提示；通过定义是任务执行成功及包体核验，不是日志完全没有提示。后续专服验收中，两端均正常启停并证明实际 Mixin 注入；Fabric 通过 26 项 TCP 断言，含 OP 等待期命令拒绝。两个真实 Java 8 客户端在严格默认策略下分别于报告通过后持续在线 66 / 65 秒，生存恢复、设备关联及正常退出均通过；使用了官方 authlib 的本地离线回退，不能作为正版认证证明。仍待验证客户端连接 Bukkit、Forge OP 门禁行为、重连/reload、大型整合包和旧存档。Java 17 游戏运行、代理/ViaVersion和第三方 Grim/AntiXray 组合均未验证。

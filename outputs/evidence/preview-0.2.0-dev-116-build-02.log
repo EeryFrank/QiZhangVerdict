@@ -1,0 +1,182 @@
+Picked up JAVA_TOOL_OPTIONS: -Djavax.net.ssl.trustStoreType=Windows-ROOT -Djavax.net.ssl.trustStore=NONE
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+
+> Configure project :
+Architect Plugin: 3.4.164
+Architectury Loom: 1.11.456
+This version of Architectury Loom is in beta! Please report any issues you encounter: https://github.com/architectury/architectury-loom/issues
+
+> Configure project :fabric
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Using of the official minecraft mappings is at your own risk!
+Please make sure to read and understand the following license:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# (c) 2020 Microsoft Corporation. These mappings are provided "as-is" and you bear the risk of using them. You may copy and use the mappings for development purposes, but you may not redistribute the mappings complete and unmodified. Microsoft makes no warranties, express or implied, with respect to the mappings provided here.  Use and modification of this document or the source code (in any form) of Minecraft: Java Edition is governed by the Minecraft End User License Agreement available at https://account.mojang.com/documents/minecraft_eula.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+:remapped 45 mods (intermediary -> named) in 5.334 s
+:remapping sources (Mercury, intermediary -> named)
+
+> Configure project :forge
+:executing 6 MCP steps
+:step 1/6 - downloadClient
+:downloadClient done in 838.5 μs
+:step 2/6 - downloadServer
+:downloadServer done in 21.40 μs
+:step 3/6 - stripClient
+:stripClient done in 738.4 ms
+:step 4/6 - stripServer
+:stripServer done in 760.1 ms
+:step 5/6 - merge with net.minecraftforge:mergetool:1.1.1:fatjar
+:merge done in 2.755 s
+:step 6/6 - rename with net.md-5:SpecialSource:1.8.3:shaded
+:rename done in 6.484 s
+:patching jars
+:patched jars in 19.03 s
+:access transforming minecraft
+:access transformed minecraft in 14.52 s
+:remapping minecraft (TinyRemapper, srg -> official)
+:found 1 forge source jars
+:extracted 642 forge source classes
+
+> Task :generateLegacySources
+
+> Task :compat:compileJava
+Picked up JAVA_TOOL_OPTIONS: -Djavax.net.ssl.trustStoreType=Windows-ROOT -Djavax.net.ssl.trustStore=NONE
+
+> Task :compat:processResources NO-SOURCE
+> Task :compat:classes
+> Task :compat:jar
+> Task :compat:sourcesJar
+> Task :compat:assemble
+> Task :compat:compileTestJava
+> Task :compat:processTestResources NO-SOURCE
+> Task :compat:testClasses
+
+> Task :compat:boundedIoSmoke
+Picked up JAVA_TOOL_OPTIONS: -Djavax.net.ssl.trustStoreType=Windows-ROOT -Djavax.net.ssl.trustStore=NONE
+PASS: Java 8 probe bridge preserves bounded, short, empty and zero-progress reads
+
+> Task :compat:catalogCompatibilityTest
+Picked up JAVA_TOOL_OPTIONS: -Djavax.net.ssl.trustStoreType=Windows-ROOT -Djavax.net.ssl.trustStore=NONE
+PASS: production Blacklist parser accepts 31 exact extension rules; alert-only and ordinary IDs preserved
+
+> Task :compat:clientReporterSmoke
+Picked up JAVA_TOOL_OPTIONS: -Djavax.net.ssl.trustStoreType=Windows-ROOT -Djavax.net.ssl.trustStore=NONE
+PASS: stable scoped digest, scope separation, asynchronous probe, wire round trip, stale callback suppression, 20 rapid reloads coalesced; no identifiers printed
+
+Picked up JAVA_TOOL_OPTIONS: -Djavax.net.ssl.trustStoreType=Windows-ROOT -Djavax.net.ssl.trustStore=NONE
+> Task :compat:securityTest
+PASS 1: literal parser rejects DNS and ambiguous representations
+PASS 2: IPv4-mapped IPv6 shares limits with IPv4
+PASS 3: IPv6 canonical forms share limits
+PASS 4: CIDR allow and deny precedence
+PASS 5: mapped CIDR semantics
+PASS 6: failed attempts do not consume persisted accounts
+PASS 7: rolling history survives restart and expires
+PASS 8: concurrent pending accounts cannot bypass account limit
+PASS 9: concurrent joins cannot bypass online limit
+PASS 10: duplicate UUID cannot overwrite a session
+PASS 11: pending reservations expire
+PASS 12: join rate limit resets after rolling minute
+PASS 13: attacker IP buckets are bounded
+PASS 14: configuration reload is transactional
+PASS 15: invalid blacklist prevents configuration reload
+PASS 16: corrupt persisted history fails closed
+PASS 17: state replacement preserves coherent latest history
+PASS 18: fresh nonce and replay rejection
+PASS 19: mismatched nonce consumes challenge
+PASS 20: reissued challenge invalidates old nonce
+PASS 21: required report timeout kicks exactly once
+PASS 22: optional report timeout does not kick
+PASS 23: retry cannot extend report deadline
+PASS 24: malformed oversized incomplete and trailing reports rejected
+PASS 25: wire rejects invalid UTF-8 and protocol versions
+PASS 26: client report owns immutable copied lists
+PASS 27: blacklist uses exact normalized identifiers
+PASS 28: automation default only alerts
+PASS 29: VM DENY requires companion
+PASS 30: VM evidence and unknown are distinguished
+PASS 31: global blacklist OFF and ALERT are honored
+PASS 32: managed glob rules and matching whitelist
+PASS 33: rule mutations persist and invalid changes are transactional
+PASS 34: legacy blacklist rules support list and removal
+PASS 35: account and device bans propagate and survive restart
+PASS 36: whitelist never bypasses a persistent ban
+PASS 37: account and device unban are independent
+PASS 38: KICK sanctions never persist a blacklist ban
+PASS 39: missing devices and invalid reports do not permanently ban
+PASS 40: same IP and device allows one concurrent account
+PASS 41: same IP different devices allow three accounts
+PASS 42: different IP same device is allowed until banned
+PASS 43: concurrent device reports cannot bypass the device limit
+PASS 44: IP and device limit respects configuration two
+PASS 45: brand sanctions bind known device only
+PASS 46: device protocol round trip and legacy rejection
+PASS 47: online associated bans are discoverable without losing sessions
+PASS 48: rechallenge applies new player rules
+PASS 49: admin bans and background saves do not deadlock
+PASS 50: online IP policy reload does not rewrite account history
+PASS 51: server scope persists across restarts and differs across instances
+PASS 52: corrupt server scope is rejected rather than regenerated
+PASS 53: pathological managed rules have a report-wide budget
+PASS 54: in-flight old report cannot consume or satisfy the new challenge
+PASS 55: only two previous-nonce reports are tolerated
+PASS: 55 security regression tests
+
+> Task :compat:test
+> Task :compat:check
+> Task :compat:build
+> Task :fabric:compileJava
+> Task :fabric:processResources
+> Task :fabric:classes
+> Task :fabric:jar
+> Task :fabric:compileTestJava
+> Task :fabric:processIncludeJars
+> Task :fabric:remapJar
+> Task :fabric:sourcesJar
+> Task :fabric:remapSourcesJar
+> Task :fabric:assemble
+> Task :fabric:processTestResources NO-SOURCE
+> Task :fabric:testClasses
+
+> Task :fabric:commandParserSmoke
+Picked up JAVA_TOOL_OPTIONS: -Djavax.net.ssl.trustStoreType=Windows-ROOT -Djavax.net.ssl.trustStore=NONE
+PASS: production command tree accepts unquoted device digests and legacy rule IDs, glob spaces and ban reasons; rejects non-admin access and invalid pages
+
+> Task :fabric:test
+> Task :fabric:validateAccessWidener NO-SOURCE
+> Task :fabric:check
+> Task :fabric:build
+> Task :forge:compileJava
+> Task :forge:processResources
+> Task :forge:classes
+> Task :forge:jar
+> Task :forge:compileTestJava
+> Task :forge:processIncludeJars
+> Task :forge:remapJar
+> Task :forge:sourcesJar
+> Task :forge:remapSourcesJar
+> Task :forge:assemble
+> Task :forge:processTestResources NO-SOURCE
+> Task :forge:testClasses
+
+> Task :forge:commandParserSmoke
+PASS: production command tree accepts unquoted device digests and legacy rule IDs, glob spaces and ban reasons; rejects non-admin access and invalid pages
+Picked up JAVA_TOOL_OPTIONS: -Djavax.net.ssl.trustStoreType=Windows-ROOT -Djavax.net.ssl.trustStore=NONE
+
+> Task :forge:test
+> Task :forge:validateAccessWidener NO-SOURCE
+> Task :forge:check
+> Task :forge:build
+
+[Incubating] Problems report is available at: file:///E:/Codex_work/QiZhangVerdict/platforms/1.16.5/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.14.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 8m 55s
+30 actionable tasks: 30 executed

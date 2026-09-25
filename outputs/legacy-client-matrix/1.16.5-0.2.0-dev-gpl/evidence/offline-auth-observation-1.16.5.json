@@ -1,0 +1,73 @@
+{
+  "scope": "Stock official Minecraft 1.16.5 / authlib 2.1.28 bytecode inspected with Java8 javap. Only a local synthetic offline-auth test fixture is changed.",
+  "first_attempt": "fabric-1.16.5/candidate-0.2.0-dev-gpl-01",
+  "observation": "Client rendered title screen, multiplayer/realms disabled, no server join; both processes then exited normally.",
+  "findings": [
+    "Main accepts --server and --port; actual argv has no disableMultiplayer flag.",
+    "Minecraft constructor calls SocialInteractionsService.serversAllowed before retaining configured server address.",
+    "Authlib 2.1.28 EnvironmentParser supports per-process minecraft.api.*.host overrides.",
+    "AuthenticationException selects stock OfflineSocialInteractions; its serversAllowed method returns true."
+  ],
+  "diagnostic_files": [
+    {
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\main-116-bytecode.txt",
+      "sha256": "25c1bb0de9624c79d361b6978320e04b429825fc9d3f0f3bdccbba52d98512b0"
+    },
+    {
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\minecraft-116-bytecode.txt",
+      "sha256": "3d19600fb60e1dc2bc70245416bc39f3e34b277c9cd7853034c09c08d7647543"
+    },
+    {
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\social-116-bytecode.txt",
+      "sha256": "c9348852138d1fd5abc4d54e357f80680681ee68114e955b7d9400d0650be1de"
+    },
+    {
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\env-116-bytecode.txt",
+      "sha256": "9fadc0523805c172fa005e1e707a1f95ec03b28a7111a040b871ec067cd33473"
+    }
+  ],
+  "next_harness_sha256": "92d2423de37a3cd268cabf0374b94280cc0425b52359107edd66bb69c339950c",
+  "next_fixture": "Reserve non-listening loopback socket; override only services host away from official values. Synthetic token0, local game server only. Product and authlib bytes unchanged.",
+  "first_game_arguments": [
+    "--username",
+    "VerdictClient",
+    "--version",
+    "fabric-loader-0.16.14-1.16.5",
+    "--gameDir",
+    "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\fabric-1.16.5\\client\\game",
+    "--assetsDir",
+    "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\fabric-1.16.5\\client\\assets",
+    "--assetIndex",
+    "1.16",
+    "--uuid",
+    "86f10d93-6a7a-3707-bf5f-b5decc1e46a7",
+    "--accessToken",
+    "0",
+    "--userType",
+    "legacy",
+    "--versionType",
+    "release",
+    "--width",
+    "640",
+    "--height",
+    "360",
+    "--server",
+    "127.0.0.1",
+    "--port",
+    "25641"
+  ],
+  "official_authlib": {
+    "filename": "authlib-2.1.28.jar",
+    "sha256": "bae2283ec6afde9806142cd877b786123143ae50686fdd138ddb281b3de81d59",
+    "sha1": "ad54da276bf59983d02d5ed16fc14541354c71fd"
+  },
+  "official_vanilla_client_sha1": "37fd3c903861eeff3bc24b71eed48f828b5269c8",
+  "javap_options": "-c -p",
+  "inspected_classes": [
+    "net.minecraft.client.main.Main",
+    "djz",
+    "com.mojang.authlib.yggdrasil.YggdrasilSocialInteractionsService",
+    "com.mojang.authlib.minecraft.OfflineSocialInteractions",
+    "com.mojang.authlib.EnvironmentParser"
+  ]
+}

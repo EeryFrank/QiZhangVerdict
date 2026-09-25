@@ -1,0 +1,322 @@
+{
+  "schema": 1,
+  "candidate_version": "0.2.0-dev",
+  "bukkit_version": "0.1.1",
+  "license": "GPL-3.0-only",
+  "generated_utc": "2026-09-25T08:37:31.758918+00:00",
+  "scope": "Actual production rendered Forge 1.12.2 client with matching Forge and Paper 1620 dedicated servers; synthetic offline-auth loopback fixtures only. No dev classes or online-account authentication claim.",
+  "all_passed": true,
+  "expected_default_policy": {
+    "limits.max-online-per-ip": "3",
+    "limits.max-online-per-ip-device": "1",
+    "limits.max-accounts-per-ip": "5",
+    "limits.account-window-hours": "720",
+    "limits.attempts-per-minute": "20",
+    "ip.allow": "",
+    "ip.deny": "",
+    "companion.required": "true",
+    "companion.timeout-seconds": "20",
+    "vm.action": "DENY",
+    "blacklist.action": "DENY",
+    "sanctions.on-deny": "BAN",
+    "device.required": "true"
+  },
+  "cases": [
+    {
+      "profile": "forge-1.12.2-to-forge",
+      "minecraft": "1.12.2",
+      "client_loader": "Forge 14.23.5.2864",
+      "server_kind": "forge",
+      "client_guard_sha256": "7ee00ced99919281e2d6851e123c6bcb2d8ddd3e46338870b2034d5a5dcf0966",
+      "server_guard_sha256": "7ee00ced99919281e2d6851e123c6bcb2d8ddd3e46338870b2034d5a5dcf0966",
+      "passed": true,
+      "client_exit_code": 0,
+      "server_exit_code": 0,
+      "strict_defaults": true,
+      "policy_unchanged": true,
+      "policy_before_sha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+      "policy_after_sha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+      "exact_synthetic_uuid_device_association_verified": true,
+      "survival_mode_confirmed": true,
+      "mode_transition_expected": true,
+      "confirmed_online_seconds_after_report_acceptance": 65.354,
+      "timing_method": "time.monotonic; final selector must match only a fresh log suffix written after the >=65-second observation window",
+      "report_acceptance_basis": "A survival selector succeeded after the Forge required-report spectator gate; exact-UUID device association was also independently verified.",
+      "final_fresh_survival_query": "[17:25:06] [Server thread/INFO] [minecraft/DedicatedServer]: Found VerdictClient",
+      "rendered_client_confirmed": true,
+      "resource_pack_metadata_warning": false,
+      "harness_sha256": "7a5b0d1938090c1ce3d0f709a20ac0d4ff71bfee144585db40a43ffa803f55b8",
+      "helper_sha256": "54dd6011c2d1860beae405780f0d2c63cfa42ece8505dfa55a0170e0ccbf33cc",
+      "vanilla_client_sha1": "0f275bc1547d01fa5f56ba34bdc87d981ee12daf",
+      "raw_evidence": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.12.2\\candidate-0.2.0-dev-gpl-02\\result.json",
+          "sha256": "036194d42c6389c49ed0576997780f87e1ea984c8951b9927a4888b27aa69560",
+          "bytes": 4858
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.12.2\\candidate-0.2.0-dev-gpl-02\\server-console.log",
+          "sha256": "3d4d9e941462946b0a236ba471015867cd73721477e0b0a23a737a6796fe862f",
+          "bytes": 14716
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.12.2\\candidate-0.2.0-dev-gpl-02\\client-console.log",
+          "sha256": "b310ab4028babbe24f3f68fec1b4cad3a7a1a8c918ab31e029fd893d0bc57210",
+          "bytes": 16728
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.12.2\\candidate-0.2.0-dev-gpl-02\\screenshots\\2026-09-25_17.24.31.png",
+          "sha256": "090ad3e62458fdcd3904701d4307c5cbd3b2dfef0968ffb95b5b8cb580836cbd",
+          "bytes": 35191
+        }
+      ],
+      "public_evidence": [
+        {
+          "file": "legacy-client-matrix/1.12.2-0.2.0-dev-gpl/evidence/forge-result.json",
+          "path": "E:\\Codex_work\\QiZhangVerdict\\outputs\\legacy-client-matrix\\1.12.2-0.2.0-dev-gpl\\evidence\\forge-result.json",
+          "sha256": "036194d42c6389c49ed0576997780f87e1ea984c8951b9927a4888b27aa69560",
+          "bytes": 4858,
+          "copied_original_bytes": true
+        },
+        {
+          "file": "legacy-client-matrix/1.12.2-0.2.0-dev-gpl/evidence/forge-server-console.log",
+          "path": "E:\\Codex_work\\QiZhangVerdict\\outputs\\legacy-client-matrix\\1.12.2-0.2.0-dev-gpl\\evidence\\forge-server-console.log",
+          "sha256": "3d4d9e941462946b0a236ba471015867cd73721477e0b0a23a737a6796fe862f",
+          "bytes": 14716,
+          "copied_original_bytes": true
+        },
+        {
+          "file": "legacy-client-matrix/1.12.2-0.2.0-dev-gpl/evidence/forge-client-console.log",
+          "path": "E:\\Codex_work\\QiZhangVerdict\\outputs\\legacy-client-matrix\\1.12.2-0.2.0-dev-gpl\\evidence\\forge-client-console.log",
+          "sha256": "b310ab4028babbe24f3f68fec1b4cad3a7a1a8c918ab31e029fd893d0bc57210",
+          "bytes": 16728,
+          "copied_original_bytes": true
+        }
+      ],
+      "raw_field_semantics": "Original reports retain the historical restored_survival key. This summary uses survival_mode_confirmed; the Bukkit value is a selector confirmation, not a mode transition.",
+      "rendered_frame": {
+        "file": "legacy-client-matrix/1.12.2-0.2.0-dev-gpl/forge-1.12.2.png",
+        "path": "E:\\Codex_work\\QiZhangVerdict\\outputs\\legacy-client-matrix\\1.12.2-0.2.0-dev-gpl\\forge-1.12.2.png",
+        "sha256": "090ad3e62458fdcd3904701d4307c5cbd3b2dfef0968ffb95b5b8cb580836cbd",
+        "bytes": 35191,
+        "copied_original_bytes": true,
+        "width": 640,
+        "height": 360,
+        "crc_verified": true,
+        "image_data_inflated": true,
+        "visually_reviewed_survival_hud": true
+      }
+    },
+    {
+      "profile": "forge-1.12.2-to-bukkit",
+      "minecraft": "1.12.2",
+      "client_loader": "Forge 14.23.5.2864",
+      "server_kind": "bukkit",
+      "client_guard_sha256": "7ee00ced99919281e2d6851e123c6bcb2d8ddd3e46338870b2034d5a5dcf0966",
+      "server_guard_sha256": "e1194b8b694763afbc431e22799f40d357dd80493d194f680edfb219afe94845",
+      "passed": true,
+      "client_exit_code": 0,
+      "server_exit_code": 0,
+      "strict_defaults": true,
+      "policy_unchanged": true,
+      "policy_before_sha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+      "policy_after_sha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+      "exact_synthetic_uuid_device_association_verified": true,
+      "survival_mode_confirmed": true,
+      "mode_transition_expected": false,
+      "confirmed_online_seconds_after_report_acceptance": 65.271,
+      "timing_method": "time.monotonic; final selector must match only a fresh log suffix written after the >=65-second observation window",
+      "report_acceptance_basis": "The exact synthetic UUID device association was already persisted before the observation timer began. At least 65 monotonic seconds later, a new survival selector reply was read only from the newly appended log suffix under the unchanged 20-second required-report deadline. Survival mode alone is not evidence of Bukkit report acceptance.",
+      "final_fresh_survival_query": "[17:30:33 INFO]: Found VerdictClient",
+      "rendered_client_confirmed": true,
+      "resource_pack_metadata_warning": false,
+      "harness_sha256": "f1b8c30104b60e01057838be8c6640bd432ed406663a9108d0c7834c1fa28043",
+      "helper_sha256": "54dd6011c2d1860beae405780f0d2c63cfa42ece8505dfa55a0170e0ccbf33cc",
+      "vanilla_client_sha1": "0f275bc1547d01fa5f56ba34bdc87d981ee12daf",
+      "raw_evidence": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.12.2\\bukkit-candidate-0.2.0-dev-gpl-02\\result.json",
+          "sha256": "f1d503cfd3956e5247c78869c5648a6a00df40168dd3dfca7c217e81d8571868",
+          "bytes": 4591
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.12.2\\bukkit-candidate-0.2.0-dev-gpl-02\\server-console.log",
+          "sha256": "d676ef6c1750cfd3e7abbd3875bd6c06bfae1f0c5b67f4515bcce13a39f6b00b",
+          "bytes": 10304
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.12.2\\bukkit-candidate-0.2.0-dev-gpl-02\\client-console.log",
+          "sha256": "4a97380aeab27a1842aafabda9e0cccddba477f5a77e18658893b6a459044288",
+          "bytes": 16386
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.12.2\\bukkit-candidate-0.2.0-dev-gpl-02\\screenshots\\2026-09-25_17.29.58.png",
+          "sha256": "bbadababbe618a1caadb59e74ee1c86dfbe790256b393e6be3f72491074c7e62",
+          "bytes": 38645
+        }
+      ],
+      "public_evidence": [
+        {
+          "file": "legacy-client-matrix/1.12.2-0.2.0-dev-gpl/evidence/bukkit-result.json",
+          "path": "E:\\Codex_work\\QiZhangVerdict\\outputs\\legacy-client-matrix\\1.12.2-0.2.0-dev-gpl\\evidence\\bukkit-result.json",
+          "sha256": "f1d503cfd3956e5247c78869c5648a6a00df40168dd3dfca7c217e81d8571868",
+          "bytes": 4591,
+          "copied_original_bytes": true
+        },
+        {
+          "file": "legacy-client-matrix/1.12.2-0.2.0-dev-gpl/evidence/bukkit-server-console.log",
+          "path": "E:\\Codex_work\\QiZhangVerdict\\outputs\\legacy-client-matrix\\1.12.2-0.2.0-dev-gpl\\evidence\\bukkit-server-console.log",
+          "sha256": "d676ef6c1750cfd3e7abbd3875bd6c06bfae1f0c5b67f4515bcce13a39f6b00b",
+          "bytes": 10304,
+          "copied_original_bytes": true
+        },
+        {
+          "file": "legacy-client-matrix/1.12.2-0.2.0-dev-gpl/evidence/bukkit-client-console.log",
+          "path": "E:\\Codex_work\\QiZhangVerdict\\outputs\\legacy-client-matrix\\1.12.2-0.2.0-dev-gpl\\evidence\\bukkit-client-console.log",
+          "sha256": "4a97380aeab27a1842aafabda9e0cccddba477f5a77e18658893b6a459044288",
+          "bytes": 16386,
+          "copied_original_bytes": true
+        }
+      ],
+      "raw_field_semantics": "Original reports retain the historical restored_survival key. This summary uses survival_mode_confirmed; the Bukkit value is a selector confirmation, not a mode transition.",
+      "rendered_frame": {
+        "file": "legacy-client-matrix/1.12.2-0.2.0-dev-gpl/bukkit-1.12.2.png",
+        "path": "E:\\Codex_work\\QiZhangVerdict\\outputs\\legacy-client-matrix\\1.12.2-0.2.0-dev-gpl\\bukkit-1.12.2.png",
+        "sha256": "bbadababbe618a1caadb59e74ee1c86dfbe790256b393e6be3f72491074c7e62",
+        "bytes": 38645,
+        "copied_original_bytes": true,
+        "width": 640,
+        "height": 360,
+        "crc_verified": true,
+        "image_data_inflated": true,
+        "visually_reviewed_survival_hud": true
+      },
+      "server_runtime": {
+        "name": "Paper",
+        "build": 1620,
+        "sha256": "3a2041807f492dcdc34ebb324a287414946e3e05ec3df6fd03f5b5f7d9afc210",
+        "official_metadata_url": "https://fill.papermc.io/v3/projects/paper/versions/1.12.2/builds",
+        "official_download_url": "https://fill-data.papermc.io/v1/objects/3a2041807f492dcdc34ebb324a287414946e3e05ec3df6fd03f5b5f7d9afc210/paper-1.12.2-1620.jar"
+      }
+    }
+  ],
+  "retained_unsuccessful_attempts": [
+    {
+      "profile": "forge-1.12.2-to-forge",
+      "passed": false,
+      "source_result": {
+        "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.12.2\\candidate-0.2.0-dev-gpl-01\\result.json",
+        "sha256": "78d059d7106e4c467f78b41506a452524ae88425f247d7985a3875161c75df65",
+        "bytes": 12806
+      },
+      "harness_sha256": "625ce367207cc919a6291eb9feae9146cabde4f7ce9d0d44420e76bbf9cddd69",
+      "client_exit_code": 1,
+      "server_exit_code": 0,
+      "exact_synthetic_uuid_device_association_verified": true,
+      "explanation": "Required reporting and survival observation succeeded, but QA used WM_CLOSE for LWJGL2. The Java close-request flag was not set, closing timed out, and the owned client was terminated with exit 1; the server exited 0. This attempt remains FAILED. The later QA uses the official library-supported WM_SYSCOMMAND/SC_CLOSE path.",
+      "public_evidence": [
+        {
+          "file": "legacy-client-matrix/1.12.2-0.2.0-dev-gpl/evidence/forge-attempt-01-server-console.log",
+          "path": "E:\\Codex_work\\QiZhangVerdict\\outputs\\legacy-client-matrix\\1.12.2-0.2.0-dev-gpl\\evidence\\forge-attempt-01-server-console.log",
+          "sha256": "ff7d5da38105209a78dd7cc8c7f72307fe54a73ec21422040efd139037f68431",
+          "bytes": 14715,
+          "copied_original_bytes": true
+        },
+        {
+          "file": "legacy-client-matrix/1.12.2-0.2.0-dev-gpl/evidence/forge-attempt-01-client-console.log",
+          "path": "E:\\Codex_work\\QiZhangVerdict\\outputs\\legacy-client-matrix\\1.12.2-0.2.0-dev-gpl\\evidence\\forge-attempt-01-client-console.log",
+          "sha256": "be29829b7fc9f73b5244a0098b15d545685d45f5cf4c47d170d1099efbd86748",
+          "bytes": 16298,
+          "copied_original_bytes": true
+        }
+      ],
+      "derived_summary": {
+        "file": "legacy-client-matrix/1.12.2-0.2.0-dev-gpl/evidence/forge-attempt-01-derived-summary.json",
+        "path": "E:\\Codex_work\\QiZhangVerdict\\outputs\\legacy-client-matrix\\1.12.2-0.2.0-dev-gpl\\evidence\\forge-attempt-01-derived-summary.json",
+        "sha256": "7b989779787672ed5cfdd76fefed02d180a41c9fd20a291968cdfd3ee0f69732",
+        "bytes": 1119,
+        "copied_original_bytes": true
+      }
+    },
+    {
+      "profile": "forge-1.12.2-to-bukkit",
+      "passed": false,
+      "source_result": {
+        "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.12.2\\bukkit-candidate-0.2.0-dev-gpl-01\\result.json",
+        "sha256": "6fe2ab7e44a8b365ef4b9fcd5631635b8c0c4cd16fae2368af227300f517f9fb",
+        "bytes": 4184
+      },
+      "harness_sha256": "7a5b0d1938090c1ce3d0f709a20ac0d4ff71bfee144585db40a43ffa803f55b8",
+      "client_exit_code": 0,
+      "server_exit_code": 0,
+      "exact_synthetic_uuid_device_association_verified": true,
+      "explanation": "The real report and exact-UUID device association succeeded, but QA awaited a join broadcast that this old Paper did not log. It missed the PlayerList admission line and did not complete the accepted observation criteria. The owner closed the client normally; both exited 0. This attempt remains FAILED. Later QA matches the exact loopback PlayerList admission line.",
+      "public_evidence": [
+        {
+          "file": "legacy-client-matrix/1.12.2-0.2.0-dev-gpl/evidence/bukkit-attempt-01-server-console.log",
+          "path": "E:\\Codex_work\\QiZhangVerdict\\outputs\\legacy-client-matrix\\1.12.2-0.2.0-dev-gpl\\evidence\\bukkit-attempt-01-server-console.log",
+          "sha256": "83e5f3f63fbd5759da40271c5c120461141d2e606cb4dfbfa5ee90b4981197cd",
+          "bytes": 7997,
+          "copied_original_bytes": true
+        },
+        {
+          "file": "legacy-client-matrix/1.12.2-0.2.0-dev-gpl/evidence/bukkit-attempt-01-client-console.log",
+          "path": "E:\\Codex_work\\QiZhangVerdict\\outputs\\legacy-client-matrix\\1.12.2-0.2.0-dev-gpl\\evidence\\bukkit-attempt-01-client-console.log",
+          "sha256": "26a3697e98ffd1df07b2e75be41ce6b68eca7d1b829eaab19f6f280f6b7bb0f6",
+          "bytes": 16386,
+          "copied_original_bytes": true
+        },
+        {
+          "file": "legacy-client-matrix/1.12.2-0.2.0-dev-gpl/evidence/bukkit-attempt-01-result.json",
+          "path": "E:\\Codex_work\\QiZhangVerdict\\outputs\\legacy-client-matrix\\1.12.2-0.2.0-dev-gpl\\evidence\\bukkit-attempt-01-result.json",
+          "sha256": "6fe2ab7e44a8b365ef4b9fcd5631635b8c0c4cd16fae2368af227300f517f9fb",
+          "bytes": 4184,
+          "copied_original_bytes": true
+        }
+      ]
+    }
+  ],
+  "executed_harness_snapshots": [
+    {
+      "file": "legacy-client-matrix/1.12.2-0.2.0-dev-gpl/evidence/legacy112-625ce367207cc919a6291eb9feae9146cabde4f7ce9d0d44420e76bbf9cddd69.py",
+      "path": "E:\\Codex_work\\QiZhangVerdict\\outputs\\legacy-client-matrix\\1.12.2-0.2.0-dev-gpl\\evidence\\legacy112-625ce367207cc919a6291eb9feae9146cabde4f7ce9d0d44420e76bbf9cddd69.py",
+      "sha256": "625ce367207cc919a6291eb9feae9146cabde4f7ce9d0d44420e76bbf9cddd69",
+      "bytes": 21760,
+      "copied_original_bytes": true
+    },
+    {
+      "file": "legacy-client-matrix/1.12.2-0.2.0-dev-gpl/evidence/legacy112-7a5b0d1938090c1ce3d0f709a20ac0d4ff71bfee144585db40a43ffa803f55b8.py",
+      "path": "E:\\Codex_work\\QiZhangVerdict\\outputs\\legacy-client-matrix\\1.12.2-0.2.0-dev-gpl\\evidence\\legacy112-7a5b0d1938090c1ce3d0f709a20ac0d4ff71bfee144585db40a43ffa803f55b8.py",
+      "sha256": "7a5b0d1938090c1ce3d0f709a20ac0d4ff71bfee144585db40a43ffa803f55b8",
+      "bytes": 22369,
+      "copied_original_bytes": true
+    },
+    {
+      "file": "legacy-client-matrix/1.12.2-0.2.0-dev-gpl/evidence/legacy112-f1b8c30104b60e01057838be8c6640bd432ed406663a9108d0c7834c1fa28043.py",
+      "path": "E:\\Codex_work\\QiZhangVerdict\\outputs\\legacy-client-matrix\\1.12.2-0.2.0-dev-gpl\\evidence\\legacy112-f1b8c30104b60e01057838be8c6640bd432ed406663a9108d0c7834c1fa28043.py",
+      "sha256": "f1b8c30104b60e01057838be8c6640bd432ed406663a9108d0c7834c1fa28043",
+      "bytes": 22622,
+      "copied_original_bytes": true
+    }
+  ],
+  "lwjgl2_close_inspection": {
+    "file": "legacy-client-matrix/1.12.2-0.2.0-dev-gpl/evidence/lwjgl2-close-inspection.json",
+    "path": "E:\\Codex_work\\QiZhangVerdict\\outputs\\legacy-client-matrix\\1.12.2-0.2.0-dev-gpl\\evidence\\lwjgl2-close-inspection.json",
+    "sha256": "f72b0bf57106ef35976ae46fa0927013f318e153aa3f85e86e1af9ad92c39454",
+    "bytes": 905,
+    "copied_original_bytes": true
+  },
+  "privacy": "Only booleans about exact-UUID device association are published. No raw device hash, system installation ID, accounts.state, full startup plan, full command line, or complete disassembly is included.",
+  "qa_only_repairs": [
+    "LWJGL2 stock close-message selection",
+    "Exact old Paper PlayerList admission matching"
+  ],
+  "product_or_library_bytes_changed_for_repairs": false,
+  "current_repo_harness_not_substituted_for_executed_hashes": true,
+  "not_covered": [
+    "Authenticated online infrastructure",
+    "Cheat detection accuracy or adversarial modified reporters",
+    "Real VM vendor/OS matrix",
+    "Large modpacks, performance, old saves"
+  ]
+}

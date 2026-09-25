@@ -1,0 +1,263 @@
+{
+  "schema": 1,
+  "candidate_version": "0.2.0-dev",
+  "license": "GPL-3.0-only",
+  "generated_utc": "2026-09-25T07:34:17.661743+00:00",
+  "scope": "Actual production Minecraft 1.18.2 clients and matching dedicated servers; isolated loopback offline-auth fixtures, no dev classes.",
+  "all_passed": true,
+  "expected_default_policy": {
+    "limits.max-online-per-ip": "3",
+    "limits.max-online-per-ip-device": "1",
+    "limits.max-accounts-per-ip": "5",
+    "limits.account-window-hours": "720",
+    "limits.attempts-per-minute": "20",
+    "ip.allow": "",
+    "ip.deny": "",
+    "companion.required": "true",
+    "companion.timeout-seconds": "20",
+    "vm.action": "DENY",
+    "blacklist.action": "DENY",
+    "sanctions.on-deny": "BAN",
+    "device.required": "true"
+  },
+  "cases": [
+    {
+      "profile": "fabric-1.18.2",
+      "guard_sha256": "65ad6fafe4eee0f326d3eebe67465e30022972e800fd1d93ac7c068cf6d613c5",
+      "minecraft": "1.18.2",
+      "loader_version": "0.16.14",
+      "launch_main": "net.fabricmc.loader.impl.launch.knot.KnotClient",
+      "vanilla_client_sha1": "2e9a3e3107cca00d6bc9c97bf7d149cae163ef21",
+      "passed": true,
+      "client_exit_code": 0,
+      "server_exit_code": 0,
+      "confirmed_online_seconds_after_first_restored_mode": 65,
+      "report_acceptance_basis": "Survival restoration while the strict required-report gate is active proves the report was accepted no later than this first mode query.",
+      "first_restored_mode_line": "[16:26:44] [Server thread/INFO]: VerdictClient has the following entity data: 0",
+      "last_online_line": "[16:27:49] [Server thread/INFO]: There are 1 of a max of 5 players online: VerdictClient",
+      "strict_defaults": true,
+      "restored_survival": true,
+      "persisted_device_association": true,
+      "resource_pack_metadata_warning": false,
+      "rendered_client_confirmed": true,
+      "policy_unchanged": true,
+      "shared_harness_sha256": "54dd6011c2d1860beae405780f0d2c63cfa42ece8505dfa55a0170e0ccbf33cc",
+      "legacy_harness_sha256": "4c89e97421706f599ccdc3367f75c72cb4ac7e5eb7c35a5d00e3306294337134",
+      "fresh_world": true,
+      "fabric_api": {
+        "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\downloads\\fabric-api-0.77.0+1.18.2-distribution.jar",
+        "sha256": "6f822fb5aa481b4a6c1cfb8612bbfecc62a58e69d2c792f61a0eafa580e75999",
+        "bytes": 1472259
+      },
+      "policy_before_sha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+      "policy_after_sha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+      "raw_evidence": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\fabric-1.18.2\\candidate-0.2.0-dev-gpl-02\\result.json",
+          "sha256": "5f413811783104b8f3976dc28baae469e6e66ab8d0d59ecd2117aed7c0e2aff5",
+          "bytes": 6130
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\fabric-1.18.2\\candidate-0.2.0-dev-gpl-02\\client-console.log",
+          "sha256": "498a3ee998897420996e7821a73d3904e1dde3d064b828724c4011fae861fc1d",
+          "bytes": 8513
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\fabric-1.18.2\\candidate-0.2.0-dev-gpl-02\\server-console.log",
+          "sha256": "b909677e2ce0a2bc0929456939a31861b8fd457dbb7038f4576e860b7dbc72b5",
+          "bytes": 77292
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\fabric-1.18.2\\candidate-0.2.0-dev-gpl-02\\screenshots\\2026-09-25_16.27.15.png",
+          "sha256": "7f888944f77f70c531ce162c031047cb241e3418c0786c4cd64ccbd7c033ac1d",
+          "bytes": 197322
+        }
+      ],
+      "public_evidence": [
+        {
+          "file": "legacy-client-matrix/1.18.2-0.2.0-dev-gpl/evidence/fabric-1.18.2-result.json",
+          "path": "E:\\Codex_work\\QiZhangVerdict\\outputs\\legacy-client-matrix\\1.18.2-0.2.0-dev-gpl\\evidence\\fabric-1.18.2-result.json",
+          "sha256": "5f413811783104b8f3976dc28baae469e6e66ab8d0d59ecd2117aed7c0e2aff5",
+          "bytes": 6130
+        },
+        {
+          "file": "legacy-client-matrix/1.18.2-0.2.0-dev-gpl/evidence/fabric-1.18.2-client-console.log",
+          "path": "E:\\Codex_work\\QiZhangVerdict\\outputs\\legacy-client-matrix\\1.18.2-0.2.0-dev-gpl\\evidence\\fabric-1.18.2-client-console.log",
+          "sha256": "498a3ee998897420996e7821a73d3904e1dde3d064b828724c4011fae861fc1d",
+          "bytes": 8513
+        },
+        {
+          "file": "legacy-client-matrix/1.18.2-0.2.0-dev-gpl/evidence/fabric-1.18.2-server-console.log",
+          "path": "E:\\Codex_work\\QiZhangVerdict\\outputs\\legacy-client-matrix\\1.18.2-0.2.0-dev-gpl\\evidence\\fabric-1.18.2-server-console.log",
+          "sha256": "b909677e2ce0a2bc0929456939a31861b8fd457dbb7038f4576e860b7dbc72b5",
+          "bytes": 77292
+        }
+      ],
+      "rendered_frame": {
+        "file": "legacy-client-matrix/1.18.2-0.2.0-dev-gpl/fabric-1.18.2.png",
+        "path": "E:\\Codex_work\\QiZhangVerdict\\outputs\\legacy-client-matrix\\1.18.2-0.2.0-dev-gpl\\fabric-1.18.2.png",
+        "sha256": "7f888944f77f70c531ce162c031047cb241e3418c0786c4cd64ccbd7c033ac1d",
+        "bytes": 197322,
+        "width": 640,
+        "height": 360,
+        "crc_verified": true,
+        "image_data_inflated": true
+      }
+    },
+    {
+      "profile": "forge-1.18.2",
+      "guard_sha256": "c2823b070719ace443fca7ad48ae58a13f6b70d575dafbeaeb0f676aa682e4ff",
+      "minecraft": "1.18.2",
+      "loader_version": "40.3.12",
+      "launch_main": "cpw.mods.bootstraplauncher.BootstrapLauncher",
+      "vanilla_client_sha1": "2e9a3e3107cca00d6bc9c97bf7d149cae163ef21",
+      "passed": true,
+      "client_exit_code": 0,
+      "server_exit_code": 0,
+      "confirmed_online_seconds_after_first_restored_mode": 65,
+      "report_acceptance_basis": "Survival restoration while the strict required-report gate is active proves the report was accepted no later than this first mode query.",
+      "first_restored_mode_line": "[16:32:45] [Server thread/INFO] [minecraft/DedicatedServer]: VerdictClient has the following entity data: 0",
+      "last_online_line": "[16:33:50] [Server thread/INFO] [minecraft/DedicatedServer]: There are 1 of a max of 5 players online: VerdictClient",
+      "strict_defaults": true,
+      "restored_survival": true,
+      "persisted_device_association": true,
+      "resource_pack_metadata_warning": false,
+      "rendered_client_confirmed": true,
+      "policy_unchanged": true,
+      "shared_harness_sha256": "54dd6011c2d1860beae405780f0d2c63cfa42ece8505dfa55a0170e0ccbf33cc",
+      "legacy_harness_sha256": "4c89e97421706f599ccdc3367f75c72cb4ac7e5eb7c35a5d00e3306294337134",
+      "fresh_world": true,
+      "policy_before_sha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+      "policy_after_sha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+      "raw_evidence": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.18.2\\candidate-0.2.0-dev-gpl-02\\result.json",
+          "sha256": "88166be5f76cda8f07e49b2646fa66ed3bd2928e8cc3ea5c7e4eb1d700a29c80",
+          "bytes": 6538
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.18.2\\candidate-0.2.0-dev-gpl-02\\client-console.log",
+          "sha256": "b3f49c0ce9a20083e1bf195f65f0e9347dc05b118ab8e1c3c4a597a8c8396a2c",
+          "bytes": 9173
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.18.2\\candidate-0.2.0-dev-gpl-02\\server-console.log",
+          "sha256": "2b4e97e999c8e17ec23dec185499770d894626902fc358e84a7277f192e0af91",
+          "bytes": 29347
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.18.2\\candidate-0.2.0-dev-gpl-02\\screenshots\\2026-09-25_16.33.05.png",
+          "sha256": "37df22facda2e9fec2ec3de2c8eff72fe2b86b0edba5275fb155204310cc1691",
+          "bytes": 126586
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.18.2\\candidate-0.2.0-dev-gpl-02\\screenshots\\2026-09-25_16.33.15.png",
+          "sha256": "37df22facda2e9fec2ec3de2c8eff72fe2b86b0edba5275fb155204310cc1691",
+          "bytes": 126586
+        }
+      ],
+      "public_evidence": [
+        {
+          "file": "legacy-client-matrix/1.18.2-0.2.0-dev-gpl/evidence/forge-1.18.2-result.json",
+          "path": "E:\\Codex_work\\QiZhangVerdict\\outputs\\legacy-client-matrix\\1.18.2-0.2.0-dev-gpl\\evidence\\forge-1.18.2-result.json",
+          "sha256": "88166be5f76cda8f07e49b2646fa66ed3bd2928e8cc3ea5c7e4eb1d700a29c80",
+          "bytes": 6538
+        },
+        {
+          "file": "legacy-client-matrix/1.18.2-0.2.0-dev-gpl/evidence/forge-1.18.2-client-console.log",
+          "path": "E:\\Codex_work\\QiZhangVerdict\\outputs\\legacy-client-matrix\\1.18.2-0.2.0-dev-gpl\\evidence\\forge-1.18.2-client-console.log",
+          "sha256": "b3f49c0ce9a20083e1bf195f65f0e9347dc05b118ab8e1c3c4a597a8c8396a2c",
+          "bytes": 9173
+        },
+        {
+          "file": "legacy-client-matrix/1.18.2-0.2.0-dev-gpl/evidence/forge-1.18.2-server-console.log",
+          "path": "E:\\Codex_work\\QiZhangVerdict\\outputs\\legacy-client-matrix\\1.18.2-0.2.0-dev-gpl\\evidence\\forge-1.18.2-server-console.log",
+          "sha256": "2b4e97e999c8e17ec23dec185499770d894626902fc358e84a7277f192e0af91",
+          "bytes": 29347
+        }
+      ],
+      "rendered_frame": {
+        "file": "legacy-client-matrix/1.18.2-0.2.0-dev-gpl/forge-1.18.2.png",
+        "path": "E:\\Codex_work\\QiZhangVerdict\\outputs\\legacy-client-matrix\\1.18.2-0.2.0-dev-gpl\\forge-1.18.2.png",
+        "sha256": "37df22facda2e9fec2ec3de2c8eff72fe2b86b0edba5275fb155204310cc1691",
+        "bytes": 126586,
+        "width": 640,
+        "height": 360,
+        "crc_verified": true,
+        "image_data_inflated": true
+      }
+    }
+  ],
+  "retained_unsuccessful_attempts": [
+    {
+      "profile": "fabric-1.18.2",
+      "explanation": "The first Fabric fixture waited in resource reload before Guard initialization and never started the client. Its owned server was terminated after thread capture; a new-world fixture subsequently passed. Cause not established.",
+      "result": {
+        "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\fabric-1.18.2\\candidate-0.2.0-dev-gpl-01\\result.json",
+        "sha256": "a943a5834a371c24050b83801fe77c21b9896a3eec1154da31a11ee8b5b0f77f",
+        "bytes": 1730
+      },
+      "public_evidence": [
+        {
+          "file": "legacy-client-matrix/1.18.2-0.2.0-dev-gpl/evidence/fabric-1.18.2-candidate-0.2.0-dev-gpl-01-result.json",
+          "path": "E:\\Codex_work\\QiZhangVerdict\\outputs\\legacy-client-matrix\\1.18.2-0.2.0-dev-gpl\\evidence\\fabric-1.18.2-candidate-0.2.0-dev-gpl-01-result.json",
+          "sha256": "a943a5834a371c24050b83801fe77c21b9896a3eec1154da31a11ee8b5b0f77f",
+          "bytes": 1730
+        },
+        {
+          "file": "legacy-client-matrix/1.18.2-0.2.0-dev-gpl/evidence/fabric-1.18.2-candidate-0.2.0-dev-gpl-01-client-console.log",
+          "path": "E:\\Codex_work\\QiZhangVerdict\\outputs\\legacy-client-matrix\\1.18.2-0.2.0-dev-gpl\\evidence\\fabric-1.18.2-candidate-0.2.0-dev-gpl-01-client-console.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "file": "legacy-client-matrix/1.18.2-0.2.0-dev-gpl/evidence/fabric-1.18.2-candidate-0.2.0-dev-gpl-01-server-console.log",
+          "path": "E:\\Codex_work\\QiZhangVerdict\\outputs\\legacy-client-matrix\\1.18.2-0.2.0-dev-gpl\\evidence\\fabric-1.18.2-candidate-0.2.0-dev-gpl-01-server-console.log",
+          "sha256": "2e6fbbe45eca4b5bc774f6bd4954ba1e7b1dea5ebff528ee17bf4625d67ad95b",
+          "bytes": 66549
+        }
+      ]
+    },
+    {
+      "profile": "forge-1.18.2",
+      "explanation": "First Forge client exited with 0xC0000005 before rendering/join. The matching Windows application error names lwjgl.dll. The dedicated server exited normally; unchanged client arguments/artifact were retried in a new fixture. Cause not established.",
+      "result": {
+        "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.18.2\\candidate-0.2.0-dev-gpl-01\\result.json",
+        "sha256": "ceb7ff7f4cfa3dcc6385eaa6732c6f5aa88a024a120656d1fb9ec3cba692e556",
+        "bytes": 3628
+      },
+      "public_evidence": [
+        {
+          "file": "legacy-client-matrix/1.18.2-0.2.0-dev-gpl/evidence/forge-1.18.2-candidate-0.2.0-dev-gpl-01-result.json",
+          "path": "E:\\Codex_work\\QiZhangVerdict\\outputs\\legacy-client-matrix\\1.18.2-0.2.0-dev-gpl\\evidence\\forge-1.18.2-candidate-0.2.0-dev-gpl-01-result.json",
+          "sha256": "ceb7ff7f4cfa3dcc6385eaa6732c6f5aa88a024a120656d1fb9ec3cba692e556",
+          "bytes": 3628
+        },
+        {
+          "file": "legacy-client-matrix/1.18.2-0.2.0-dev-gpl/evidence/forge-1.18.2-candidate-0.2.0-dev-gpl-01-client-console.log",
+          "path": "E:\\Codex_work\\QiZhangVerdict\\outputs\\legacy-client-matrix\\1.18.2-0.2.0-dev-gpl\\evidence\\forge-1.18.2-candidate-0.2.0-dev-gpl-01-client-console.log",
+          "sha256": "a66127e870e6355dfaf2c7b1b268f6b1973c826348ec4ae635257f37976ec11d",
+          "bytes": 3288
+        },
+        {
+          "file": "legacy-client-matrix/1.18.2-0.2.0-dev-gpl/evidence/forge-1.18.2-candidate-0.2.0-dev-gpl-01-server-console.log",
+          "path": "E:\\Codex_work\\QiZhangVerdict\\outputs\\legacy-client-matrix\\1.18.2-0.2.0-dev-gpl\\evidence\\forge-1.18.2-candidate-0.2.0-dev-gpl-01-server-console.log",
+          "sha256": "d7bdbab0b8e0e097652d880fc52a0a1e2c350ab0bee875efa460edef6c7890d1",
+          "bytes": 24638
+        }
+      ],
+      "native_crash_observation": {
+        "file": "legacy-client-matrix/1.18.2-0.2.0-dev-gpl/evidence/forge-1.18.2-native-crash-observation.json",
+        "path": "E:\\Codex_work\\QiZhangVerdict\\outputs\\legacy-client-matrix\\1.18.2-0.2.0-dev-gpl\\evidence\\forge-1.18.2-native-crash-observation.json",
+        "sha256": "b9d105459355193207403ce5e465873100b7728cadceed67d15bb6e679b712b4",
+        "bytes": 192
+      }
+    }
+  ],
+  "privacy": "No raw device identifiers, system installation identifiers, accounts.state, full launch plans, or debug logs are published.",
+  "not_covered": [
+    "Cheat detection accuracy or adversarial modified reporters",
+    "Real VM vendor/OS matrix",
+    "Large modpacks, performance, old saves, authenticated online infrastructure"
+  ]
+}

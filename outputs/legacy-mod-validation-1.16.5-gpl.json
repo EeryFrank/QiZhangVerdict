@@ -1,0 +1,314 @@
+{
+  "schemaVersion": 1,
+  "product": "QiZhangVerdict",
+  "minecraft": "1.16.5",
+  "release": "0.2.0-dev",
+  "license": "GPL-3.0-only",
+  "published": false,
+  "recordedAtUtc": "2026-09-25T08:10:09Z",
+  "allRequestedDedicatedChecksPassed": true,
+  "scope": "Official Fabric/Forge dedicated servers and actual exported Mixin targets; Fabric additionally runs 26 real loopback TCP cases with synthetic reports. Forge has no connected player in this dedicated report.",
+  "runs": [
+    {
+      "loader": "fabric",
+      "loaderVersion": "0.16.14",
+      "runtime": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\fabric-1.16.5-guard-01",
+      "guardFile": "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.16.5\\fabric\\build\\libs\\qizhangverdict-fabric-1.16.5-0.2.0-dev.jar",
+      "guardSha256": "d9bb0837f97ccf30c4b0f19a5cd8b65197eab4b2c5137b246b0e56c94fe6aae6",
+      "guardBytes": 89068,
+      "java": {
+        "executable": "E:\\CodexTemp\\QiZhangVerdict\\toolchains\\jdk8\\jdk8u504-b01\\bin\\java.exe",
+        "sha256": "65ebee06ec47df0c41c4483ac5aa408e55adb47a1613bad56be30bccc4317e85",
+        "version": "openjdk version \"1.8.0_504\"\nOpenJDK Runtime Environment (Temurin)(build 1.8.0_504-b01)\nOpenJDK 64-Bit Server VM (Temurin)(build 25.504-b01, mixed mode)",
+        "effectiveMaximumHeapMiB": 1536
+      },
+      "installer": {
+        "url": "https://maven.fabricmc.net/net/fabricmc/fabric-installer/1.1.1/fabric-installer-1.1.1.jar",
+        "checksumUrl": "https://maven.fabricmc.net/net/fabricmc/fabric-installer/1.1.1/fabric-installer-1.1.1.jar.sha256",
+        "sha256": "2487a69dd6f9d9c2605265a7142d77c26ab62edc620e6bcf810d581d2ee31b79",
+        "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\downloads\\fabric-installer-1.1.1.jar",
+        "bytes": 209151
+      },
+      "fabricApi": {
+        "url": "https://github.com/FabricMC/fabric-api/releases/download/0.42.0%2B1.16/fabric-api-0.42.0%2B1.16.jar",
+        "checksumUrl": "https://api.modrinth.com/v2/version/IQ3UGSc2",
+        "sha256": "3df8dd503f35aa0ac9fab8ad9f9a369fdfd0b1ab544af19a3d626d948fb4586c",
+        "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\downloads\\fabric-api-0.42.0+1.16-distribution.jar",
+        "bytes": 1090414,
+        "officialSha512": "20defa796ea605fbad3285a7216c3bf8ac88bffbd0eee997c77e49dd6fbcf86631ef4ab75ab571d3d402181d1aa5c2bd945985a5119b411ef014b31c4ee1a5fb",
+        "nestedModules": 44,
+        "fullDistributionVerified": true
+      },
+      "installerExitCode": 0,
+      "serverExitCode": 0,
+      "startupPassed": true,
+      "strictInitialConsoleStatusVerified": true,
+      "normalWorldSaveAndExit": true,
+      "elapsedSeconds": 111.61,
+      "mixinActualTargetExportVerified": true,
+      "runtimeArguments": [
+        "-Xmx1536M",
+        "-Dmixin.debug.verbose=true",
+        "-Dmixin.debug.export=true",
+        "-Dmixin.debug.countInjections=true",
+        "-jar",
+        "fabric-server-launch.jar",
+        "nogui"
+      ],
+      "realTcpAssertions": [
+        "normal companion joins",
+        "privileged commands blocked before report and restored afterward",
+        "missing companion expires",
+        "malformed report rejected",
+        "malformed report does not permanently ban account",
+        "first account on device allowed",
+        "same IP same device second account rejected",
+        "same IP second different device allowed",
+        "same IP third different device allowed",
+        "same IP fourth account rejected",
+        "disconnect releases device and IP quota",
+        "known cheat denied and sanctioned",
+        "same banned device different account denied",
+        "banned account denied with new device",
+        "administrator account and device unban restores access",
+        "administrator glob rule enforced",
+        "whitelist overrides matching blacklist item",
+        "removed whitelist takes effect",
+        "administrator removes default rule with colon ID",
+        "administrator restores removed blacklist entry",
+        "CIDR deny rejects login",
+        "known VM signal denied",
+        "VBS hypervisor alone does not ban physical machine",
+        "two-device setting first account",
+        "two-device setting second account",
+        "two-device setting rejects third account"
+      ],
+      "realTcpAssertionCount": 26,
+      "protocolExitCode": 0,
+      "protocolScriptSha256": "4f88bcd526337d9c911f26d7a79c6435cf0b94a2814acd11dcf0338f3f1f78be",
+      "protocolElapsedSeconds": 70.05,
+      "statusResponses": [
+        "[17:01:15] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=0, accountPairs=0, rules=11, companion=required, vm=DENY, blacklist=DENY, rateBuckets=0, accountBans=0, deviceBans=0, deviceRequired=true",
+        "[17:01:16] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=0, accountPairs=0, rules=11, companion=required, vm=ALERT, blacklist=DENY, rateBuckets=0, accountBans=0, deviceBans=0, deviceRequired=true",
+        "[17:01:19] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=1, rules=11, companion=required, vm=ALERT, blacklist=DENY, rateBuckets=1, accountBans=0, deviceBans=0, deviceRequired=true",
+        "[17:01:27] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=2, rules=11, companion=required, vm=ALERT, blacklist=DENY, rateBuckets=1, accountBans=0, deviceBans=0, deviceRequired=true",
+        "[17:02:09] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=16, rules=12, companion=required, vm=ALERT, blacklist=DENY, rateBuckets=1, accountBans=4, deviceBans=3, deviceRequired=true",
+        "[17:02:12] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=16, rules=12, companion=required, vm=DENY, blacklist=DENY, rateBuckets=1, accountBans=4, deviceBans=3, deviceRequired=true",
+        "[17:02:16] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=18, rules=12, companion=required, vm=ALERT, blacklist=DENY, rateBuckets=1, accountBans=5, deviceBans=4, deviceRequired=true"
+      ],
+      "warningSeverityLineCount": 21,
+      "errorSeverityLineCount": 0,
+      "evidence": [
+        {
+          "original": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\fabric-1.16.5-guard-01\\smoke-result.json",
+          "sha256": "de15576d3891f53af58f8b059e944ea347eec7b41a1d10547eb4fadeb518c4b8",
+          "bytes": 10284,
+          "file": "evidence/legacy-1165-gpl-fabric-smoke-result.json",
+          "textEncoding": "UTF-8"
+        },
+        {
+          "original": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\fabric-1.16.5-guard-01\\console.log",
+          "sha256": "acb71a75614abdb9d699357732b298beab266b0cfd1abdd636cb95fda169f7e2",
+          "bytes": 72153,
+          "file": "evidence/legacy-1165-gpl-fabric-console.log",
+          "textEncoding": "UTF-8"
+        },
+        {
+          "original": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\fabric-1.16.5-guard-01\\mixin-audit.json",
+          "sha256": "ace322ec6680b502c9acdf406975454c952537e8e8a383f69184d3614cf525b6",
+          "bytes": 634,
+          "file": "evidence/legacy-1165-gpl-fabric-mixin-audit.json",
+          "textEncoding": "UTF-8"
+        },
+        {
+          "original": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\fabric-1.16.5-guard-01\\.qizhang-verdict-smoke.json",
+          "sha256": "5c3dd86908f4c9ceeab8c267c42fd22d91f9bd81667fde551909bd6bdeb63082",
+          "bytes": 2201,
+          "file": "evidence/legacy-1165-gpl-fabric-qizhang-verdict-smoke.json",
+          "textEncoding": "UTF-8"
+        },
+        {
+          "original": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\fabric-1.16.5-guard-01\\protocol-result.json",
+          "sha256": "2cc68701e6e92b1e8bbcea0b69b24628115bd53bcaff37804e65e9536063d634",
+          "bytes": 1381,
+          "file": "evidence/legacy-1165-gpl-fabric-protocol-result.json",
+          "textEncoding": "UTF-8"
+        },
+        {
+          "original": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\fabric-1.16.5-guard-01\\protocol-console.log",
+          "sha256": "361cb449976be2a51762a818179e40d14c8a6e8197bcac1f837cdb7802c34e26",
+          "bytes": 1224,
+          "file": "evidence/legacy-1165-gpl-fabric-protocol-console.log",
+          "textEncoding": "UTF-8"
+        },
+        {
+          "original": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\fabric-1.16.5-guard-01\\install-console.log",
+          "sha256": "e5d7d7329921219da9393ed24f00546fa1eec10d4e3909e343511a663770fb98",
+          "bytes": 549,
+          "file": "evidence/legacy-1165-gpl-fabric-install-console.log",
+          "textEncoding": "CP936/GB18030"
+        },
+        {
+          "original": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\fabric-1.16.5-guard-01\\mixin-javap.txt",
+          "sha256": "0da16d7e5faad3229fd98c2a4438c1ad359edab26d8e6d707bd229482570d424",
+          "bytes": 62865
+        }
+      ]
+    },
+    {
+      "loader": "forge",
+      "loaderVersion": "1.16.5-36.2.42",
+      "runtime": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\forge-1.16.5-guard-01",
+      "guardFile": "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.16.5\\forge\\build\\libs\\qizhangverdict-forge-1.16.5-0.2.0-dev.jar",
+      "guardSha256": "52e68051478f7e9b257432e895d81f48b54a8974f2a2a03d5f9af14d59e15779",
+      "guardBytes": 90328,
+      "java": {
+        "executable": "E:\\CodexTemp\\QiZhangVerdict\\toolchains\\jdk8\\jdk8u504-b01\\bin\\java.exe",
+        "sha256": "65ebee06ec47df0c41c4483ac5aa408e55adb47a1613bad56be30bccc4317e85",
+        "version": "openjdk version \"1.8.0_504\"\nOpenJDK Runtime Environment (Temurin)(build 1.8.0_504-b01)\nOpenJDK 64-Bit Server VM (Temurin)(build 25.504-b01, mixed mode)",
+        "effectiveMaximumHeapMiB": 1536
+      },
+      "installer": {
+        "url": "https://maven.minecraftforge.net/net/minecraftforge/forge/1.16.5-36.2.42/forge-1.16.5-36.2.42-installer.jar",
+        "checksumUrl": "https://maven.minecraftforge.net/net/minecraftforge/forge/1.16.5-36.2.42/forge-1.16.5-36.2.42-installer.jar.sha256",
+        "sha256": "dfa90c681f30be2406548b6429bccb68d95af4f64ab19b8c58f6128fd50ff857",
+        "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\downloads\\forge-1.16.5-36.2.42-installer.jar",
+        "bytes": 7543237
+      },
+      "fabricApi": null,
+      "installerExitCode": 0,
+      "serverExitCode": 0,
+      "startupPassed": true,
+      "strictInitialConsoleStatusVerified": true,
+      "normalWorldSaveAndExit": true,
+      "elapsedSeconds": 34.65,
+      "mixinActualTargetExportVerified": true,
+      "runtimeArguments": [
+        "-Xmx1536M",
+        "-Dmixin.debug.verbose=true",
+        "-Dmixin.debug.export=true",
+        "-Dmixin.debug.countInjections=true",
+        "-jar",
+        "forge-1.16.5-36.2.42.jar",
+        "nogui"
+      ],
+      "realTcpAssertions": [],
+      "realTcpAssertionCount": 0,
+      "protocolExitCode": null,
+      "protocolScriptSha256": null,
+      "protocolElapsedSeconds": null,
+      "statusResponses": [
+        "[17:04:16] [Server thread/INFO] [minecraft/DedicatedServer]: QiZhangVerdict sessions=0, trackedIPs=0, accountPairs=0, rules=11, companion=required, vm=DENY, blacklist=DENY, rateBuckets=0, accountBans=0, deviceBans=0, deviceRequired=true"
+      ],
+      "warningSeverityLineCount": 22,
+      "errorSeverityLineCount": 0,
+      "evidence": [
+        {
+          "original": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\forge-1.16.5-guard-01\\smoke-result.json",
+          "sha256": "b18f3d0606fb0c93bfa76649132701fd26f8592ed3e5c3974b62e3e874edf75e",
+          "bytes": 5620,
+          "file": "evidence/legacy-1165-gpl-forge-smoke-result.json",
+          "textEncoding": "UTF-8"
+        },
+        {
+          "original": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\forge-1.16.5-guard-01\\smoke-console.log",
+          "sha256": "9e87d0f3fcd0bce4dc9f1eb44085d232da2343ee173e43613719108bb16f23f9",
+          "bytes": 20428,
+          "file": "evidence/legacy-1165-gpl-forge-smoke-console.log",
+          "textEncoding": "UTF-8"
+        },
+        {
+          "original": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\forge-1.16.5-guard-01\\mixin-audit.json",
+          "sha256": "fef14087714c06b89226d690989328f0f61368ee04dcbfaef64327b86bd1d0ed",
+          "bytes": 646,
+          "file": "evidence/legacy-1165-gpl-forge-mixin-audit.json",
+          "textEncoding": "UTF-8"
+        },
+        {
+          "original": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\forge-1.16.5-guard-01\\.qizhang-verdict-smoke.json",
+          "sha256": "96af845a1980b7b164d83e31808124959e5726f6a019e0f65665a3f979fabf15",
+          "bytes": 1627,
+          "file": "evidence/legacy-1165-gpl-forge-qizhang-verdict-smoke.json",
+          "textEncoding": "UTF-8"
+        },
+        {
+          "original": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\forge-1.16.5-guard-01\\mixin-javap.txt",
+          "sha256": "b70edb9547b559374c6778889a7c876a932599e73606590ad4c0493503fee161",
+          "bytes": 68519
+        },
+        {
+          "original": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\forge-1.16.5-guard-01\\install-console.log",
+          "sha256": "8573f762da1af6ddb1ddad5d3939cc9e8afc82d0eb7069d9292affaa56124311",
+          "bytes": 1881673
+        }
+      ]
+    }
+  ],
+  "additionalEvidence": [
+    {
+      "original": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\1165-mixin-bytecode-verification.json",
+      "sha256": "0ea92c70dc8f629bff8b68068b2d542daa7ec08b76df452415be4fcb8f7fd9df",
+      "bytes": 2831,
+      "file": "evidence/legacy-1165-gpl-mixin-bytecode-verification.json",
+      "textEncoding": "UTF-8"
+    },
+    {
+      "original": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\downloads\\1165-mojang-verification.json",
+      "sha256": "9abc6034cf7c897e74d56ea2656868036cce027537556a57887009f4c20f1779",
+      "bytes": 723,
+      "file": "evidence/legacy-1165-gpl-mojang-verification.json",
+      "textEncoding": "UTF-8"
+    }
+  ],
+  "harness": {
+    "file": "scripts/legacy_mod_smoke.py",
+    "sha256": "94c60b8dc034fea7b41bdf8b7f60baa49a1828a1a0bf9ca60242ea77805a433f",
+    "sharedFrozenRunner": {
+      "file": "scripts/mod_runtime_smoke.py",
+      "sha256": "a15e49bfef5e67d7d7c4471d85fc665be637777889b9ea2032461c417db1e9e2"
+    },
+    "protocol": {
+      "file": "scripts/protocol_smoke.cjs",
+      "sha256": "4f88bcd526337d9c911f26d7a79c6435cf0b94a2814acd11dcf0338f3f1f78be"
+    }
+  },
+  "policyCoverage": {
+    "initialStrictDefaultStatus": true,
+    "fabricProtocolDefaultPolicyUnchanged": false,
+    "fabricProtocolOverrides": {
+      "limits.max-accounts-per-ip": 100,
+      "limits.attempts-per-minute": 1000,
+      "companion.timeout-seconds": "4 normally;10 for OP gate",
+      "vm.action": "ALERT normally;DENY for VM case",
+      "limits.max-online-per-ip": "3 normally;2 for final case",
+      "ip.deny": "temporary127.0.0.0/8 for deny case"
+    },
+    "companionAndDeviceRequiredThroughout": true,
+    "forgeGuardDefaultsUnmodified": true,
+    "default20SecondSustainedAdmissionProvenHere": false
+  },
+  "mixinProof": "Native Java8 javap on both actual runtime exports confirms command dispatcher invokes injected handler and handler invokes MinecraftGuard.isWaiting. Fabric additionally exercised an operator command before/after report.",
+  "thirdPartyAnticheatInstalled": false,
+  "antiXrayInstalled": false,
+  "serverProcessesAndPortsReleased": true,
+  "privacy": {
+    "players": "synthetic offline names/UUIDs on loopback",
+    "devices": "SHA256 of fixed synthetic labels; no OS hardware probe",
+    "excluded": [
+      "accounts.state",
+      "worlds",
+      "server-id.txt",
+      "raw hardware IDs",
+      "whole Minecraft class exports/disassembly"
+    ]
+  },
+  "retainedPreparationIssue": "Before Fabric Java execution, old Modrinth metadata marked all files primary=false. Stage selection was corrected to the unique reviewed SHA512. No product artifact/source changed.",
+  "limitations": [
+    "Synthetic reports do not verify the production graphical companion or actual VM hardware detection.",
+    "Forge in this report has no connected player; real client acceptance is separate.",
+    "Fabric TCP changes policy values; default20-second sustained admission is not proven here.",
+    "No cheat accuracy, false-positive matrix, old-world/modpack compatibility, combat, performance or third-party anticheat/AntiXray acceptance.",
+    "Requested flat preset was not interpreted as flat by1.16.5; actual generated fixture is ordinary Overworld terrain. No AntiXray/worldgen claim depends on it.",
+    "Original warnings remain. INFO debug lines containing Exception are not ERROR severity."
+  ]
+}

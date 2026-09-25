@@ -1,6 +1,6 @@
 # Minecraft 1.18.2 开发适配
 
-`platforms/1.18.2` 是 Fabric + Forge 的 **0.2.0-dev 开发工程**。两端已完成编译、打包及各 7 项实际命令解析检查，随后按 GPL-3.0-only 重建并核验内置 LICENSE / NOTICE。**尚未执行 1.18.2 模组专服或图形客户端验收，开发 JAR 不属于 0.1.1 的五个发布成品。** 构建通过不能证明运行兼容性。
+`platforms/1.18.2` 是 Fabric + Forge 的 **0.2.0-dev 开发工程**。两端已完成编译、打包及各 7 项实际命令解析检查，随后按 GPL-3.0-only 重建并核验内置 LICENSE / NOTICE。最终 GPL JAR 已完成[独立专服验收](legacy-mod-validation-1.18.2-gpl.md)和[真实图形客户端验收](legacy-client-validation-1.18.2.md)。开发 JAR 尚未发布，不属于 0.1.1 的五个发布成品。
 
 ## 固定工具链与依赖
 
@@ -32,7 +32,7 @@
 
 `core` 与 `client-common` 从现有源码直接编译；策略判断、设备标识、wire 协议仍共用实现。`MinecraftGuard`、`GuardCommands` 与真实 Brigadier 命令解析检查在新工程的 `build/generated/sources/shared1182` 下生成版本适配副本。任务不会回写 `platforms/shared`。只有 loader 入口和 `CommandGate118Mixin` 位于新版本目录内。
 
-两端 Mixin 均为 `required: true`，注入 `require = 1`；不能通过禁用注入绕过旧版命令隔离。首次构建后仍需确认最终 remapped JAR 的 refmap 和实际入口，因为静态方法名核对不能证明 Mixin 在运行时成功注入。
+两端 Mixin 均为 `required: true`，注入 `require = 1`；不能通过禁用注入绕过旧版命令隔离。专服测试已实际导出注入后的目标类，并核验调用 `MinecraftGuard.isWaiting` 的 JVM 指令；Fabric 另通过了 OP 报告前命令拒绝、报告后允许的 TCP 行为测试。Forge 的类注入证据不替代相同的玩家命令行为测试。
 
 ## 构建安排
 
@@ -58,4 +58,4 @@ Set-Location E:\Codex_work\QiZhangVerdict\platforms\1.18.2
 
 `platforms/1.18.2/static-checks.json` 保留首次源码交付时的 10 项静态检查快照。它先于首次构建、GPL 许可调整和 parser 临时目录修正，因此其中 `compiled=false`、`runtimeTested=false` 与文件 SHA256 只描述当时状态，不能用作当前源码散列。之后的实际构建见 [开发版首次构建](../outputs/legacy-mod-builds.json)；GPL 重建见 [最终构建记录](../outputs/build-validation-0.1.1-gpl.json)，新旧成品的类文件逐字节比较见 [许可迁移记录](../outputs/license-transition.json)。
 
-后续仍需独立专用服务器正常启动/退出、真实客户端报告与生存模式恢复、等待报告期间包括 OP 在内的命令隔离，以及账号/IP/设备规则行为测试。严格 Mixin 和 refmap 已打包，是否实际成功注入仍须启动验收。本适配任务没有选定或验证 1.18.2 的 Grim/AntiXray 第三方防护组合；不能把现有 1.20.1/1.21.1 集成证据外推到这个版本。
+两端专服均正常启动和退出；Fabric 另通过 26 项 TCP 分支断言。两个真实客户端均在完整默认策略下完成报告、生存模式恢复及设备关联，再持续在线 65 秒，客户端和专服退出码均为 0。Fabric 首轮资源重载等待、Forge 首轮原生 LWJGL 崩溃保留在客户端记录中，原因尚未确定。待验证项目包括客户端连接 Bukkit、Forge 的 OP 命令隔离行为、大型整合包、旧存档和性能。本适配任务没有选定或验证 1.18.2 的 Grim/AntiXray 第三方防护组合；不能把现有 1.20.1/1.21.1 集成证据外推到这个版本。

@@ -2,6 +2,8 @@
 
 审计日期：2026-09-25。**本文是只读源码、映射及发布元数据分析，不是实现或兼容性验收。** 没有新增 platform、修改共享实现或启动 Java/Gradle。官方 MDK、源码、Mojang/MCP 映射及 SHA256 清单存于 `E:\CodexTemp\QiZhangVerdict\legacy-build\analysis`，其中 `audit-source-lock.json`、`fabric-source-lock.json` 可追溯本次输入。
 
+后续进度：此文保留首次移植前的分析与建议，正文中的“下一轮”不代表当前状态。实际 [1.16.5 实现与构建](legacy-1.16.5-adapter.md)最终采用 Architectury Loom 1.11.456 / Gradle 8.14.1；[1.12.2 实现与构建](legacy-1.12.2-adapter.md)采用固定 ForgeGradle 3.0.197 / Gradle 5.6.4。两版均已完成 Java 8 回归，当前运行验证状态以[兼容矩阵](compatibility-matrix.md)为准。
+
 ## 共同前置工作：先恢复 Java 8 基线
 
 `core/build.gradle` 已采用 `options.release = 8`；阻碍主要在客户端报告器和 Minecraft 接口层：

@@ -1,0 +1,48 @@
+{
+  "scope": "JVM class parsing with instruction-boundary decoding confirms an actual invokestatic to MinecraftGuard.isWaiting within the injected command-gate method in the runtime-exported target class. No Java process started.",
+  "results": [
+    {
+      "class": "net/minecraft/class_2170",
+      "classFile": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\fabric-1.18.2-guard-02\\.mixin.out\\class\\net\\minecraft\\class_2170.class",
+      "sha256": "ad4e92c83648f37df2a7ec39767b2a8f3b374157f69abee421c88d1efebc6257",
+      "methods": [
+        {
+          "injectedMethod": "handler$zfh000$qizhangverdict$denyPendingCommand",
+          "codeBytes": 38,
+          "actualInvokeStaticCalls": [
+            {
+              "offset": 23,
+              "owner": "cn/qizhang/guard/minecraft/MinecraftGuard",
+              "method": "isWaiting",
+              "descriptor": "(Lnet/minecraft/class_3222;)Z"
+            }
+          ],
+          "verified": true
+        }
+      ],
+      "verified": true
+    },
+    {
+      "class": "net/minecraft/commands/Commands",
+      "classFile": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\forge-1.18.2-guard-01\\.mixin.out\\class\\net\\minecraft\\commands\\Commands.class",
+      "sha256": "1d0896fef512c04d513e7d5f4a37f9571b16e90d230d4c6ead6695a45c2100da",
+      "methods": [
+        {
+          "injectedMethod": "handler$zza000$qizhangverdict$denyPendingCommand",
+          "codeBytes": 38,
+          "actualInvokeStaticCalls": [
+            {
+              "offset": 23,
+              "owner": "cn/qizhang/guard/minecraft/MinecraftGuard",
+              "method": "isWaiting",
+              "descriptor": "(Lnet/minecraft/server/level/ServerPlayer;)Z"
+            }
+          ],
+          "verified": true
+        }
+      ],
+      "verified": true
+    }
+  ],
+  "passed": true
+}

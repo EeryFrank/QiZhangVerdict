@@ -1,0 +1,144 @@
+{
+  "passed": true,
+  "caseCount": 24,
+  "cases": [
+    {
+      "name": "verify creates no packaging outputs",
+      "passed": true
+    },
+    {
+      "name": "document CRLF is accepted but committed LF bytes are packaged",
+      "passed": true
+    },
+    {
+      "name": "working document content drift",
+      "passed": true,
+      "rejection": "Working file differs from the selected commit: E:\\CodexTemp\\QiZhangVerdict\\preview-packaging-tests\\run-20260925-174649\\repository\\README.md"
+    },
+    {
+      "name": "evidence newline byte drift",
+      "passed": true,
+      "rejection": "Working file differs from the selected commit: E:\\CodexTemp\\QiZhangVerdict\\preview-packaging-tests\\run-20260925-174649\\repository\\outputs\\result.json"
+    },
+    {
+      "name": "working manifest drift",
+      "passed": true,
+      "rejection": "Working file differs from the selected commit: E:\\CodexTemp\\QiZhangVerdict\\preview-packaging-tests\\run-20260925-174649\\repository\\packaging\\preview.json"
+    },
+    {
+      "name": "original build JAR byte drift",
+      "passed": true,
+      "rejection": "Manifest reference hash/size drift: platforms/1.12.2/forge/build/libs/fixture.jar"
+    },
+    {
+      "name": "symbolic Git ref",
+      "passed": true,
+      "rejection": "Use a full lowercase commit object ID, not a branch or abbreviated ref"
+    },
+    {
+      "name": "boolean schemaVersion is not an integer",
+      "passed": true,
+      "rejection": "Unsupported preview manifest schema"
+    },
+    {
+      "name": "top-level manifest must be an object",
+      "passed": true,
+      "rejection": "Manifest must be a JSON object"
+    },
+    {
+      "name": "manifest parent traversal",
+      "passed": true,
+      "rejection": "Absolute paths, empty components and dot traversal are forbidden"
+    },
+    {
+      "name": "manifest absolute drive path",
+      "passed": true,
+      "rejection": "Paths must be nonempty repository-relative POSIX paths"
+    },
+    {
+      "name": "committed reference SHA drift",
+      "passed": true,
+      "rejection": "Manifest reference hash/size drift: README.md"
+    },
+    {
+      "name": "committed reference size drift",
+      "passed": true,
+      "rejection": "Manifest reference hash/size drift: outputs/result.json"
+    },
+    {
+      "name": "duplicate package basename",
+      "passed": true,
+      "rejection": "Package destination collision: fixture.jar"
+    },
+    {
+      "name": "untracked evidence cannot be packaged",
+      "passed": true,
+      "rejection": "Whitelisted document/evidence is not in the selected commit: outputs/untracked.json"
+    },
+    {
+      "name": "wrong embedded GPL file",
+      "passed": true,
+      "rejection": "Embedded LICENSE/NOTICE differs from the selected commit"
+    },
+    {
+      "name": "invalid JAR despite matching outer pin",
+      "passed": true,
+      "rejection": "Invalid JAR or required licensing entry missing"
+    },
+    {
+      "name": "existing empty release directory",
+      "passed": true,
+      "rejection": "Refusing existing package directory/archive/receipt: E:\\CodexTemp\\QiZhangVerdict\\preview-packaging-tests\\run-20260925-174649\\existing-empty\\QiZhangVerdict-synthetic-preview.1"
+    },
+    {
+      "name": "existing archive",
+      "passed": true,
+      "rejection": "Refusing existing package directory/archive/receipt: E:\\CodexTemp\\QiZhangVerdict\\preview-packaging-tests\\run-20260925-174649\\existing-zip\\QiZhangVerdict-synthetic-preview.1.zip"
+    },
+    {
+      "name": "repository junction",
+      "passed": true,
+      "rejection": "Symbolic links and Windows reparse points are forbidden: E:\\CodexTemp\\QiZhangVerdict\\preview-packaging-tests\\run-20260925-174649\\junction-repository"
+    },
+    {
+      "name": "binary whitelist only and exact selected-commit source ZIP",
+      "passed": true
+    },
+    {
+      "name": "same validated plan cannot package twice",
+      "passed": true,
+      "rejection": "Refusing to overwrite an existing packaging output"
+    },
+    {
+      "name": "verify rejects previous packaging outputs",
+      "passed": true,
+      "rejection": "Refusing existing package directory/archive/receipt: E:\\CodexTemp\\QiZhangVerdict\\preview-packaging-tests\\run-20260925-174649\\outputs\\QiZhangVerdict-synthetic-preview.1"
+    },
+    {
+      "name": "tracked account state",
+      "passed": true,
+      "rejection": "Tracked source tree contains private runtime/configuration data: accounts.state"
+    }
+  ],
+  "tool": "E:\\Codex_work\\QiZhangVerdict\\scripts\\package_preview.py",
+  "toolSha256": "569c19c7b08758131fdf3f104ab21419c1a2c55c96f521b04acee5ae0c39a41c",
+  "testHarness": "E:\\CodexTemp\\QiZhangVerdict\\preview-packaging-tests\\test_package_preview.py",
+  "testHarnessSha256": "a01a4fa4ba768e6c5558f256e23b087b856b76906df9e89f13446e2e2ae292ad",
+  "fixtureRoot": "E:\\CodexTemp\\QiZhangVerdict\\preview-packaging-tests\\run-20260925-174649",
+  "syntheticSourceCommit": "b1dd34311941cff683a5b9508f8d2d6d7401cd75",
+  "artifacts": [
+    {
+      "file": "QiZhangVerdict-synthetic-preview.1.zip",
+      "bytes": 29109,
+      "sha256": "4ecd2db3b6735d7eba0f4032eca44d11ee60e1e5085fafdf9c8fcb69b8e70d88"
+    },
+    {
+      "file": "QiZhangVerdict-synthetic-preview.1-sources.zip",
+      "bytes": 14988,
+      "sha256": "a851f3a200dbc8403bef367b5d254b5bcd438854489f2312d563a94b544360e4"
+    }
+  ],
+  "productionPackageCreated": false,
+  "publishingPerformed": false,
+  "javaProcessesLaunched": 0
+}
