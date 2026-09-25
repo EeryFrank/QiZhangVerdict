@@ -1,0 +1,353 @@
+{
+  "schemaVersion": 1,
+  "status": "BUILD_AND_JAVA8_CHECKS_PASSED_GAME_NOT_RUN",
+  "verifiedAtUTC": "2026-09-25T08:49:26.687315+00:00",
+  "minecraft": "1.8.9",
+  "forge": "11.15.1.2318",
+  "version": "0.2.0-dev",
+  "release": false,
+  "buildExitCode": 0,
+  "gradleDuration": "2 mins 15.22 secs",
+  "attempts": [
+    {
+      "attempt": "01",
+      "startedUtc": "2026-09-25T08:32:01.520429+00:00",
+      "finishedUtc": "2026-09-25T08:32:32.523126+00:00",
+      "exitCode": 1,
+      "command": [
+        "E:\\CodexTemp\\QiZhangVerdict\\legacy-build\\1.8.9\\tools\\gradle-2.7\\bin\\gradle.bat",
+        "--no-daemon",
+        "--max-workers",
+        "1",
+        "-Dorg.gradle.jvmargs=-Xmx1536M -Dfile.encoding=UTF-8",
+        "--stacktrace",
+        "--info",
+        "setupCIWorkspace",
+        "build"
+      ],
+      "cwd": "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.8.9",
+      "javaHome": "E:\\CodexTemp\\QiZhangVerdict\\toolchains\\jdk8\\jdk8u504-b01",
+      "gradleUserHome": "E:\\CodexTemp\\QiZhangVerdict\\legacy-build\\1.8.9\\gradle-user-home",
+      "log": "E:\\CodexTemp\\QiZhangVerdict\\legacy-build\\1.8.9\\build-01.log",
+      "logSha256": "e548c35fff6af150d5505507e074184c12350800b45badc04e2cb78cc8080f9d",
+      "heapMaximum": "1536M",
+      "minimumFreeGiB": 3,
+      "freePhysicalGiBBeforeStart": 3.053630828857422,
+      "maxWorkers": 1,
+      "gameStarted": false,
+      "outcome": "Old Gradle DSL findProperty() unsupported; replaced with hasProperty/property before retry"
+    },
+    {
+      "attempt": "02",
+      "startedUtc": "2026-09-25T08:44:20.067393+00:00",
+      "finishedUtc": "2026-09-25T08:46:35.710583+00:00",
+      "exitCode": 0,
+      "command": [
+        "E:\\CodexTemp\\QiZhangVerdict\\legacy-build\\1.8.9\\tools\\gradle-2.7\\bin\\gradle.bat",
+        "--no-daemon",
+        "--max-workers",
+        "1",
+        "-Dorg.gradle.jvmargs=-Xmx1536M -Dfile.encoding=UTF-8",
+        "--stacktrace",
+        "--info",
+        "setupCIWorkspace",
+        "build"
+      ],
+      "cwd": "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.8.9",
+      "javaHome": "E:\\CodexTemp\\QiZhangVerdict\\toolchains\\jdk8\\jdk8u504-b01",
+      "gradleUserHome": "E:\\CodexTemp\\QiZhangVerdict\\legacy-build\\1.8.9\\gradle-user-home",
+      "log": "E:\\CodexTemp\\QiZhangVerdict\\legacy-build\\1.8.9\\build-02.log",
+      "logSha256": "af7e9234f8dc15840b75a2732005941266795df98d95e92c0785a452777db905",
+      "heapMaximum": "1536M",
+      "minimumFreeGiB": 3,
+      "freePhysicalGiBBeforeStart": 6.529197692871094,
+      "maxWorkers": 1,
+      "gameStarted": false,
+      "outcome": "Full build and all five native Java 8 checks passed"
+    }
+  ],
+  "toolchains": {
+    "gradle": "2.7",
+    "forgeGradle": "2.1-20211118.174922-42",
+    "mappings": "stable_22",
+    "gradleJvm": "E:\\CodexTemp\\QiZhangVerdict\\toolchains\\jdk8\\jdk8u504-b01",
+    "compilerTarget": 8,
+    "nativeCheckJavaVersion": 8,
+    "jdkReleaseFileSHA256": "e6cae76bfbad3be459eb5d730446d8e76b5d531f81a3d2dc14ebea6bc4e79fde"
+  },
+  "buildOptions": {
+    "maxWorkers": 1,
+    "daemonMaximumHeap": "1536M",
+    "javaExecMaximumHeap": "256m",
+    "minimumFreeGiB": 3,
+    "startFreeGiB": 6.529197692871094,
+    "gradleUserHome": "E:\\CodexTemp\\QiZhangVerdict\\legacy-build\\1.8.9\\gradle-user-home",
+    "projectCacheJunctions": {
+      "root": "E:\\CodexTemp\\QiZhangVerdict\\legacy-build\\1.8.9\\gradle-project-root",
+      "forge": "E:\\CodexTemp\\QiZhangVerdict\\legacy-build\\1.8.9\\gradle-project-forge"
+    },
+    "allFiveChecksRequired": true,
+    "testsSkipped": false
+  },
+  "checks": [
+    {
+      "gradleTask": ":forge:boundedIoSmoke",
+      "status": "PASS",
+      "casesOrRules": null,
+      "launcherLanguageVersion": 8,
+      "maximumHeap": "256m",
+      "evidence": "PASS: Java 8 probe bridge preserves bounded, short, empty and zero-progress reads"
+    },
+    {
+      "gradleTask": ":forge:catalogCompatibilityTest",
+      "status": "PASS",
+      "casesOrRules": 31,
+      "launcherLanguageVersion": 8,
+      "maximumHeap": "256m",
+      "evidence": "PASS: production Blacklist parser accepts 31 exact extension rules; alert-only and ordinary IDs preserved"
+    },
+    {
+      "gradleTask": ":forge:clientReporterSmoke",
+      "status": "PASS",
+      "casesOrRules": null,
+      "launcherLanguageVersion": 8,
+      "maximumHeap": "256m",
+      "evidence": "PASS: stable scoped digest, scope separation, asynchronous probe, wire round trip, stale callback suppression, 20 rapid reloads coalesced; no identifiers printed"
+    },
+    {
+      "gradleTask": ":forge:legacyCommandSmoke",
+      "status": "PASS",
+      "casesOrRules": 13,
+      "launcherLanguageVersion": 8,
+      "maximumHeap": "256m",
+      "evidence": "PASS: 13 legacy command permission/argument checks (non-admin denial, admin access, colon IDs, greedy spaces, positive pages, invalid commands)"
+    },
+    {
+      "gradleTask": ":forge:securityTest",
+      "status": "PASS",
+      "casesOrRules": 55,
+      "launcherLanguageVersion": 8,
+      "maximumHeap": "256m",
+      "evidence": "PASS: 55 security regression tests"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.8.9\\forge\\build\\libs\\qizhangverdict-forge-1.8.9-0.2.0-dev-sources.jar",
+      "sha256": "d58a945226691f17a9b0dd2c4ceef296a941b1ab2ba8015161051fd3c2e62748",
+      "size": 48626,
+      "classCount": 0,
+      "classMajorVersions": [],
+      "javaSourceCount": 19,
+      "metadata": null,
+      "rootLicenseByteEqual": true,
+      "rootNoticeByteEqual": true,
+      "manifestSPDX": "GPL-3.0-only",
+      "thirdPartyClassesOrSourceBundled": false,
+      "nestedJars": false,
+      "entriesSHA256": {
+        "META-INF/MANIFEST.MF": "91c98ee1c78d6c124bd8295d8c55c34326a3173b8373b2c5b87b891aa401b59e",
+        "mcmod.info": "8dc06a1e7386d4338f4247df33aac46c075a99e8835465f42152c7d4625f847d",
+        "pack.mcmeta": "0cce80b4193ed525f789bfb58be6977fcf766f2ca439c2a3c6bf4b6610990134",
+        "cn/qizhang/guard/client/ClientReporter.java": "4dfe01fca93976421d7fa247c7a588976d5555d617f6c943e8c86fa0dab17f8f",
+        "cn/qizhang/guard/client/LegacyJava8.java": "7e61b076baab06bfad932a084089609fcbd9b3a640bce6a1e25ee6c1ec683b8a",
+        "cn/qizhang/guard/core/Blacklist.java": "006b900ad82af2530ae906d59e995a234470ee94af2eaec4798f30286678c00e",
+        "cn/qizhang/guard/core/Cidr.java": "72c6933cb0b0c03111d350840fe269300a5f102c593019ff874a09aaaeff8818",
+        "cn/qizhang/guard/core/ClientReport.java": "d74eab23e646635ac1bfa65cb7bd6b1533d30cee3d2a38894c4ea603ddf71236",
+        "cn/qizhang/guard/core/Decision.java": "4c6e6505fa6614dd505cf321e62fcda15ea03ec6373b3e6683d8a926d3f78053",
+        "cn/qizhang/guard/core/GuardConfig.java": "51b14d5398c94573f0b561e33726fe1b6c322bbacb4434a6aab7c32111b0ff22",
+        "cn/qizhang/guard/core/GuardService.java": "4e2db30dfed6cba25178fc64e1d07664df81770c24732211c89602757f902e3c",
+        "cn/qizhang/guard/core/IpAddress.java": "13b506502c2227c64ee0e66e864c510d4be748888b51dc2d8664354a694ff8bd",
+        "cn/qizhang/guard/core/ReportEnvelope.java": "da333d36ced077e3c93c509a62a4a53f33a8acd85438279e54a42591888780da",
+        "cn/qizhang/guard/core/RuleRegistry.java": "957e31b7c26ff6d0b9679e9557233b2f7212431fb33738716c5f74c008df9f4c",
+        "cn/qizhang/guard/core/Wire.java": "c799100c30630c4378a0537aba4a6a82320c94179d2d86f8b005d9a157a169c2",
+        "cn/qizhang/guard/forge189/ClientProxy.java": "bb803a41c95e355b80cc28c4b0a2692ae9bfb4cf8611c961363da1b21a62d322",
+        "cn/qizhang/guard/forge189/CommonProxy.java": "38f2946d6002de017f20b0763fc5a63284ba65514e9b0ecf8fc8bcbce9584c6f",
+        "cn/qizhang/guard/forge189/GuardForge189.java": "3e76fe8c6b465f589c25838531a4210590dde744c62dc3cb9c74df1b38f60474",
+        "cn/qizhang/guard/forge189/LegacyAddress.java": "41decb9b573650ee3d4b7485b1f17ef99a7418408244440b8246abb76e05b92b",
+        "cn/qizhang/guard/forge189/LegacyCommandParser.java": "4c330f48c831fec0b0f184f31cb496cf1b45cf4283f2f10f98b914218a3c2126",
+        "cn/qizhang/guard/forge189/LegacyGuardCommand.java": "cc65b89fec20b606cd2fe451da61a229c6f0333274711a190134f9414cf82bb1",
+        "cn/qizhang/guard/minecraft/MinecraftGuard.java": "9ed39022dd2d18b9d7e3c0ed7a17b58748855bc097a0704cfd10281c461b09ce",
+        "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+        "NOTICE": "47514206d1ef6b6e26de075747b19c9aca8ae77b2b68d3f101dd4675c4b14155"
+      }
+    },
+    {
+      "path": "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.8.9\\forge\\build\\libs\\qizhangverdict-forge-1.8.9-0.2.0-dev.jar",
+      "sha256": "f00943b06e87dbfc04e88336134ab4ae1a571a6e9b53924ab6bc06b311918424",
+      "size": 91765,
+      "classCount": 31,
+      "classMajorVersions": [
+        52
+      ],
+      "javaSourceCount": 0,
+      "metadata": {
+        "modid": "qizhangverdict",
+        "name": "QiZhang's Verdict",
+        "description": "Server admission rules and companion reports. Device and VM signals are self-reported, not attestation.",
+        "version": "0.2.0-dev",
+        "mcversion": "1.8.9",
+        "url": "https://github.com/EeryFrank/QiZhangVerdict",
+        "authorList": [
+          "QiZhang contributors"
+        ],
+        "license": "GPL-3.0-only",
+        "dependencies": []
+      },
+      "rootLicenseByteEqual": true,
+      "rootNoticeByteEqual": true,
+      "manifestSPDX": "GPL-3.0-only",
+      "thirdPartyClassesOrSourceBundled": false,
+      "nestedJars": false,
+      "entriesSHA256": {
+        "META-INF/MANIFEST.MF": "91c98ee1c78d6c124bd8295d8c55c34326a3173b8373b2c5b87b891aa401b59e",
+        "cn/qizhang/guard/client/ClientReporter$Request.class": "f07d409c70674432c4e51694bd6fdd473bed58d1c643cad4822585bd8e9e9ede",
+        "cn/qizhang/guard/client/ClientReporter.class": "30df96ded2c4a2e0c182ab900c4db764622662a3d873d341ee411eb46397ff01",
+        "cn/qizhang/guard/client/LegacyJava8.class": "5e1fb1ea30675e41e67dfd1961ae467c5f7721a8abd5bd840755b15cca4ced12",
+        "cn/qizhang/guard/core/Blacklist$Rule.class": "890c567292e0e79b9d0e968b8bf11040bcbb6002c34d0584289bbd9913a47f0e",
+        "cn/qizhang/guard/core/Blacklist.class": "bc41f2ac6c5ce280ad832b5f54c5473de1af6daa22c11fde9974cb382dd2485c",
+        "cn/qizhang/guard/core/Cidr.class": "1763da26a4df316cf8e0a3aaf1534a8c146e657f21dd23837ecd2af4aacc60a1",
+        "cn/qizhang/guard/core/ClientReport.class": "3875f7c824461a15338028f3a7ffbdd1ebe45a9747fa6759417dd037cafb1258",
+        "cn/qizhang/guard/core/Decision.class": "36354da79613b96e7a6577fe56ecb3474d0f05de5affef2935538d8b1414e72c",
+        "cn/qizhang/guard/core/GuardConfig$Action.class": "05af1c21828c65b2a040cba23ec409aff6af46206d2ade4fd9354fd969ef86c4",
+        "cn/qizhang/guard/core/GuardConfig.class": "1cd83d21c98fa47ae9ab55facd50f516aa0d21cd425ecc6cc89b4ec616ddac9f",
+        "cn/qizhang/guard/core/GuardService$Session.class": "77c288dc227def9b2f4263603824a4a6157a1372839dfaa0367819bc0a9fbb92",
+        "cn/qizhang/guard/core/GuardService.class": "854be4bf16ca4f58586b538c98327d4b66abea595e60a6f73fa99cf788d4c1fb",
+        "cn/qizhang/guard/core/IpAddress.class": "543dbfd8c84d3e9f5aab16d5aa385cf75284b7f61c60f7f3bb950f59d47cde58",
+        "cn/qizhang/guard/core/ReportEnvelope.class": "04a98a1fded71a032ac032d44a2dffbc3fed4ddb4367685e458f570ae1f0bf40",
+        "cn/qizhang/guard/core/RuleRegistry$Budget.class": "3119c98148b7e69d313dbc1492f28efb9938f236a46a3d8c04016c0819b4c6fc",
+        "cn/qizhang/guard/core/RuleRegistry$BudgetExceeded.class": "b57730abb81d464416938f221d78503434bb381ad4381589b973241339177864",
+        "cn/qizhang/guard/core/RuleRegistry$Rule.class": "b16d3ab7886e486c53d9b94a1babcbe065ce132d9106a9a3c087a02b46fbdd16",
+        "cn/qizhang/guard/core/RuleRegistry.class": "68b8a0d480144d1f35f5f0ed6f75b9d950befa5e5f8bd4d131020a52d2b5327c",
+        "cn/qizhang/guard/core/Wire.class": "3a1e78d57fc78edaf48883424ef2313f47d3e735c3f7be8a1d771bd94f63ba1e",
+        "cn/qizhang/guard/forge189/ClientProxy.class": "0ebf7c2deb9873df56e75080bb83e093fe92d537ea1b49f39b017f350d23fe1a",
+        "cn/qizhang/guard/forge189/CommonProxy.class": "5040bc1af607a08c67574df97e823fd35f8f4a531c1f2782963d6f61537833d3",
+        "cn/qizhang/guard/forge189/GuardForge189$1.class": "bd6cdc41d72d8bac16ac2562b876160e9d736dd47af0be84aac5496822250d9c",
+        "cn/qizhang/guard/forge189/GuardForge189.class": "ed328f5b3cb24d2cda99c783b7ba4f12203d381e3173a2acfe701c749a18c289",
+        "cn/qizhang/guard/forge189/LegacyAddress.class": "571036018fb96ddf6f812959452714566a913fdac4e437632ce14ee15d262974",
+        "cn/qizhang/guard/forge189/LegacyCommandParser$1.class": "48e21c0ee5b163f5d27636de714df6b63714fdfa92c5ef28c2c3a710be3c4f9a",
+        "cn/qizhang/guard/forge189/LegacyCommandParser$Action.class": "aaa59940de01cd64216ce5d8abf44366d84b150fa8cc27538229e2bfdceded61",
+        "cn/qizhang/guard/forge189/LegacyCommandParser.class": "e0eb063b7a60684eca6ea7b2229617438f3c4bb155e0d1de33c87696d36fbf89",
+        "cn/qizhang/guard/forge189/LegacyGuardCommand.class": "aab9e1d341aed89259484d3d76af05be6e62e88dc8a78921e39f924c3ad36015",
+        "cn/qizhang/guard/minecraft/MinecraftGuard$Pending.class": "97811797e672f447e30abbe32c1003e72f3b0fa9b235ad3936181624cca3ddae",
+        "cn/qizhang/guard/minecraft/MinecraftGuard$Transport.class": "34abdcf05e5e02868b22dd34e939974dd256188644e337515d885dc0d6f7a4c8",
+        "cn/qizhang/guard/minecraft/MinecraftGuard.class": "8e2c3f95085e679cf8243732d62e57dcde32e5f51daf435dd8e8c43db4aeb4e8",
+        "mcmod.info": "8dc06a1e7386d4338f4247df33aac46c075a99e8835465f42152c7d4625f847d",
+        "pack.mcmeta": "0cce80b4193ed525f789bfb58be6977fcf766f2ca439c2a3c6bf4b6610990134",
+        "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+        "NOTICE": "47514206d1ef6b6e26de075747b19c9aca8ae77b2b68d3f101dd4675c4b14155"
+      }
+    }
+  ],
+  "verifiedOfficialDependencies": [
+    {
+      "file": "E:\\CodexTemp\\QiZhangVerdict\\legacy-build\\1.8.9\\gradle-user-home\\caches\\modules-2\\files-2.1\\net.minecraftforge.gradle\\ForgeGradle\\2.1-20211118.174922-42\\a65f4069da83d7720b9360d46f9cd23f26bcf155\\ForgeGradle-2.1-20211118.174922-42.jar",
+      "sha256": "29f4f9a4b7ad917937d6ca761404ed4c56ee2a716cbfdd190b9aa99f25eb4695",
+      "matchesOfficialResearchInput": true
+    },
+    {
+      "file": "E:\\CodexTemp\\QiZhangVerdict\\legacy-build\\1.8.9\\gradle-user-home\\caches\\modules-2\\files-2.1\\net.minecraftforge\\forge\\1.8.9-11.15.1.2318-1.8.9\\3ee42818acd64acd4015b58cd4ab4d4091025c98\\forge-1.8.9-11.15.1.2318-1.8.9-userdev.jar",
+      "sha256": "62be30583a9a3fb1be844d5b82e9f105fce8e2efb8b68ce0bdf7f742025b5af2",
+      "matchesOfficialResearchInput": true
+    },
+    {
+      "file": "E:\\CodexTemp\\QiZhangVerdict\\legacy-build\\1.8.9\\gradle-user-home\\caches\\minecraft\\net\\minecraft\\minecraft\\1.8.9\\minecraft-1.8.9.jar",
+      "sha256": "14f0d96d1a56fb4f5c3b2233d00699525893fe5ce3dcf181e7de59120595d298",
+      "officialSHA1": "3870888a6c3d349d3771a3e9d16c9bf5e076b908",
+      "officialURL": "https://launcher.mojang.com/v1/objects/3870888a6c3d349d3771a3e9d16c9bf5e076b908/client.jar"
+    },
+    {
+      "file": "E:\\CodexTemp\\QiZhangVerdict\\legacy-build\\1.8.9\\gradle-user-home\\caches\\minecraft\\net\\minecraft\\minecraft_server\\1.8.9\\minecraft_server-1.8.9.jar",
+      "sha256": "c18e4245073aaff580eb7359902f0251436568b1647a9e443a924cdb73fa8312",
+      "officialSHA1": "b58b2ceb36e01bcd8dbf49c8fb66c55a9f0676cd",
+      "officialURL": "https://launcher.mojang.com/v1/objects/b58b2ceb36e01bcd8dbf49c8fb66c55a9f0676cd/server.jar"
+    }
+  ],
+  "gradleDistributionPreflight": {
+    "kind": "official-gradle-distribution-preflight",
+    "createdUtc": "2026-09-25T08:20:40.375855+00:00",
+    "url": "https://services.gradle.org/distributions/gradle-2.7-bin.zip",
+    "file": "E:\\CodexTemp\\QiZhangVerdict\\legacy-build\\1.8.9\\tools\\gradle-2.7-bin.zip",
+    "sha256": "cde43b90945b5304c43ee36e58aab4cc6fb3a3d5f9bd9449bb1709a68371cb06",
+    "expectedSha256": "cde43b90945b5304c43ee36e58aab4cc6fb3a3d5f9bd9449bb1709a68371cb06",
+    "extractedDirectory": "E:\\CodexTemp\\QiZhangVerdict\\legacy-build\\1.8.9\\tools\\gradle-2.7",
+    "javaStarted": false
+  },
+  "sourceInputsSHA256": {
+    "platforms/1.8.9/api-evidence.json": "c9d003965998947ca8435fded12181fcb4704e1593a929b59c3decfc7e9f750f",
+    "platforms/1.8.9/build.gradle": "0a5d1fbf53763cfd6d4c66b807b30c3bc32e6157351769b99d0bdd8a564b19c1",
+    "platforms/1.8.9/gradle.properties": "927f5fc254a5698f9bd2fa4aa271b071c73cb4955aea906eeee53a940ad256a2",
+    "platforms/1.8.9/gradlew": "874d75d37bf38c810a8314e0b2f78a3c77fce9437963ae33cec8543d92662b61",
+    "platforms/1.8.9/gradlew.bat": "c13c6e91b9a517783976de213d46398c661ea9e17651376d7301e839eaedcc62",
+    "platforms/1.8.9/prepare_gradle.py": "8b948043a77bf1debd88f018d84c2be5c06db97c5a8f036a76f2f00a51fcd152",
+    "platforms/1.8.9/settings.gradle": "3ebc1a5b74a416c1f63beef31de1890142a9f62787285003058eebebe4a7f1c3",
+    "platforms/1.8.9/static-checks.json": "8bb925b3caec27c5fe10b922b7c93d1243b3623088901bb1cc251c273a41d1b8",
+    "platforms/1.8.9/static_check.py": "36949bb3a4c283bbee608a2c464513e4e23505b2baeae3eba4b35e34f5f44209",
+    "platforms/1.8.9/forge/build.gradle": "b358f5b6146ed20cdbede8a7c1ba4f5e5e0cc60d3313a0c9e88486f2601e9b67",
+    "platforms/1.8.9/forge/src/main/java/cn/qizhang/guard/forge189/ClientProxy.java": "ac9ba5761851ea704dc7d47490a902ef43fb3380ab2e6a4f5a0f0ce8c3404494",
+    "platforms/1.8.9/forge/src/main/java/cn/qizhang/guard/forge189/CommonProxy.java": "38f2946d6002de017f20b0763fc5a63284ba65514e9b0ecf8fc8bcbce9584c6f",
+    "platforms/1.8.9/forge/src/main/java/cn/qizhang/guard/forge189/GuardForge189.java": "19cfc3eea9b9896857d508780fdf9c026aa1efab084f56681951ebb3d46c17b4",
+    "platforms/1.8.9/forge/src/main/java/cn/qizhang/guard/forge189/LegacyAddress.java": "0c396e012570a8a2ea707dc964f7ee4faa8ea963c2537bef70dca1d5d8559a4e",
+    "platforms/1.8.9/forge/src/main/java/cn/qizhang/guard/forge189/LegacyCommandParser.java": "4c330f48c831fec0b0f184f31cb496cf1b45cf4283f2f10f98b914218a3c2126",
+    "platforms/1.8.9/forge/src/main/java/cn/qizhang/guard/forge189/LegacyGuardCommand.java": "d77dd14e499757577bb9ab000db27414c67f309fea52ca5e2af34e65f5af0f1a",
+    "platforms/1.8.9/forge/src/main/resources/mcmod.info": "b5e69927b78e68771c9f7118e939cc50cd4af227a700d5189d4e2174aef831ef",
+    "platforms/1.8.9/forge/src/main/resources/pack.mcmeta": "0cce80b4193ed525f789bfb58be6977fcf766f2ca439c2a3c6bf4b6610990134",
+    "platforms/1.8.9/forge/src/test/java/cn/qizhang/guard/forge189/LegacyCommandSmoke.java": "bfc28e8ecaec1d615359442b5f18ebc18a45f850e770eb7ff6412513635cdcca",
+    "platforms/1.8.9/gradle/adapt-sources.gradle": "dba0e2f5d19868cbcc861bbfae19595b6f7bca7ec1be0ed6edc40670d3ddf0c1",
+    "platforms/1.8.9/gradle/adaptations.json": "8922fb62347d3ed8c36705e67e09ba9469624bbc3b60b675dd72e6571b71bfee",
+    "platforms/1.8.9/gradle/license-resources-legacy.gradle": "1188f0ae115b6e303ecb3d0bfa8d444d26c503ba2b56d51d4689e5c1e63e92d5",
+    "platforms/1.8.9/gradle/wrapper/gradle-wrapper.jar": "718d7b25ea60b357fc4cb2212ce10b3f03dfd0e6fe5f23f565b15553ec46bb7e",
+    "platforms/1.8.9/gradle/wrapper/gradle-wrapper.properties": "c76073c897f6797a54bc782a466280d903a5c0e71d77c948174ee5c635a4edc9",
+    "platforms/1.8.9/src/compat/java/cn/qizhang/guard/client/LegacyJava8.java": "7e61b076baab06bfad932a084089609fcbd9b3a640bce6a1e25ee6c1ec683b8a",
+    "platforms/1.8.9/src/compatTest/java/cn/qizhang/guard/client/LegacyJava8Smoke.java": "870e2b02dfc5ae7dd5f7bb70c04e59584a67d54f20390622cdb58a9de605e2d2",
+    "core/src/test/java/cn/qizhang/guard/core/CatalogCompatibilityTest.java": "f7b25464c24f2e13e7ba33b2f7f066ff41b60cd38cc1d72b9533f48e9deeb303",
+    "core/src/test/java/cn/qizhang/guard/core/SecurityRegressionTest.java": "b46e6fc9d1bac1a8ab1d4e5bfd79c79a2cfc4384927b5dbaad98f735c5b1855c",
+    "core/src/main/java/cn/qizhang/guard/core/Blacklist.java": "006b900ad82af2530ae906d59e995a234470ee94af2eaec4798f30286678c00e",
+    "core/src/main/java/cn/qizhang/guard/core/Cidr.java": "72c6933cb0b0c03111d350840fe269300a5f102c593019ff874a09aaaeff8818",
+    "core/src/main/java/cn/qizhang/guard/core/ClientReport.java": "d74eab23e646635ac1bfa65cb7bd6b1533d30cee3d2a38894c4ea603ddf71236",
+    "core/src/main/java/cn/qizhang/guard/core/Decision.java": "4c6e6505fa6614dd505cf321e62fcda15ea03ec6373b3e6683d8a926d3f78053",
+    "core/src/main/java/cn/qizhang/guard/core/GuardConfig.java": "51b14d5398c94573f0b561e33726fe1b6c322bbacb4434a6aab7c32111b0ff22",
+    "core/src/main/java/cn/qizhang/guard/core/GuardService.java": "4e2db30dfed6cba25178fc64e1d07664df81770c24732211c89602757f902e3c",
+    "core/src/main/java/cn/qizhang/guard/core/IpAddress.java": "13b506502c2227c64ee0e66e864c510d4be748888b51dc2d8664354a694ff8bd",
+    "core/src/main/java/cn/qizhang/guard/core/ReportEnvelope.java": "da333d36ced077e3c93c509a62a4a53f33a8acd85438279e54a42591888780da",
+    "core/src/main/java/cn/qizhang/guard/core/RuleRegistry.java": "957e31b7c26ff6d0b9679e9557233b2f7212431fb33738716c5f74c008df9f4c",
+    "core/src/main/java/cn/qizhang/guard/core/Wire.java": "c799100c30630c4378a0537aba4a6a82320c94179d2d86f8b005d9a157a169c2",
+    "client-common/src/test/java/cn/qizhang/guard/client/ClientReporterSmoke.java": "68861b772a7ed936ee337aee7682418e0534e2005b12d7df85ec5e93e3097184",
+    "client-common/src/main/java/cn/qizhang/guard/client/ClientReporter.java": "c0ed835c8b8adef7b8c4ca31282c0c22b18d00ecd49f643b47af31a72e35bc15",
+    "platforms/shared/src/test/java/cn/qizhang/guard/minecraft/CommandParserSmoke.java": "257838590ab09b0862510c18d81346232e052ac88a3b9c082e0d7ed8a55c07c3",
+    "platforms/shared/src/main/java/cn/qizhang/guard/minecraft/GuardCommands.java": "dbca14cc46e028507dc4203c485c309d4592db5f3161ee728e2a5f96ba4e7713",
+    "platforms/shared/src/main/java/cn/qizhang/guard/minecraft/MinecraftGuard.java": "2ee1f6e683f640f0229e2e741ca4747676521e832f2a5079f8a9dd30b467b4ab",
+    "platforms/shared/src/main/java/cn/qizhang/guard/minecraft/mixin/CommandGate120Mixin.java": "2acd68dfa97957d75ce890ec56f0f3078d77ef2595d7f43d24df4b5c27dba788",
+    "platforms/shared/src/main/java/cn/qizhang/guard/minecraft/mixin/CommandGate121Mixin.java": "dba2a113de4720478520160e684edb4901a87ebf4f221e67d1ac81e3d81fc1b3",
+    "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+    "NOTICE": "47514206d1ef6b6e26de075747b19c9aca8ae77b2b68d3f101dd4675c4b14155",
+    "LICENSES/Apache-2.0.txt": "a7b4d76e585c582ebb20c7b8165215fa459e74b813dac32929d2dbe326ed1851",
+    "catalog/blacklist-extension.tsv": "51cef16e26582226c3718064c17c92041ce2ef67e73ec11096660c5913158d2b"
+  },
+  "historicalSnapshots": {
+    "apiEvidenceSHA256": "c9d003965998947ca8435fded12181fcb4704e1593a929b59c3decfc7e9f750f",
+    "staticChecksSHA256": "8bb925b3caec27c5fe10b922b7c93d1243b3623088901bb1cc251c273a41d1b8",
+    "preservedOriginalBytes": true,
+    "scope": "Historical snapshots precede the Gradle DSL fix; current source hashes are recorded above"
+  },
+  "warnings": [
+    "ForgeGradle 2.1 reports that it is an unsupported upstream version; this is preserved in the successful build log."
+  ],
+  "reobfuscation": {
+    "gradleTask": ":forge:reobfJar",
+    "completed": true,
+    "minecraftGuardContainsSRGField": "field_71135_a",
+    "entryClassHashes": {
+      "cn/qizhang/guard/forge189/ClientProxy.class": "0ebf7c2deb9873df56e75080bb83e093fe92d537ea1b49f39b017f350d23fe1a",
+      "cn/qizhang/guard/forge189/CommonProxy.class": "5040bc1af607a08c67574df97e823fd35f8f4a531c1f2782963d6f61537833d3",
+      "cn/qizhang/guard/forge189/GuardForge189.class": "ed328f5b3cb24d2cda99c783b7ba4f12203d381e3173a2acfe701c749a18c289",
+      "cn/qizhang/guard/forge189/LegacyGuardCommand.class": "aab9e1d341aed89259484d3d76af05be6e62e88dc8a78921e39f924c3ad36015",
+      "cn/qizhang/guard/minecraft/MinecraftGuard.class": "8e2c3f95085e679cf8243732d62e57dcde32e5f51daf435dd8e8c43db4aeb4e8"
+    }
+  },
+  "limitations": [
+    "No dedicated server or game client has been launched for this adapter at this verification time.",
+    "No player admission, live command gate, transport, reconnect, or 1.8.8 interoperability result is claimed.",
+    "This 0.2.0-dev adapter is not part of the released 0.1.1 artifacts."
+  ]
+}

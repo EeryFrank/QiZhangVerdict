@@ -1,0 +1,26 @@
+// SPDX-License-Identifier: GPL-3.0-only
+// Explicit counted bridges fail closed if the reviewed shared-source anchors drift.
+import groovy.json.JsonSlurper
+
+def specification = rootProject.file('gradle/adaptations.json')
+def adaptations = new JsonSlurper().parseText(specification.getText('UTF-8'))
+task generateLegacySources {
+    inputs.file specification
+    inputs.files adaptations.collect { rootProject.file(it.input) }
+    outputs.dir rootProject.file('build/generated/legacy')
+    doLast {
+        adaptations.each { entry ->
+            String source = rootProject.file(entry.input).getText('UTF-8')
+            entry.changes.each { change ->
+                int actual = source.count(change.before as String)
+                if (actual != (change.count as int)) {
+                    throw new GradleException("1.8.9 bridge drift: ${change.before}; expected ${change.count}, got ${actual}")
+                }
+                source = source.replace(change.before as String, change.after as String)
+            }
+            File output = rootProject.file('build/generated/legacy/' + entry.output)
+            output.parentFile.mkdirs()
+            output.setText(source, 'UTF-8')
+        }
+    }
+}

@@ -14,9 +14,11 @@ GitHub 的 `qizhangverdict-five-jars-<commit>`、GitLab 的 `collect` job artifa
 
 ## 旧版开发构建
 
-独立的 GitHub `legacy-build.yml` 与 GitLab `legacy-build` 矩阵检查 1.12.2、1.16.5、1.18.2、1.19.4，共七个开发 JAR。两站共用 `scripts/ci_legacy_build.sh`，不会把开发成品混入五 JAR 的 0.1.1 汇总，也不会自动发布测试版。
+独立的 GitHub `legacy-build.yml` 与 GitLab `legacy-build` 矩阵检查 1.8.9、1.12.2、1.16.5、1.18.2、1.19.4，共八个开发 JAR。两站共用 `scripts/ci_legacy_build.sh`，不会把开发成品混入五 JAR 的 0.1.1 汇总，也不会自动发布测试版。
 
 1.12.2 用 JDK 8 运行官方 MDK 对应的 Gradle 5.6.4 / ForgeGradle 3；其他三版用 JDK 21 运行 Gradle 8.14.1，再以 JDK 17 编译。1.16.5 以 `--release 8` 编译并在真实 Java 8 上执行核心、报告器及两端命令解析检查；1.18.2 / 1.19.4 的命令检查使用 Java 17。所有必需检查都由各自 `build → check` 依赖执行。CI 安装三个完整 JDK，并关闭 Gradle 工具链的隐式下载。
+
+1.8.9 另用原生 JDK 8 + 固定 ForgeGradle 2.1 + Gradle 2.7，执行 `setupCIWorkspace build` 和五项必需 Java 检查。旧 MDK wrapper 不支持分发 SHA256 校验，CI 会先校验官方 ZIP 的固定 SHA256，再解压到全新目录运行。不得用仅添加 wrapper 属性代替校验。损坏缓存拒绝、新目录隔离及 GitLab 官方 YAML lint 的证据见 [1.8.9 CI 预检](../outputs/legacy-ci-preflight-1.8.9.json)；预检不等于新增目标的远端构建已通过。
 
 GitHub 使用固定 SHA 的官方 actions；GitLab 开发任务使用[官方 Temurin 8 Noble 镜像](https://github.com/adoptium/containers/blob/main/8/jdk/ubuntu/noble/Dockerfile)，另安装 Ubuntu 24.04 的 JDK 17 / 21。独立任务保留日志及带 SHA256 的开发产物 14 天。CI 构建成功仍不能替代指定 Windows 成品的专服或客户端实测。
 

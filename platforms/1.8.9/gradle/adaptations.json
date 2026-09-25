@@ -1,0 +1,235 @@
+[
+  {
+    "input": "../../client-common/src/main/java/cn/qizhang/guard/client/ClientReporter.java",
+    "output": "main/cn/qizhang/guard/client/ClientReporter.java",
+    "changes": [
+      {
+        "before": "stream.readNBytes(",
+        "after": "LegacyJava8.readBounded(stream, ",
+        "count": 3
+      },
+      {
+        "before": "input.readNBytes(",
+        "after": "LegacyJava8.readBounded(input, ",
+        "count": 2
+      },
+      {
+        "before": "ProcessBuilder.Redirect.DISCARD",
+        "after": "LegacyJava8.discardError()",
+        "count": 2
+      },
+      {
+        "before": "Files.writeString(file, UUID.randomUUID().toString(), StandardCharsets.UTF_8, StandardOpenOption.CREATE_NEW)",
+        "after": "Files.write(file, UUID.randomUUID().toString().getBytes(StandardCharsets.UTF_8), StandardOpenOption.CREATE_NEW)",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "input": "../../client-common/src/test/java/cn/qizhang/guard/client/ClientReporterSmoke.java",
+    "output": "test/cn/qizhang/guard/client/ClientReporterSmoke.java",
+    "changes": [
+      {
+        "before": "var directory =",
+        "after": "java.nio.file.Path directory =",
+        "count": 1
+      },
+      {
+        "before": "var accepted =",
+        "after": "AtomicReference<byte[]> accepted =",
+        "count": 1
+      },
+      {
+        "before": "var complete =",
+        "after": "CountDownLatch complete =",
+        "count": 1
+      },
+      {
+        "before": "var envelope =",
+        "after": "cn.qizhang.guard.core.ReportEnvelope envelope =",
+        "count": 1
+      },
+      {
+        "before": "var reporter =",
+        "after": "ClientReporter reporter =",
+        "count": 1
+      },
+      {
+        "before": "var mainThread =",
+        "after": "LinkedBlockingQueue<Runnable> mainThread =",
+        "count": 1
+      },
+      {
+        "before": "var newest =",
+        "after": "AtomicReference<byte[]> newest =",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "input": "../shared/src/main/java/cn/qizhang/guard/minecraft/MinecraftGuard.java",
+    "output": "main/cn/qizhang/guard/minecraft/MinecraftGuard.java",
+    "changes": [
+      {
+        "before": "import org.slf4j.Logger;",
+        "after": "import org.apache.logging.log4j.Logger;",
+        "count": 1
+      },
+      {
+        "before": "import org.slf4j.LoggerFactory;",
+        "after": "import org.apache.logging.log4j.LogManager;",
+        "count": 1
+      },
+      {
+        "before": "LoggerFactory.getLogger(",
+        "after": "LogManager.getLogger(",
+        "count": 1
+      },
+      {
+        "before": "import net.minecraft.network.chat.Component;",
+        "after": "",
+        "count": 1
+      },
+      {
+        "before": "import net.minecraft.server.level.ServerPlayer;",
+        "after": "import net.minecraft.entity.player.EntityPlayerMP;",
+        "count": 1
+      },
+      {
+        "before": "import net.minecraft.server.level.ServerLevel;",
+        "after": "import net.minecraft.world.WorldServer;",
+        "count": 1
+      },
+      {
+        "before": "import net.minecraft.world.level.GameType;",
+        "after": "import net.minecraft.world.WorldSettings.GameType;",
+        "count": 1
+      },
+      {
+        "before": "String ip = player.getIpAddress();",
+        "after": "String ip = cn.qizhang.guard.forge189.LegacyAddress.address(player);",
+        "count": 1
+      },
+      {
+        "before": "player.getServer().isSingleplayerOwner(player.getGameProfile())",
+        "after": "player.getGameProfile().getName().equals(player.getServerForPlayer().getMinecraftServer().getServerOwner())",
+        "count": 1
+      },
+      {
+        "before": "player.getServer().isDedicatedServer()",
+        "after": "player.getServerForPlayer().getMinecraftServer().isDedicatedServer()",
+        "count": 1
+      },
+      {
+        "before": "player.setCamera(player);",
+        "after": "player.setSpectatingEntity(player);",
+        "count": 1
+      },
+      {
+        "before": "if (player.serverLevel() != gate.level) player.teleportTo(gate.level, gate.x, gate.y, gate.z, gate.yaw, gate.pitch);",
+        "after": "if (player.getServerForPlayer() != gate.level) { kick(player, \"QiZhangVerdict: dimension changed during verification\"); continue; }",
+        "count": 1
+      },
+      {
+        "before": "player.connection.teleport(",
+        "after": "player.playerNetServerHandler.setPlayerLocation(",
+        "count": 1
+      },
+      {
+        "before": "p.gameMode.getGameModeForPlayer()",
+        "after": "p.theItemInWorldManager.getGameType()",
+        "count": 1
+      },
+      {
+        "before": "p.serverLevel()",
+        "after": "p.getServerForPlayer()",
+        "count": 1
+      },
+      {
+        "before": "p.getX()",
+        "after": "p.posX",
+        "count": 1
+      },
+      {
+        "before": "p.getY()",
+        "after": "p.posY",
+        "count": 1
+      },
+      {
+        "before": "p.getZ()",
+        "after": "p.posZ",
+        "count": 1
+      },
+      {
+        "before": "p.getYRot()",
+        "after": "p.rotationYaw",
+        "count": 1
+      },
+      {
+        "before": "p.getXRot()",
+        "after": "p.rotationPitch",
+        "count": 1
+      },
+      {
+        "before": "server.execute(",
+        "after": "server.addScheduledTask(",
+        "count": 1
+      },
+      {
+        "before": "Component.literal(decision.message())",
+        "after": "decision.message()",
+        "count": 1
+      },
+      {
+        "before": "Component.literal(reason)",
+        "after": "reason",
+        "count": 1
+      },
+      {
+        "before": "player.connection.disconnect(",
+        "after": "player.playerNetServerHandler.kickPlayerFromServer(",
+        "count": 2
+      },
+      {
+        "before": "ServerPlayer",
+        "after": "EntityPlayerMP",
+        "count": 19
+      },
+      {
+        "before": "ServerLevel",
+        "after": "WorldServer",
+        "count": 1
+      },
+      {
+        "before": ".getUUID()",
+        "after": ".getUniqueID()",
+        "count": 21
+      },
+      {
+        "before": ".setGameMode(",
+        "after": ".setGameType(",
+        "count": 5
+      },
+      {
+        "before": "server.getPlayerList()",
+        "after": "server.getConfigurationManager()",
+        "count": 7
+      },
+      {
+        "before": ".getPlayer(",
+        "after": ".getPlayerByUUID(",
+        "count": 4
+      },
+      {
+        "before": ".getPlayerByName(",
+        "after": ".getPlayerByUsername(",
+        "count": 1
+      },
+      {
+        "before": ".getPlayers()",
+        "after": ".getPlayerList()",
+        "count": 2
+      }
+    ]
+  }
+]

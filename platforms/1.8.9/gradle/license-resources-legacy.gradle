@@ -1,0 +1,15 @@
+// SPDX-License-Identifier: GPL-3.0-only
+// Equivalent first-party license resources using the Gradle 2.7 Jar API.
+import org.gradle.api.tasks.bundling.Jar
+
+def licenseRoot = project.property('qvLicenseRoot') as File
+tasks.withType(Jar) {
+    from(new File(licenseRoot, 'LICENSE'))
+    from(new File(licenseRoot, 'NOTICE'))
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    manifest {
+        attributes 'License': 'GPL-3.0-only',
+            'Bundle-License': 'https://www.gnu.org/licenses/gpl-3.0.html',
+            'Implementation-URL': 'https://github.com/EeryFrank/QiZhangVerdict'
+    }
+}

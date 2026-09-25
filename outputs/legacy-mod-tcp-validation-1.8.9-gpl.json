@@ -1,0 +1,203 @@
+{
+  "schemaVersion": 1,
+  "checkedAtUTC": "2026-09-25T09:05:14.211512+00:00",
+  "product": "QiZhangVerdict",
+  "minecraft": "1.8.9",
+  "forge": "1.8.9-11.15.1.2318-1.8.9",
+  "artifactVersion": "0.2.0-dev",
+  "license": "GPL-3.0-only",
+  "status": "DEDICATED_AND_SYNTHETIC_TCP_14_PASSED",
+  "publishedByThisTask": false,
+  "artifact": {
+    "file": "platforms/1.8.9/forge/build/libs/qizhangverdict-forge-1.8.9-0.2.0-dev.jar",
+    "sha256": "f00943b06e87dbfc04e88336134ab4ae1a571a6e9b53924ab6bc06b311918424",
+    "bytes": 91765
+  },
+  "runner": {
+    "file": "scripts/legacy189_mod_smoke.py",
+    "sha256": "fd4b0625f3649da65addd6a0ae3c9dd8edef999654fe784bf4629036fa59d6e7",
+    "protocolSha256": "5304bb0d61b4eebd27e15e8cbb46e45feaefa4b825cd348c9433943f116eb8ea",
+    "javaExecutable": "E:\\CodexTemp\\QiZhangVerdict\\toolchains\\jdk8\\jdk8u504-b01\\bin\\java.exe",
+    "javaExecutableSha256": "65ebee06ec47df0c41c4483ac5aa408e55adb47a1613bad56be30bccc4317e85",
+    "javaVersion": "openjdk version \"1.8.0_504\"\r\nOpenJDK Runtime Environment (Temurin)(build 1.8.0_504-b01)\r\nOpenJDK 64-Bit Server VM (Temurin)(build 25.504-b01, mixed mode)",
+    "command": [
+      "E:\\CodexTemp\\QiZhangVerdict\\toolchains\\jdk8\\jdk8u504-b01\\bin\\java.exe",
+      "-Xms256M",
+      "-Xmx1536M",
+      "-XX:+UseG1GC",
+      "-Dfile.encoding=UTF-8",
+      "-jar",
+      "forge-1.8.9-11.15.1.2318-1.8.9-universal.jar",
+      "nogui"
+    ]
+  },
+  "officialInputs": {
+    "installer": {
+      "url": "https://maven.minecraftforge.net/net/minecraftforge/forge/1.8.9-11.15.1.2318-1.8.9/forge-1.8.9-11.15.1.2318-1.8.9-installer.jar",
+      "checksumUrl": "https://maven.minecraftforge.net/net/minecraftforge/forge/1.8.9-11.15.1.2318-1.8.9/forge-1.8.9-11.15.1.2318-1.8.9-installer.jar.sha1",
+      "officialSha1": "ec0293ff0776b8831f2ed90511bab76e635dda0c",
+      "sha256": "f9fdf4945ca02d73ec6cc46300942f4e199e4add068877d517157b3677563656",
+      "bytes": 4485999
+    },
+    "minecraftServer": {
+      "sha1": "b58b2ceb36e01bcd8dbf49c8fb66c55a9f0676cd",
+      "size": 8320755,
+      "url": "https://launcher.mojang.com/v1/objects/b58b2ceb36e01bcd8dbf49c8fb66c55a9f0676cd/server.jar",
+      "sha256": "c18e4245073aaff580eb7359902f0251436568b1647a9e443a924cdb73fa8312",
+      "versionMetadataUrl": "https://piston-meta.mojang.com/v1/packages/d546f1707a3f2b7d034eece5ea2e311eda875787/1.8.9.json",
+      "versionMetadataSha1": "d546f1707a3f2b7d034eece5ea2e311eda875787"
+    },
+    "serverEntry": {
+      "file": "forge-1.8.9-11.15.1.2318-1.8.9-universal.jar",
+      "sha256": "596512ad5f12f95d8a3170321543d4455d23b8fe649c68580c5f828fe74f6668"
+    }
+  },
+  "fixture": {
+    "directory": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\forge-1.8.9-guard-tcp-01",
+    "sourceFixture": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\forge-1.8.9-guard-01",
+    "sourceMarkerSha256": "0c934274f77404189fa404990ac0fb4877460d827d65484281778ebfc8f0cf97",
+    "sourceSmokeSha256": "be6ca9786b418e5b116f360dfa2052ec6e4139e436b45f49d1d42b2340215c0f",
+    "copiedLibraries": 18,
+    "worldCreatedFresh": true,
+    "copiedPlayerState": false,
+    "copiedGuardConfiguration": false,
+    "loopbackOnly": true,
+    "port": 25662,
+    "onlineMode": false,
+    "freeBytesBeforeJava": 12239683584,
+    "minimumFreeBytes": 4294967296
+  },
+  "acceptance": {
+    "passed": true,
+    "started": true,
+    "strictConsoleStatus": true,
+    "protocolVersion": 47,
+    "protocolDataAlias": "1.8.8",
+    "channel": "QZGuard",
+    "registrationChannel": "REGISTER",
+    "assertionGroups": 14,
+    "cases": [
+      "real operator command blocked while pending and restored after native QZGuard report",
+      "strict default companion report accepted on native Forge QZGuard channel",
+      "valid report keeps account online for at least 22 seconds with strict server status",
+      "same IP and same device second account rejected",
+      "same IP second distinct device accepted",
+      "same IP third distinct device accepted",
+      "default fourth concurrent account rejected",
+      "disconnect releases IP and device concurrent slots",
+      "default sixth distinct rolling account rejected after five successful accounts",
+      "strict default rejects missing device identifier",
+      "malformed report rejected",
+      "invalid report does not permanently ban account",
+      "default required companion timeout enforced",
+      "timeout releases session and does not permanently ban account"
+    ],
+    "waits": [
+      {
+        "case": "valid companion stays online beyond default deadline",
+        "elapsedMilliseconds": 22070.6124
+      },
+      {
+        "case": "default required report timeout",
+        "elapsedMilliseconds": 20944.7031
+      }
+    ],
+    "serverExitCode": 0,
+    "protocolExitCode": 0,
+    "normalStop": true,
+    "elapsedSeconds": 79.68,
+    "ownedServerPidExited": true,
+    "ownedServerPid": 94836,
+    "testPortReleased": true,
+    "defaultPolicyBeforeSha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+    "defaultPolicyAfterSha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+    "entirePolicyEqualsPinnedDefaults": true,
+    "defaultPolicyUnmodified": true,
+    "persistedAccountPairs": 5,
+    "persistedDeviceRowsContainOnlyFixtureIdentifiers": true,
+    "statusResponses": [
+      "[18:01:40] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=0, accountPairs=0, rules=11, companion=required, vm=DENY, blacklist=DENY, rateBuckets=0, accountBans=0, deviceBans=0, deviceRequired=true",
+      "[18:02:09] [Server thread/INFO]: QiZhangVerdict sessions=1, trackedIPs=1, accountPairs=2, rules=11, companion=required, vm=DENY, blacklist=DENY, rateBuckets=1, accountBans=0, deviceBans=0, deviceRequired=true",
+      "[18:02:42] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=5, rules=11, companion=required, vm=DENY, blacklist=DENY, rateBuckets=1, accountBans=0, deviceBans=0, deviceRequired=true",
+      "[18:02:43] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=5, rules=11, companion=required, vm=DENY, blacklist=DENY, rateBuckets=1, accountBans=0, deviceBans=0, deviceRequired=true"
+    ]
+  },
+  "retainedLogFindings": {
+    "warningCount": 8,
+    "errorCount": 1,
+    "errors": [
+      "[18:01:31] [main/ERROR] [FML]: FML appears to be missing any signature data. This is not a good thing"
+    ],
+    "meaning": "Forge emitted its missing-signature ERROR; fresh offline-loopback setup emitted authentication and absent initial ban/operator/white-list warnings. These are retained unchanged; successful stop is not a warning-free startup claim."
+  },
+  "publicEvidence": [
+    {
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\forge-1.8.9-guard-tcp-01\\.qizhang-189-smoke.json",
+      "file": "evidence/legacy-189-tcp-gpl-fixture.json",
+      "publicFile": "outputs/evidence/legacy-189-tcp-gpl-fixture.json",
+      "sha256": "c1534f6fbce88fdc76f0a21119aa83fe6b42d937b647dbf891506d6a83a86c51",
+      "bytes": 6337,
+      "copyMode": "verbatim"
+    },
+    {
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\forge-1.8.9-guard-tcp-01\\console.log",
+      "file": "evidence/legacy-189-tcp-gpl-server-console.log",
+      "publicFile": "outputs/evidence/legacy-189-tcp-gpl-server-console.log",
+      "sha256": "cac405cec7b8f84c67997c25cf6014181505c596dd2513367f6addd1d1d25240",
+      "bytes": 22626,
+      "copyMode": "verbatim"
+    },
+    {
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\forge-1.8.9-guard-tcp-01\\protocol-console.log",
+      "file": "evidence/legacy-189-tcp-gpl-protocol-console.log",
+      "publicFile": "outputs/evidence/legacy-189-tcp-gpl-protocol-console.log",
+      "sha256": "c46d5f605b3a25ebfa78e7c0f54aae6aff273784fbea5bd90290e342e0cc87df",
+      "bytes": 1359,
+      "copyMode": "verbatim"
+    },
+    {
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\forge-1.8.9-guard-tcp-01\\protocol-result.json",
+      "file": "evidence/legacy-189-tcp-gpl-protocol-result.json",
+      "publicFile": "outputs/evidence/legacy-189-tcp-gpl-protocol-result.json",
+      "sha256": "8da92bde5976db77f60ac4d2f527291a2250d8416e2cebbb29b7bb42670be464",
+      "bytes": 1535,
+      "copyMode": "verbatim"
+    },
+    {
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\forge-1.8.9-guard-tcp-01\\smoke-result.json",
+      "file": "evidence/legacy-189-tcp-gpl-smoke-result.json",
+      "publicFile": "outputs/evidence/legacy-189-tcp-gpl-smoke-result.json",
+      "sha256": "9bcf464f92fb6bc0c0099baa3e4fabd1eb3c2bd53761b7f671ad69ae1ace645a",
+      "bytes": 5511,
+      "copyMode": "verbatim"
+    },
+    {
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-runtime\\forge-1.8.9-guard-tcp-01\\protocol-189.cjs",
+      "file": "evidence/legacy-189-tcp-gpl-protocol.cjs",
+      "publicFile": "outputs/evidence/legacy-189-tcp-gpl-protocol.cjs",
+      "sha256": "5304bb0d61b4eebd27e15e8cbb46e45feaefa4b825cd348c9433943f116eb8ea",
+      "bytes": 10467,
+      "copyMode": "verbatim"
+    }
+  ],
+  "publicEvidenceCount": 6,
+  "publicEvidenceBytes": 47835,
+  "privacyReview": {
+    "passed": true,
+    "syntheticNamesAndLoopbackOnly": true,
+    "noCredentialsOrRealDeviceIdentifiersFound": true,
+    "excluded": [
+      "accounts.state",
+      "server-id.txt",
+      "world and player data",
+      "Minecraft/Forge JARs and third-party libraries"
+    ],
+    "fullMinecraftDisassemblyIncluded": false
+  },
+  "limitations": [
+    "Synthetic TCP clients submit chosen device/mod reports; this does not prove hardware identity or resistance to a modified client.",
+    "No rendered companion client, real VM classification, movement/combat detector, anti-Xray integration, modpack compatibility or performance validation is claimed by this run.",
+    "Protocol 47 is represented as 1.8.8 by minecraft-data; the actual server and Guard artifact are 1.8.9. This does not prove installing the Forge 1.8.9 mod on Forge 1.8.8.",
+    "Default online-mode=false is limited to this isolated loopback test fixture."
+  ]
+}

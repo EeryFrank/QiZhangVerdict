@@ -1,0 +1,63 @@
+// SPDX-License-Identifier: GPL-3.0-only
+// Isolated Gradle 2.7 / ForgeGradle 2.1 build. Modern root Gradle DSL is not applied.
+buildscript {
+    repositories { maven { url 'https://maven.minecraftforge.net/' }; mavenCentral() }
+    dependencies { classpath 'net.minecraftforge.gradle:ForgeGradle:2.1-20211118.174922-42' }
+}
+if (JavaVersion.current() != JavaVersion.VERSION_1_8) {
+    throw new GradleException('Minecraft 1.8.9 uses a native JDK 8 build; set JAVA_HOME to the complete JDK 8 installation.')
+}
+allprojects { group = 'cn.qizhang.guard'; version = '0.2.0-dev' }
+ext.qvRuntimeRoot = (hasProperty('qzRuntimeRoot') ? property('qzRuntimeRoot') : null) ?: (System.getProperty('os.name').toLowerCase().contains('windows')
+    ? 'E:/CodexTemp/QiZhangVerdict/legacy-build/1.8.9/runtime'
+    : new File(System.getProperty('java.io.tmpdir'), 'qizhangverdict-1.8.9-runtime').absolutePath)
+apply from: 'gradle/adapt-sources.gradle'
+
+subprojects {
+    final String runtimeRoot = rootProject.qvRuntimeRoot
+    apply plugin: 'net.minecraftforge.gradle.forge'
+    archivesBaseName = 'qizhangverdict-forge-1.8.9'
+    sourceCompatibility = targetCompatibility = '1.8'
+    repositories { mavenCentral(); maven { url 'https://maven.minecraftforge.net/' } }
+    minecraft {
+        version = '1.8.9-11.15.1.2318-1.8.9'
+        mappings = 'stable_22'
+        runDir = new File(runtimeRoot, 'forge-game').absolutePath
+        makeObfSourceJar = true
+    }
+    sourceSets.main.java.srcDirs += [rootProject.file('../../core/src/main/java'), rootProject.file('src/compat/java'), rootProject.file('build/generated/legacy/main')]
+    sourceSets.main.resources.srcDir rootProject.file('../../core/src/main/resources')
+    sourceSets.test.java.srcDirs += [rootProject.file('../../core/src/test/java'), rootProject.file('src/compatTest/java'), rootProject.file('build/generated/legacy/test')]
+    // FG2 copies sources before javac. Both copying and compilation must wait for generation.
+    tasks.matching { it.name in ['sourceMainJava', 'sourceTestJava', 'compileJava', 'compileTestJava', 'sourceJar'] }.all {
+        dependsOn rootProject.tasks.generateLegacySources
+    }
+    tasks.withType(JavaCompile) { options.encoding = 'UTF-8' }
+    processResources {
+        inputs.property 'version', project.version
+        filesMatching('mcmod.info') { expand version: project.version }
+    }
+    ext.qvLicenseRoot = rootProject.file('../..')
+    apply from: rootProject.file('gradle/license-resources-legacy.gradle')
+    // ForgeGradle already connects assemble -> reobfJar and assemble -> sourceJar.
+    build.dependsOn 'reobfJar', 'sourceJar'
+    def checks = [securityTest: 'cn.qizhang.guard.core.SecurityRegressionTest',
+        catalogCompatibilityTest: 'cn.qizhang.guard.core.CatalogCompatibilityTest',
+        clientReporterSmoke: 'cn.qizhang.guard.client.ClientReporterSmoke',
+        boundedIoSmoke: 'cn.qizhang.guard.client.LegacyJava8Smoke',
+        legacyCommandSmoke: 'cn.qizhang.guard.forge189.LegacyCommandSmoke']
+    checks.each { taskName, entryPoint ->
+        tasks.create(taskName, JavaExec) {
+            dependsOn testClasses
+            maxHeapSize = '256m'
+            classpath = sourceSets.test.runtimeClasspath
+            main = entryPoint
+            workingDir = new File(runtimeRoot, 'checks')
+            systemProperty 'qzguard.testDir', new File(runtimeRoot, 'core-tests').absolutePath
+            if (taskName == 'catalogCompatibilityTest') args rootProject.file('../../catalog/blacklist-extension.tsv').absolutePath
+            if (taskName == 'clientReporterSmoke') args new File(runtimeRoot, 'client-config').absolutePath
+            doFirst { workingDir.mkdirs() }
+        }
+    }
+    check.dependsOn checks.keySet()
+}

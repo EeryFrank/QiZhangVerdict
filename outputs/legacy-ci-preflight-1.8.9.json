@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 1,
+  "checkedAtUTC": "2026-09-25T09:10:53.355780+00:00",
+  "status": "PYTHON_PREFLIGHT_AND_GITLAB_LINT_PASSED",
+  "scope": "Read-only review plus exact embedded Python extraction path tests; no Java, Gradle execution, game, CI build, commit or push performed.",
+  "reviewedBaseCommit": "cff94f62e86e7a6078b807f2c5188a7605c832d2",
+  "inputs": [
+    {
+      "file": "scripts/ci_legacy_build.sh",
+      "sha256": "29fe11d8e9cd61cc414466d26df462ef78ed89c0a87c72b59ae64c349ae9da2c",
+      "bytes": 3291,
+      "newlineNormalizedSha256": "29fe11d8e9cd61cc414466d26df462ef78ed89c0a87c72b59ae64c349ae9da2c"
+    },
+    {
+      "file": ".github/workflows/legacy-build.yml",
+      "sha256": "2162e995ca069867a0b244425770a7f0c18d914c4afc91f11570f9d897a85f00",
+      "bytes": 2311,
+      "newlineNormalizedSha256": "2162e995ca069867a0b244425770a7f0c18d914c4afc91f11570f9d897a85f00"
+    },
+    {
+      "file": ".gitlab-ci.yml",
+      "sha256": "d4764848b54c012ec8b9f2dd494ec4bec00199b34a23aed210dbc3d246f94978",
+      "bytes": 4596,
+      "newlineNormalizedSha256": "7bdd94a3478af15e0eae7447e31921daeab649d5823851cb2ca4b67881a894e1"
+    },
+    {
+      "file": "platforms/1.8.9/build.gradle",
+      "sha256": "0a5d1fbf53763cfd6d4c66b807b30c3bc32e6157351769b99d0bdd8a564b19c1",
+      "bytes": 3739,
+      "newlineNormalizedSha256": "0a5d1fbf53763cfd6d4c66b807b30c3bc32e6157351769b99d0bdd8a564b19c1"
+    }
+  ],
+  "staticReview": {
+    "passed": true,
+    "existingFourTargetBranchesUnchanged": true,
+    "githubChangeOnlyAdds189MatrixEntry": true,
+    "gitlabChangesOnlyAdd189MatrixEntryAndPython3Dependency": true,
+    "legacyMatrixTargets": [
+      "1.8.9",
+      "1.12.2",
+      "1.16.5",
+      "1.18.2",
+      "1.19.4"
+    ],
+    "java8SelectedFor189": true,
+    "requestedTasks": [
+      "setupCIWorkspace",
+      "build"
+    ],
+    "requiredChecks": [
+      "securityTest",
+      "catalogCompatibilityTest",
+      "clientReporterSmoke",
+      "boundedIoSmoke",
+      "legacyCommandSmoke"
+    ],
+    "checkDependsOnAllRequiredChecks": true,
+    "gradle27MaxWorkersOptionFoundInOfficialClass": "gradle-2.7/lib/gradle-core-2.7.jar!/org/gradle/initialization/DefaultCommandLineConverter.class",
+    "blockers": [],
+    "notes": [
+      "Known Gradle ZIP SHA-256 is checked before each extraction; every invocation gets a fresh temporary output directory.",
+      "Python extraction does not preserve executable mode, but CI invokes the printed launcher using sh explicitly.",
+      "No old wrapper launcher is invoked on the 1.8.9 branch. Other targets retain their prior wrapper and build task selection."
+    ]
+  },
+  "embeddedPythonValidation": {
+    "passed": true,
+    "caseCount": 3,
+    "cases": [
+      {
+        "name": "valid official cached ZIP extracts every file with matching original bytes",
+        "passed": true,
+        "exitCode": 0,
+        "launcher": "E:\\CodexTemp\\QiZhangVerdict\\legacy-build\\1.8.9\\ci-preflight-20260925-180803\\valid-cache\\qizhang-gradle-2.7-sqxem2bx\\gradle-2.7\\bin\\gradle",
+        "fileCount": 174
+      },
+      {
+        "name": "repeated invocation extracts into a new directory instead of reusing modified extraction",
+        "passed": true,
+        "exitCode": 0,
+        "launcher": "E:\\CodexTemp\\QiZhangVerdict\\legacy-build\\1.8.9\\ci-preflight-20260925-180803\\valid-cache\\qizhang-gradle-2.7-2own5r35\\gradle-2.7\\bin\\gradle"
+      },
+      {
+        "name": "one-byte corrupt cached ZIP is rejected before creating an extraction directory",
+        "passed": true,
+        "exitCode": 1,
+        "rejection": "Cached Gradle 2.7 distribution SHA256 mismatch",
+        "corruptInputRetained": true
+      }
+    ],
+    "officialArchive": "E:\\CodexTemp\\QiZhangVerdict\\legacy-build\\1.8.9\\tools\\gradle-2.7-bin.zip",
+    "officialArchiveSha256": "cde43b90945b5304c43ee36e58aab4cc6fb3a3d5f9bd9449bb1709a68371cb06",
+    "officialArchiveBytes": 44809759,
+    "embeddedCodeSha256": "b3a113610d2d06b8ada98020240e3dcce0d0c5a97b88b36ff9f1445c09198bd1",
+    "cache": "E:\\CodexTemp\\QiZhangVerdict\\legacy-build\\1.8.9\\ci-preflight-20260925-180803",
+    "javaProcessesLaunched": 0,
+    "networkDownloadAttempted": false,
+    "note": "Exact embedded Python from reviewed CI script executed with cache only. Launcher content inspected, never executed."
+  },
+  "gitlabOfficialLint": {
+    "checkedAtUTC": "2026-09-25T09:09:10.045573+00:00",
+    "endpoint": "https://gitlab.com/api/v4/projects/EeryFrank%2FQiZhangVerdict/ci/lint",
+    "apiExitCode": 0,
+    "valid": true,
+    "errors": [],
+    "warnings": [],
+    "jobs": [
+      {
+        "name": "legacy-build: [1.8.9]",
+        "stage": "build"
+      },
+      {
+        "name": "legacy-build: [1.12.2]",
+        "stage": "build"
+      },
+      {
+        "name": "legacy-build: [1.16.5]",
+        "stage": "build"
+      },
+      {
+        "name": "legacy-build: [1.18.2]",
+        "stage": "build"
+      },
+      {
+        "name": "legacy-build: [1.19.4]",
+        "stage": "build"
+      },
+      {
+        "name": "build: [core-bukkit]",
+        "stage": "build"
+      },
+      {
+        "name": "build: [mods-1.20.1]",
+        "stage": "build"
+      },
+      {
+        "name": "build: [mods-1.21.1]",
+        "stage": "build"
+      },
+      {
+        "name": "collect",
+        "stage": "collect"
+      }
+    ],
+    "inputFileSha256": "2f731ba5dce24f8031941476bed58d9c23496d91b266ca5248f7bc91b9057a1a",
+    "retainedFieldsOnly": true,
+    "tokensOrHeadersStored": false
+  },
+  "cacheEvidence": [
+    {
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-build\\1.8.9\\ci-preflight-20260925-180803\\embedded_gradle_preflight.py",
+      "sha256": "b3a113610d2d06b8ada98020240e3dcce0d0c5a97b88b36ff9f1445c09198bd1",
+      "bytes": 1163
+    },
+    {
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-build\\1.8.9\\ci-preflight-20260925-180803\\python-preflight-result.json",
+      "sha256": "775a1a5b32c66db7379d04ec66e798f94c61eb9d757a67045545d43675ddab62",
+      "bytes": 1633
+    },
+    {
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-build\\1.8.9\\ci-preflight-20260925-180803\\gitlab-lint-receipt.json",
+      "sha256": "3c9899e1f00de5bbc1045c4f24779242818261c8257f4aeffc03a1ef0872ff41",
+      "bytes": 1097
+    }
+  ],
+  "javaProcessesLaunched": 0,
+  "gradleBuildExecuted": false,
+  "ciPipelineExecuted": false,
+  "tokenOrAuthorizationHeaderRecorded": false,
+  "limitations": [
+    "Local execution used the official ZIP already in cache; it did not exercise a live distribution download.",
+    "GitLab lint proves YAML/expanded-job validity, not successful Linux dependency resolution or a remote build.",
+    "Shell syntax and actionlint were reported separately by root; this record does not claim to have rerun those commands.",
+    "The corrupt ZIP is an isolated one-byte mutation in the task cache; the original official cached ZIP was not changed."
+  ]
+}

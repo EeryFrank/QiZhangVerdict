@@ -23,7 +23,7 @@ legacy-build:
   timeout: 1h
   parallel:
     matrix:
-      - QV_MC: ['1.12.2', '1.16.5', '1.18.2', '1.19.4']
+      - QV_MC: ['1.8.9', '1.12.2', '1.16.5', '1.18.2', '1.19.4']
   cache:
     key: 'legacy-gradle-${CI_COMMIT_REF_SLUG}-${QV_MC}'
     paths:
@@ -31,7 +31,7 @@ legacy-build:
       - .gradle-user/wrapper/
   before_script:
     - apt-get update -qq
-    - DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends openjdk-17-jdk-headless openjdk-21-jdk-headless
+    - DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends openjdk-17-jdk-headless openjdk-21-jdk-headless python3
   script:
     - |
       export QV_JDK8="$JAVA_HOME"
