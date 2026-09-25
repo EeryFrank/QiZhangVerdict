@@ -52,9 +52,9 @@ async function connect(name, device = shared) {
 }
 function allowed(s, label) { assert(s.joined && s.sent && !s.ended && !s.error, `${label}: ${JSON.stringify({...s,client:undefined})}`); cases.push(label); }
 async function close(s) { if (!s.ended) s.client.end('QA complete'); await pause(700); }
-async function denied(s, label) {
+async function denied(s, label, reason = /banned/i) {
   await until(() => s.ended, label);
-  assert(/banned/i.test(s.kick), `${label}: ${s.kick}`); cases.push(label);
+  assert(reason.test(s.kick), `${label}: ${s.kick}`); cases.push(label);
 }
 function stateText() { return fs.readFileSync(path.join(dataFolder, 'accounts.state'), 'utf8'); }
 function banRows() { return stateText().split(/\r?\n/).filter(s => /^[BV]\t/.test(s)); }
@@ -81,7 +81,7 @@ async function main() {
     while (!player.ended && packets < 150) {
       player.client.write('held_item_slot', {slotId:1}); packets++; await pause(160);
     }
-    await denied(player, 'real Grim violation executes the QiZhangVerdict ban command');
+    await denied(player, 'real Grim violation executes the QiZhangVerdict ban command', /\[QiZhangVerdict\] Grim-BadPackets/);
     assert(packets >= 120, 'ban must not precede the shipped violation threshold');
     await until(() => thresholdObserved(grimViolationAlerts(fs.readFileSync(consoleFile, 'utf8').slice(triggerOffset))),
       'actual Grim console alert must identify BadPacketsA at or above 120 violations');
