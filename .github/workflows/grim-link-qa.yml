@@ -1,0 +1,57 @@
+name: Grim linked-ban runtime QA
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  grim-link:
+    name: Grim linked bans on ${{ matrix.mc }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - mc: '1.20.1'
+            java: '17'
+          - mc: '1.21.1'
+            java: '21'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-java@de7274f081f381c8f8158605e0321c36c376e2e6
+        with:
+          distribution: temurin
+          java-version: ${{ matrix.java }}
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: '22'
+      - name: Install pinned protocol QA dependencies
+        run: npm ci --ignore-scripts --no-audit --no-fund --prefix scripts/protocol-qa
+      - name: Test actual Grim violation, device linking, restart and unban
+        env:
+          QV_MC: ${{ matrix.mc }}
+        run: |
+          export NODE_PATH="$GITHUB_WORKSPACE/scripts/protocol-qa/node_modules"
+          python3 -B scripts/grim_link_smoke.py "$QV_MC" --java "$JAVA_HOME/bin/java" --node "$(command -v node)" --output "$RUNNER_TEMP/qizhang-grim-link"
+      - name: Preserve explicit QA logs and results
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: grim-linked-ban-${{ matrix.mc }}-${{ github.sha }}
+          path: |
+            ${{ runner.temp }}/qizhang-grim-link/fixture.json
+            ${{ runner.temp }}/qizhang-grim-link/result-*.json
+            ${{ runner.temp }}/qizhang-grim-link/protocol-*.json
+            ${{ runner.temp }}/qizhang-grim-link/protocol-*.log
+            ${{ runner.temp }}/qizhang-grim-link/console-*.log
+            ${{ runner.temp }}/qizhang-grim-link/trigger-details.json
+            ${{ runner.temp }}/qizhang-grim-link/acceptance.json
+            ${{ runner.temp }}/qizhang-grim-link/resource-gate-*.json
+            ${{ runner.temp }}/qizhang-grim-link/punishments-*.yml
+          if-no-files-found: warn
+          retention-days: 30

@@ -6,7 +6,7 @@ GitHub Actions 与 GitLab CI 都在 Linux 上分三个任务执行：核心+Bukk
 
 必须执行根工程 `build :core:securityTest`、两版工程各自的 `build :fabric:commandParserSmoke`，以及 Python 安装安全和运行证据解析回归。`build` 仍会执行全部子工程的 `check`；显式的 Fabric parser 任务运行两个 Minecraft 版本共用的真实生产命令树，和本地已验收的 parser 入口一致。没有 `-x test`、`-x check` 或忽略失败设置；`pipefail` 确保记录日志不会吞掉失败退出码。`CI=true` 供 Loom 在 CI 中减少开发依赖源码重映射，不跳过产物 remap 或检查。
 
-CI 是重新构建和静态/逻辑回归，不会自动接受 Minecraft EULA、启动游戏服务端或图形客户端，也不会覆盖 `outputs/validation.json` 的既有 Windows 实测证据。新构建字节不应被当作已通过本地联机验收的旧散列；测试版 release 的已验收产物由独立发布流程处理。
+上述构建 CI 是重新构建和静态/逻辑回归，不会自动接受 Minecraft EULA、启动游戏服务端或图形客户端，也不会覆盖 `outputs/validation.json` 的既有 Windows 实测证据。新构建字节不应被当作已通过本地联机验收的旧散列；测试版 release 的已验收产物由独立发布流程处理。
 
 GitHub 的 `qizhangverdict-five-jars-<commit>`、GitLab 的 `collect` job artifacts 为五 JAR 汇总，保留 30 天；中间构建与日志保留 14 天。GitLab 项目需要可用的 Linux Docker runner，并允许下载 Maven/Gradle/Minecraft 依赖及 Ubuntu 软件包。
 
@@ -29,3 +29,9 @@ GitHub 使用固定 SHA 的官方 actions；GitLab 开发任务使用[官方 Tem
 配置依据：[setup-java](https://github.com/actions/setup-java)、[Gradle setup action](https://github.com/gradle/actions/blob/main/setup-gradle/README.md)、[GitLab CI YAML](https://docs.gitlab.com/ci/yaml/)。首次远端 pipeline 的执行结果应单独核验；仅完成配置静态校验不等于 CI 已通过。
 
 `v0.2.0-dev-preview.1` 的固定提交 `0f5335649573a2cb3f0ee4c11d264cd17a116c6e` 已完成 [GitHub 旧版四任务](https://github.com/EeryFrank/QiZhangVerdict/actions/runs/36115223222)和[现代四任务](https://github.com/EeryFrank/QiZhangVerdict/actions/runs/36115223292)，全部通过。同提交 [GitLab tag pipeline](https://gitlab.com/EeryFrank/QiZhangVerdict/-/pipelines/2881654692) 的八任务均为 `ci_quota_exceeded`，未执行。发布成品另经本机运行和两站下载校验，见 [预览回执](../outputs/publish-receipt-0.2.0-dev-preview.1.json)。
+
+加入 1.8.9 后，提交 `281fa7a` 的首次远程构建因官方 Gradle 2.7 启动脚本被 `sh` 执行而失败。保持分发校验和必需检查不变，仅该目标改用 Bash 后，提交 `ba7c919ef48298b15fe41fff8bfc222524961291` 的旧版五任务与现代四任务全部通过；GitLab 九任务仍因额度不足未执行。见[故障复现](../outputs/legacy-ci-diagnosis-1.8.9.json)与[远程结果](../outputs/legacy-ci-validation-1.8.9.json)。
+
+## 手动 Grim 联动运行测试
+
+`grim-link-qa.yml` 仅通过 `workflow_dispatch` 启动，在临时的 Linux runner 上创建绑定 `127.0.0.1` 的两个独立测试服。它下载并校验已发布 GPL Bukkit 0.1.1、固定 Purpur 与 Grim，接受该隔离夹具的 Minecraft EULA，实际启动 JVM；不会连接现存服务器。测试使用原样处罚模板的 `120:0` 阈值，通过重复物品栏槽位包触发 Grim 检查，验证关联账号/设备封禁、重启持久化和管理员解封。Node 22 依赖通过固定 npm lock 安装。只有该运行的实际日志和结果可证明通过；配置存在不代表测试已执行。上传路径明确限定为夹具元数据、日志与结果，不上传世界、Minecraft JAR 或账号状态文件。

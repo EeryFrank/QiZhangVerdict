@@ -2,7 +2,7 @@
 
 截至 2026-09-25，本目录包含 **0.2.0-dev 的官方输入研究和独立源码适配**。源码已完成原生 **Java 8 / Gradle 2.7 构建和全部五项必需 Java 检查**，二进制与源码 JAR 已通过 GPL/字节码审计。随后已完成官方安装器及 **Forge 专服无玩家启动、严格控制台状态和正常停服**；**真实玩家联机、客户端与命令门禁仍未由本报告验证**。构建记录见 [build-verification.json](../platforms/1.8.9/build-verification.json)。本目录不属于 0.1.1 发布，也不继承其他版本的验收结果。[api-evidence.json](../platforms/1.8.9/api-evidence.json) 保留先前“未实现”的研究时间点快照；后续源码阶段由独立 [static-checks.json](../platforms/1.8.9/static-checks.json) 描述，未改写研究快照。
 
-后续的[独立 TCP 验收](legacy-mod-tcp-validation-1.8.9-gpl.md)已完成 14 项真实连接检查，包括默认配额、20 秒报告超时及实际 OP 命令门禁，服务器正常退出。图形客户端验收仍在进行；本候选未纳入已发布的 `0.2.0-dev-preview.1`，也不声称能够安装到原生 Forge 1.8.8。
+后续的[独立 TCP 验收](legacy-mod-tcp-validation-1.8.9-gpl.md)已完成 14 项真实连接检查，包括默认配额、20 秒报告超时及实际 OP 命令门禁，服务器正常退出。图形客户端出现纹理及 HUD 异常，**正式客户端验收未通过**，见[两轮原始证据与人工复核](../outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/diagnostic.json)。首轮报告及设备关联成功、在线 65 秒且双进程退出 0，仍不能覆盖视觉失败；第二轮开启 VBO 后异常仍在。无本模组的 Forge 对照因可用内存不足尚未启动，根因未确定。本候选未纳入已发布的 `0.2.0-dev-preview.1`，也不声称能够安装到原生 Forge 1.8.8。
 
 ## 目标与 1.8.8 边界
 
@@ -111,7 +111,7 @@ $env:GRADLE_USER_HOME = 'E:\CodexTemp\QiZhangVerdict\legacy-build\1.8.9\gradle-u
 
 下方记录的安装与无玩家运行后来已经执行成功；不要重跑覆盖该夹具。后续 TCP/OP 检查使用了全新目录，结论单独记录于前述 TCP 验收。真实伴随模组的图形验收、VM 准确率、完整游戏兼容及 **1.8.8** 跨版联机均不能由此无玩家记录推出。该适配尚未发布安装包。
 
-历史内存窗口：随后仅安装窗口单独调整为 **384 MiB 堆 / free ≥1.25 GiB**，服务器运行仍要求 **1536 MiB 堆 / free ≥3 GiB**，当时没有服务端启动授权。两次即时观测分别为 **1.068 GiB、1.043 GiB**，均不足，当时安装器未启动并已停止等待；恢复窗口后的结果另见下节。旧阶段 helper 按 SHA256 `339a1d8ad38977ac583f752d04f8957536ac11fbd853266d2ae6c8fdd5e9c8fc` 保存在 `runtime_basic.stage-snapshot-339a1d8ad389.py`，新 helper SHA256 为 `d9b1dc375f45ad69ce6f21911356ce3f8e4ec6bae47f199c6b63aa2c0ef3275a`；两份均在同一临时构建目录。新门槛仅影响测试安装器，不改变产品或默认策略，原 stage 历史记录未覆盖。
+历史内存窗口：随后仅安装窗口单独调整为 **384 MiB 堆 / free ≥1.25 GiB**，服务器运行仍要求 **1536 MiB 堆 / free ≥3 GiB**，当时尚未启动服务端测试。两次即时观测分别为 **1.068 GiB、1.043 GiB**，均不足，当时安装器未启动并已停止等待；恢复窗口后的结果另见下节。旧阶段 helper 按 SHA256 `339a1d8ad38977ac583f752d04f8957536ac11fbd853266d2ae6c8fdd5e9c8fc` 保存在 `runtime_basic.stage-snapshot-339a1d8ad389.py`，新 helper SHA256 为 `d9b1dc375f45ad69ce6f21911356ce3f8e4ec6bae47f199c6b63aa2c0ef3275a`；两份均在同一临时构建目录。新门槛仅影响测试安装器，不改变产品或默认策略，原 stage 历史记录未覆盖。
 
 ## 无玩家专服运行结果
 
