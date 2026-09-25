@@ -1,0 +1,226 @@
+{
+  "passed": true,
+  "fixture": {
+    "schemaVersion": 1,
+    "version": "1.21.1",
+    "distribution": "Purpur",
+    "build": "2329",
+    "serverSourceUrl": "https://api.purpurmc.org/v2/purpur/1.21.1/2329/download",
+    "serverSha256": "30403cf54f981f16e1403f172645e82d3e4a59ad6c9f1d8e98df99edb1f8ae4c",
+    "guardFile": "qizhangverdict-bukkit-0.2.0-test.1.jar",
+    "guardVersion": "0.2.0-test.1",
+    "guardSha256": "1e54c48f744b61cc23efe28b8516132d13dba601d9b36beab88c1da3a849f1b7",
+    "catalogSha256": "66a633ad3faa2d7d666c43e2b3b544437054345e102103d90fe3b5db022c46a3",
+    "pristineDefaultPolicySha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+    "qaPolicySha256": "7d97c3b22a50e54b56a19d279aebd87cb5c3e33256c7b135873d8f7a0f683646",
+    "expectedQaPolicy": {
+      "limits.max-online-per-ip": "3",
+      "limits.max-online-per-ip-device": "1",
+      "limits.max-accounts-per-ip": "64",
+      "limits.account-window-hours": "720",
+      "limits.attempts-per-minute": "200",
+      "ip.allow": "",
+      "ip.deny": "",
+      "companion.required": "true",
+      "companion.timeout-seconds": "20",
+      "vm.action": "DENY",
+      "blacklist.action": "DENY",
+      "sanctions.on-deny": "BAN",
+      "device.required": "true"
+    },
+    "declaredQuotaChanges": {
+      "limits.max-accounts-per-ip": {
+        "default": "5",
+        "qa": "64"
+      },
+      "limits.attempts-per-minute": {
+        "default": "20",
+        "qa": "200"
+      }
+    },
+    "temporaryControlChange": "Only restart-phase KICK control temporarily changes sanctions.on-deny from BAN to KICK; restored to BAN before successful stop.",
+    "strictUnchanged": [
+      "companion.required=true",
+      "companion.timeout-seconds=20",
+      "device.required=true",
+      "vm.action=DENY",
+      "blacklist.action=DENY",
+      "limits.max-online-per-ip=3",
+      "limits.max-online-per-ip-device=1"
+    ],
+    "java": "D:\\Java\\jdk-21\\bin\\java.exe",
+    "node": "E:\\CodexTemp\\Codex\\RuntimeCache\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+    "nodeModules": "E:\\CodexTemp\\QiZhangVerdict\\legacy-protocol-qa\\node_modules",
+    "helperSha256": "326be5912682dbb833f5ec5ea81788de020d2e0daf1a9b6e70ed3553a41946c9",
+    "protocolSha256": "6500cb534f2cdf3a73c24ae3874d9f72173584bf91a45c3ba26888e2c45465e3",
+    "dependencyLockSha256": "d20909e9e6e085ff2dfd2621eb6143c6634858f6b01e463b6e6b9daa7f08e335",
+    "port": 25675,
+    "host": "127.0.0.1",
+    "prepareExecutedJava": false,
+    "sourceFixtureReadOnly": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.21.1-startup",
+    "scope": "New candidate product; synthetic loopback TCP, catalog and sanction regressions. No third-party detection engine, real hardware, accuracy or performance claim."
+  },
+  "phases": [
+    {
+      "phase": "initial",
+      "passed": true,
+      "availableBytesBeforeJava": 9152925696,
+      "minimumAvailableGiB": 3.5,
+      "policyBeforeSha256": "7d97c3b22a50e54b56a19d279aebd87cb5c3e33256c7b135873d8f7a0f683646",
+      "command": [
+        "D:\\Java\\jdk-21\\bin\\java.exe",
+        "-Xms256M",
+        "-Xmx1536M",
+        "-jar",
+        "server.jar",
+        "--nogui"
+      ],
+      "ownedServerPid": 28136,
+      "startupPassed": true,
+      "protocolExitCode": 0,
+      "protocol": {
+        "passed": true,
+        "phase": "initial",
+        "version": "1.21.1",
+        "cases": [
+          {
+            "name": "first install generates all 37 exact catalog rows with pinned kind/action/source",
+            "deny": 33,
+            "alert": 4
+          },
+          {
+            "name": "new catalog DENY cheatutils persists account and device bans"
+          },
+          {
+            "name": "new catalog DENY cigarette persists account and device bans"
+          },
+          {
+            "name": "new catalog DENY gamesense persists account and device bans"
+          },
+          {
+            "name": "new catalog DENY krs persists account and device bans"
+          },
+          {
+            "name": "new catalog DENY meteorplus persists account and device bans"
+          },
+          {
+            "name": "new catalog DENY nightx persists account and device bans"
+          },
+          {
+            "name": "default baritoe remains ALERT without bans",
+            "onlineSecondsAfterReport": 4.588,
+            "deviceAssociationPersisted": true,
+            "decision": "AUTOMATION_ALERT"
+          },
+          {
+            "name": "default baritone remains ALERT without bans",
+            "onlineSecondsAfterReport": 4.269,
+            "deviceAssociationPersisted": true,
+            "decision": "AUTOMATION_ALERT"
+          },
+          {
+            "name": "default atianxray remains ALERT without bans",
+            "onlineSecondsAfterReport": 4.469,
+            "deviceAssociationPersisted": true,
+            "decision": "BLACKLIST_ALERT"
+          },
+          {
+            "name": "default keystrokesmod remains ALERT without bans",
+            "onlineSecondsAfterReport": 4.36,
+            "deviceAssociationPersisted": true,
+            "decision": "BLACKLIST_ALERT"
+          },
+          {
+            "name": "ordinary identifiers survive the strict report deadline without bans",
+            "onlineSecondsAfterReport": 22.013,
+            "deviceAssociationPersisted": true
+          },
+          {
+            "name": "administrator OFF and command API deletion take effect before restart"
+          },
+          {
+            "name": "explicit automation DENY with BAN links historical two accounts and one device",
+            "addedBanRows": 3,
+            "reason": "AUTOMATION_DENIED"
+          }
+        ],
+        "caseCount": 14,
+        "exactDefaultCatalogChecked": true,
+        "scope": "Real loopback TCP and server state assertions; synthetic accounts/devices; two explicitly raised batch quotas; KICK only in named control window."
+      },
+      "serverExitCode": 0,
+      "normalStop": true,
+      "policyAfterSha256": "7d97c3b22a50e54b56a19d279aebd87cb5c3e33256c7b135873d8f7a0f683646",
+      "finalPolicyMatchesDeclaredQaPolicy": true,
+      "elapsedSeconds": 137.353,
+      "consoleSha256": "f201a236e57703d287188eb8f85cdaddd028222282d692951c76e1152929dd1b"
+    },
+    {
+      "phase": "restart",
+      "passed": true,
+      "availableBytesBeforeJava": 9533992960,
+      "minimumAvailableGiB": 3.5,
+      "policyBeforeSha256": "7d97c3b22a50e54b56a19d279aebd87cb5c3e33256c7b135873d8f7a0f683646",
+      "command": [
+        "D:\\Java\\jdk-21\\bin\\java.exe",
+        "-Xms256M",
+        "-Xmx1536M",
+        "-jar",
+        "server.jar",
+        "--nogui"
+      ],
+      "ownedServerPid": 59880,
+      "startupPassed": true,
+      "protocolExitCode": 0,
+      "protocol": {
+        "passed": true,
+        "phase": "restart",
+        "version": "1.21.1",
+        "cases": [
+          {
+            "name": "administrator OFF and removed rule remain byte-identical after normal server restart"
+          },
+          {
+            "name": "historical linked account remains banned"
+          },
+          {
+            "name": "automation offender remains banned with changed device"
+          },
+          {
+            "name": "new account on the banned device is rejected after restart"
+          },
+          {
+            "name": "preserved administrator OFF and deletion still allow reports beyond deadline",
+            "onlineSecondsAfterReport": 22.004,
+            "deviceAssociationPersisted": true
+          },
+          {
+            "name": "explicit automation DENY with KICK rejects without adding permanent bans"
+          },
+          {
+            "name": "KICK account and same device can reconnect beyond the strict report deadline",
+            "onlineSecondsAfterReport": 22.002,
+            "deviceAssociationPersisted": true
+          },
+          {
+            "name": "KICK does not ban the historical associated account"
+          },
+          {
+            "name": "BAN policy restored and administrator blacklist edits remain unchanged"
+          }
+        ],
+        "caseCount": 9,
+        "exactDefaultCatalogChecked": false,
+        "scope": "Real loopback TCP and server state assertions; synthetic accounts/devices; two explicitly raised batch quotas; KICK only in named control window."
+      },
+      "serverExitCode": 0,
+      "normalStop": true,
+      "policyAfterSha256": "7d97c3b22a50e54b56a19d279aebd87cb5c3e33256c7b135873d8f7a0f683646",
+      "finalPolicyMatchesDeclaredQaPolicy": true,
+      "elapsedSeconds": 85.341,
+      "consoleSha256": "eaa3de673dfb4cdb964c0e9023fb5cb9f3318fed3c3cd60621b2e3e5b1709611"
+    }
+  ],
+  "assertionGroups": 23,
+  "scope": "New candidate real TCP proof with declared batch quota changes, not an unmodified-full-default quota test."
+}

@@ -2,7 +2,7 @@
 
 这些组件保持独立 JAR，不会打入 QiZhangVerdict 自身产物。`dependencies.lock.json` 保存官方 Modrinth 项目和不可变版本 ID、下载地址、许可证/源码地址、平台范围、真实 JAR 描述符、官方 SHA-512 和下载后计算的 SHA-256。清单已实际下载核验；启动、玩家联机和反作弊准确率是不同层次的验证。
 
-旧版组件使用独立的 `legacy-dependencies.lock.json`，目前仅完成七个 JAR 输入与八个文件暂存组合的检查，尚未运行。其 Java 要求、补齐的 Architectury 依赖和配置缺口见[旧版候选说明](../docs/legacy-integration-candidates.md)；不能把下面现代组合的实测结果套用到旧版。
+旧版组件使用独立的 `legacy-dependencies.lock.json`。该暂存清单自身仍保留最初的输入核验范围；后续独立实测不能当成清单中每个组合都已通过。Paper 1.8.8 / 1.12.2 / 1.16.5 的 Grim 2.3.67 联动和原生矿物混淆已完成 [42 组检查](../docs/legacy-paper-integration-validation.md)，对应的三个 `paper-*-anti-xray.example.yml` 和 `grim-legacy-2.3.67-verdict.example.yml` 需人工合并到实际配置，保留原有版本字段。Fabric 1.16.5 官方 AntiXray 1.1.0 的 refmap 启动故障和独立补丁见 [Java 17 兼容说明](../docs/legacy-fabric116-antixray-qzcompat1-java17.md)与[补丁工具](compat/README.md)。上述运行记录均使用报告指定的旧 Verdict JAR；其余旧版组合的 Java 要求和待验证项见[候选说明](../docs/legacy-integration-candidates.md)。
 
 | profile | 已固定组件 | 能力范围 |
 | --- | --- | --- |

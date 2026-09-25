@@ -1,0 +1,1183 @@
+{
+  "schemaVersion": 1,
+  "title": "QiZhangVerdict Bukkit 0.2.0-test.1 candidate runtime validation",
+  "generatedUtc": "2026-09-25T11:25:15Z",
+  "passed": true,
+  "artifactVersion": "0.2.0-test.1",
+  "artifact": {
+    "path": "bukkit/build/libs/qizhangverdict-bukkit-0.2.0-test.1.jar",
+    "sha256": "1e54c48f744b61cc23efe28b8516132d13dba601d9b36beab88c1da3a849f1b7",
+    "bytes": 73684
+  },
+  "assertionGroups": 75,
+  "countDefinition": "23 catalog/sanction two-phase groups plus 26 existing base groups per modern Minecraft version. No prior-version tests are added.",
+  "scope": "Actual isolated loopback Minecraft TCP, synthetic reports/accounts/devices, explicit QA policy changes. Not a rendered companion client, real VM/hardware test, anti-cheat detection accuracy benchmark, or Anti-Xray/Grim integration test.",
+  "resourcePolicy": {
+    "maxConcurrentOwnedMinecraftServers": 1,
+    "serverMaximumHeapMiB": 1536,
+    "minimumAvailablePhysicalGiBBeforeEachStart": 3.5
+  },
+  "specialCatalogAndSanctions": {
+    "minecraft": "1.21.1",
+    "distribution": "Purpur",
+    "build": "2329",
+    "passed": true,
+    "assertionGroups": 23,
+    "server": {
+      "sourceUrl": "https://api.purpurmc.org/v2/purpur/1.21.1/2329/download",
+      "sha256": "30403cf54f981f16e1403f172645e82d3e4a59ad6c9f1d8e98df99edb1f8ae4c",
+      "bytes": 53071332
+    },
+    "javaExecutable": "D:\\Java\\jdk-21\\bin\\java.exe",
+    "javaVersionEvidence": "java version \"21.0.8\" 2025-07-15 LTS\nJava(TM) SE Runtime Environment (build 21.0.8+12-LTS-250)\nJava HotSpot(TM) 64-Bit Server VM (build 21.0.8+12-LTS-250, mixed mode, sharing)",
+    "freshDefaultCatalog": {
+      "rules": 37,
+      "deny": 33,
+      "alert": 4,
+      "kindIdActionPinnedSourceCompared": true,
+      "catalogSha256": "66a633ad3faa2d7d666c43e2b3b544437054345e102103d90fe3b5db022c46a3"
+    },
+    "newDenyIds": [
+      "cheatutils",
+      "cigarette",
+      "gamesense",
+      "krs",
+      "meteorplus",
+      "nightx"
+    ],
+    "alertIds": [
+      "baritoe",
+      "baritone",
+      "atianxray",
+      "keystrokesmod"
+    ],
+    "ordinaryIds": [
+      "bigrat",
+      "template",
+      "antixray",
+      "sodium",
+      "iris",
+      "jei",
+      "fabricloader",
+      "meteor-client-helper"
+    ],
+    "automationBan": {
+      "administratorChange": "baritone ALERT -> DENY",
+      "reason": "AUTOMATION_DENIED",
+      "historicalAccounts": 2,
+      "devices": 1,
+      "addedBanRows": 3,
+      "normalRestartDenialVerified": true
+    },
+    "kickControl": {
+      "permanentBanRowsAdded": 0,
+      "sameAccountSameDeviceReconnectSeconds": 22.002,
+      "historicalLinkedAccountAllowed": true,
+      "finalPolicyRestoredToBan": true
+    },
+    "administratorPreservation": {
+      "off": "meteor-client",
+      "removedWithCommandApi": "legacy:mod:xray",
+      "blacklistBytesUnchangedAcrossRestart": true
+    },
+    "phases": [
+      {
+        "phase": "initial",
+        "passed": true,
+        "availableBytesBeforeJava": 9152925696,
+        "minimumAvailableGiB": 3.5,
+        "policyBeforeSha256": "7d97c3b22a50e54b56a19d279aebd87cb5c3e33256c7b135873d8f7a0f683646",
+        "command": [
+          "D:\\Java\\jdk-21\\bin\\java.exe",
+          "-Xms256M",
+          "-Xmx1536M",
+          "-jar",
+          "server.jar",
+          "--nogui"
+        ],
+        "ownedServerPid": 28136,
+        "startupPassed": true,
+        "protocolExitCode": 0,
+        "protocol": {
+          "passed": true,
+          "phase": "initial",
+          "version": "1.21.1",
+          "cases": [
+            {
+              "name": "first install generates all 37 exact catalog rows with pinned kind/action/source",
+              "deny": 33,
+              "alert": 4
+            },
+            {
+              "name": "new catalog DENY cheatutils persists account and device bans"
+            },
+            {
+              "name": "new catalog DENY cigarette persists account and device bans"
+            },
+            {
+              "name": "new catalog DENY gamesense persists account and device bans"
+            },
+            {
+              "name": "new catalog DENY krs persists account and device bans"
+            },
+            {
+              "name": "new catalog DENY meteorplus persists account and device bans"
+            },
+            {
+              "name": "new catalog DENY nightx persists account and device bans"
+            },
+            {
+              "name": "default baritoe remains ALERT without bans",
+              "onlineSecondsAfterReport": 4.588,
+              "deviceAssociationPersisted": true,
+              "decision": "AUTOMATION_ALERT"
+            },
+            {
+              "name": "default baritone remains ALERT without bans",
+              "onlineSecondsAfterReport": 4.269,
+              "deviceAssociationPersisted": true,
+              "decision": "AUTOMATION_ALERT"
+            },
+            {
+              "name": "default atianxray remains ALERT without bans",
+              "onlineSecondsAfterReport": 4.469,
+              "deviceAssociationPersisted": true,
+              "decision": "BLACKLIST_ALERT"
+            },
+            {
+              "name": "default keystrokesmod remains ALERT without bans",
+              "onlineSecondsAfterReport": 4.36,
+              "deviceAssociationPersisted": true,
+              "decision": "BLACKLIST_ALERT"
+            },
+            {
+              "name": "ordinary identifiers survive the strict report deadline without bans",
+              "onlineSecondsAfterReport": 22.013,
+              "deviceAssociationPersisted": true
+            },
+            {
+              "name": "administrator OFF and command API deletion take effect before restart"
+            },
+            {
+              "name": "explicit automation DENY with BAN links historical two accounts and one device",
+              "addedBanRows": 3,
+              "reason": "AUTOMATION_DENIED"
+            }
+          ],
+          "caseCount": 14,
+          "exactDefaultCatalogChecked": true,
+          "scope": "Real loopback TCP and server state assertions; synthetic accounts/devices; two explicitly raised batch quotas; KICK only in named control window."
+        },
+        "serverExitCode": 0,
+        "normalStop": true,
+        "policyAfterSha256": "7d97c3b22a50e54b56a19d279aebd87cb5c3e33256c7b135873d8f7a0f683646",
+        "finalPolicyMatchesDeclaredQaPolicy": true,
+        "elapsedSeconds": 137.353,
+        "consoleSha256": "f201a236e57703d287188eb8f85cdaddd028222282d692951c76e1152929dd1b"
+      },
+      {
+        "phase": "restart",
+        "passed": true,
+        "availableBytesBeforeJava": 9533992960,
+        "minimumAvailableGiB": 3.5,
+        "policyBeforeSha256": "7d97c3b22a50e54b56a19d279aebd87cb5c3e33256c7b135873d8f7a0f683646",
+        "command": [
+          "D:\\Java\\jdk-21\\bin\\java.exe",
+          "-Xms256M",
+          "-Xmx1536M",
+          "-jar",
+          "server.jar",
+          "--nogui"
+        ],
+        "ownedServerPid": 59880,
+        "startupPassed": true,
+        "protocolExitCode": 0,
+        "protocol": {
+          "passed": true,
+          "phase": "restart",
+          "version": "1.21.1",
+          "cases": [
+            {
+              "name": "administrator OFF and removed rule remain byte-identical after normal server restart"
+            },
+            {
+              "name": "historical linked account remains banned"
+            },
+            {
+              "name": "automation offender remains banned with changed device"
+            },
+            {
+              "name": "new account on the banned device is rejected after restart"
+            },
+            {
+              "name": "preserved administrator OFF and deletion still allow reports beyond deadline",
+              "onlineSecondsAfterReport": 22.004,
+              "deviceAssociationPersisted": true
+            },
+            {
+              "name": "explicit automation DENY with KICK rejects without adding permanent bans"
+            },
+            {
+              "name": "KICK account and same device can reconnect beyond the strict report deadline",
+              "onlineSecondsAfterReport": 22.002,
+              "deviceAssociationPersisted": true
+            },
+            {
+              "name": "KICK does not ban the historical associated account"
+            },
+            {
+              "name": "BAN policy restored and administrator blacklist edits remain unchanged"
+            }
+          ],
+          "caseCount": 9,
+          "exactDefaultCatalogChecked": false,
+          "scope": "Real loopback TCP and server state assertions; synthetic accounts/devices; two explicitly raised batch quotas; KICK only in named control window."
+        },
+        "serverExitCode": 0,
+        "normalStop": true,
+        "policyAfterSha256": "7d97c3b22a50e54b56a19d279aebd87cb5c3e33256c7b135873d8f7a0f683646",
+        "finalPolicyMatchesDeclaredQaPolicy": true,
+        "elapsedSeconds": 85.341,
+        "consoleSha256": "eaa3de673dfb4cdb964c0e9023fb5cb9f3318fed3c3cd60621b2e3e5b1709611"
+      }
+    ],
+    "rawEvidence": {
+      "fixture.json": {
+        "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-catalog-fixture.json",
+        "sha256": "7c6c0b26cb41cc4f0ae948f1d90d5c2186a483a18348d56cfbbd3832eff7ebb5",
+        "bytes": 2674
+      },
+      "acceptance.json": {
+        "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-catalog-acceptance.json",
+        "sha256": "5f76414dadb9777fad84f14ba905aebcb44e8a9673c262cd0c77f7e050cc5543",
+        "bytes": 8999
+      },
+      "result-initial.json": {
+        "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-catalog-result-initial.json",
+        "sha256": "a51b624f8f624addc1c7dd6d7cbfc69b076739bdc0def622b82e02be4bea8702",
+        "bytes": 3167
+      },
+      "result-restart.json": {
+        "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-catalog-result-restart.json",
+        "sha256": "6ccf447c265b01a075df39f3cf63b926376395b9a8c3e675dba848bc9f929c66",
+        "bytes": 2196
+      },
+      "protocol-initial.json": {
+        "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-catalog-protocol-initial.json",
+        "sha256": "5ccc9ab4cacfec058842692fb1f3c0d814922fdb3d9f23f3dd8af68a60864495",
+        "bytes": 2201
+      },
+      "protocol-restart.json": {
+        "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-catalog-protocol-restart.json",
+        "sha256": "52955951e37e8209f30f1314934f80c29cd81234e115c94932cef416f394a9ea",
+        "bytes": 1318
+      },
+      "console-initial.log": {
+        "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-catalog-console-initial.log",
+        "sha256": "f201a236e57703d287188eb8f85cdaddd028222282d692951c76e1152929dd1b",
+        "bytes": 14109
+      },
+      "console-restart.log": {
+        "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-catalog-console-restart.log",
+        "sha256": "eaa3de673dfb4cdb964c0e9023fb5cb9f3318fed3c3cd60621b2e3e5b1709611",
+        "bytes": 10022
+      },
+      "protocol-initial.log": {
+        "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-catalog-protocol-initial.log",
+        "sha256": "b970c1df2763dc1353dc72e5162e332b35d6aa812c948cb00302db88fea4da1e",
+        "bytes": 23533
+      },
+      "protocol-restart.log": {
+        "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-catalog-protocol-restart.log",
+        "sha256": "eca4a1571e3b900288207cb81017e9d53d7cd5e600b7f1ad8aa31db0d5e6d685",
+        "bytes": 10332
+      },
+      "blacklist-first-install.tsv": {
+        "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-catalog-blacklist-first-install.tsv",
+        "sha256": "5133d41d55a004439eec7a460e7e3f009f8484263b47f3d87a05b9fc8ea45c29",
+        "bytes": 5825
+      },
+      "blacklist-after-administrator.tsv": {
+        "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-catalog-blacklist-after-administrator.tsv",
+        "sha256": "eb2d9b096022fe8ba932cf4fbbfce4cf3b33e3d9eea4858aee44b2a350210ad4",
+        "bytes": 5670
+      },
+      "catalog-snapshot.tsv": {
+        "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-catalog-catalog-snapshot.tsv",
+        "sha256": "66a633ad3faa2d7d666c43e2b3b544437054345e102103d90fe3b5db022c46a3",
+        "bytes": 5641
+      },
+      "default-policy-reference.properties": {
+        "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-catalog-default-policy-reference.properties",
+        "sha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+        "bytes": 396
+      },
+      "qa-policy-reference.properties": {
+        "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-catalog-qa-policy-reference.properties",
+        "sha256": "7d97c3b22a50e54b56a19d279aebd87cb5c3e33256c7b135873d8f7a0f683646",
+        "bytes": 398
+      },
+      "restart-expectations.json": {
+        "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-catalog-restart-expectations.json",
+        "sha256": "cdbd349106170e6dcd209bbc3fca3eb84849e1e0128d736dd1757ed8bfb14e9b",
+        "bytes": 137
+      },
+      "executed-helper.py": {
+        "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-catalog-executed-helper.py",
+        "sha256": "326be5912682dbb833f5ec5ea81788de020d2e0daf1a9b6e70ed3553a41946c9",
+        "bytes": 14474
+      },
+      "executed-protocol.cjs": {
+        "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-catalog-executed-protocol.cjs",
+        "sha256": "6500cb534f2cdf3a73c24ae3874d9f72173584bf91a45c3ba26888e2c45465e3",
+        "bytes": 13640
+      },
+      "executed-package-lock.json": {
+        "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-catalog-executed-package-lock.json",
+        "sha256": "d20909e9e6e085ff2dfd2621eb6143c6634858f6b01e463b6e6b9daa7f08e335",
+        "bytes": 56370
+      },
+      "java-version.log": {
+        "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-catalog-java-version.log",
+        "sha256": "2964d5e1b3b412d2128748e82aa8b0069d4a7b2c58bd5c7e50cd3ba4ebcc8aa0",
+        "bytes": 179
+      },
+      "server.properties": {
+        "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-catalog-server.properties",
+        "sha256": "3f6ff11ebaf24e25a7bcb18d777a66b2f0b2fe424c564bd2e4440e128c3dd9ae",
+        "bytes": 1493
+      }
+    }
+  },
+  "modernBaseRuns": [
+    {
+      "minecraft": "1.20.1",
+      "distribution": "Purpur",
+      "build": "2062",
+      "server": {
+        "sourceUrl": "https://api.purpurmc.org/v2/purpur/1.20.1/2062/download",
+        "sha256": "238e64b33e5c7c9b87506cf1a23f239e6ce7fb71edd9d31837f229c94f4dfa1a",
+        "bytes": 46903164
+      },
+      "javaExecutable": "E:\\CodexTemp\\mods-danzi\\java\\jdk-17.0.20.1+1-jre\\bin\\java.exe",
+      "javaVersionEvidence": "System Info: Java 17 (OpenJDK 64-Bit Server VM 17.0.20.1+1) Host: Windows 11 10.0 (amd64)",
+      "mode": "full",
+      "networkCompressionThreshold": 256,
+      "passed": true,
+      "assertionGroups": 26,
+      "cases": [
+        "normal companion joins",
+        "privileged commands blocked before report and restored afterward",
+        "missing companion expires",
+        "malformed report rejected",
+        "malformed report does not permanently ban account",
+        "first account on device allowed",
+        "same IP same device second account rejected",
+        "same IP second different device allowed",
+        "same IP third different device allowed",
+        "same IP fourth account rejected",
+        "disconnect releases device and IP quota",
+        "known cheat denied and sanctioned",
+        "same banned device different account denied",
+        "banned account denied with new device",
+        "administrator account and device unban restores access",
+        "administrator glob rule enforced",
+        "whitelist overrides matching blacklist item",
+        "removed whitelist takes effect",
+        "administrator removes default rule with colon ID",
+        "administrator restores removed blacklist entry",
+        "CIDR deny rejects login",
+        "known VM signal denied",
+        "VBS hypervisor alone does not ban physical machine",
+        "two-device setting first account",
+        "two-device setting second account",
+        "two-device setting rejects third account"
+      ],
+      "serverExitCode": 0,
+      "protocolExitCode": 0,
+      "driverExitCode": 0,
+      "normalStop": true,
+      "elapsedSeconds": 105.17,
+      "availablePhysicalBytesBeforeJava": 9417146368,
+      "dependencies": {
+        "minecraft-protocol": "1.66.2",
+        "minecraft-data": "3.117.0",
+        "protodef": "1.19.0"
+      },
+      "scriptSnapshots": {
+        "executed-runtime_smoke.py": {
+          "sha256": "986ac17ddfea111f025267b4d6a499a9a4f6da03a0ea381c12d8dd0a0bdb86d9",
+          "bytes": 8395,
+          "source": "E:\\Codex_work\\QiZhangVerdict\\scripts\\runtime_smoke.py"
+        },
+        "executed-protocol_smoke.cjs": {
+          "sha256": "4f88bcd526337d9c911f26d7a79c6435cf0b94a2814acd11dcf0338f3f1f78be",
+          "bytes": 12087,
+          "source": "E:\\Codex_work\\QiZhangVerdict\\scripts\\protocol_smoke.cjs"
+        },
+        "executed-package-lock.json": {
+          "sha256": "3e1f393e371f52c524a9256309cbef6665137f6312c4a0bd6848e3ee3959b814",
+          "bytes": 53375,
+          "source": "E:\\CodexTemp\\QiZhangGuard\\bot\\package-lock.json"
+        }
+      },
+      "commandGateObserved": {
+        "operatorGranted": true,
+        "beforeReportExecuted": false,
+        "afterReportExecuted": true
+      },
+      "antiXrayExecuted": false,
+      "grimInstalled": false,
+      "protocolPartialReadErrorOccurrences": 0,
+      "rawEvidence": {
+        "wrapper/result.json": {
+          "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-base-1.20.1-wrapper-result.json",
+          "sha256": "fe8660191f31a6f795918f9635c30c5fc1792a623ad7e1bd7f72b47f87864070",
+          "bytes": 4034
+        },
+        "wrapper/driver.log": {
+          "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-base-1.20.1-wrapper-driver.log",
+          "sha256": "0cdd13f7049426b4c75662d5e6e6217a375e3f58d084dc2d23d06b95b9b779a1",
+          "bytes": 1985
+        },
+        "wrapper/resource-gate.json": {
+          "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-base-1.20.1-wrapper-resource-gate.json",
+          "sha256": "75d3e078af6bd1e271bea931db49edee215ae7f2a4ffdc295bda496d859e86cd",
+          "bytes": 117
+        },
+        "wrapper/executed-runtime_smoke.py": {
+          "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-base-1.20.1-wrapper-executed-runtime_smoke.py",
+          "sha256": "986ac17ddfea111f025267b4d6a499a9a4f6da03a0ea381c12d8dd0a0bdb86d9",
+          "bytes": 8395
+        },
+        "wrapper/executed-protocol_smoke.cjs": {
+          "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-base-1.20.1-wrapper-executed-protocol_smoke.cjs",
+          "sha256": "4f88bcd526337d9c911f26d7a79c6435cf0b94a2814acd11dcf0338f3f1f78be",
+          "bytes": 12087
+        },
+        "wrapper/executed-package-lock.json": {
+          "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-base-1.20.1-wrapper-executed-package-lock.json",
+          "sha256": "3e1f393e371f52c524a9256309cbef6665137f6312c4a0bd6848e3ee3959b814",
+          "bytes": 53375
+        },
+        "result.json": {
+          "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-base-1.20.1-result.json",
+          "sha256": "74d40c380dd6f4a10ec21e97e250c27df68dcbf483b9f0945a0d371c2f8afe5d",
+          "bytes": 2258
+        },
+        "console.log": {
+          "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-base-1.20.1-console.log",
+          "sha256": "242b055a217963f27e147e55d6fd0a06856dcfe759d08603e86ef3179bd6b58a",
+          "bytes": 22633
+        },
+        "protocol-result.json": {
+          "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-base-1.20.1-protocol-result.json",
+          "sha256": "c3263117101d86431b9ea8b3529da5121ab82ca30a75c73e70438a5d7441d38d",
+          "bytes": 1381
+        },
+        "protocol-results.log": {
+          "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-base-1.20.1-protocol-results.log",
+          "sha256": "a42fb8819870b3ab7d13014376aedfa890db7bab8c76245099798861cf9c3d7e",
+          "bytes": 1224
+        },
+        "server.properties": {
+          "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-base-1.20.1-server.properties",
+          "sha256": "9dcd629ed0af168d764fe1e535a072d1fae833a56820d949b65e7cf34dd8104e",
+          "bytes": 1599
+        },
+        "final-guard.properties": {
+          "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-base-1.20.1-final-guard.properties",
+          "sha256": "c5cbabcffaaefe72b8ef4e65a979834f9888d70c627ff5354e9267b82c69360f",
+          "bytes": 308
+        }
+      }
+    },
+    {
+      "minecraft": "1.21.1",
+      "distribution": "Purpur",
+      "build": "2329",
+      "server": {
+        "sourceUrl": "https://api.purpurmc.org/v2/purpur/1.21.1/2329/download",
+        "sha256": "30403cf54f981f16e1403f172645e82d3e4a59ad6c9f1d8e98df99edb1f8ae4c",
+        "bytes": 53071332
+      },
+      "javaExecutable": "D:\\Java\\jdk-21\\bin\\java.exe",
+      "javaVersionEvidence": "[20:20:26 INFO]: [bootstrap] Running Java 21 (Java HotSpot(TM) 64-Bit Server VM 21.0.8+12-LTS-250; Oracle Corporation null) on Windows 11 10.0 (amd64)",
+      "mode": "full",
+      "networkCompressionThreshold": 256,
+      "passed": true,
+      "assertionGroups": 26,
+      "cases": [
+        "normal companion joins",
+        "privileged commands blocked before report and restored afterward",
+        "missing companion expires",
+        "malformed report rejected",
+        "malformed report does not permanently ban account",
+        "first account on device allowed",
+        "same IP same device second account rejected",
+        "same IP second different device allowed",
+        "same IP third different device allowed",
+        "same IP fourth account rejected",
+        "disconnect releases device and IP quota",
+        "known cheat denied and sanctioned",
+        "same banned device different account denied",
+        "banned account denied with new device",
+        "administrator account and device unban restores access",
+        "administrator glob rule enforced",
+        "whitelist overrides matching blacklist item",
+        "removed whitelist takes effect",
+        "administrator removes default rule with colon ID",
+        "administrator restores removed blacklist entry",
+        "CIDR deny rejects login",
+        "known VM signal denied",
+        "VBS hypervisor alone does not ban physical machine",
+        "two-device setting first account",
+        "two-device setting second account",
+        "two-device setting rejects third account"
+      ],
+      "serverExitCode": 0,
+      "protocolExitCode": 0,
+      "driverExitCode": 0,
+      "normalStop": true,
+      "elapsedSeconds": 115.39,
+      "availablePhysicalBytesBeforeJava": 6706212864,
+      "dependencies": {
+        "minecraft-protocol": "1.66.2",
+        "minecraft-data": "3.117.0",
+        "protodef": "1.19.0"
+      },
+      "scriptSnapshots": {
+        "executed-runtime_smoke.py": {
+          "sha256": "986ac17ddfea111f025267b4d6a499a9a4f6da03a0ea381c12d8dd0a0bdb86d9",
+          "bytes": 8395,
+          "source": "E:\\Codex_work\\QiZhangVerdict\\scripts\\runtime_smoke.py"
+        },
+        "executed-protocol_smoke.cjs": {
+          "sha256": "4f88bcd526337d9c911f26d7a79c6435cf0b94a2814acd11dcf0338f3f1f78be",
+          "bytes": 12087,
+          "source": "E:\\Codex_work\\QiZhangVerdict\\scripts\\protocol_smoke.cjs"
+        },
+        "executed-package-lock.json": {
+          "sha256": "3e1f393e371f52c524a9256309cbef6665137f6312c4a0bd6848e3ee3959b814",
+          "bytes": 53375,
+          "source": "E:\\CodexTemp\\QiZhangGuard\\bot\\package-lock.json"
+        }
+      },
+      "commandGateObserved": {
+        "operatorGranted": true,
+        "beforeReportExecuted": false,
+        "afterReportExecuted": true
+      },
+      "antiXrayExecuted": false,
+      "grimInstalled": false,
+      "protocolPartialReadErrorOccurrences": 22,
+      "rawEvidence": {
+        "wrapper/result.json": {
+          "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-base-1.21.1-wrapper-result.json",
+          "sha256": "84f35c212df614cb13a62ad417737d3c2b5ef4e58b366417533a86449ddd1fac",
+          "bytes": 3998
+        },
+        "wrapper/driver.log": {
+          "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-base-1.21.1-wrapper-driver.log",
+          "sha256": "312db79973b25026ace76db8f5ff20df6fd06e7dba3906b44bdf5a6b4934a2e6",
+          "bytes": 1949
+        },
+        "wrapper/resource-gate.json": {
+          "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-base-1.21.1-wrapper-resource-gate.json",
+          "sha256": "1c3e4eeb71ed1a684245fa2d4ab6e4d8ef0ae11583141299b08d94bf074b3762",
+          "bytes": 117
+        },
+        "wrapper/executed-runtime_smoke.py": {
+          "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-base-1.20.1-wrapper-executed-runtime_smoke.py",
+          "sha256": "986ac17ddfea111f025267b4d6a499a9a4f6da03a0ea381c12d8dd0a0bdb86d9",
+          "bytes": 8395
+        },
+        "wrapper/executed-protocol_smoke.cjs": {
+          "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-base-1.20.1-wrapper-executed-protocol_smoke.cjs",
+          "sha256": "4f88bcd526337d9c911f26d7a79c6435cf0b94a2814acd11dcf0338f3f1f78be",
+          "bytes": 12087
+        },
+        "wrapper/executed-package-lock.json": {
+          "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-base-1.20.1-wrapper-executed-package-lock.json",
+          "sha256": "3e1f393e371f52c524a9256309cbef6665137f6312c4a0bd6848e3ee3959b814",
+          "bytes": 53375
+        },
+        "result.json": {
+          "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-base-1.21.1-result.json",
+          "sha256": "708b7ea2487a7e31583d67d58b1a330edde344e7a172858caed513f4e3e69a37",
+          "bytes": 2222
+        },
+        "console.log": {
+          "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-base-1.21.1-console.log",
+          "sha256": "c01daf709d8480b2281923f51549f15686158fcd324ec055d85f169c25fa40cc",
+          "bytes": 20858
+        },
+        "protocol-result.json": {
+          "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-base-1.21.1-protocol-result.json",
+          "sha256": "7ab8ce050538b1b05452b5f0e6f54798cda614580e2f0df53106897ba775c3cb",
+          "bytes": 1381
+        },
+        "protocol-results.log": {
+          "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-base-1.21.1-protocol-results.log",
+          "sha256": "b39e1d9c16cc1aa4941bcc6b3f8570dd1183919706781c0c269270e21882acc5",
+          "bytes": 31584
+        },
+        "server.properties": {
+          "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-base-1.21.1-server.properties",
+          "sha256": "515ef7d5844473d2bc83e035a46c610d4dfb0021b6ba9c9987159589485c3513",
+          "bytes": 1708
+        },
+        "final-guard.properties": {
+          "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-base-1.20.1-final-guard.properties",
+          "sha256": "c5cbabcffaaefe72b8ef4e65a979834f9888d70c627ff5354e9267b82c69360f",
+          "bytes": 308
+        }
+      }
+    }
+  ],
+  "policyDisclosure": {
+    "pristineDefaultPolicySha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+    "defaultPolicy": {
+      "limits.max-online-per-ip": "3",
+      "limits.max-online-per-ip-device": "1",
+      "limits.max-accounts-per-ip": "5",
+      "limits.account-window-hours": "720",
+      "limits.attempts-per-minute": "20",
+      "ip.allow": "",
+      "ip.deny": "",
+      "companion.required": "true",
+      "companion.timeout-seconds": "20",
+      "vm.action": "DENY",
+      "blacklist.action": "DENY",
+      "sanctions.on-deny": "BAN",
+      "device.required": "true"
+    },
+    "special": {
+      "qaPolicySha256": "7d97c3b22a50e54b56a19d279aebd87cb5c3e33256c7b135873d8f7a0f683646",
+      "changes": {
+        "limits.max-accounts-per-ip": {
+          "default": "5",
+          "qa": "64"
+        },
+        "limits.attempts-per-minute": {
+          "default": "20",
+          "qa": "200"
+        }
+      },
+      "unchangedRemainingKeys": 11,
+      "temporaryControl": "Restart KICK control changes sanctions.on-deny only, then restores BAN. All 13 parsed keys and final QA bytes are checked."
+    },
+    "base": {
+      "changes": {
+        "limits.max-accounts-per-ip": {
+          "default": "5",
+          "qa": "100"
+        },
+        "limits.attempts-per-minute": {
+          "default": "20",
+          "qa": "1000"
+        },
+        "companion.timeout-seconds": {
+          "default": "20",
+          "qa": "4"
+        },
+        "vm.action": {
+          "default": "DENY",
+          "qa": "ALERT"
+        }
+      },
+      "baselinePolicy": {
+        "limits.max-online-per-ip": "3",
+        "limits.max-online-per-ip-device": "1",
+        "limits.max-accounts-per-ip": "100",
+        "limits.account-window-hours": "720",
+        "limits.attempts-per-minute": "1000",
+        "ip.allow": "",
+        "ip.deny": "",
+        "companion.required": "true",
+        "companion.timeout-seconds": "4",
+        "device.required": "true",
+        "vm.action": "ALERT",
+        "blacklist.action": "DENY",
+        "sanctions.on-deny": "BAN"
+      },
+      "scenarioOverrides": [
+        {
+          "case": "privileged command gate",
+          "companion.timeout-seconds": "10"
+        },
+        {
+          "case": "CIDR deny",
+          "ip.deny": "127.0.0.0/8"
+        },
+        {
+          "case": "known VM and VBS control",
+          "vm.action": "DENY"
+        },
+        {
+          "case": "two-device IP limit",
+          "limits.max-online-per-ip": "2"
+        }
+      ],
+      "finalState": "QA policy retains max-online-per-ip=2 and baseline VM ALERT/timeout4; fixture is not a deployment configuration."
+    },
+    "limits": "Full unchanged default 5-account rolling quota/20 attempts rate limit is not claimed by these batch TCP runs. Only special ordinary/restart controls explicitly observe 22+ seconds; base allowed cases use shorter waits."
+  },
+  "warningsAndBoundaries": [
+    "The 1.20.1 base console retains Purpur SparkProviderSource download timeout; Minecraft still reached Done and all 26 guard assertions plus normal stop passed.",
+    "The 1.21.1 protocol client logs retain PartialReadError messages in third-party registry/component decoding. Every listed guard packet/command assertion passed; this is not a claim that all minecraft-protocol packets decode correctly.",
+    "Special catalog fixture logs retain No key layers in MapLike[{}]; no ore, terrain, flat-world, or Anti-Xray assertion depends on that generator.",
+    "Offline-mode, legacy api-version/material support, terminal/SIMD and disconnect warnings remain in unmodified logs. All player/device identities here are deterministic QA values.",
+    "The existing full helper enables command-gate tests and disables Anti-Xray tests; therefore each run has exactly 26 groups, not the 27-group integrated suite.",
+    "Historical 42 groups for Bukkit 0.1.1 SHA E119 are separate evidence and are not counted for this new artifact.",
+    "No game/client performance, real cheat execution, modified-client resilience, hardware identity trust, or all-version compatibility claim is inferred."
+  ],
+  "lifecycle": {
+    "checkedUtc": "2026-09-25T11:25:15Z",
+    "portsReleased": {
+      "25675": {
+        "bindAndListenPassed": true,
+        "host": "127.0.0.1"
+      },
+      "25581": {
+        "bindAndListenPassed": true,
+        "host": "127.0.0.1"
+      },
+      "25582": {
+        "bindAndListenPassed": true,
+        "host": "127.0.0.1"
+      }
+    },
+    "serverWaitCompleted": 4,
+    "normalStops": 4,
+    "forcedStops": 0,
+    "scope": "All four owned server processes were waited to exit 0 by their drivers; each test listener port is released.",
+    "evidence": {
+      "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-post-run-review.json",
+      "sha256": "618c2cdb029db732cdc8981151fbbaaae6e34fe3480d8b4354cb8098e9c780d9",
+      "bytes": 529
+    }
+  },
+  "privacyReview": {
+    "rawBytesUnmodified": true,
+    "syntheticNamesUuidsAndDerivedDeviceHashesAllowed": true,
+    "credentialPatternScanPassed": true,
+    "perServerScopeValuesAbsent": true,
+    "unexpectedDeviceReferences": 0,
+    "excluded": [
+      "accounts.state",
+      "server-id.txt",
+      "usercache.json",
+      "ops.json",
+      "world data",
+      "server/plugin binaries",
+      "Minecraft class dumps",
+      "all unlisted cache files"
+    ]
+  },
+  "evidenceFiles": [
+    {
+      "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-catalog-fixture.json",
+      "sha256": "7c6c0b26cb41cc4f0ae948f1d90d5c2186a483a18348d56cfbbd3832eff7ebb5",
+      "bytes": 2674,
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\bukkit-catalog-020\\purpur-1.21.1-01\\fixture.json"
+      ],
+      "copyMode": "raw-byte-identical"
+    },
+    {
+      "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-catalog-acceptance.json",
+      "sha256": "5f76414dadb9777fad84f14ba905aebcb44e8a9673c262cd0c77f7e050cc5543",
+      "bytes": 8999,
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\bukkit-catalog-020\\purpur-1.21.1-01\\acceptance.json"
+      ],
+      "copyMode": "raw-byte-identical"
+    },
+    {
+      "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-catalog-result-initial.json",
+      "sha256": "a51b624f8f624addc1c7dd6d7cbfc69b076739bdc0def622b82e02be4bea8702",
+      "bytes": 3167,
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\bukkit-catalog-020\\purpur-1.21.1-01\\result-initial.json"
+      ],
+      "copyMode": "raw-byte-identical"
+    },
+    {
+      "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-catalog-result-restart.json",
+      "sha256": "6ccf447c265b01a075df39f3cf63b926376395b9a8c3e675dba848bc9f929c66",
+      "bytes": 2196,
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\bukkit-catalog-020\\purpur-1.21.1-01\\result-restart.json"
+      ],
+      "copyMode": "raw-byte-identical"
+    },
+    {
+      "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-catalog-protocol-initial.json",
+      "sha256": "5ccc9ab4cacfec058842692fb1f3c0d814922fdb3d9f23f3dd8af68a60864495",
+      "bytes": 2201,
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\bukkit-catalog-020\\purpur-1.21.1-01\\protocol-initial.json"
+      ],
+      "copyMode": "raw-byte-identical"
+    },
+    {
+      "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-catalog-protocol-restart.json",
+      "sha256": "52955951e37e8209f30f1314934f80c29cd81234e115c94932cef416f394a9ea",
+      "bytes": 1318,
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\bukkit-catalog-020\\purpur-1.21.1-01\\protocol-restart.json"
+      ],
+      "copyMode": "raw-byte-identical"
+    },
+    {
+      "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-catalog-console-initial.log",
+      "sha256": "f201a236e57703d287188eb8f85cdaddd028222282d692951c76e1152929dd1b",
+      "bytes": 14109,
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\bukkit-catalog-020\\purpur-1.21.1-01\\console-initial.log"
+      ],
+      "copyMode": "raw-byte-identical"
+    },
+    {
+      "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-catalog-console-restart.log",
+      "sha256": "eaa3de673dfb4cdb964c0e9023fb5cb9f3318fed3c3cd60621b2e3e5b1709611",
+      "bytes": 10022,
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\bukkit-catalog-020\\purpur-1.21.1-01\\console-restart.log"
+      ],
+      "copyMode": "raw-byte-identical"
+    },
+    {
+      "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-catalog-protocol-initial.log",
+      "sha256": "b970c1df2763dc1353dc72e5162e332b35d6aa812c948cb00302db88fea4da1e",
+      "bytes": 23533,
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\bukkit-catalog-020\\purpur-1.21.1-01\\protocol-initial.log"
+      ],
+      "copyMode": "raw-byte-identical"
+    },
+    {
+      "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-catalog-protocol-restart.log",
+      "sha256": "eca4a1571e3b900288207cb81017e9d53d7cd5e600b7f1ad8aa31db0d5e6d685",
+      "bytes": 10332,
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\bukkit-catalog-020\\purpur-1.21.1-01\\protocol-restart.log"
+      ],
+      "copyMode": "raw-byte-identical"
+    },
+    {
+      "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-catalog-blacklist-first-install.tsv",
+      "sha256": "5133d41d55a004439eec7a460e7e3f009f8484263b47f3d87a05b9fc8ea45c29",
+      "bytes": 5825,
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\bukkit-catalog-020\\purpur-1.21.1-01\\blacklist-first-install.tsv"
+      ],
+      "copyMode": "raw-byte-identical"
+    },
+    {
+      "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-catalog-blacklist-after-administrator.tsv",
+      "sha256": "eb2d9b096022fe8ba932cf4fbbfce4cf3b33e3d9eea4858aee44b2a350210ad4",
+      "bytes": 5670,
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\bukkit-catalog-020\\purpur-1.21.1-01\\blacklist-after-administrator.tsv"
+      ],
+      "copyMode": "raw-byte-identical"
+    },
+    {
+      "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-catalog-catalog-snapshot.tsv",
+      "sha256": "66a633ad3faa2d7d666c43e2b3b544437054345e102103d90fe3b5db022c46a3",
+      "bytes": 5641,
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\bukkit-catalog-020\\purpur-1.21.1-01\\catalog-snapshot.tsv"
+      ],
+      "copyMode": "raw-byte-identical"
+    },
+    {
+      "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-catalog-default-policy-reference.properties",
+      "sha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+      "bytes": 396,
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\bukkit-catalog-020\\purpur-1.21.1-01\\default-policy-reference.properties"
+      ],
+      "copyMode": "raw-byte-identical"
+    },
+    {
+      "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-catalog-qa-policy-reference.properties",
+      "sha256": "7d97c3b22a50e54b56a19d279aebd87cb5c3e33256c7b135873d8f7a0f683646",
+      "bytes": 398,
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\bukkit-catalog-020\\purpur-1.21.1-01\\qa-policy-reference.properties"
+      ],
+      "copyMode": "raw-byte-identical"
+    },
+    {
+      "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-catalog-restart-expectations.json",
+      "sha256": "cdbd349106170e6dcd209bbc3fca3eb84849e1e0128d736dd1757ed8bfb14e9b",
+      "bytes": 137,
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\bukkit-catalog-020\\purpur-1.21.1-01\\restart-expectations.json"
+      ],
+      "copyMode": "raw-byte-identical"
+    },
+    {
+      "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-catalog-executed-helper.py",
+      "sha256": "326be5912682dbb833f5ec5ea81788de020d2e0daf1a9b6e70ed3553a41946c9",
+      "bytes": 14474,
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\bukkit-catalog-020\\purpur-1.21.1-01\\executed-helper.py"
+      ],
+      "copyMode": "raw-byte-identical"
+    },
+    {
+      "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-catalog-executed-protocol.cjs",
+      "sha256": "6500cb534f2cdf3a73c24ae3874d9f72173584bf91a45c3ba26888e2c45465e3",
+      "bytes": 13640,
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\bukkit-catalog-020\\purpur-1.21.1-01\\executed-protocol.cjs"
+      ],
+      "copyMode": "raw-byte-identical"
+    },
+    {
+      "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-catalog-executed-package-lock.json",
+      "sha256": "d20909e9e6e085ff2dfd2621eb6143c6634858f6b01e463b6e6b9daa7f08e335",
+      "bytes": 56370,
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\bukkit-catalog-020\\purpur-1.21.1-01\\executed-package-lock.json"
+      ],
+      "copyMode": "raw-byte-identical"
+    },
+    {
+      "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-catalog-java-version.log",
+      "sha256": "2964d5e1b3b412d2128748e82aa8b0069d4a7b2c58bd5c7e50cd3ba4ebcc8aa0",
+      "bytes": 179,
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\bukkit-catalog-020\\purpur-1.21.1-01\\java-version.log"
+      ],
+      "copyMode": "raw-byte-identical"
+    },
+    {
+      "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-catalog-server.properties",
+      "sha256": "3f6ff11ebaf24e25a7bcb18d777a66b2f0b2fe424c564bd2e4440e128c3dd9ae",
+      "bytes": 1493,
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\bukkit-catalog-020\\purpur-1.21.1-01\\server.properties"
+      ],
+      "copyMode": "raw-byte-identical"
+    },
+    {
+      "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-base-1.20.1-wrapper-result.json",
+      "sha256": "fe8660191f31a6f795918f9635c30c5fc1792a623ad7e1bd7f72b47f87864070",
+      "bytes": 4034,
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\bukkit-catalog-020\\base-1.20.1\\result.json"
+      ],
+      "copyMode": "raw-byte-identical"
+    },
+    {
+      "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-base-1.20.1-wrapper-driver.log",
+      "sha256": "0cdd13f7049426b4c75662d5e6e6217a375e3f58d084dc2d23d06b95b9b779a1",
+      "bytes": 1985,
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\bukkit-catalog-020\\base-1.20.1\\driver.log"
+      ],
+      "copyMode": "raw-byte-identical"
+    },
+    {
+      "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-base-1.20.1-wrapper-resource-gate.json",
+      "sha256": "75d3e078af6bd1e271bea931db49edee215ae7f2a4ffdc295bda496d859e86cd",
+      "bytes": 117,
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\bukkit-catalog-020\\base-1.20.1\\resource-gate.json"
+      ],
+      "copyMode": "raw-byte-identical"
+    },
+    {
+      "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-base-1.20.1-wrapper-executed-runtime_smoke.py",
+      "sha256": "986ac17ddfea111f025267b4d6a499a9a4f6da03a0ea381c12d8dd0a0bdb86d9",
+      "bytes": 8395,
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\bukkit-catalog-020\\base-1.20.1\\executed-runtime_smoke.py",
+        "E:\\CodexTemp\\QiZhangVerdict\\bukkit-catalog-020\\base-1.21.1\\executed-runtime_smoke.py"
+      ],
+      "copyMode": "raw-byte-identical"
+    },
+    {
+      "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-base-1.20.1-wrapper-executed-protocol_smoke.cjs",
+      "sha256": "4f88bcd526337d9c911f26d7a79c6435cf0b94a2814acd11dcf0338f3f1f78be",
+      "bytes": 12087,
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\bukkit-catalog-020\\base-1.20.1\\executed-protocol_smoke.cjs",
+        "E:\\CodexTemp\\QiZhangVerdict\\bukkit-catalog-020\\base-1.21.1\\executed-protocol_smoke.cjs"
+      ],
+      "copyMode": "raw-byte-identical"
+    },
+    {
+      "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-base-1.20.1-wrapper-executed-package-lock.json",
+      "sha256": "3e1f393e371f52c524a9256309cbef6665137f6312c4a0bd6848e3ee3959b814",
+      "bytes": 53375,
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\bukkit-catalog-020\\base-1.20.1\\executed-package-lock.json",
+        "E:\\CodexTemp\\QiZhangVerdict\\bukkit-catalog-020\\base-1.21.1\\executed-package-lock.json"
+      ],
+      "copyMode": "raw-byte-identical"
+    },
+    {
+      "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-base-1.20.1-result.json",
+      "sha256": "74d40c380dd6f4a10ec21e97e250c27df68dcbf483b9f0945a0d371c2f8afe5d",
+      "bytes": 2258,
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-full-20260925-201643\\result.json"
+      ],
+      "copyMode": "raw-byte-identical"
+    },
+    {
+      "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-base-1.20.1-console.log",
+      "sha256": "242b055a217963f27e147e55d6fd0a06856dcfe759d08603e86ef3179bd6b58a",
+      "bytes": 22633,
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-full-20260925-201643\\console.log"
+      ],
+      "copyMode": "raw-byte-identical"
+    },
+    {
+      "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-base-1.20.1-protocol-result.json",
+      "sha256": "c3263117101d86431b9ea8b3529da5121ab82ca30a75c73e70438a5d7441d38d",
+      "bytes": 1381,
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-full-20260925-201643\\protocol-result.json"
+      ],
+      "copyMode": "raw-byte-identical"
+    },
+    {
+      "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-base-1.20.1-protocol-results.log",
+      "sha256": "a42fb8819870b3ab7d13014376aedfa890db7bab8c76245099798861cf9c3d7e",
+      "bytes": 1224,
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-full-20260925-201643\\protocol-results.log"
+      ],
+      "copyMode": "raw-byte-identical"
+    },
+    {
+      "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-base-1.20.1-server.properties",
+      "sha256": "9dcd629ed0af168d764fe1e535a072d1fae833a56820d949b65e7cf34dd8104e",
+      "bytes": 1599,
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-full-20260925-201643\\server.properties"
+      ],
+      "copyMode": "raw-byte-identical"
+    },
+    {
+      "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-base-1.20.1-final-guard.properties",
+      "sha256": "c5cbabcffaaefe72b8ef4e65a979834f9888d70c627ff5354e9267b82c69360f",
+      "bytes": 308,
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.20.1-full-20260925-201643\\plugins\\QiZhangVerdict\\guard.properties",
+        "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.21.1-full-20260925-202021\\plugins\\QiZhangVerdict\\guard.properties"
+      ],
+      "copyMode": "raw-byte-identical"
+    },
+    {
+      "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-base-1.21.1-wrapper-result.json",
+      "sha256": "84f35c212df614cb13a62ad417737d3c2b5ef4e58b366417533a86449ddd1fac",
+      "bytes": 3998,
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\bukkit-catalog-020\\base-1.21.1\\result.json"
+      ],
+      "copyMode": "raw-byte-identical"
+    },
+    {
+      "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-base-1.21.1-wrapper-driver.log",
+      "sha256": "312db79973b25026ace76db8f5ff20df6fd06e7dba3906b44bdf5a6b4934a2e6",
+      "bytes": 1949,
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\bukkit-catalog-020\\base-1.21.1\\driver.log"
+      ],
+      "copyMode": "raw-byte-identical"
+    },
+    {
+      "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-base-1.21.1-wrapper-resource-gate.json",
+      "sha256": "1c3e4eeb71ed1a684245fa2d4ab6e4d8ef0ae11583141299b08d94bf074b3762",
+      "bytes": 117,
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\bukkit-catalog-020\\base-1.21.1\\resource-gate.json"
+      ],
+      "copyMode": "raw-byte-identical"
+    },
+    {
+      "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-base-1.21.1-result.json",
+      "sha256": "708b7ea2487a7e31583d67d58b1a330edde344e7a172858caed513f4e3e69a37",
+      "bytes": 2222,
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.21.1-full-20260925-202021\\result.json"
+      ],
+      "copyMode": "raw-byte-identical"
+    },
+    {
+      "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-base-1.21.1-console.log",
+      "sha256": "c01daf709d8480b2281923f51549f15686158fcd324ec055d85f169c25fa40cc",
+      "bytes": 20858,
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.21.1-full-20260925-202021\\console.log"
+      ],
+      "copyMode": "raw-byte-identical"
+    },
+    {
+      "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-base-1.21.1-protocol-result.json",
+      "sha256": "7ab8ce050538b1b05452b5f0e6f54798cda614580e2f0df53106897ba775c3cb",
+      "bytes": 1381,
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.21.1-full-20260925-202021\\protocol-result.json"
+      ],
+      "copyMode": "raw-byte-identical"
+    },
+    {
+      "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-base-1.21.1-protocol-results.log",
+      "sha256": "b39e1d9c16cc1aa4941bcc6b3f8570dd1183919706781c0c269270e21882acc5",
+      "bytes": 31584,
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.21.1-full-20260925-202021\\protocol-results.log"
+      ],
+      "copyMode": "raw-byte-identical"
+    },
+    {
+      "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-base-1.21.1-server.properties",
+      "sha256": "515ef7d5844473d2bc83e035a46c610d4dfb0021b6ba9c9987159589485c3513",
+      "bytes": 1708,
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.21.1-full-20260925-202021\\server.properties"
+      ],
+      "copyMode": "raw-byte-identical"
+    },
+    {
+      "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-base-executed-wrapper.py",
+      "sha256": "fa2191f29121d9468cabf27a6002861bccc97ee89b67a945315ef7a44979c5fc",
+      "bytes": 3721,
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\bukkit-catalog-020\\run-base.py"
+      ],
+      "copyMode": "raw-byte-identical"
+    },
+    {
+      "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-official-server-cache-record.json",
+      "sha256": "b7c79dbcf26ce00ad3d17a0971470423c538607e9e319958ecdf805ad245b2ae",
+      "bytes": 631,
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangGuard\\downloads\\servers.json"
+      ],
+      "copyMode": "raw-byte-identical"
+    },
+    {
+      "publicFile": "outputs/evidence/bukkit-0.2.0-test.1-post-run-review.json",
+      "sha256": "618c2cdb029db732cdc8981151fbbaaae6e34fe3480d8b4354cb8098e9c780d9",
+      "bytes": 529,
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\bukkit-catalog-020\\post-run-review.json"
+      ],
+      "copyMode": "raw-byte-identical"
+    }
+  ],
+  "evidenceFileCount": 44,
+  "evidenceTotalBytes": 360868,
+  "rawReferencesBeforeDeduplication": 48
+}

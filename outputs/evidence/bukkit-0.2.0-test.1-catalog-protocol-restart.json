@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "phase": "restart",
+  "version": "1.21.1",
+  "cases": [
+    {
+      "name": "administrator OFF and removed rule remain byte-identical after normal server restart"
+    },
+    {
+      "name": "historical linked account remains banned"
+    },
+    {
+      "name": "automation offender remains banned with changed device"
+    },
+    {
+      "name": "new account on the banned device is rejected after restart"
+    },
+    {
+      "name": "preserved administrator OFF and deletion still allow reports beyond deadline",
+      "onlineSecondsAfterReport": 22.004,
+      "deviceAssociationPersisted": true
+    },
+    {
+      "name": "explicit automation DENY with KICK rejects without adding permanent bans"
+    },
+    {
+      "name": "KICK account and same device can reconnect beyond the strict report deadline",
+      "onlineSecondsAfterReport": 22.002,
+      "deviceAssociationPersisted": true
+    },
+    {
+      "name": "KICK does not ban the historical associated account"
+    },
+    {
+      "name": "BAN policy restored and administrator blacklist edits remain unchanged"
+    }
+  ],
+  "caseCount": 9,
+  "exactDefaultCatalogChecked": false,
+  "scope": "Real loopback TCP and server state assertions; synthetic accounts/devices; two explicitly raised batch quotas; KICK only in named control window."
+}

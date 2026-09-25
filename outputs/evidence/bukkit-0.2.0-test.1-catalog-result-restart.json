@@ -1,0 +1,65 @@
+{
+  "phase": "restart",
+  "passed": true,
+  "availableBytesBeforeJava": 9533992960,
+  "minimumAvailableGiB": 3.5,
+  "policyBeforeSha256": "7d97c3b22a50e54b56a19d279aebd87cb5c3e33256c7b135873d8f7a0f683646",
+  "command": [
+    "D:\\Java\\jdk-21\\bin\\java.exe",
+    "-Xms256M",
+    "-Xmx1536M",
+    "-jar",
+    "server.jar",
+    "--nogui"
+  ],
+  "ownedServerPid": 59880,
+  "startupPassed": true,
+  "protocolExitCode": 0,
+  "protocol": {
+    "passed": true,
+    "phase": "restart",
+    "version": "1.21.1",
+    "cases": [
+      {
+        "name": "administrator OFF and removed rule remain byte-identical after normal server restart"
+      },
+      {
+        "name": "historical linked account remains banned"
+      },
+      {
+        "name": "automation offender remains banned with changed device"
+      },
+      {
+        "name": "new account on the banned device is rejected after restart"
+      },
+      {
+        "name": "preserved administrator OFF and deletion still allow reports beyond deadline",
+        "onlineSecondsAfterReport": 22.004,
+        "deviceAssociationPersisted": true
+      },
+      {
+        "name": "explicit automation DENY with KICK rejects without adding permanent bans"
+      },
+      {
+        "name": "KICK account and same device can reconnect beyond the strict report deadline",
+        "onlineSecondsAfterReport": 22.002,
+        "deviceAssociationPersisted": true
+      },
+      {
+        "name": "KICK does not ban the historical associated account"
+      },
+      {
+        "name": "BAN policy restored and administrator blacklist edits remain unchanged"
+      }
+    ],
+    "caseCount": 9,
+    "exactDefaultCatalogChecked": false,
+    "scope": "Real loopback TCP and server state assertions; synthetic accounts/devices; two explicitly raised batch quotas; KICK only in named control window."
+  },
+  "serverExitCode": 0,
+  "normalStop": true,
+  "policyAfterSha256": "7d97c3b22a50e54b56a19d279aebd87cb5c3e33256c7b135873d8f7a0f683646",
+  "finalPolicyMatchesDeclaredQaPolicy": true,
+  "elapsedSeconds": 85.341,
+  "consoleSha256": "eaa3de673dfb4cdb964c0e9023fb5cb9f3318fed3c3cd60621b2e3e5b1709611"
+}

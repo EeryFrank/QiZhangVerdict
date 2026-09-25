@@ -1,0 +1,91 @@
+{
+  "classification": "DERIVED_STATIC_REVIEW_NOT_A_RUNTIME_PASS",
+  "binaryFinding": {
+    "antiXrayJarSha256": "7c8d22a2e9c8d0f88a33ce76cdb7bade18c63bb2a5cc9b3a11991bd28c742f43",
+    "mixinClassSha256": "8d48b365cf295a6f65ac58c9f3f3deb86cfe8ca8bd1f25c3d8fe919bd3e66ae4",
+    "mixinConstantPoolContainsSelector": true,
+    "selector": "lambda$scheduleChunkLoad$14",
+    "refmapMappingsForMixin": {
+      "net/minecraft/world/level/chunk/ProtoChunk": "net/minecraft/class_2839"
+    },
+    "refmapSelectorMapped": false,
+    "runtimeIntermediaryJarSha256": "48d4ca96f56bc6cd4c6a1d8d70720bad35cac2e871cf25ae1797eedd2623a311",
+    "targetClassSha256": "3816aee930879c8a18e061c2199dee32f2e1adfbe7fcad2f6aaf696c0dc64893",
+    "targetMethodNameMatches": [],
+    "targetMethodCount": 106,
+    "interpretation": "Named selector is present in released mixin but absent in its mapping entries and actual intermediary target methods. This corroborates the exact observed injection failure; it does not identify a tested replacement version."
+  },
+  "officialVersionApi": {
+    "url": "https://api.modrinth.com/v2/project/sml2FMaA/version?game_versions=%5B%221.16.5%22%5D",
+    "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-fabric-antixray\\investigation-01\\versions-1165.json",
+    "sha256": "77d902163ce431519bf566f641ebf0f33525d7ea15bb659cb1b20a0b8c1de5d6",
+    "bytes": 2518
+  },
+  "releases": [
+    {
+      "version": "1.1.0+1.16.5",
+      "releaseId": "RI3CvrQa",
+      "url": "https://cdn.modrinth.com//data/sml2FMaA/versions/mc1.16.5-1.1.0/anti-xray-mc1.16.5-1.1.0.jar",
+      "sha256": "7c8d22a2e9c8d0f88a33ce76cdb7bade18c63bb2a5cc9b3a11991bd28c742f43",
+      "officialSha512Verified": true,
+      "sameUnmappedNamedSelector": true,
+      "refmapChunkMappings": {
+        "anti-xray-mc1.16.5-refmap.json": {
+          "me/drex/antixray/mixin/ChunkMapMixin": {
+            "net/minecraft/world/level/chunk/ProtoChunk": "net/minecraft/class_2839"
+          }
+        }
+      },
+      "runtimeStatus": "FAILED_THIS_FIXTURE"
+    },
+    {
+      "version": "1.0.2+1.16.5",
+      "releaseId": "gtBPCQef",
+      "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/mc1.16.5-1.0.2/anti-xray-mc1.16.5-1.0.2.jar",
+      "sha256": "bef954314eb467d0750dbe42c468ceb84c9cc8802d0cf420e9c1aed01eb8f5b9",
+      "officialSha512Verified": true,
+      "sameUnmappedNamedSelector": true,
+      "refmapChunkMappings": {
+        "anti-xray-mc1.16.5-refmap.json": {
+          "me/drex/antixray/mixin/ChunkMapMixin": {
+            "net/minecraft/world/level/chunk/ProtoChunk": "net/minecraft/class_2839"
+          }
+        }
+      },
+      "runtimeStatus": "NOT_RUN"
+    },
+    {
+      "version": "1.0.1+1.16.5",
+      "releaseId": "rbkHv5Pp",
+      "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/1.0.1b/anti-xray-1.0.1.jar",
+      "sha256": "33e5ceb88023c55fc9969c34155d4262b5892f2f1e2f89b7ff76cf920287214a",
+      "officialSha512Verified": true,
+      "sameUnmappedNamedSelector": true,
+      "refmapChunkMappings": {
+        "anti-xray-refmap.json": {
+          "me/drex/antixray/mixin/ChunkMapMixin": {
+            "net/minecraft/world/level/chunk/ProtoChunk": "net/minecraft/class_2839"
+          }
+        }
+      },
+      "runtimeStatus": "NOT_RUN"
+    }
+  ],
+  "matchingOfficialIssue": {
+    "url": "https://github.com/DrexHD/AntiXray/issues/48",
+    "opened": "2024-07-16",
+    "sameSelectorFailure": true,
+    "reportedLoader": "0.15.11",
+    "reportedJava": "21.0.3",
+    "authorComment": "https://github.com/DrexHD/AntiXray/issues/48#issuecomment-2231846519",
+    "author": "DrexHD",
+    "authorResponseSummary": "Author declined investigating Minecraft 1.16.5 because of its age.",
+    "sourceHtmlSha256": "cb300f506e5439f49c2fe94dc34de5699ffe22f388c1f26e1b89974ee73274ed"
+  },
+  "limits": [
+    "No replacement was installed or run.",
+    "Official Modrinth list contains only 1.1.0, 1.0.2 and 1.0.1 for MC1.16.5.",
+    "GitHub branches/releases/comments API returned rate-limit errors; comment was read from the official issue HTML.",
+    "Does not prove absence of every possible fork or future fix. Complete target-class inventory stays in cache."
+  ]
+}

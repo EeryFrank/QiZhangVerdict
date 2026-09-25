@@ -1,0 +1,76 @@
+{
+  "status": "FEASIBILITY_ONLY_NOT_PATCHED_NOT_RUN",
+  "officialArtifactSha256": "7c8d22a2e9c8d0f88a33ce76cdb7bade18c63bb2a5cc9b3a11991bd28c742f43",
+  "mappingChain": {
+    "mojang": {
+      "source": "https://piston-data.mojang.com/v1/objects/41285beda6d251d190f2bf33beadd4fee187df7a/server.txt",
+      "sha256": "b3732b0f031abce7083cac8e594427e70d2e19674b8de2c682630c39b64228a7",
+      "entry": "518:545:com.mojang.datafixers.util.Either lambda$scheduleChunkLoad$14(net.minecraft.world.level.ChunkPos) -> l"
+    },
+    "intermediary": {
+      "source": "https://maven.fabricmc.net/net/fabricmc/intermediary/1.16.5/intermediary-1.16.5.jar",
+      "sha256": "81ce6ae1ac18393416227a0afb805b1923b88a3aed308966ccc3f1badf61d4e2",
+      "entry": "METHOD\tzs\t(Lbrd;)Lcom/mojang/datafixers/util/Either;\tl\tmethod_17256"
+    },
+    "yarn": {
+      "source": "https://maven.fabricmc.net/net/fabricmc/yarn/1.16.5%2Bbuild.10/yarn-1.16.5%2Bbuild.10-v2.jar",
+      "sha256": "9a7263629e5870f2788cc947f932b3d8d8606c29145babe1377b4c49796da615",
+      "officialSha1Verified": "a635d601ac266fa4181ca692c8cd8528b5b2cc36",
+      "classEntry": "c\tnet/minecraft/class_3898\tnet/minecraft/server/world/ThreadedAnvilChunkStorage",
+      "syntheticMethodEntries": [],
+      "note": "Yarn build.10 names the target class but provides no named override for this synthetic method."
+    }
+  },
+  "actualRuntime": {
+    "targetClass": "net/minecraft/class_3898",
+    "method": "method_17256",
+    "descriptor": "(Lnet/minecraft/class_1923;)Lcom/mojang/datafixers/util/Either;",
+    "constructor": "net/minecraft/class_2839.<init>(Lnet/minecraft/class_1923;Lnet/minecraft/class_2843;)V",
+    "constructorInstructionOffset": 201,
+    "javapExitCode": 0,
+    "javapSha256": "13d66c339199ded0dc37cda6af2a83e8cac58476c065fb0e84d70687e0ea39ac",
+    "javapPublic": false,
+    "instructionBoundariesConfirmed": true
+  },
+  "minimalProposedRepair": {
+    "kind": "separate explicitly maintained compatibility fork, not an official release",
+    "file": "anti-xray-mc1.16.5-refmap.json",
+    "additions": [
+      {
+        "jsonPath": "mappings.me/drex/antixray/mixin/ChunkMapMixin",
+        "key": "lambda$scheduleChunkLoad$14",
+        "value": "Lnet/minecraft/class_3898;method_17256(Lnet/minecraft/class_1923;)Lcom/mojang/datafixers/util/Either;"
+      },
+      {
+        "jsonPath": "data.named:intermediary.me/drex/antixray/mixin/ChunkMapMixin",
+        "key": "lambda$scheduleChunkLoad$14",
+        "value": "Lnet/minecraft/class_3898;method_17256(Lnet/minecraft/class_1923;)Lcom/mojang/datafixers/util/Either;"
+      }
+    ],
+    "classByteChangesRequired": false,
+    "injectionRequirementUnchanged": true,
+    "algorithmChangesRequired": false,
+    "otherNecessaryPackaging": [
+      "Distinct compat artifact name and version/display metadata; preserve antixray ID to prevent co-installing original",
+      "Preserve exact upstream MIT license; add source commit, official source URL, original artifact checksum, mapping inputs and explicit change notice",
+      "Keep all other entry contents exact and report a ZIP-entry delta; do not overwrite official downloaded artifact or pins"
+    ]
+  },
+  "license": {
+    "source": "https://raw.githubusercontent.com/DrexHD/AntiXray/a113ce0b0616052de80ca8719986a09849348ce0/LICENSE",
+    "sha256": "109d6d2b31d28899e2a4e017341ab1ea5f5cf670a866e2bac538e8a5683e2f00",
+    "embeddedLicenseName": "LICENSE_anti-xray-mc1.16.5",
+    "actualSourceAndEmbedded": "MIT",
+    "upstreamDescriptorClaims": "CC0-1.0",
+    "discrepancyPreserved": true
+  },
+  "nextAcceptance": [
+    "Obtain root approval for new compatibility artifact first",
+    "Static assert mapping+constructor selector count and all unrelated entries unchanged",
+    "Fresh Java17 server with strict Verdict original d9bb; startup+required mixin; report/OP gate; real chunk coordinates+reveal; normal exit",
+    "Preserve original startup failure and clearly separate fork evidence; one repaired selector may expose additional runtime failures"
+  ],
+  "patchCreated": false,
+  "patchRun": false,
+  "minecraftJavaStartedDuringInvestigation": false
+}

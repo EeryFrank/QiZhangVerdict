@@ -1,6 +1,22 @@
 # 兼容验证进度
 
-本页按已发布的 `0.1.1` GPL 测试版及独立 `0.2.0-dev` 适配记录验证范围，不能替代每个成品的散列与验收记录。当前测试版下载：[GitHub v0.1.1-test.1](https://github.com/EeryFrank/QiZhangVerdict/releases/tag/v0.1.1-test.1) / [GitLab v0.1.1-test.1](https://gitlab.com/EeryFrank/QiZhangVerdict/-/releases/v0.1.1-test.1)。两站共 22 个公开附件均已匿名下载并核对 SHA256，见 [发布回执](../outputs/publish-receipt-0.1.1.json)。首个 0.1.0 的文件仍保留原字节；其 Forge 客户端后续发现的问题已在原发布说明中标明。
+0.2.0-test.1 的 13 个新成品已经分别完成构建与核心检查，真实客户端组合见下表；下载和 Java 要求见[安装指南](release-0.2.0-test.1.md)。每行仅说明本轮列出的组合，不外推同一大版本的其他小版本或加载器。
+
+| Minecraft | 本轮真实客户端 / 专服 | 新 Bukkit 证据 |
+| --- | --- | --- |
+| 1.8.9 / Paper 1.8.8 | Forge 1.8.9 → Forge 1.8.9、Paper 1.8.8；本机关闭 Forge splash | 配套客户端严格报告通过 |
+| 1.12.2 | Forge → Forge、Paper 1.12.2 | 配套客户端严格报告通过 |
+| 1.16.5 | Fabric → Fabric、Forge → Forge | 本轮未重跑此版插件服 |
+| 1.18.2 | Fabric → Fabric、Forge → Forge | 本轮未重跑此版插件服 |
+| 1.19.4 | Fabric → Fabric、Forge → Forge | 本轮未重跑此版插件服 |
+| 1.20.1 | Fabric → Fabric、Forge → Forge | Purpur 2062 协议 26 组 |
+| 1.21.1 | Fabric → Fabric、NeoForge → NeoForge | Purpur 2329 基础协议 26 组，目录/处罚/重启另 23 组 |
+
+14 组图形客户端保留完整默认策略、报告后的持续在线检查、截图及退出码。插件协议检查的测试配置另列；75 组不能等同于 75 个真实作弊样本。完整证据见[本版客户端](client-0.2.0-test.1.md)和[验证汇总](../outputs/validation-0.2.0-test.1.json)。历史 Grim / AntiXray 结果使用旧 JAR，见下方各原始报告。
+
+## 历史版本记录
+
+本页按已发布的 `0.1.1` GPL 测试版及独立 `0.2.0-dev` 适配记录验证范围，不能替代每个成品的散列与验收记录。历史测试版下载：[GitHub v0.1.1-test.1](https://github.com/EeryFrank/QiZhangVerdict/releases/tag/v0.1.1-test.1) / [GitLab v0.1.1-test.1](https://gitlab.com/EeryFrank/QiZhangVerdict/-/releases/v0.1.1-test.1)。两站共 22 个公开附件均已匿名下载并核对 SHA256，见 [发布回执](../outputs/publish-receipt-0.1.1.json)。首个 0.1.0 的文件仍保留原字节；其 Forge 客户端后续发现的问题已在原发布说明中标明。
 
 旧版开发预览已发布：[GitHub 0.2.0-dev-preview.1](https://github.com/EeryFrank/QiZhangVerdict/releases/tag/v0.2.0-dev-preview.1) / [GitLab 0.2.0-dev-preview.1](https://gitlab.com/EeryFrank/QiZhangVerdict/-/releases/v0.2.0-dev-preview.1)。固定提交为 `0f5335649573a2cb3f0ee4c11d264cd17a116c6e`；两站共 32 个附件匿名下载和 SHA256 验证通过，见 [预览发布回执](../outputs/publish-receipt-0.2.0-dev-preview.1.json)。七个模组与已有 Bukkit 0.1.1 的字节均保持验收原样。
 
@@ -21,7 +37,7 @@ preview.2 已发布，固定源码提交 `c2f2d007d9212b30f42843a641a365e8b352f0
 
 五版旧 Paper 的新版回归实际使用许可调整前的 `568868…` 候选，各 12 项、共 60 项 TCP 断言；核心的 55 项安全回归是另一组测试。原始默认的同 IP 3 人、同设备 1 人、20 秒报告期限及非空设备要求均未放宽。最终 GPL JAR 的全部类文件与该候选逐字节相同，旧版运行记录仍保留实际原散列。详见 [最终 Bukkit 验收与许可迁移边界](validation-0.1.1-gpl-bukkit.md)。
 
-旧版协议夹具能提交合成报告，但普通玩家仍需对应版本的真实客户端模组。尚无配套客户端的版本不应被宣传为可直接部署完整设备验证；不能通过关闭设备要求把它算作功能已兼容。旧 Paper 的历史 TCP 检查不证明命令隔离或完整游戏操作；新增模组的命令门禁测试以各自报告为准。旧版 Grim、AntiXray 尚未完成运行验收。
+旧版协议夹具能提交合成报告，但普通玩家仍需对应版本的真实客户端模组。尚无配套客户端的版本不应被宣传为可直接部署完整设备验证；不能通过关闭设备要求把它算作功能已兼容。旧 Paper 的历史 TCP 检查不证明命令隔离或完整游戏操作；新增模组的命令门禁测试以各自报告为准。旧版第三方后续实测另见 [Paper 三版联动](legacy-paper-integration-validation.md)与 [Fabric 1.16.5 独立兼容补丁](legacy-fabric116-antixray-qzcompat1-java17.md)，不能套用于未测试组合。
 
 旧版用例包含合法报告后超过默认期限仍在线的实际状态检查；历史首版另有五站各 11 项的冻结 JAR 记录，均见 [旧版插件验收](legacy-bukkit-validation.md)。四端真实客户端的精确成品、截图、配置和登录重试记录见 [客户端验收](client-matrix.md)。
 
@@ -33,7 +49,7 @@ preview.2 已发布，固定源码提交 `c2f2d007d9212b30f42843a641a365e8b352f0
 
 ## 1.19.4 开发构建
 
-此目标使用 Java 17、Fabric Loader 0.16.14 / Fabric API 0.87.2+1.19.4 或 Forge 45.4.5，开发版本号为 `0.2.0-dev`。从仓库根目录执行：
+此目标使用 Java 17、Fabric Loader 0.16.14 / Fabric API 0.87.2+1.19.4 或 Forge 45.4.5，当前构建版本号为 `0.2.0-test.1`。从仓库根目录执行：
 
 ```text
 gradlew.bat -p platforms/1.19.4 build :fabric:commandParserSmoke

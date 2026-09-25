@@ -1,0 +1,1027 @@
+{
+  "schemaVersion": 1,
+  "checkedAtUTC": "2026-09-25T11:08:39.997112+00:00",
+  "status": "PASS_STARTUP_PREFLIGHT_ONLY",
+  "scope": "Explicit candidate CLI selection and startup rejection checks for legacy Forge 1.12.2/1.8.9 client QA harnesses; not Minecraft, loader, product or runtime acceptance.",
+  "counts": {
+    "passed": 42,
+    "failed": 0,
+    "helpCases": 2,
+    "rejectedBeforeActionCases": 40,
+    "minecraft1_12_2": 20,
+    "minecraft1_8_9": 22,
+    "pythonCompilationPassed": 2
+  },
+  "featuresVerified": [
+    "Both JAR/hash options must be supplied as complete pairs.",
+    "SHA256 must contain exactly 64 hexadecimal characters; uppercase is normalized.",
+    "Missing files, non-file paths and hash mismatches are rejected.",
+    "prepare/install reject candidate overrides, retaining historical defaults.",
+    "run refuses traversal, Windows reserved names, trailing dots and existing run directories before action.",
+    "1.8.9 candidate stage rejects invalid hash and traversal before action."
+  ],
+  "historicalBaselineFilesUnchanged": {
+    "verified": true,
+    "fileCount": 11,
+    "privatePlansPublished": false,
+    "note": "Baseline plan/options/mod bytes were hashed locally before and after these CLI invocations. Only the aggregate assertion is public; no private plans or device state are included."
+  },
+  "boundaries": [
+    "No Java, installer, game, server or successful stage/run action was executed.",
+    "These checks do not prove the new 0.2.0-test.1 JARs can launch or connect; separate exact-artifact runtime evidence is required.",
+    "No product anti-cheat threshold, policy, VM/IP/device check or user server configuration was changed.",
+    "Historical default JAR paths and hashes remain in the source snapshots; explicit candidate parameters select new artifacts.",
+    "Tool files below are snapshots of the tested source bytes, not runnable entrypoints from the evidence directory."
+  ],
+  "evidenceFormat": "The original receipt names individual stdout/stderr files. Every original byte stream is included once in the indexed bundle; cases[].streams supplies exact byte offsets, lengths and SHA256 so streams can be reconstructed without omitted references.",
+  "cases": [
+    {
+      "minecraft": "1.12.2",
+      "case": "help",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "passed": true,
+      "streams": {
+        "stdout": {
+          "originalFile": "1.12.2-help.stdout.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 106,
+          "bytes": 1174,
+          "sha256": "0361e916cd8a761b4a141288c62b9bd596219418986944439de0b1ca2323a2bf"
+        },
+        "stderr": {
+          "originalFile": "1.12.2-help.stderr.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 1384,
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "minecraft": "1.12.2",
+      "case": "guard-missing-hash",
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "passed": true,
+      "streams": {
+        "stdout": {
+          "originalFile": "1.12.2-guard-missing-hash.stdout.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 1502,
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "originalFile": "1.12.2-guard-missing-hash.stderr.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 1622,
+          "bytes": 522,
+          "sha256": "5f89eed4c62b8f18647e233a5677d8ed4208b1183073592575e370caff3896c2"
+        }
+      }
+    },
+    {
+      "minecraft": "1.12.2",
+      "case": "guard-missing-file",
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "passed": true,
+      "streams": {
+        "stdout": {
+          "originalFile": "1.12.2-guard-missing-file.stdout.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 2262,
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "originalFile": "1.12.2-guard-missing-file.stderr.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 2382,
+          "bytes": 522,
+          "sha256": "5f89eed4c62b8f18647e233a5677d8ed4208b1183073592575e370caff3896c2"
+        }
+      }
+    },
+    {
+      "minecraft": "1.12.2",
+      "case": "bukkit-missing-hash",
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "passed": true,
+      "streams": {
+        "stdout": {
+          "originalFile": "1.12.2-bukkit-missing-hash.stdout.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 3023,
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "originalFile": "1.12.2-bukkit-missing-hash.stderr.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 3144,
+          "bytes": 524,
+          "sha256": "a4eeb8b20f11e721dbb2a4221a5d5a6c6338b56a45cce326fa2a291300786520"
+        }
+      }
+    },
+    {
+      "minecraft": "1.12.2",
+      "case": "bukkit-missing-file",
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "passed": true,
+      "streams": {
+        "stdout": {
+          "originalFile": "1.12.2-bukkit-missing-file.stdout.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 3787,
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "originalFile": "1.12.2-bukkit-missing-file.stderr.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 3908,
+          "bytes": 524,
+          "sha256": "a4eeb8b20f11e721dbb2a4221a5d5a6c6338b56a45cce326fa2a291300786520"
+        }
+      }
+    },
+    {
+      "minecraft": "1.12.2",
+      "case": "guard-invalid-hash",
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "passed": true,
+      "streams": {
+        "stdout": {
+          "originalFile": "1.12.2-guard-invalid-hash.stdout.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 4550,
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "originalFile": "1.12.2-guard-invalid-hash.stderr.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 4670,
+          "bytes": 527,
+          "sha256": "e29cd14c4c492775622493f8cdd3bb8d702147eb20f5154b620551a70ca82eb5"
+        }
+      }
+    },
+    {
+      "minecraft": "1.12.2",
+      "case": "bukkit-short-hash",
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "passed": true,
+      "streams": {
+        "stdout": {
+          "originalFile": "1.12.2-bukkit-short-hash.stdout.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 5314,
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "originalFile": "1.12.2-bukkit-short-hash.stderr.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 5433,
+          "bytes": 528,
+          "sha256": "259019295e7abade727d99f750ee7360d5eb6ca5e54da220d6f6e9f9c9c08e0c"
+        }
+      }
+    },
+    {
+      "minecraft": "1.12.2",
+      "case": "guard-hash-mismatch",
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "passed": true,
+      "streams": {
+        "stdout": {
+          "originalFile": "1.12.2-guard-hash-mismatch.stdout.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 6080,
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "originalFile": "1.12.2-guard-hash-mismatch.stderr.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 6201,
+          "bytes": 496,
+          "sha256": "43796bef65fa53f553f625e5dc86cf09ae5ad519b2b2b4807055070c3f7c90ea"
+        }
+      }
+    },
+    {
+      "minecraft": "1.12.2",
+      "case": "bukkit-hash-mismatch",
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "passed": true,
+      "streams": {
+        "stdout": {
+          "originalFile": "1.12.2-bukkit-hash-mismatch.stdout.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 6817,
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "originalFile": "1.12.2-bukkit-hash-mismatch.stderr.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 6939,
+          "bytes": 497,
+          "sha256": "d756eeb1a839a839d320a250e423fa6cb42ba2103be00d6cb175eed2fc3d6ab0"
+        }
+      }
+    },
+    {
+      "minecraft": "1.12.2",
+      "case": "guard-nonexistent",
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "passed": true,
+      "streams": {
+        "stdout": {
+          "originalFile": "1.12.2-guard-nonexistent.stdout.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 7553,
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "originalFile": "1.12.2-guard-nonexistent.stderr.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 7672,
+          "bytes": 511,
+          "sha256": "0d0bf9358eede2cd8dc3a52497d434b9b01158080b7c4716f441337ad4a882a3"
+        }
+      }
+    },
+    {
+      "minecraft": "1.12.2",
+      "case": "bukkit-directory",
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "passed": true,
+      "streams": {
+        "stdout": {
+          "originalFile": "1.12.2-bukkit-directory.stdout.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 8299,
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "originalFile": "1.12.2-bukkit-directory.stderr.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 8417,
+          "bytes": 497,
+          "sha256": "d756eeb1a839a839d320a250e423fa6cb42ba2103be00d6cb175eed2fc3d6ab0"
+        }
+      }
+    },
+    {
+      "minecraft": "1.12.2",
+      "case": "prepare-rejects-overrides",
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "passed": true,
+      "streams": {
+        "stdout": {
+          "originalFile": "1.12.2-prepare-rejects-overrides.stdout.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 9039,
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "originalFile": "1.12.2-prepare-rejects-overrides.stderr.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 9166,
+          "bytes": 556,
+          "sha256": "984cfe876cb6915b454ec4010d43979d6daf2ec625ddc626734a74e9fd268b94"
+        }
+      }
+    },
+    {
+      "minecraft": "1.12.2",
+      "case": "install-rejects-overrides",
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "passed": true,
+      "streams": {
+        "stdout": {
+          "originalFile": "1.12.2-install-rejects-overrides.stdout.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 9847,
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "originalFile": "1.12.2-install-rejects-overrides.stderr.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 9974,
+          "bytes": 556,
+          "sha256": "984cfe876cb6915b454ec4010d43979d6daf2ec625ddc626734a74e9fd268b94"
+        }
+      }
+    },
+    {
+      "minecraft": "1.12.2",
+      "case": "run-traversal",
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "passed": true,
+      "streams": {
+        "stdout": {
+          "originalFile": "1.12.2-run-traversal.stdout.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 10643,
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "originalFile": "1.12.2-run-traversal.stderr.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 10758,
+          "bytes": 515,
+          "sha256": "8ae9bbd9fa0721b96e9fe558476cab5ea9ee8e8dfdf821d3b13fc8f6253915f8"
+        }
+      }
+    },
+    {
+      "minecraft": "1.12.2",
+      "case": "run-backslash-traversal",
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "passed": true,
+      "streams": {
+        "stdout": {
+          "originalFile": "1.12.2-run-backslash-traversal.stdout.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 11396,
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "originalFile": "1.12.2-run-backslash-traversal.stderr.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 11521,
+          "bytes": 515,
+          "sha256": "8ae9bbd9fa0721b96e9fe558476cab5ea9ee8e8dfdf821d3b13fc8f6253915f8"
+        }
+      }
+    },
+    {
+      "minecraft": "1.12.2",
+      "case": "run-reserved",
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "passed": true,
+      "streams": {
+        "stdout": {
+          "originalFile": "1.12.2-run-reserved.stdout.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 12148,
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "originalFile": "1.12.2-run-reserved.stderr.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 12262,
+          "bytes": 515,
+          "sha256": "8ae9bbd9fa0721b96e9fe558476cab5ea9ee8e8dfdf821d3b13fc8f6253915f8"
+        }
+      }
+    },
+    {
+      "minecraft": "1.12.2",
+      "case": "run-trailing-dot",
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "passed": true,
+      "streams": {
+        "stdout": {
+          "originalFile": "1.12.2-run-trailing-dot.stdout.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 12893,
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "originalFile": "1.12.2-run-trailing-dot.stderr.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 13011,
+          "bytes": 515,
+          "sha256": "8ae9bbd9fa0721b96e9fe558476cab5ea9ee8e8dfdf821d3b13fc8f6253915f8"
+        }
+      }
+    },
+    {
+      "minecraft": "1.12.2",
+      "case": "run-existing-defaults",
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "passed": true,
+      "streams": {
+        "stdout": {
+          "originalFile": "1.12.2-run-existing-defaults.stdout.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 13647,
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "originalFile": "1.12.2-run-existing-defaults.stderr.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 13770,
+          "bytes": 531,
+          "sha256": "566bd02ba2910846e9d55a0ffd7f8c1e51f6d262bab942a0bbb02cd2197afd95"
+        }
+      }
+    },
+    {
+      "minecraft": "1.12.2",
+      "case": "run-existing-valid-both",
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "passed": true,
+      "streams": {
+        "stdout": {
+          "originalFile": "1.12.2-run-existing-valid-both.stdout.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 14424,
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "originalFile": "1.12.2-run-existing-valid-both.stderr.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 14549,
+          "bytes": 531,
+          "sha256": "566bd02ba2910846e9d55a0ffd7f8c1e51f6d262bab942a0bbb02cd2197afd95"
+        }
+      }
+    },
+    {
+      "minecraft": "1.12.2",
+      "case": "run-existing-uppercase-hash",
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "passed": true,
+      "streams": {
+        "stdout": {
+          "originalFile": "1.12.2-run-existing-uppercase-hash.stdout.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 15207,
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "originalFile": "1.12.2-run-existing-uppercase-hash.stderr.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 15336,
+          "bytes": 531,
+          "sha256": "566bd02ba2910846e9d55a0ffd7f8c1e51f6d262bab942a0bbb02cd2197afd95"
+        }
+      }
+    },
+    {
+      "minecraft": "1.8.9",
+      "case": "help",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "passed": true,
+      "streams": {
+        "stdout": {
+          "originalFile": "1.8.9-help.stdout.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 15973,
+          "bytes": 1402,
+          "sha256": "ac9a65155862c8852cb5a269d749102e2e0a1c7d03940a5257ce60b1a20c74fd"
+        },
+        "stderr": {
+          "originalFile": "1.8.9-help.stderr.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 17478,
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "minecraft": "1.8.9",
+      "case": "guard-missing-hash",
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "passed": true,
+      "streams": {
+        "stdout": {
+          "originalFile": "1.8.9-guard-missing-hash.stdout.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 17595,
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "originalFile": "1.8.9-guard-missing-hash.stderr.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 17714,
+          "bytes": 663,
+          "sha256": "6c11194e6b1bba1fa966ead89c63176d62045529cc9eb8645acde4a7d0727c9d"
+        }
+      }
+    },
+    {
+      "minecraft": "1.8.9",
+      "case": "guard-missing-file",
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "passed": true,
+      "streams": {
+        "stdout": {
+          "originalFile": "1.8.9-guard-missing-file.stdout.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 18494,
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "originalFile": "1.8.9-guard-missing-file.stderr.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 18613,
+          "bytes": 663,
+          "sha256": "6c11194e6b1bba1fa966ead89c63176d62045529cc9eb8645acde4a7d0727c9d"
+        }
+      }
+    },
+    {
+      "minecraft": "1.8.9",
+      "case": "bukkit-missing-hash",
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "passed": true,
+      "streams": {
+        "stdout": {
+          "originalFile": "1.8.9-bukkit-missing-hash.stdout.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 19394,
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "originalFile": "1.8.9-bukkit-missing-hash.stderr.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 19514,
+          "bytes": 665,
+          "sha256": "6ae6b7ab4e0762451215e5e7b3c2534d346982b06db2591dc620cd4de5f0605e"
+        }
+      }
+    },
+    {
+      "minecraft": "1.8.9",
+      "case": "bukkit-missing-file",
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "passed": true,
+      "streams": {
+        "stdout": {
+          "originalFile": "1.8.9-bukkit-missing-file.stdout.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 20297,
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "originalFile": "1.8.9-bukkit-missing-file.stderr.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 20417,
+          "bytes": 665,
+          "sha256": "6ae6b7ab4e0762451215e5e7b3c2534d346982b06db2591dc620cd4de5f0605e"
+        }
+      }
+    },
+    {
+      "minecraft": "1.8.9",
+      "case": "guard-invalid-hash",
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "passed": true,
+      "streams": {
+        "stdout": {
+          "originalFile": "1.8.9-guard-invalid-hash.stdout.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 21199,
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "originalFile": "1.8.9-guard-invalid-hash.stderr.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 21318,
+          "bytes": 668,
+          "sha256": "b4c2f447f2f95411dd63000d616075aed0787e6f2a749e463de8d130111aa714"
+        }
+      }
+    },
+    {
+      "minecraft": "1.8.9",
+      "case": "bukkit-short-hash",
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "passed": true,
+      "streams": {
+        "stdout": {
+          "originalFile": "1.8.9-bukkit-short-hash.stdout.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 22102,
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "originalFile": "1.8.9-bukkit-short-hash.stderr.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 22220,
+          "bytes": 669,
+          "sha256": "094d65b652fe4c4f02fbc9f30cfda6ffde9ebd43daf1c4606e2669ddba4e3f73"
+        }
+      }
+    },
+    {
+      "minecraft": "1.8.9",
+      "case": "guard-hash-mismatch",
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "passed": true,
+      "streams": {
+        "stdout": {
+          "originalFile": "1.8.9-guard-hash-mismatch.stdout.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 23007,
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "originalFile": "1.8.9-guard-hash-mismatch.stderr.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 23127,
+          "bytes": 637,
+          "sha256": "87e9abb2e36d113286f6cc48f8e32e84062e4200be2406e63bd2eeb202c0e348"
+        }
+      }
+    },
+    {
+      "minecraft": "1.8.9",
+      "case": "bukkit-hash-mismatch",
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "passed": true,
+      "streams": {
+        "stdout": {
+          "originalFile": "1.8.9-bukkit-hash-mismatch.stdout.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 23883,
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "originalFile": "1.8.9-bukkit-hash-mismatch.stderr.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 24004,
+          "bytes": 638,
+          "sha256": "7fc0fa4e16bd1a5e02eaa762a42449ab296b479c71863b50b123029aad59983f"
+        }
+      }
+    },
+    {
+      "minecraft": "1.8.9",
+      "case": "guard-nonexistent",
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "passed": true,
+      "streams": {
+        "stdout": {
+          "originalFile": "1.8.9-guard-nonexistent.stdout.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 24758,
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "originalFile": "1.8.9-guard-nonexistent.stderr.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 24876,
+          "bytes": 652,
+          "sha256": "3c5f9e1b96ac5866d7e4d57d3fe40d0d99bf2242c16b46ce918a4ec2e9ab20fa"
+        }
+      }
+    },
+    {
+      "minecraft": "1.8.9",
+      "case": "bukkit-directory",
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "passed": true,
+      "streams": {
+        "stdout": {
+          "originalFile": "1.8.9-bukkit-directory.stdout.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 25643,
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "originalFile": "1.8.9-bukkit-directory.stderr.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 25760,
+          "bytes": 638,
+          "sha256": "7fc0fa4e16bd1a5e02eaa762a42449ab296b479c71863b50b123029aad59983f"
+        }
+      }
+    },
+    {
+      "minecraft": "1.8.9",
+      "case": "prepare-rejects-overrides",
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "passed": true,
+      "streams": {
+        "stdout": {
+          "originalFile": "1.8.9-prepare-rejects-overrides.stdout.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 26522,
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "originalFile": "1.8.9-prepare-rejects-overrides.stderr.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 26648,
+          "bytes": 703,
+          "sha256": "1b87358957c6e01f866b0445693db01bfd907126a06829dd536c4b35c66f2909"
+        }
+      }
+    },
+    {
+      "minecraft": "1.8.9",
+      "case": "install-rejects-overrides",
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "passed": true,
+      "streams": {
+        "stdout": {
+          "originalFile": "1.8.9-install-rejects-overrides.stdout.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 27475,
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "originalFile": "1.8.9-install-rejects-overrides.stderr.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 27601,
+          "bytes": 703,
+          "sha256": "1b87358957c6e01f866b0445693db01bfd907126a06829dd536c4b35c66f2909"
+        }
+      }
+    },
+    {
+      "minecraft": "1.8.9",
+      "case": "run-traversal",
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "passed": true,
+      "streams": {
+        "stdout": {
+          "originalFile": "1.8.9-run-traversal.stdout.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 28416,
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "originalFile": "1.8.9-run-traversal.stderr.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 28530,
+          "bytes": 656,
+          "sha256": "ca3d65ee0a438ffc169fa3a5615c484d94a82f43e01d5a5dbfd935c80e2d9dd9"
+        }
+      }
+    },
+    {
+      "minecraft": "1.8.9",
+      "case": "run-backslash-traversal",
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "passed": true,
+      "streams": {
+        "stdout": {
+          "originalFile": "1.8.9-run-backslash-traversal.stdout.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 29308,
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "originalFile": "1.8.9-run-backslash-traversal.stderr.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 29432,
+          "bytes": 656,
+          "sha256": "ca3d65ee0a438ffc169fa3a5615c484d94a82f43e01d5a5dbfd935c80e2d9dd9"
+        }
+      }
+    },
+    {
+      "minecraft": "1.8.9",
+      "case": "run-reserved",
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "passed": true,
+      "streams": {
+        "stdout": {
+          "originalFile": "1.8.9-run-reserved.stdout.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 30199,
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "originalFile": "1.8.9-run-reserved.stderr.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 30312,
+          "bytes": 656,
+          "sha256": "ca3d65ee0a438ffc169fa3a5615c484d94a82f43e01d5a5dbfd935c80e2d9dd9"
+        }
+      }
+    },
+    {
+      "minecraft": "1.8.9",
+      "case": "run-trailing-dot",
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "passed": true,
+      "streams": {
+        "stdout": {
+          "originalFile": "1.8.9-run-trailing-dot.stdout.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 31083,
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "originalFile": "1.8.9-run-trailing-dot.stderr.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 31200,
+          "bytes": 656,
+          "sha256": "ca3d65ee0a438ffc169fa3a5615c484d94a82f43e01d5a5dbfd935c80e2d9dd9"
+        }
+      }
+    },
+    {
+      "minecraft": "1.8.9",
+      "case": "run-existing-defaults",
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "passed": true,
+      "streams": {
+        "stdout": {
+          "originalFile": "1.8.9-run-existing-defaults.stdout.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 31976,
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "originalFile": "1.8.9-run-existing-defaults.stderr.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 32098,
+          "bytes": 672,
+          "sha256": "4898a9bdbebb6030c83c9699c812b70a8c13724ea23f5f7179040c7b68cedd8f"
+        }
+      }
+    },
+    {
+      "minecraft": "1.8.9",
+      "case": "run-existing-valid-both",
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "passed": true,
+      "streams": {
+        "stdout": {
+          "originalFile": "1.8.9-run-existing-valid-both.stdout.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 32892,
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "originalFile": "1.8.9-run-existing-valid-both.stderr.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 33016,
+          "bytes": 672,
+          "sha256": "4898a9bdbebb6030c83c9699c812b70a8c13724ea23f5f7179040c7b68cedd8f"
+        }
+      }
+    },
+    {
+      "minecraft": "1.8.9",
+      "case": "run-existing-uppercase-hash",
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "passed": true,
+      "streams": {
+        "stdout": {
+          "originalFile": "1.8.9-run-existing-uppercase-hash.stdout.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 33814,
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "originalFile": "1.8.9-run-existing-uppercase-hash.stderr.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 33942,
+          "bytes": 672,
+          "sha256": "4898a9bdbebb6030c83c9699c812b70a8c13724ea23f5f7179040c7b68cedd8f"
+        }
+      }
+    },
+    {
+      "minecraft": "1.8.9",
+      "case": "stage-traversal",
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "passed": true,
+      "streams": {
+        "stdout": {
+          "originalFile": "1.8.9-stage-traversal.stdout.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 34728,
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "originalFile": "1.8.9-stage-traversal.stderr.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 34844,
+          "bytes": 656,
+          "sha256": "ca3d65ee0a438ffc169fa3a5615c484d94a82f43e01d5a5dbfd935c80e2d9dd9"
+        }
+      }
+    },
+    {
+      "minecraft": "1.8.9",
+      "case": "stage-invalid-hash",
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "passed": true,
+      "streams": {
+        "stdout": {
+          "originalFile": "1.8.9-stage-invalid-hash.stdout.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 35617,
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "originalFile": "1.8.9-stage-invalid-hash.stderr.log",
+          "bundleFile": "evidence/candidate-client-cli-all-streams.log",
+          "byteOffset": 35736,
+          "bytes": 637,
+          "sha256": "87e9abb2e36d113286f6cc48f8e32e84062e4200be2406e63bd2eeb202c0e348"
+        }
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "file": "evidence/candidate-client-cli-preflight-original.json",
+      "sha256": "2f58b8857da7605a4494dadfd0f2e38907db94dcbbe2bdf338b649d41efc9b83",
+      "bytes": 11865
+    },
+    {
+      "file": "evidence/candidate-client-cli-112-executed-tool.py",
+      "sha256": "df73fbad1705665ed085e9b7fb095994b27d28bc13c6fe2731282eedcb09fc24",
+      "bytes": 26157
+    },
+    {
+      "file": "evidence/candidate-client-cli-189-executed-tool.py",
+      "sha256": "c4a3e1926bcb3867213c7ccf0910113460fdbe8c3655cb246786d013875cd222",
+      "bytes": 41129
+    },
+    {
+      "file": "evidence/candidate-client-cli-all-streams.log",
+      "sha256": "0a89b7f831cf06a4f0ec294498441a28a36e8d3b8c44c6074b4aaaef82b230e7",
+      "bytes": 36374
+    }
+  ]
+}

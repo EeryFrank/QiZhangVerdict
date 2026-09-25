@@ -2,29 +2,17 @@
 
 插件标识 **QiZhangVerdict**，模组 ID `qizhangverdict`，管理命令 `/qzverdict`。本项目提供 IP/账号/设备准入、可管理的黑白名单、客户端协作检查和设备关联封禁。行为预测与矿物混淆使用独立安装、固定版本的开源组件，具体见 [集成安装](integrations/README.md)。
 
-开发分支版本为 **0.2.0-test.1**，正在对新构建的各平台 JAR 重新验收；下方下载链接仍对应各自已经发布的历史版本。开发版将首次安装的默认名单扩展到 37 条，并修复管理员将自动化规则设为 DENY 后，BAN 策略漏记账号及设备关联封禁的问题。源码回归见 [默认名单检查](outputs/core-default-catalog-validation.json) 和 [自动化封禁回归](outputs/core-automation-sanction-validation.json)，这些报告本身不代表新版已发布。
+## 测试版 0.2.0-test.1
 
-## 测试版本 0.1.1
+公开源码及 13 个安装包：[GitHub](https://github.com/EeryFrank/QiZhangVerdict/releases/tag/v0.2.0-test.1) · [GitLab](https://gitlab.com/EeryFrank/QiZhangVerdict/-/releases/v0.2.0-test.1)。原创代码使用 **GPL-3.0-only**，附完整许可证、对应源码 ZIP 和 SHA256 校验文件。
 
-公开源码及测试安装包：[GitHub](https://github.com/EeryFrank/QiZhangVerdict/releases/tag/v0.1.1-test.1) · [GitLab](https://gitlab.com/EeryFrank/QiZhangVerdict/-/releases/v0.1.1-test.1)。当前版本采用 **GPL-3.0-only**，附完整许可证、对应源码包和 SHA256 校验文件。
+包括一个 Bukkit 插件和 12 个模组：1.8.9、1.12.2 Forge，1.16.5、1.18.2、1.19.4、1.20.1 Fabric / Forge，以及 1.21.1 Fabric / NeoForge。安装包选择、Java 要求和升级步骤见[本版指南](docs/release-0.2.0-test.1.md)。插件服玩家也需要匹配的客户端模组；同一服务器只安装一个 Verdict 服务端实现。
 
-| 安装位置 | 文件 |
-|---|---|
-| Paper/Spigot 系插件服 | `qizhangverdict-bukkit-0.1.1.jar` 放 `plugins/` |
-| Fabric 1.20.1 服务端和客户端 | `qizhangverdict-fabric-1.20.1-0.1.1.jar` 放 `mods/`，另装 Fabric API |
-| Forge 1.20.1 服务端和客户端 | `qizhangverdict-forge-1.20.1-0.1.1.jar` 放 `mods/` |
-| Fabric 1.21.1 服务端和客户端 | `qizhangverdict-fabric-1.21.1-0.1.1.jar` 放 `mods/`，另装 Fabric API |
-| NeoForge 1.21.1 服务端和客户端 | `qizhangverdict-neoforge-1.21.1-0.1.1.jar` 放 `mods/` |
+本版首次默认名单为 37 条，保留已有管理员规则；修复自动化规则设为 DENY 时 BAN 策略漏记账号及设备关联封禁的问题。13 个原始成品均通过核心回归；14 组真实图形客户端/专服组合和插件服 75 组协议检查通过。准确散列、条件及证据见[验证汇总](outputs/validation-0.2.0-test.1.json)。这些测试不代表全部版本、全部作弊或真实多人实战均已验证。
 
-1.20.1 使用 Java 17；1.21.1 使用 Java 21。新版修复 Forge 1.20.1 的报告事件方向和资源元数据警告；首个 0.1.0 测试版的 Forge 组合未通过后续真实客户端验收。当前验收与开发状态见 [兼容矩阵](docs/compatibility-matrix.md) 和 [客户端记录](docs/client-matrix.md)。插件在 Java 8 上兼容旧 Bukkit API，并已补测五个旧 Paper 版本的准入规则；尚无配套客户端的旧版仍不能直接部署完整设备验证。插件服玩家也需要匹配游戏版本/加载器的客户端模组。
+1.8.9 本机图形验收需关闭 Forge 启动画面；Paper 1.8.8 使用 Forge 1.8.9 配套客户端，没有原生 Forge 1.8.8 成品。Grim / AntiXray 独立安装，不包含在这 13 个 JAR 中。
 
-同一服务器只安装插件或服务器模组中的一种。第三方 Grim/AntiXray 是另外的组件。不要把所有平台 JAR 一起放进一个 `mods` 文件夹。服务端插件无法自动安装到玩家客户端。
-
-## 旧版开发预览
-
-1.8.9 / 1.12.2 Forge，以及 1.16.5 / 1.18.2 / 1.19.4 Fabric、Forge 的八个模组已完成构建与真实客户端/专服测试；另有 1.8.9 Forge 客户端连接 Paper 1.8.8、1.12.2 Forge 客户端连接 Paper 1.12.2 的验收。下载：[GitHub 0.2.0-dev-preview.2](https://github.com/EeryFrank/QiZhangVerdict/releases/tag/v0.2.0-dev-preview.2) · [GitLab 0.2.0-dev-preview.2](https://gitlab.com/EeryFrank/QiZhangVerdict/-/releases/v0.2.0-dev-preview.2)。安装组合、证据和限制见 [旧版测试包说明](docs/preview-0.2.0-dev-preview.2.md)。本机 1.8.9 图形客户端验收需要关闭 Forge 启动画面，具体设置见说明；没有原生 Forge 1.8.8 模组。预览沿用已发布 0.1.1 Bukkit 和 preview.1 七个模组的原始文件，新增 1.8.9 模组。
-
-preview.2 已在两站公开发布，每站 17 个附件均经匿名下载核对 SHA256，见 [发布回执](outputs/publish-receipt-0.2.0-dev-preview.2.json)。最终标签的 GitHub 9 项构建检查通过；GitLab 9 项因 CI 配额不足未执行。
+历史版本保持原字节和原验证范围：[0.1.1](docs/validation-0.1.1.md)、[preview.1](docs/preview-0.2.0-dev-preview.1.md)、[preview.2](docs/preview-0.2.0-dev-preview.2.md)。
 
 ## 默认登录规则
 
@@ -99,16 +87,18 @@ sanctions.on-deny=BAN
 
 ## 黑名单与防透视
 
-开发版首次生成的 `blacklist.tsv` 包含 **37 个精确 ID：33 条 DENY、4 条 ALERT**。`baritone`、`baritoe`、`atianxray`、`keystrokesmod` 默认仅告警，服主可按玩法调整。不会因 `xray` 子串封掉正常的 `antixray`，也不默认封 Sodium、Iris、JEI、地图、投影等正常模组；存在正常项目重名的 `bigrat` 和通用 `template` ID 未设为默认拒绝。
+0.2.0-test.1 首次生成的 `blacklist.tsv` 包含 **37 个精确 ID：33 条 DENY、4 条 ALERT**。`baritone`、`baritoe`、`atianxray`、`keystrokesmod` 默认仅告警，服主可按玩法调整。不会因 `xray` 子串封掉正常的 `antixray`，也不默认封 Sodium、Iris、JEI、地图、投影等正常模组；存在正常项目重名的 `bigrat` 和通用 `template` ID 未设为默认拒绝。
 
 完整 [37 条可核验目录与合并工具](docs/catalog.md) 包含固定源码提交和描述符证据。已有安装的名单文件保持原样，包括管理员的 OFF 设置和删除记录；升级不会自动回填。管理员可审阅后显式合并新增规则。历史发布包的默认规则与目录数量以对应 tag 为准。
 
 名单不是全市场数据库，也无法发现所有改名、注入或伪造上报的作弊。资源包透视和未知外挂需要服务端矿物混淆及行为检测；[锁定依赖与配置](integrations/README.md) 提供 Paper、Fabric、Forge、NeoForge 安装组合。Forge/NeoForge 组合含矿物混淆，目前没有 Grim 行为预测引擎，不能宣称各平台行为检测能力相同。
 
-1.20.1 / 1.21.1 插件组合完成了真实 Grim 检查触发、账号与设备关联封禁、重启持久化及解封验证，共 24 组断言；具体版本、处罚阈值及限制见 [现代联动验收](docs/grim-linked-ban-validation.md)。Paper 1.8.8 / 1.12.2 / 1.16.5 另通过 42 组联动与明确坐标矿石隐藏检查，见 [旧版 Paper 记录](docs/legacy-paper-integration-validation.md)。两份报告均使用历史 Bukkit 0.1.1，不替代开发版的成品验收。
+1.20.1 / 1.21.1 插件组合完成了真实 Grim 检查触发、账号与设备关联封禁、重启持久化及解封验证，共 24 组断言；具体版本、处罚阈值及限制见 [现代联动验收](docs/grim-linked-ban-validation.md)。Paper 1.8.8 / 1.12.2 / 1.16.5 另通过 42 组联动与明确坐标矿石隐藏检查，见 [旧版 Paper 记录](docs/legacy-paper-integration-validation.md)。两份报告均使用历史 Bukkit 0.1.1，不替代 0.2.0-test.1 的成品验收。
 
 ## 构建与验证
 
-Windows 使用 JDK 21 运行 `scripts/build.ps1`，1.20.1 工程另需可发现的 JDK 17 工具链；构建机的 JDK 路径可在版本工程 `gradle.properties` 中调整。缓存放 `E:\CodexTemp`，JAR 在各模块的 `build/libs/`。根构建 `gradlew.bat build` 构建核心与插件，两个平台工程分别构建模组；完成验收后用 Python 3.12+ 执行 `scripts/package_release.py`，发行 ZIP 输出到 `outputs/`，脚本拒绝打包与验收散列不符的 JAR。真实验证范围、产物散列及证据路径记录在 `outputs/validation-0.1.1.json`（发行包根目录为 `validation.json`）和 `docs/validation-0.1.1.md`，未列为通过的项目均未验收。
+构建路径及工具链见[CI 说明](docs/ci.md)；1.8.9 / 1.12.2 使用独立旧版 Gradle 和 JDK 8，其余版本各自使用固定工具链。缓存放 `E:\CodexTemp`，成品在对应模块的 `build/libs/`。
+
+本版使用 `scripts/package_preview.py` 的显式清单打包流程。先提交审阅后的源码、报告与 `outputs/release-manifest-0.2.0-test.1.json`，再以完整提交 SHA 执行 `verify` 和 `package`；产物输出 `outputs/`。打包器核对每个 JAR 的原始散列、GPL/NOTICE、固定 Git 源码与证据，拒绝覆盖既有发布目录。`scripts/package_release.py` 保留历史 0.1.1 流程，不用于本版 13 包发行。
 
 当前原始实现按 **GPL-3.0-only** 提供，全文见 [LICENSE](LICENSE)；独立第三方组件保留各自许可证与来源，本项目 JAR 未打包 Grim 或 AntiXray 的实现。

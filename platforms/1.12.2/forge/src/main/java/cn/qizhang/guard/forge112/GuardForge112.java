@@ -26,7 +26,7 @@ import net.minecraftforge.fml.common.network.FMLEventChannel;
 import net.minecraftforge.fml.common.network.FMLNetworkEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 
-@Mod(modid = "qizhangverdict", name = "QiZhang's Verdict", version = "0.2.0-dev",
+@Mod(modid = "qizhangverdict", name = "QiZhang's Verdict", version = "0.2.0-test.1",
         acceptedMinecraftVersions = "[1.12.2]", acceptableRemoteVersions = "*")
 public final class GuardForge112 {
     public static final String CHANNEL = "QZGuard";

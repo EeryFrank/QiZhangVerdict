@@ -1,0 +1,172 @@
+{
+  "schemaVersion": 1,
+  "passed": false,
+  "profile": "fabric-1.16.5-antixray-1.1.0-java17",
+  "harness": {
+    "path": "E:\\Codex_work\\QiZhangVerdict\\scripts\\legacy_fabric_antixray_smoke.py",
+    "sha256": "0df6b8c0ae15ced5a56d09423684117f7bb4aa5cb2d5d1339c3527c52ae5510c",
+    "bytes": 33840
+  },
+  "guardSha256": "d9bb0837f97ccf30c4b0f19a5cd8b65197eab4b2c5137b246b0e56c94fe6aae6",
+  "antiXraySha256": "fa72bb5e4424bc8ffb9cda83298f8c27b704dd36c3bd413660a3a58d69cc9484",
+  "antiXrayVersion": "1.1.0-qzcompat.1",
+  "independentCompatFork": true,
+  "java": "E:\\CodexTemp\\mods-danzi\\java\\jdk-17.0.20.1+1-jre\\bin\\java.exe",
+  "phaseResults": [
+    {
+      "pid": 95172,
+      "args": [
+        "E:\\CodexTemp\\mods-danzi\\java\\jdk-17.0.20.1+1-jre\\bin\\java.exe",
+        "-Xms256M",
+        "-Xmx1536M",
+        "-jar",
+        "fabric-server-launch.jar",
+        "nogui"
+      ],
+      "resourceGate": {
+        "phase": "bootstrap",
+        "availableGiB": 10.0209,
+        "requiredGiB": 3.5,
+        "passed": true
+      },
+      "exitCode": 0
+    },
+    {
+      "pid": 94348,
+      "args": [
+        "E:\\CodexTemp\\mods-danzi\\java\\jdk-17.0.20.1+1-jre\\bin\\java.exe",
+        "-Xms256M",
+        "-Xmx1536M",
+        "-jar",
+        "fabric-server-launch.jar",
+        "nogui"
+      ],
+      "resourceGate": {
+        "phase": "integration",
+        "availableGiB": 9.7835,
+        "requiredGiB": 3.5,
+        "passed": true
+      },
+      "exitCode": 0
+    }
+  ],
+  "policyBefore": {
+    "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-fabric-antixray\\fabric-1.16.5-antixray-qzcompat1-java17-03\\config\\qizhangverdict\\guard.properties",
+    "sha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+    "bytes": 396,
+    "values": {
+      "limits.max-online-per-ip": "3",
+      "limits.max-online-per-ip-device": "1",
+      "limits.max-accounts-per-ip": "5",
+      "limits.account-window-hours": "720",
+      "limits.attempts-per-minute": "20",
+      "ip.allow": "",
+      "ip.deny": "",
+      "companion.required": "true",
+      "companion.timeout-seconds": "20",
+      "vm.action": "DENY",
+      "blacklist.action": "DENY",
+      "sanctions.on-deny": "BAN",
+      "device.required": "true"
+    },
+    "matchesCompleteStrictDefaults": true
+  },
+  "configurationChange": {
+    "onlyChange": "overworld.engineMode: 2 -> 1",
+    "default": {
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-fabric-antixray\\fabric-1.16.5-antixray-qzcompat1-java17-03\\evidence\\generated-default-antixray.toml",
+      "sha256": "21e246226f8a6fa46888a96e74dd99c76c6eaf840b1fee8b2763551e96db82d3",
+      "bytes": 640
+    },
+    "selected": {
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\legacy-fabric-antixray\\fabric-1.16.5-antixray-qzcompat1-java17-03\\config\\antixray.toml",
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-fabric-antixray\\fabric-1.16.5-antixray-qzcompat1-java17-03\\evidence\\selected-antixray.toml",
+      "sha256": "0dbd06ac5881c87f53acac8b2ff3dcf685c8938608ad4203a8be0adfef3a168b",
+      "bytes": 640
+    }
+  },
+  "policyBeforeProtocol": {
+    "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-fabric-antixray\\fabric-1.16.5-antixray-qzcompat1-java17-03\\config\\qizhangverdict\\guard.properties",
+    "sha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+    "bytes": 396,
+    "values": {
+      "limits.max-online-per-ip": "3",
+      "limits.max-online-per-ip-device": "1",
+      "limits.max-accounts-per-ip": "5",
+      "limits.account-window-hours": "720",
+      "limits.attempts-per-minute": "20",
+      "ip.allow": "",
+      "ip.deny": "",
+      "companion.required": "true",
+      "companion.timeout-seconds": "20",
+      "vm.action": "DENY",
+      "blacklist.action": "DENY",
+      "sanctions.on-deny": "BAN",
+      "device.required": "true"
+    },
+    "matchesCompleteStrictDefaults": true
+  },
+  "protocolExitCode": 1,
+  "protocol": {
+    "passed": false,
+    "syntheticProtocolClient": true,
+    "graphicalClient": false,
+    "version": "1.16.5",
+    "cases": [],
+    "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n    {\n      block: 'minecraft:bedrock',\n      height: 1\n    },\n    {\n+     block: 'minecraft:dirt',\n+     height: 2\n-     block: 'minecraft:stone',\n-     height: 59\n    },\n    {\n      block: 'minecraft:grass_block',\n      height: 1\n    }\n\n    at main (E:\\CodexTemp\\QiZhangVerdict\\legacy-fabric-antixray\\fabric-1.16.5-antixray-qzcompat1-java17-03\\evidence\\protocol.cjs:63:10)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)",
+    "packetCounts": {},
+    "chunkReceipts": []
+  },
+  "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n    {\n      block: 'minecraft:bedrock',\n      height: 1\n    },\n    {\n+     block: 'minecraft:dirt',\n+     height: 2\n-     block: 'minecraft:stone',\n-     height: 59\n    },\n    {\n      block: 'minecraft:grass_block',\n      height: 1\n    }\n\n    at main (E:\\CodexTemp\\QiZhangVerdict\\legacy-fabric-antixray\\fabric-1.16.5-antixray-qzcompat1-java17-03\\evidence\\protocol.cjs:63:10)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)",
+  "policyAfter": {
+    "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-fabric-antixray\\fabric-1.16.5-antixray-qzcompat1-java17-03\\config\\qizhangverdict\\guard.properties",
+    "sha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+    "bytes": 396,
+    "values": {
+      "limits.max-online-per-ip": "3",
+      "limits.max-online-per-ip-device": "1",
+      "limits.max-accounts-per-ip": "5",
+      "limits.account-window-hours": "720",
+      "limits.attempts-per-minute": "20",
+      "ip.allow": "",
+      "ip.deny": "",
+      "companion.required": "true",
+      "companion.timeout-seconds": "20",
+      "vm.action": "DENY",
+      "blacklist.action": "DENY",
+      "sanctions.on-deny": "BAN",
+      "device.required": "true"
+    },
+    "matchesCompleteStrictDefaults": true
+  },
+  "strictPolicyUnchanged": true,
+  "loadedComponents": {
+    "antixray": true,
+    "verdict": true,
+    "fabric": true,
+    "loader": true
+  },
+  "portReleased": true,
+  "artifacts": [
+    {
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-fabric-antixray\\fabric-1.16.5-antixray-qzcompat1-java17-03\\bootstrap-console.log",
+      "sha256": "3e938381d02741ae30b3271f962d6d16d783d4987c1491ad8b49c4af24b2eb83",
+      "bytes": 8135
+    },
+    {
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-fabric-antixray\\fabric-1.16.5-antixray-qzcompat1-java17-03\\integration-console.log",
+      "sha256": "3717eed271b77b5a20c5e933c95b48e404ee489df7023457db8d0318dfe48957",
+      "bytes": 7256
+    },
+    {
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-fabric-antixray\\fabric-1.16.5-antixray-qzcompat1-java17-03\\protocol-console.log",
+      "sha256": "b68c2b6c413493775735dbd40c3cc1c3259703955685378a491ee9155ff5de2f",
+      "bytes": 558
+    },
+    {
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-fabric-antixray\\fabric-1.16.5-antixray-qzcompat1-java17-03\\protocol-result.json",
+      "sha256": "399849e09faa644775af4578fd1b7329d34756099d74bc6333caa50ab0a9b4f9",
+      "bytes": 766
+    }
+  ]
+}

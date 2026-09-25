@@ -1,0 +1,11 @@
+--- historical/patch_antixray116.py
++++ current/patch_antixray116.py
+@@ -130,6 +130,8 @@
+     parser.add_argument("--output", type=Path, required=True)
+     parser.add_argument("--receipt", type=Path, required=True)
+     args = parser.parse_args()
++    if args.output.resolve() == args.receipt.resolve():
++        parser.error("Output and receipt must resolve to different paths")
+     if args.output.name != OUTPUT_NAME:
+         parser.error("Output filename must identify the compatibility fork: " + OUTPUT_NAME)
+     if args.output.resolve() == args.input.resolve() or args.output.exists() or args.receipt.exists():

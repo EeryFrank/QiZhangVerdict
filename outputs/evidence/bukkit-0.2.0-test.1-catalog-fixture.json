@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "version": "1.21.1",
+  "distribution": "Purpur",
+  "build": "2329",
+  "serverSourceUrl": "https://api.purpurmc.org/v2/purpur/1.21.1/2329/download",
+  "serverSha256": "30403cf54f981f16e1403f172645e82d3e4a59ad6c9f1d8e98df99edb1f8ae4c",
+  "guardFile": "qizhangverdict-bukkit-0.2.0-test.1.jar",
+  "guardVersion": "0.2.0-test.1",
+  "guardSha256": "1e54c48f744b61cc23efe28b8516132d13dba601d9b36beab88c1da3a849f1b7",
+  "catalogSha256": "66a633ad3faa2d7d666c43e2b3b544437054345e102103d90fe3b5db022c46a3",
+  "pristineDefaultPolicySha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+  "qaPolicySha256": "7d97c3b22a50e54b56a19d279aebd87cb5c3e33256c7b135873d8f7a0f683646",
+  "expectedQaPolicy": {
+    "limits.max-online-per-ip": "3",
+    "limits.max-online-per-ip-device": "1",
+    "limits.max-accounts-per-ip": "64",
+    "limits.account-window-hours": "720",
+    "limits.attempts-per-minute": "200",
+    "ip.allow": "",
+    "ip.deny": "",
+    "companion.required": "true",
+    "companion.timeout-seconds": "20",
+    "vm.action": "DENY",
+    "blacklist.action": "DENY",
+    "sanctions.on-deny": "BAN",
+    "device.required": "true"
+  },
+  "declaredQuotaChanges": {
+    "limits.max-accounts-per-ip": {
+      "default": "5",
+      "qa": "64"
+    },
+    "limits.attempts-per-minute": {
+      "default": "20",
+      "qa": "200"
+    }
+  },
+  "temporaryControlChange": "Only restart-phase KICK control temporarily changes sanctions.on-deny from BAN to KICK; restored to BAN before successful stop.",
+  "strictUnchanged": [
+    "companion.required=true",
+    "companion.timeout-seconds=20",
+    "device.required=true",
+    "vm.action=DENY",
+    "blacklist.action=DENY",
+    "limits.max-online-per-ip=3",
+    "limits.max-online-per-ip-device=1"
+  ],
+  "java": "D:\\Java\\jdk-21\\bin\\java.exe",
+  "node": "E:\\CodexTemp\\Codex\\RuntimeCache\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+  "nodeModules": "E:\\CodexTemp\\QiZhangVerdict\\legacy-protocol-qa\\node_modules",
+  "helperSha256": "326be5912682dbb833f5ec5ea81788de020d2e0daf1a9b6e70ed3553a41946c9",
+  "protocolSha256": "6500cb534f2cdf3a73c24ae3874d9f72173584bf91a45c3ba26888e2c45465e3",
+  "dependencyLockSha256": "d20909e9e6e085ff2dfd2621eb6143c6634858f6b01e463b6e6b9daa7f08e335",
+  "port": 25675,
+  "host": "127.0.0.1",
+  "prepareExecutedJava": false,
+  "sourceFixtureReadOnly": "E:\\CodexTemp\\QiZhangGuard\\runtime\\1.21.1-startup",
+  "scope": "New candidate product; synthetic loopback TCP, catalog and sanction regressions. No third-party detection engine, real hardware, accuracy or performance claim."
+}

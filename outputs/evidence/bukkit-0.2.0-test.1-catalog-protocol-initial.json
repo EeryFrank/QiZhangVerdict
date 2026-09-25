@@ -1,0 +1,70 @@
+{
+  "passed": true,
+  "phase": "initial",
+  "version": "1.21.1",
+  "cases": [
+    {
+      "name": "first install generates all 37 exact catalog rows with pinned kind/action/source",
+      "deny": 33,
+      "alert": 4
+    },
+    {
+      "name": "new catalog DENY cheatutils persists account and device bans"
+    },
+    {
+      "name": "new catalog DENY cigarette persists account and device bans"
+    },
+    {
+      "name": "new catalog DENY gamesense persists account and device bans"
+    },
+    {
+      "name": "new catalog DENY krs persists account and device bans"
+    },
+    {
+      "name": "new catalog DENY meteorplus persists account and device bans"
+    },
+    {
+      "name": "new catalog DENY nightx persists account and device bans"
+    },
+    {
+      "name": "default baritoe remains ALERT without bans",
+      "onlineSecondsAfterReport": 4.588,
+      "deviceAssociationPersisted": true,
+      "decision": "AUTOMATION_ALERT"
+    },
+    {
+      "name": "default baritone remains ALERT without bans",
+      "onlineSecondsAfterReport": 4.269,
+      "deviceAssociationPersisted": true,
+      "decision": "AUTOMATION_ALERT"
+    },
+    {
+      "name": "default atianxray remains ALERT without bans",
+      "onlineSecondsAfterReport": 4.469,
+      "deviceAssociationPersisted": true,
+      "decision": "BLACKLIST_ALERT"
+    },
+    {
+      "name": "default keystrokesmod remains ALERT without bans",
+      "onlineSecondsAfterReport": 4.36,
+      "deviceAssociationPersisted": true,
+      "decision": "BLACKLIST_ALERT"
+    },
+    {
+      "name": "ordinary identifiers survive the strict report deadline without bans",
+      "onlineSecondsAfterReport": 22.013,
+      "deviceAssociationPersisted": true
+    },
+    {
+      "name": "administrator OFF and command API deletion take effect before restart"
+    },
+    {
+      "name": "explicit automation DENY with BAN links historical two accounts and one device",
+      "addedBanRows": 3,
+      "reason": "AUTOMATION_DENIED"
+    }
+  ],
+  "caseCount": 14,
+  "exactDefaultCatalogChecked": true,
+  "scope": "Real loopback TCP and server state assertions; synthetic accounts/devices; two explicitly raised batch quotas; KICK only in named control window."
+}
