@@ -1,0 +1,5 @@
+// SPDX-License-Identifier: GPL-3.0-only
+architectury { platformSetupLoomIde(); forge() }
+dependencies { forge 'net.minecraftforge:forge:1.19.2-43.5.2' }
+loom { mixin { defaultRefmapName = 'qizhangverdict.refmap.json' } }
+tasks.named('jar') { manifest { attributes 'MixinConfigs': 'qizhangverdict.mixins.json' } }

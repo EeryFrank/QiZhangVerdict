@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "generatedUtc": "2026-09-25T12:12:54.565821+00:00",
+  "status": "passed",
+  "scope": "Unreleased Bukkit source correction for delayed challenge ordering. No product JAR build or live Minecraft execution in this validation.",
+  "issue": {
+    "id": "BKT-CHALLENGE-ORDER-001",
+    "priority": "P2",
+    "before": "The initial two-tick task captured A. A reload could send B first, then the task sent A last. Companion generation coalescing could discard B; an A response remains stale and strict verification times out.",
+    "after": "The production scheduled Runnable checks the same Player owner and online status, then retrieves the currently pending challenge at execution time.",
+    "originalStaticEvidence": "E:/CodexTemp/QiZhangVerdict/next-core-audit/audit.json",
+    "originalStaticEvidenceSha256": "ea9690c93eb6ed7aa962a5e519a01e708ea1adbe2935bfc272a5be4766b13781"
+  },
+  "sources": [
+    {
+      "file": "bukkit/src/main/java/cn/qizhang/guard/bukkit/QiZhangVerdictPlugin.java",
+      "sha256": "0266bd8bc8e1bc185bba0eba26a7b2c279270b521e04bd90bc161f5f9a16c5ba",
+      "bytes": 19276
+    },
+    {
+      "file": "bukkit/src/main/java/cn/qizhang/guard/bukkit/PendingChallengeTask.java",
+      "sha256": "7aef1193a846152cc16e3e6ef7ce594f33a1fce2b09520ef73605a547a58c2d4",
+      "bytes": 1237
+    },
+    {
+      "file": "bukkit/src/test/java/cn/qizhang/guard/bukkit/PendingChallengeTaskTest.java",
+      "sha256": "82edf55ee1308d9bcd32e392592df6f4a009fbf6bbba1de7412013f17e687d82",
+      "bytes": 6283
+    },
+    {
+      "file": "bukkit/build.gradle",
+      "sha256": "f6bcf7758ee23f9b34e401e42e1c01e7131495876aa26a879759a81c0d3b373c",
+      "bytes": 1189
+    }
+  ],
+  "validation": {
+    "java": "Temurin OpenJDK 1.8.0_504-b01",
+    "maxHeapMiB": 128,
+    "compiled": "All current core and Bukkit production Java sources, including the plugin scheduling call, plus PendingChallengeTaskTest, against the pinned Spigot 1.8.8 API.",
+    "javacExitCode": 0,
+    "behaviorExitCode": 0,
+    "checksTotal": 6,
+    "oldClosureModelChecks": 1,
+    "productionRunnableChecks": 5,
+    "checks": [
+      "Old-closure negative-control model sends stale A and real GuardService expires it at the strict deadline. This is not execution of the historical Bukkit plugin binary.",
+      "Actual production task sends B after reload replaces A, and the real GuardService accepts B and does not time out.",
+      "A removed pending challenge is not resent.",
+      "A disconnected owner cannot send retained pending bytes.",
+      "An old Player task cannot send the replacement session challenge, even when the former owner still appears online.",
+      "An offline owner cannot send pending bytes."
+    ],
+    "gradleExecuted": false,
+    "minecraftExecuted": false,
+    "productJarBuilt": false,
+    "core57Rerun": false,
+    "scopeLimits": [
+      "The scheduler and Player identity are provided as deterministic suppliers; no Bukkit server or real client was started.",
+      "The old behavior is a model copied from the prior closure. Only the fixed production Runnable and current GuardService execute in the positive checks.",
+      "Gradle check wiring was added but was not executed during this low-resource Java8 validation."
+    ]
+  },
+  "evidence": [
+    {
+      "file": "outputs/evidence/bukkit-challenge-scheduling-java-version.log",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\next-core-audit\\scheduling-fix-java8-01\\java-version.log",
+      "sha256": "9d65a43706f49fcfdbcece91e737f759110493e82fd1c4886cf49104c2017b0e",
+      "bytes": 155
+    },
+    {
+      "file": "outputs/evidence/bukkit-challenge-scheduling-javac.log",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\next-core-audit\\scheduling-fix-java8-01\\javac.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "outputs/evidence/bukkit-challenge-scheduling-behavior.log",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\next-core-audit\\scheduling-fix-java8-01\\behavior.log",
+      "sha256": "924d8baad81827caf44405ee7ec844b71dc1b25a1b3b48cca6aeec89dfe72ce8",
+      "bytes": 448
+    },
+    {
+      "file": "outputs/evidence/bukkit-challenge-scheduling-result.json",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\next-core-audit\\scheduling-fix-java8-01\\result.json",
+      "sha256": "5b144665964557d79744a07c6ecf188f0da4534b4206c78676aa0f023420574e",
+      "bytes": 6678
+    }
+  ],
+  "publicEvidenceBytes": 7281,
+  "privacy": "Only source paths, compiler/runtime output, and synthetic test descriptions are public. Test state directories, account/device state, and actual identifiers are excluded."
+}

@@ -23,7 +23,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        target: [core-bukkit, mods-1.20.1, mods-1.21.1]
+        target: [core-bukkit, mods-1.19.2, mods-1.20.1, mods-1.20.4, mods-1.21.1]
     env:
       QV_TARGET: ${{ matrix.target }}
     steps:
@@ -50,30 +50,7 @@ jobs:
         shell: bash
         env:
           QV_JAVA_PATHS: ${{ steps.jdk17.outputs.path }},${{ steps.jdk21.outputs.path }}
-        run: |
-          set -euo pipefail
-          mkdir -p ci-logs ci-artifacts
-          export JAVA_TOOL_OPTIONS="${JAVA_TOOL_OPTIONS:+$JAVA_TOOL_OPTIONS }-Dqzguard.testDir=$RUNNER_TEMP/qizhang-core-tests"
-          gradle_options=(--no-daemon --console=plain --stacktrace "-Porg.gradle.java.installations.paths=$QV_JAVA_PATHS" -Porg.gradle.java.installations.auto-detect=false -Porg.gradle.java.installations.auto-download=false)
-          if [[ "$QV_TARGET" == core-bukkit ]]; then
-            sh ./gradlew "${gradle_options[@]}" build :core:securityTest 2>&1 | tee ci-logs/gradle.log
-            python3 -B integrations/test_integrations.py 2>&1 | tee ci-logs/integration-tests.log
-            python3 -B integrations/test_runtime_evidence.py 2>&1 | tee ci-logs/evidence-parser-tests.log
-            python3 -B -m unittest discover -s catalog -p test_catalog.py -v 2>&1 | tee ci-logs/catalog-tests.log
-            cp bukkit/build/libs/qizhangverdict-bukkit-0.2.0-test.1.jar ci-artifacts/
-          else
-            qv_mc="${QV_TARGET#mods-}"
-            case "$qv_mc" in
-              1.20.1) qv_other_loader=forge ;;
-              1.21.1) qv_other_loader=neoforge ;;
-              *) exit 1 ;;
-            esac
-            (cd "platforms/$qv_mc" && sh ./gradlew "${gradle_options[@]}" build :fabric:commandParserSmoke) 2>&1 | tee ci-logs/gradle.log
-            for qv_loader in fabric "$qv_other_loader"; do
-              cp "platforms/$qv_mc/$qv_loader/build/libs/qizhangverdict-$qv_loader-$qv_mc-0.2.0-test.1.jar" ci-artifacts/
-            done
-          fi
-          (cd ci-artifacts && sha256sum ./*.jar > SHA256SUMS)
+        run: bash scripts/ci_modern_build.sh
       - name: Save build logs
         if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
@@ -86,36 +63,30 @@ jobs:
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: qizhang-ci-${{ matrix.target }}
-          path: ci-artifacts/
+          path: ci-artifacts/${{ matrix.target }}/
           if-no-files-found: error
           retention-days: 14
 
   collect:
-    name: Collect five JARs
+    name: Collect ten modern JARs
     needs: build
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
       - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
         with:
           pattern: qizhang-ci-*
           path: ci-input
           merge-multiple: false
-      - name: Verify all five deliverables
+      - name: Verify all ten exact modern deliverables
         shell: bash
-        run: |
-          set -euo pipefail
-          for qv_folder in ci-input/*; do
-            (cd "$qv_folder" && sha256sum --check SHA256SUMS)
-          done
-          qv_jars=(ci-input/*/*.jar)
-          test "${#qv_jars[@]}" -eq 5
-          mkdir ci-release
-          cp -- "${qv_jars[@]}" ci-release/
-          (cd ci-release && sha256sum ./*.jar > SHA256SUMS)
+        run: python3 -B scripts/ci_modern_artifacts.py collect --input ci-input --output ci-release --layout github
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          name: qizhangverdict-five-jars-${{ github.sha }}
+          name: qizhangverdict-ten-modern-jars-${{ github.sha }}
           path: ci-release/
           if-no-files-found: error
           retention-days: 30

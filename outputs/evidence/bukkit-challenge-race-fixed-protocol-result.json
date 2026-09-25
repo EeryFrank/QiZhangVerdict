@@ -1,0 +1,66 @@
+{
+  "expectedOutcomeConfirmed": true,
+  "passed": true,
+  "knownBugReproduced": false,
+  "expected": "fixed",
+  "packets": [
+    {
+      "index": 0,
+      "duringReload": false,
+      "afterCheckpoint": false,
+      "payloadSha256": "05e941dfb2b7fd549c18412a43ecef69857ba1831aa253164a2db3b29f8a25d9",
+      "timeMs": 1428.3413
+    },
+    {
+      "index": 1,
+      "duringReload": true,
+      "afterCheckpoint": false,
+      "payloadSha256": "5fee04cec84cf68754fb20837a900d529a8fef30b83062889befb4ae70798401",
+      "timeMs": 1428.5663
+    },
+    {
+      "index": 2,
+      "duringReload": false,
+      "afterCheckpoint": false,
+      "payloadSha256": "5fee04cec84cf68754fb20837a900d529a8fef30b83062889befb4ae70798401",
+      "timeMs": 2155.5865
+    }
+  ],
+  "controls": [
+    {
+      "stage": "BEFORE_RELOAD",
+      "tick": 28,
+      "joinedTick": 27,
+      "timeMs": 1428.4539
+    },
+    {
+      "stage": "AFTER_RELOAD",
+      "tick": 28,
+      "joinedTick": 27,
+      "timeMs": 1433.7669
+    },
+    {
+      "stage": "CHECKPOINT",
+      "tick": 31,
+      "joinedTick": 27,
+      "timeMs": 4158.7654
+    }
+  ],
+  "checks": [
+    "complete default policy unchanged before join",
+    "actual reload completed before original two-tick callback with strict policy",
+    "actual delayed send preserves current B",
+    "server persists the exact synthetic account/device association",
+    "one accepted report stays online past the unmodified twenty-second deadline",
+    "default policy remains byte-identical and timeout does not create bans"
+  ],
+  "syntheticReport": true,
+  "lastChallengeMatchesReload": true,
+  "onlineSecondsAfterReport": 22.043,
+  "reportsSent": 1,
+  "deviceAssociationPersisted": true,
+  "kick": "",
+  "clientEnded": true,
+  "transportError": "",
+  "timingNotEstablished": false
+}

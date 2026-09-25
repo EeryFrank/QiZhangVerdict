@@ -1,0 +1,89 @@
+// SPDX-License-Identifier: GPL-3.0-only
+plugins {
+    id 'dev.architectury.loom' version '1.11.456' apply false
+    id 'architectury-plugin' version '3.4.164'
+}
+
+architectury { minecraft = '1.19.2' }
+allprojects { group = 'cn.qizhang.guard'; version = '0.3.0-dev' }
+
+def runtimeRoot = providers.gradleProperty('qzRuntimeRoot').getOrElse(
+    System.getProperty('os.name').toLowerCase().contains('windows')
+    ? 'E:/CodexTemp/QiZhangVerdict/next-platforms/1.19.2/runtime'
+    : new File(System.getProperty('java.io.tmpdir'), 'qizhangverdict-1.19.2-runtime').absolutePath)
+
+subprojects {
+    apply plugin: 'dev.architectury.loom'
+    apply plugin: 'architectury-plugin'
+    ext.qvLicenseRoot = rootProject.file('../..')
+    apply from: new File(qvLicenseRoot, 'gradle/license-resources.gradle')
+    base { archivesName = "qizhangverdict-${project.name}-1.19.2" }
+    repositories {
+        mavenCentral()
+        maven { url 'https://maven.fabricmc.net/' }
+        maven { url 'https://maven.architectury.dev/' }
+        maven { url 'https://maven.minecraftforge.net/' }
+    }
+    dependencies {
+        minecraft 'com.mojang:minecraft:1.19.2'
+        mappings loom.officialMojangMappings()
+    }
+
+    // Generate version-local API bridges; never change the released shared source files.
+    // Mojang 1.19.2 has ServerPlayer.getLevel() and sendSuccess(Component, boolean).
+    def adaptedMain = layout.buildDirectory.dir('generated/sources/shared1192/main')
+    def adaptShared = tasks.register('adaptSharedSources', Sync) {
+        from(rootProject.file('../shared/src/main/java')) { exclude '**/mixin/**' }
+        into adaptedMain
+        filteringCharset = 'UTF-8'
+        filter { line -> line.replace('.serverLevel()', '.getLevel()').replace('sendSuccess(() -> ', 'sendSuccess(') }
+    }
+    sourceSets.main.java.srcDirs += [
+        rootProject.file('../../core/src/main/java'),
+        rootProject.file('../../client-common/src/main/java'),
+        rootProject.file('src/main/java'),
+        adaptedMain
+    ]
+    sourceSets.main.resources.srcDir rootProject.file('../../core/src/main/resources')
+    sourceSets.test.java.srcDirs += [
+        rootProject.file('../shared/src/test/java'),
+        rootProject.file('../../core/src/test/java'),
+        rootProject.file('../../client-common/src/test/java')
+    ]
+    tasks.named('compileJava') { dependsOn adaptShared }
+    java { toolchain.languageVersion = JavaLanguageVersion.of(17); withSourcesJar() }
+    tasks.named('sourcesJar') { dependsOn adaptShared }
+    tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8'; options.release = 17 }
+
+    def checks = [
+        commandParserSmoke: 'cn.qizhang.guard.minecraft.CommandParserSmoke',
+        securityTest: 'cn.qizhang.guard.core.SecurityRegressionTest',
+        catalogCompatibilityTest: 'cn.qizhang.guard.core.CatalogCompatibilityTest',
+        clientReporterSmoke: 'cn.qizhang.guard.client.ClientReporterSmoke'
+    ]
+    checks.each { taskName, entryPoint ->
+        tasks.register(taskName, JavaExec) {
+            dependsOn tasks.named('testClasses')
+            classpath = sourceSets.test.runtimeClasspath
+            mainClass = entryPoint
+            javaLauncher = javaToolchains.launcherFor { languageVersion = JavaLanguageVersion.of(17) }
+            maxHeapSize = '256m'
+            workingDir = new File(runtimeRoot, project.name + '-' + taskName)
+            systemProperty 'qzguard.testDir', new File(workingDir, 'core-tests').absolutePath
+            if (taskName == 'catalogCompatibilityTest') args rootProject.file('../../catalog/blacklist-extension.tsv').absolutePath
+            if (taskName == 'clientReporterSmoke') args new File(workingDir, 'client-config').absolutePath
+            doFirst { workingDir.mkdirs() }
+        }
+    }
+    tasks.named('check') { dependsOn checks.keySet() }
+    processResources {
+        inputs.property 'version', project.version
+        filesMatching(['fabric.mod.json', 'META-INF/mods.toml']) { expand version: project.version }
+    }
+    loom {
+        runs {
+            server { runDir(new File(runtimeRoot, project.name + '-server').absolutePath) }
+            client { runDir(new File(runtimeRoot, project.name + '-client').absolutePath) }
+        }
+    }
+}

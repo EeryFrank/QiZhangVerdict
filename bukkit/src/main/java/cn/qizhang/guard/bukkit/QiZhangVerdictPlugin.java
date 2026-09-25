@@ -119,7 +119,9 @@ public final class QiZhangVerdictPlugin extends JavaPlugin implements Listener, 
             if (guard.requiresCompanion()) waiting.add(id);
             byte[] challenge = guard.challenge(id, System.currentTimeMillis());
             challenges.put(id, challenge);
-            Bukkit.getScheduler().runTaskLater(this, () -> { if (player.isOnline() && challenges.containsKey(id)) player.sendPluginMessage(this, channel, challenge); }, 2L);
+            Bukkit.getScheduler().runTaskLater(this, new PendingChallengeTask(player,
+                    () -> Bukkit.getPlayer(id), player::isOnline, () -> challenges.get(id),
+                    current -> player.sendPluginMessage(this, channel, current)), 2L);
         } catch (RuntimeException ex) {
             cleanup(id); player.kickPlayer("QiZhangVerdict: admission expired; reconnect.");
             getLogger().warning("Could not confirm session " + id + ": " + ex.getMessage());

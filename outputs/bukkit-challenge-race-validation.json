@@ -1,0 +1,374 @@
+{
+  "schemaVersion": 1,
+  "generatedUtc": "2026-09-25T12:38:17.486170+00:00",
+  "repairVerified": true,
+  "allExperimentExpectationsConfirmed": true,
+  "allProductAttemptsPassed": false,
+  "sourceCorrection": "Bukkit PendingChallengeTask resolves current bytes at send time and checks original Player identity and online status.",
+  "scope": "One Purpur 1.21.1 build2329 real-server/TCP regression comparing the published old Bukkit JAR with the new development JAR. TCP client models delayed/latest-request coalescing, not the production ClientReporter implementation.",
+  "experiments": [
+    {
+      "id": "bukkit-race-old-02",
+      "artifactVersion": "0.2.0-test.1",
+      "artifactSha256": "1e54c48f744b61cc23efe28b8516132d13dba601d9b36beab88c1da3a849f1b7",
+      "artifactBytes": 73684,
+      "server": "Purpur 1.21.1 build2329",
+      "serverSha256": "30403cf54f981f16e1403f172645e82d3e4a59ad6c9f1d8e98df99edb1f8ae4c",
+      "javaRuntime": "Oracle Java21.0.8+12-LTS-250 (server bootstrap log)",
+      "minecraftProtocolVersion": "1.66.2",
+      "tcpChallengeOrder": "A-B-A",
+      "challengePayloadSha256": [
+        "6219b1bd2bf661fc165fb5d8845d390e8219d01c47e808e9937044f90c623f45",
+        "e6bcd39e29d2e0f41b98d650482f3159773a9df1bd28672021b730cdbafcd285",
+        "6219b1bd2bf661fc165fb5d8845d390e8219d01c47e808e9937044f90c623f45"
+      ],
+      "controlTicks": [
+        {
+          "stage": "BEFORE_RELOAD",
+          "tick": 29,
+          "joinedTick": 28,
+          "timeMs": 1463.0959
+        },
+        {
+          "stage": "AFTER_RELOAD",
+          "tick": 29,
+          "joinedTick": 28,
+          "timeMs": 1468.0233
+        },
+        {
+          "stage": "CHECKPOINT",
+          "tick": 32,
+          "joinedTick": 28,
+          "timeMs": 4206.6952
+        }
+      ],
+      "oneReportSent": true,
+      "productPassed": false,
+      "knownBugReproduced": true,
+      "expectedOutcomeConfirmed": true,
+      "observationGroups": 5,
+      "observations": [
+        "complete default policy unchanged before join",
+        "actual reload completed before original two-tick callback with strict policy",
+        "frozen product actually sends superseded A after B",
+        "superseded last report actually expires without accepted device association",
+        "default policy remains byte-identical and timeout does not create bans"
+      ],
+      "secondsJoinToTimeout": 20.224,
+      "onlineSecondsAfterReport": null,
+      "deviceAssociationPersisted": false,
+      "noPermanentBans": true,
+      "policyKeys": 13,
+      "policyChanged": false,
+      "policySha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+      "tickRateRestoredTo20": true,
+      "ownedServerPid": 57688,
+      "serverExitCode": 0,
+      "protocolExitCode": 0,
+      "normalStop": true,
+      "clientEnded": true,
+      "qaCompileExitCode": 0,
+      "qaPluginSha256": "4f378a9cc135816536ec965f578a87fb24a25b588a05edb1ace5a2cbfba1598b",
+      "warnings": {
+        "protocolPartialReadErrorCount": 1,
+        "retained": true,
+        "classification": "Upstream protocol-library registry/inventory parsing warning; independent qzguard messages, exact ordering, status, association and shutdown still observed. Not treated as evidence of general packet decoding correctness."
+      },
+      "evidence": {
+        "fixture.json": "outputs/evidence/bukkit-challenge-race-old-fixture.json",
+        "result.json": "outputs/evidence/bukkit-challenge-race-old-result.json",
+        "console.log": "outputs/evidence/bukkit-challenge-race-old-console.log",
+        "protocol.log": "outputs/evidence/bukkit-challenge-race-old-protocol.log",
+        "protocol-result.json": "outputs/evidence/bukkit-challenge-race-old-protocol-result.json",
+        "qa-compile.log": "outputs/evidence/bukkit-challenge-race-old-qa-compile.log",
+        "commands.queue": "outputs/evidence/bukkit-challenge-race-old-commands.queue",
+        "default-policy-reference.properties": "outputs/evidence/bukkit-challenge-race-old-default-policy-reference.properties"
+      }
+    },
+    {
+      "id": "bukkit-race-fixed-01",
+      "artifactVersion": "0.2.1-dev",
+      "artifactSha256": "9849a60374ea1bb18aae2af0ee479593312437a9665b803a3f847a07c570b2c8",
+      "artifactBytes": 74976,
+      "server": "Purpur 1.21.1 build2329",
+      "serverSha256": "30403cf54f981f16e1403f172645e82d3e4a59ad6c9f1d8e98df99edb1f8ae4c",
+      "javaRuntime": "Oracle Java21.0.8+12-LTS-250 (server bootstrap log)",
+      "minecraftProtocolVersion": "1.66.2",
+      "tcpChallengeOrder": "A-B-B",
+      "challengePayloadSha256": [
+        "05e941dfb2b7fd549c18412a43ecef69857ba1831aa253164a2db3b29f8a25d9",
+        "5fee04cec84cf68754fb20837a900d529a8fef30b83062889befb4ae70798401",
+        "5fee04cec84cf68754fb20837a900d529a8fef30b83062889befb4ae70798401"
+      ],
+      "controlTicks": [
+        {
+          "stage": "BEFORE_RELOAD",
+          "tick": 28,
+          "joinedTick": 27,
+          "timeMs": 1428.4539
+        },
+        {
+          "stage": "AFTER_RELOAD",
+          "tick": 28,
+          "joinedTick": 27,
+          "timeMs": 1433.7669
+        },
+        {
+          "stage": "CHECKPOINT",
+          "tick": 31,
+          "joinedTick": 27,
+          "timeMs": 4158.7654
+        }
+      ],
+      "oneReportSent": true,
+      "productPassed": true,
+      "knownBugReproduced": false,
+      "expectedOutcomeConfirmed": true,
+      "observationGroups": 6,
+      "observations": [
+        "complete default policy unchanged before join",
+        "actual reload completed before original two-tick callback with strict policy",
+        "actual delayed send preserves current B",
+        "server persists the exact synthetic account/device association",
+        "one accepted report stays online past the unmodified twenty-second deadline",
+        "default policy remains byte-identical and timeout does not create bans"
+      ],
+      "secondsJoinToTimeout": null,
+      "onlineSecondsAfterReport": 22.043,
+      "deviceAssociationPersisted": true,
+      "noPermanentBans": true,
+      "policyKeys": 13,
+      "policyChanged": false,
+      "policySha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+      "tickRateRestoredTo20": true,
+      "ownedServerPid": 91684,
+      "serverExitCode": 0,
+      "protocolExitCode": 0,
+      "normalStop": true,
+      "clientEnded": true,
+      "qaCompileExitCode": 0,
+      "qaPluginSha256": "4bd4ee4c864b846fd0e856e214ec88a909feddd701158339fc6431b5c84a2419",
+      "warnings": {
+        "protocolPartialReadErrorCount": 1,
+        "retained": true,
+        "classification": "Upstream protocol-library registry/inventory parsing warning; independent qzguard messages, exact ordering, status, association and shutdown still observed. Not treated as evidence of general packet decoding correctness."
+      },
+      "evidence": {
+        "fixture.json": "outputs/evidence/bukkit-challenge-race-fixed-fixture.json",
+        "result.json": "outputs/evidence/bukkit-challenge-race-fixed-result.json",
+        "console.log": "outputs/evidence/bukkit-challenge-race-fixed-console.log",
+        "protocol.log": "outputs/evidence/bukkit-challenge-race-fixed-protocol.log",
+        "protocol-result.json": "outputs/evidence/bukkit-challenge-race-fixed-protocol-result.json",
+        "qa-compile.log": "outputs/evidence/bukkit-challenge-race-fixed-qa-compile.log",
+        "commands.queue": "outputs/evidence/bukkit-challenge-race-fixed-commands.queue",
+        "default-policy-reference.properties": "outputs/evidence/bukkit-challenge-race-fixed-default-policy-reference.properties"
+      }
+    }
+  ],
+  "assertionAccounting": {
+    "totalObservedGroups": 11,
+    "oldKnownBugReproductionGroups": 5,
+    "newProductPassingGroups": 6,
+    "note": "Old five groups prove the failure, and are not counted as product acceptance."
+  },
+  "timingControl": {
+    "qaPlugin": "QVChallengeRaceQA, compiled only from recorded source against existing Spigot1.8.8 API, no new dependency download",
+    "api": "Real PlayerJoinEvent and PlayerRegisterChannelEvent listeners plus Bukkit dispatchCommand/sendPluginMessage/runTaskLater. No reflection, synthetic Bukkit events or guard replacement classes.",
+    "globalScope": "tick rate changes only the fresh isolated loopback test server JVM; instances ran sequentially on25679. No existing server was touched.",
+    "change": "Original vanilla tick rate1 after join; reload on actual channel registration before join+2ticks; CHECKPOINT at join+4ticks and restore20.",
+    "defaultGuardPolicyAlterations": {},
+    "latestResponse": "Client waits for CHECKPOINT then sends exactly one response to its latest received challenge."
+  },
+  "historicalPreparations": [
+    {
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\next-core-audit\\bukkit-race-old-01",
+      "executed": false,
+      "javaStarted": false,
+      "reason": "Initial pure-file preparation logged complete payload hex. It was superseded before execution to omit server scope values from public protocol output. Its snapshots remain unchanged in cache."
+    }
+  ],
+  "attemptsNotOmitted": true,
+  "runtimeFailures": {
+    "publishedOldArtifact": "Actual stale challenge order and timed-out admission retained as expected failure.",
+    "unexpectedFixtureFailures": []
+  },
+  "resourceAndExit": {
+    "javaSlotReleased": true,
+    "ownedServerPidsExited": [
+      57688,
+      91684
+    ],
+    "port25679BindListenAfterTests": true,
+    "serverMaxHeapMiB": 1536,
+    "qaCompilerMaxHeapMiB": 128,
+    "minimumFreeGiB": 3.5,
+    "instancesConcurrent": false
+  },
+  "sharedExecutionEvidence": {
+    "executed-helper.py": "outputs/evidence/bukkit-challenge-race-shared-executed-helper.py",
+    "executed-base-helper.py": "outputs/evidence/bukkit-challenge-race-shared-executed-base-helper.py",
+    "executed-protocol.cjs": "outputs/evidence/bukkit-challenge-race-shared-executed-protocol.cjs",
+    "executed-package-lock.json": "outputs/evidence/bukkit-challenge-race-shared-executed-package-lock.json",
+    "qa-source/qa/ChallengeRace.java": "outputs/evidence/bukkit-challenge-race-shared-qa-source-qa-ChallengeRace.java",
+    "qa-source/plugin.yml": "outputs/evidence/bukkit-challenge-race-shared-qa-source-plugin.yml",
+    "qa-source/LICENSE": "outputs/evidence/bukkit-challenge-race-shared-qa-source-LICENSE"
+  },
+  "evidence": [
+    {
+      "file": "outputs/evidence/bukkit-challenge-race-old-fixture.json",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\next-core-audit\\bukkit-race-old-02\\fixture.json",
+      "sha256": "57a42edd1d7bc04a6b04532fb605fd19eab2ece8b18e925802ab076f8357ee05",
+      "bytes": 2250
+    },
+    {
+      "file": "outputs/evidence/bukkit-challenge-race-old-result.json",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\next-core-audit\\bukkit-race-old-02\\result.json",
+      "sha256": "c1ebfca2fcfe36c51fcc89f79558869dd9b38fd7a1b06368814212893379d34c",
+      "bytes": 5127
+    },
+    {
+      "file": "outputs/evidence/bukkit-challenge-race-old-console.log",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\next-core-audit\\bukkit-race-old-02\\console.log",
+      "sha256": "2cb4f6d45b76adb1a3fb9e7cacc91a45140f88db4152f8b2801fba955c0994d7",
+      "bytes": 9098
+    },
+    {
+      "file": "outputs/evidence/bukkit-challenge-race-old-protocol.log",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\next-core-audit\\bukkit-race-old-02\\protocol.log",
+      "sha256": "bbad0f76c206688fae3ad03bfc8aae6a12927a5dedfbb1a8756d9f59aa3d85ed",
+      "bytes": 1906
+    },
+    {
+      "file": "outputs/evidence/bukkit-challenge-race-old-protocol-result.json",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\next-core-audit\\bukkit-race-old-02\\protocol-result.json",
+      "sha256": "790f79ae80141c2779405d61c6f0d30883bb1bcc791d41715db23c4eb54c7e23",
+      "bytes": 1953
+    },
+    {
+      "file": "outputs/evidence/bukkit-challenge-race-old-qa-compile.log",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\next-core-audit\\bukkit-race-old-02\\qa-compile.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "outputs/evidence/bukkit-challenge-race-old-commands.queue",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\next-core-audit\\bukkit-race-old-02\\commands.queue",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "outputs/evidence/bukkit-challenge-race-old-default-policy-reference.properties",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\next-core-audit\\bukkit-race-old-02\\default-policy-reference.properties",
+      "sha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+      "bytes": 396
+    },
+    {
+      "file": "outputs/evidence/bukkit-challenge-race-fixed-fixture.json",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\next-core-audit\\bukkit-race-fixed-01\\fixture.json",
+      "sha256": "37bbc2ac421ab8dda29aa42b8b8fc036db28ae6ed261a33710f3b049a11a3fa0",
+      "bytes": 2245
+    },
+    {
+      "file": "outputs/evidence/bukkit-challenge-race-fixed-result.json",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\next-core-audit\\bukkit-race-fixed-01\\result.json",
+      "sha256": "002c1ad30f623c09d8f98830a20c2d85ea1503e340d02be880be897a45bb7208",
+      "bytes": 4971
+    },
+    {
+      "file": "outputs/evidence/bukkit-challenge-race-fixed-console.log",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\next-core-audit\\bukkit-race-fixed-01\\console.log",
+      "sha256": "edee1a769d0f8437017f9c8bf6e6e6f31b25dc5f3a1a3a372cc69cbe7f309516",
+      "bytes": 9229
+    },
+    {
+      "file": "outputs/evidence/bukkit-challenge-race-fixed-protocol.log",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\next-core-audit\\bukkit-race-fixed-01\\protocol.log",
+      "sha256": "cf3d29d59e3c521097a6efc910024fcc14d8e284efb2a33198fea32616f30127",
+      "bytes": 1965
+    },
+    {
+      "file": "outputs/evidence/bukkit-challenge-race-fixed-protocol-result.json",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\next-core-audit\\bukkit-race-fixed-01\\protocol-result.json",
+      "sha256": "f7490dbac5e5ef749be2eee43654f765d0371f3bbe6a5508dfb1d1e82751379c",
+      "bytes": 1799
+    },
+    {
+      "file": "outputs/evidence/bukkit-challenge-race-fixed-qa-compile.log",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\next-core-audit\\bukkit-race-fixed-01\\qa-compile.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "outputs/evidence/bukkit-challenge-race-fixed-commands.queue",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\next-core-audit\\bukkit-race-fixed-01\\commands.queue",
+      "sha256": "a03908e53f751fd1e7197be4790c6031cf56de8e41a2e1bff673c5488002fefe",
+      "bytes": 17
+    },
+    {
+      "file": "outputs/evidence/bukkit-challenge-race-fixed-default-policy-reference.properties",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\next-core-audit\\bukkit-race-fixed-01\\default-policy-reference.properties",
+      "sha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+      "bytes": 396
+    },
+    {
+      "file": "outputs/evidence/bukkit-challenge-race-shared-executed-helper.py",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\next-core-audit\\bukkit-race-fixed-01\\executed-helper.py",
+      "sha256": "b6d58fa2c680010dd5bf23eb1aa8d42845a3a4d057b5211b8fd9cbc47ba0865a",
+      "bytes": 18100
+    },
+    {
+      "file": "outputs/evidence/bukkit-challenge-race-shared-executed-base-helper.py",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\next-core-audit\\bukkit-race-fixed-01\\executed-base-helper.py",
+      "sha256": "326be5912682dbb833f5ec5ea81788de020d2e0daf1a9b6e70ed3553a41946c9",
+      "bytes": 14474
+    },
+    {
+      "file": "outputs/evidence/bukkit-challenge-race-shared-executed-protocol.cjs",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\next-core-audit\\bukkit-race-fixed-01\\executed-protocol.cjs",
+      "sha256": "e9ccaaa121b7b10907d58ea1c60513f33e7480b816acdcf5ae82cb908c6811ea",
+      "bytes": 10067
+    },
+    {
+      "file": "outputs/evidence/bukkit-challenge-race-shared-executed-package-lock.json",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\next-core-audit\\bukkit-race-fixed-01\\executed-package-lock.json",
+      "sha256": "d20909e9e6e085ff2dfd2621eb6143c6634858f6b01e463b6e6b9daa7f08e335",
+      "bytes": 56370
+    },
+    {
+      "file": "outputs/evidence/bukkit-challenge-race-shared-qa-source-qa-ChallengeRace.java",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\next-core-audit\\bukkit-race-fixed-01\\qa-source\\qa\\ChallengeRace.java",
+      "sha256": "c6b32d6690c64bbe44a45d4b9d10647c9166f27bbdb6739a7966e4f59d61f8cf",
+      "bytes": 3408
+    },
+    {
+      "file": "outputs/evidence/bukkit-challenge-race-shared-qa-source-plugin.yml",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\next-core-audit\\bukkit-race-fixed-01\\qa-source\\plugin.yml",
+      "sha256": "a6a2c51b3a196c3c41956d8124c6b74afa924bf72f7daba7b0cbdbc9e4d816d2",
+      "bytes": 173
+    },
+    {
+      "file": "outputs/evidence/bukkit-challenge-race-shared-qa-source-LICENSE",
+      "source": "E:\\CodexTemp\\QiZhangVerdict\\next-core-audit\\bukkit-race-fixed-01\\qa-source\\LICENSE",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "bytes": 35149
+    }
+  ],
+  "evidenceFileCount": 23,
+  "evidenceBytes": 179093,
+  "privacy": {
+    "actualScopesAndReportedDeviceValuesScannedPrivatelyAgainstPublicBytes": true,
+    "credentialMarkerScanPassed": true,
+    "accountStateCopied": false,
+    "scopeFileCopied": false,
+    "rawDeviceValueCopied": false,
+    "worldCopied": false,
+    "serverOrMinecraftBinaryCopied": false,
+    "syntheticAccountNameAndUuidRetained": true
+  },
+  "limits": [
+    "The production ClientReporter and OS/VM probing do not execute here; the TCP sender deliberately models one late coalesced response.",
+    "Only this Purpur1.21.1 runtime is demonstrated. The Java8 production-Runnable checks are documented separately.",
+    "No gameplay, cheat-detection breadth, X-ray protection, performance, or cross-loader claim follows from this regression.",
+    "Nonfatal upstream protocol warnings remain in raw logs; no warning removal or fabricated service log was performed."
+  ]
+}

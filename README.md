@@ -16,6 +16,8 @@
 
 历史版本保持原字节和原验证范围：[0.1.1](docs/validation-0.1.1.md)、[preview.1](docs/preview-0.2.0-dev-preview.1.md)、[preview.2](docs/preview-0.2.0-dev-preview.2.md)。
 
+开发分支另有尚未发布的 [1.19.2](docs/adapter-1.19.2.md) 和 [1.20.4](docs/adapter-1.20.4.md) 适配候选，已完成构建及成品内核心回归，专服和客户端验收分开记录。Bukkit `0.2.1-dev` 修复登录期间重载规则可能导致旧挑战覆盖新挑战的问题，已完成[真实服务器对比验证](docs/bukkit-challenge-race.md)。这些开发结果不改变上方已发布安装包的版本、字节和验证范围。
+
 ## 默认登录规则
 
 - 同一个 IP、同一个设备标识：最多 **1 个同时在线账号**。

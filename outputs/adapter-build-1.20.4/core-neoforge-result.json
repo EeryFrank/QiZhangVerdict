@@ -1,0 +1,123 @@
+{
+  "loader": "neoforge",
+  "artifact": "platforms\\1.20.4\\neoforge\\build\\libs\\qizhangverdict-neoforge-1.20.4-0.3.0-dev.jar",
+  "sha256": "c3e742892ef723d035b81e165eed3ef4a560aa249349183298dd0f9b45e48f66",
+  "scope": "Only packaged core regressions on Java17; no Minecraft loader, server or rendered client execution.",
+  "java": "E:\\CodexTemp\\mods-danzi\\minecraft\\runtime\\java-runtime-gamma\\windows-x64\\java-runtime-gamma\\bin\\java.exe",
+  "javac": "E:\\CodexTemp\\mods-danzi\\minecraft\\runtime\\java-runtime-gamma\\windows-x64\\java-runtime-gamma\\bin\\javac.exe",
+  "passed": true,
+  "checks": [
+    {
+      "name": "java-version",
+      "argv": [
+        "E:\\CodexTemp\\mods-danzi\\minecraft\\runtime\\java-runtime-gamma\\windows-x64\\java-runtime-gamma\\bin\\java.exe",
+        "-version"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "log": "java-version.log",
+      "bytes": 191,
+      "sha256": "2a940e0ff4d3791bc057d76c8b784157924644c026da59c1ef4114b8d282a033"
+    },
+    {
+      "name": "compile-runners",
+      "argv": [
+        "E:\\CodexTemp\\mods-danzi\\minecraft\\runtime\\java-runtime-gamma\\windows-x64\\java-runtime-gamma\\bin\\javac.exe",
+        "-J-Xmx256m",
+        "--release",
+        "8",
+        "-encoding",
+        "UTF-8",
+        "-sourcepath",
+        "",
+        "-cp",
+        "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.20.4\\neoforge\\build\\libs\\qizhangverdict-neoforge-1.20.4-0.3.0-dev.jar",
+        "-d",
+        "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\artifact-core\\01\\neoforge\\runner-classes",
+        "E:\\Codex_work\\QiZhangVerdict\\core\\src\\test\\java\\cn\\qizhang\\guard\\core\\SecurityRegressionTest.java",
+        "E:\\Codex_work\\QiZhangVerdict\\core\\src\\test\\java\\cn\\qizhang\\guard\\core\\CatalogCompatibilityTest.java",
+        "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\artifact-core\\01\\neoforge\\ArtifactOriginCheck.java"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "log": "compile-runners.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "artifact-origin",
+      "argv": [
+        "E:\\CodexTemp\\mods-danzi\\minecraft\\runtime\\java-runtime-gamma\\windows-x64\\java-runtime-gamma\\bin\\java.exe",
+        "-Xmx128M",
+        "-XX:MaxMetaspaceSize=64M",
+        "-Djava.io.tmpdir=E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\artifact-core\\01\\neoforge\\temp",
+        "-Dqzguard.testDir=E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\artifact-core\\01\\neoforge\\test-data",
+        "-cp",
+        "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\artifact-core\\01\\neoforge\\runner-classes;E:\\Codex_work\\QiZhangVerdict\\platforms\\1.20.4\\neoforge\\build\\libs\\qizhangverdict-neoforge-1.20.4-0.3.0-dev.jar",
+        "ArtifactOriginCheck",
+        "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.20.4\\neoforge\\build\\libs\\qizhangverdict-neoforge-1.20.4-0.3.0-dev.jar"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "log": "artifact-origin.log",
+      "bytes": 34,
+      "sha256": "951b419fb51e07d362cf0b7174aea00acd257499a601cc4a1bc77e55f205ed22"
+    },
+    {
+      "name": "security",
+      "argv": [
+        "E:\\CodexTemp\\mods-danzi\\minecraft\\runtime\\java-runtime-gamma\\windows-x64\\java-runtime-gamma\\bin\\java.exe",
+        "-Xmx128M",
+        "-XX:MaxMetaspaceSize=64M",
+        "-Djava.io.tmpdir=E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\artifact-core\\01\\neoforge\\temp",
+        "-Dqzguard.testDir=E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\artifact-core\\01\\neoforge\\test-data",
+        "-cp",
+        "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\artifact-core\\01\\neoforge\\runner-classes;E:\\Codex_work\\QiZhangVerdict\\platforms\\1.20.4\\neoforge\\build\\libs\\qizhangverdict-neoforge-1.20.4-0.3.0-dev.jar",
+        "cn.qizhang.guard.core.SecurityRegressionTest"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "log": "security.log",
+      "bytes": 3229,
+      "sha256": "1e26be45a2a53ee19e208f27f4e32b96db5c32f3c0dd7582a88d36147338e1fb"
+    },
+    {
+      "name": "catalog",
+      "argv": [
+        "E:\\CodexTemp\\mods-danzi\\minecraft\\runtime\\java-runtime-gamma\\windows-x64\\java-runtime-gamma\\bin\\java.exe",
+        "-Xmx128M",
+        "-XX:MaxMetaspaceSize=64M",
+        "-Djava.io.tmpdir=E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\artifact-core\\01\\neoforge\\temp",
+        "-Dqzguard.testDir=E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\artifact-core\\01\\neoforge\\test-data",
+        "-cp",
+        "E:\\CodexTemp\\QiZhangVerdict\\next-platforms\\1.20.4\\artifact-core\\01\\neoforge\\runner-classes;E:\\Codex_work\\QiZhangVerdict\\platforms\\1.20.4\\neoforge\\build\\libs\\qizhangverdict-neoforge-1.20.4-0.3.0-dev.jar",
+        "cn.qizhang.guard.core.CatalogCompatibilityTest",
+        "E:\\Codex_work\\QiZhangVerdict\\catalog\\blacklist-extension.tsv"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "log": "catalog.log",
+      "bytes": 3262,
+      "sha256": "1df88d7a85a7481da4a7ab479ac5ef7085d6f440dfcc8fb0ad8a19950ae9855e"
+    }
+  ],
+  "sourceSha256": {
+    "core/src/test/java/cn/qizhang/guard/core/SecurityRegressionTest.java": "f1b0c445eaf5229e889b94d4c5176dbbe72eccebd81febe58b78ff980d716985",
+    "core/src/test/java/cn/qizhang/guard/core/CatalogCompatibilityTest.java": "29ddd1bed5f88c5917d9dfd8f67454f476ac3e2bd26b3bb404e29b4503268980",
+    "catalog/blacklist-extension.tsv": "66a633ad3faa2d7d666c43e2b3b544437054345e102103d90fe3b5db022c46a3",
+    "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+    "NOTICE": "47514206d1ef6b6e26de075747b19c9aca8ae77b2b68d3f101dd4675c4b14155"
+  },
+  "runnerSha256": "f81d043d0ee1fdc05f55ee19a6ccf83a672437e32dee176178b8ccc27d323c25",
+  "gameStarted": false,
+  "runnerClassFiles": [
+    "ArtifactOriginCheck.class",
+    "cn/qizhang/guard/core/CatalogCompatibilityTest.class",
+    "cn/qizhang/guard/core/SecurityRegressionTest$Check.class",
+    "cn/qizhang/guard/core/SecurityRegressionTest.class"
+  ],
+  "securityCount": 57,
+  "catalogRuleCount": 37,
+  "catalogControlCount": 3,
+  "artifactUnchanged": true
+}

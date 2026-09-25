@@ -1,0 +1,121 @@
+{
+  "passed": true,
+  "expectedOutcomeConfirmed": true,
+  "fixture": {
+    "schemaVersion": 1,
+    "version": "1.21.1",
+    "build": "2329",
+    "serverSha256": "30403cf54f981f16e1403f172645e82d3e4a59ad6c9f1d8e98df99edb1f8ae4c",
+    "serverSourceUrl": "https://api.purpurmc.org/v2/purpur/1.21.1/2329/download",
+    "guardFile": "qizhangverdict-bukkit-0.2.1-dev.jar",
+    "guardSha256": "9849a60374ea1bb18aae2af0ee479593312437a9665b803a3f847a07c570b2c8",
+    "expectedOutcome": "fixed",
+    "policySha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+    "policyChanges": {},
+    "timingControl": "QA plugin uses vanilla tick rate 1 until join+4ticks, then restores 20; guard timeout/policy are unchanged.",
+    "host": "127.0.0.1",
+    "port": 25679,
+    "java": "D:\\Java\\jdk-21\\bin\\java.exe",
+    "javac": "E:\\CodexTemp\\QiZhangVerdict\\toolchains\\jdk8\\jdk8u504-b01\\bin\\javac.exe",
+    "node": "E:\\CodexTemp\\Codex\\RuntimeCache\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+    "nodeModules": "E:\\CodexTemp\\QiZhangVerdict\\legacy-protocol-qa\\node_modules",
+    "spigotApi": "E:\\CodexTemp\\Gradle\\QiZhang_Games\\caches\\modules-2\\files-2.1\\org.spigotmc\\spigot-api\\1.8.8-R0.1-SNAPSHOT\\164ca9702b04d7ff5f655e507ceafd9b50e7fca7\\spigot-api-1.8.8-R0.1-SNAPSHOT.jar",
+    "spigotApiSha256": "bc50bbc4d8226d75d0d75460828567b4580841d5987cae5c1d89b321f8ffc071",
+    "snapshots": {
+      "executed-helper.py": "b6d58fa2c680010dd5bf23eb1aa8d42845a3a4d057b5211b8fd9cbc47ba0865a",
+      "executed-base-helper.py": "326be5912682dbb833f5ec5ea81788de020d2e0daf1a9b6e70ed3553a41946c9",
+      "executed-protocol.cjs": "e9ccaaa121b7b10907d58ea1c60513f33e7480b816acdcf5ae82cb908c6811ea",
+      "executed-package-lock.json": "d20909e9e6e085ff2dfd2621eb6143c6634858f6b01e463b6e6b9daa7f08e335",
+      "qa-source/qa/ChallengeRace.java": "c6b32d6690c64bbe44a45d4b9d10647c9166f27bbdb6739a7966e4f59d61f8cf",
+      "qa-source/plugin.yml": "a6a2c51b3a196c3c41956d8124c6b74afa924bf72f7daba7b0cbdbc9e4d816d2",
+      "qa-source/LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+    },
+    "javaStartedByPrepare": false,
+    "scope": "Actual frozen/new product JAR, real Bukkit lifecycle and TCP, synthetic companion reports; no actual ClientReporter probe or real hardware assertion."
+  },
+  "availableBytesBeforeJava": 9973587968,
+  "qaCompileExitCode": 0,
+  "qaJarSha256": "4bd4ee4c864b846fd0e856e214ec88a909feddd701158339fc6431b5c84a2419",
+  "serverCommand": [
+    "D:\\Java\\jdk-21\\bin\\java.exe",
+    "-Xms256m",
+    "-Xmx1536m",
+    "-jar",
+    "server.jar",
+    "--nogui"
+  ],
+  "ownedServerPid": 91684,
+  "started": true,
+  "protocolExitCode": 0,
+  "protocol": {
+    "expectedOutcomeConfirmed": true,
+    "passed": true,
+    "knownBugReproduced": false,
+    "expected": "fixed",
+    "packets": [
+      {
+        "index": 0,
+        "duringReload": false,
+        "afterCheckpoint": false,
+        "payloadSha256": "05e941dfb2b7fd549c18412a43ecef69857ba1831aa253164a2db3b29f8a25d9",
+        "timeMs": 1428.3413
+      },
+      {
+        "index": 1,
+        "duringReload": true,
+        "afterCheckpoint": false,
+        "payloadSha256": "5fee04cec84cf68754fb20837a900d529a8fef30b83062889befb4ae70798401",
+        "timeMs": 1428.5663
+      },
+      {
+        "index": 2,
+        "duringReload": false,
+        "afterCheckpoint": false,
+        "payloadSha256": "5fee04cec84cf68754fb20837a900d529a8fef30b83062889befb4ae70798401",
+        "timeMs": 2155.5865
+      }
+    ],
+    "controls": [
+      {
+        "stage": "BEFORE_RELOAD",
+        "tick": 28,
+        "joinedTick": 27,
+        "timeMs": 1428.4539
+      },
+      {
+        "stage": "AFTER_RELOAD",
+        "tick": 28,
+        "joinedTick": 27,
+        "timeMs": 1433.7669
+      },
+      {
+        "stage": "CHECKPOINT",
+        "tick": 31,
+        "joinedTick": 27,
+        "timeMs": 4158.7654
+      }
+    ],
+    "checks": [
+      "complete default policy unchanged before join",
+      "actual reload completed before original two-tick callback with strict policy",
+      "actual delayed send preserves current B",
+      "server persists the exact synthetic account/device association",
+      "one accepted report stays online past the unmodified twenty-second deadline",
+      "default policy remains byte-identical and timeout does not create bans"
+    ],
+    "syntheticReport": true,
+    "lastChallengeMatchesReload": true,
+    "onlineSecondsAfterReport": 22.043,
+    "reportsSent": 1,
+    "deviceAssociationPersisted": true,
+    "kick": "",
+    "clientEnded": true,
+    "transportError": "",
+    "timingNotEstablished": false
+  },
+  "serverExitCode": 0,
+  "normalStop": true,
+  "policyAfterSha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+  "policyUnchanged": true,
+  "knownBugReproduced": false
+}

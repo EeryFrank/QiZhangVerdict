@@ -43,7 +43,9 @@ async function connect(options = {}) {
   client.on('kick_disconnect',p=>{state.kicked=JSON.stringify(p);});
   client.on('disconnect',p=>{state.kicked=JSON.stringify(p);});
   client.on('end',r=>{state.ended=true;state.endReason=String(r);active.delete(client);});
-  client.on('login',()=>{state.joined=true;client.write('custom_payload',{channel:'minecraft:register',data:Buffer.from('qzguard:main')});});
+  // Forge 43's stock ChannelList reader commits a channel only at a NUL byte;
+  // use the same terminated format emitted by its own registration writer.
+  client.on('login',()=>{state.joined=true;client.write('custom_payload',{channel:'minecraft:register',data:Buffer.from('qzguard:main\0')});});
   client.on('position',p=>{if(p.teleportId !== undefined)client.write('teleport_confirm',{teleportId:p.teleportId});});
   client.on('map_chunk',p=>{if(process.env.QV_TEST_ANTIXRAY === '1')inspectChunkPalettes(p.chunkData);});
   client.on('custom_payload',p=>{

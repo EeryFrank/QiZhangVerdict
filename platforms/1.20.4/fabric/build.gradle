@@ -1,0 +1,7 @@
+architectury { platformSetupLoomIde(); fabric() }
+dependencies {
+ modImplementation 'net.fabricmc:fabric-loader:0.16.14'
+ modImplementation 'net.fabricmc.fabric-api:fabric-api:0.97.3+1.20.4'
+}
+sourceSets.main.java.srcDir rootProject.file('../1.20.1/fabric/src/main/java')
+loom { mixin { defaultRefmapName = 'qizhangverdict.refmap.json' } }

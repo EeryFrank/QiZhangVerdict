@@ -1,0 +1,595 @@
+{
+  "generatedUtc": "2026-09-25T12:20:41.780153+00:00",
+  "minecraft": "1.20.4",
+  "forge": "49.2.9",
+  "phase": "source-ready; not compiled or run",
+  "officialInputs": "official-inputs.json",
+  "binaryApiSignatures": {
+    "net/minecraftforge/network/ChannelBuilder": {
+      "classMajor": 61,
+      "fields": [
+        {
+          "name": "name",
+          "descriptor": "Lnet/minecraft/resources/ResourceLocation;",
+          "access": 18
+        },
+        {
+          "name": "networkProtocolVersion",
+          "descriptor": "I",
+          "access": 2
+        },
+        {
+          "name": "clientAcceptedVersions",
+          "descriptor": "Lnet/minecraftforge/network/Channel$VersionTest;",
+          "access": 2
+        },
+        {
+          "name": "serverAcceptedVersions",
+          "descriptor": "Lnet/minecraftforge/network/Channel$VersionTest;",
+          "access": 2
+        },
+        {
+          "name": "attributes",
+          "descriptor": "Ljava/util/Map;",
+          "access": 2
+        },
+        {
+          "name": "connectionHandler",
+          "descriptor": "Ljava/util/function/Consumer;",
+          "access": 2
+        }
+      ],
+      "methods": [
+        {
+          "name": "named",
+          "descriptor": "(Ljava/lang/String;)Lnet/minecraftforge/network/ChannelBuilder;",
+          "access": 9
+        },
+        {
+          "name": "named",
+          "descriptor": "(Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraftforge/network/ChannelBuilder;",
+          "access": 9
+        },
+        {
+          "name": "<init>",
+          "descriptor": "(Lnet/minecraft/resources/ResourceLocation;)V",
+          "access": 2
+        },
+        {
+          "name": "networkProtocolVersion",
+          "descriptor": "(I)Lnet/minecraftforge/network/ChannelBuilder;",
+          "access": 1
+        },
+        {
+          "name": "acceptedVersions",
+          "descriptor": "(Lnet/minecraftforge/network/Channel$VersionTest;)Lnet/minecraftforge/network/ChannelBuilder;",
+          "access": 1
+        },
+        {
+          "name": "clientAcceptedVersions",
+          "descriptor": "(Lnet/minecraftforge/network/Channel$VersionTest;)Lnet/minecraftforge/network/ChannelBuilder;",
+          "access": 1
+        },
+        {
+          "name": "serverAcceptedVersions",
+          "descriptor": "(Lnet/minecraftforge/network/Channel$VersionTest;)Lnet/minecraftforge/network/ChannelBuilder;",
+          "access": 1
+        },
+        {
+          "name": "optional",
+          "descriptor": "()Lnet/minecraftforge/network/ChannelBuilder;",
+          "access": 1
+        },
+        {
+          "name": "optionalServer",
+          "descriptor": "()Lnet/minecraftforge/network/ChannelBuilder;",
+          "access": 1
+        },
+        {
+          "name": "optionalClient",
+          "descriptor": "()Lnet/minecraftforge/network/ChannelBuilder;",
+          "access": 1
+        },
+        {
+          "name": "attribute",
+          "descriptor": "(Lio/netty/util/AttributeKey;Ljava/util/function/Supplier;)Lnet/minecraftforge/network/ChannelBuilder;",
+          "access": 1
+        },
+        {
+          "name": "attribute",
+          "descriptor": "(Lio/netty/util/AttributeKey;Ljava/util/function/Function;)Lnet/minecraftforge/network/ChannelBuilder;",
+          "access": 1
+        },
+        {
+          "name": "connectionHandler",
+          "descriptor": "(Ljava/util/function/Consumer;)Lnet/minecraftforge/network/ChannelBuilder;",
+          "access": 1
+        },
+        {
+          "name": "createNetworkInstance",
+          "descriptor": "()Lnet/minecraftforge/network/NetworkInstance;",
+          "access": 2
+        },
+        {
+          "name": "getClientAcceptedVersions",
+          "descriptor": "()Lnet/minecraftforge/network/Channel$VersionTest;",
+          "access": 2
+        },
+        {
+          "name": "getServerAcceptedVersions",
+          "descriptor": "()Lnet/minecraftforge/network/Channel$VersionTest;",
+          "access": 2
+        },
+        {
+          "name": "simpleChannel",
+          "descriptor": "()Lnet/minecraftforge/network/SimpleChannel;",
+          "access": 1
+        },
+        {
+          "name": "eventNetworkChannel",
+          "descriptor": "()Lnet/minecraftforge/network/EventNetworkChannel;",
+          "access": 1
+        },
+        {
+          "name": "lambda$attribute$0",
+          "descriptor": "(Ljava/util/function/Supplier;Lnet/minecraft/network/Connection;)Ljava/lang/Object;",
+          "access": 4106
+        }
+      ]
+    },
+    "net/minecraftforge/network/EventNetworkChannel": {
+      "classMajor": 61,
+      "fields": [],
+      "methods": [
+        {
+          "name": "<init>",
+          "descriptor": "(Lnet/minecraftforge/network/NetworkInstance;)V",
+          "access": 0
+        },
+        {
+          "name": "addListener",
+          "descriptor": "(Ljava/util/function/Consumer;)Lnet/minecraftforge/network/EventNetworkChannel;",
+          "access": 1
+        },
+        {
+          "name": "registerObject",
+          "descriptor": "(Ljava/lang/Object;)Lnet/minecraftforge/network/EventNetworkChannel;",
+          "access": 1
+        },
+        {
+          "name": "unregisterObject",
+          "descriptor": "(Ljava/lang/Object;)V",
+          "access": 1
+        },
+        {
+          "name": "toBuffer",
+          "descriptor": "(Lnet/minecraft/network/FriendlyByteBuf;)Lnet/minecraft/network/FriendlyByteBuf;",
+          "access": 1
+        },
+        {
+          "name": "toBuffer",
+          "descriptor": "(Ljava/lang/Object;)Lnet/minecraft/network/FriendlyByteBuf;",
+          "access": 4161
+        }
+      ]
+    },
+    "net/minecraftforge/network/Channel": {
+      "classMajor": 61,
+      "fields": [
+        {
+          "name": "instance",
+          "descriptor": "Lnet/minecraftforge/network/NetworkInstance;",
+          "access": 20
+        }
+      ],
+      "methods": [
+        {
+          "name": "<init>",
+          "descriptor": "(Lnet/minecraftforge/network/NetworkInstance;)V",
+          "access": 4
+        },
+        {
+          "name": "getName",
+          "descriptor": "()Lnet/minecraft/resources/ResourceLocation;",
+          "access": 1
+        },
+        {
+          "name": "getProtocolVersion",
+          "descriptor": "()I",
+          "access": 1
+        },
+        {
+          "name": "isRemotePresent",
+          "descriptor": "(Lnet/minecraft/network/Connection;)Z",
+          "access": 1
+        },
+        {
+          "name": "toBuffer",
+          "descriptor": "(Ljava/lang/Object;)Lnet/minecraft/network/FriendlyByteBuf;",
+          "access": 1025
+        },
+        {
+          "name": "toVanillaPacket",
+          "descriptor": "(Lnet/minecraft/network/Connection;Ljava/lang/Object;)Lnet/minecraft/network/protocol/Packet;",
+          "access": 0
+        },
+        {
+          "name": "send",
+          "descriptor": "(Ljava/lang/Object;Lnet/minecraft/network/Connection;)V",
+          "access": 1
+        },
+        {
+          "name": "send",
+          "descriptor": "(Ljava/lang/Object;Lnet/minecraftforge/network/PacketDistributor$PacketTarget;)V",
+          "access": 1
+        },
+        {
+          "name": "reply",
+          "descriptor": "(Ljava/lang/Object;Lnet/minecraftforge/event/network/CustomPayloadEvent$Context;)V",
+          "access": 1
+        }
+      ]
+    },
+    "net/minecraftforge/event/network/CustomPayloadEvent": {
+      "classMajor": 61,
+      "fields": [
+        {
+          "name": "channel",
+          "descriptor": "Lnet/minecraft/resources/ResourceLocation;",
+          "access": 18
+        },
+        {
+          "name": "payload",
+          "descriptor": "Lnet/minecraft/network/FriendlyByteBuf;",
+          "access": 18
+        },
+        {
+          "name": "source",
+          "descriptor": "Lnet/minecraftforge/event/network/CustomPayloadEvent$Context;",
+          "access": 18
+        },
+        {
+          "name": "loginIndex",
+          "descriptor": "I",
+          "access": 18
+        }
+      ],
+      "methods": [
+        {
+          "name": "<init>",
+          "descriptor": "(Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/network/FriendlyByteBuf;Lnet/minecraftforge/event/network/CustomPayloadEvent$Context;I)V",
+          "access": 1
+        },
+        {
+          "name": "<init>",
+          "descriptor": "(Lnet/minecraftforge/network/ICustomPacket;Lnet/minecraftforge/event/network/CustomPayloadEvent$Context;)V",
+          "access": 1
+        },
+        {
+          "name": "getChannel",
+          "descriptor": "()Lnet/minecraft/resources/ResourceLocation;",
+          "access": 1
+        },
+        {
+          "name": "getPayload",
+          "descriptor": "()Lnet/minecraft/network/FriendlyByteBuf;",
+          "access": 1
+        },
+        {
+          "name": "getLoginIndex",
+          "descriptor": "()I",
+          "access": 1
+        },
+        {
+          "name": "getSource",
+          "descriptor": "()Lnet/minecraftforge/event/network/CustomPayloadEvent$Context;",
+          "access": 1
+        }
+      ]
+    },
+    "net/minecraftforge/event/network/CustomPayloadEvent$Context": {
+      "classMajor": 61,
+      "fields": [
+        {
+          "name": "connection",
+          "descriptor": "Lnet/minecraft/network/Connection;",
+          "access": 18
+        },
+        {
+          "name": "networkDirection",
+          "descriptor": "Lnet/minecraftforge/network/NetworkDirection;",
+          "access": 18
+        },
+        {
+          "name": "packetHandled",
+          "descriptor": "Z",
+          "access": 2
+        }
+      ],
+      "methods": [
+        {
+          "name": "<init>",
+          "descriptor": "(Lnet/minecraft/network/Connection;Lnet/minecraftforge/network/NetworkDirection;)V",
+          "access": 1
+        },
+        {
+          "name": "isClientSide",
+          "descriptor": "()Z",
+          "access": 1
+        },
+        {
+          "name": "isServerSide",
+          "descriptor": "()Z",
+          "access": 1
+        },
+        {
+          "name": "getDirection",
+          "descriptor": "()Lnet/minecraftforge/network/NetworkDirection;",
+          "access": 1
+        },
+        {
+          "name": "getConnection",
+          "descriptor": "()Lnet/minecraft/network/Connection;",
+          "access": 1
+        },
+        {
+          "name": "attr",
+          "descriptor": "(Lio/netty/util/AttributeKey;)Lio/netty/util/Attribute;",
+          "access": 1
+        },
+        {
+          "name": "setPacketHandled",
+          "descriptor": "(Z)V",
+          "access": 1
+        },
+        {
+          "name": "getPacketHandled",
+          "descriptor": "()Z",
+          "access": 1
+        },
+        {
+          "name": "enqueueWork",
+          "descriptor": "(Ljava/lang/Runnable;)Ljava/util/concurrent/CompletableFuture;",
+          "access": 1
+        },
+        {
+          "name": "getSender",
+          "descriptor": "()Lnet/minecraft/server/level/ServerPlayer;",
+          "access": 1
+        }
+      ]
+    },
+    "net/minecraftforge/network/NetworkDirection": {
+      "classMajor": 61,
+      "fields": [
+        {
+          "name": "PLAY_TO_SERVER",
+          "descriptor": "Lnet/minecraftforge/network/NetworkDirection;",
+          "access": 16409
+        },
+        {
+          "name": "PLAY_TO_CLIENT",
+          "descriptor": "Lnet/minecraftforge/network/NetworkDirection;",
+          "access": 16409
+        },
+        {
+          "name": "LOGIN_TO_SERVER",
+          "descriptor": "Lnet/minecraftforge/network/NetworkDirection;",
+          "access": 16409
+        },
+        {
+          "name": "LOGIN_TO_CLIENT",
+          "descriptor": "Lnet/minecraftforge/network/NetworkDirection;",
+          "access": 16409
+        },
+        {
+          "name": "logicalSide",
+          "descriptor": "Lnet/minecraftforge/fml/LogicalSide;",
+          "access": 18
+        },
+        {
+          "name": "packetClass",
+          "descriptor": "Ljava/lang/Class;",
+          "access": 18
+        },
+        {
+          "name": "otherWay",
+          "descriptor": "I",
+          "access": 18
+        },
+        {
+          "name": "factory",
+          "descriptor": "Lnet/minecraftforge/network/NetworkDirection$Factory;",
+          "access": 18
+        },
+        {
+          "name": "packetLookup",
+          "descriptor": "Lit/unimi/dsi/fastutil/objects/Reference2ReferenceArrayMap;",
+          "access": 26
+        },
+        {
+          "name": "values",
+          "descriptor": "[Lnet/minecraftforge/network/NetworkDirection;",
+          "access": 26
+        },
+        {
+          "name": "$VALUES",
+          "descriptor": "[Lnet/minecraftforge/network/NetworkDirection;",
+          "access": 4122
+        }
+      ],
+      "methods": [
+        {
+          "name": "values",
+          "descriptor": "()[Lnet/minecraftforge/network/NetworkDirection;",
+          "access": 9
+        },
+        {
+          "name": "valueOf",
+          "descriptor": "(Ljava/lang/String;)Lnet/minecraftforge/network/NetworkDirection;",
+          "access": 9
+        },
+        {
+          "name": "<init>",
+          "descriptor": "(Ljava/lang/String;ILnet/minecraftforge/fml/LogicalSide;Ljava/lang/Class;ILnet/minecraftforge/network/NetworkDirection$Factory;)V",
+          "access": 2
+        },
+        {
+          "name": "getPacketClass",
+          "descriptor": "()Ljava/lang/Class;",
+          "access": 2
+        },
+        {
+          "name": "directionFor",
+          "descriptor": "(Ljava/lang/Class;)Lnet/minecraftforge/network/NetworkDirection;",
+          "access": 9
+        },
+        {
+          "name": "reply",
+          "descriptor": "()Lnet/minecraftforge/network/NetworkDirection;",
+          "access": 1
+        },
+        {
+          "name": "getOriginationSide",
+          "descriptor": "()Lnet/minecraftforge/fml/LogicalSide;",
+          "access": 1
+        },
+        {
+          "name": "getReceptionSide",
+          "descriptor": "()Lnet/minecraftforge/fml/LogicalSide;",
+          "access": 1
+        },
+        {
+          "name": "buildPacket",
+          "descriptor": "(Lnet/minecraft/network/FriendlyByteBuf;Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraftforge/network/ICustomPacket;",
+          "access": 1
+        },
+        {
+          "name": "playServerbound",
+          "descriptor": "(Lnet/minecraft/network/FriendlyByteBuf;Ljava/lang/Integer;Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/network/protocol/common/ServerboundCustomPayloadPacket;",
+          "access": 10
+        },
+        {
+          "name": "playClientbound",
+          "descriptor": "(Lnet/minecraft/network/FriendlyByteBuf;Ljava/lang/Integer;Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/network/protocol/common/ClientboundCustomPayloadPacket;",
+          "access": 10
+        },
+        {
+          "name": "loginServerbound",
+          "descriptor": "(Lnet/minecraft/network/FriendlyByteBuf;Ljava/lang/Integer;Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/network/protocol/login/ServerboundCustomQueryAnswerPacket;",
+          "access": 10
+        },
+        {
+          "name": "loginClientbound",
+          "descriptor": "(Lnet/minecraft/network/FriendlyByteBuf;Ljava/lang/Integer;Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/network/protocol/login/ClientboundCustomQueryPacket;",
+          "access": 10
+        },
+        {
+          "name": "$values",
+          "descriptor": "()[Lnet/minecraftforge/network/NetworkDirection;",
+          "access": 4106
+        },
+        {
+          "name": "<clinit>",
+          "descriptor": "()V",
+          "access": 8
+        }
+      ]
+    },
+    "net/minecraftforge/event/TickEvent$ServerTickEvent": {
+      "classMajor": 61,
+      "fields": [
+        {
+          "name": "haveTime",
+          "descriptor": "Ljava/util/function/BooleanSupplier;",
+          "access": 18
+        },
+        {
+          "name": "server",
+          "descriptor": "Lnet/minecraft/server/MinecraftServer;",
+          "access": 18
+        }
+      ],
+      "methods": [
+        {
+          "name": "<init>",
+          "descriptor": "(Lnet/minecraftforge/event/TickEvent$Phase;Ljava/util/function/BooleanSupplier;Lnet/minecraft/server/MinecraftServer;)V",
+          "access": 1
+        },
+        {
+          "name": "<init>",
+          "descriptor": "(Ljava/util/function/BooleanSupplier;Lnet/minecraft/server/MinecraftServer;Lnet/minecraftforge/event/TickEvent$Phase;)V",
+          "access": 4
+        },
+        {
+          "name": "haveTime",
+          "descriptor": "()Z",
+          "access": 1
+        },
+        {
+          "name": "getServer",
+          "descriptor": "()Lnet/minecraft/server/MinecraftServer;",
+          "access": 1
+        }
+      ]
+    }
+  },
+  "sourceApiConclusions": {
+    "event": "Forge49 CustomPayloadEvent.getSource directly returns Context; no sender-side subclass names.",
+    "direction": "Explicit PLAY_TO_SERVER and PLAY_TO_CLIENT branches. ConnectionProtocol.PLAY check excludes configuration and login.",
+    "thread": "Context.enqueueWork dispatches to reception-side WORKQUEUE. All game/player mutations occur in the callback.",
+    "rawWire": "EventNetworkChannel.toBuffer returns the input FriendlyByteBuf; Channel uses NetworkDirection.buildPacket and DiscardedPayload(channel,buffer) without a SimpleChannel discriminator.",
+    "remoteChannels": "ChannelListManager handles minecraft:register and stores remote channels for Channel.isRemotePresent. ChannelBuilder.optional accepts VANILLA/MISSING; core still enforces required reports.",
+    "ownership": "Server official PacketDistributor calls player.connection.getConnection. Adapter compares originating connection on reception and final client send; shared guard verifies Player object ownership.",
+    "resourceFormat": "Official 49.2.9 MDK pack.mcmeta specifies pack_format22."
+  },
+  "checks": {
+    "officialMavenSha1InputsVerified": 4,
+    "universalRequiredMethodsPresent": true,
+    "tomlParsed": true,
+    "mixinJsonParsed": true,
+    "packMetadataParsed": true
+  },
+  "sources": [
+    {
+      "file": "platforms/1.20.4/forge/build.gradle",
+      "sha256": "63e8b700d5d4c33b47ccd51c26e926fea983464c945ff1ebd8c54b142af365d1",
+      "bytes": 314
+    },
+    {
+      "file": "platforms/1.20.4/forge/gradle.properties",
+      "sha256": "a67157ef794526aa3b2f0ad4961c79a8509ce506a8decd006b32ca93a3b6de97",
+      "bytes": 20
+    },
+    {
+      "file": "platforms/1.20.4/forge/src/main/java/cn/qizhang/guard/forge/GuardForge.java",
+      "sha256": "2923a9cf26eaa5e2abda1e9d4318fd42bb200341ed67115d1bc26e0bf9ef2eac",
+      "bytes": 5368
+    },
+    {
+      "file": "platforms/1.20.4/forge/src/main/java/cn/qizhang/guard/forge/GuardForgeClient.java",
+      "sha256": "cff6c5a874996f3a42c35d4cdef3814b0faeb80e37776072515112217f5e37d9",
+      "bytes": 1450
+    },
+    {
+      "file": "platforms/1.20.4/forge/src/main/resources/META-INF/mods.toml",
+      "sha256": "dcef7b37ed1dff1fe6a429d5817ce9e3fbfe75af5e0e2a2d8e97f3f95c5a598f",
+      "bytes": 535
+    },
+    {
+      "file": "platforms/1.20.4/forge/src/main/resources/pack.mcmeta",
+      "sha256": "95f4ec5c02a7350125bd3198382df7b2f238e714485846af5edbc74ca16fc882",
+      "bytes": 89
+    },
+    {
+      "file": "platforms/1.20.4/forge/src/main/resources/qizhangverdict.mixins.json",
+      "sha256": "50e5c9d632bf5553c169576df8f16a45a00fcddd728061d8056381a30e5ec4f3",
+      "bytes": 248
+    }
+  ],
+  "limits": [
+    "No javac, Gradle, or Minecraft process started. Binary signatures were parsed using Python.",
+    "Source/API checks do not prove runtime interoperability; parent must compile and run dedicated/client QA.",
+    "No official Forge implementation code copied into production files; official archives and excerpts remain in Etemp."
+  ]
+}

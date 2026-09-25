@@ -12,3 +12,19 @@ jar {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
 processResources { filesMatching('plugin.yml') { expand(version: project.version) } }
+
+tasks.register('pendingChallengeTest', JavaExec) {
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'cn.qizhang.guard.bukkit.PendingChallengeTaskTest'
+    maxHeapSize = '128m'
+    doFirst {
+        def fixtures = java.nio.file.Paths.get(providers.gradleProperty('qzTestRoot').getOrElse(
+            System.getProperty('os.name').toLowerCase().contains('windows')
+                ? 'E:/CodexTemp/QiZhangVerdict/tests/bukkit-pending'
+                : new File(System.getProperty('java.io.tmpdir'), 'qizhangverdict-bukkit-pending').absolutePath))
+        java.nio.file.Files.createDirectories(fixtures)
+        setArgs([java.nio.file.Files.createTempDirectory(fixtures, 'run-').toString()])
+    }
+}
+tasks.named('check') { dependsOn tasks.named('pendingChallengeTest') }
