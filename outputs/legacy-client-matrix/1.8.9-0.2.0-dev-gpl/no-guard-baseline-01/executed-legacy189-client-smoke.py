@@ -395,7 +395,7 @@ def close_legacy_client(pid):
     user32.EnumWindows(callback_type(callback), 0)
 
 
-def run(run_name, kind, video_preset='vanilla', forge_splash='default'):
+def run(run_name, kind, video_preset='vanilla'):
     resources = memory_gate('strict-' + kind + '-' + run_name)
     with socket.socket() as port:
         port.bind(('127.0.0.1', PORT))
@@ -415,10 +415,6 @@ def run(run_name, kind, video_preset='vanilla', forge_splash='default'):
         options += 'useVbo:true\n'
     (game / 'options.txt').write_text(options, encoding='ascii')
     shutil.copy2(game / 'options.txt', directory / 'options-before.txt')
-    if forge_splash == 'disabled':
-        (game / 'config').mkdir()
-        (game / 'config/splash.properties').write_text('enabled=false\n', encoding='ascii')
-        shutil.copy2(game / 'config/splash.properties', directory / 'splash-before.properties')
     plan = {**plan, 'game': str(game)}
     server_log, client_log = directory / 'server-console.log', directory / 'client-console.log'
     result = {'minecraft': '1.8.9', 'loader': 'Forge 11.15.1.2318-1.8.9', 'guard_sha256': GUARD_SHA,
@@ -429,7 +425,6 @@ def run(run_name, kind, video_preset='vanilla', forge_splash='default'):
               'vanilla_client_sha1': plan['vanilla_client_sha1'], 'java': str(JAVA),
               'launch_method': plan.get('launch_method', 'Official Forge profile'),
               'video_preset': video_preset, 'visual_review_status': 'pending manual screenshot review',
-              'forge_splash_override': 'enabled=false' if forge_splash == 'disabled' else 'default',
               'resource_gate': resources,
               'video_options_basis': 'Official Minecraft 1.8.9 GameSettings (avh) constructor defaults useVbo=false and accepts options.txt useVbo:true; optional VBO comparison changes only this local video option.',
               'harness_sha256': matrix.digest(Path(__file__)), 'helper_sha256': matrix.digest(HELPER),
@@ -544,10 +539,6 @@ def run(run_name, kind, video_preset='vanilla', forge_splash='default'):
         shutil.copy2(game / 'options.txt', directory / 'options-after.txt')
         result['video_options_before'] = matrix.artifact_record(directory / 'options-before.txt')
         result['video_options_after'] = matrix.artifact_record(directory / 'options-after.txt')
-        if forge_splash == 'disabled':
-            shutil.copy2(game / 'config/splash.properties', directory / 'splash-after.properties')
-            result['forge_splash_before'] = matrix.artifact_record(directory / 'splash-before.properties')
-            result['forge_splash_after'] = matrix.artifact_record(directory / 'splash-after.properties')
         valid_screenshots = 0
         if client_start:
             for path in (Path(plan['game']) / 'screenshots').glob('*.png'):
@@ -573,9 +564,8 @@ if __name__ == '__main__':
     parser.add_argument('--run-name', default='candidate-0.2.0-dev-gpl-01')
     parser.add_argument('--server-kind', choices=('forge', 'bukkit'), default='forge')
     parser.add_argument('--video-preset', choices=('vanilla', 'vbo'), default='vanilla')
-    parser.add_argument('--forge-splash', choices=('default', 'disabled'), default='default')
     args = parser.parse_args()
     if args.action == 'prepare': prepare()
     elif args.action == 'install': install()
     elif args.action == 'stage': stage()
-    else: run(args.run_name, args.server_kind, args.video_preset, args.forge_splash)
+    else: run(args.run_name, args.server_kind, args.video_preset)

@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "scope": "No-Guard visual diagnostic control; not an anti-cheat acceptance.",
+  "minecraft": "1.8.9",
+  "loader": "Forge 11.15.1.2318-1.8.9",
+  "automated_baseline_completed": true,
+  "formal_anti_cheat_acceptance_passed": false,
+  "normal_graphics_validation_passed": true,
+  "manual_visual_review": {
+    "viewed_actual_png": true,
+    "png_crc_dimensions_valid": true,
+    "finding": "The decoded screenshot shows textured grass blocks, readable inventory tutorial text, the crosshair, a skinned hand, red hearts, hunger icons and hotbar. The earlier flat-texture/white-HUD anomaly is not present in this run.",
+    "screenshot": {
+      "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/no-guard-baseline-02/screenshot.png",
+      "sha256": "6607b4d433d61f6395169a4a94139fcb1cbc6aa0f7e480885b31f29a9759900e",
+      "bytes": 39239,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\vanilla-forge-visual-baseline-02\\client-game\\screenshots\\2026-09-25_18.46.48.png",
+      "copyMode": "verbatim bytes"
+    }
+  },
+  "earlier_texture_anomaly_reproduced_this_run": false,
+  "guard_absence_evidence": {
+    "client_mod_directory_jar_count": 0,
+    "server_mod_directory_jar_count": 0,
+    "loader_reports_only_mcp_fml_forge": true,
+    "guard_server_state_directory_exists": false,
+    "client_log_marker": "Forge Mod Loader has identified 3 mods to load",
+    "server_log_marker": "Client attempting to join with 3 mods : FML@8.0.99.99,Forge@11.15.1.2318,mcp@9.19"
+  },
+  "supported_conclusion": "With the same official Forge/client libraries, video options, heap limits and no Guard on either side, pre-setting only local Forge splash.properties enabled=false was followed by a normally textured image on this machine. The result supports this fixture-level mitigation, not a definitive lower-level root cause.",
+  "not_established": [
+    "A specific AMD driver defect",
+    "A complete causal explanation of Forge splash/graphics interaction",
+    "Whether the hidden-window QA method contributes",
+    "Normal graphics with default splash settings",
+    "Graphics behavior on other machines",
+    "A successful 1.8.9 client anti-cheat acceptance"
+  ],
+  "controlled_comparison": {
+    "previous_report": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/no-guard-baseline-01.json",
+    "only_config_override": "client-game/config/splash.properties: enabled=false",
+    "classpath_records_byte_equal": true,
+    "official_installer_hash_equal": true,
+    "video_options_before_after_byte_equal": true,
+    "heap_arguments_equal": true,
+    "original_profile_semantics_changed": false
+  },
+  "experiment_lead": {
+    "url": "https://forums.minecraftforge.net/topic/36881-189-black-screen-on-menu-only-in-forge-mode-fixed/",
+    "type": "A same-Minecraft-version user report on the official Forge forum suggested disabling splash; this motivated a local comparison and is not proof of the cause on this machine."
+  },
+  "launch_method": "Official install_profile versionInfo, original embedded universal JAR and pinned official libraries; no supported --installClient CLI is claimed.",
+  "resource_gate": {
+    "action": "vanilla-forge-visual-baseline-02",
+    "minimum_available_gib": 3.5,
+    "available_gib": 12.215,
+    "utc": "2026-09-25T09:46:04Z",
+    "allowed": true
+  },
+  "client_heap": [
+    "-Xms256M",
+    "-Xmx1G"
+  ],
+  "server_heap": [
+    "-Xms256M",
+    "-Xmx768M"
+  ],
+  "video_preset": "Fresh original video-option defaults; useVbo is not overridden; Forge loading splash disabled in this isolated client only",
+  "minimum_requested_seconds_after_join": 15,
+  "timing_evidence": {
+    "join_local": "18:46:33",
+    "fresh_survival_query_local": "18:46:48",
+    "screenshot_local": "18:46:48",
+    "method": "The executed baseline harness waits >=15 monotonic seconds after observing this run join, then sends F2 and normally closes the owned client."
+  },
+  "client_exit_code": 0,
+  "server_exit_code": 0,
+  "owned_pids_no_longer_present": true,
+  "port_25661_rebind_verified": true,
+  "global_drivers_or_other_processes_modified": false,
+  "official_jars_or_libraries_modified": false,
+  "paper_client_attempted": false,
+  "candidate_formal_rerun_attempted": false,
+  "original_result": {
+    "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/no-guard-baseline-02/result.json",
+    "sha256": "e1ee26ccb92c6965d72b4bdc2aae376e88ba0fbc8325d90fa9d00c25e246d6b2",
+    "bytes": 12936,
+    "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\vanilla-forge-visual-baseline-02\\result.json",
+    "copyMode": "verbatim bytes"
+  },
+  "public_evidence": [
+    {
+      "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/no-guard-baseline-02/result.json",
+      "sha256": "e1ee26ccb92c6965d72b4bdc2aae376e88ba0fbc8325d90fa9d00c25e246d6b2",
+      "bytes": 12936,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\vanilla-forge-visual-baseline-02\\result.json",
+      "copyMode": "verbatim bytes"
+    },
+    {
+      "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/no-guard-baseline-02/client-console.log",
+      "sha256": "9088463a1af9322487e658a4cb1fb180e714c98c6a72a2e7b3b2850316af9189",
+      "bytes": 18409,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\vanilla-forge-visual-baseline-02\\client-console.log",
+      "copyMode": "verbatim bytes"
+    },
+    {
+      "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/no-guard-baseline-02/server-console.log",
+      "sha256": "f7e0d4707f7c870fd09dd018e2a8c4649cde9ea312648ed25a526e01601744e8",
+      "bytes": 12863,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\vanilla-forge-visual-baseline-02\\server-console.log",
+      "copyMode": "verbatim bytes"
+    },
+    {
+      "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/no-guard-baseline-02/options-before.txt",
+      "sha256": "35fdff0ad66d42a16aa5db5fb33897bf7063a454529c626572c61c14b1f6014c",
+      "bytes": 71,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\vanilla-forge-visual-baseline-02\\options-before.txt",
+      "copyMode": "verbatim bytes"
+    },
+    {
+      "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/no-guard-baseline-02/options-after.txt",
+      "sha256": "35fdff0ad66d42a16aa5db5fb33897bf7063a454529c626572c61c14b1f6014c",
+      "bytes": 71,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\vanilla-forge-visual-baseline-02\\options-after.txt",
+      "copyMode": "verbatim bytes"
+    },
+    {
+      "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/no-guard-baseline-02/splash-before.properties",
+      "sha256": "4bba62d98a82507560add62fb404f2d2140ba0fe96eddece88eb1d0d17415272",
+      "bytes": 15,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\vanilla-forge-visual-baseline-02\\splash-before.properties",
+      "copyMode": "verbatim bytes"
+    },
+    {
+      "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/no-guard-baseline-02/splash-after.properties",
+      "sha256": "6d8d1688e4a150712a9e62c1c2348ca15b1f76fc5ce6cca838c660e0ba1e3847",
+      "bytes": 340,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\vanilla-forge-visual-baseline-02\\splash-after.properties",
+      "copyMode": "verbatim bytes"
+    },
+    {
+      "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/no-guard-baseline-02/screenshot.png",
+      "sha256": "6607b4d433d61f6395169a4a94139fcb1cbc6aa0f7e480885b31f29a9759900e",
+      "bytes": 39239,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\vanilla-forge-visual-baseline-02\\client-game\\screenshots\\2026-09-25_18.46.48.png",
+      "copyMode": "verbatim bytes"
+    },
+    {
+      "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/no-guard-baseline-02/executed-visual-baseline.py",
+      "sha256": "528a48e71cd54863a4c05c899de5025543d599375f68b6b16db3781320819418",
+      "bytes": 5868,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\visual-baseline-02.py",
+      "copyMode": "verbatim bytes"
+    },
+    {
+      "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/no-guard-baseline-02/reference-baseline-01-splash.properties",
+      "sha256": "26a5b5e4abc32294ca19ac196fcc22a1e96162b855f43fde4cdf745dbb546a7f",
+      "bytes": 339,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\vanilla-forge-visual-baseline-01\\client-game\\config\\splash.properties",
+      "copyMode": "verbatim bytes"
+    },
+    {
+      "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/no-guard-baseline-02/executed-legacy189-client-smoke.py",
+      "sha256": "ad5861189cb2e509c6ab56005c8ae0ab3034ffd61adfcc171ebb54ed62b696b6",
+      "bytes": 36628,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\harness-snapshots\\legacy189-ad5861189cb2e509c6ab56005c8ae0ab3034ffd61adfcc171ebb54ed62b696b6.py",
+      "copyMode": "verbatim bytes"
+    }
+  ],
+  "prior_diagnostic_preserved": {
+    "path": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/diagnostic.json",
+    "sha256": "31d7e60a5b09c228ee325d938f079dd03aa705b9e0ee4cb9fc647011a858347d"
+  },
+  "publication_review": {
+    "raw_copy_count": 11,
+    "all_sha256_sizes_verified": true,
+    "account_state_or_raw_device_identifiers_included": false,
+    "full_minecraft_disassembly_included": false
+  },
+  "recorded_utc": "2026-09-25T09:50:11Z"
+}

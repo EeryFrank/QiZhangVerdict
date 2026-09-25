@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 1,
+  "scope": "No-Guard visual diagnostic control; not an anti-cheat acceptance.",
+  "minecraft": "1.8.9",
+  "loader": "Forge 11.15.1.2318-1.8.9",
+  "automated_baseline_completed": true,
+  "formal_anti_cheat_acceptance_passed": false,
+  "normal_graphics_validation_passed": false,
+  "manual_visual_review": {
+    "viewed_actual_png": true,
+    "png_crc_dimensions_valid": true,
+    "finding": "World geometry is present, but terrain textures remain flat and HUD/hand rendering is visibly abnormal, matching the same class of fault in both earlier candidate screenshots.",
+    "screenshot": {
+      "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/no-guard-baseline-01/screenshot.png",
+      "sha256": "4db2c0fc831075cc4eec7bfe15d6624a9ffe2824ce5e8020b2cd9b753287607c",
+      "bytes": 1845,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\vanilla-forge-visual-baseline-01\\client-game\\screenshots\\2026-09-25_18.42.15.png",
+      "copyMode": "verbatim bytes"
+    }
+  },
+  "reproduced_without_qizhangverdict": true,
+  "guard_absence_evidence": {
+    "client_mod_directory_jar_count": 0,
+    "server_mod_directory_jar_count": 0,
+    "loader_reports_only_mcp_fml_forge": true,
+    "guard_server_state_directory_exists": false,
+    "client_log_marker": "Forge Mod Loader has identified 3 mods to load",
+    "server_log_marker": "Client attempting to join with 3 mods : FML@8.0.99.99,Forge@11.15.1.2318,mcp@9.19"
+  },
+  "supported_conclusion": "This texture/HUD anomaly can be reproduced in the same local official Forge 1.8.9 fixture with QiZhangVerdict absent on both sides. The comparison does not establish the underlying cause.",
+  "not_established": [
+    "A specific AMD driver defect",
+    "Whether Forge itself is required",
+    "Whether the hidden-window QA method contributes",
+    "Normal visible-launcher graphics on this machine",
+    "Graphics behavior on other machines",
+    "A successful 1.8.9 client anti-cheat acceptance"
+  ],
+  "launch_method": "Official install_profile versionInfo, original embedded universal JAR and pinned official libraries; no supported --installClient CLI is claimed.",
+  "resource_gate": {
+    "action": "vanilla-forge-visual-baseline-01",
+    "minimum_available_gib": 3.5,
+    "available_gib": 5.002,
+    "utc": "2026-09-25T09:41:29Z",
+    "allowed": true
+  },
+  "client_heap": [
+    "-Xms256M",
+    "-Xmx1G"
+  ],
+  "server_heap": [
+    "-Xms256M",
+    "-Xmx768M"
+  ],
+  "video_preset": "Fresh original video-option defaults; useVbo is not overridden",
+  "minimum_requested_seconds_after_join": 15,
+  "timing_evidence": {
+    "join_local": "18:42:00",
+    "fresh_survival_query_local": "18:42:15",
+    "screenshot_local": "18:42:15",
+    "method": "The executed baseline harness waits >=15 monotonic seconds after observing this run join, then sends F2 and normally closes the owned client."
+  },
+  "client_exit_code": 0,
+  "server_exit_code": 0,
+  "owned_pids_no_longer_present": true,
+  "port_25661_rebind_verified": true,
+  "global_drivers_or_other_processes_modified": false,
+  "official_jars_or_libraries_modified": false,
+  "paper_client_attempted": false,
+  "candidate_formal_rerun_attempted": false,
+  "original_result": {
+    "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/no-guard-baseline-01/result.json",
+    "sha256": "3d80b6ebd3621a931e0f53fd7dbcaa4f658b6f9ba8ccc73896c9ec61e6bc4299",
+    "bytes": 12364,
+    "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\vanilla-forge-visual-baseline-01\\result.json",
+    "copyMode": "verbatim bytes"
+  },
+  "public_evidence": [
+    {
+      "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/no-guard-baseline-01/result.json",
+      "sha256": "3d80b6ebd3621a931e0f53fd7dbcaa4f658b6f9ba8ccc73896c9ec61e6bc4299",
+      "bytes": 12364,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\vanilla-forge-visual-baseline-01\\result.json",
+      "copyMode": "verbatim bytes"
+    },
+    {
+      "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/no-guard-baseline-01/client-console.log",
+      "sha256": "944bfe115444b4600d7a675319e859253d492dd7f695efce05eb01734038434e",
+      "bytes": 19809,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\vanilla-forge-visual-baseline-01\\client-console.log",
+      "copyMode": "verbatim bytes"
+    },
+    {
+      "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/no-guard-baseline-01/server-console.log",
+      "sha256": "25758bf32d40ac005dbf9b135aa857f3dc9fe3ae80fe6027f1b935053fe50715",
+      "bytes": 12866,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\vanilla-forge-visual-baseline-01\\server-console.log",
+      "copyMode": "verbatim bytes"
+    },
+    {
+      "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/no-guard-baseline-01/options-before.txt",
+      "sha256": "35fdff0ad66d42a16aa5db5fb33897bf7063a454529c626572c61c14b1f6014c",
+      "bytes": 71,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\vanilla-forge-visual-baseline-01\\options-before.txt",
+      "copyMode": "verbatim bytes"
+    },
+    {
+      "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/no-guard-baseline-01/options-after.txt",
+      "sha256": "35fdff0ad66d42a16aa5db5fb33897bf7063a454529c626572c61c14b1f6014c",
+      "bytes": 71,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\vanilla-forge-visual-baseline-01\\options-after.txt",
+      "copyMode": "verbatim bytes"
+    },
+    {
+      "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/no-guard-baseline-01/screenshot.png",
+      "sha256": "4db2c0fc831075cc4eec7bfe15d6624a9ffe2824ce5e8020b2cd9b753287607c",
+      "bytes": 1845,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\vanilla-forge-visual-baseline-01\\client-game\\screenshots\\2026-09-25_18.42.15.png",
+      "copyMode": "verbatim bytes"
+    },
+    {
+      "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/no-guard-baseline-01/executed-visual-baseline.py",
+      "sha256": "d516d80636e92f0b6789d540251d641c5ca54d366150a309743b0c96fedf8c00",
+      "bytes": 5472,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\visual-baseline.py",
+      "copyMode": "verbatim bytes"
+    },
+    {
+      "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/no-guard-baseline-01/executed-legacy189-client-smoke.py",
+      "sha256": "ad5861189cb2e509c6ab56005c8ae0ab3034ffd61adfcc171ebb54ed62b696b6",
+      "bytes": 36628,
+      "originalPath": "E:\\Codex_work\\QiZhangVerdict\\platforms\\legacy189-client-smoke.py",
+      "copyMode": "verbatim bytes"
+    }
+  ],
+  "prior_diagnostic_preserved": {
+    "path": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/diagnostic.json",
+    "sha256": "31d7e60a5b09c228ee325d938f079dd03aa705b9e0ee4cb9fc647011a858347d"
+  },
+  "publication_review": {
+    "raw_copy_count": 8,
+    "all_sha256_sizes_verified": true,
+    "account_state_or_raw_device_identifiers_included": false,
+    "full_minecraft_disassembly_included": false
+  },
+  "recorded_utc": "2026-09-25T09:44:53Z"
+}

@@ -1,0 +1,85 @@
+{
+  "version": "1.20.1",
+  "server": "Purpur",
+  "build": "2062",
+  "serverSha256": "238e64b33e5c7c9b87506cf1a23f239e6ce7fb71edd9d31837f229c94f4dfa1a",
+  "guardSha256": "e1194b8b694763afbc431e22799f40d357dd80493d194f680edfb219afe94845",
+  "grimSha256": "8bbe54877f1adec32b180862579fcb720a4a5905c16ce0578b676b1a87fa8f2d",
+  "grimVersion": "2.3.71",
+  "punishmentsTemplateSha256": "a8d67c5ff47eda932b6b9c0f50489283ebf5cc4dcbbfc68c02b72746e234c047",
+  "javaExecutable": "/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64/bin/java",
+  "nodeExecutable": "/opt/hostedtoolcache/node/22.23.2/x64/bin/node",
+  "helperSha256": "c6881c255db875b6b3e1983e287c686f5831706a59532b2dacc9368b6577fbb1",
+  "protocolSha256": "a6c6ec9aa4fa1ed8ed139180eb78248504a1eadfbc4b046c1473dd1b2d38b818",
+  "expectedDefaultPolicySha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+  "scope": "Isolated offline loopback synthetic reports; shipped Grim command template activated only in this new QA fixture.",
+  "passed": true,
+  "phases": [
+    {
+      "phase": "trigger",
+      "passed": true,
+      "availableBytesBeforeJava": 15420747776,
+      "ownedServerPid": 2464,
+      "defaultPolicyBeforeSha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+      "punishmentsBeforeSha256": "a8d67c5ff47eda932b6b9c0f50489283ebf5cc4dcbbfc68c02b72746e234c047",
+      "protocolExit": 0,
+      "protocol": {
+        "passed": true,
+        "phase": "trigger",
+        "version": "1.20.1",
+        "cases": [
+          "historical linked account accepted",
+          "trigger account accepted before violations",
+          "clean connection survives default 20 second companion deadline",
+          "real Grim violation executes the QiZhangVerdict ban command",
+          "Grim console independently identifies BadPacketsA reaching the shipped threshold",
+          "real Grim punishment persists both historical accounts and their shared synthetic device"
+        ],
+        "caseCount": 6,
+        "scope": "Real loopback TCP and upstream Grim BadPacketsA, synthetic device reports; not real hardware attestation or detection accuracy across cheats."
+      },
+      "serverExit": 0,
+      "normalStop": true,
+      "defaultPolicyAfterSha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+      "punishmentsAfterSha256": "a8d67c5ff47eda932b6b9c0f50489283ebf5cc4dcbbfc68c02b72746e234c047",
+      "strictGuardPolicyUnmodified": true,
+      "completePunishmentsTemplateUnmodified": true,
+      "elapsedSeconds": 72.37,
+      "logSha256": "b8499cb6bd6b2374a0ce6e031ded0b8dc07e20bad1039f7257ae7bb649590fd7"
+    },
+    {
+      "phase": "restart",
+      "passed": true,
+      "availableBytesBeforeJava": 15758069760,
+      "ownedServerPid": 2585,
+      "defaultPolicyBeforeSha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+      "punishmentsBeforeSha256": "a8d67c5ff47eda932b6b9c0f50489283ebf5cc4dcbbfc68c02b72746e234c047",
+      "protocolExit": 0,
+      "protocol": {
+        "passed": true,
+        "phase": "restart",
+        "version": "1.20.1",
+        "cases": [
+          "account ban survives restart and a new device",
+          "historical linked account remains banned after restart",
+          "new account using banned device is denied after restart",
+          "unrelated device remains allowed on the same IP",
+          "explicit account and device unban restores access",
+          "all synthetic account and device bans are cleared on disk after explicit unban"
+        ],
+        "caseCount": 6,
+        "scope": "Real loopback TCP and upstream Grim BadPacketsA, synthetic device reports; not real hardware attestation or detection accuracy across cheats."
+      },
+      "serverExit": 0,
+      "normalStop": true,
+      "defaultPolicyAfterSha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+      "punishmentsAfterSha256": "a8d67c5ff47eda932b6b9c0f50489283ebf5cc4dcbbfc68c02b72746e234c047",
+      "strictGuardPolicyUnmodified": true,
+      "completePunishmentsTemplateUnmodified": true,
+      "elapsedSeconds": 31.182,
+      "logSha256": "438aed010c66040ddeba33c42209e0fb3ba353b81331cb900410dcd7a8a9a6fd"
+    }
+  ],
+  "strictGuardPolicyUnmodified": true,
+  "completePunishmentsTemplateUnmodified": true
+}

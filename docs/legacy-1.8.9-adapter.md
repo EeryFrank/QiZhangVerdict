@@ -1,12 +1,14 @@
 # Minecraft 1.8.9 Forge 开发适配
 
-截至 2026-09-25，本目录包含 **0.2.0-dev 的官方输入研究和独立源码适配**。源码已完成原生 **Java 8 / Gradle 2.7 构建和全部五项必需 Java 检查**，二进制与源码 JAR 已通过 GPL/字节码审计。随后已完成官方安装器及 **Forge 专服无玩家启动、严格控制台状态和正常停服**；**真实玩家联机、客户端与命令门禁仍未由本报告验证**。构建记录见 [build-verification.json](../platforms/1.8.9/build-verification.json)。本目录不属于 0.1.1 发布，也不继承其他版本的验收结果。[api-evidence.json](../platforms/1.8.9/api-evidence.json) 保留先前“未实现”的研究时间点快照；后续源码阶段由独立 [static-checks.json](../platforms/1.8.9/static-checks.json) 描述，未改写研究快照。
+截至 2026-09-25，原生 **Java 8 / Gradle 2.7 构建和五项必需 Java 检查**、GPL/字节码审计、官方安装器及 Forge 专服启动均已通过。随后完成了默认准入策略 TCP/OP 门禁，以及配套客户端连接 Forge 1.8.9、Paper 1.8.8 的独立实测。精确输入和原始构建结果见 [build-verification.json](../platforms/1.8.9/build-verification.json)。本目录不属于 0.1.1 发布，也不继承其他版本的验收结果。[api-evidence.json](../platforms/1.8.9/api-evidence.json) 与 [static-checks.json](../platforms/1.8.9/static-checks.json) 保留各自历史阶段，不改写先前结论。
 
-后续的[独立 TCP 验收](legacy-mod-tcp-validation-1.8.9-gpl.md)已完成 14 项真实连接检查，包括默认配额、20 秒报告超时及实际 OP 命令门禁，服务器正常退出。图形客户端出现纹理及 HUD 异常，**正式客户端验收未通过**，见[两轮原始证据与人工复核](../outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/diagnostic.json)。首轮报告及设备关联成功、在线 65 秒且双进程退出 0，仍不能覆盖视觉失败；第二轮开启 VBO 后异常仍在。无本模组的 Forge 对照因可用内存不足尚未启动，根因未确定。本候选未纳入已发布的 `0.2.0-dev-preview.1`，也不声称能够安装到原生 Forge 1.8.8。
+独立 [TCP 验收](legacy-mod-tcp-validation-1.8.9-gpl.md)完成 14 项检查，包括默认配额、20 秒报告超时及实际 OP 命令门禁。[真实客户端验收](legacy-client-validation-1.8.9.md)在两种服务端均确认设备关联、完整默认策略、获准后在线超过 65 秒、画面正常及双进程退出 0。测试在本机显式关闭 Forge 加载动画（隔离客户端 `config/splash.properties` 的 `enabled=false`），没有修改产品 JAR 或准入策略。
+
+最初两轮图形失败仍保留于[诊断记录](../outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/diagnostic.json)：无本模组的官方 Forge [对照一](../outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/no-guard-baseline-01.json)也复现异常；仅关闭加载动画的[对照二](../outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/no-guard-baseline-02.json)恢复正常。这证明该本机配置下的缓解效果，未确定显卡驱动等底层根因。此前 `0.2.0-dev-preview.1` 不包含 1.8.9；客户端与 Paper 1.8.8 互通也不代表模组可安装到原生 Forge 1.8.8。
 
 ## 目标与 1.8.8 边界
 
-建议先实现原生 **Minecraft 1.8.9 + Forge 11.15.1.2318**，再单独验证其客户端连接用户原定的 1.8.8 Bukkit/Paper 插件服。[Forge 1.8.9 官方页](https://files.minecraftforge.net/net/minecraftforge/forge/index_1.8.9.html) 同时列它为 latest/recommended；[1.8.8 官方分支](https://files.minecraftforge.net/net/minecraftforge/forge/index_1.8.8.html) 也实际存在，latest 为 **11.15.0.1655**。不能把 1.8.9 成品标为可安装到 1.8.8 Forge。
+当前实现针对原生 **Minecraft 1.8.9 + Forge 11.15.1.2318**，并已独立验证其客户端连接 Paper 1.8.8 插件服。[Forge 1.8.9 官方页](https://files.minecraftforge.net/net/minecraftforge/forge/index_1.8.9.html) 同时列它为 latest/recommended；[1.8.8 官方分支](https://files.minecraftforge.net/net/minecraftforge/forge/index_1.8.8.html) 也实际存在，latest 为 **11.15.0.1655**。不能把 1.8.9 成品标为可安装到 1.8.8 Forge。
 
 已下载并按官方 SHA1 核对两版 userdev：各自 `patches.zip!/net/minecraft/client/multiplayer/GuiConnecting.java.patch` 明确构造 `C00Handshake(47, ...)`。这是**两版协议号均为 47 的一手静态依据**，不是已经互通的测试结果。Forge 还在握手中加入 FML 标记及后续握手，因此原生同版 Forge 联机、1.8.9 客户端至 1.8.8 插件服、1.8.8 原生 Forge 模组必须作为三个不同目标；跨版 Forge 服务器不作默认承诺。插件联机必须实测大小写精确的 `QZGuard` / `REGISTER` 频道以及完整 wire2 报告。
 

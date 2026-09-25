@@ -1,0 +1,40 @@
+# QiZhang's Verdict OPTIONAL Grim 2.3.71/2.3.73 command-integration fragment.
+# Verified syntax/placeholders against the locked Grim JAR's punishments/en.yml.
+# Merge the selected categories under Punishments in Grim's active punishments.yml.
+# Preserve other categories and your own settings. Do NOT replace the whole file.
+# These thresholds are local EXAMPLES, not recommendations from the Grim authors.
+# Tune on a test server with your movement/combat mods, latency and gameplay rules.
+# qzverdict ban resolves the ONLINE player's UUID and blocks known linked devices.
+# A device link is client-reported and does not identify a real person reliably.
+# No automatic ban happens merely by installing this file beside the server.
+Punishments:
+  Simulation:
+    remove-violations-after: 300
+    checks:
+      - "Simulation"
+      - "GroundSpoof"
+      - "Timer"
+      - "TimerLimit"
+      - "NoFall"
+    commands:
+      - "100:40 [alert]"
+      - "100:40 [log]"
+      - "250:0 qzverdict ban %player% Grim-Simulation"
+  Reach:
+    remove-violations-after: 300
+    checks:
+      - "Reach"
+    commands:
+      - "1:1 [alert]"
+      - "1:1 [log]"
+      - "30:0 qzverdict ban %player% Grim-Reach"
+  BadPackets:
+    remove-violations-after: 300
+    checks:
+      - "BadPackets"
+      - "PacketOrder"
+      - "Crash"
+    commands:
+      - "20:20 [alert]"
+      - "20:20 [log]"
+      - "120:0 qzverdict ban %player% Grim-BadPackets"

@@ -20,7 +20,7 @@
 
 ## 旧版开发预览
 
-1.12.2 Forge，以及 1.16.5 / 1.18.2 / 1.19.4 Fabric、Forge 的七个模组已完成构建与真实客户端/专服测试；另有 1.12.2 Forge 客户端连接 Paper 的验收。公开下载：[GitHub 0.2.0-dev-preview.1](https://github.com/EeryFrank/QiZhangVerdict/releases/tag/v0.2.0-dev-preview.1) · [GitLab 0.2.0-dev-preview.1](https://gitlab.com/EeryFrank/QiZhangVerdict/-/releases/v0.2.0-dev-preview.1)。安装组合、证据和限制见 [旧版测试包说明](docs/preview-0.2.0-dev-preview.1.md)。1.8.x 尚未纳入可安装模组范围。预览不改变已发布 0.1.1 的文件。
+1.8.9 / 1.12.2 Forge，以及 1.16.5 / 1.18.2 / 1.19.4 Fabric、Forge 的八个模组已完成构建与真实客户端/专服测试；另有 1.8.9 Forge 客户端连接 Paper 1.8.8、1.12.2 Forge 客户端连接 Paper 1.12.2 的验收。下载：[GitHub 0.2.0-dev-preview.2](https://github.com/EeryFrank/QiZhangVerdict/releases/tag/v0.2.0-dev-preview.2) · [GitLab 0.2.0-dev-preview.2](https://gitlab.com/EeryFrank/QiZhangVerdict/-/releases/v0.2.0-dev-preview.2)。安装组合、证据和限制见 [旧版测试包说明](docs/preview-0.2.0-dev-preview.2.md)。本机 1.8.9 图形客户端验收需要关闭 Forge 启动画面，具体设置见说明；没有原生 Forge 1.8.8 模组。预览沿用已发布 0.1.1 Bukkit 和 preview.1 七个模组的原始文件，新增 1.8.9 模组。
 
 ## 默认登录规则
 
@@ -100,6 +100,8 @@ sanctions.on-deny=BAN
 另提供 [31 个可核验精确 ID 的扩展目录与合并工具](docs/catalog.md)，包含固定源码提交和描述符证据；新增条目由服主显式选用，保留现有规则与白名单。原有安装不会被自动覆盖。
 
 名单不是全市场数据库，也无法发现所有改名、注入或伪造上报的作弊。资源包透视和未知外挂需要服务端矿物混淆及行为检测；[锁定依赖与配置](integrations/README.md) 提供 Paper、Fabric、Forge、NeoForge 安装组合。Forge/NeoForge 组合含矿物混淆，目前没有 Grim 行为预测引擎，不能宣称各平台行为检测能力相同。
+
+1.20.1 / 1.21.1 插件组合还完成了真实 Grim 检查触发、账号与设备关联封禁、重启持久化及解封验证，共 24 组断言；具体上游版本、固定处罚阈值及限制见 [联动验收](docs/grim-linked-ban-validation.md)。旧版第三方集成目前只有依赖审计与安装准备，不能套用这份现代版本的运行结论。
 
 ## 构建与验证
 

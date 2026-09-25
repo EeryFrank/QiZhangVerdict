@@ -1,0 +1,479 @@
+{
+  "schema": 1,
+  "candidate_version": "0.2.0-dev",
+  "bukkit_version": "0.1.1",
+  "license": "GPL-3.0-only",
+  "generated_utc": "2026-09-25T09:56:55Z",
+  "scope": "Production rendered Forge 1.8.9 client to matching Forge 1.8.9 and Paper 1.8.8 dedicated servers. Synthetic offline-auth loopback fixtures; no dev classes or online-account authentication claim.",
+  "all_passed": true,
+  "formal_acceptance_passed": true,
+  "acceptance_condition": "Both final cases locally disable Forge loading splash via client config/splash.properties enabled=false. Original game/Forge/product JARs, video options and server strict defaults are unchanged.",
+  "expected_default_policy": {
+    "limits.max-online-per-ip": "3",
+    "limits.max-online-per-ip-device": "1",
+    "limits.max-accounts-per-ip": "5",
+    "limits.account-window-hours": "720",
+    "limits.attempts-per-minute": "20",
+    "ip.allow": "",
+    "ip.deny": "",
+    "companion.required": "true",
+    "companion.timeout-seconds": "20",
+    "vm.action": "DENY",
+    "blacklist.action": "DENY",
+    "sanctions.on-deny": "BAN",
+    "device.required": "true"
+  },
+  "cases": [
+    {
+      "profile": "forge-1.8.9-to-forge-1.8.9",
+      "minecraft": "1.8.9",
+      "client_loader": "Forge 11.15.1.2318-1.8.9",
+      "server_minecraft": "1.8.9",
+      "server_kind": "forge",
+      "server_build": "Forge 11.15.1.2318",
+      "client_guard_sha256": "f00943b06e87dbfc04e88336134ab4ae1a571a6e9b53924ab6bc06b311918424",
+      "server_guard_sha256": "f00943b06e87dbfc04e88336134ab4ae1a571a6e9b53924ab6bc06b311918424",
+      "passed": true,
+      "manual_visual_review_passed": true,
+      "client_exit_code": 0,
+      "server_exit_code": 0,
+      "strict_defaults": true,
+      "policy_unchanged": true,
+      "policy_before_sha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+      "policy_after_sha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+      "exact_synthetic_uuid_device_association_verified": true,
+      "survival_mode_confirmed": true,
+      "mode_transition_expected": true,
+      "confirmed_online_seconds_after_report_acceptance": 65.157,
+      "timing_method": "time.monotonic; final successful selector must appear only in a new log suffix after the >=65-second window",
+      "report_acceptance_basis": "Exact UUID device association persisted and vanilla testfor m=0 succeeds after required-report spectator isolation; then >=65 monotonic seconds and a fresh successful query.",
+      "final_fresh_survival_query": "[18:51:50] [Server thread/INFO]: Found VerdictClient",
+      "rendered_client_confirmed": true,
+      "resource_pack_metadata_warning": false,
+      "harness_sha256": "72a7a9ec475180845cef9fd8302b17c256057e7c2009a2716c03a692797f4dc1",
+      "helper_sha256": "54dd6011c2d1860beae405780f0d2c63cfa42ece8505dfa55a0170e0ccbf33cc",
+      "vanilla_client_sha1": "3870888a6c3d349d3771a3e9d16c9bf5e076b908",
+      "resource_gate": {
+        "action": "strict-forge-candidate-0.2.0-dev-gpl-03",
+        "minimum_available_gib": 5,
+        "available_gib": 12.104,
+        "utc": "2026-09-25T09:50:12Z",
+        "allowed": true
+      },
+      "client_heap_max": "2G",
+      "server_heap_max": "1536M",
+      "local_forge_splash_disabled": true,
+      "game_video_options_unchanged": true,
+      "screenshot": {
+        "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/evidence/forge-1.8.9-candidate-03.png",
+        "sha256": "e7aaca82f36e923128552cca27f2d8cc5389ff1b348ac856e6eeed49ee2aaed2",
+        "bytes": 34697,
+        "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\candidate-0.2.0-dev-gpl-03\\screenshots\\2026-09-25_18.51.15.png",
+        "copyMode": "verbatim bytes"
+      },
+      "public_evidence": [
+        {
+          "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/evidence/forge-1.8.9-candidate-03-result.json",
+          "sha256": "9de70e14bd7b824b6e9e59a2f9ab29fafd99351406baef677df05a258753d738",
+          "bytes": 6580,
+          "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\candidate-0.2.0-dev-gpl-03\\result.json",
+          "copyMode": "verbatim bytes"
+        },
+        {
+          "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/evidence/forge-1.8.9-candidate-03-client-console.log",
+          "sha256": "bb75a4679084ca5c8483acd843c56bda4475526e5d50594460156d4c596de4e3",
+          "bytes": 18513,
+          "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\candidate-0.2.0-dev-gpl-03\\client-console.log",
+          "copyMode": "verbatim bytes"
+        },
+        {
+          "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/evidence/forge-1.8.9-candidate-03-server-console.log",
+          "sha256": "31b49fd2f3398f215ac75c69ceb5a7ff8a776b393eedda1b3eedb9871e8e5848",
+          "bytes": 16169,
+          "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\candidate-0.2.0-dev-gpl-03\\server-console.log",
+          "copyMode": "verbatim bytes"
+        },
+        {
+          "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/evidence/forge-1.8.9-candidate-03-options-before.txt",
+          "sha256": "35fdff0ad66d42a16aa5db5fb33897bf7063a454529c626572c61c14b1f6014c",
+          "bytes": 71,
+          "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\candidate-0.2.0-dev-gpl-03\\options-before.txt",
+          "copyMode": "verbatim bytes"
+        },
+        {
+          "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/evidence/forge-1.8.9-candidate-03-options-after.txt",
+          "sha256": "35fdff0ad66d42a16aa5db5fb33897bf7063a454529c626572c61c14b1f6014c",
+          "bytes": 71,
+          "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\candidate-0.2.0-dev-gpl-03\\options-after.txt",
+          "copyMode": "verbatim bytes"
+        },
+        {
+          "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/evidence/forge-1.8.9-candidate-03-splash-before.properties",
+          "sha256": "4bba62d98a82507560add62fb404f2d2140ba0fe96eddece88eb1d0d17415272",
+          "bytes": 15,
+          "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\candidate-0.2.0-dev-gpl-03\\splash-before.properties",
+          "copyMode": "verbatim bytes"
+        },
+        {
+          "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/evidence/forge-1.8.9-candidate-03-splash-after.properties",
+          "sha256": "a129d74562e073a021247f18c0747cb648daf561aff26ff77e12a52796ca5e22",
+          "bytes": 340,
+          "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\candidate-0.2.0-dev-gpl-03\\splash-after.properties",
+          "copyMode": "verbatim bytes"
+        },
+        {
+          "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/evidence/forge-1.8.9-candidate-03-manual-visual-review.json",
+          "sha256": "725490df4f106d833a3e6e9c6f4afeabd994adf8421f8106fe4190df417158dc",
+          "bytes": 500,
+          "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\candidate-0.2.0-dev-gpl-03\\manual-visual-review.json",
+          "copyMode": "verbatim bytes"
+        },
+        {
+          "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/evidence/forge-1.8.9-candidate-03.png",
+          "sha256": "e7aaca82f36e923128552cca27f2d8cc5389ff1b348ac856e6eeed49ee2aaed2",
+          "bytes": 34697,
+          "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\candidate-0.2.0-dev-gpl-03\\screenshots\\2026-09-25_18.51.15.png",
+          "copyMode": "verbatim bytes"
+        }
+      ]
+    },
+    {
+      "profile": "forge-1.8.9-to-paper-1.8.8",
+      "minecraft": "1.8.9",
+      "client_loader": "Forge 11.15.1.2318-1.8.9",
+      "server_minecraft": "1.8.8",
+      "server_kind": "bukkit",
+      "server_build": "git-PaperSpigot-445 (MC: 1.8.8)",
+      "client_guard_sha256": "f00943b06e87dbfc04e88336134ab4ae1a571a6e9b53924ab6bc06b311918424",
+      "server_guard_sha256": "e1194b8b694763afbc431e22799f40d357dd80493d194f680edfb219afe94845",
+      "passed": true,
+      "manual_visual_review_passed": true,
+      "client_exit_code": 0,
+      "server_exit_code": 0,
+      "strict_defaults": true,
+      "policy_unchanged": true,
+      "policy_before_sha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+      "policy_after_sha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+      "exact_synthetic_uuid_device_association_verified": true,
+      "survival_mode_confirmed": true,
+      "mode_transition_expected": false,
+      "confirmed_online_seconds_after_report_acceptance": 65.213,
+      "timing_method": "time.monotonic; final successful selector must appear only in a new log suffix after the >=65-second window",
+      "report_acceptance_basis": "Device association persisted for this exact UUID, followed by >=65 monotonic seconds and a fresh survival/online query under the unchanged 20-second required-report deadline. Survival alone is not report proof or a mode transition.",
+      "final_fresh_survival_query": "[18:53:56 INFO]: Found VerdictClient",
+      "rendered_client_confirmed": true,
+      "resource_pack_metadata_warning": false,
+      "harness_sha256": "72a7a9ec475180845cef9fd8302b17c256057e7c2009a2716c03a692797f4dc1",
+      "helper_sha256": "54dd6011c2d1860beae405780f0d2c63cfa42ece8505dfa55a0170e0ccbf33cc",
+      "vanilla_client_sha1": "3870888a6c3d349d3771a3e9d16c9bf5e076b908",
+      "resource_gate": {
+        "action": "strict-bukkit-paper-candidate-0.2.0-dev-gpl-01",
+        "minimum_available_gib": 5,
+        "available_gib": 11.129,
+        "utc": "2026-09-25T09:52:22Z",
+        "allowed": true
+      },
+      "client_heap_max": "2G",
+      "server_heap_max": "1536M",
+      "local_forge_splash_disabled": true,
+      "game_video_options_unchanged": true,
+      "screenshot": {
+        "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/evidence/forge-1.8.9-paper-01.png",
+        "sha256": "849ab9f106359689d3cdd12b335a57463309560a69f6990497a17ea6fae2d315",
+        "bytes": 34224,
+        "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\paper-candidate-0.2.0-dev-gpl-01\\screenshots\\2026-09-25_18.53.21.png",
+        "copyMode": "verbatim bytes"
+      },
+      "public_evidence": [
+        {
+          "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/evidence/forge-1.8.9-paper-01-result.json",
+          "sha256": "f9620031871dc000ca42952640872a759db206f644de57c280479774d7185229",
+          "bytes": 6560,
+          "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\paper-candidate-0.2.0-dev-gpl-01\\result.json",
+          "copyMode": "verbatim bytes"
+        },
+        {
+          "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/evidence/forge-1.8.9-paper-01-client-console.log",
+          "sha256": "029254a5b27adec3cf976ae754fb9d7066fa925ab6248da90bd8126bb80a9c8f",
+          "bytes": 18156,
+          "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\paper-candidate-0.2.0-dev-gpl-01\\client-console.log",
+          "copyMode": "verbatim bytes"
+        },
+        {
+          "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/evidence/forge-1.8.9-paper-01-server-console.log",
+          "sha256": "105440f6cc5ebb67fb44b0d33626b7852bb722d4d12d6c4a3d78d71ca0102338",
+          "bytes": 13844,
+          "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\paper-candidate-0.2.0-dev-gpl-01\\server-console.log",
+          "copyMode": "verbatim bytes"
+        },
+        {
+          "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/evidence/forge-1.8.9-paper-01-options-before.txt",
+          "sha256": "35fdff0ad66d42a16aa5db5fb33897bf7063a454529c626572c61c14b1f6014c",
+          "bytes": 71,
+          "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\paper-candidate-0.2.0-dev-gpl-01\\options-before.txt",
+          "copyMode": "verbatim bytes"
+        },
+        {
+          "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/evidence/forge-1.8.9-paper-01-options-after.txt",
+          "sha256": "35fdff0ad66d42a16aa5db5fb33897bf7063a454529c626572c61c14b1f6014c",
+          "bytes": 71,
+          "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\paper-candidate-0.2.0-dev-gpl-01\\options-after.txt",
+          "copyMode": "verbatim bytes"
+        },
+        {
+          "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/evidence/forge-1.8.9-paper-01-splash-before.properties",
+          "sha256": "4bba62d98a82507560add62fb404f2d2140ba0fe96eddece88eb1d0d17415272",
+          "bytes": 15,
+          "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\paper-candidate-0.2.0-dev-gpl-01\\splash-before.properties",
+          "copyMode": "verbatim bytes"
+        },
+        {
+          "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/evidence/forge-1.8.9-paper-01-splash-after.properties",
+          "sha256": "45f24ed97f58b219fdf57a9a38df887b2995ae9fb16dd0a2de3cd79671911332",
+          "bytes": 340,
+          "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\paper-candidate-0.2.0-dev-gpl-01\\splash-after.properties",
+          "copyMode": "verbatim bytes"
+        },
+        {
+          "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/evidence/forge-1.8.9-paper-01-manual-visual-review.json",
+          "sha256": "8a1f13a69e657a279267b36e7dc8d6016063c5ac12a22e8dd9f970f25b1fc9b7",
+          "bytes": 500,
+          "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\paper-candidate-0.2.0-dev-gpl-01\\manual-visual-review.json",
+          "copyMode": "verbatim bytes"
+        },
+        {
+          "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/evidence/forge-1.8.9-paper-01.png",
+          "sha256": "849ab9f106359689d3cdd12b335a57463309560a69f6990497a17ea6fae2d315",
+          "bytes": 34224,
+          "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\paper-candidate-0.2.0-dev-gpl-01\\screenshots\\2026-09-25_18.53.21.png",
+          "copyMode": "verbatim bytes"
+        }
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "platforms/1.8.9/forge/build/libs/qizhangverdict-forge-1.8.9-0.2.0-dev.jar",
+      "sha256": "f00943b06e87dbfc04e88336134ab4ae1a571a6e9b53924ab6bc06b311918424",
+      "bytes": 91765
+    },
+    {
+      "path": "bukkit/build/libs/qizhangverdict-bukkit-0.1.1.jar",
+      "sha256": "e1194b8b694763afbc431e22799f40d357dd80493d194f680edfb219afe94845",
+      "bytes": 70007
+    }
+  ],
+  "official_inputs": {
+    "minecraft_client_sha1": "3870888a6c3d349d3771a3e9d16c9bf5e076b908",
+    "mojang_metadata": {
+      "id": "1.8.9",
+      "type": "release",
+      "url": "https://piston-meta.mojang.com/v1/packages/d546f1707a3f2b7d034eece5ea2e311eda875787/1.8.9.json",
+      "time": "2021-12-15T15:44:12+00:00",
+      "releaseTime": "2015-12-03T09:24:39+00:00",
+      "sha1": "d546f1707a3f2b7d034eece5ea2e311eda875787",
+      "complianceLevel": 0
+    },
+    "installer_sha256": "f9fdf4945ca02d73ec6cc46300942f4e199e4add068877d517157b3677563656",
+    "installer_official_sha1": "ec0293ff0776b8831f2ed90511bab76e635dda0c",
+    "asset_objects_verified": 722,
+    "logging": {
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\client\\assets\\log_configs\\client-1.7.xml",
+      "sha256": "dca9a1804df74776ddcb5f50ddc3f86fff51a656352f7990ede50fe74c988eea",
+      "bytes": 966
+    },
+    "paper_1_8_8_server_sha256": "7ff6d2cec671ef0d95b3723b5c92890118fb882d73b7f8fa0a2cd31d97c55f86",
+    "java": "E:\\CodexTemp\\QiZhangVerdict\\toolchains\\jdk8\\jdk8u504-b01\\bin\\java.exe"
+  },
+  "legacy_installer_boundary": "The old official installer does not support --installClient. That exit-1 attempt remains in diagnostic.json. Clients use the verified official install_profile versionInfo and unmodified universal JAR; no supported client CLI installation is claimed.",
+  "retained_unsuccessful_attempts": [
+    {
+      "run": "candidate-0.2.0-dev-gpl-01",
+      "formal_acceptance_passed": false,
+      "automatic_runtime_passed": true,
+      "reason": "Strict report/65.224 seconds/normal exits passed, but manual texture/HUD inspection failed."
+    },
+    {
+      "run": "candidate-0.2.0-dev-gpl-02",
+      "formal_acceptance_passed": false,
+      "automatic_runtime_passed": false,
+      "reason": "VBO-only comparison retained the visual failure. Run started at 4.513 GiB instead of required 5 GiB; owned processes were normally closed early. No >=65-second acceptance was claimed."
+    }
+  ],
+  "previous_diagnostic": {
+    "path": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/diagnostic.json",
+    "sha256": "31d7e60a5b09c228ee325d938f079dd03aa705b9e0ee4cb9fc647011a858347d",
+    "bytes": 20118
+  },
+  "diagnostic_baselines": [
+    {
+      "report": {
+        "path": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/no-guard-baseline-01.json",
+        "sha256": "baec9097458b9cef5b946498cf76c7a94521728161c4fea167e7f0ac6c4fec7c",
+        "bytes": 7476
+      },
+      "anti_cheat_acceptance": false,
+      "finding": "Same visual fault reproduced without Guard."
+    },
+    {
+      "report": {
+        "path": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/no-guard-baseline-02.json",
+        "sha256": "cb5db2cf27defbaa29f6f1ecfa8ab073aa29a14d6f77c402a03e13e5df8f755d",
+        "bytes": 9923
+      },
+      "anti_cheat_acceptance": false,
+      "finding": "Changing only local Forge splash enabled=false yielded normal textures/HUD in the no-Guard fixture."
+    }
+  ],
+  "graphics_conclusion": "The comparison supports disabling Forge splash as a mitigation for this local test fixture. It does not establish a general GPU/driver cause or normal rendering under default splash settings on every machine.",
+  "native_forge_1_8_8_adapter_claimed": false,
+  "public_evidence": [
+    {
+      "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/evidence/forge-1.8.9-candidate-03-result.json",
+      "sha256": "9de70e14bd7b824b6e9e59a2f9ab29fafd99351406baef677df05a258753d738",
+      "bytes": 6580,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\candidate-0.2.0-dev-gpl-03\\result.json",
+      "copyMode": "verbatim bytes"
+    },
+    {
+      "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/evidence/forge-1.8.9-candidate-03-client-console.log",
+      "sha256": "bb75a4679084ca5c8483acd843c56bda4475526e5d50594460156d4c596de4e3",
+      "bytes": 18513,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\candidate-0.2.0-dev-gpl-03\\client-console.log",
+      "copyMode": "verbatim bytes"
+    },
+    {
+      "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/evidence/forge-1.8.9-candidate-03-server-console.log",
+      "sha256": "31b49fd2f3398f215ac75c69ceb5a7ff8a776b393eedda1b3eedb9871e8e5848",
+      "bytes": 16169,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\candidate-0.2.0-dev-gpl-03\\server-console.log",
+      "copyMode": "verbatim bytes"
+    },
+    {
+      "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/evidence/forge-1.8.9-candidate-03-options-before.txt",
+      "sha256": "35fdff0ad66d42a16aa5db5fb33897bf7063a454529c626572c61c14b1f6014c",
+      "bytes": 71,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\candidate-0.2.0-dev-gpl-03\\options-before.txt",
+      "copyMode": "verbatim bytes"
+    },
+    {
+      "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/evidence/forge-1.8.9-candidate-03-options-after.txt",
+      "sha256": "35fdff0ad66d42a16aa5db5fb33897bf7063a454529c626572c61c14b1f6014c",
+      "bytes": 71,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\candidate-0.2.0-dev-gpl-03\\options-after.txt",
+      "copyMode": "verbatim bytes"
+    },
+    {
+      "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/evidence/forge-1.8.9-candidate-03-splash-before.properties",
+      "sha256": "4bba62d98a82507560add62fb404f2d2140ba0fe96eddece88eb1d0d17415272",
+      "bytes": 15,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\candidate-0.2.0-dev-gpl-03\\splash-before.properties",
+      "copyMode": "verbatim bytes"
+    },
+    {
+      "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/evidence/forge-1.8.9-candidate-03-splash-after.properties",
+      "sha256": "a129d74562e073a021247f18c0747cb648daf561aff26ff77e12a52796ca5e22",
+      "bytes": 340,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\candidate-0.2.0-dev-gpl-03\\splash-after.properties",
+      "copyMode": "verbatim bytes"
+    },
+    {
+      "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/evidence/forge-1.8.9-candidate-03-manual-visual-review.json",
+      "sha256": "725490df4f106d833a3e6e9c6f4afeabd994adf8421f8106fe4190df417158dc",
+      "bytes": 500,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\candidate-0.2.0-dev-gpl-03\\manual-visual-review.json",
+      "copyMode": "verbatim bytes"
+    },
+    {
+      "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/evidence/forge-1.8.9-candidate-03.png",
+      "sha256": "e7aaca82f36e923128552cca27f2d8cc5389ff1b348ac856e6eeed49ee2aaed2",
+      "bytes": 34697,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\candidate-0.2.0-dev-gpl-03\\screenshots\\2026-09-25_18.51.15.png",
+      "copyMode": "verbatim bytes"
+    },
+    {
+      "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/evidence/forge-1.8.9-paper-01-result.json",
+      "sha256": "f9620031871dc000ca42952640872a759db206f644de57c280479774d7185229",
+      "bytes": 6560,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\paper-candidate-0.2.0-dev-gpl-01\\result.json",
+      "copyMode": "verbatim bytes"
+    },
+    {
+      "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/evidence/forge-1.8.9-paper-01-client-console.log",
+      "sha256": "029254a5b27adec3cf976ae754fb9d7066fa925ab6248da90bd8126bb80a9c8f",
+      "bytes": 18156,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\paper-candidate-0.2.0-dev-gpl-01\\client-console.log",
+      "copyMode": "verbatim bytes"
+    },
+    {
+      "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/evidence/forge-1.8.9-paper-01-server-console.log",
+      "sha256": "105440f6cc5ebb67fb44b0d33626b7852bb722d4d12d6c4a3d78d71ca0102338",
+      "bytes": 13844,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\paper-candidate-0.2.0-dev-gpl-01\\server-console.log",
+      "copyMode": "verbatim bytes"
+    },
+    {
+      "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/evidence/forge-1.8.9-paper-01-options-before.txt",
+      "sha256": "35fdff0ad66d42a16aa5db5fb33897bf7063a454529c626572c61c14b1f6014c",
+      "bytes": 71,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\paper-candidate-0.2.0-dev-gpl-01\\options-before.txt",
+      "copyMode": "verbatim bytes"
+    },
+    {
+      "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/evidence/forge-1.8.9-paper-01-options-after.txt",
+      "sha256": "35fdff0ad66d42a16aa5db5fb33897bf7063a454529c626572c61c14b1f6014c",
+      "bytes": 71,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\paper-candidate-0.2.0-dev-gpl-01\\options-after.txt",
+      "copyMode": "verbatim bytes"
+    },
+    {
+      "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/evidence/forge-1.8.9-paper-01-splash-before.properties",
+      "sha256": "4bba62d98a82507560add62fb404f2d2140ba0fe96eddece88eb1d0d17415272",
+      "bytes": 15,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\paper-candidate-0.2.0-dev-gpl-01\\splash-before.properties",
+      "copyMode": "verbatim bytes"
+    },
+    {
+      "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/evidence/forge-1.8.9-paper-01-splash-after.properties",
+      "sha256": "45f24ed97f58b219fdf57a9a38df887b2995ae9fb16dd0a2de3cd79671911332",
+      "bytes": 340,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\paper-candidate-0.2.0-dev-gpl-01\\splash-after.properties",
+      "copyMode": "verbatim bytes"
+    },
+    {
+      "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/evidence/forge-1.8.9-paper-01-manual-visual-review.json",
+      "sha256": "8a1f13a69e657a279267b36e7dc8d6016063c5ac12a22e8dd9f970f25b1fc9b7",
+      "bytes": 500,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\paper-candidate-0.2.0-dev-gpl-01\\manual-visual-review.json",
+      "copyMode": "verbatim bytes"
+    },
+    {
+      "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/evidence/forge-1.8.9-paper-01.png",
+      "sha256": "849ab9f106359689d3cdd12b335a57463309560a69f6990497a17ea6fae2d315",
+      "bytes": 34224,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\forge-1.8.9\\paper-candidate-0.2.0-dev-gpl-01\\screenshots\\2026-09-25_18.53.21.png",
+      "copyMode": "verbatim bytes"
+    },
+    {
+      "publicFile": "outputs/legacy-client-matrix/1.8.9-0.2.0-dev-gpl/evidence/executed-legacy189-72a7a9ec475180845cef9fd8302b17c256057e7c2009a2716c03a692797f4dc1.py",
+      "sha256": "72a7a9ec475180845cef9fd8302b17c256057e7c2009a2716c03a692797f4dc1",
+      "bytes": 37473,
+      "originalPath": "E:\\CodexTemp\\QiZhangVerdict\\legacy-client-matrix\\harness-snapshots\\legacy189-72a7a9ec475180845cef9fd8302b17c256057e7c2009a2716c03a692797f4dc1.py",
+      "copyMode": "verbatim bytes"
+    }
+  ],
+  "publication_review": {
+    "raw_copy_count": 19,
+    "hash_and_size_closure_verified": true,
+    "account_state_or_raw_device_identifiers_included": false,
+    "full_launch_plan_or_minecraft_disassembly_included": false
+  },
+  "not_covered": [
+    "Native Forge 1.8.8 JAR installation",
+    "Ordinary graphics with default Forge splash on this machine",
+    "Other machines/loaders/modpacks",
+    "Authenticated online infrastructure",
+    "Modified-client resistance or real VM vendor matrix",
+    "Large modpacks, old saves, sustained load, proxy or hybrid servers"
+  ]
+}
