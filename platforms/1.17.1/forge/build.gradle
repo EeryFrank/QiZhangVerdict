@@ -1,0 +1,23 @@
+// SPDX-License-Identifier: GPL-3.0-only
+architectury { platformSetupLoomIde(); forge() }
+dependencies { forge 'net.minecraftforge:forge:1.17.1-37.1.1' }
+loom { mixin { defaultRefmapName = 'qizhangverdict.refmap.json' } }
+tasks.named('jar') { manifest { attributes 'MixinConfigs': 'qizhangverdict.mixins.json' } }
+
+// The parent creates smoke and its main-source classpaths for both loaders.
+configurations.smokeImplementation.extendsFrom(configurations.implementation)
+configurations.smokeRuntimeOnly.extendsFrom(configurations.runtimeOnly)
+
+['connectionDispatchSmoke': 'cn.qizhang.guard.forge.ConnectionDispatchSmoke',
+ 'legacyPayloadSmoke': 'cn.qizhang.guard.forge.LegacyPayloadSmoke'].each { taskName, entryPoint ->
+    tasks.register(taskName, JavaExec) {
+        dependsOn tasks.named('smokeClasses')
+        classpath = sourceSets.smoke.runtimeClasspath
+        mainClass = entryPoint
+        javaLauncher = javaToolchains.launcherFor { languageVersion = JavaLanguageVersion.of(16) }
+        maxHeapSize = '256m'
+        workingDir = new File(rootProject.runtimeRoot, 'forge-' + taskName)
+        doFirst { workingDir.mkdirs() }
+    }
+    tasks.named('check') { dependsOn tasks.named(taskName) }
+}

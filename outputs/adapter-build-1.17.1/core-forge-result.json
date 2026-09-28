@@ -1,0 +1,127 @@
+{
+  "artifact": "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.17.1\\forge\\build\\libs\\qizhangverdict-forge-1.17.1-0.6.0-dev.jar",
+  "sha256": "02e8e470f9abe5b7b6dd19b9107b4597b4f197423223e94f74fe9dd94da0481b",
+  "bytes": 99068,
+  "scope": "Core from the packaged JAR, not source classes; no Minecraft loader or player runtime acceptance.",
+  "java": "E:\\CodexTemp\\QiZhangVerdict\\toolchains\\jdk16\\installation-01\\extracted\\jdk-16.0.2+7\\bin\\java.exe",
+  "javac": "D:\\Java\\jdk-21\\bin\\javac.exe",
+  "checks": [
+    {
+      "name": "java-version",
+      "command": [
+        "E:\\CodexTemp\\QiZhangVerdict\\toolchains\\jdk16\\installation-01\\extracted\\jdk-16.0.2+7\\bin\\java.exe",
+        "-version"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "log": "java-version.log",
+      "sha256": "64a06b9d8a966fed747eef0f1aab79d7d2f1d091d3359fb1aac796b2e92863b2",
+      "bytes": 181
+    },
+    {
+      "name": "compile-runners",
+      "command": [
+        "D:\\Java\\jdk-21\\bin\\javac.exe",
+        "--release",
+        "8",
+        "-encoding",
+        "UTF-8",
+        "-sourcepath",
+        "",
+        "-cp",
+        "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.17.1\\forge\\build\\libs\\qizhangverdict-forge-1.17.1-0.6.0-dev.jar",
+        "-d",
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\core-checks\\forge-44-01\\runner-classes",
+        "E:\\Codex_work\\QiZhangVerdict\\core\\src\\test\\java\\cn\\qizhang\\guard\\core\\SecurityRegressionTest.java",
+        "E:\\Codex_work\\QiZhangVerdict\\core\\src\\test\\java\\cn\\qizhang\\guard\\core\\CatalogCompatibilityTest.java",
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\core-checks\\forge-44-01\\ArtifactOriginCheck.java"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "log": "compile-runners.log",
+      "sha256": "0776deeb6ace85f83d60a9ba535cbe73a21566505b5aec2fd5c75b2bde065172",
+      "bytes": 188
+    },
+    {
+      "name": "artifact-origin",
+      "command": [
+        "E:\\CodexTemp\\QiZhangVerdict\\toolchains\\jdk16\\installation-01\\extracted\\jdk-16.0.2+7\\bin\\java.exe",
+        "-Xmx128M",
+        "-XX:MaxMetaspaceSize=64M",
+        "-Dqzguard.testDir=E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\core-checks\\forge-44-01\\test-data",
+        "-cp",
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\core-checks\\forge-44-01\\runner-classes;E:\\Codex_work\\QiZhangVerdict\\platforms\\1.17.1\\forge\\build\\libs\\qizhangverdict-forge-1.17.1-0.6.0-dev.jar",
+        "ArtifactOriginCheck",
+        "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.17.1\\forge\\build\\libs\\qizhangverdict-forge-1.17.1-0.6.0-dev.jar"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "log": "artifact-origin.log",
+      "sha256": "de3373d101bd34efca6d6014acec9d6fb476d4803cfadfa4d52bade4f5cb8c0b",
+      "bytes": 74
+    },
+    {
+      "name": "security",
+      "command": [
+        "E:\\CodexTemp\\QiZhangVerdict\\toolchains\\jdk16\\installation-01\\extracted\\jdk-16.0.2+7\\bin\\java.exe",
+        "-Xmx128M",
+        "-XX:MaxMetaspaceSize=64M",
+        "-Dqzguard.testDir=E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\core-checks\\forge-44-01\\test-data",
+        "-cp",
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\core-checks\\forge-44-01\\runner-classes;E:\\Codex_work\\QiZhangVerdict\\platforms\\1.17.1\\forge\\build\\libs\\qizhangverdict-forge-1.17.1-0.6.0-dev.jar",
+        "cn.qizhang.guard.core.SecurityRegressionTest"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "log": "security.log",
+      "sha256": "1e26be45a2a53ee19e208f27f4e32b96db5c32f3c0dd7582a88d36147338e1fb",
+      "bytes": 3229
+    },
+    {
+      "name": "catalog",
+      "command": [
+        "E:\\CodexTemp\\QiZhangVerdict\\toolchains\\jdk16\\installation-01\\extracted\\jdk-16.0.2+7\\bin\\java.exe",
+        "-Xmx128M",
+        "-XX:MaxMetaspaceSize=64M",
+        "-Dqzguard.testDir=E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\core-checks\\forge-44-01\\test-data",
+        "-cp",
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\core-checks\\forge-44-01\\runner-classes;E:\\Codex_work\\QiZhangVerdict\\platforms\\1.17.1\\forge\\build\\libs\\qizhangverdict-forge-1.17.1-0.6.0-dev.jar",
+        "cn.qizhang.guard.core.CatalogCompatibilityTest",
+        "E:\\Codex_work\\QiZhangVerdict\\catalog\\blacklist-extension.tsv"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "log": "catalog.log",
+      "sha256": "a86d429d64692f6fb0afa8515e66ed904c7e4ffc7ec12947a3200d1ab2c5d9a3",
+      "bytes": 3814,
+      "validation": {
+        "rules": 44,
+        "deny": 40,
+        "alert": 4,
+        "controls": 3,
+        "summary": "PASS: production Blacklist parser and fresh GuardService enforce 44 exact catalog rules (40 DENY, 4 ALERT); 3 preservation and ordinary-ID controls passed",
+        "catalogSha256": "fa2f688bd977317c95b485a115ca52267b1cd779ef48fdc0cadc4cfaa7ac4ccf"
+      }
+    }
+  ],
+  "sourceFiles": [
+    {
+      "path": "core\\src\\test\\java\\cn\\qizhang\\guard\\core\\SecurityRegressionTest.java",
+      "sha256": "f1b0c445eaf5229e889b94d4c5176dbbe72eccebd81febe58b78ff980d716985"
+    },
+    {
+      "path": "core\\src\\test\\java\\cn\\qizhang\\guard\\core\\CatalogCompatibilityTest.java",
+      "sha256": "92089bada45a9bb492cbd387f62afaaf558ffa1ba985d2ea562782f4cb427b43"
+    }
+  ],
+  "toolSha256": "8a0746fbb5a8a2802b84292c349dde8f86c1f56d4d9dbbb046ab8fe111ed0ddd",
+  "passed": true,
+  "embeddedCoreClassCount": 16,
+  "runnerClassFiles": [
+    "ArtifactOriginCheck.class",
+    "cn/qizhang/guard/core/CatalogCompatibilityTest.class",
+    "cn/qizhang/guard/core/SecurityRegressionTest$Check.class",
+    "cn/qizhang/guard/core/SecurityRegressionTest.class"
+  ],
+  "artifactUnchanged": true
+}

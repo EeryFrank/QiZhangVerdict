@@ -4,6 +4,12 @@ set -euo pipefail
 
 : "${QV_TARGET:?Set one exact modern CI target}"
 : "${QV_JAVA_PATHS:?Set installed Java17 and Java21 toolchain paths}"
+if [[ "$QV_TARGET" == mods-1.17.1 ]]; then
+  : "${QV_JAVA16_PATH:?Minecraft 1.17.1 requires the installed Java16 toolchain path}"
+  test -x "$QV_JAVA16_PATH/bin/java"
+  test -x "$QV_JAVA16_PATH/bin/javac"
+  QV_JAVA_PATHS="$QV_JAVA_PATHS,$QV_JAVA16_PATH"
+fi
 qv_project=$(python3 -B scripts/ci_modern_artifacts.py target --target "$QV_TARGET" --field project)
 qv_logs="$PWD/ci-logs/$QV_TARGET"
 qv_runtime="${RUNNER_TEMP:-$PWD/.ci-tests}/qizhang-modern/$QV_TARGET"

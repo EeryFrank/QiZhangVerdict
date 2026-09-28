@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "read-only Forge37 channel-source and prior TCP-failure review",
+  "javaExecuted": false,
+  "repositoryModified": false,
+  "runtimeFixValidated": false,
+  "officialSource": {
+    "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\forge-preparation-01\\forge-1.17.1-37.1.1-sources.jar",
+    "bytes": 1558390,
+    "sha256": "58a7ed4c531ac8965bcded899116821e19ac02ec1aabec8942f5fe5aef9da6b8",
+    "url": "https://maven.minecraftforge.net/net/minecraftforge/forge/1.17.1-37.1.1/forge-1.17.1-37.1.1-sources.jar"
+  },
+  "reviewedAdapter": {
+    "path": "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.17.1\\forge\\src\\main\\java\\cn\\qizhang\\guard\\forge\\GuardForge.java",
+    "bytes": 6849,
+    "sha256": "ea0fc6afb1885eb5dae3c4e01fb2e5f2d58be3296f4b50bb817a3a75afe06aaa"
+  },
+  "candidate": {
+    "path": "E:\\Codex_work\\QiZhangVerdict\\platforms\\1.17.1\\forge\\build\\libs\\qizhangverdict-forge-1.17.1-0.6.0-dev.jar",
+    "bytes": 99068,
+    "sha256": "02e8e470f9abe5b7b6dd19b9107b4597b4f197423223e94f74fe9dd94da0481b"
+  },
+  "observedAttempt": {
+    "result": {
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-02\\smoke-result.json",
+      "bytes": 9775,
+      "sha256": "ff218f66a9467747614859292a9a3a92d1e586ffcbb6dbe3c3f3d8af15362963"
+    },
+    "protocolConsole": {
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-02\\protocol-console.log",
+      "bytes": 578,
+      "sha256": "b0c7e8256a102485bed077980ae79942715f3335b969b90f8fc36e78a7a4ac78"
+    },
+    "started": true,
+    "strictDefaultsAnd44Catalog": true,
+    "mixinActualCallChain": true,
+    "firstBotJoined": true,
+    "reportSent": false,
+    "requiredReportTimedOut": true,
+    "normalStop": true,
+    "exitCode": 0,
+    "protocolPassed": false
+  },
+  "sourceFindings": [
+    {
+      "member": "net/minecraftforge/fmllegacy/network/NetworkInitialization.java",
+      "lines": "103-118",
+      "finding": "Built-in EventNetworkChannels handle minecraft:register/unregister."
+    },
+    {
+      "member": "net/minecraftforge/fmllegacy/network/FMLMCRegisterPacketHandler.java",
+      "lines": "45-56,72-82,90-112",
+      "finding": "REGISTER updates FML_MC_REGISTRY ChannelList, requires NUL-terminated names, and notifies union of old/new targets. It does not fill FML_CONNECTION_DATA."
+    },
+    {
+      "member": "net/minecraftforge/fmllegacy/network/NetworkInstance.java",
+      "lines": "110-112",
+      "finding": "isRemotePresent only reads NetworkHooks.getConnectionData(manager).getChannels(), not the MC registry."
+    },
+    {
+      "member": "net/minecraftforge/fmllegacy/network/FMLHandshakeHandler.java",
+      "lines": "205-210",
+      "finding": "Forge login C2SModListReply supplies the FMLConnectionData channel map."
+    },
+    {
+      "member": "net/minecraftforge/fmllegacy/network/NetworkHooks.java",
+      "lines": "89-92",
+      "finding": "Raw PLAY payload dispatch is by registered local channel name and direction, independent of isRemotePresent/FMLConnectionData."
+    },
+    {
+      "member": "patches/net/minecraft/server/network/ServerGamePacketListenerImpl.java.patch",
+      "lines": "67-69",
+      "finding": "Vanilla PLAY custom payload calls NetworkHooks.onCustomPayload."
+    },
+    {
+      "member": "patches/net/minecraft/client/multiplayer/ClientPacketListener.java.patch",
+      "lines": "91-94",
+      "finding": "Unknown vanilla payload IDs are offered to NetworkHooks.onCustomPayload."
+    }
+  ],
+  "conclusion": "Current transport.available mistakes the Forge-only login channel map for general raw-channel availability; the source predicts the observed Node timeout and also blocks standard Fabric companion reports before sending a nonce.",
+  "minimalProductionProposal": "Require the existing exact live PLAY Connection/listener identity before sending the one nonce; remove the Forge-only isRemotePresent prerequisite. Keep report validation, device policy, isolation, deadlines and report bounds unchanged. Rebuild a new candidate and retest; preserve old bytes/results.",
+  "alternativeScope": "A real FML login QA handshake can test Forge-to-Forge but cannot establish standard raw/Fabric interoperability. Registration-event booleans alone are unsafe as exact membership queries because events cover the old/new union without exposing the current set.",
+  "bounds": [
+    "No source edit or Java run in this review.",
+    "The original runtime did not directly log FMLConnectionData; cause is established by actual pinned source and consistent failed behavior, not a fabricated attribute measurement.",
+    "Ordinary absent companions would still need to satisfy the same report requirement or time out; capability registration is not attestation."
+  ]
+}

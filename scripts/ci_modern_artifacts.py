@@ -10,6 +10,7 @@ import shutil
 
 TARGETS = {
     'core-bukkit': ('.', '0.2.1-dev', ('bukkit',)),
+    'mods-1.17.1': ('platforms/1.17.1', '0.6.0-dev', ('fabric', 'forge')),
     'mods-1.19.2': ('platforms/1.19.2', '0.3.0-dev', ('fabric', 'forge')),
     'mods-1.20.1': ('platforms/1.20.1', '0.2.0-test.1', ('fabric', 'forge')),
     'mods-1.20.4': ('platforms/1.20.4', '0.3.0-dev', ('fabric', 'forge', 'neoforge')),
@@ -17,7 +18,7 @@ TARGETS = {
     'mods-1.21.1': ('platforms/1.21.1', '0.2.0-test.1', ('fabric', 'neoforge')),
     'mods-1.21.11': ('platforms/1.21.11', '0.4.0-dev', ('fabric', 'neoforge')),
 }
-DELIVERABLE_COUNT = 15
+DELIVERABLE_COUNT = 17
 
 
 def artifact_paths(target):
@@ -85,7 +86,7 @@ def collect(input_root, output, layout):
     if not input_root.is_dir() or input_root.is_symlink():
         raise ValueError('Expected ordinary artifact input directory')
     if {p.name for p in input_root.iterdir()} != set(folders.values()):
-        raise ValueError('Input target folders differ from the seven pinned modern jobs')
+        raise ValueError('Input target folders differ from the eight pinned modern jobs')
     sources = []
     for target, folder_name in folders.items():
         expected = [Path(path).name for path in artifact_paths(target)]
@@ -93,7 +94,7 @@ def collect(input_root, output, layout):
         verify_folder(folder, expected)
         sources.extend(folder / name for name in expected)
     if len(sources) != DELIVERABLE_COUNT or len({p.name for p in sources}) != DELIVERABLE_COUNT:
-        raise ValueError('Expected exactly fifteen distinct pinned production JARs')
+        raise ValueError('Expected exactly seventeen distinct pinned production JARs')
     # Validate the entire input before creating the new result directory.
     output.mkdir(parents=True, exist_ok=False)
     for source in sources:

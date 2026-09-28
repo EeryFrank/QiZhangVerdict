@@ -2,6 +2,12 @@
 
 插件标识 **QiZhangVerdict**，模组 ID `qizhangverdict`，管理命令 `/qzverdict`。本项目提供 IP/账号/设备准入、可管理的黑白名单、客户端协作检查和设备关联封禁。行为预测与矿物混淆使用独立安装、固定版本的开源组件，具体见 [集成安装](integrations/README.md)。
 
+## 1.17.1 开发候选
+
+`0.6.0-dev` 新增 Minecraft **1.17.1 Fabric / Forge**，使用 Java 16。两份成品各通过 104 项包内核心检查；适配、依赖、散列和保留的失败尝试见[构建记录](docs/adapter-1.17.1.md)。此处是开发进度，公开下载仍以仓库 Releases 及下面已发布版本为准。
+
+当前开发目录有 **44 个精确标识（40 DENY、4 ALERT）**，新增 `dualviewxray`、`simplexray`；普通模组也使用的 `hydrogen`、`lumina` 不会被默认拒绝。已有名单、白名单、OFF 和删除项不会因升级自动回填，见[目录与合并工具](docs/catalog.md)。设备及 VM 信号是客户端自报，名单数量不代表覆盖全部作弊工具。
+
 ## 测试预览 0.5.0-dev-preview.1
 
 23 个安装包及对应源码已发布至 [GitHub](https://github.com/EeryFrank/QiZhangVerdict/releases/tag/v0.5.0-dev-preview.1) 和 [GitLab](https://gitlab.com/EeryFrank/QiZhangVerdict/-/releases/v0.5.0-dev-preview.1)，原始实现采用 **GPL-3.0-only**。每站提供 34 个附件，包含当前源码与三份继承组件的原版对应源码 ZIP。
@@ -10,7 +16,7 @@
 
 两站 68 份附件均已匿名下载并核对大小与 SHA256，见[发布回执](outputs/publish-receipt-0.5.0-dev-preview.1.json)；安装和源码 ZIP 见[独立审计](outputs/packaging-validation-0.5.0-dev-preview.1.json)。最终标签源码固定为 `13b3e05996f2abaf97a4616fe7c9a2e5d5288916`。同标签 GitHub 现代 8 项、旧版 5 项全部成功；GitLab 13 项因配额未启动，不计为通过，详见[最终标签 CI](outputs/release-ci-validation-0.5.0-dev-preview.1.json)。CI 重编不替换本机实测的发布成品。
 
-当前开发目录扩为 **42 个精确标识（38 DENY、4 ALERT）**，新增 `gateclient`、`genshin`、`meteor-crash-addon`，附固定来源与许可说明。既有管理员名单及已发布 20 个 JAR 保持原样，更新方法见[目录说明](docs/catalog.md)。本轮没有验证 1.20.6 插件服互通、真实虚拟机攻防或全部作弊类型。
+0.5 发布时的开发目录扩为 **42 个精确标识（38 DENY、4 ALERT）**，新增 `gateclient`、`genshin`、`meteor-crash-addon`，附固定来源与许可说明。既有管理员名单及已发布 20 个 JAR 保持原样，更新方法见[目录说明](docs/catalog.md)。本轮没有验证 1.20.6 插件服互通、真实虚拟机攻防或全部作弊类型。
 
 ## 测试预览 0.4.0-dev-preview.1
 
@@ -121,7 +127,7 @@ sanctions.on-deny=BAN
 
 0.2.0-test.1 首次生成的 `blacklist.tsv` 包含 **37 个精确 ID：33 条 DENY、4 条 ALERT**。`baritone`、`baritoe`、`atianxray`、`keystrokesmod` 默认仅告警，服主可按玩法调整。不会因 `xray` 子串封掉正常的 `antixray`，也不默认封 Sodium、Iris、JEI、地图、投影等正常模组；存在正常项目重名的 `bigrat` 和通用 `template` ID 未设为默认拒绝。
 
-当前开发目录包含 [42 条可核验规则与合并工具](docs/catalog.md)，合计 38 条 DENY、4 条 ALERT；每条附固定源码提交和描述符证据。0.4 新增 `ferox`、`wurstplusthree`，本轮进一步新增 `gateclient`、`genshin`、`meteor-crash-addon`。已有安装的名单文件保持原样，包括管理员的 OFF 设置和删除记录；升级不会自动回填。管理员可审阅后显式合并新增规则。已发布 0.2 / 0.3 的 18 份成品仍默认 37 条，0.4 新增的两份仍默认 39 条；各历史包以对应 tag 为准。
+当前开发目录包含 [44 条可核验规则与合并工具](docs/catalog.md)，合计 40 条 DENY、4 条 ALERT；每条附固定源码提交和描述符证据。本轮新增 `dualviewxray`、`simplexray`，保留普通模组同名标识的排除说明及许可冲突说明。已有安装的名单文件保持原样，包括管理员的 OFF 设置和删除记录；升级不会自动回填。管理员可审阅后显式合并新增规则。已发布 0.2 / 0.3 的 18 份成品仍默认 37 条，0.4 新增的两份仍默认 39 条，0.5 新增的三份仍默认 42 条；各历史包以对应 tag 为准。
 
 名单不是全市场数据库，也无法发现所有改名、注入或伪造上报的作弊。资源包透视和未知外挂需要服务端矿物混淆及行为检测；[锁定依赖与配置](integrations/README.md) 提供 Paper、Fabric、Forge、NeoForge 安装组合。Forge/NeoForge 组合含矿物混淆，目前没有 Grim 行为预测引擎，不能宣称各平台行为检测能力相同。
 

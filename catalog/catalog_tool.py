@@ -22,7 +22,8 @@ KINDS = {"mod", "automation", "pack", "brand"}
 # Ambiguous/common identities and ordinary support mods cannot become default DENY.
 ALERT_ONLY = {"keystrokesmod", "baritone", "baritoe", "examplemod", "client",
               "sodium", "iris", "optifine", "jei", "rei", "litematica", "schematica",
-              "lunatriuscore", "antixray", "fabric-api", "minecraft"}
+              "lunatriuscore", "antixray", "fabric-api", "minecraft",
+              "hydrogen", "lumina"}
 MAX_SOURCE_BYTES = 1024 * 1024
 MAX_RULE_BYTES = 4 * 1024 * 1024
 MAX_RULE_COUNT = 10000

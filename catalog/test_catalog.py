@@ -29,8 +29,19 @@ class CatalogTests(unittest.TestCase):
 
     def test_reviewed_catalog(self):
         result = tool.validate(self.data)
-        self.assertEqual(42, result["exactIds"])
-        self.assertEqual(56, sum(len(e["identifierProofs"]) for e in self.data["entries"]))
+        self.assertEqual(44, result["exactIds"])
+        self.assertEqual(59, sum(len(e["identifierProofs"]) for e in self.data["entries"]))
+
+    def test_verified_ordinary_identity_collisions_cannot_default_deny(self):
+        for identifier in ("hydrogen", "lumina"):
+            data = copy.deepcopy(self.catalog)
+            entry = copy.deepcopy(self.entry("simplexray"))
+            entry["key"] = identifier
+            entry["exactIds"] = [identifier]
+            entry["identifierProofs"][0]["id"] = identifier
+            data["entries"].append(entry)
+            with self.subTest(identifier=identifier), self.assertRaisesRegex(tool.CatalogError, "cannot default DENY"):
+                tool.validate(data)
 
     def test_duplicate_conflicting_identity_rejected(self):
         duplicate = copy.deepcopy(self.entry("meteor-client"))
@@ -123,10 +134,10 @@ class CatalogTests(unittest.TestCase):
         self.assertNotIn(("brand", "future"), parsed)
         self.assertNotIn(("mod", "bigrat"), parsed)
         self.assertNotIn(("mod", "template"), parsed)
-        for identifier in ("cheatutils", "gamesense", "nightx", "krs", "cigarette", "meteorplus", "ferox", "wurstplusthree"):
+        for identifier in ("cheatutils", "gamesense", "nightx", "krs", "cigarette", "meteorplus", "ferox", "wurstplusthree", "dualviewxray", "simplexray"):
             self.assertEqual("DENY", parsed[("mod", identifier)][2])
         self.assertEqual("ALERT", parsed[("mod", "baritoe")][2])
-        for identifier in ("eclient", "xulu", "coffee", "atomic", "ferox-helper", "wurstplusthree-helper"):
+        for identifier in ("eclient", "xulu", "coffee", "atomic", "ferox-helper", "wurstplusthree-helper", "hydrogen", "lumina", "simplexraydetector", "dualviewxray-helper", "simplexray-helper"):
             self.assertNotIn(("mod", identifier), parsed)
 
     def test_export_refuses_existing_file(self):
@@ -162,6 +173,24 @@ class CatalogTests(unittest.TestCase):
         output.write_text("keep", "utf-8")
         with self.assertRaisesRegex(tool.CatalogError, "refusing to overwrite"):
             tool.merge(self.data, existing, output, report, ["mod:xray"])
+
+    def test_new_xray_merge_preserves_off_and_does_not_restore_unselected_rule(self):
+        for disabled, omitted in (("dualviewxray", "simplexray"), ("simplexray", "dualviewxray")):
+            with self.subTest(disabled=disabled):
+                existing = self.folder / (disabled + "-admin.tsv")
+                output = self.folder / (disabled + "-candidate.tsv")
+                report = self.folder / (disabled + "-report.json")
+                original = ("# Deliberately sparse administrator policy\r\nmod\t" + disabled
+                            + "\tOFF\thttps://example.org/admin\r\n").encode("utf-8")
+                existing.write_bytes(original)
+                result = tool.merge(self.data, existing, output, report, ["mod:" + disabled])
+                self.assertEqual(original, existing.read_bytes())
+                rows = tool.parse_rules(output.read_text("utf-8"))
+                self.assertEqual({("mod", disabled)}, set(rows))
+                self.assertEqual("OFF", rows[("mod", disabled)][2])
+                self.assertNotIn(("mod", omitted), rows)
+                self.assertEqual([], result["added"])
+                self.assertFalse(result["serverFilesModified"])
 
     def test_duplicate_admin_rules_rejected(self):
         text = "mod\twurst\tOFF\thttps://example.org/a\nmod\twurst\tDENY\thttps://example.org/b\n"

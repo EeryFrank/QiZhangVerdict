@@ -1,0 +1,17 @@
+architectury { platformSetupLoomIde(); fabric() }
+dependencies {
+    modImplementation 'net.fabricmc:fabric-loader:0.19.5'
+    modImplementation 'net.fabricmc.fabric-api:fabric-api:0.46.1+1.17'
+}
+loom { mixin { defaultRefmapName = 'qizhangverdict.refmap.json' } }
+
+tasks.register('connectionDispatchSmoke', JavaExec) {
+    dependsOn tasks.named('smokeClasses')
+    classpath = sourceSets.smoke.runtimeClasspath
+    mainClass = 'cn.qizhang.guard.fabric.ConnectionDispatchSmoke'
+    maxHeapSize = '128m'
+    javaLauncher = javaToolchains.launcherFor { languageVersion = JavaLanguageVersion.of(16) }
+    workingDir = new File(rootProject.runtimeRoot, 'fabric-dispatch')
+    doFirst { workingDir.mkdirs() }
+}
+tasks.named('check') { dependsOn tasks.named('connectionDispatchSmoke') }

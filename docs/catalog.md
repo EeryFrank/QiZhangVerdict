@@ -1,10 +1,10 @@
 # 可核验标识扩展目录
 
-本目录供七章的裁决管理员审阅、按服规选用。2026-09-28 当前开发目录包含 **44 个公开源码仓库、41 个归并条目、42 个精确 ID（38 DENY / 4 ALERT）**，另有 **8 个待验证品牌或资源包**。本轮在开发源码的首次默认规则中新增 `gateclient`、`genshin`、`meteor-crash-addon`；这不是新 JAR 的交付或运行验收声明。目录工具不会连接服务器、修改服务器配置或自动恢复管理员删除的规则；已发布版本的目录和默认规则以各自 tag 与发布包为准。
+本目录供七章的裁决管理员审阅、按服规选用。2026-09-28 当前开发目录包含 **43 个归并条目、44 个精确 ID（40 DENY / 4 ALERT）**，另有 **8 个待验证品牌或资源包**。已验证条目的仓库声明共 46 个；加上同 ID 冲突复核的 4 个额外仓库，来源文本共覆盖 50 个公开仓库。本轮首次默认规则新增透视身份 `dualviewxray`、`simplexray`。目录工具不会连接服务器、修改服务器配置或自动恢复管理员删除的规则；已发布版本的目录和默认规则以各自 tag 与发布包为准。
 
-历史 **0.2.0-test.1 的 37 条默认规则（33 DENY / 4 ALERT）**及其[验证汇总](../outputs/validation-0.2.0-test.1.json)保持原事实。此前 **39 条目录（35 DENY / 4 ALERT）**及已发布 JAR 的 37/39 条默认规则也保留各自原事实与原字节，不由本次源码更新改写。当前 [Python 目录核验](../catalog/verification.json)实际运行仓库中的 25 项测试，离线复核 271 条固定来源的 SHA256 与 56 个描述符证明；两份重新导出的 TSV 与仓库文件逐字节一致。原 39 条规则、249 个来源与 8 个待验证项均保持不变。本次没有重新联网获取来源，也没有把此前缓存候选的验证报告复制成合入成功证据。
+历史 **0.2.0-test.1 的 37 条默认规则（33 DENY / 4 ALERT）**及其[验证汇总](../outputs/validation-0.2.0-test.1.json)保持原事实。此前 **39 条目录（35 DENY / 4 ALERT）**、**42 条目录（38 DENY / 4 ALERT）**及 [0.5 预览合集的 23 个已发布 JAR](preview-0.5.0-dev-preview.1.md)保留各自的 37/39/42 条默认规则与原字节，不由本次源码更新改写。当前 [Python 目录核验](../catalog/verification.json)实际运行仓库中的 **27 项测试**，离线复核 **297 条固定来源的 SHA256 与 59 个描述符证明**；另核对四份冲突描述符的实际同 ID 值，它们不产生规则。两份重新导出的 TSV 与仓库文件逐字节一致。原 42 条规则、41 个条目、271 个来源与 8 个待验证项均保持不变。新增 26 条来源在本轮候选研究中联网获取；合入检查复用其固定字节，没有冒称重新联网扫描全部旧来源。
 
-首次默认数据的 42 行已与导出 TSV 作静态比对。本摘要没有运行 Java、Gradle、服务器或客户端；新增默认规则的 Java、包内核心与运行结果需由独立报告证明，不能套用历史结果。
+首次默认数据的 44 行已与导出 TSV 作静态比对。另有独立的 [1.17.1 Fabric/Forge 构建与包内核心报告](../outputs/adapter-build-1.17.1.json)：两个 `0.6.0-dev` 精确 JAR 各完成 **104 项检查（57 安全 + 44 目录 + 3 普通身份及管理员配置保留）**，合计 208 次执行。新增两条分别覆盖 OFF 与 API 删除后 reload、重建仍保留，已有稀疏文件不会自动补齐。构建和核心检查不证明专服、图形客户端或正式用户验收；那些结果应另读对应运行报告。
 
 这里的 HIGH 表示“固定官方源码能证明这个标识和相应功能”，不表示服务端能可靠证明玩家运行了未经修改的原版客户端。目录覆盖本次有一手证据的已知项目，不声称囊括全部商业客户端、私有分支、注入器或未来版本。
 
@@ -48,6 +48,8 @@
 | Meteor Crash Addon | `meteor-crash-addon` | DENY；源码构建目标 Fabric 1.20.6，未运行该客户端 |
 | Advanced XRay 旧 Fabric 实现 | `advanced-xray-fabric` | DENY |
 | Advanced XRay、ate47 和 Deltinha 的独立实现共用身份 | `xray` | DENY |
+| DualView X-ray | `dualviewxray` | DENY；Fabric/Forge 的固定 1.20.1 源码描述符与属性相互印证 |
+| SimpleXray | `simplexray` | DENY；Fabric 固定描述符身份，根 MIT 与描述符 CC0 声明冲突保留 |
 | ate47 遗留 Forge 描述符 | `atianxray` | ALERT：尚未核验该旧 Forge 发布包 |
 | Raven 的混同身份 | `keystrokesmod` | ALERT：不能据此认定普通按键显示用户使用 Raven |
 | Baritone Fabric / Forge、NeoForge | `baritone`, `baritoe` | ALERT：自动化是否允许由服规决定 |
@@ -65,6 +67,8 @@
 - NightX 的 [`mcmod.info`](https://raw.githubusercontent.com/Aspw-w/NightX-Client/1c771444a9120d8c06fe7d88a3f5849402849bb4/src/main/resources/mcmod.info) 确实声明 `nightx`，但其 [IFMLLoadingPlugin 入口](https://raw.githubusercontent.com/Aspw-w/NightX-Client/1c771444a9120d8c06fe7d88a3f5849402849bb4/src/main/java/net/aspw/client/injection/forge/TransformerLoader.java) 使用 Mixin 且 `getModContainerClass` 返回 `null`。本次未证明普通 Forge Loader 列表一定包含它；该规则只会匹配实际收到的精确 ID，不能把加入规则说成能识别所有注入形式。
 - `bigrat` **不加入规则**：[作弊衍生客户端](https://raw.githubusercontent.com/ZimnyCat/BigRat/3dc274a18e5912f904f30734fdcf858b0aaf964f/src/main/resources/fabric.mod.json) 与[正常实体/物品模组](https://raw.githubusercontent.com/dodogang/bigrat/68bf3add5a5f73f39c0a7248acb3b9bf9b1da879/src/main/resources/fabric.mod.json) 在 Fabric 1.16.5 使用完全相同的 ID，不能据此默认封禁。
 - Achilles 的[实际描述符](https://raw.githubusercontent.com/NoboKik/Achilles/b63a84fdec014ed8015559671cda9f4ea2721103/client/src/main/resources/fabric.mod.json) 使用通用 ID `template`。`template` 和猜测出的 `achilles` 均不加入规则。
+- `hydrogen` **不加入默认规则**：[ghost 客户端描述符](https://raw.githubusercontent.com/zPeanut/Hydrogen/c84fd6a32504bfdcd9b85b420b57b50c52caf882/src/main/resources/mcmod.info) 与 [CaffeineMC 内存优化模组描述符](https://raw.githubusercontent.com/CaffeineMC/hydrogen-fabric/95da36046c2f55617a76ebb8ea1e1f2a330330e5/src/main/resources/fabric.mod.json) 都使用该 ID。当前 MOD 规则不按加载器、版本或仓库区分，不能一并封禁。
+- `lumina` **不加入默认规则**：[作弊客户端描述符](https://raw.githubusercontent.com/stormcoph/LuminaClient/3e64dc0af5694bd5ac0fe7ebab1cbf63743646f9/src/main/resources/fabric.mod.json) 与 [westernbear 普通光照模组描述符](https://raw.githubusercontent.com/westernbear/lumina/7f857d2d3908335ebfd1705778caaa2460c545fa/src/main/resources/fabric.mod.json) 使用相同 ID。目录校验器和生产普通 ID 控制均防止将其误加为默认 DENY；管理员自定规则仍由管理员负责。
 
 新增来源保留许可差异：Meteor+ 根 [LICENSE](https://raw.githubusercontent.com/MeteorClientPlus/MeteorPlus/657959e9b46faa0c1228c5978d3afe844351c911/LICENSE) 为 AGPL-3.0，而同提交描述符写 GPL-3.0，不能消除冲突后冒称有统一再分发许可。CheatUtils 现代源码为 MIT；所读 1.16.5 历史描述符写 All rights reserved 且该提交没有根 LICENSE，不把现代授权追溯套用到旧源码。这些标准许可证文本也纳入来源 SHA256 核验。Cigarette 记录的是其官方 GitHub 仓库固定提交，仓库声明已迁移，不能据此宣称掌握新托管站的最新状态。
 
@@ -75,6 +79,10 @@ Gate Client 的固定 [mcmod.info](https://raw.githubusercontent.com/TheF1xer/Ga
 Gensh1n 的固定 [fabric.mod.json](https://raw.githubusercontent.com/Undef1nedTeam/Gensh1n/bf6b6cbb596ce4782b20627a2a9360386fd79d02/src/main/resources/fabric.mod.json) 声明 `genshin`；同提交注册并实现 KillAura，根 LICENSE/README 的 GPL 与描述符 `IDK-0.0` 冲突保留。有限正常模组复核读取同提交描述符与属性后，得到 [Genshin Instruments](https://raw.githubusercontent.com/StavWasPlayZ/Genshin-Instruments/dd8ab22e9dac5c61ba9d5456abcf2ca339af4b7e/gradle.properties) 的 `genshinstrument`、[HoYoI](https://raw.githubusercontent.com/DeeChael/HoYoI/0938781c8268332eb88e66ca50381ad879ec0024/gradle.properties) 的 `hoyoi`、[MineGenshin](https://raw.githubusercontent.com/Violet-Molder/MineGenshin/6957d5f9f18dc89eff61b28cd2f89d6fab16b46e/gradle.properties) 的 `minegenshin`，均不等于 `genshin`；这不保证全球唯一，不能扩展为产品名、文件名或子串封禁。
 
 Meteor Crash Addon 的固定 [描述符](https://raw.githubusercontent.com/AntiCope/meteor-crash-addon/0d64cc11330447d2821747f0b7f7566d6192b258/src/main/resources/fabric.mod.json) 直接说明服务器破坏用途，身份为 `meteor-crash-addon`。其 GPL 文本未另行确定 only/or-later；构建目标是 Minecraft 1.20.6 / Java release 21，尽管描述符声明 Java >=17，不能据此声称 Java 17 或整个版本下限范围可运行。它依赖 Meteor，诚实上报中的父模组本已受 `meteor-client` 规则覆盖；新增身份不代表不可绕过的新检测能力。
+
+DualView X-ray 的固定 [Fabric 描述符](https://raw.githubusercontent.com/TACOWASA059/DualViewXray/2be44cfd6e2f1ed1b7dfde71dfafd76155a8cc3b/fabric/src/main/resources/fabric.mod.json) 明写 `dualviewxray`；Forge 描述符通过同提交 `mod_id` 属性解析为同值。源码实现独立的矿物透视视图，根 LICENSE 与构建属性均为 MIT，源码目标为 Minecraft 1.20.1 / Java 17；没有运行其作弊客户端或验证全部声明版本范围。
+
+SimpleXray 的固定 [描述符](https://raw.githubusercontent.com/Gudu0/SimpleXray/eb20fecc273d669e6a21e430d1136928c718e973/src/main/resources/fabric.mod.json) 明写 `simplexray`，源码绘制层使用始终通过的深度测试显示被遮挡目标轮廓。[根 LICENSE](https://raw.githubusercontent.com/Gudu0/SimpleXray/eb20fecc273d669e6a21e430d1136928c718e973/LICENSE) 为 MIT，描述符却写 `CC0-1.0` 并保留示例说明、作者和联系字段；冲突未解决，不据此推定统一再分发许可。默认源码目标为 1.20.1，构建允许显式 `mcVersion`；README 列出的其它版本不作为运行证据。普通服务端插件 SimpleXRayDetector 不等于这个客户端 MOD 身份，也不会因名字含 `xray` 而命中精确规则。
 
 Aristois、Impact、Future、RusherHack、Inertia、CatLean、Raven b+ 和 Xray Ultimate 留在 `pending`。官网、产品名或功能说明不足以证明真实 mod ID；其中 Aristois 官网抓取失败，Raven b+ 官方 API 返回 451，未绕过访问限制。资源包没有可推断的稳定 mod ID，文件名和本地 pack ID 都可修改，所以没有虚构 PACK/BRAND 封禁规则。验证器目前只允许 MOD 身份进入已验证列表。
 

@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "sourceChanges": [
+    {
+      "path": "platforms/1.17.1/build.gradle",
+      "initialSha256": "1943fd7a358c7e9641769c4dc022dea9b6a3f97c4233ab66a2ac049c93a82ad5",
+      "finalSha256": "f8f5ec0907e6135d3aae6c041ece51e055e164759c2ba22814afceb33953ea5c"
+    },
+    {
+      "path": "platforms/1.17.1/forge/src/main/java/cn/qizhang/guard/forge/GuardForge.java",
+      "initialSha256": "c5f53d4e8e3b9ee4b3372d0a0791aacc1481210b81afd869cfb839cea439b96c",
+      "finalSha256": "0b8cfb00f049cdd1ef6eeab0b0b2b9e80f7d023febb609852eb991858343665f"
+    }
+  ],
+  "sourceFilesCompared": 56,
+  "changedBinaryClasses": [
+    "cn/qizhang/guard/forge/GuardForge.class",
+    "cn/qizhang/guard/minecraft/MinecraftGuard.class"
+  ],
+  "otherProductionClassesByteIdentical": true,
+  "previousAvailabilityFixUnchanged": true,
+  "livePlayConnectionGateRetained": true,
+  "strictPolicyAndEmbedded44DefaultsUnchanged": true,
+  "previousProductSlF4jReferenceClasses": [
+    "cn/qizhang/guard/forge/GuardForge.class",
+    "cn/qizhang/guard/minecraft/MinecraftGuard.class"
+  ],
+  "finalProductSlf4jReferenceClasses": [],
+  "finalForgeUsesExistingLog4jBackend": true,
+  "loggingImplementationBundled": false,
+  "fabricBinaryAndSourceJarUnchanged": true,
+  "reason": "Forge 37 provided no SLF4J provider for these first-party log calls. Forge-only generated MinecraftGuard imports/factory and GuardForge startup logging now use the existing Log4j backend, so decision/save-error logging does not depend on an absent SLF4J provider. Fabric sources and artifacts are unchanged.",
+  "boundary": "Static change and build/core checks only. A production TCP or graphical-client result is not inferred here."
+}

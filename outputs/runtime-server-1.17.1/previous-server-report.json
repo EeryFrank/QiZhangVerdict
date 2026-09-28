@@ -1,0 +1,1471 @@
+{
+  "schemaVersion": 1,
+  "generatedUtc": "2026-09-28T14:08:51.323142+00:00",
+  "product": "QiZhangVerdict",
+  "artifactVersion": "0.6.0-dev",
+  "minecraft": "1.17.1",
+  "finalCandidatePassed": true,
+  "allAttemptsPassed": false,
+  "actualServerAttempts": 3,
+  "installationOnlyFailedAttempts": 1,
+  "failedServerAttempts": 1,
+  "finalSelectedAttempts": [
+    "fabric-44-01",
+    "forge-44-03"
+  ],
+  "finalArtifacts": {
+    "fabric": {
+      "path": "platforms/1.17.1/fabric/build/libs/qizhangverdict-fabric-1.17.1-0.6.0-dev.jar",
+      "sha256": "bda006d24663acb3698c8fb76d06d14220dfca18422c8eb9177499f5c498e497",
+      "bytes": 95434
+    },
+    "forge": {
+      "path": "platforms/1.17.1/forge/build/libs/qizhangverdict-forge-1.17.1-0.6.0-dev.jar",
+      "sha256": "d88ac5a343d48905ac8212b7f85337bb78a35762e6a605ee0ed389fda73bb839",
+      "bytes": 98986
+    }
+  },
+  "passingServerAttempts": 2,
+  "passedCaseGroups": 52,
+  "uniqueCaseDefinitions": 26,
+  "formalAcceptancePassed": false,
+  "attempts": [
+    {
+      "attempt": "fabric-44-01",
+      "profile": "fabric-1.17.1",
+      "loader": "fabric",
+      "loaderVersion": "0.19.5",
+      "minecraft": "1.17.1",
+      "artifact": {
+        "path": "platforms/1.17.1/fabric/build/libs/qizhangverdict-fabric-1.17.1-0.6.0-dev.jar",
+        "sha256": "bda006d24663acb3698c8fb76d06d14220dfca18422c8eb9177499f5c498e497",
+        "bytes": 95434,
+        "version": "0.6.0-dev"
+      },
+      "isFinalArtifact": true,
+      "historicalBuildPathReplaced": false,
+      "installer": {
+        "exitCode": 0,
+        "installedOutputsVerified": true,
+        "sha256": "2487a69dd6f9d9c2605265a7142d77c26ab62edc620e6bcf810d581d2ee31b79",
+        "officialReceiptSha256": "3aee72affa901e35c8b701a0ea5631032a158a1ef6a3c7ae6814e126c40c65e5",
+        "baseReceiptSha256": "87e84a9b1486da6893e9f16571a8471f560901326f601e8d69bab21a48acef06"
+      },
+      "evidenceRefs": {
+        "install-result.json": "runtime-server-1.17.1/fabric-44-01-install-result.json",
+        "install-console.log": "runtime-server-1.17.1/fabric-44-01-install-console.log",
+        "fixture": "runtime-server-1.17.1/fabric-44-01-fixture.json",
+        "helper": "runtime-server-1.17.1/helper-4bdb66d9d933.py",
+        "protocol_smoke.cjs": "runtime-server-1.17.1/shared-2830d43816df-protocol_smoke.cjs",
+        "protocol_disconnect_observer.cjs": "runtime-server-1.17.1/shared-c4496beaa3d4-protocol_disconnect_observer.cjs",
+        "protocol_player_loaded.cjs": "runtime-server-1.17.1/shared-9bb049190eab-protocol_player_loaded.cjs",
+        "package-lock.json": "runtime-server-1.17.1/shared-48d3f0428d10-package-lock.json",
+        "catalog.tsv": "runtime-server-1.17.1/shared-fa2f688bd977-catalog.tsv",
+        "officialProfile": "runtime-server-1.17.1/fabric-44-01-official-server-profile.json",
+        "smoke-result.json": "runtime-server-1.17.1/fabric-44-01-smoke-result.json",
+        "console.log": "runtime-server-1.17.1/fabric-44-01-console.log",
+        "protocol-console.log": "runtime-server-1.17.1/fabric-44-01-protocol-console.log",
+        "protocol-result.json": "runtime-server-1.17.1/fabric-44-01-protocol-result.json",
+        "protocol-disconnect-observations.json": "runtime-server-1.17.1/fabric-44-01-protocol-disconnect-observations.json",
+        "protocol-metadata-trace.json": "runtime-server-1.17.1/fabric-44-01-protocol-metadata-trace.json",
+        "protocol-handshake-trace.json": "runtime-server-1.17.1/fabric-44-01-protocol-handshake-trace.json",
+        "server.properties": "runtime-server-1.17.1/fabric-44-01-server.properties",
+        "commands.queue": "runtime-server-1.17.1/fabric-44-01-commands.queue",
+        "guard-default.properties": "runtime-server-1.17.1/shared-47310c31b472-guard-default.properties",
+        "blacklist-default.tsv": "runtime-server-1.17.1/shared-537661b0604b-blacklist-default.tsv",
+        "final-blacklist.tsv": "runtime-server-1.17.1/fabric-44-01-final-blacklist.tsv",
+        "final-rules.tsv": "runtime-server-1.17.1/fabric-44-01-final-rules.tsv"
+      },
+      "stage": "SERVER_TCP",
+      "actualServerStarted": true,
+      "passed": true,
+      "serverExitCode": 0,
+      "normalStop": true,
+      "protocolExitCode": 0,
+      "elapsedSeconds": 113.223,
+      "protocolElapsedSeconds": 82.337,
+      "passedCaseGroups": 26,
+      "cases": [
+        "normal companion joins",
+        "privileged commands blocked before report and restored afterward",
+        "missing companion expires",
+        "malformed report rejected",
+        "malformed report does not permanently ban account",
+        "first account on device allowed",
+        "same IP same device second account rejected",
+        "same IP second different device allowed",
+        "same IP third different device allowed",
+        "same IP fourth account rejected",
+        "disconnect releases device and IP quota",
+        "known cheat denied and sanctioned",
+        "same banned device different account denied",
+        "banned account denied with new device",
+        "administrator account and device unban restores access",
+        "administrator glob rule enforced",
+        "whitelist overrides matching blacklist item",
+        "removed whitelist takes effect",
+        "administrator removes default rule with colon ID",
+        "administrator restores removed blacklist entry",
+        "CIDR deny rejects login",
+        "known VM signal denied",
+        "VBS hypervisor alone does not ban physical machine",
+        "two-device setting first account",
+        "two-device setting second account",
+        "two-device setting rejects third account"
+      ],
+      "protocol": {
+        "minecraftProtocolVersion": "1.66.2",
+        "minecraftDataVersion": "3.117.0",
+        "protocol": 756,
+        "versionMetadata": {
+          "path": "E:\\CodexTemp\\QiZhangGuard\\bot\\node_modules\\minecraft-data\\minecraft-data\\data\\pc\\1.17.1\\version.json",
+          "bytes": 79,
+          "sha256": "dffbccf66e3655f0c0aa1bb8e9f71a656fd2dda813b955330e2dce379a4002d4"
+        },
+        "schema": {
+          "path": "E:\\CodexTemp\\QiZhangGuard\\bot\\node_modules\\minecraft-data\\minecraft-data\\data\\pc\\1.17.1\\protocol.json",
+          "bytes": 155791,
+          "sha256": "695099fb813c72b54180bd9cfea002f2243c28d0be9beb87e03b405cfa2abb31"
+        },
+        "versionList": {
+          "path": "E:\\CodexTemp\\QiZhangGuard\\bot\\node_modules\\minecraft-protocol\\src\\version.js",
+          "bytes": 368,
+          "sha256": "5b473bdb689c2fedf505b545be2096ab997d152f3b58338d7c624a5c1c73d1d1"
+        },
+        "scope": "Static package support and schema inspection; TCP success is a separate run result"
+      },
+      "policy": {
+        "fresh13DefaultsVerified": true,
+        "freshDefaults": {
+          "limits.max-online-per-ip": "3",
+          "limits.max-online-per-ip-device": "1",
+          "limits.max-accounts-per-ip": "5",
+          "limits.account-window-hours": "720",
+          "limits.attempts-per-minute": "20",
+          "ip.allow": "",
+          "ip.deny": "",
+          "companion.required": "true",
+          "companion.timeout-seconds": "20",
+          "device.required": "true",
+          "vm.action": "DENY",
+          "blacklist.action": "DENY",
+          "sanctions.on-deny": "BAN"
+        },
+        "freshDefaultRuleCount": 44,
+        "freshDefaultDeny": 40,
+        "freshDefaultAlert": 4,
+        "freshCatalogSha256": "fa2f688bd977317c95b485a115ca52267b1cd779ef48fdc0cadc4cfaa7ac4ccf",
+        "qaOverrides": {
+          "limits.max-accounts-per-ip": "100",
+          "limits.attempts-per-minute": "1000",
+          "companion.timeout-seconds": "4 (10 for the operator gate)",
+          "vm.action": "ALERT initially; DENY in VM cases",
+          "ip.deny": "127.0.0.0/8 in CIDR case",
+          "limits.max-online-per-ip": "2 in final quota cases"
+        },
+        "freshStatus": "[22:35:46] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=0, accountPairs=0, rules=44, companion=required, vm=DENY, blacklist=DENY, rateBuckets=0, accountBans=0, deviceBans=0, deviceRequired=true",
+        "strict13RestoredByteForByte": true,
+        "restoreReloadStatus": "[22:37:09] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=20, rules=45, companion=required, vm=DENY, blacklist=DENY, rateBuckets=1, accountBans=5, deviceBans=4, deviceRequired=true",
+        "restoredLiveStatus": "[22:37:09] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=20, rules=45, companion=required, vm=DENY, blacklist=DENY, rateBuckets=1, accountBans=5, deviceBans=4, deviceRequired=true",
+        "finalLegacyRows": 43,
+        "finalAdministratorRows": 2,
+        "finalEffectiveRules": 45,
+        "boundary": "Only guard.properties is restored; retained QA rules are not a production template."
+      },
+      "mixin": {
+        "scope": "Actual runtime-transformed dispatcher inspected with the pinned Java16 javap; full disassembly remains private.",
+        "target": "net/minecraft/class_2170",
+        "export": {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\fabric-44-01\\.mixin.out\\class\\net\\minecraft\\class_2170.class",
+          "bytes": 25852,
+          "sha256": "a9dbaf679a4459489a511dec84af34b786bb7afd3f20494cbe16235eedb3e89a"
+        },
+        "privateDisassembly": {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\fabric-44-01\\private-mixin-javap.txt",
+          "bytes": 62062,
+          "sha256": "519020791ae55467d417f420af898f00218a861821121d1bd90c5b5a1219e8e7"
+        },
+        "javapExitCode": 0,
+        "dispatchCallsInjectedHandler": true,
+        "handlerCallsGuardWaiting": true,
+        "handlerCancelsCommand": true,
+        "passed": true
+      },
+      "operatorGate": {
+        "opBeforeReportBlocked": true,
+        "opAfterReportExecuted": true,
+        "grantAndRemovalObserved": true
+      },
+      "closure": {
+        "normalExit0": true,
+        "portReleasedAtHelperEnd": true,
+        "currentPortNotProbed": true
+      },
+      "nodeDecoderObservations": {
+        "partialReadErrorCount": 0,
+        "rawMessages": [],
+        "decodedDisconnects": 13,
+        "boundary": "Admission case results do not establish complete game packet decoding."
+      },
+      "warnings": [
+        "[22:35:27] [main/WARN]: Ignoring invalid library path \"",
+        "[22:35:27] [main/WARN]: Ignoring invalid library path D:\\Program Files\\Node.js\\\"",
+        "[22:35:27] [main/WARN]: Compatibility level JAVA_16 specified by fabric-api-lookup-api-v1.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).",
+        "[22:35:28] [main/WARN]: @Shadow target fabric-registry-sync-v0.mixins.json:MixinDynamicRegistryManager from mod fabric-registry-sync-v0::field_26733 is final but shadow is not decorated with @Final",
+        "[22:35:29] [main/WARN]: fabric-transfer-api-v1.mixins.json:FluidMixin from mod fabric-transfer-api-v1: Class version 60 required is higher than the class version supported by the current version of Mixin (JAVA_8 supports class version 52)",
+        "[22:35:30] [main/WARN]: @Shadow target fabric-registry-sync-v0.mixins.json:MixinIdList from mod fabric-registry-sync-v0::field_11100 is final but shadow is not decorated with @Final",
+        "[22:35:30] [main/WARN]: @Shadow target fabric-registry-sync-v0.mixins.json:MixinIdList from mod fabric-registry-sync-v0::field_11098 is final but shadow is not decorated with @Final",
+        "[22:35:31] [main/WARN]: fabric-biome-api-v1.mixins.json:MultiNoiseBiomeSourceAccessor from mod fabric-biome-api-v1->@Accessor[FIELD_SETTER]::setBiomePoints(Ljava/util/List;)V for final field net.minecraft.class_4766::field_24115 is not @Mutable",
+        "[22:35:33] [main/WARN]: Write access to @Mutable @Final field field_7921:[Lnet/minecraft/class_1761; in fabric-item-groups-v0.mixins.json:MixinItemGroup from mod fabric-item-groups-v0::fabric_expandArray",
+        "[22:35:33] [main/WARN]: Write access to @Mutable @Final field field_23730:Ljava/util/Map; in fabric-object-builder-v1.mixins.json:DefaultAttributeRegistryMixin from mod fabric-object-builder-api-v1::handler$zda000$fabric-object-builder-api-v1$injectAttributes",
+        "[22:35:33] [main/WARN]: @Inject(@At(\"INVOKE\")) Shift.BY=3 on fabric-lifecycle-events-v1.mixins.json:server.WorldChunkMixin from mod fabric-lifecycle-events-v1::handler$zcf000$fabric-lifecycle-events-v1$onLoadBlockEntity exceeds the maximum allowed value: 0. Increase the value of maxShiftBy to suppress this warning.",
+        "[22:35:33] [main/WARN]: Write access to @Mutable @Final field field_28306:Ljava/util/Map; in fabric-tag-extensions-v0.mixins.json:MixinTagManager from mod fabric-tag-extensions-v0::handler$zej000$fabric-tag-extensions-v0$init",
+        "[22:35:34] [main/WARN]: @Shadow target fabric-events-interaction-v0.mixins.json:MixinServerPlayerInteractionManager from mod fabric-events-interaction-v0::field_14008 is final but shadow is not decorated with @Final",
+        "[22:35:34] [main/WARN]: Write access to @Mutable @Final field field_14227:Ljava/util/Set; in fabric-resource-loader-v0.mixins.json:ResourcePackManagerMixin from mod fabric-resource-loader-v0::handler$zeb000$fabric-resource-loader-v0$construct",
+        "[22:35:35] [main/WARN]: @Shadow target fabric-game-rule-api-v1.mixins.json:GameRuleCommandVisitorMixin from mod fabric-game-rule-api-v1::field_19419 is final but shadow is not decorated with @Final",
+        "[22:35:35] [main/INFO]: Renaming @Accessor method getFailedException()Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType; to getFailedException$fabric-command-api-v1_$md$9cd6f5$0 in fabric-command-api-v1.mixins.json:HelpCommandAccessor from mod fabric-command-api-v1",
+        "[22:35:35] [main/WARN]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]",
+        "[22:35:35] [main/WARN]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]",
+        "[22:35:35] [main/WARN]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]",
+        "[22:35:35] [main/WARN]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]",
+        "[22:35:35] [main/WARN]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]",
+        "[22:35:35] [Worker-Main-9/WARN]: @Shadow target fabric-tag-extensions-v0.mixins.json:MixinTagBuilder from mod fabric-tag-extensions-v0::field_23688 is final but shadow is not decorated with @Final",
+        "[22:35:37] [main/ERROR]: No key structures in MapLike[{\"layers\":[{\"block\":\"minecraft:bedrock\",\"height\":1},{\"block\":\"minecraft:dirt\",\"height\":2},{\"block\":\"minecraft:grass_block\",\"height\":1}],\"biome\":\"minecraft:plains\"}]; Not a registry ops",
+        "[22:35:38] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!",
+        "[22:35:38] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.",
+        "[22:35:38] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.",
+        "[22:35:38] [Server thread/WARN]: To change this, set \"online-mode\" to \"true\" in the server.properties file.",
+        "[22:35:49] [Server thread/WARN]: Player QVBot1 can't receive direct packet, using nbt packet instead",
+        "[22:35:53] [Server thread/WARN]: Player GateAccount can't receive direct packet, using nbt packet instead",
+        "[22:36:00] [Server thread/WARN]: Player QVBot2 can't receive direct packet, using nbt packet instead",
+        "[22:36:06] [Server thread/WARN]: Player BadWire can't receive direct packet, using nbt packet instead",
+        "[22:36:07] [Server thread/WARN]: Player BadWire can't receive direct packet, using nbt packet instead",
+        "[22:36:10] [Server thread/WARN]: Player QVBot3 can't receive direct packet, using nbt packet instead",
+        "[22:36:11] [Server thread/WARN]: Player QVBot4 can't receive direct packet, using nbt packet instead",
+        "[22:36:13] [Server thread/WARN]: Player QVBot5 can't receive direct packet, using nbt packet instead",
+        "[22:36:15] [Server thread/WARN]: Player QVBot6 can't receive direct packet, using nbt packet instead",
+        "[22:36:17] [Server thread/WARN]: Player QVBot7 can't receive direct packet, using nbt packet instead",
+        "[22:36:17] [Server thread/WARN]: handleDisconnection() called twice",
+        "[22:36:19] [Server thread/WARN]: Player QVBot8 can't receive direct packet, using nbt packet instead",
+        "[22:36:22] [Server thread/WARN]: Player CheatAccount can't receive direct packet, using nbt packet instead",
+        "[22:36:23] [Server thread/WARN]: Player LinkedAccount can't receive direct packet, using nbt packet instead",
+        "[22:36:26] [Server thread/WARN]: Player CheatAccount can't receive direct packet, using nbt packet instead",
+        "[22:36:29] [Server thread/WARN]: Player CheatAccount can't receive direct packet, using nbt packet instead",
+        "[22:36:33] [Server thread/WARN]: Player QVBot9 can't receive direct packet, using nbt packet instead",
+        "[22:36:37] [Server thread/WARN]: Player QVBot10 can't receive direct packet, using nbt packet instead",
+        "[22:36:41] [Server thread/WARN]: Player QVBot11 can't receive direct packet, using nbt packet instead",
+        "[22:36:44] [Server thread/WARN]: Player QVBot12 can't receive direct packet, using nbt packet instead",
+        "[22:36:48] [Server thread/WARN]: Player QVBot13 can't receive direct packet, using nbt packet instead",
+        "[22:36:51] [Server thread/WARN]: Player QVBot14 can't receive direct packet, using nbt packet instead",
+        "[22:36:51] [Server thread/WARN]: handleDisconnection() called twice",
+        "[22:36:54] [Server thread/WARN]: Player QVBot15 can't receive direct packet, using nbt packet instead",
+        "[22:36:56] [Server thread/WARN]: Player QVBot16 can't receive direct packet, using nbt packet instead",
+        "[22:37:00] [Server thread/WARN]: Player QVBot17 can't receive direct packet, using nbt packet instead",
+        "[22:37:02] [Server thread/WARN]: Player QVBot18 can't receive direct packet, using nbt packet instead",
+        "[22:37:04] [Server thread/WARN]: Player QVBot19 can't receive direct packet, using nbt packet instead",
+        "[22:37:04] [Server thread/WARN]: handleDisconnection() called twice"
+      ]
+    },
+    {
+      "attempt": "forge-44-01",
+      "profile": "forge-1.17.1",
+      "loader": "forge",
+      "loaderVersion": "37.1.1",
+      "minecraft": "1.17.1",
+      "artifact": {
+        "path": "platforms/1.17.1/forge/build/libs/qizhangverdict-forge-1.17.1-0.6.0-dev.jar",
+        "sha256": "02e8e470f9abe5b7b6dd19b9107b4597b4f197423223e94f74fe9dd94da0481b",
+        "bytes": 99068,
+        "version": "0.6.0-dev"
+      },
+      "isFinalArtifact": false,
+      "historicalBuildPathReplaced": true,
+      "installer": {
+        "exitCode": 0,
+        "installedOutputsVerified": false,
+        "sha256": "31f2319b1b9ca491aaccc020887240f8524a4ff2a8e0f8b795e17e889cbc043b",
+        "officialReceiptSha256": "3aee72affa901e35c8b701a0ea5631032a158a1ef6a3c7ae6814e126c40c65e5",
+        "baseReceiptSha256": "87e84a9b1486da6893e9f16571a8471f560901326f601e8d69bab21a48acef06"
+      },
+      "evidenceRefs": {
+        "install-result.json": "runtime-server-1.17.1/forge-44-01-install-result.json",
+        "install-console.log": "runtime-server-1.17.1/forge-44-01-install-console.log",
+        "fixture": "runtime-server-1.17.1/forge-44-01-fixture.json",
+        "helper": "runtime-server-1.17.1/helper-4bdb66d9d933.py",
+        "protocol_smoke.cjs": "runtime-server-1.17.1/shared-2830d43816df-protocol_smoke.cjs",
+        "protocol_disconnect_observer.cjs": "runtime-server-1.17.1/shared-c4496beaa3d4-protocol_disconnect_observer.cjs",
+        "protocol_player_loaded.cjs": "runtime-server-1.17.1/shared-9bb049190eab-protocol_player_loaded.cjs",
+        "package-lock.json": "runtime-server-1.17.1/shared-48d3f0428d10-package-lock.json",
+        "catalog.tsv": "runtime-server-1.17.1/shared-fa2f688bd977-catalog.tsv",
+        "officialProfile": "runtime-server-1.17.1/forge-44-01-official-install-profile.json"
+      },
+      "stage": "INSTALLATION_VALIDATION_FAILED",
+      "actualServerStarted": false,
+      "passed": false,
+      "passedCaseGroups": 0,
+      "serverExitCode": null,
+      "error": "ValueError: Official generated PATCHED digest mismatch",
+      "boundary": "Installer exit0 alone is not server acceptance. No game process or TCP suite was started in this fixture."
+    },
+    {
+      "attempt": "forge-44-02",
+      "profile": "forge-1.17.1",
+      "loader": "forge",
+      "loaderVersion": "37.1.1",
+      "minecraft": "1.17.1",
+      "artifact": {
+        "path": "platforms/1.17.1/forge/build/libs/qizhangverdict-forge-1.17.1-0.6.0-dev.jar",
+        "sha256": "02e8e470f9abe5b7b6dd19b9107b4597b4f197423223e94f74fe9dd94da0481b",
+        "bytes": 99068,
+        "version": "0.6.0-dev"
+      },
+      "isFinalArtifact": false,
+      "historicalBuildPathReplaced": true,
+      "installer": {
+        "exitCode": 0,
+        "installedOutputsVerified": true,
+        "sha256": "31f2319b1b9ca491aaccc020887240f8524a4ff2a8e0f8b795e17e889cbc043b",
+        "officialReceiptSha256": "3aee72affa901e35c8b701a0ea5631032a158a1ef6a3c7ae6814e126c40c65e5",
+        "baseReceiptSha256": "87e84a9b1486da6893e9f16571a8471f560901326f601e8d69bab21a48acef06"
+      },
+      "evidenceRefs": {
+        "install-result.json": "runtime-server-1.17.1/forge-44-02-install-result.json",
+        "install-console.log": "runtime-server-1.17.1/forge-44-02-install-console.log",
+        "fixture": "runtime-server-1.17.1/forge-44-02-fixture.json",
+        "helper": "runtime-server-1.17.1/helper-41e37c090ede.py",
+        "helperDependency-forge117_patch_check.py": "runtime-server-1.17.1/helper-27d8f048e83b-forge117_patch_check.py",
+        "protocol_smoke.cjs": "runtime-server-1.17.1/shared-2830d43816df-protocol_smoke.cjs",
+        "protocol_disconnect_observer.cjs": "runtime-server-1.17.1/shared-c4496beaa3d4-protocol_disconnect_observer.cjs",
+        "protocol_player_loaded.cjs": "runtime-server-1.17.1/shared-9bb049190eab-protocol_player_loaded.cjs",
+        "package-lock.json": "runtime-server-1.17.1/shared-48d3f0428d10-package-lock.json",
+        "catalog.tsv": "runtime-server-1.17.1/shared-fa2f688bd977-catalog.tsv",
+        "officialProfile": "runtime-server-1.17.1/forge-44-02-official-install-profile.json",
+        "smoke-result.json": "runtime-server-1.17.1/forge-44-02-smoke-result.json",
+        "console.log": "runtime-server-1.17.1/forge-44-02-console.log",
+        "protocol-console.log": "runtime-server-1.17.1/forge-44-02-protocol-console.log",
+        "protocol-disconnect-observations.json": "runtime-server-1.17.1/forge-44-02-protocol-disconnect-observations.json",
+        "protocol-metadata-trace.json": "runtime-server-1.17.1/forge-44-02-protocol-metadata-trace.json",
+        "protocol-handshake-trace.json": "runtime-server-1.17.1/forge-44-02-protocol-handshake-trace.json",
+        "server.properties": "runtime-server-1.17.1/forge-44-02-server.properties",
+        "commands.queue": "runtime-server-1.17.1/forge-44-02-commands.queue",
+        "guard-default.properties": "runtime-server-1.17.1/shared-47310c31b472-guard-default.properties",
+        "blacklist-default.tsv": "runtime-server-1.17.1/shared-537661b0604b-blacklist-default.tsv"
+      },
+      "generatedServerLibraries": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-02\\libraries\\net\\minecraftforge\\forge\\1.17.1-37.1.1\\forge-1.17.1-37.1.1-server.jar",
+          "bytes": 4259465,
+          "sha256": "7ca3e1514fd160ff12e747ea31578099fd873022b73a4bad7ccdf193191eee5a",
+          "role": "PATCHED",
+          "upstreamExpectedSha1": "bdf354470955786626a4d1c66a8c0f14b32e362d",
+          "upstreamSha1Verified": false,
+          "upstreamSha1Matches": false,
+          "processorOutputHashRequired": false,
+          "zipCrcVerified": true,
+          "independentPatchReplay": {
+            "schemaVersion": 1,
+            "passed": true,
+            "side": "server",
+            "scope": "Every official Forge v1/GDIFF4 patch replayed in memory; exact generated class bytes and output entry set. Not a runtime or whole-clean-file upstream hash claim.",
+            "javaExecuted": false,
+            "jarsModified": false,
+            "installer": {
+              "bytes": 5364773,
+              "sha256": "31f2319b1b9ca491aaccc020887240f8524a4ff2a8e0f8b795e17e889cbc043b",
+              "sha1": "356db842e0f316d37f566dfa8e0742230c36b094"
+            },
+            "cleanSrg": {
+              "bytes": 11681505,
+              "sha256": "b6af244cb0b538880ba9d00e0f60fe988c126301e7861594b955ca6db49265e3",
+              "sha1": "4d70b9abe5fbb5057ad29b0fad77f5f93c7cc615"
+            },
+            "patchedOverlay": {
+              "bytes": 4259465,
+              "sha256": "7ca3e1514fd160ff12e747ea31578099fd873022b73a4bad7ccdf193191eee5a",
+              "sha1": "2a0ea05d86af1d8ef21020637192dcddb521e794"
+            },
+            "patchSource": {
+              "member": "data/server.lzma",
+              "bytes": 2437587,
+              "sha256": "8dbd1368886aedbcd188669d711be18ead2933ec9466d56a66290742f2f2ff73"
+            },
+            "patchEntryCount": 1252,
+            "patchClassCount": 1252,
+            "existingPatchedClassCount": 954,
+            "addedClassCount": 298,
+            "removedClassCount": 0,
+            "inputAdler32CheckCount": 1252,
+            "allInputAdler32ChecksPassed": true,
+            "outputClassCount": 1252,
+            "everyOutputEntryAccountedFor": true,
+            "allOutputClassBytesMatchOfficialReplay": true,
+            "dataPatchedSha1Reference": "bdf354470955786626a4d1c66a8c0f14b32e362d",
+            "dataReferenceMatchesActual": false,
+            "containerDifferenceCauseEstablished": false,
+            "classBytesOrNameTableExposed": false
+          }
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-02\\libraries\\net\\minecraft\\server\\1.17.1-20210706.113038\\server-1.17.1-20210706.113038-slim.jar",
+          "bytes": 7627491,
+          "sha256": "aa6008e0fcb8a8514b43aea5f23129f6e4d889aee6361a8b884f7f874d3c3aaf",
+          "role": "MC_SLIM",
+          "upstreamExpectedSha1": "fae17df4e8f1a82118f267f715b99dfded75a0f0",
+          "upstreamSha1Verified": true,
+          "upstreamSha1Matches": true,
+          "processorOutputHashRequired": true,
+          "zipCrcVerified": true
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-02\\libraries\\net\\minecraft\\server\\1.17.1-20210706.113038\\server-1.17.1-20210706.113038-extra.jar",
+          "bytes": 36465875,
+          "sha256": "713ac4e3f19ec5347bdec01cb168c7568c348952af389c705d33ab10e30511b6",
+          "role": "MC_EXTRA",
+          "upstreamExpectedSha1": "493f50d7b9fc0914782748183658df40337cc120",
+          "upstreamSha1Verified": true,
+          "upstreamSha1Matches": true,
+          "processorOutputHashRequired": true,
+          "zipCrcVerified": true
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-02\\libraries\\net\\minecraft\\server\\1.17.1-20210706.113038\\server-1.17.1-20210706.113038-srg.jar",
+          "bytes": 11681505,
+          "sha256": "b6af244cb0b538880ba9d00e0f60fe988c126301e7861594b955ca6db49265e3",
+          "role": "MC_SRG",
+          "upstreamExpectedSha1": null,
+          "upstreamSha1Verified": false,
+          "upstreamSha1Matches": null,
+          "processorOutputHashRequired": false,
+          "zipCrcVerified": true
+        }
+      ],
+      "patchedServerVerification": "Fixed official installer; processor-declared MC_SLIM/MC_EXTRA SHA-1 checks; independent in-memory replay of every official binary patch against MC_SRG and byte-for-byte PATCHED comparison. Unused PATCHED_SHA data reference and its mismatch remain recorded; MC_SRG has local digest/CRC only.",
+      "stage": "SERVER_TCP",
+      "actualServerStarted": true,
+      "passed": false,
+      "serverExitCode": 0,
+      "normalStop": true,
+      "protocolExitCode": 1,
+      "elapsedSeconds": 41.53,
+      "protocolElapsedSeconds": 7.981,
+      "passedCaseGroups": 0,
+      "error": "TCP suite did not complete; exitCode=1",
+      "partialObservations": {
+        "defaultPolicyVerified": true,
+        "defaultCatalogVerified": true,
+        "expectedRuleCount": 44,
+        "expectedCatalogActions": {
+          "DENY": 40,
+          "ALERT": 4
+        },
+        "freshStatus": "[22:51:33] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=0, accountPairs=0, rules=44, companion=required, vm=DENY, blacklist=DENY, rateBuckets=0, accountBans=0, deviceBans=0, deviceRequired=true",
+        "mixinAudit": {
+          "scope": "Actual runtime-transformed dispatcher inspected with the pinned Java16 javap; full disassembly remains private.",
+          "target": "net/minecraft/commands/Commands",
+          "export": {
+            "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-02\\.mixin.out\\class\\net\\minecraft\\commands\\Commands.class",
+            "bytes": 28981,
+            "sha256": "3925d724958defd7835149a49993b233f52f4439f65a519bd02f76a4730b9184"
+          },
+          "privateDisassembly": {
+            "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-02\\private-mixin-javap.txt",
+            "bytes": 66757,
+            "sha256": "78ea4bbb8980cf245512387273897adb7dd6f775aaf4cfd2cabf77d961094e47"
+          },
+          "javapExitCode": 0,
+          "dispatchCallsInjectedHandler": true,
+          "handlerCallsGuardWaiting": true,
+          "handlerCancelsCommand": true,
+          "passed": true
+        },
+        "restoreReloadStatus": "[22:51:41] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=1, rules=44, companion=required, vm=DENY, blacklist=DENY, rateBuckets=1, accountBans=0, deviceBans=0, deviceRequired=true",
+        "restoredStatus": "[22:51:41] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=1, rules=44, companion=required, vm=DENY, blacklist=DENY, rateBuckets=1, accountBans=0, deviceBans=0, deviceRequired=true",
+        "strictPolicyRestored": true,
+        "portReleased": true,
+        "protocolDecoderErrors": [],
+        "warningAndErrorLines": [
+          "[22:51:02] [main/WARN]: Configuration file E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-02\\config\\fml.toml is not correct. Correcting",
+          "[22:51:02] [main/WARN]: Incorrect key [defaultConfigPath] was corrected from null to defaultconfigs",
+          "[22:51:10] [main/WARN]: Configuration file E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-02\\config\\forge-common.toml is not correct. Correcting",
+          "[22:51:10] [main/WARN]: Incorrect key general was corrected from null to its default, SimpleCommentedConfig:{}. ",
+          "[22:51:10] [main/WARN]: Incorrect key general.defaultWorldType was corrected from null to its default, default. ",
+          "[22:51:12] [main/WARN]: Assets URL 'union:/E:/CodexTemp/QiZhangVerdict/compat-1.17.1/servers/forge-44-02/libraries/net/minecraft/server/1.17.1-20210706.113038/server-1.17.1-20210706.113038-srg.jar%2327!/assets/.mcassetsroot' uses unexpected schema",
+          "[22:51:12] [main/WARN]: Assets URL 'union:/E:/CodexTemp/QiZhangVerdict/compat-1.17.1/servers/forge-44-02/libraries/net/minecraft/server/1.17.1-20210706.113038/server-1.17.1-20210706.113038-srg.jar%2327!/data/.mcassetsroot' uses unexpected schema",
+          "[22:51:12] [main/WARN]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]",
+          "[22:51:12] [main/WARN]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]",
+          "[22:51:12] [main/WARN]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]",
+          "[22:51:12] [main/WARN]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]",
+          "[22:51:12] [main/WARN]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]",
+          "[22:51:27] [main/ERROR]: No key structures in MapLike[{\"layers\":[{\"block\":\"minecraft:bedrock\",\"height\":1},{\"block\":\"minecraft:dirt\",\"height\":2},{\"block\":\"minecraft:grass_block\",\"height\":1}],\"biome\":\"minecraft:plains\"}]; Not a registry ops",
+          "[22:51:27] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!",
+          "[22:51:27] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.",
+          "[22:51:27] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.",
+          "[22:51:27] [Server thread/WARN]: To change this, set \"online-mode\" to \"true\" in the server.properties file.",
+          "[22:51:27] [Server thread/WARN]: Configuration file .\\world\\serverconfig\\forge-server.toml is not correct. Correcting",
+          "[22:51:27] [Server thread/WARN]: Incorrect key server was corrected from null to its default, SimpleCommentedConfig:{}. ",
+          "[22:51:27] [Server thread/WARN]: Incorrect key server.removeErroringBlockEntities was corrected from null to its default, false. ",
+          "[22:51:27] [Server thread/WARN]: Incorrect key server.fullBoundingBoxLadders was corrected from null to its default, false. ",
+          "[22:51:27] [Server thread/WARN]: Incorrect key server.zombieBaseSummonChance was corrected from null to its default, 0.1. ",
+          "[22:51:27] [Server thread/WARN]: Incorrect key server.zombieBabyChance was corrected from null to its default, 0.05. ",
+          "[22:51:27] [Server thread/WARN]: Incorrect key server.treatEmptyTagsAsAir was corrected from null to its default, false. ",
+          "[22:51:27] [Server thread/WARN]: Incorrect key server.fixAdvancementLoading was corrected from null to its default, true. "
+        ]
+      },
+      "boundary": "Startup, defaults, required Mixin and clean stop observations are retained separately; the first TCP admission assertion failed, so no completed26-case result is claimed."
+    },
+    {
+      "attempt": "forge-44-03",
+      "profile": "forge-1.17.1",
+      "loader": "forge",
+      "loaderVersion": "37.1.1",
+      "minecraft": "1.17.1",
+      "artifact": {
+        "path": "platforms/1.17.1/forge/build/libs/qizhangverdict-forge-1.17.1-0.6.0-dev.jar",
+        "sha256": "d88ac5a343d48905ac8212b7f85337bb78a35762e6a605ee0ed389fda73bb839",
+        "bytes": 98986,
+        "version": "0.6.0-dev"
+      },
+      "isFinalArtifact": true,
+      "historicalBuildPathReplaced": false,
+      "installer": {
+        "exitCode": 0,
+        "installedOutputsVerified": true,
+        "sha256": "31f2319b1b9ca491aaccc020887240f8524a4ff2a8e0f8b795e17e889cbc043b",
+        "officialReceiptSha256": "3aee72affa901e35c8b701a0ea5631032a158a1ef6a3c7ae6814e126c40c65e5",
+        "baseReceiptSha256": "87e84a9b1486da6893e9f16571a8471f560901326f601e8d69bab21a48acef06"
+      },
+      "evidenceRefs": {
+        "install-result.json": "runtime-server-1.17.1/forge-44-03-install-result.json",
+        "install-console.log": "runtime-server-1.17.1/forge-44-03-install-console.log",
+        "fixture": "runtime-server-1.17.1/forge-44-03-fixture.json",
+        "helper": "runtime-server-1.17.1/helper-41e37c090ede.py",
+        "helperDependency-forge117_patch_check.py": "runtime-server-1.17.1/helper-27d8f048e83b-forge117_patch_check.py",
+        "protocol_smoke.cjs": "runtime-server-1.17.1/shared-2830d43816df-protocol_smoke.cjs",
+        "protocol_disconnect_observer.cjs": "runtime-server-1.17.1/shared-c4496beaa3d4-protocol_disconnect_observer.cjs",
+        "protocol_player_loaded.cjs": "runtime-server-1.17.1/shared-9bb049190eab-protocol_player_loaded.cjs",
+        "package-lock.json": "runtime-server-1.17.1/shared-48d3f0428d10-package-lock.json",
+        "catalog.tsv": "runtime-server-1.17.1/shared-fa2f688bd977-catalog.tsv",
+        "officialProfile": "runtime-server-1.17.1/forge-44-03-official-install-profile.json",
+        "smoke-result.json": "runtime-server-1.17.1/forge-44-03-smoke-result.json",
+        "console.log": "runtime-server-1.17.1/forge-44-03-console.log",
+        "protocol-console.log": "runtime-server-1.17.1/forge-44-03-protocol-console.log",
+        "protocol-result.json": "runtime-server-1.17.1/forge-44-03-protocol-result.json",
+        "protocol-disconnect-observations.json": "runtime-server-1.17.1/forge-44-03-protocol-disconnect-observations.json",
+        "protocol-metadata-trace.json": "runtime-server-1.17.1/forge-44-03-protocol-metadata-trace.json",
+        "protocol-handshake-trace.json": "runtime-server-1.17.1/forge-44-03-protocol-handshake-trace.json",
+        "server.properties": "runtime-server-1.17.1/forge-44-03-server.properties",
+        "commands.queue": "runtime-server-1.17.1/forge-44-03-commands.queue",
+        "guard-default.properties": "runtime-server-1.17.1/shared-47310c31b472-guard-default.properties",
+        "blacklist-default.tsv": "runtime-server-1.17.1/shared-537661b0604b-blacklist-default.tsv",
+        "final-blacklist.tsv": "runtime-server-1.17.1/forge-44-03-final-blacklist.tsv",
+        "final-rules.tsv": "runtime-server-1.17.1/forge-44-03-final-rules.tsv"
+      },
+      "generatedServerLibraries": [
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-03\\libraries\\net\\minecraftforge\\forge\\1.17.1-37.1.1\\forge-1.17.1-37.1.1-server.jar",
+          "bytes": 4259465,
+          "sha256": "c9d977ae5c7ad660dd18a64823ca7aa11c5a6b72c79fe76d96ce578747782c3a",
+          "role": "PATCHED",
+          "upstreamExpectedSha1": "bdf354470955786626a4d1c66a8c0f14b32e362d",
+          "upstreamSha1Verified": false,
+          "upstreamSha1Matches": false,
+          "processorOutputHashRequired": false,
+          "zipCrcVerified": true,
+          "independentPatchReplay": {
+            "schemaVersion": 1,
+            "passed": true,
+            "side": "server",
+            "scope": "Every official Forge v1/GDIFF4 patch replayed in memory; exact generated class bytes and output entry set. Not a runtime or whole-clean-file upstream hash claim.",
+            "javaExecuted": false,
+            "jarsModified": false,
+            "installer": {
+              "bytes": 5364773,
+              "sha256": "31f2319b1b9ca491aaccc020887240f8524a4ff2a8e0f8b795e17e889cbc043b",
+              "sha1": "356db842e0f316d37f566dfa8e0742230c36b094"
+            },
+            "cleanSrg": {
+              "bytes": 11681505,
+              "sha256": "71dea663e4b398692be537857827c579446cbec834c78481d310a1a8e6062907",
+              "sha1": "a0d467bff91e7da3b109fe9dfee0abe9443d1e52"
+            },
+            "patchedOverlay": {
+              "bytes": 4259465,
+              "sha256": "c9d977ae5c7ad660dd18a64823ca7aa11c5a6b72c79fe76d96ce578747782c3a",
+              "sha1": "aeb767bbc79cee6e4bb73a5c26294c05205b991e"
+            },
+            "patchSource": {
+              "member": "data/server.lzma",
+              "bytes": 2437587,
+              "sha256": "8dbd1368886aedbcd188669d711be18ead2933ec9466d56a66290742f2f2ff73"
+            },
+            "patchEntryCount": 1252,
+            "patchClassCount": 1252,
+            "existingPatchedClassCount": 954,
+            "addedClassCount": 298,
+            "removedClassCount": 0,
+            "inputAdler32CheckCount": 1252,
+            "allInputAdler32ChecksPassed": true,
+            "outputClassCount": 1252,
+            "everyOutputEntryAccountedFor": true,
+            "allOutputClassBytesMatchOfficialReplay": true,
+            "dataPatchedSha1Reference": "bdf354470955786626a4d1c66a8c0f14b32e362d",
+            "dataReferenceMatchesActual": false,
+            "containerDifferenceCauseEstablished": false,
+            "classBytesOrNameTableExposed": false
+          }
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-03\\libraries\\net\\minecraft\\server\\1.17.1-20210706.113038\\server-1.17.1-20210706.113038-slim.jar",
+          "bytes": 7627491,
+          "sha256": "aa6008e0fcb8a8514b43aea5f23129f6e4d889aee6361a8b884f7f874d3c3aaf",
+          "role": "MC_SLIM",
+          "upstreamExpectedSha1": "fae17df4e8f1a82118f267f715b99dfded75a0f0",
+          "upstreamSha1Verified": true,
+          "upstreamSha1Matches": true,
+          "processorOutputHashRequired": true,
+          "zipCrcVerified": true
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-03\\libraries\\net\\minecraft\\server\\1.17.1-20210706.113038\\server-1.17.1-20210706.113038-extra.jar",
+          "bytes": 36465875,
+          "sha256": "713ac4e3f19ec5347bdec01cb168c7568c348952af389c705d33ab10e30511b6",
+          "role": "MC_EXTRA",
+          "upstreamExpectedSha1": "493f50d7b9fc0914782748183658df40337cc120",
+          "upstreamSha1Verified": true,
+          "upstreamSha1Matches": true,
+          "processorOutputHashRequired": true,
+          "zipCrcVerified": true
+        },
+        {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-03\\libraries\\net\\minecraft\\server\\1.17.1-20210706.113038\\server-1.17.1-20210706.113038-srg.jar",
+          "bytes": 11681505,
+          "sha256": "71dea663e4b398692be537857827c579446cbec834c78481d310a1a8e6062907",
+          "role": "MC_SRG",
+          "upstreamExpectedSha1": null,
+          "upstreamSha1Verified": false,
+          "upstreamSha1Matches": null,
+          "processorOutputHashRequired": false,
+          "zipCrcVerified": true
+        }
+      ],
+      "patchedServerVerification": "Fixed official installer; processor-declared MC_SLIM/MC_EXTRA SHA-1 checks; independent in-memory replay of every official binary patch against MC_SRG and byte-for-byte PATCHED comparison. Unused PATCHED_SHA data reference and its mismatch remain recorded; MC_SRG has local digest/CRC only.",
+      "stage": "SERVER_TCP",
+      "actualServerStarted": true,
+      "passed": true,
+      "serverExitCode": 0,
+      "normalStop": true,
+      "protocolExitCode": 0,
+      "elapsedSeconds": 105.718,
+      "protocolElapsedSeconds": 69.579,
+      "passedCaseGroups": 26,
+      "cases": [
+        "normal companion joins",
+        "privileged commands blocked before report and restored afterward",
+        "missing companion expires",
+        "malformed report rejected",
+        "malformed report does not permanently ban account",
+        "first account on device allowed",
+        "same IP same device second account rejected",
+        "same IP second different device allowed",
+        "same IP third different device allowed",
+        "same IP fourth account rejected",
+        "disconnect releases device and IP quota",
+        "known cheat denied and sanctioned",
+        "same banned device different account denied",
+        "banned account denied with new device",
+        "administrator account and device unban restores access",
+        "administrator glob rule enforced",
+        "whitelist overrides matching blacklist item",
+        "removed whitelist takes effect",
+        "administrator removes default rule with colon ID",
+        "administrator restores removed blacklist entry",
+        "CIDR deny rejects login",
+        "known VM signal denied",
+        "VBS hypervisor alone does not ban physical machine",
+        "two-device setting first account",
+        "two-device setting second account",
+        "two-device setting rejects third account"
+      ],
+      "protocol": {
+        "minecraftProtocolVersion": "1.66.2",
+        "minecraftDataVersion": "3.117.0",
+        "protocol": 756,
+        "versionMetadata": {
+          "path": "E:\\CodexTemp\\QiZhangGuard\\bot\\node_modules\\minecraft-data\\minecraft-data\\data\\pc\\1.17.1\\version.json",
+          "bytes": 79,
+          "sha256": "dffbccf66e3655f0c0aa1bb8e9f71a656fd2dda813b955330e2dce379a4002d4"
+        },
+        "schema": {
+          "path": "E:\\CodexTemp\\QiZhangGuard\\bot\\node_modules\\minecraft-data\\minecraft-data\\data\\pc\\1.17.1\\protocol.json",
+          "bytes": 155791,
+          "sha256": "695099fb813c72b54180bd9cfea002f2243c28d0be9beb87e03b405cfa2abb31"
+        },
+        "versionList": {
+          "path": "E:\\CodexTemp\\QiZhangGuard\\bot\\node_modules\\minecraft-protocol\\src\\version.js",
+          "bytes": 368,
+          "sha256": "5b473bdb689c2fedf505b545be2096ab997d152f3b58338d7c624a5c1c73d1d1"
+        },
+        "scope": "Static package support and schema inspection; TCP success is a separate run result"
+      },
+      "policy": {
+        "fresh13DefaultsVerified": true,
+        "freshDefaults": {
+          "limits.max-online-per-ip": "3",
+          "limits.max-online-per-ip-device": "1",
+          "limits.max-accounts-per-ip": "5",
+          "limits.account-window-hours": "720",
+          "limits.attempts-per-minute": "20",
+          "ip.allow": "",
+          "ip.deny": "",
+          "companion.required": "true",
+          "companion.timeout-seconds": "20",
+          "device.required": "true",
+          "vm.action": "DENY",
+          "blacklist.action": "DENY",
+          "sanctions.on-deny": "BAN"
+        },
+        "freshDefaultRuleCount": 44,
+        "freshDefaultDeny": 40,
+        "freshDefaultAlert": 4,
+        "freshCatalogSha256": "fa2f688bd977317c95b485a115ca52267b1cd779ef48fdc0cadc4cfaa7ac4ccf",
+        "qaOverrides": {
+          "limits.max-accounts-per-ip": "100",
+          "limits.attempts-per-minute": "1000",
+          "companion.timeout-seconds": "4 (10 for the operator gate)",
+          "vm.action": "ALERT initially; DENY in VM cases",
+          "ip.deny": "127.0.0.0/8 in CIDR case",
+          "limits.max-online-per-ip": "2 in final quota cases"
+        },
+        "freshStatus": "[23:04:22] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=0, accountPairs=0, rules=44, companion=required, vm=DENY, blacklist=DENY, rateBuckets=0, accountBans=0, deviceBans=0, deviceRequired=true",
+        "strict13RestoredByteForByte": true,
+        "restoreReloadStatus": "[23:05:32] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=20, rules=45, companion=required, vm=DENY, blacklist=DENY, rateBuckets=1, accountBans=5, deviceBans=4, deviceRequired=true",
+        "restoredLiveStatus": "[23:05:32] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=20, rules=45, companion=required, vm=DENY, blacklist=DENY, rateBuckets=1, accountBans=5, deviceBans=4, deviceRequired=true",
+        "finalLegacyRows": 43,
+        "finalAdministratorRows": 2,
+        "finalEffectiveRules": 45,
+        "boundary": "Only guard.properties is restored; retained QA rules are not a production template."
+      },
+      "mixin": {
+        "scope": "Actual runtime-transformed dispatcher inspected with the pinned Java16 javap; full disassembly remains private.",
+        "target": "net/minecraft/commands/Commands",
+        "export": {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-03\\.mixin.out\\class\\net\\minecraft\\commands\\Commands.class",
+          "bytes": 28981,
+          "sha256": "0977fc78836ae504fdfa18b5fd3543ddfda9241ce3915dbbe6a5adb874178590"
+        },
+        "privateDisassembly": {
+          "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-03\\private-mixin-javap.txt",
+          "bytes": 66757,
+          "sha256": "78ea4bbb8980cf245512387273897adb7dd6f775aaf4cfd2cabf77d961094e47"
+        },
+        "javapExitCode": 0,
+        "dispatchCallsInjectedHandler": true,
+        "handlerCallsGuardWaiting": true,
+        "handlerCancelsCommand": true,
+        "passed": true
+      },
+      "operatorGate": {
+        "opBeforeReportBlocked": true,
+        "opAfterReportExecuted": true,
+        "grantAndRemovalObserved": true
+      },
+      "closure": {
+        "normalExit0": true,
+        "portReleasedAtHelperEnd": true,
+        "currentPortNotProbed": true
+      },
+      "nodeDecoderObservations": {
+        "partialReadErrorCount": 0,
+        "rawMessages": [],
+        "decodedDisconnects": 13,
+        "boundary": "Admission case results do not establish complete game packet decoding."
+      },
+      "warnings": [
+        "[23:03:49] [main/WARN]: Configuration file E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-03\\config\\fml.toml is not correct. Correcting",
+        "[23:03:49] [main/WARN]: Incorrect key [defaultConfigPath] was corrected from null to defaultconfigs",
+        "[23:03:57] [main/WARN]: Configuration file E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-03\\config\\forge-common.toml is not correct. Correcting",
+        "[23:03:57] [main/WARN]: Incorrect key general was corrected from null to its default, SimpleCommentedConfig:{}. ",
+        "[23:03:57] [main/WARN]: Incorrect key general.defaultWorldType was corrected from null to its default, default. ",
+        "[23:03:58] [main/WARN]: Assets URL 'union:/E:/CodexTemp/QiZhangVerdict/compat-1.17.1/servers/forge-44-03/libraries/net/minecraft/server/1.17.1-20210706.113038/server-1.17.1-20210706.113038-srg.jar%2327!/assets/.mcassetsroot' uses unexpected schema",
+        "[23:03:58] [main/WARN]: Assets URL 'union:/E:/CodexTemp/QiZhangVerdict/compat-1.17.1/servers/forge-44-03/libraries/net/minecraft/server/1.17.1-20210706.113038/server-1.17.1-20210706.113038-srg.jar%2327!/data/.mcassetsroot' uses unexpected schema",
+        "[23:03:59] [main/WARN]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]",
+        "[23:03:59] [main/WARN]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]",
+        "[23:03:59] [main/WARN]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]",
+        "[23:03:59] [main/WARN]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]",
+        "[23:03:59] [main/WARN]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]",
+        "[23:04:17] [main/ERROR]: No key structures in MapLike[{\"layers\":[{\"block\":\"minecraft:bedrock\",\"height\":1},{\"block\":\"minecraft:dirt\",\"height\":2},{\"block\":\"minecraft:grass_block\",\"height\":1}],\"biome\":\"minecraft:plains\"}]; Not a registry ops",
+        "[23:04:17] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!",
+        "[23:04:17] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.",
+        "[23:04:17] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.",
+        "[23:04:17] [Server thread/WARN]: To change this, set \"online-mode\" to \"true\" in the server.properties file.",
+        "[23:04:17] [Server thread/WARN]: Configuration file .\\world\\serverconfig\\forge-server.toml is not correct. Correcting",
+        "[23:04:17] [Server thread/WARN]: Incorrect key server was corrected from null to its default, SimpleCommentedConfig:{}. ",
+        "[23:04:17] [Server thread/WARN]: Incorrect key server.removeErroringBlockEntities was corrected from null to its default, false. ",
+        "[23:04:17] [Server thread/WARN]: Incorrect key server.fullBoundingBoxLadders was corrected from null to its default, false. ",
+        "[23:04:17] [Server thread/WARN]: Incorrect key server.zombieBaseSummonChance was corrected from null to its default, 0.1. ",
+        "[23:04:17] [Server thread/WARN]: Incorrect key server.zombieBabyChance was corrected from null to its default, 0.05. ",
+        "[23:04:17] [Server thread/WARN]: Incorrect key server.treatEmptyTagsAsAir was corrected from null to its default, false. ",
+        "[23:04:17] [Server thread/WARN]: Incorrect key server.fixAdvancementLoading was corrected from null to its default, true. "
+      ]
+    }
+  ],
+  "transportReview": {
+    "evidence": "runtime-server-1.17.1/forge-channel-static-review.json",
+    "initialArtifact": "02e8e470f9abe5b7b6dd19b9107b4597b4f197423223e94f74fe9dd94da0481b",
+    "finalArtifact": "d88ac5a343d48905ac8212b7f85337bb78a35762e6a605ee0ed389fda73bb839",
+    "boundary": "Static official-source analysis predicts the old FML-only channel gate failure; old runtime did not log FMLConnectionData directly. New product passed unchanged26 TCP definitions. This is not cross-loader GUI proof."
+  },
+  "evidence": [
+    {
+      "file": "runtime-server-1.17.1/collection-review.py",
+      "publicFile": "outputs/runtime-server-1.17.1/collection-review.py",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\server-report-01\\collect.py"
+      ],
+      "sha256": "aa99ac6002e9ca8bebe38d5edac1ed13fff540ca061a52caebf2fe9e4bcd085e",
+      "bytes": 23177,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/forge-channel-static-review.json",
+      "publicFile": "outputs/runtime-server-1.17.1/forge-channel-static-review.json",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\forge-channel-review-01\\result.json"
+      ],
+      "sha256": "61aedf6581ce3ff4adeaac3851eb979479c6a8a5f8932e60a922362c008bcc55",
+      "bytes": 4867,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/fabric-44-01-install-result.json",
+      "publicFile": "outputs/runtime-server-1.17.1/fabric-44-01-install-result.json",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\fabric-44-01\\install-result.json"
+      ],
+      "sha256": "f1c3c8bb8968f5a8eeb1d741b62eac66b67a22cff4c4db1836d026ddcd514506",
+      "bytes": 1095,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/fabric-44-01-install-console.log",
+      "publicFile": "outputs/runtime-server-1.17.1/fabric-44-01-install-console.log",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\fabric-44-01\\install-console.log"
+      ],
+      "sha256": "4b6160c609440c0a2d0a980b628fa8a9c0956c754dc574862bbffbbfab6cc002",
+      "bytes": 532,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/fabric-44-01-fixture.json",
+      "publicFile": "outputs/runtime-server-1.17.1/fabric-44-01-fixture.json",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\fabric-44-01\\.qizhang-legacy117-smoke.json"
+      ],
+      "sha256": "43ecd4da94ff9a7f05055a2dbe3e062f62ed901eeae3686eda0f54ffce53b686",
+      "bytes": 39328,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/helper-4bdb66d9d933.py",
+      "publicFile": "outputs/runtime-server-1.17.1/helper-4bdb66d9d933.py",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\fabric-44-01\\qa\\legacy117_mod_smoke.py",
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-01\\qa\\legacy117_mod_smoke.py"
+      ],
+      "sha256": "4bdb66d9d9335c59bb76629edc4952f28f454642af4dc27e928b458261c7bf49",
+      "bytes": 43463,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/shared-2830d43816df-protocol_smoke.cjs",
+      "publicFile": "outputs/runtime-server-1.17.1/shared-2830d43816df-protocol_smoke.cjs",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\fabric-44-01\\qa\\protocol_smoke.cjs",
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-01\\qa\\protocol_smoke.cjs",
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-02\\qa\\protocol_smoke.cjs",
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-03\\qa\\protocol_smoke.cjs"
+      ],
+      "sha256": "2830d43816df28df2565a0966a837a64afd26ee14897b1b591d995d1090be7b8",
+      "bytes": 21043,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/shared-c4496beaa3d4-protocol_disconnect_observer.cjs",
+      "publicFile": "outputs/runtime-server-1.17.1/shared-c4496beaa3d4-protocol_disconnect_observer.cjs",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\fabric-44-01\\qa\\protocol_disconnect_observer.cjs",
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-01\\qa\\protocol_disconnect_observer.cjs",
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-02\\qa\\protocol_disconnect_observer.cjs",
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-03\\qa\\protocol_disconnect_observer.cjs"
+      ],
+      "sha256": "c4496beaa3d43c13ff946821aae5f2c62cd7623e09ed21300af66e5e58c68dbc",
+      "bytes": 2374,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/shared-9bb049190eab-protocol_player_loaded.cjs",
+      "publicFile": "outputs/runtime-server-1.17.1/shared-9bb049190eab-protocol_player_loaded.cjs",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\fabric-44-01\\qa\\protocol_player_loaded.cjs",
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-01\\qa\\protocol_player_loaded.cjs",
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-02\\qa\\protocol_player_loaded.cjs",
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-03\\qa\\protocol_player_loaded.cjs"
+      ],
+      "sha256": "9bb049190eab7d10734eb0385756edbed4e7185332c7e65cf4599f4d1eefda51",
+      "bytes": 701,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/shared-48d3f0428d10-package-lock.json",
+      "publicFile": "outputs/runtime-server-1.17.1/shared-48d3f0428d10-package-lock.json",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\fabric-44-01\\qa\\package-lock.json",
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-01\\qa\\package-lock.json",
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-02\\qa\\package-lock.json",
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-03\\qa\\package-lock.json"
+      ],
+      "sha256": "48d3f0428d10fd389f085060dedd28e71db8c851cb6ffd032d08b66a238ce49a",
+      "bytes": 53330,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/shared-fa2f688bd977-catalog.tsv",
+      "publicFile": "outputs/runtime-server-1.17.1/shared-fa2f688bd977-catalog.tsv",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\fabric-44-01\\qa\\catalog.tsv",
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-01\\qa\\catalog.tsv",
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-02\\qa\\catalog.tsv",
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-03\\qa\\catalog.tsv"
+      ],
+      "sha256": "fa2f688bd977317c95b485a115ca52267b1cd779ef48fdc0cadc4cfaa7ac4ccf",
+      "bytes": 6709,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/fabric-44-01-official-server-profile.json",
+      "publicFile": "outputs/runtime-server-1.17.1/fabric-44-01-official-server-profile.json",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\fabric-44-01\\qa\\official-server-profile.json"
+      ],
+      "sha256": "a0aecaa9df279b81ba42183d2e9f95b84de393314f94de6a3cb0d9c09d16a55b",
+      "bytes": 2805,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/fabric-44-01-smoke-result.json",
+      "publicFile": "outputs/runtime-server-1.17.1/fabric-44-01-smoke-result.json",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\fabric-44-01\\smoke-result.json"
+      ],
+      "sha256": "402b23580a26791d384a06a5ce89f02b67560c51bbd72c19e1e5383b8d187019",
+      "bytes": 19977,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/fabric-44-01-console.log",
+      "publicFile": "outputs/runtime-server-1.17.1/fabric-44-01-console.log",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\fabric-44-01\\console.log"
+      ],
+      "sha256": "170453287456394dfccdd8fcbb31b4b764379f7583edaca73595e4650a0fa3ea",
+      "bytes": 78182,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/fabric-44-01-protocol-console.log",
+      "publicFile": "outputs/runtime-server-1.17.1/fabric-44-01-protocol-console.log",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\fabric-44-01\\protocol-console.log"
+      ],
+      "sha256": "133fb52af0ce24f0361ba1e5f3be1df13454d4723f9c46da8f23ce40cae003fe",
+      "bytes": 4238,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/fabric-44-01-protocol-result.json",
+      "publicFile": "outputs/runtime-server-1.17.1/fabric-44-01-protocol-result.json",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\fabric-44-01\\protocol-result.json"
+      ],
+      "sha256": "490fda443e397438df40ba45de970b3a483e9220f19ba7ff1d87eac6df65496d",
+      "bytes": 5156,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/fabric-44-01-protocol-disconnect-observations.json",
+      "publicFile": "outputs/runtime-server-1.17.1/fabric-44-01-protocol-disconnect-observations.json",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\fabric-44-01\\protocol-disconnect-observations.json"
+      ],
+      "sha256": "434ff5ebc26bd7d28af47c9b3ae6e3f045212ed471dede0ae3154822caff3401",
+      "bytes": 3800,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/fabric-44-01-protocol-metadata-trace.json",
+      "publicFile": "outputs/runtime-server-1.17.1/fabric-44-01-protocol-metadata-trace.json",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\fabric-44-01\\protocol-metadata-trace.json"
+      ],
+      "sha256": "ab185c00f047935c61197a2da4335d9629282385202b4b6b2243b2bc651f7b07",
+      "bytes": 111765,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/fabric-44-01-protocol-handshake-trace.json",
+      "publicFile": "outputs/runtime-server-1.17.1/fabric-44-01-protocol-handshake-trace.json",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\fabric-44-01\\protocol-handshake-trace.json"
+      ],
+      "sha256": "f3dae3285e29efe96854384b1343f469f801c076251757fc766fb96fc44290bb",
+      "bytes": 88244,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/fabric-44-01-server.properties",
+      "publicFile": "outputs/runtime-server-1.17.1/fabric-44-01-server.properties",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\fabric-44-01\\server.properties"
+      ],
+      "sha256": "5659284a1fd27de8d10351e70e322f908a1b0c22ecab7855d81ce0b0f43af27a",
+      "bytes": 1356,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/fabric-44-01-commands.queue",
+      "publicFile": "outputs/runtime-server-1.17.1/fabric-44-01-commands.queue",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\fabric-44-01\\commands.queue"
+      ],
+      "sha256": "7bd6c53f6bdff06fb8db9c5bc550ba23b71ae8fb6564890f29be1e0bff697900",
+      "bytes": 564,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/shared-47310c31b472-guard-default.properties",
+      "publicFile": "outputs/runtime-server-1.17.1/shared-47310c31b472-guard-default.properties",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\fabric-44-01\\guard-default.properties",
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-02\\guard-default.properties",
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-03\\guard-default.properties"
+      ],
+      "sha256": "47310c31b47287ab805bfdbf8ddddf80e8169385bd9c862239a0a0075644da4e",
+      "bytes": 396,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/shared-537661b0604b-blacklist-default.tsv",
+      "publicFile": "outputs/runtime-server-1.17.1/shared-537661b0604b-blacklist-default.tsv",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\fabric-44-01\\blacklist-default.tsv",
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-02\\blacklist-default.tsv",
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-03\\blacklist-default.tsv"
+      ],
+      "sha256": "537661b0604bff1ee09a2d2913fcac5df8763e6fa43ab535ba51bd6b7c8a048c",
+      "bytes": 6893,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/fabric-44-01-final-blacklist.tsv",
+      "publicFile": "outputs/runtime-server-1.17.1/fabric-44-01-final-blacklist.tsv",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\fabric-44-01\\config\\qizhangverdict\\blacklist.tsv"
+      ],
+      "sha256": "4540a9eb800cf36a7de54d906eed014a7176002840efbd66c5ba6ecac578e93b",
+      "bytes": 6728,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/fabric-44-01-final-rules.tsv",
+      "publicFile": "outputs/runtime-server-1.17.1/fabric-44-01-final-rules.tsv",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\fabric-44-01\\config\\qizhangverdict\\rules.tsv"
+      ],
+      "sha256": "ca00fd379737148812293ee0171f99a4b8c59ae20422b8a86efcd762a4478f0f",
+      "bytes": 193,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/forge-44-01-install-result.json",
+      "publicFile": "outputs/runtime-server-1.17.1/forge-44-01-install-result.json",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-01\\install-result.json"
+      ],
+      "sha256": "a2663cadd10117322da20f09cf2e55776772eb6c32f10e51688d1b800bf5b09c",
+      "bytes": 1100,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/forge-44-01-install-console.log",
+      "publicFile": "outputs/runtime-server-1.17.1/forge-44-01-install-console.log",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-01\\install-console.log"
+      ],
+      "sha256": "9b3147d50357c79a1e4cfe2270dfee373110bb3d7f084b36dbbb2cd4424fa33b",
+      "bytes": 2100699,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/forge-44-01-fixture.json",
+      "publicFile": "outputs/runtime-server-1.17.1/forge-44-01-fixture.json",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-01\\.qizhang-legacy117-smoke.json"
+      ],
+      "sha256": "e396b094abef1f7553f5a408ea9ab97d873e5d26ece6a84f6ace564396330319",
+      "bytes": 38851,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/forge-44-01-official-install-profile.json",
+      "publicFile": "outputs/runtime-server-1.17.1/forge-44-01-official-install-profile.json",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-01\\qa\\official-install-profile.json"
+      ],
+      "sha256": "88ae920bb357f2b2c4a6fea2bcc234b525d8256e24c02e828055730570a9308b",
+      "bytes": 45900,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/forge-44-02-install-result.json",
+      "publicFile": "outputs/runtime-server-1.17.1/forge-44-02-install-result.json",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-02\\install-result.json"
+      ],
+      "sha256": "5f727abe9234f3d9bb6fe6395585e34443b4a3bfe4ae4a8c42e00ac7f5d94a8b",
+      "bytes": 1031,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/forge-44-02-install-console.log",
+      "publicFile": "outputs/runtime-server-1.17.1/forge-44-02-install-console.log",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-02\\install-console.log"
+      ],
+      "sha256": "e23ca518869ecb3dc2fc6da914e8d5b8223dd8752fa6bbeaa2e6a90f3935426d",
+      "bytes": 2100699,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/forge-44-02-fixture.json",
+      "publicFile": "outputs/runtime-server-1.17.1/forge-44-02-fixture.json",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-02\\.qizhang-legacy117-smoke.json"
+      ],
+      "sha256": "01e8502e46d105682000cc7277b9971ec92e752926426b0884423afdc36f20bb",
+      "bytes": 46008,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/helper-41e37c090ede.py",
+      "publicFile": "outputs/runtime-server-1.17.1/helper-41e37c090ede.py",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-02\\qa\\legacy117_mod_smoke.py",
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-03\\qa\\legacy117_mod_smoke.py"
+      ],
+      "sha256": "41e37c090ede6c143d9dda73aae0b17b11e7799211929c4d8a609fd339d63cc2",
+      "bytes": 45316,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/helper-27d8f048e83b-forge117_patch_check.py",
+      "publicFile": "outputs/runtime-server-1.17.1/helper-27d8f048e83b-forge117_patch_check.py",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-02\\qa\\forge117_patch_check.py",
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-03\\qa\\forge117_patch_check.py"
+      ],
+      "sha256": "27d8f048e83b32d5bee3450d4cca063fc8775dda1a36287be4d88b9f4c61d11b",
+      "bytes": 8824,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/forge-44-02-official-install-profile.json",
+      "publicFile": "outputs/runtime-server-1.17.1/forge-44-02-official-install-profile.json",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-02\\qa\\official-install-profile.json"
+      ],
+      "sha256": "88ae920bb357f2b2c4a6fea2bcc234b525d8256e24c02e828055730570a9308b",
+      "bytes": 45900,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/forge-44-02-smoke-result.json",
+      "publicFile": "outputs/runtime-server-1.17.1/forge-44-02-smoke-result.json",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-02\\smoke-result.json"
+      ],
+      "sha256": "ff218f66a9467747614859292a9a3a92d1e586ffcbb6dbe3c3f3d8af15362963",
+      "bytes": 9775,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/forge-44-02-console.log",
+      "publicFile": "outputs/runtime-server-1.17.1/forge-44-02-console.log",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-02\\console.log"
+      ],
+      "sha256": "e55a8e6cdd37b3ad1cd0d496e31a38d5c61199d883f56933403e7616934e5066",
+      "bytes": 19491,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/forge-44-02-protocol-console.log",
+      "publicFile": "outputs/runtime-server-1.17.1/forge-44-02-protocol-console.log",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-02\\protocol-console.log"
+      ],
+      "sha256": "b0c7e8256a102485bed077980ae79942715f3335b969b90f8fc36e78a7a4ac78",
+      "bytes": 578,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/forge-44-02-protocol-disconnect-observations.json",
+      "publicFile": "outputs/runtime-server-1.17.1/forge-44-02-protocol-disconnect-observations.json",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-02\\protocol-disconnect-observations.json"
+      ],
+      "sha256": "e04bc9229614634418b662836f7d1793f7f8aff83ca50d2c7fa269e3b5883e0f",
+      "bytes": 348,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/forge-44-02-protocol-metadata-trace.json",
+      "publicFile": "outputs/runtime-server-1.17.1/forge-44-02-protocol-metadata-trace.json",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-02\\protocol-metadata-trace.json"
+      ],
+      "sha256": "a5940652e3de157ca13fcf6d8e1814c703ced1a1eb4bb2c1bc2fbd76944b0cc2",
+      "bytes": 122,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/forge-44-02-protocol-handshake-trace.json",
+      "publicFile": "outputs/runtime-server-1.17.1/forge-44-02-protocol-handshake-trace.json",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-02\\protocol-handshake-trace.json"
+      ],
+      "sha256": "85b73ba6492a32f96d4266cefef2a694cd997d0f121340eb7a002dba5d923c09",
+      "bytes": 3137,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/forge-44-02-server.properties",
+      "publicFile": "outputs/runtime-server-1.17.1/forge-44-02-server.properties",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-02\\server.properties"
+      ],
+      "sha256": "a81dfe5d5712746010d7bdbd40f8a16f68bbcc4be8659d810078a816faf8c709",
+      "bytes": 1356,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/forge-44-02-commands.queue",
+      "publicFile": "outputs/runtime-server-1.17.1/forge-44-02-commands.queue",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-02\\commands.queue"
+      ],
+      "sha256": "78979ba6fe9982f8b6895cddeff2d53c517e0411db06a8a713893bca941412d3",
+      "bytes": 17,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/forge-44-03-install-result.json",
+      "publicFile": "outputs/runtime-server-1.17.1/forge-44-03-install-result.json",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-03\\install-result.json"
+      ],
+      "sha256": "8f92505a91bef49172b3be7199b161e148a8bcfeb2677a5e5e79529feb7ff164",
+      "bytes": 1031,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/forge-44-03-install-console.log",
+      "publicFile": "outputs/runtime-server-1.17.1/forge-44-03-install-console.log",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-03\\install-console.log"
+      ],
+      "sha256": "47c1a7f288fc8ab83d3ec8be94fd1ee824f031b4d054a0228fd0fa6c1fee8eaa",
+      "bytes": 2100699,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/forge-44-03-fixture.json",
+      "publicFile": "outputs/runtime-server-1.17.1/forge-44-03-fixture.json",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-03\\.qizhang-legacy117-smoke.json"
+      ],
+      "sha256": "f0cde3dd629c38665c20eaa8438e443a6db90926f1cfff2823bd53bec8b82280",
+      "bytes": 46008,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/forge-44-03-official-install-profile.json",
+      "publicFile": "outputs/runtime-server-1.17.1/forge-44-03-official-install-profile.json",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-03\\qa\\official-install-profile.json"
+      ],
+      "sha256": "88ae920bb357f2b2c4a6fea2bcc234b525d8256e24c02e828055730570a9308b",
+      "bytes": 45900,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/forge-44-03-smoke-result.json",
+      "publicFile": "outputs/runtime-server-1.17.1/forge-44-03-smoke-result.json",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-03\\smoke-result.json"
+      ],
+      "sha256": "7879017f6ec6d222c04ed1e12e641379bddd862a438f64022a80bcd0944a89b3",
+      "bytes": 15472,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/forge-44-03-console.log",
+      "publicFile": "outputs/runtime-server-1.17.1/forge-44-03-console.log",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-03\\console.log"
+      ],
+      "sha256": "f02fcc0200ad50ca3e61af1c95d730d2fd42ba6f03621fa25312763a20a70d2c",
+      "bytes": 33127,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/forge-44-03-protocol-console.log",
+      "publicFile": "outputs/runtime-server-1.17.1/forge-44-03-protocol-console.log",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-03\\protocol-console.log"
+      ],
+      "sha256": "133fb52af0ce24f0361ba1e5f3be1df13454d4723f9c46da8f23ce40cae003fe",
+      "bytes": 4238,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/forge-44-03-protocol-result.json",
+      "publicFile": "outputs/runtime-server-1.17.1/forge-44-03-protocol-result.json",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-03\\protocol-result.json"
+      ],
+      "sha256": "490fda443e397438df40ba45de970b3a483e9220f19ba7ff1d87eac6df65496d",
+      "bytes": 5156,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/forge-44-03-protocol-disconnect-observations.json",
+      "publicFile": "outputs/runtime-server-1.17.1/forge-44-03-protocol-disconnect-observations.json",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-03\\protocol-disconnect-observations.json"
+      ],
+      "sha256": "434ff5ebc26bd7d28af47c9b3ae6e3f045212ed471dede0ae3154822caff3401",
+      "bytes": 3800,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/forge-44-03-protocol-metadata-trace.json",
+      "publicFile": "outputs/runtime-server-1.17.1/forge-44-03-protocol-metadata-trace.json",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-03\\protocol-metadata-trace.json"
+      ],
+      "sha256": "193a36c639485be55a7fc87f3f19a36850c8ac35a4c5b0c02d9dac63eb3f3e0d",
+      "bytes": 175642,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/forge-44-03-protocol-handshake-trace.json",
+      "publicFile": "outputs/runtime-server-1.17.1/forge-44-03-protocol-handshake-trace.json",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-03\\protocol-handshake-trace.json"
+      ],
+      "sha256": "b736e412c211676446652d7b84bcbe7fdf071d5f8bc521886460a5c2ededb6da",
+      "bytes": 91557,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/forge-44-03-server.properties",
+      "publicFile": "outputs/runtime-server-1.17.1/forge-44-03-server.properties",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-03\\server.properties"
+      ],
+      "sha256": "5fa9d89307813dec0f2d22e8fd72eab1b4023541513dc23f8d6464b1718edec9",
+      "bytes": 1356,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/forge-44-03-commands.queue",
+      "publicFile": "outputs/runtime-server-1.17.1/forge-44-03-commands.queue",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-03\\commands.queue"
+      ],
+      "sha256": "ba6c295e035312480830c56fbdcdcb22840f275409e56f7c9c304a12bd39ec3f",
+      "bytes": 564,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/forge-44-03-final-blacklist.tsv",
+      "publicFile": "outputs/runtime-server-1.17.1/forge-44-03-final-blacklist.tsv",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-03\\config\\qizhangverdict\\blacklist.tsv"
+      ],
+      "sha256": "4540a9eb800cf36a7de54d906eed014a7176002840efbd66c5ba6ecac578e93b",
+      "bytes": 6728,
+      "rawBytesPreserved": true
+    },
+    {
+      "file": "runtime-server-1.17.1/forge-44-03-final-rules.tsv",
+      "publicFile": "outputs/runtime-server-1.17.1/forge-44-03-final-rules.tsv",
+      "originalPaths": [
+        "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-03\\config\\qizhangverdict\\rules.tsv"
+      ],
+      "sha256": "90eb054e39c1b8b9596e40510897b0c738223568319789ca691aeaf6afb50193",
+      "bytes": 193,
+      "rawBytesPreserved": true
+    }
+  ],
+  "evidenceCount": 58,
+  "evidenceBytes": 7527539,
+  "scope": "Actual dedicated servers and real TCP synthetic-report clients; not rendered ClientReporter, real VM/hardware attestation, online-mode authentication, behavior anticheat, Anti-Xray or performance acceptance.",
+  "privacyReview": {
+    "scopeFilesComparedInMemory": 3,
+    "stateDigestSources": {
+      "fabric-44-01": {
+        "storedDigests": 16,
+        "allMatchSyntheticFixture": true
+      },
+      "forge-44-02": {
+        "storedDigests": 0,
+        "allMatchSyntheticFixture": true
+      },
+      "forge-44-03": {
+        "storedDigests": 16,
+        "allMatchSyntheticFixture": true
+      }
+    },
+    "uniqueSyntheticDigests": 16,
+    "scopeMatches": 0,
+    "machineGuidMatches": 0,
+    "credentialPatternMatches": 0,
+    "excluded": [
+      "accounts.state",
+      "server-id.txt",
+      "world/player data",
+      "full Minecraft javap/class exports",
+      "third-party JARs",
+      "duplicate installer JAR logs"
+    ],
+    "boundary": "Known fixture scopes/devices and local MachineGuid plus credential patterns checked; synthetic device hashes are allowed only after reproducing their QA inputs. Not an exhaustive secret detector."
+  },
+  "boundaries": [
+    "Each passing loader runs26 admission definitions; two passing loaders would make52 executions, not52 distinct features.",
+    "Fresh13/default44 are checked before overrides; final13 runtime restoration waits for asynchronous reload status and another fresh status. Rule tests retain45 effective rules.",
+    "Failed installer validation is retained separately; installer exit0 does not prove server startup.",
+    "Original warning/error lines and protocol decoder observations are preserved without turning successful admission into a complete gameplay-decoding claim."
+  ],
+  "collectionAudit": {
+    "collectorSha256": "aa99ac6002e9ca8bebe38d5edac1ed13fff540ca061a52caebf2fe9e4bcd085e",
+    "collectorEvidence": "runtime-server-1.17.1/collection-review.py",
+    "sourceBuildReceipt": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\builds\\build-01\\result.json",
+    "sourceBuildReceiptSHA256": "889a3ecc259043ffdef6ba465f03f1108971df2c65f7b2551c2bb8b14f080bcf",
+    "finalBuildReceipt": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\builds\\build-02\\result.json",
+    "finalBuildReceiptSHA256": "c4ef5d676f5fe19209ff9640272f7506a4c9389ba72854391b287646e1d7abe9",
+    "javaExecutedDuringCollection": false,
+    "publicationRequested": true
+  }
+}

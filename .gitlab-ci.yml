@@ -51,7 +51,7 @@ build:
   timeout: 1h
   parallel:
     matrix:
-      - QV_TARGET: [core-bukkit, mods-1.19.2, mods-1.20.1, mods-1.20.4, mods-1.20.6, mods-1.21.1, mods-1.21.11]
+      - QV_TARGET: [core-bukkit, mods-1.17.1, mods-1.19.2, mods-1.20.1, mods-1.20.4, mods-1.20.6, mods-1.21.1, mods-1.21.11]
   cache:
     key: 'gradle-${CI_COMMIT_REF_SLUG}-${QV_TARGET}'
     paths:
@@ -59,7 +59,7 @@ build:
       - .gradle-user/wrapper/
   before_script:
     - apt-get update -qq
-    - DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends openjdk-17-jdk-headless python3
+    - DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends openjdk-17-jdk-headless python3 curl ca-certificates
   script:
     - |
       set -euo pipefail
@@ -70,6 +70,20 @@ build:
       "$qv_jdk17/bin/java" -version
       export GRADLE_USER_HOME="$CI_PROJECT_DIR/.gradle-user"
       export QV_JAVA_PATHS="$qv_jdk17,$JAVA_HOME"
+      if [[ "$QV_TARGET" == mods-1.17.1 ]]; then
+        # Official Adoptium 16.0.2+7 Linux x64: verify the fixed archive before extraction.
+        test "$(dpkg --print-architecture)" = amd64
+        qv_java16_dir="$CI_PROJECT_DIR/.ci-tests/toolchains/java16"
+        test ! -e "$qv_java16_dir"
+        mkdir -p "$qv_java16_dir"
+        curl --fail --location --retry 3 --output "$qv_java16_dir/jdk16.tar.gz" \
+          'https://github.com/adoptium/temurin16-binaries/releases/download/jdk-16.0.2%2B7/OpenJDK16U-jdk_x64_linux_hotspot_16.0.2_7.tar.gz'
+        printf '%s  %s\n' '323d6d7474a359a28eff7ddd0df8e65bd61554a8ed12ef42fd9365349e573c2c' "$qv_java16_dir/jdk16.tar.gz" | sha256sum --check --strict -
+        tar --extract --gzip --file "$qv_java16_dir/jdk16.tar.gz" --directory "$qv_java16_dir" --no-same-owner
+        export QV_JAVA16_PATH="$qv_java16_dir/jdk-16.0.2+7"
+        test -x "$QV_JAVA16_PATH/bin/java"
+        test -x "$QV_JAVA16_PATH/bin/javac"
+      fi
       bash scripts/ci_modern_build.sh
   artifacts:
     name: 'qizhangverdict-${QV_TARGET}-${CI_COMMIT_SHORT_SHA}'
@@ -91,7 +105,7 @@ collect:
   script:
     - python3 -B scripts/ci_modern_artifacts.py collect --input ci-artifacts --output ci-release --layout gitlab
   artifacts:
-    name: 'qizhangverdict-fifteen-modern-jars-${CI_COMMIT_SHORT_SHA}'
+    name: 'qizhangverdict-seventeen-modern-jars-${CI_COMMIT_SHORT_SHA}'
     expire_in: 30 days
     paths:
       - ci-release/

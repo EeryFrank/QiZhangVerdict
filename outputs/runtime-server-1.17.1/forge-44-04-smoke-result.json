@@ -1,0 +1,307 @@
+{
+  "profile": "forge-1.17.1",
+  "guard": {
+    "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-04\\mods\\qizhangverdict-forge-1.17.1-0.6.0-dev.jar",
+    "bytes": 99008,
+    "sha256": "a71d6bb215426927b5db4cf2ea6278aa4bc92615d750d1bfa42b7d1469dde813"
+  },
+  "mode": "tcp",
+  "command": [
+    "E:\\CodexTemp\\QiZhangVerdict\\toolchains\\jdk16\\installation-01\\extracted\\jdk-16.0.2+7\\bin\\java.exe",
+    "-Xms512M",
+    "-Xmx1536M",
+    "-Djava.awt.headless=true",
+    "-Dfile.encoding=UTF-8",
+    "-Djava.io.tmpdir=E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-04\\runtime-temp",
+    "-Dmixin.debug.verbose=true",
+    "-Dmixin.debug.export=true",
+    "-Dmixin.debug.countInjections=true",
+    "@libraries\\net\\minecraftforge\\forge\\1.17.1-37.1.1\\win_args.txt",
+    "nogui"
+  ],
+  "scope": "Dedicated startup/status/required command Mixin and clean stop; optional real TCP synthetic reports, not rendered companion/hardware evidence",
+  "availablePhysicalGiB": 16.94173812866211,
+  "started": true,
+  "normalStop": true,
+  "serverExitCode": 0,
+  "protocolPassed": true,
+  "defaultPolicyVerified": true,
+  "defaultCatalogVerified": true,
+  "requiredMixinObserved": true,
+  "helper": {
+    "path": "E:\\Codex_work\\QiZhangVerdict\\scripts\\legacy117_mod_smoke.py",
+    "bytes": 45316,
+    "sha256": "41e37c090ede6c143d9dda73aae0b17b11e7799211929c4d8a609fd339d63cc2"
+  },
+  "serverPid": 102012,
+  "expectedRuleCount": 44,
+  "expectedCatalogActions": {
+    "DENY": 40,
+    "ALERT": 4
+  },
+  "freshStatus": "[23:14:45] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=0, accountPairs=0, rules=44, companion=required, vm=DENY, blacklist=DENY, rateBuckets=0, accountBans=0, deviceBans=0, deviceRequired=true",
+  "mixinLines": [
+    "[23:14:20] [main/INFO]: Mixing CommandGate117Mixin from qizhangverdict.mixins.json into net.minecraft.commands.Commands"
+  ],
+  "mixinAudit": {
+    "scope": "Actual runtime-transformed dispatcher inspected with the pinned Java16 javap; full disassembly remains private.",
+    "target": "net/minecraft/commands/Commands",
+    "export": {
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-04\\.mixin.out\\class\\net\\minecraft\\commands\\Commands.class",
+      "bytes": 28981,
+      "sha256": "6f71d32e574bb5e31c0eefc1f2d0da87051f039e78719919b792a530d4970d70"
+    },
+    "privateDisassembly": {
+      "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-04\\private-mixin-javap.txt",
+      "bytes": 66757,
+      "sha256": "78ea4bbb8980cf245512387273897adb7dd6f775aaf4cfd2cabf77d961094e47"
+    },
+    "javapExitCode": 0,
+    "dispatchCallsInjectedHandler": true,
+    "handlerCallsGuardWaiting": true,
+    "handlerCancelsCommand": true,
+    "passed": true
+  },
+  "protocolSupport": {
+    "minecraftProtocolVersion": "1.66.2",
+    "minecraftDataVersion": "3.117.0",
+    "protocol": 756,
+    "versionMetadata": {
+      "path": "E:\\CodexTemp\\QiZhangGuard\\bot\\node_modules\\minecraft-data\\minecraft-data\\data\\pc\\1.17.1\\version.json",
+      "bytes": 79,
+      "sha256": "dffbccf66e3655f0c0aa1bb8e9f71a656fd2dda813b955330e2dce379a4002d4"
+    },
+    "schema": {
+      "path": "E:\\CodexTemp\\QiZhangGuard\\bot\\node_modules\\minecraft-data\\minecraft-data\\data\\pc\\1.17.1\\protocol.json",
+      "bytes": 155791,
+      "sha256": "695099fb813c72b54180bd9cfea002f2243c28d0be9beb87e03b405cfa2abb31"
+    },
+    "versionList": {
+      "path": "E:\\CodexTemp\\QiZhangGuard\\bot\\node_modules\\minecraft-protocol\\src\\version.js",
+      "bytes": 368,
+      "sha256": "5b473bdb689c2fedf505b545be2096ab997d152f3b58338d7c624a5c1c73d1d1"
+    },
+    "scope": "Static package support and schema inspection; TCP success is a separate run result"
+  },
+  "syntheticPolicyOverrides": {
+    "limits.max-accounts-per-ip": "100",
+    "limits.attempts-per-minute": "1000",
+    "companion.timeout-seconds": "4 (10 for the operator gate)",
+    "vm.action": "ALERT initially; DENY in VM cases",
+    "ip.deny": "127.0.0.0/8 in CIDR case",
+    "limits.max-online-per-ip": "2 in final quota cases"
+  },
+  "executedProtocol": {
+    "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-04\\qa\\protocol_smoke.cjs",
+    "bytes": 21043,
+    "sha256": "2830d43816df28df2565a0966a837a64afd26ee14897b1b591d995d1090be7b8"
+  },
+  "protocolExitCode": 0,
+  "protocolElapsedSeconds": 69.66,
+  "forwardedCommands": 17,
+  "protocolResult": {
+    "passed": 26,
+    "cases": [
+      "normal companion joins",
+      "privileged commands blocked before report and restored afterward",
+      "missing companion expires",
+      "malformed report rejected",
+      "malformed report does not permanently ban account",
+      "first account on device allowed",
+      "same IP same device second account rejected",
+      "same IP second different device allowed",
+      "same IP third different device allowed",
+      "same IP fourth account rejected",
+      "disconnect releases device and IP quota",
+      "known cheat denied and sanctioned",
+      "same banned device different account denied",
+      "banned account denied with new device",
+      "administrator account and device unban restores access",
+      "administrator glob rule enforced",
+      "whitelist overrides matching blacklist item",
+      "removed whitelist takes effect",
+      "administrator removes default rule with colon ID",
+      "administrator restores removed blacklist entry",
+      "CIDR deny rejects login",
+      "known VM signal denied",
+      "VBS hypervisor alone does not ban physical machine",
+      "two-device setting first account",
+      "two-device setting second account",
+      "two-device setting rejects third account"
+    ],
+    "orePalette": [],
+    "maxChunkZeroPadding": 0,
+    "disconnectObservations": [
+      {
+        "name": "QVBot2",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "\"{\\\"text\\\":\\\"QiZhangGuard: required companion report timed out\\\"}\""
+      },
+      {
+        "name": "BadWire",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "\"{\\\"text\\\":\\\"Malformed or oversized companion report\\\"}\""
+      },
+      {
+        "name": "QVBot4",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "\"{\\\"text\\\":\\\"Only the configured number of accounts may use the same IP and device concurrently\\\"}\""
+      },
+      {
+        "name": "QVBot7",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "\"{\\\"text\\\":\\\"Too many simultaneous accounts from this IP\\\"}\""
+      },
+      {
+        "name": "CheatAccount",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "\"{\\\"text\\\":\\\"Reported mod matches an exact server blacklist rule\\\"}\""
+      },
+      {
+        "name": "LinkedAccount",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "\"{\\\"text\\\":\\\"This reported device identifier is banned\\\"}\""
+      },
+      {
+        "name": "CheatAccount",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "\"{\\\"text\\\":\\\"This account is banned by the server\\\"}\""
+      },
+      {
+        "name": "QVBot9",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "\"{\\\"text\\\":\\\"Reported mod matches a server blacklist rule\\\"}\""
+      },
+      {
+        "name": "QVBot11",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "\"{\\\"text\\\":\\\"Reported mod matches a server blacklist rule\\\"}\""
+      },
+      {
+        "name": "QVBot13",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "\"{\\\"text\\\":\\\"Reported mod matches a server blacklist rule\\\"}\""
+      },
+      {
+        "name": "QVBot14",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "\"{\\\"text\\\":\\\"This IP is denied by server policy\\\"}\""
+      },
+      {
+        "name": "QVBot15",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "\"{\\\"text\\\":\\\"Companion reported a virtual machine indicator\\\"}\""
+      },
+      {
+        "name": "QVBot19",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "\"{\\\"text\\\":\\\"Too many simultaneous accounts from this IP\\\"}\""
+      }
+    ],
+    "kind": "real TCP clients using synthetic self-reports; not rendered mod client or real VM",
+    "version": "1.17.1"
+  },
+  "protocolResultRecord": {
+    "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-04\\protocol-result.json",
+    "bytes": 5156,
+    "sha256": "490fda443e397438df40ba45de970b3a483e9220f19ba7ff1d87eac6df65496d"
+  },
+  "policyBeforeRestore": {
+    "limits.max-online-per-ip": "2",
+    "limits.max-online-per-ip-device": "1",
+    "limits.max-accounts-per-ip": "100",
+    "limits.account-window-hours": "720",
+    "limits.attempts-per-minute": "1000",
+    "ip.allow": "",
+    "ip.deny": "",
+    "companion.required": "true",
+    "companion.timeout-seconds": "4",
+    "device.required": "true",
+    "vm.action": "ALERT",
+    "blacklist.action": "DENY",
+    "sanctions.on-deny": "BAN"
+  },
+  "restoreReloadStatus": "[23:15:56] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=20, rules=45, companion=required, vm=DENY, blacklist=DENY, rateBuckets=1, accountBans=5, deviceBans=4, deviceRequired=true",
+  "restoredStatus": "[23:15:56] [Server thread/INFO]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=20, rules=45, companion=required, vm=DENY, blacklist=DENY, rateBuckets=1, accountBans=5, deviceBans=4, deviceRequired=true",
+  "strictPolicyRestored": true,
+  "portReleased": true,
+  "elapsedSeconds": 111.284,
+  "console": {
+    "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-04\\console.log",
+    "bytes": 33868,
+    "sha256": "7867f01ad0adc69a93f93a6ca77c76c9b78dd217f2f363529d6b921d6e66f8da"
+  },
+  "warningAndErrorLines": [
+    "[23:14:07] [main/WARN]: Configuration file E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-04\\config\\fml.toml is not correct. Correcting",
+    "[23:14:07] [main/WARN]: Incorrect key [defaultConfigPath] was corrected from null to defaultconfigs",
+    "[23:14:17] [main/WARN]: Configuration file E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-04\\config\\forge-common.toml is not correct. Correcting",
+    "[23:14:17] [main/WARN]: Incorrect key general was corrected from null to its default, SimpleCommentedConfig:{}. ",
+    "[23:14:17] [main/WARN]: Incorrect key general.defaultWorldType was corrected from null to its default, default. ",
+    "[23:14:20] [main/WARN]: Assets URL 'union:/E:/CodexTemp/QiZhangVerdict/compat-1.17.1/servers/forge-44-04/libraries/net/minecraft/server/1.17.1-20210706.113038/server-1.17.1-20210706.113038-srg.jar%2327!/assets/.mcassetsroot' uses unexpected schema",
+    "[23:14:20] [main/WARN]: Assets URL 'union:/E:/CodexTemp/QiZhangVerdict/compat-1.17.1/servers/forge-44-04/libraries/net/minecraft/server/1.17.1-20210706.113038/server-1.17.1-20210706.113038-srg.jar%2327!/data/.mcassetsroot' uses unexpected schema",
+    "[23:14:20] [main/WARN]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]",
+    "[23:14:20] [main/WARN]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]",
+    "[23:14:21] [main/WARN]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]",
+    "[23:14:21] [main/WARN]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]",
+    "[23:14:21] [main/WARN]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]",
+    "[23:14:39] [main/ERROR]: No key structures in MapLike[{\"layers\":[{\"block\":\"minecraft:bedrock\",\"height\":1},{\"block\":\"minecraft:dirt\",\"height\":2},{\"block\":\"minecraft:grass_block\",\"height\":1}],\"biome\":\"minecraft:plains\"}]; Not a registry ops",
+    "[23:14:39] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!",
+    "[23:14:39] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.",
+    "[23:14:39] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.",
+    "[23:14:39] [Server thread/WARN]: To change this, set \"online-mode\" to \"true\" in the server.properties file.",
+    "[23:14:39] [Server thread/WARN]: Configuration file .\\world\\serverconfig\\forge-server.toml is not correct. Correcting",
+    "[23:14:39] [Server thread/WARN]: Incorrect key server was corrected from null to its default, SimpleCommentedConfig:{}. ",
+    "[23:14:39] [Server thread/WARN]: Incorrect key server.removeErroringBlockEntities was corrected from null to its default, false. ",
+    "[23:14:39] [Server thread/WARN]: Incorrect key server.fullBoundingBoxLadders was corrected from null to its default, false. ",
+    "[23:14:39] [Server thread/WARN]: Incorrect key server.zombieBaseSummonChance was corrected from null to its default, 0.1. ",
+    "[23:14:39] [Server thread/WARN]: Incorrect key server.zombieBabyChance was corrected from null to its default, 0.05. ",
+    "[23:14:39] [Server thread/WARN]: Incorrect key server.treatEmptyTagsAsAir was corrected from null to its default, false. ",
+    "[23:14:39] [Server thread/WARN]: Incorrect key server.fixAdvancementLoading was corrected from null to its default, true. "
+  ],
+  "protocolDecoderErrors": [],
+  "protocolConsole": {
+    "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.17.1\\servers\\forge-44-04\\protocol-console.log",
+    "bytes": 4238,
+    "sha256": "133fb52af0ce24f0361ba1e5f3be1df13454d4723f9c46da8f23ce40cae003fe"
+  },
+  "passed": true
+}

@@ -1,107 +1,119 @@
 {
   "schemaVersion": 1,
-  "scope": "Merged development catalog source verification only; actual repository Python tests and offline source proof checks. No Java, artifact or runtime acceptance is claimed.",
-  "checkedAtUTC": "2026-09-28T10:51:22.338066+00:00",
+  "scope": "Merged development catalog source verification only. Python tests and hash-pinned text/proof checks ran; Java, new artifacts and runtime acceptance are not claimed.",
+  "checkedAtUTC": "2026-09-28T13:29:32.454098+00:00",
   "counts": {
-    "entries": 41,
-    "exactIds": 42,
+    "entries": 43,
+    "exactIds": 44,
     "pending": 8,
-    "sources": 271
+    "sources": 297
   },
-  "publicRepositories": 44,
+  "publicRepositories": 50,
   "actionsByExactId": {
     "ALERT": 4,
-    "DENY": 38
+    "DENY": 40
   },
   "newExactIds": [
-    "gateclient",
-    "genshin",
-    "meteor-crash-addon"
+    "dualviewxray",
+    "simplexray"
   ],
   "sourceVerification": {
-    "entries": 41,
-    "exactIds": 42,
+    "entries": 43,
+    "exactIds": 44,
     "pending": 8,
-    "sources": 271,
-    "verifiedSources": 271,
-    "verifiedDescriptorProofs": 56,
+    "sources": 297,
+    "verifiedSources": 297,
+    "verifiedDescriptorProofs": 59,
     "offline": true,
     "freshNetworkFetchOfAllSourcesCompleted": false,
     "networkRequestsMadeByThisCheck": false,
-    "oldPinnedSourceRecordsReused": 249,
-    "newPinnedSourceRecords": 22,
-    "note": "All 271 source records and 56 descriptor proofs were verified against hash-pinned local texts. New URLs were fetched during the preceding candidate research, not fetched again by this production-merge check."
+    "oldPinnedSourceRecordsReused": 271,
+    "newPinnedSourceRecords": 26,
+    "note": "All 297 source records and 59 enforcement descriptor proofs verified against cached bytes. The 26 added source URLs were fetched during this candidate research; old pinned URLs were not refetched by this merge check. Four additional collision descriptor values were checked independently and emit no rules."
   },
   "pythonTests": {
     "command": "python -B -m unittest discover -s catalog -p test_catalog.py -v",
-    "passed": 25,
+    "passed": 27,
     "failures": 0,
     "errors": 0,
     "exitCode": 0,
     "actualRepositoryTests": true,
     "candidateTestCopyUsed": false,
-    "logSHA256": "a2a60bc569ab4747923a1efb947a847a266bea5be62cedd974e62180e183bc45"
+    "logSHA256": "e5c134780f9bce68f8703dc4fe78c7f2966029ef51c1d8a706153c22035aa470"
   },
   "javaValidation": {
     "executedByThisCheck": false,
-    "status": "SEPARATE_BUILD_AND_EXECUTION_NOT_ESTABLISHED_BY_THIS_REPORT",
+    "status": "PENDING_SEPARATE_BUILD_AND_EXECUTION",
     "test": "cn.qizhang.guard.core.CatalogCompatibilityTest",
-    "expectedCatalogRules": 42,
-    "expectedDeny": 38,
+    "expectedCatalogRules": 44,
+    "expectedDeny": 40,
     "expectedAlert": 4,
-    "preservationAndOrdinaryControls": 3
+    "preservationAndOrdinaryControls": 3,
+    "addedCoverage": "Both dualviewxray and simplexray are separately exercised as OFF and API-deleted through reload and reconstruction; sparse policy remains unexpanded; ordinary hydrogen/lumina and exact-prefix controls remain allowed."
   },
   "defaultDataVerification": {
-    "rows": 42,
+    "rows": 44,
     "matchesExportedRows": true,
     "javaExecuted": false,
-    "onlyThreeRowsInserted": true,
+    "onlyTwoRowsInserted": true,
     "existingProductionMethodsUnchanged": true,
-    "comparison": "Decoded DEFAULTS data equals the four-column TSV. Removing the three new data lines reproduces HEAD Java source after line-ending normalization."
+    "comparison": "Decoded Java DEFAULTS matches all exported TSV rows. Removing just the two inserted data lines reproduces the previous Java source after newline normalization."
   },
   "preservation": {
-    "previous39RulesUnchanged": true,
-    "previous38EntriesUnchanged": true,
-    "previous249SourcesUnchanged": true,
+    "previous42RulesUnchanged": true,
+    "previous41EntriesUnchanged": true,
+    "previous271SourcesUnchanged": true,
     "previous8PendingUnchanged": true,
-    "oldJsonRawBytesReconstructedAfterRemovingAddedBlocksAndRestoringReviewDate": true,
-    "previousCatalogSHA256": "9f4942159c8e626bbd5933f6ee19a4f11fb7040100d0964dbc0878be6c7d44a7",
-    "previousVerificationSHA256": "0ad08f2edccef742e66095bc6ad17e139a8fa142d298b214c796aa937cf1553d",
-    "previousVerificationCacheSnapshot": "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260928-01\\production-merge-01\\checks-01\\verification-39.before.json",
-    "allCheckedProductInputsUnchangedDuringThisRun": true,
+    "oldJsonRawBytesReconstructedAfterRemovingAddedBlocks": true,
+    "previousCatalogSHA256": "80c3211909f3c067ce7b145fa752682cad973b34e292543e6349ea400bdc0d7b",
+    "previousVerificationSHA256": "91d6ee03fa74434adb4bbe9f905b03e52cc01805aea2210d918a64cee5f2677b",
+    "previousVerificationCacheSnapshot": "E:\\CodexTemp\\QiZhangVerdict\\catalog-coverage-20260928\\production-merge-01\\before\\catalog\\verification.json",
     "publishedOutputsModifiedByThisTask": false,
-    "publishedArtifactRuleCountsRemainVersionSpecific": [
-      37,
-      39
-    ]
+    "previouslyReleasedArtifactsModified": false
   },
   "exports": {
     "bothRepositoryTSVsMatchFreshOfflineExportsByteForByte": true
   },
-  "candidateHistory": {
-    "file": "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260928-01\\merge-candidate-01\\verification.json",
-    "sha256": "048febec973e34f3b0c280430a60879a241ca11dc058c4aad6bf5a89c76c121d",
-    "scope": "Historical cache-only proposal with productionStillExactIds=39; retained unchanged and not substituted for this merged-source verification."
-  },
+  "identityCollisionExclusions": [
+    {
+      "id": "hydrogen",
+      "reason": "Both an ordinary mod and a cheat client declare this exact loader ID. Current MOD rules do not distinguish loader/version/repository; no default enforcement rule is added.",
+      "ordinaryDescriptorSource": "see5fdc25130c3ab7",
+      "cheatDescriptorSource": "s2bd8a386741b4b07",
+      "ordinaryPurposeSource": "se98dc4f9db124dac",
+      "ordinaryLicenseSource": "sea5a4c84a944772d",
+      "ordinaryDescriptorSelector": "/id",
+      "cheatDescriptorSelector": "/0/modid"
+    },
+    {
+      "id": "lumina",
+      "reason": "Both an ordinary mod and a cheat client declare this exact loader ID. Current MOD rules do not distinguish loader/version/repository; no default enforcement rule is added.",
+      "ordinaryDescriptorSource": "sd1ec9a01585c71f4",
+      "cheatDescriptorSource": "sfed14ffc3ffe160b",
+      "ordinaryPurposeSource": "s92e7ae5acd7903e8",
+      "ordinaryLicenseSource": "s62c59b8264028335",
+      "ordinaryDescriptorSelector": "/id",
+      "cheatDescriptorSelector": "/id"
+    }
+  ],
   "boundaries": [
-    "This report is not new JAR delivery, Java parser execution, server/client acceptance, VM detection or exhaustive market coverage.",
-    "Previously released JARs and their 37/39-rule evidence remain unchanged; a source directory update does not modify historical artifact bytes.",
-    "Administrator files, OFF choices and deletions were not modified. Python merge-preservation tests ran; Java preservation tests did not run in this task.",
-    "Gate implementation license is unresolved; bundled Forge/FML LGPL boilerplate does not grant a license for the mod implementation.",
-    "Gensh1n GPL root/README versus IDK-0.0 descriptor conflict is retained. The exact ID is genshin, not the display/repository spelling gensh1n.",
-    "Bounded legitimate-mod descriptor comparison found genshinstrument, hoyoi and minegenshin; no exact genshin collision in that sample, not a global uniqueness guarantee.",
-    "Meteor Crash Addon source targets Minecraft 1.20.6 and build release 21 despite descriptor Java >=17; neither runtime compatibility nor the declared >= range was tested.",
-    "Existing NightX visibility limits, bigrat/template exclusions and previous license conflicts remain in the unchanged original entries."
+    "This is not exhaustive market coverage or runtime cheat-detection proof. The original eight pending projects still emit no guessed IDs.",
+    "No Java/Gradle/game process ran in this task. Changed Java regression source is awaiting the parent build, not marked passed here.",
+    "SimpleXray root LICENSE declares MIT while its Fabric descriptor declares CC0-1.0 and retains example metadata. The conflict is preserved without licensing inference.",
+    "DualView X-ray source targets 1.20.1; SimpleXray defaults to 1.20.1 with an explicit mcVersion override. Declared ranges and README versions are not runtime tests.",
+    "Hydrogen and Lumina each have a confirmed ordinary-mod/cheat-client same-ID collision. Both remain absent from default rules; administrator-chosen custom rules are not globally prohibited.",
+    "SimpleXRayDetector is an ordinary Bukkit plugin with a different name; exact MOD matching does not use display-name substrings.",
+    "Only identity facts, URLs and hashes are committed. Upstream implementation text/binaries, repository API author emails and private runtime state are not copied into the project.",
+    "New defaults apply only when the blacklist file does not exist. Existing OFF/deleted/sparse administrator choices and all released JARs remain unchanged."
   ],
   "filesSHA256": {
-    "catalog/identifiers.json": "80c3211909f3c067ce7b145fa752682cad973b34e292543e6349ea400bdc0d7b",
-    "catalog/identifiers.tsv": "6a883a4e3ec543d33a9fc224a7f026af4c96589975ce33d4441ab45bcf8774ec",
-    "catalog/blacklist-extension.tsv": "60e01612c2fec20437b45fe974b1bccf1a49af8b4525ee76d4b95ee4b4c3f6a6",
-    "catalog/catalog_tool.py": "885ae41eee413f8f16f81fc20f99f7058eb2762ba55c5deec48065e9365a0dba",
-    "catalog/test_catalog.py": "180caf47677ad43124f26753d3e64871823f0e2de07f48f0cfd420c412a33c2f",
-    "core/src/main/java/cn/qizhang/guard/core/Blacklist.java": "bfdd64df5df29c26d1fbabdddc849bd52796e685161d7b38a39447274cc3834e",
-    "core/src/test/java/cn/qizhang/guard/core/CatalogCompatibilityTest.java": "e2d5f96b9417e3b01eb17f2234fedc90f3a161b743515b70bd32f279382d5c7b",
-    "docs/catalog.md": "7a65a9e5f7266da5911f02553010ceaa3f334f411f0e5d6e9f23189810c8ed70"
+    "catalog/identifiers.json": "c7b611b0a860a1337a4ea50af0cb6427b114efd7e2fb5f68f94f3ba791119831",
+    "catalog/identifiers.tsv": "619299cbc3ed6c208c24ab448fcc8678fcb14892a5deee1e74f51d150018675e",
+    "catalog/blacklist-extension.tsv": "fa2f688bd977317c95b485a115ca52267b1cd779ef48fdc0cadc4cfaa7ac4ccf",
+    "catalog/catalog_tool.py": "465c705f08d5069486ae966d914e1ff8866d8cc5ec5e8339d336bd471adb9d26",
+    "catalog/test_catalog.py": "4df128784a0b66d84f52370cb035cb404c0253d9ae131867b342a4b2512dcf8c",
+    "core/src/main/java/cn/qizhang/guard/core/Blacklist.java": "df4e7e8962b64895ad81a047d14e275d7dfa13317f921e8b60d7f47df3d8c73d",
+    "core/src/test/java/cn/qizhang/guard/core/CatalogCompatibilityTest.java": "92089bada45a9bb492cbd387f62afaaf558ffa1ba985d2ea562782f4cb427b43"
   },
   "checkEvidence": [
     {
@@ -113,12 +125,12 @@
         "validate"
       ],
       "workingDirectory": "E:\\Codex_work\\QiZhangVerdict",
-      "startedAtUTC": "2026-09-28T10:51:20.583287+00:00",
-      "endedAtUTC": "2026-09-28T10:51:20.771191+00:00",
+      "startedAtUTC": "2026-09-28T13:29:30.703068+00:00",
+      "endedAtUTC": "2026-09-28T13:29:30.852000+00:00",
       "exitCode": 0,
-      "stdoutFile": "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260928-01\\production-merge-01\\checks-01\\validate.stdout",
-      "stderrFile": "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260928-01\\production-merge-01\\checks-01\\validate.stderr",
-      "stdoutSHA256": "0b81ea2ce61cb8cdd60775ebaa1bb7272931a5becc04c1a05ef0c1f921a590e8",
+      "stdoutFile": "E:\\CodexTemp\\QiZhangVerdict\\catalog-coverage-20260928\\production-merge-01\\checks-03\\validate.stdout",
+      "stderrFile": "E:\\CodexTemp\\QiZhangVerdict\\catalog-coverage-20260928\\production-merge-01\\checks-03\\validate.stderr",
+      "stdoutSHA256": "18d071e4dc4b6472bf29606bc0c906a2c32526b91e9ff825a587866692f5ae61",
       "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
@@ -129,16 +141,16 @@
         "catalog/catalog_tool.py",
         "verify-sources",
         "--cache",
-        "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260928-01\\merge-candidate-01\\verified-sources",
+        "E:\\CodexTemp\\QiZhangVerdict\\catalog-coverage-20260928\\production-merge-01\\verified-sources",
         "--offline"
       ],
       "workingDirectory": "E:\\Codex_work\\QiZhangVerdict",
-      "startedAtUTC": "2026-09-28T10:51:20.772101+00:00",
-      "endedAtUTC": "2026-09-28T10:51:20.981764+00:00",
+      "startedAtUTC": "2026-09-28T13:29:30.852110+00:00",
+      "endedAtUTC": "2026-09-28T13:29:31.055281+00:00",
       "exitCode": 0,
-      "stdoutFile": "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260928-01\\production-merge-01\\checks-01\\verify-offline.stdout",
-      "stderrFile": "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260928-01\\production-merge-01\\checks-01\\verify-offline.stderr",
-      "stdoutSHA256": "67eb8f26f3728fa203eb72ea9eb0a6c5060ed88e9bfc1a87b37936689d30a5ea",
+      "stdoutFile": "E:\\CodexTemp\\QiZhangVerdict\\catalog-coverage-20260928\\production-merge-01\\checks-03\\verify-offline.stdout",
+      "stderrFile": "E:\\CodexTemp\\QiZhangVerdict\\catalog-coverage-20260928\\production-merge-01\\checks-03\\verify-offline.stderr",
+      "stdoutSHA256": "de695666b58e05a42548fe1a6a62f90266c36b2131d895b066b02d8b936624c0",
       "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
@@ -156,13 +168,13 @@
         "-v"
       ],
       "workingDirectory": "E:\\Codex_work\\QiZhangVerdict",
-      "startedAtUTC": "2026-09-28T10:51:20.982276+00:00",
-      "endedAtUTC": "2026-09-28T10:51:21.859517+00:00",
+      "startedAtUTC": "2026-09-28T13:29:31.055345+00:00",
+      "endedAtUTC": "2026-09-28T13:29:32.034037+00:00",
       "exitCode": 0,
-      "stdoutFile": "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260928-01\\production-merge-01\\checks-01\\tests.stdout",
-      "stderrFile": "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260928-01\\production-merge-01\\checks-01\\tests.stderr",
+      "stdoutFile": "E:\\CodexTemp\\QiZhangVerdict\\catalog-coverage-20260928\\production-merge-01\\checks-03\\tests.stdout",
+      "stderrFile": "E:\\CodexTemp\\QiZhangVerdict\\catalog-coverage-20260928\\production-merge-01\\checks-03\\tests.stderr",
       "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "stderrSHA256": "a2a60bc569ab4747923a1efb947a847a266bea5be62cedd974e62180e183bc45"
+      "stderrSHA256": "e5c134780f9bce68f8703dc4fe78c7f2966029ef51c1d8a706153c22035aa470"
     },
     {
       "check": "export-blacklist",
@@ -172,19 +184,19 @@
         "catalog/catalog_tool.py",
         "export",
         "--cache",
-        "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260928-01\\merge-candidate-01\\verified-sources",
+        "E:\\CodexTemp\\QiZhangVerdict\\catalog-coverage-20260928\\production-merge-01\\verified-sources",
         "--format",
         "blacklist",
         "--output",
-        "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260928-01\\production-merge-01\\checks-01\\blacklist-extension.tsv"
+        "E:\\CodexTemp\\QiZhangVerdict\\catalog-coverage-20260928\\production-merge-01\\checks-03\\blacklist-extension.tsv"
       ],
       "workingDirectory": "E:\\Codex_work\\QiZhangVerdict",
-      "startedAtUTC": "2026-09-28T10:51:21.860264+00:00",
-      "endedAtUTC": "2026-09-28T10:51:22.057635+00:00",
+      "startedAtUTC": "2026-09-28T13:29:32.034166+00:00",
+      "endedAtUTC": "2026-09-28T13:29:32.240088+00:00",
       "exitCode": 0,
-      "stdoutFile": "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260928-01\\production-merge-01\\checks-01\\export-blacklist.stdout",
-      "stderrFile": "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260928-01\\production-merge-01\\checks-01\\export-blacklist.stderr",
-      "stdoutSHA256": "110e23cf6b3f68515fa52d8e9f19eceb39ea5dbbcc6fed84c91058d9c5f08d60",
+      "stdoutFile": "E:\\CodexTemp\\QiZhangVerdict\\catalog-coverage-20260928\\production-merge-01\\checks-03\\export-blacklist.stdout",
+      "stderrFile": "E:\\CodexTemp\\QiZhangVerdict\\catalog-coverage-20260928\\production-merge-01\\checks-03\\export-blacklist.stderr",
+      "stdoutSHA256": "c7eb3fc7fd5d6136c8d52238ce27bbee9c685255aa65578cffd8f25ccbaa2e34",
       "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
@@ -195,25 +207,21 @@
         "catalog/catalog_tool.py",
         "export",
         "--cache",
-        "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260928-01\\merge-candidate-01\\verified-sources",
+        "E:\\CodexTemp\\QiZhangVerdict\\catalog-coverage-20260928\\production-merge-01\\verified-sources",
         "--format",
         "catalog",
         "--output",
-        "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260928-01\\production-merge-01\\checks-01\\identifiers.tsv"
+        "E:\\CodexTemp\\QiZhangVerdict\\catalog-coverage-20260928\\production-merge-01\\checks-03\\identifiers.tsv"
       ],
       "workingDirectory": "E:\\Codex_work\\QiZhangVerdict",
-      "startedAtUTC": "2026-09-28T10:51:22.058243+00:00",
-      "endedAtUTC": "2026-09-28T10:51:22.256709+00:00",
+      "startedAtUTC": "2026-09-28T13:29:32.240598+00:00",
+      "endedAtUTC": "2026-09-28T13:29:32.434540+00:00",
       "exitCode": 0,
-      "stdoutFile": "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260928-01\\production-merge-01\\checks-01\\export-catalog.stdout",
-      "stderrFile": "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260928-01\\production-merge-01\\checks-01\\export-catalog.stderr",
-      "stdoutSHA256": "9f054c8642dc127d4da7532df8ed91b64b6725435dca28fac7f90f8a407b895b",
+      "stdoutFile": "E:\\CodexTemp\\QiZhangVerdict\\catalog-coverage-20260928\\production-merge-01\\checks-03\\export-catalog.stdout",
+      "stderrFile": "E:\\CodexTemp\\QiZhangVerdict\\catalog-coverage-20260928\\production-merge-01\\checks-03\\export-catalog.stderr",
+      "stdoutSHA256": "9883bc77a96205b30618d3d3592c2e6ae6533efb571be4b6fb992d1468b7691a",
       "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     }
   ],
-  "localEvidenceDirectory": "E:\\CodexTemp\\QiZhangVerdict\\catalog-next-20260928-01\\production-merge-01\\checks-01",
-  "documentFormattingReview": {
-    "scope": "Only doc LF normalization and explicit historical Minecraft snapshot wording; test input files and their results unchanged.",
-    "checkedAtUTC": "2026-09-28T10:52:20.555193+00:00"
-  }
+  "localEvidenceDirectory": "E:\\CodexTemp\\QiZhangVerdict\\catalog-coverage-20260928\\production-merge-01\\checks-03"
 }
