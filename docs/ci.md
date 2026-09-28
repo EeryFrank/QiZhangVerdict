@@ -1,6 +1,6 @@
 # CI 构建范围
 
-当前开发分支的 GitHub Actions 与 GitLab CI 配置了六个现代任务：核心+Bukkit、MC 1.19.2 的 Fabric+Forge、1.20.1 的 Fabric+Forge、1.20.4 的 Fabric+Forge+NeoForge、1.21.1 的 Fabric+NeoForge，以及新增 1.21.11 的 Fabric+NeoForge。最后收集十二个精确指定的生产 JAR 和 SHA256SUMS，拒绝 sources JAR、其它版本和重复文件；组件仍保留各自的开发版本号，CI 构建成功本身不代表成品已完成游戏验收。1.21.11 配置尚待本轮远端运行验证，下方历史十 JAR 结果不能替代新目标结果。流水线只保存构建产物和日志，不创建 release、不推送代码、不使用发布凭证。
+当前开发分支的 GitHub Actions 与 GitLab CI 配置了六个现代任务：核心+Bukkit、MC 1.19.2 的 Fabric+Forge、1.20.1 的 Fabric+Forge、1.20.4 的 Fabric+Forge+NeoForge、1.21.1 的 Fabric+NeoForge，以及新增 1.21.11 的 Fabric+NeoForge。最后收集十二个精确指定的生产 JAR 和 SHA256SUMS，拒绝 sources JAR、其它版本和重复文件；组件仍保留各自的开发版本号，CI 构建成功本身不代表成品已完成游戏验收。1.21.11 的本轮开发提交结果见下节，下方历史十 JAR 结果保持原范围。流水线只保存构建产物和日志，不创建 release、不推送代码、不使用发布凭证。
 
 现代工程使用 Gradle Wrapper 8.14.1；新增 1.21.11 工程独立使用 9.2.1。Gradle 本身在 JDK 21 上运行；额外安装 JDK 17 供 1.19.2、1.20.1、1.20.4 工具链使用。每次调用通过 `-Porg.gradle.java.installations.paths` 显式传入 Linux JDK 目录，并关闭工具链自动探测/下载，覆盖本地 `gradle.properties` 中的 Windows 路径。`JAVA_TOOL_OPTIONS` 将核心测试的临时目录指向 runner 工作区。GitHub 使用固定提交 SHA 的官方 actions；GitLab 使用 Temurin 21 Noble 镜像和 Ubuntu 的 OpenJDK 17 包。
 
@@ -11,6 +11,12 @@
 GitHub 的 `qizhangverdict-twelve-modern-jars-<commit>`、GitLab 的 `collect` job artifacts 为十二 JAR 汇总，保留 30 天；中间构建与日志保留 14 天。两站共用 [构建脚本](../scripts/ci_modern_build.sh)和[精确版本清单及收集器](../scripts/ci_modern_artifacts.py)。GitLab 项目需要可用的 Linux Docker runner，并允许下载 Maven/Gradle/Minecraft 依赖及 Ubuntu 软件包。0.2.0-test.1 标签仍使用当时的五 JAR 现代收集流程，0.3.0-dev-preview.1 标签使用十 JAR 流程，以下历史记录不因开发配置变更而改变。
 
 0.2.0-test.1 发布时执行目录的 25 项 Python 回归、57 项核心回归，以及 Java 生产解析器对 37 条导出规则和首次默认配置的检查；还检查已有 OFF、删除记录和稀疏配置文件保留。0.1.1 当时的检查数量为 55 项核心、31 条目录。GitLab 镜像使用 Temurin 21 Noble（Ubuntu 24.04），以满足标准库 `tomllib` 所需的 Python 3.11+；原 Jammy 默认 Python 3.10 不满足该工具要求。
+
+## 1.21.11 开发提交 429284e
+
+提交 `429284ed0fa296b04cf7a13253b2e95af048e5d6` 的 [GitHub 现代流水线](https://github.com/EeryFrank/QiZhangVerdict/actions/runs/36152709544)七项作业与[旧版流水线](https://github.com/EeryFrank/QiZhangVerdict/actions/runs/36152709516)五项作业全部成功。原日志确认新增 Fabric 的连接调度、命令解析和编解码检查，以及 NeoForge 的九项调度检查和实际 FML 初始化后的两项 JUnit 检查。核心另含 57 项安全断言、39 条目录检查和三项管理员配置保留检查。现代收集任务核对十二份指定 JAR 及校验和。
+
+[GitLab 同提交流水线](https://gitlab.com/EeryFrank/QiZhangVerdict/-/pipelines/2882969251)十二项作业均为 `ci_quota_exceeded`，`started_at` 全为空，未执行。详见[公开报告及十三份附件](../outputs/ci-development-1.21.11.json)。本轮保留十二份原始作业日志与去除作者邮箱的 API 摘要，没有下载审查 CI JAR，也不以 CI 重建包替换本机实测成品；集成测试中的一项条件跳过及上游警告仍在报告中。这是开发提交记录，最终发布标签另行核验。
 
 ## 0.3.0-dev-preview.1 标签构建与发布
 
