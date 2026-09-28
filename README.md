@@ -2,11 +2,15 @@
 
 插件标识 **QiZhangVerdict**，模组 ID `qizhangverdict`，管理命令 `/qzverdict`。本项目提供 IP/账号/设备准入、可管理的黑白名单、客户端协作检查和设备关联封禁。行为预测与矿物混淆使用独立安装、固定版本的开源组件，具体见 [集成安装](integrations/README.md)。
 
-## 1.17.1 开发候选
+## 测试预览 0.6.0-dev-preview.1
 
-`0.6.0-dev` 新增 Minecraft **1.17.1 Fabric / Forge**，使用 Java 16。两份成品各通过 104 项包内核心检查、26 组[专服准入检查](docs/runtime-server-1.17.1.md)，以及默认策略下超过 60 秒的[图形客户端验证](docs/runtime-client-1.17.1.md)，截图已另行检查。适配、依赖与散列见[构建记录](docs/adapter-1.17.1.md)。Fabric 首次启动曾发生模型初始化崩溃，同包复测通过但根因未定；失败记录完整保留。此处是开发进度，公开下载仍以仓库 Releases 及下面已发布版本为准。
+**25 个安装包及五代对应源码**已公开发布至 [GitHub](https://github.com/EeryFrank/QiZhangVerdict/releases/tag/v0.6.0-dev-preview.1) 和 [GitLab](https://gitlab.com/EeryFrank/QiZhangVerdict/-/releases/v0.6.0-dev-preview.1)，原创实现采用 **GPL-3.0-only**。新增 Minecraft **1.17.1 Fabric / Forge**，组件 `0.6.0-dev`、Java 16；既有 23 份成品保留原字节。依赖和安装步骤见[安装指南](docs/preview-0.6.0-dev-preview.1.md)，每个实例只安装匹配的一份。
 
-当前开发目录有 **44 个精确标识（40 DENY、4 ALERT）**，新增 `dualviewxray`、`simplexray`；普通模组也使用的 `hydrogen`、`lumina` 不会被默认拒绝。已有名单、白名单、OFF 和删除项不会因升级自动回填，见[目录与合并工具](docs/catalog.md)。设备及 VM 信号是客户端自报，名单数量不代表覆盖全部作弊工具。
+两份新包各通过 104 项包内核心检查、26 组[专服准入检查](docs/runtime-server-1.17.1.md)，以及默认 13 项策略、44 条规则下超过 60 秒的[图形客户端验证](docs/runtime-client-1.17.1.md)，双端正常退出 0，截图已另行检查。完整散列见[构建记录](docs/adapter-1.17.1.md)。Fabric 首次模型初始化崩溃根因未定，同包复测通过不能抹去失败；Forge 的通道与日志问题修复后以最终包重新验证。用户正式验收仍未完成。
+
+两站每站 37 个附件，共 **74 次匿名下载**已核对大小和 SHA-256，见[发布回执](outputs/publish-receipt-0.6.0-dev-preview.1.json)；ZIP 见[独立审计](outputs/packaging-validation-0.6.0-dev-preview.1.json)。源码标签固定为 `d9c683b7ca9082d84692acc0b666250a592e6df7`。[最终标签 CI](outputs/release-ci-validation-0.6.0-dev-preview.1.json)中，GitHub 现代 9 项、旧版 5 项全部成功；GitLab 14 项因配额未启动，不计为通过。CI 重编不替换本机实测的发布成品。
+
+当前目录有 **44 个精确标识（40 DENY、4 ALERT）**，新增 `dualviewxray`、`simplexray`；普通模组也使用的 `hydrogen`、`lumina` 不会被默认拒绝。现有名单、白名单、OFF 和删除项不会自动回填，见[目录与合并工具](docs/catalog.md)。设备和 VM 信号来自可伪造的客户端自报；本轮不证明全部作弊识别、1.17.1 插件服互通、正版认证或真实 VM 对抗。
 
 ## 测试预览 0.5.0-dev-preview.1
 

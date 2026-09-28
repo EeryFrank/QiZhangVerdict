@@ -1,0 +1,272 @@
+﻿2026-09-28T14:44:49.7157126Z Current runner version: '2.337.0'
+2026-09-28T14:44:49.7181974Z ##[group]Runner Image Provisioner
+2026-09-28T14:44:49.7182986Z Hosted Compute Agent
+2026-09-28T14:44:49.7183629Z Version: 20260828.587
+2026-09-28T14:44:49.7184289Z Commit: abac92662cab4cc7352de4f9f9d2e2419aad9c29
+2026-09-28T14:44:49.7185125Z Build Date: 2026-08-28T16:44:25Z
+2026-09-28T14:44:49.7185825Z Worker ID: {2b9b2290-6002-47c8-b6c3-71590208b5a9}
+2026-09-28T14:44:49.7186557Z Azure Region: eastus
+2026-09-28T14:44:49.7187215Z ##[endgroup]
+2026-09-28T14:44:49.7188908Z ##[group]Operating System
+2026-09-28T14:44:49.7189754Z Ubuntu
+2026-09-28T14:44:49.7190310Z 24.04.5
+2026-09-28T14:44:49.7190812Z LTS
+2026-09-28T14:44:49.7191850Z ##[endgroup]
+2026-09-28T14:44:49.7192439Z ##[group]Runner Image
+2026-09-28T14:44:49.7193140Z Image: ubuntu-24.04
+2026-09-28T14:44:49.7193767Z Version: 20260920.314.1
+2026-09-28T14:44:49.7195137Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260920.314/images/ubuntu/Ubuntu2404-Readme.md
+2026-09-28T14:44:49.7196715Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260920.314
+2026-09-28T14:44:49.7197799Z ##[endgroup]
+2026-09-28T14:44:49.7199195Z ##[group]GITHUB_TOKEN Permissions
+2026-09-28T14:44:49.7201215Z Contents: read
+2026-09-28T14:44:49.7201887Z Metadata: read
+2026-09-28T14:44:49.7202511Z ##[endgroup]
+2026-09-28T14:44:49.7205084Z Secret source: Actions
+2026-09-28T14:44:49.7206078Z Cache mode: write
+2026-09-28T14:44:49.7207156Z Prepare workflow directory
+2026-09-28T14:44:49.7617908Z Prepare all required actions
+2026-09-28T14:44:49.7666163Z Getting action download info
+2026-09-28T14:44:50.0083864Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+2026-09-28T14:44:50.1256030Z Download action repository 'actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c' (SHA:3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c)
+2026-09-28T14:44:50.3111694Z Download action repository 'actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a' (SHA:043fb46d1a93c77aae656e7c1c64a875d1fc6a0a)
+2026-09-28T14:44:50.4863081Z Complete job name: Collect seventeen modern JARs
+2026-09-28T14:44:50.5618508Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+2026-09-28T14:44:50.5619734Z with:
+2026-09-28T14:44:50.5620200Z   persist-credentials: false
+2026-09-28T14:44:50.5620768Z   repository: EeryFrank/QiZhangVerdict
+2026-09-28T14:44:50.5624513Z   token: ***
+2026-09-28T14:44:50.5624967Z   ssh-strict: true
+2026-09-28T14:44:50.5625430Z   ssh-user: git
+2026-09-28T14:44:50.5625873Z   clean: true
+2026-09-28T14:44:50.5626329Z   sparse-checkout-cone-mode: true
+2026-09-28T14:44:50.5626872Z   fetch-depth: 1
+2026-09-28T14:44:50.5627319Z   fetch-tags: false
+2026-09-28T14:44:50.5627804Z   show-progress: true
+2026-09-28T14:44:50.5628597Z   lfs: false
+2026-09-28T14:44:50.5629056Z   submodules: false
+2026-09-28T14:44:50.5629526Z   set-safe-directory: true
+2026-09-28T14:44:50.5630053Z   allow-unsafe-pr-checkout: false
+2026-09-28T14:44:50.5630924Z env:
+2026-09-28T14:44:50.5631401Z   CI: true
+2026-09-28T14:44:50.5631828Z ##[endgroup]
+2026-09-28T14:44:50.6637134Z Syncing repository: EeryFrank/QiZhangVerdict
+2026-09-28T14:44:50.6640714Z ##[group]Getting Git version info
+2026-09-28T14:44:50.6642132Z Working directory is '/home/runner/work/QiZhangVerdict/QiZhangVerdict'
+2026-09-28T14:44:50.6644154Z [command]/usr/bin/git version
+2026-09-28T14:44:50.6746419Z git version 2.55.0
+2026-09-28T14:44:50.6770852Z ##[endgroup]
+2026-09-28T14:44:50.6782008Z Temporarily overriding HOME='/home/runner/work/_temp/9c7190ff-e1f7-496a-a0cd-ce3498883c6b' before making global git config changes
+2026-09-28T14:44:50.6784295Z Adding repository directory to the temporary git global config as a safe directory
+2026-09-28T14:44:50.6788738Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/QiZhangVerdict/QiZhangVerdict
+2026-09-28T14:44:50.6846025Z Deleting the contents of '/home/runner/work/QiZhangVerdict/QiZhangVerdict'
+2026-09-28T14:44:50.6866448Z ##[group]Determining repository object format
+2026-09-28T14:44:50.6871444Z ##[endgroup]
+2026-09-28T14:44:50.6873009Z ##[group]Initializing the repository
+2026-09-28T14:44:50.6874615Z [command]/usr/bin/git init /home/runner/work/QiZhangVerdict/QiZhangVerdict
+2026-09-28T14:44:50.7008573Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-09-28T14:44:50.7010332Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-09-28T14:44:50.7011851Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-09-28T14:44:50.7013040Z hint: call:
+2026-09-28T14:44:50.7013677Z hint:
+2026-09-28T14:44:50.7014502Z hint: 	git config --global init.defaultBranch <name>
+2026-09-28T14:44:50.7015524Z hint:
+2026-09-28T14:44:50.7016518Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-09-28T14:44:50.7018037Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-09-28T14:44:50.7019572Z hint:
+2026-09-28T14:44:50.7020290Z hint: 	git branch -m <name>
+2026-09-28T14:44:50.7021062Z hint:
+2026-09-28T14:44:50.7022079Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-09-28T14:44:50.7023884Z Initialized empty Git repository in /home/runner/work/QiZhangVerdict/QiZhangVerdict/.git/
+2026-09-28T14:44:50.7026795Z [command]/usr/bin/git remote add origin https://github.com/EeryFrank/QiZhangVerdict
+2026-09-28T14:44:50.7079077Z ##[endgroup]
+2026-09-28T14:44:50.7080608Z ##[group]Disabling automatic garbage collection
+2026-09-28T14:44:50.7082182Z [command]/usr/bin/git config --local gc.auto 0
+2026-09-28T14:44:50.7116338Z ##[endgroup]
+2026-09-28T14:44:50.7117511Z ##[group]Setting up auth
+2026-09-28T14:44:50.7118668Z Removing SSH command configuration
+2026-09-28T14:44:50.7129482Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-28T14:44:50.7169734Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-28T14:44:50.7562021Z Removing HTTP extra header
+2026-09-28T14:44:50.7572594Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-28T14:44:50.7611560Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-28T14:44:50.7892762Z Removing includeIf entries pointing to credentials config files
+2026-09-28T14:44:50.7894219Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-28T14:44:50.7939238Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-09-28T14:44:50.8202804Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-012fdca9-2b0f-4ec7-9f07-5e545bc659c9.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-09-28T14:44:50.8246419Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/QiZhangVerdict/QiZhangVerdict/.git.path /home/runner/work/_temp/git-credentials-012fdca9-2b0f-4ec7-9f07-5e545bc659c9.config
+2026-09-28T14:44:50.8286477Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/QiZhangVerdict/QiZhangVerdict/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-012fdca9-2b0f-4ec7-9f07-5e545bc659c9.config
+2026-09-28T14:44:50.8335002Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-012fdca9-2b0f-4ec7-9f07-5e545bc659c9.config
+2026-09-28T14:44:50.8377631Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-012fdca9-2b0f-4ec7-9f07-5e545bc659c9.config
+2026-09-28T14:44:50.8414566Z ##[endgroup]
+2026-09-28T14:44:50.8415627Z ##[group]Fetching the repository
+2026-09-28T14:44:50.8425281Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +refs/tags/v0.6.0-dev-preview.1:refs/tags/v0.6.0-dev-preview.1
+2026-09-28T14:44:52.4490232Z From https://github.com/EeryFrank/QiZhangVerdict
+2026-09-28T14:44:52.4492112Z  * [new tag]         v0.6.0-dev-preview.1 -> v0.6.0-dev-preview.1
+2026-09-28T14:44:52.4501339Z [command]/usr/bin/git tag --list v0.6.0-dev-preview.1
+2026-09-28T14:44:52.4538694Z v0.6.0-dev-preview.1
+2026-09-28T14:44:52.4549211Z [command]/usr/bin/git rev-parse refs/tags/v0.6.0-dev-preview.1^{commit}
+2026-09-28T14:44:52.4581865Z d9c683b7ca9082d84692acc0b666250a592e6df7
+2026-09-28T14:44:52.4591806Z ##[endgroup]
+2026-09-28T14:44:52.4593519Z ##[group]Determining the checkout info
+2026-09-28T14:44:52.4595046Z ##[endgroup]
+2026-09-28T14:44:52.4595933Z [command]/usr/bin/git sparse-checkout disable
+2026-09-28T14:44:52.4652171Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-09-28T14:44:52.4689649Z ##[group]Checking out the ref
+2026-09-28T14:44:52.4694469Z [command]/usr/bin/git checkout --progress --force refs/tags/v0.6.0-dev-preview.1
+2026-09-28T14:44:52.7129819Z Note: switching to 'refs/tags/v0.6.0-dev-preview.1'.
+2026-09-28T14:44:52.7130736Z 
+2026-09-28T14:44:52.7131336Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-09-28T14:44:52.7132729Z changes and commit them, and you can discard any commits you make in this
+2026-09-28T14:44:52.7134056Z state without impacting any branches by switching back to a branch.
+2026-09-28T14:44:52.7134820Z 
+2026-09-28T14:44:52.7135423Z If you want to create a new branch to retain commits you create, you may
+2026-09-28T14:44:52.7136743Z do so (now or later) by using -c with the switch command. Example:
+2026-09-28T14:44:52.7137553Z 
+2026-09-28T14:44:52.7137879Z   git switch -c <new-branch-name>
+2026-09-28T14:44:52.7138642Z 
+2026-09-28T14:44:52.7138971Z Or undo this operation with:
+2026-09-28T14:44:52.7139530Z 
+2026-09-28T14:44:52.7139810Z   git switch -
+2026-09-28T14:44:52.7140187Z 
+2026-09-28T14:44:52.7141147Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-09-28T14:44:52.7142246Z 
+2026-09-28T14:44:52.7142931Z HEAD is now at d9c683b Freeze 0.6 preview manifest for verified 25 artifacts
+2026-09-28T14:44:52.7157623Z ##[endgroup]
+2026-09-28T14:44:52.7207737Z [command]/usr/bin/git log -1 --format=%H
+2026-09-28T14:44:52.7236712Z d9c683b7ca9082d84692acc0b666250a592e6df7
+2026-09-28T14:44:52.7245729Z ##[group]Removing auth
+2026-09-28T14:44:52.7246739Z Removing SSH command configuration
+2026-09-28T14:44:52.7249917Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-28T14:44:52.7287815Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-28T14:44:52.7516519Z Removing HTTP extra header
+2026-09-28T14:44:52.7520323Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-28T14:44:52.7556124Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-28T14:44:52.7781097Z Removing includeIf entries pointing to credentials config files
+2026-09-28T14:44:52.7783943Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-28T14:44:52.7816429Z includeif.gitdir:/home/runner/work/QiZhangVerdict/QiZhangVerdict/.git.path
+2026-09-28T14:44:52.7820922Z includeif.gitdir:/home/runner/work/QiZhangVerdict/QiZhangVerdict/.git/worktrees/*.path
+2026-09-28T14:44:52.7824577Z includeif.gitdir:/github/workspace/.git.path
+2026-09-28T14:44:52.7827317Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-09-28T14:44:52.7833958Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/QiZhangVerdict/QiZhangVerdict/.git.path
+2026-09-28T14:44:52.7856063Z /home/runner/work/_temp/git-credentials-012fdca9-2b0f-4ec7-9f07-5e545bc659c9.config
+2026-09-28T14:44:52.7867310Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/QiZhangVerdict/QiZhangVerdict/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-012fdca9\-2b0f\-4ec7\-9f07\-5e545bc659c9\.config
+2026-09-28T14:44:52.7906634Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/QiZhangVerdict/QiZhangVerdict/.git/worktrees/*.path
+2026-09-28T14:44:52.7932574Z /home/runner/work/_temp/git-credentials-012fdca9-2b0f-4ec7-9f07-5e545bc659c9.config
+2026-09-28T14:44:52.7944190Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/QiZhangVerdict/QiZhangVerdict/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-012fdca9\-2b0f\-4ec7\-9f07\-5e545bc659c9\.config
+2026-09-28T14:44:52.7981309Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-09-28T14:44:52.8009689Z /github/runner_temp/git-credentials-012fdca9-2b0f-4ec7-9f07-5e545bc659c9.config
+2026-09-28T14:44:52.8060371Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-012fdca9\-2b0f\-4ec7\-9f07\-5e545bc659c9\.config
+2026-09-28T14:44:52.8151178Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-09-28T14:44:52.8184019Z /github/runner_temp/git-credentials-012fdca9-2b0f-4ec7-9f07-5e545bc659c9.config
+2026-09-28T14:44:52.8201427Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-012fdca9\-2b0f\-4ec7\-9f07\-5e545bc659c9\.config
+2026-09-28T14:44:52.8252552Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-09-28T14:44:52.8502688Z Removing credentials config '/home/runner/work/_temp/git-credentials-012fdca9-2b0f-4ec7-9f07-5e545bc659c9.config'
+2026-09-28T14:44:52.8510632Z ##[endgroup]
+2026-09-28T14:44:52.8895437Z ##[group]Run actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
+2026-09-28T14:44:52.8897472Z with:
+2026-09-28T14:44:52.8898544Z   pattern: qizhang-ci-*
+2026-09-28T14:44:52.8899489Z   path: ci-input
+2026-09-28T14:44:52.8900334Z   merge-multiple: false
+2026-09-28T14:44:52.8901575Z   repository: EeryFrank/QiZhangVerdict
+2026-09-28T14:44:52.8902834Z   run-id: 36437694694
+2026-09-28T14:44:52.8903915Z   skip-decompress: false
+2026-09-28T14:44:52.8904931Z   digest-mismatch: error
+2026-09-28T14:44:52.8905958Z env:
+2026-09-28T14:44:52.8906845Z   CI: true
+2026-09-28T14:44:52.8907623Z ##[endgroup]
+2026-09-28T14:44:53.1829526Z Found 16 artifact(s)
+2026-09-28T14:44:53.1832537Z Filtering artifacts by pattern 'qizhang-ci-*'
+2026-09-28T14:44:53.1849340Z Preparing to download the following artifacts:
+2026-09-28T14:44:53.1879887Z - qizhang-ci-mods-1.21.1 (ID: 10976945732, Size: 181263, Expected Digest: sha256:7ad5e501eb5491c19f21c982ef70279a8bc6ce0a87f124d1ef53486d8b593421)
+2026-09-28T14:44:53.1882701Z - qizhang-ci-core-bukkit (ID: 10976845338, Size: 73858, Expected Digest: sha256:430ff123eca7419cfebfee3ee640f9fbe53a96f4ec8328315a894d3df092d6b6)
+2026-09-28T14:44:53.1885294Z - qizhang-ci-mods-1.20.1 (ID: 10976800318, Size: 179575, Expected Digest: sha256:5209b77a4e69e83b52d146cad36f341e3d49eaab80a51fd19da60f3defeeab69)
+2026-09-28T14:44:53.1887747Z - qizhang-ci-mods-1.21.11 (ID: 10976511590, Size: 185605, Expected Digest: sha256:0a73318e4abb3c49ae09bbd5511c05c1e8e27ed6340729d284f54188c544a07f)
+2026-09-28T14:44:53.1890389Z - qizhang-ci-mods-1.20.6 (ID: 10976417320, Size: 279303, Expected Digest: sha256:f8b5cd6ef0fa0ab838ad9b97d4a1f53210ba847f2e1fef95eadc6c2c67112323)
+2026-09-28T14:44:53.1892656Z - qizhang-ci-mods-1.19.2 (ID: 10976202580, Size: 179284, Expected Digest: sha256:33415d508bd12f29593d1aa41c1d6d02bfd58e7597cae850263bade4a457350b)
+2026-09-28T14:44:53.1895404Z - qizhang-ci-mods-1.17.1 (ID: 10976033092, Size: 185859, Expected Digest: sha256:7d4481fb9b88a146ea6a5a90598cc64a67e954e6726d132dcbeea4feca318b49)
+2026-09-28T14:44:53.1897779Z - qizhang-ci-mods-1.20.4 (ID: 10975958228, Size: 273804, Expected Digest: sha256:50932c3623434dd74731041cc6a1dfb91de2a4b4b2c4d27cacbc5ce7c995f876)
+2026-09-28T14:44:53.3881550Z Redirecting to blob download url: https://productionresultssa10.blob.core.windows.net/actions-results/f2e18929-b0bf-48be-a486-b7ac823b48bc/workflow-job-run-ba77ce3d-94a8-565e-b34f-e00a34e234d7/artifacts/4521afbc4544f067b400f6c52b55c2d4f7807246f0c09e3e5e2f68c65f1b9f64.zip
+2026-09-28T14:44:53.3884993Z Starting download of artifact to: /home/runner/work/QiZhangVerdict/QiZhangVerdict/ci-input/qizhang-ci-mods-1.19.2
+2026-09-28T14:44:53.3907100Z Redirecting to blob download url: https://productionresultssa10.blob.core.windows.net/actions-results/f2e18929-b0bf-48be-a486-b7ac823b48bc/workflow-job-run-13af68f7-c7b8-5553-8375-fbceb407c646/artifacts/ad96ff0868a664f36c652a6a82687ddf5b09a246e2f7dc20ca32fc81b1cbff3a.zip
+2026-09-28T14:44:53.3911970Z Starting download of artifact to: /home/runner/work/QiZhangVerdict/QiZhangVerdict/ci-input/qizhang-ci-mods-1.17.1
+2026-09-28T14:44:53.3945739Z Redirecting to blob download url: https://productionresultssa10.blob.core.windows.net/actions-results/f2e18929-b0bf-48be-a486-b7ac823b48bc/workflow-job-run-809078ca-e23e-56be-bfbe-3e0233bb67b5/artifacts/2239211228932bbc0a530e64473f117984619639ae0bbd66f5f725501a2e4c57.zip
+2026-09-28T14:44:53.3949155Z Starting download of artifact to: /home/runner/work/QiZhangVerdict/QiZhangVerdict/ci-input/qizhang-ci-mods-1.20.4
+2026-09-28T14:44:53.4008696Z Redirecting to blob download url: https://productionresultssa10.blob.core.windows.net/actions-results/f2e18929-b0bf-48be-a486-b7ac823b48bc/workflow-job-run-f303f89b-002a-5985-9e69-49f2fe37d7af/artifacts/619d149d186c9b77d5672f1b584c0fc9010efbc907ffb5c510123193efa5789f.zip
+2026-09-28T14:44:53.4012016Z Starting download of artifact to: /home/runner/work/QiZhangVerdict/QiZhangVerdict/ci-input/qizhang-ci-core-bukkit
+2026-09-28T14:44:53.4079161Z Redirecting to blob download url: https://productionresultssa10.blob.core.windows.net/actions-results/f2e18929-b0bf-48be-a486-b7ac823b48bc/workflow-job-run-ccfc3378-69ef-5f7a-90a5-b523289ee464/artifacts/af1e6204192e26249ff7da75f6ab0cf76c9aa0e1adc56cea5373d669aa934389.zip
+2026-09-28T14:44:53.4082508Z Starting download of artifact to: /home/runner/work/QiZhangVerdict/QiZhangVerdict/ci-input/qizhang-ci-mods-1.20.6
+2026-09-28T14:44:53.4118103Z Redirecting to blob download url: https://productionresultssa10.blob.core.windows.net/actions-results/f2e18929-b0bf-48be-a486-b7ac823b48bc/workflow-job-run-0d829f1a-2edd-5d4b-952b-5998d4722e30/artifacts/4ab6a52bcffbf097a1b44667daa9e31bd10e69227f6db49953b471f56ac03ae7.zip
+2026-09-28T14:44:53.4121636Z Starting download of artifact to: /home/runner/work/QiZhangVerdict/QiZhangVerdict/ci-input/qizhang-ci-mods-1.21.1
+2026-09-28T14:44:53.4179874Z (node:2191) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+2026-09-28T14:44:53.4182448Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-09-28T14:44:53.4234990Z Redirecting to blob download url: https://productionresultssa10.blob.core.windows.net/actions-results/f2e18929-b0bf-48be-a486-b7ac823b48bc/workflow-job-run-4ff9f67b-9dba-5d99-adec-79ef0f3b003d/artifacts/c77539abe97de877896af0e2899710c0d3db2e01e69d4941783d1533095b06c4.zip
+2026-09-28T14:44:53.4238807Z Starting download of artifact to: /home/runner/work/QiZhangVerdict/QiZhangVerdict/ci-input/qizhang-ci-mods-1.21.11
+2026-09-28T14:44:53.4498864Z Redirecting to blob download url: https://productionresultssa10.blob.core.windows.net/actions-results/f2e18929-b0bf-48be-a486-b7ac823b48bc/workflow-job-run-a8bc0d57-1e00-5949-8edb-395499fa3863/artifacts/52ee1dee0c4b747719a8e7438c2a85199f90776c64ad2c9d1a5628ac26f27500.zip
+2026-09-28T14:44:53.4505369Z Starting download of artifact to: /home/runner/work/QiZhangVerdict/QiZhangVerdict/ci-input/qizhang-ci-mods-1.20.1
+2026-09-28T14:44:53.4688090Z SHA256 digest of downloaded artifact is 33415d508bd12f29593d1aa41c1d6d02bfd58e7597cae850263bade4a457350b
+2026-09-28T14:44:53.4690171Z Artifact download completed successfully.
+2026-09-28T14:44:53.4796337Z SHA256 digest of downloaded artifact is 7d4481fb9b88a146ea6a5a90598cc64a67e954e6726d132dcbeea4feca318b49
+2026-09-28T14:44:53.4797707Z Artifact download completed successfully.
+2026-09-28T14:44:53.4801327Z SHA256 digest of downloaded artifact is 430ff123eca7419cfebfee3ee640f9fbe53a96f4ec8328315a894d3df092d6b6
+2026-09-28T14:44:53.4802932Z Artifact download completed successfully.
+2026-09-28T14:44:53.4841373Z SHA256 digest of downloaded artifact is 50932c3623434dd74731041cc6a1dfb91de2a4b4b2c4d27cacbc5ce7c995f876
+2026-09-28T14:44:53.4843652Z Artifact download completed successfully.
+2026-09-28T14:44:53.4933841Z SHA256 digest of downloaded artifact is f8b5cd6ef0fa0ab838ad9b97d4a1f53210ba847f2e1fef95eadc6c2c67112323
+2026-09-28T14:44:53.4936824Z Artifact download completed successfully.
+2026-09-28T14:44:53.4952397Z SHA256 digest of downloaded artifact is 7ad5e501eb5491c19f21c982ef70279a8bc6ce0a87f124d1ef53486d8b593421
+2026-09-28T14:44:53.4954921Z Artifact download completed successfully.
+2026-09-28T14:44:53.4959002Z SHA256 digest of downloaded artifact is 0a73318e4abb3c49ae09bbd5511c05c1e8e27ed6340729d284f54188c544a07f
+2026-09-28T14:44:53.4961029Z Artifact download completed successfully.
+2026-09-28T14:44:53.4992344Z SHA256 digest of downloaded artifact is 5209b77a4e69e83b52d146cad36f341e3d49eaab80a51fd19da60f3defeeab69
+2026-09-28T14:44:53.5003326Z Artifact download completed successfully.
+2026-09-28T14:44:53.5004672Z Total of 8 artifact(s) downloaded
+2026-09-28T14:44:53.5005926Z Download artifact has finished successfully
+2026-09-28T14:44:53.5204700Z ##[group]Run python3 -B scripts/ci_modern_artifacts.py collect --input ci-input --output ci-release --layout github
+2026-09-28T14:44:53.5206878Z [36;1mpython3 -B scripts/ci_modern_artifacts.py collect --input ci-input --output ci-release --layout github[0m
+2026-09-28T14:44:53.5548671Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-09-28T14:44:53.5549442Z env:
+2026-09-28T14:44:53.5549932Z   CI: true
+2026-09-28T14:44:53.5550426Z ##[endgroup]
+2026-09-28T14:44:53.6074316Z PASS: 17 exact modern artifact names and SHA-256 checksums; no legacy/source JARs included
+2026-09-28T14:44:53.6221362Z ##[group]Run actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+2026-09-28T14:44:53.6222017Z with:
+2026-09-28T14:44:53.6222625Z   name: qizhangverdict-seventeen-modern-jars-d9c683b7ca9082d84692acc0b666250a592e6df7
+2026-09-28T14:44:53.6223307Z   path: ci-release/
+2026-09-28T14:44:53.6223737Z   if-no-files-found: error
+2026-09-28T14:44:53.6224199Z   retention-days: 30
+2026-09-28T14:44:53.6224635Z   compression-level: 6
+2026-09-28T14:44:53.6225062Z   overwrite: false
+2026-09-28T14:44:53.6225510Z   include-hidden-files: false
+2026-09-28T14:44:53.6225963Z   archive: true
+2026-09-28T14:44:53.6226361Z env:
+2026-09-28T14:44:53.6226736Z   CI: true
+2026-09-28T14:44:53.6227118Z ##[endgroup]
+2026-09-28T14:44:53.7771831Z With the provided path, there will be 18 files uploaded
+2026-09-28T14:44:53.7773446Z Artifact name is valid!
+2026-09-28T14:44:53.7774273Z Root directory input is valid!
+2026-09-28T14:44:53.9920735Z Uploading artifact: qizhangverdict-seventeen-modern-jars-d9c683b7ca9082d84692acc0b666250a592e6df7.zip
+2026-09-28T14:44:53.9987911Z Beginning upload of artifact content to blob storage
+2026-09-28T14:44:54.2487394Z Uploaded bytes 1537205
+2026-09-28T14:44:54.2621572Z Finished uploading artifact content to blob storage!
+2026-09-28T14:44:54.2625036Z SHA256 digest of uploaded artifact is 9564d91eab3d90873ffc25fff8f22c709409e826117ee229ae2eb80fb6b01e35
+2026-09-28T14:44:54.2626956Z Finalizing artifact upload
+2026-09-28T14:44:54.4845772Z Artifact qizhangverdict-seventeen-modern-jars-d9c683b7ca9082d84692acc0b666250a592e6df7 successfully finalized. Artifact ID 10976378021
+2026-09-28T14:44:54.4850351Z Artifact qizhangverdict-seventeen-modern-jars-d9c683b7ca9082d84692acc0b666250a592e6df7 has been successfully uploaded! Final size is 1537205 bytes. Artifact ID is 10976378021
+2026-09-28T14:44:54.4852824Z Artifact download URL: https://github.com/EeryFrank/QiZhangVerdict/actions/runs/36437694694/artifacts/10976378021
+2026-09-28T14:44:54.5134129Z Post job cleanup.
+2026-09-28T14:44:54.6204091Z [command]/usr/bin/git version
+2026-09-28T14:44:54.6257888Z git version 2.55.0
+2026-09-28T14:44:54.6296799Z Temporarily overriding HOME='/home/runner/work/_temp/038d1c72-f844-494d-a7a8-122548108d26' before making global git config changes
+2026-09-28T14:44:54.6298646Z Adding repository directory to the temporary git global config as a safe directory
+2026-09-28T14:44:54.6302203Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/QiZhangVerdict/QiZhangVerdict
+2026-09-28T14:44:54.6334863Z Removing SSH command configuration
+2026-09-28T14:44:54.6341410Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-28T14:44:54.6381195Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-28T14:44:54.6661325Z Removing HTTP extra header
+2026-09-28T14:44:54.6663498Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-28T14:44:54.6723704Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-28T14:44:54.7034298Z Removing includeIf entries pointing to credentials config files
+2026-09-28T14:44:54.7040561Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-28T14:44:54.7100323Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-09-28T14:44:54.7589613Z Cleaning up orphan processes
