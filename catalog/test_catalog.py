@@ -29,8 +29,8 @@ class CatalogTests(unittest.TestCase):
 
     def test_reviewed_catalog(self):
         result = tool.validate(self.data)
-        self.assertEqual(39, result["exactIds"])
-        self.assertEqual(53, sum(len(e["identifierProofs"]) for e in self.data["entries"]))
+        self.assertEqual(42, result["exactIds"])
+        self.assertEqual(56, sum(len(e["identifierProofs"]) for e in self.data["entries"]))
 
     def test_duplicate_conflicting_identity_rejected(self):
         duplicate = copy.deepcopy(self.entry("meteor-client"))

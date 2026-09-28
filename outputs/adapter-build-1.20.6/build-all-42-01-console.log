@@ -1,0 +1,189 @@
+Picked up JAVA_TOOL_OPTIONS: -Djava.io.tmpdir=E:/CodexTemp/QiZhangVerdict/compat-1.20.6/builds/all-42-01/temp -Dqzguard.testDir=E:/CodexTemp/QiZhangVerdict/compat-1.20.6/builds/all-42-01/core-tests -Djavax.net.ssl.trustStoreType=Windows-ROOT -Djavax.net.ssl.trustStore=NONE
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.2.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+
+> Configure project :fabric
+Fabric Loom: 1.14.10
+
+> Configure project :neoforge
+Creating Minecraft artifacts without recompilation.
+
+> Task :assemble UP-TO-DATE
+> Task :check UP-TO-DATE
+> Task :build UP-TO-DATE
+> Task :fabric:compileJava
+> Task :fabric:processResources
+> Task :fabric:classes
+> Task :fabric:compileSmokeJava
+> Task :fabric:compileTestJava NO-SOURCE
+> Task :fabric:jar
+> Task :fabric:processIncludeJars
+> Task :fabric:remapJar
+> Task :fabric:sourcesJar
+> Task :fabric:remapSourcesJar
+> Task :fabric:assemble
+> Task :fabric:processSmokeResources NO-SOURCE
+> Task :fabric:smokeClasses
+
+> Task :fabric:clientChallengeDispatchSmoke
+Picked up JAVA_TOOL_OPTIONS: -Djava.io.tmpdir=E:/CodexTemp/QiZhangVerdict/compat-1.20.6/builds/all-42-01/temp -Dqzguard.testDir=E:/CodexTemp/QiZhangVerdict/compat-1.20.6/builds/all-42-01/core-tests -Djavax.net.ssl.trustStoreType=Windows-ROOT -Djavax.net.ssl.trustStore=NONE
+PASS fabric-client-dispatch 1: receive defers inspection until queued login work
+PASS fabric-client-dispatch 2: original sender receives after login
+PASS fabric-client-dispatch 3: switching servers discards old challenge
+PASS fabric-client-dispatch 4: disconnect discards queued challenge
+PASS fabric-client-dispatch 5: closed transport is excluded even with retained sender
+PASS fabric-client-dispatch 6: null origin never queues a receive
+PASS fabric-client-dispatch 7: origin comparison uses identity
+PASS fabric-client-dispatch 8: response allowed only for original live listener and sender
+PASS fabric-client-dispatch 9: changed response sender rejected
+PASS fabric-client-dispatch 10: changed response listener rejected
+PASS fabric-client-dispatch 11: closed response transport rejected
+PASS fabric-client-dispatch 12: null origin listener cannot match disconnected client
+PASS fabric-client-dispatch total=12
+
+> Task :fabric:commandParserSmoke
+Picked up JAVA_TOOL_OPTIONS: -Djava.io.tmpdir=E:/CodexTemp/QiZhangVerdict/compat-1.20.6/builds/all-42-01/temp -Dqzguard.testDir=E:/CodexTemp/QiZhangVerdict/compat-1.20.6/builds/all-42-01/core-tests -Djavax.net.ssl.trustStoreType=Windows-ROOT -Djavax.net.ssl.trustStore=NONE
+[19:49:26] [main/INFO]: [STDOUT]: PASS: production command tree accepts unquoted device digests and legacy rule IDs, glob spaces and ban reasons; rejects non-admin access and invalid pages
+
+> Task :fabric:payloadCodecSmoke
+Picked up JAVA_TOOL_OPTIONS: -Djava.io.tmpdir=E:/CodexTemp/QiZhangVerdict/compat-1.20.6/builds/all-42-01/temp -Dqzguard.testDir=E:/CodexTemp/QiZhangVerdict/compat-1.20.6/builds/all-42-01/core-tests -Djavax.net.ssl.trustStoreType=Windows-ROOT -Djavax.net.ssl.trustStore=NONE
+PASS: four raw wire round trips, inbound/outbound bounds and defensive array ownership
+
+> Task :fabric:processTestResources NO-SOURCE
+> Task :fabric:testClasses UP-TO-DATE
+> Task :fabric:test NO-SOURCE
+> Task :fabric:validateAccessWidener NO-SOURCE
+> Task :fabric:check
+> Task :fabric:build
+
+> Task :neoforge:createMinecraftArtifacts
+Picked up JAVA_TOOL_OPTIONS: -Djava.io.tmpdir=E:/CodexTemp/QiZhangVerdict/compat-1.20.6/builds/all-42-01/temp -Dqzguard.testDir=E:/CodexTemp/QiZhangVerdict/compat-1.20.6/builds/all-42-01/core-tests -Djavax.net.ssl.trustStoreType=Windows-ROOT -Djavax.net.ssl.trustStore=NONE
+Loaded 145 artifacts from E:\Codex_work\QiZhangVerdict\platforms\1.20.6\neoforge\build\tmp\createMinecraftArtifacts\nfrt_artifact_manifest.properties
+*** Started working on downloadJson
+ DONE  Completed downloadJson in 0.03s
+*** Started working on downloadClientMappings
+*** Started working on downloadServer
+*** Started working on downloadClient
+ DONE  Completed downloadServer in 0.03s
+ DONE  Completed downloadClient in 0.03s
+ DONE  Completed downloadClientMappings in 0.03s
+*** Started working on mergeMappings
+ REUSE Used cache of mergeMappings in 0.00s
+*** Started working on stripClient
+ REUSE Used cache of stripClient in 0.00s
+*** Started working on extractServer
+ REUSE Used cache of extractServer in 0.00s
+*** Started working on stripServer
+ REUSE Used cache of stripServer in 0.00s
+*** Started working on merge
+ REUSE Used cache of merge in 0.00s
+*** Started working on rename
+ REUSE Used cache of rename in 0.00s
+*** Started working on binaryPatch
+ REUSE Used cache of binaryPatch in 0.00s
+*** Started working on copyUnpatchedClasses
+ REUSE Used cache of copyUnpatchedClasses in 0.00s
+*** Started working on applyDevTransforms
+ REUSE Used cache of applyDevTransforms in 0.00s
+*** Started working on binaryWithNeoForge
+ REUSE Used cache of binaryWithNeoForge in 0.00s
+Total runtime: 1.33s
+
+
+> Task :neoforge:compileJava
+> Task :neoforge:processResources
+> Task :neoforge:classes
+> Task :neoforge:jarJar NO-SOURCE
+> Task :neoforge:jar
+> Task :neoforge:sourcesJar
+> Task :neoforge:assemble
+
+> Task :neoforge:compileSmokeJava
+注: E:\Codex_work\QiZhangVerdict\platforms\1.20.6\common\src\smoke\java\cn\qizhang\guard\minecraft\PayloadCodecSmoke.java使用或覆盖了已过时的 API。
+注: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+
+> Task :neoforge:processSmokeResources NO-SOURCE
+> Task :neoforge:smokeClasses
+
+> Task :neoforge:clientChallengeDispatchSmoke
+Picked up JAVA_TOOL_OPTIONS: -Djava.io.tmpdir=E:/CodexTemp/QiZhangVerdict/compat-1.20.6/builds/all-42-01/temp -Dqzguard.testDir=E:/CodexTemp/QiZhangVerdict/compat-1.20.6/builds/all-42-01/core-tests -Djavax.net.ssl.trustStoreType=Windows-ROOT -Djavax.net.ssl.trustStore=NONE
+PASS client-dispatch 1: queues without inspecting pre-login state
+PASS client-dispatch 2: receives challenge after queued login on original connection
+PASS client-dispatch 3: switched connection discards old challenge
+PASS client-dispatch 4: disconnected listener discards queued challenge
+PASS client-dispatch 5: supplier excludes closed connection while object remains
+PASS client-dispatch 6: null origin cannot match a missing current connection
+PASS client-dispatch 7: comparison uses identity rather than equals
+PASS client-dispatch 8: next challenge on same live connection remains supported
+PASS client-dispatch 9: reconnect drops obsolete queued work and accepts new origin
+PASS client-dispatch total=9
+
+> Task :neoforge:compileTestJava
+注: E:\Codex_work\QiZhangVerdict\platforms\1.20.6\common\src\smoke\java\cn\qizhang\guard\minecraft\PayloadCodecSmoke.java使用或覆盖了已过时的 API。
+注: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+
+> Task :neoforge:downloadAssets
+Picked up JAVA_TOOL_OPTIONS: -Djava.io.tmpdir=E:/CodexTemp/QiZhangVerdict/compat-1.20.6/builds/all-42-01/temp -Dqzguard.testDir=E:/CodexTemp/QiZhangVerdict/compat-1.20.6/builds/all-42-01/core-tests -Djavax.net.ssl.trustStoreType=Windows-ROOT -Djavax.net.ssl.trustStore=NONE
+Loaded 145 artifacts from E:\Codex_work\QiZhangVerdict\platforms\1.20.6\neoforge\build\tmp\downloadAssets\nfrt_artifact_manifest.properties
+Downloading asset index 16
+Using Minecraft asset root: E:\CodexTemp\Gradle\QiZhang_Games\caches\neoformruntime\assets
+  DL    https://piston-meta.mojang.com/v1/packages/c1fa4a8d41b8104ae6a8f9d32b5de21e72f49cdd/16.json
+
+> Task :neoforge:writeNeoForgeTestClasspath
+> Task :neoforge:prepareNeoForgeTestFiles
+> Task :neoforge:processTestResources NO-SOURCE
+> Task :neoforge:testClasses
+
+> Task :neoforge:test
+Picked up JAVA_TOOL_OPTIONS: -Djava.io.tmpdir=E:/CodexTemp/QiZhangVerdict/compat-1.20.6/builds/all-42-01/temp -Dqzguard.testDir=E:/CodexTemp/QiZhangVerdict/compat-1.20.6/builds/all-42-01/core-tests -Djavax.net.ssl.trustStoreType=Windows-ROOT -Djavax.net.ssl.trustStore=NONE
+
+Gradle Test Executor 1 STANDARD_ERROR
+    ********************************************************************************
+    Starting in unit testing mode. Misconfiguration may mask bugs that would occur in normal operation.
+    ********************************************************************************
+
+Gradle Test Executor 1 STANDARD_OUT
+    WARN StatusConsoleListener Advanced terminal features are not available in this environment
+    [19:49:47] [Test worker/INFO] [cp.mo.mo.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgejunituserdev, --version, 20.6.141, --assetIndex, 16, --assetsDir, E:\CodexTemp\Gradle\QiZhang_Games\caches\neoformruntime\assets, --gameDir, ., --fml.neoForgeVersion, 20.6.141, --fml.fmlVersion, 3.0.45, --fml.mcVersion, 1.20.6, --fml.neoFormVersion, 20240627.102356]
+    [19:49:47] [Test worker/INFO] [cp.mo.mo.Launcher/MODLAUNCHER]: JVM identified as Oracle Corporation Java HotSpot(TM) 64-Bit Server VM 21.0.8+12-LTS-250
+    [19:49:47] [Test worker/INFO] [cp.mo.mo.Launcher/MODLAUNCHER]: ModLauncher 11.0.2+main.4612c65f starting: java version 21.0.8 by Oracle Corporation; OS Windows 11 arch amd64 version 10.0
+    [19:49:47] [Test worker/WARN] [ne.ne.fm.lo.FMLConfig/CORE]: Configuration file E:\CodexTemp\QiZhangVerdict\compat-1.20.6\builds\all-42-01\runtime\neoforge-junit\config\fml.toml is not correct. Correcting
+    [19:49:47] [Test worker/INFO] [ne.ne.fm.lo.FMLConfig/CORE]: Incorrect key [disableConfigWatcher] was corrected from null to false
+    [19:49:47] [Test worker/INFO] [ne.ne.fm.lo.FMLConfig/CORE]: Incorrect key [earlyWindowSkipGLVersions] was corrected from null to []
+    [19:49:47] [Test worker/INFO] [ne.ne.fm.lo.FMLConfig/CORE]: Incorrect key [earlyWindowSquir] was corrected from null to false
+    [19:49:47] [Test worker/INFO] [ne.ne.fm.lo.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgejunituserdev
+    [19:49:47] [Test worker/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/E:/CodexTemp/Gradle/QiZhang_Games/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.13.4+mixin.0.8.5/8adf0cff1795a169141b9e16ad7b9f6e2527a990/sponge-mixin-0.13.4+mixin.0.8.5.jar%23132!/ Service=ModLauncher Env=SERVER
+    [19:49:48] [Test worker/INFO] [ne.ne.fm.lo.mo.lo.JarInJarDependencyLocator/]: Found 1 dependencies adding them to mods collection
+    [19:49:48] [Test worker/INFO] [ne.ne.fm.lo.FMLServiceProvider/CORE]: Loading coremod script-engine for [neoforge]
+    [19:49:49] [Test worker/INFO] [mixin/]: Compatibility level set to JAVA_21
+    [19:49:49] [Test worker/INFO] [cp.mo.mo.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgejunituserdev' with arguments [--version, 20.6.141, --gameDir, ., --assetsDir, E:\CodexTemp\Gradle\QiZhang_Games\caches\neoformruntime\assets, --assetIndex, 16]
+    [19:49:55] [modloading-worker-0/INFO] [ne.ne.ne.co.NeoForgeMod/NEOFORGE-MOD]: NeoForge mod loading, version 20.6.141, for MC 1.20.6
+    [19:49:55] [modloading-sync-worker/WARN] [ne.ne.ne.co.ModConfigSpec/CORE]: Configuration file E:\CodexTemp\QiZhangVerdict\compat-1.20.6\builds\all-42-01\runtime\neoforge-junit\config\neoforge-common.toml is not correct. Correcting
+    [19:49:55] [modloading-sync-worker/WARN] [ne.ne.ne.co.ModConfigSpec/CORE]: Incorrect key general was corrected from null to its default, SimpleCommentedConfig:{}. 
+    [19:49:55] [modloading-sync-worker/WARN] [ne.ne.ne.co.ModConfigSpec/CORE]: Incorrect key general.logUntranslatedItemTagWarnings was corrected from null to its default, SILENCED. 
+    [19:49:55] [modloading-sync-worker/WARN] [ne.ne.ne.co.ModConfigSpec/CORE]: Incorrect key general.logLegacyTagWarnings was corrected from null to its default, DEV_SHORT. 
+
+PlatformContractTest > administratorCommandTree() STANDARD_OUT
+    [19:49:56] [Test worker/INFO] [MixinExtras|Service/]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.4.1).
+    PASS: production command tree accepts unquoted device digests and legacy rule IDs, glob spaces and ban reasons; rejects non-admin access and invalid pages
+
+PlatformContractTest > administratorCommandTree() PASSED
+
+PlatformContractTest > boundedBukkitCompatiblePayload() STANDARD_OUT
+    PASS: four raw wire round trips, inbound/outbound bounds and defensive array ownership
+
+PlatformContractTest > boundedBukkitCompatiblePayload() PASSED
+
+> Task :neoforge:check
+> Task :neoforge:build
+
+[Incubating] Problems report is available at: file:///E:/Codex_work/QiZhangVerdict/platforms/1.20.6/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/9.2.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 1m 4s
+23 actionable tasks: 23 executed

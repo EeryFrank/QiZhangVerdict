@@ -31,27 +31,31 @@ class ModernArtifactsTests(unittest.TestCase):
             artifacts.collect(inputs, self.root / 'out', layout)
         self.assertFalse((self.root / 'out').exists())
 
-    def test_versions_and_exact_twelve_production_paths(self):
+    def test_versions_and_exact_fourteen_production_paths(self):
         paths = [p for t in artifacts.TARGETS for p in artifacts.artifact_paths(t)]
-        self.assertEqual(12, len(paths))
-        self.assertEqual(12, len(set(paths)))
+        self.assertEqual(14, len(paths))
+        self.assertEqual(14, len(set(paths)))
         self.assertIn('bukkit/build/libs/qizhangverdict-bukkit-0.2.1-dev.jar', paths)
         self.assertEqual(3, len(artifacts.artifact_paths('mods-1.20.4')))
         self.assertEqual([
             'platforms/1.21.11/fabric/build/libs/qizhangverdict-fabric-1.21.11-0.4.0-dev.jar',
             'platforms/1.21.11/neoforge/build/libs/qizhangverdict-neoforge-1.21.11-0.4.0-dev.jar',
         ], artifacts.artifact_paths('mods-1.21.11'))
+        self.assertEqual([
+            'platforms/1.20.6/fabric/build/libs/qizhangverdict-fabric-1.20.6-0.5.0-dev.jar',
+            'platforms/1.20.6/neoforge/build/libs/qizhangverdict-neoforge-1.20.6-0.5.0-dev.jar',
+        ], artifacts.artifact_paths('mods-1.20.6'))
         self.assertTrue(all('-sources' not in p for p in paths))
 
     def test_gitlab_valid_collection(self):
         inputs = self.staged()
         artifacts.collect(inputs, self.root / 'out', 'gitlab')
-        self.assertEqual(12, len(list((self.root / 'out').glob('*.jar'))))
+        self.assertEqual(14, len(list((self.root / 'out').glob('*.jar'))))
 
     def test_github_valid_collection(self):
         inputs = self.staged('github')
         artifacts.collect(inputs, self.root / 'out', 'github')
-        self.assertEqual(12, len((self.root / 'out/SHA256SUMS').read_text().splitlines()))
+        self.assertEqual(14, len((self.root / 'out/SHA256SUMS').read_text().splitlines()))
 
     def test_missing_loader_rejected(self):
         inputs = self.staged()

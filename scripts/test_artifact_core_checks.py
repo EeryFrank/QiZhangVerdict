@@ -66,9 +66,10 @@ class CatalogLogTests(unittest.TestCase):
         self.assertEqual(len(rows), result['rules'])
         self.assertEqual(sum(r[2] == 'DENY' for r in rows), result['deny'])
 
-    def test_old_37_rule_log_cannot_validate_a_39_rule_catalog(self):
-        old = [('mod', 'fixture-' + str(i), 'ALERT' if i < 4 else 'DENY', SOURCE) for i in range(37)]
-        self.write_catalog(old + [('mod', 'added-one', 'DENY', SOURCE), ('mod', 'added-two', 'DENY', SOURCE)])
+    def test_old_39_rule_log_cannot_validate_a_42_rule_catalog(self):
+        old = [('mod', 'fixture-' + str(i), 'ALERT' if i < 4 else 'DENY', SOURCE) for i in range(39)]
+        self.write_catalog(old + [('mod', identifier, 'DENY', SOURCE)
+                                  for identifier in ('gateclient', 'genshin', 'meteor-crash-addon')])
         self.reject(transcript(old))
 
     def test_missing_summary_and_incidental_37_rejected(self):

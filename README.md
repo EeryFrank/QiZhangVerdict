@@ -2,6 +2,12 @@
 
 插件标识 **QiZhangVerdict**，模组 ID `qizhangverdict`，管理命令 `/qzverdict`。本项目提供 IP/账号/设备准入、可管理的黑白名单、客户端协作检查和设备关联封禁。行为预测与矿物混淆使用独立安装、固定版本的开源组件，具体见 [集成安装](integrations/README.md)。
 
+## 1.20.6 开发候选
+
+新增 Minecraft **1.20.6 Fabric / NeoForge**，组件 `0.5.0-dev`，使用 Java 21。两份成品各通过 102 项包内核心检查、26 组专服连接检查及默认策略下超过 60 秒的图形客户端验证，截图已另行复核。见[构建](docs/adapter-1.20.6.md)、[专服](docs/runtime-server-1.20.6.md)、[客户端](docs/runtime-client-1.20.6.md)。这些新安装包尚未发布；现有公开测试版仍是下方的 0.4 预览。
+
+当前开发目录扩为 **42 个精确标识（38 DENY、4 ALERT）**，新增 `gateclient`、`genshin`、`meteor-crash-addon`，附固定来源与许可说明。既有管理员名单及已发布 20 个 JAR 保持原样，更新方法见[目录说明](docs/catalog.md)。本轮没有验证 Forge 1.20.6、插件服互通、真实虚拟机攻防或全部作弊类型。
+
 ## 测试预览 0.4.0-dev-preview.1
 
 公开源码及 20 个安装包：[GitHub](https://github.com/EeryFrank/QiZhangVerdict/releases/tag/v0.4.0-dev-preview.1) · [GitLab](https://gitlab.com/EeryFrank/QiZhangVerdict/-/releases/v0.4.0-dev-preview.1)。原创实现采用 **GPL-3.0-only**，两站分别附安装合集、三份对应源码 ZIP、LICENSE / NOTICE 和 SHA256 校验文件。

@@ -1,8 +1,10 @@
 # 可核验标识扩展目录
 
-本目录供七章的裁决管理员审阅、按服规选用。2026-09-25 当前开发目录包含 **41 个公开源码仓库、38 个归并条目、39 个精确 ID（35 DENY / 4 ALERT）**，另有 **8 个待验证品牌或资源包**。本轮在开发源码的首次默认规则中新增 `wurstplusthree`、`ferox`；这不是新 JAR 的交付或运行验收声明。目录工具不会连接服务器、修改服务器配置或自动恢复管理员删除的规则；已发布版本的目录和默认规则以各自 tag 与发布包为准。
+本目录供七章的裁决管理员审阅、按服规选用。2026-09-28 当前开发目录包含 **44 个公开源码仓库、41 个归并条目、42 个精确 ID（38 DENY / 4 ALERT）**，另有 **8 个待验证品牌或资源包**。本轮在开发源码的首次默认规则中新增 `gateclient`、`genshin`、`meteor-crash-addon`；这不是新 JAR 的交付或运行验收声明。目录工具不会连接服务器、修改服务器配置或自动恢复管理员删除的规则；已发布版本的目录和默认规则以各自 tag 与发布包为准。
 
-历史 **0.2.0-test.1 的 37 条默认规则（33 DENY / 4 ALERT）**及其[验证汇总](../outputs/validation-0.2.0-test.1.json)保持原事实。当前 Python 目录核验见 `catalog/verification.json`；新增默认规则的 Java 回归与成品验证需在后续构建中单独执行，不能套用历史测试结果。
+历史 **0.2.0-test.1 的 37 条默认规则（33 DENY / 4 ALERT）**及其[验证汇总](../outputs/validation-0.2.0-test.1.json)保持原事实。此前 **39 条目录（35 DENY / 4 ALERT）**及已发布 JAR 的 37/39 条默认规则也保留各自原事实与原字节，不由本次源码更新改写。当前 [Python 目录核验](../catalog/verification.json)实际运行仓库中的 25 项测试，离线复核 271 条固定来源的 SHA256 与 56 个描述符证明；两份重新导出的 TSV 与仓库文件逐字节一致。原 39 条规则、249 个来源与 8 个待验证项均保持不变。本次没有重新联网获取来源，也没有把此前缓存候选的验证报告复制成合入成功证据。
+
+首次默认数据的 42 行已与导出 TSV 作静态比对。本摘要没有运行 Java、Gradle、服务器或客户端；新增默认规则的 Java、包内核心与运行结果需由独立报告证明，不能套用历史结果。
 
 这里的 HIGH 表示“固定官方源码能证明这个标识和相应功能”，不表示服务端能可靠证明玩家运行了未经修改的原版客户端。目录覆盖本次有一手证据的已知项目，不声称囊括全部商业客户端、私有分支、注入器或未来版本。
 
@@ -33,7 +35,7 @@
 | KAMI Blue / KAMI | `kamiblue`, `kami` | DENY |
 | SalHack 与 Creepy SalHack / ForgeHax | `salhack`, `forgehax` | DENY |
 | Lambda 新旧实现 / Ares / Wurst+2 | `lambda`, `ares`, `wurstplus` | DENY |
-| Wurst+3 / Ferox | `wurstplusthree`, `ferox` | DENY；当前开发源码新增，均为固定 Forge 1.12.2 源码身份 |
+| Wurst+3 / Ferox | `wurstplusthree`, `ferox` | DENY；此前 39 条目录已纳入，均为固定 Forge 1.12.2 源码身份 |
 | Seppuku / FDPClient | `seppukumod`, `fdpclient` | DENY |
 | Meteor Rejects / Trouser Streak / BlackOut 扩展 | `meteor-rejects`, `streak-addon`, `blackout` | DENY |
 | Alien / Aoba / TrollHack / Jex | `alien`, `aoba`, `trollhack`, `jex` | DENY |
@@ -41,6 +43,9 @@
 | CheatUtils / GameSense | `cheatutils`, `gamesense` | DENY |
 | NightX / Krs / Cigarette | `nightx`, `krs`, `cigarette` | DENY；NightX 的上报限制见下文 |
 | Meteor+ 扩展 | `meteorplus` | DENY；不是展示名 `Meteor+` 或产物名 `meteor-plus` |
+| Gate Client | `gateclient` | DENY；Forge 1.12.2 描述符与入口常量一致，实现许可未决 |
+| Gensh1n | `genshin` | DENY；Fabric 1.20.4 描述符身份，不是仓库拼写 `gensh1n` |
+| Meteor Crash Addon | `meteor-crash-addon` | DENY；源码构建目标 Fabric 1.20.6，未运行该客户端 |
 | Advanced XRay 旧 Fabric 实现 | `advanced-xray-fabric` | DENY |
 | Advanced XRay、ate47 和 Deltinha 的独立实现共用身份 | `xray` | DENY |
 | ate47 遗留 Forge 描述符 | `atianxray` | ALERT：尚未核验该旧 Forge 发布包 |
@@ -64,6 +69,12 @@
 新增来源保留许可差异：Meteor+ 根 [LICENSE](https://raw.githubusercontent.com/MeteorClientPlus/MeteorPlus/657959e9b46faa0c1228c5978d3afe844351c911/LICENSE) 为 AGPL-3.0，而同提交描述符写 GPL-3.0，不能消除冲突后冒称有统一再分发许可。CheatUtils 现代源码为 MIT；所读 1.16.5 历史描述符写 All rights reserved 且该提交没有根 LICENSE，不把现代授权追溯套用到旧源码。这些标准许可证文本也纳入来源 SHA256 核验。Cigarette 记录的是其官方 GitHub 仓库固定提交，仓库声明已迁移，不能据此宣称掌握新托管站的最新状态。
 
 Wurst+3 的固定 [LICENSE.md](https://raw.githubusercontent.com/WurstPlus/wurst-plus-three/4eca774c0998dfc06d2f378bf0d939b8ad59318c/LICENSE.md) 为 AGPLv3 文本；Ferox 的固定 [LICENSE](https://raw.githubusercontent.com/olliem5/ferox/627205bf13f3a8ff65780a60b319defdcab73eb4/LICENSE) 为 GPLv3 文本，未另行确定 only/or-later 授权选择。本轮只纳入 ID、事实说明和来源哈希，没有复制其实现或分发其二进制。
+
+Gate Client 的固定 [mcmod.info](https://raw.githubusercontent.com/TheF1xer/GateClient-1.12.2/3ddadc1c0fe024ceccbc7c9b7b72e8cf4aabeb5a/src/main/resources/mcmod.info) 声明 `gateclient`，同提交标准 Forge `@Mod` 入口使用相同常量，源码有自动攻击与 XRay 绘制过滤。其 [LICENSE.txt](https://raw.githubusercontent.com/TheF1xer/GateClient-1.12.2/3ddadc1c0fe024ceccbc7c9b7b72e8cf4aabeb5a/LICENSE.txt) 是 Forge/FML LGPL 模板，明确普通模组实现不受该许可约束；因此 Gate 实现的授权仍未决，不把模板当作再分发授权。
+
+Gensh1n 的固定 [fabric.mod.json](https://raw.githubusercontent.com/Undef1nedTeam/Gensh1n/bf6b6cbb596ce4782b20627a2a9360386fd79d02/src/main/resources/fabric.mod.json) 声明 `genshin`；同提交注册并实现 KillAura，根 LICENSE/README 的 GPL 与描述符 `IDK-0.0` 冲突保留。有限正常模组复核读取同提交描述符与属性后，得到 [Genshin Instruments](https://raw.githubusercontent.com/StavWasPlayZ/Genshin-Instruments/dd8ab22e9dac5c61ba9d5456abcf2ca339af4b7e/gradle.properties) 的 `genshinstrument`、[HoYoI](https://raw.githubusercontent.com/DeeChael/HoYoI/0938781c8268332eb88e66ca50381ad879ec0024/gradle.properties) 的 `hoyoi`、[MineGenshin](https://raw.githubusercontent.com/Violet-Molder/MineGenshin/6957d5f9f18dc89eff61b28cd2f89d6fab16b46e/gradle.properties) 的 `minegenshin`，均不等于 `genshin`；这不保证全球唯一，不能扩展为产品名、文件名或子串封禁。
+
+Meteor Crash Addon 的固定 [描述符](https://raw.githubusercontent.com/AntiCope/meteor-crash-addon/0d64cc11330447d2821747f0b7f7566d6192b258/src/main/resources/fabric.mod.json) 直接说明服务器破坏用途，身份为 `meteor-crash-addon`。其 GPL 文本未另行确定 only/or-later；构建目标是 Minecraft 1.20.6 / Java release 21，尽管描述符声明 Java >=17，不能据此声称 Java 17 或整个版本下限范围可运行。它依赖 Meteor，诚实上报中的父模组本已受 `meteor-client` 规则覆盖；新增身份不代表不可绕过的新检测能力。
 
 Aristois、Impact、Future、RusherHack、Inertia、CatLean、Raven b+ 和 Xray Ultimate 留在 `pending`。官网、产品名或功能说明不足以证明真实 mod ID；其中 Aristois 官网抓取失败，Raven b+ 官方 API 返回 451，未绕过访问限制。资源包没有可推断的稳定 mod ID，文件名和本地 pack ID 都可修改，所以没有虚构 PACK/BRAND 封禁规则。验证器目前只允许 MOD 身份进入已验证列表。
 
@@ -100,7 +111,7 @@ python -B catalog/catalog_tool.py merge --cache E:\CodexTemp\QiZhangVerdict\cata
 
 ## Minecraft 官方版本快照
 
-截至本次读取，[Mojang 官方 version manifest](https://piston-meta.mojang.com/mc/game/version_manifest_v2.json) 的最新稳定版为 **26.3**，发布时间为 **2026-09-15**，元数据要求 Java **25**；最新快照为 **26.4-snapshot-1**。各候选元数据均已按 manifest 的 SHA1 校验。下表是工程测试优先级建议，不是市场占有率，也不代表已有构建或运行证据。
+在此前保存的 [Mojang 官方 version manifest](https://piston-meta.mojang.com/mc/game/version_manifest_v2.json) 快照中（本轮未重新联网读取），最新稳定版为 **26.3**，发布时间为 **2026-09-15**，元数据要求 Java **25**；最新快照为 **26.4-snapshot-1**。各候选元数据均已按 manifest 的 SHA1 校验。下表是工程测试优先级建议，不是市场占有率，也不代表已有构建或运行证据。
 
 | 候选 Minecraft 版本 | 官方元数据 Java 主版本 | 建议关注点 |
 | --- | --- | --- |

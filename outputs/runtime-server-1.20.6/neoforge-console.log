@@ -1,0 +1,277 @@
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+[19:54:08.045] [main/INFO] [Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeserver, --fml.neoForgeVersion, 20.6.141, --fml.fmlVersion, 3.0.45, --fml.mcVersion, 1.20.6, --fml.neoFormVersion, 20240627.102356, nogui] 
+[19:54:08.052] [main/INFO] [Launcher/MODLAUNCHER]: JVM identified as Oracle Corporation Java HotSpot(TM) 64-Bit Server VM 21.0.8+12-LTS-250 
+[19:54:08.054] [main/INFO] [Launcher/MODLAUNCHER]: ModLauncher 11.0.2+main.4612c65f starting: java version 21.0.8 by Oracle Corporation; OS Windows 11 arch amd64 version 10.0 
+[19:54:08.150] [main/WARN] [loading.FMLConfig/CORE]: Configuration file E:\CodexTemp\QiZhangVerdict\compat-1.20.6\servers\neoforge-42-01\config\fml.toml is not correct. Correcting 
+[19:54:08.152] [main/INFO] [loading.FMLConfig/CORE]: Incorrect key [disableConfigWatcher] was corrected from null to false 
+[19:54:08.152] [main/INFO] [loading.FMLConfig/CORE]: Incorrect key [earlyWindowSkipGLVersions] was corrected from null to [] 
+[19:54:08.153] [main/INFO] [loading.FMLConfig/CORE]: Incorrect key [earlyWindowSquir] was corrected from null to false 
+[19:54:08.190] [main/INFO] [loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgeserver 
+[19:54:08.252] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/E:/CodexTemp/QiZhangVerdict/compat-1.20.6/servers/neoforge-42-01/libraries/net/fabricmc/sponge-mixin/0.13.4+mixin.0.8.5/sponge-mixin-0.13.4+mixin.0.8.5.jar%2377!/ Service=ModLauncher Env=SERVER 
+/***********************************************************************************************************************************************************************************************************************************/
+/*                                                                                         SpongePowered MIXIN (Verbose debugging enabled)                                                                                         */
+/***********************************************************************************************************************************************************************************************************************************/
+/*                                         Code source : union:/E:/CodexTemp/QiZhangVerdict/compat-1.20.6/servers/neoforge-42-01/libraries/net/fabricmc/sponge-mixin/0.13.4+mixin.0.8.5/sponge-mixin-0.13.4+mixin.0.8.5.jar%2377!/ */
+/*                                    Internal Version : 0.8.5                                                                                                                                                                     */
+/*                                        Java Version : 21.0 (supports compatibility 6-21)                                                                                                                                        */
+/*                         Default Compatibility Level : JAVA_16                                                                                                                                                                   */
+/*                                Detected ASM Version : ASM 9.8 (ASM10_EXPERIMENTAL)                                                                                                                                              */
+/*                          Detected ASM Supports Java : Up to Java 25 (class file version 69.0)                                                                                                                                   */
+/***********************************************************************************************************************************************************************************************************************************/
+/*                                        Service Name : ModLauncher                                                                                                                                                               */
+/*                                 Mixin Service Class : org.spongepowered.asm.service.modlauncher.MixinServiceModLauncher                                                                                                         */
+/*                       Global Property Service Class : org.spongepowered.asm.service.modlauncher.Blackboard                                                                                                                      */
+/*                                 Logger Adapter Type : Log4j2 (via ModLauncher)                                                                                                                                                  */
+/***********************************************************************************************************************************************************************************************************************************/
+/*                                         mixin.debug : <false>                                                                                                                                                                   */
+/*                                  mixin.debug.export : - <true>                                                                                                                                                                  */
+/*                           mixin.debug.export.filter : - - <null>                                                                                                                                                                */
+/*                        mixin.debug.export.decompile : - - <true>                                                                                                                                                                */
+/*                  mixin.debug.export.decompile.async : - - - <true>                                                                                                                                                              */
+/* mixin.debug.export.decompile.mergeGenericSignatures : - - - <true>                                                                                                                                                              */
+/*                                  mixin.debug.verify : - <false>                                                                                                                                                                 */
+/*                                 mixin.debug.verbose : - <true>                                                                                                                                                                  */
+/*                         mixin.debug.countInjections : - <true>                                                                                                                                                                  */
+/*                                  mixin.debug.strict : - <false>                                                                                                                                                                 */
+/*                           mixin.debug.strict.unique : - - <false>                                                                                                                                                               */
+/*                          mixin.debug.strict.targets : - - <false>                                                                                                                                                               */
+/*                                mixin.debug.profiler : - <false>                                                                                                                                                                 */
+/*                           mixin.dumpTargetOnFailure : <false>                                                                                                                                                                   */
+/*                                        mixin.checks : <false>                                                                                                                                                                   */
+/*                             mixin.checks.interfaces : - <false>                                                                                                                                                                 */
+/*                      mixin.checks.interfaces.strict : - - <false>                                                                                                                                                               */
+/*                             mixin.ignoreConstraints : <false>                                                                                                                                                                   */
+/*                                       mixin.hotSwap : <false>                                                                                                                                                                   */
+/*                                           mixin.env : <false>                                                                                                                                                                   */
+/*                                       mixin.env.obf : - <false>                                                                                                                                                                 */
+/*                             mixin.env.disableRefMap : - <false>                                                                                                                                                                 */
+/*                               mixin.env.remapRefMap : - <false>                                                                                                                                                                 */
+/*                       mixin.env.refMapRemappingFile : - <>                                                                                                                                                                      */
+/*                        mixin.env.refMapRemappingEnv : - <searge>                                                                                                                                                                */
+/*                      mixin.env.allowPermissiveMatch : - <false>                                                                                                                                                                 */
+/*                            mixin.env.ignoreRequired : - <false>                                                                                                                                                                 */
+/*                               mixin.env.compatLevel : - <false>                                                                                                                                                                 */
+/*                          mixin.env.shiftByViolation : - <warn>                                                                                                                                                                  */
+/*                      mixin.initialiserInjectionMode : <default>                                                                                                                                                                 */
+/***********************************************************************************************************************************************************************************************************************************/
+/*                                       Detected Side : SERVER                                                                                                                                                                    */
+/***********************************************************************************************************************************************************************************************************************************/
+[19:54:08.472] [main/INFO] [loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "server-1.20.6-20240627.102356-srg.jar" [locator: production server provider +net.neoforged:neoforge:20.6.141:server] 
+[19:54:08.489] [main/INFO] [loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "neoforge-20.6.141-universal.jar" [locator: PathBasedLocator[name=neoforge, paths=[libraries\net\neoforged\neoforge\20.6.141\neoforge-20.6.141-universal.jar]], reader: mod manifest] 
+[19:54:08.502] [main/INFO] [loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "qizhangverdict-neoforge-1.20.6-0.5.0-dev.jar" [locator: {mods folder locator at E:\CodexTemp\QiZhangVerdict\compat-1.20.6\servers\neoforge-42-01\mods}, reader: mod manifest] 
+[19:54:08.588] [main/INFO] [loading.moddiscovery.locators.JarInJarDependencyLocator/]: Found 1 dependencies adding them to mods collection 
+[19:54:08.589] [main/INFO] [loading.moddiscovery.ModDiscoverer/SCAN]: Found gamelibrary file "mixinextras-neoforge-0.4.1.jar" [parent: neoforge-20.6.141-universal.jar, locator: jarinjar, reader: mod manifest] 
+[19:54:08.742] [main/INFO] [loading.FMLServiceProvider/CORE]: Loading coremod script-engine for [neoforge] 
+[19:54:09.611] [main/WARN] [mixin/]: Compatibility level JAVA_21 specified by qizhangverdict.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13). 
+[19:54:09.611] [main/INFO] [mixin/]: Compatibility level set to JAVA_21 
+[19:54:09.620] [main/INFO] [LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeserver' with arguments [nogui] 
+[19:54:09.669] [main/INFO] [mixin/]: Attempting to load Fernflower decompiler (Threaded mode) 
+[19:54:09.671] [main/INFO] [mixin/]: Fernflower could not be loaded, exported classes will not be decompiled. NoClassDefFoundError: org/jetbrains/java/decompiler/main/extern/IResultSaver 
+[19:54:09.677] [main/INFO] [mixin/]: Preparing mixins for MixinEnvironment[DEFAULT] 
+[19:54:09.677] [main/INFO] [mixin/]: Selecting config qizhangverdict.mixins.json 
+[19:54:09.682] [main/INFO] [mixin/]: Selecting config mixinextras.init.mixins.json 
+[19:54:09.787] [main/INFO] [mixin/]: Preparing qizhangverdict.mixins.json (1) 
+[19:54:09.818] [main/INFO] [mixin/]: Preparing mixinextras.init.mixins.json (0) 
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener Advanced terminal features are not available in this environment
+[19:54:16] [modloading-worker-0/INFO] [ne.ne.ne.co.NeoForgeMod/NEOFORGE-MOD]: NeoForge mod loading, version 20.6.141, for MC 1.20.6
+[19:54:16] [modloading-sync-worker/WARN] [ne.ne.ne.co.ModConfigSpec/CORE]: Configuration file E:\CodexTemp\QiZhangVerdict\compat-1.20.6\servers\neoforge-42-01\config\neoforge-common.toml is not correct. Correcting
+[19:54:16] [modloading-sync-worker/WARN] [ne.ne.ne.co.ModConfigSpec/CORE]: Incorrect key general was corrected from null to its default, SimpleCommentedConfig:{}. 
+[19:54:16] [modloading-sync-worker/WARN] [ne.ne.ne.co.ModConfigSpec/CORE]: Incorrect key general.logUntranslatedItemTagWarnings was corrected from null to its default, SILENCED. 
+[19:54:16] [modloading-sync-worker/WARN] [ne.ne.ne.co.ModConfigSpec/CORE]: Incorrect key general.logLegacyTagWarnings was corrected from null to its default, DEV_SHORT. 
+[19:54:16] [main/INFO] [mojang/YggdrasilAuthenticationService]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[19:54:16] [main/WARN] [minecraft/VanillaPackResourcesBuilder]: Assets URL 'union:/E:/CodexTemp/QiZhangVerdict/compat-1.20.6/servers/neoforge-42-01/libraries/net/minecraft/server/1.20.6-20240627.102356/server-1.20.6-20240627.102356-srg.jar%23123!/assets/.mcassetsroot' uses unexpected schema
+[19:54:16] [main/WARN] [minecraft/VanillaPackResourcesBuilder]: Assets URL 'union:/E:/CodexTemp/QiZhangVerdict/compat-1.20.6/servers/neoforge-42-01/libraries/net/minecraft/server/1.20.6-20240627.102356/server-1.20.6-20240627.102356-srg.jar%23123!/data/.mcassetsroot' uses unexpected schema
+[19:54:16] [main/INFO] [minecraft/Main]: No existing world data, creating new world
+[19:54:17] [Worker-Main-3/INFO] [MixinExtras|Service/]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.4.1).
+[19:54:17] [Worker-Main-3/INFO] [mixin/]: Mixing CommandGate1206Mixin from qizhangverdict.mixins.json into net.minecraft.commands.Commands
+[19:54:17] [main/INFO] [minecraft/RecipeManager]: Loaded 1175 recipes
+[19:54:17] [main/INFO] [minecraft/AdvancementTree]: Loaded 1276 advancements
+[19:54:18] [Server thread/INFO] [minecraft/DedicatedServer]: Starting minecraft server version 1.20.6
+[19:54:18] [Server thread/INFO] [minecraft/DedicatedServer]: Loading properties
+[19:54:18] [Server thread/INFO] [minecraft/DedicatedServer]: Default game type: SURVIVAL
+[19:54:18] [Server thread/INFO] [minecraft/MinecraftServer]: Generating keypair
+[19:54:18] [Server thread/INFO] [minecraft/DedicatedServer]: Starting Minecraft server on 127.0.0.1:25732
+[19:54:18] [Server thread/INFO] [minecraft/ServerConnectionListener]: Using default channel type
+[19:54:18] [Server thread/WARN] [minecraft/DedicatedServer]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[19:54:18] [Server thread/WARN] [minecraft/DedicatedServer]: The server will make no attempt to authenticate usernames. Beware.
+[19:54:18] [Server thread/WARN] [minecraft/DedicatedServer]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[19:54:18] [Server thread/WARN] [minecraft/DedicatedServer]: To change this, set "online-mode" to "true" in the server.properties file.
+[19:54:18] [Server thread/WARN] [ne.ne.ne.co.ModConfigSpec/CORE]: Configuration file E:\CodexTemp\QiZhangVerdict\compat-1.20.6\servers\neoforge-42-01\config\neoforge-server.toml is not correct. Correcting
+[19:54:18] [Server thread/WARN] [ne.ne.ne.co.ModConfigSpec/CORE]: Incorrect key server was corrected from null to its default, SimpleCommentedConfig:{}. 
+[19:54:18] [Server thread/WARN] [ne.ne.ne.co.ModConfigSpec/CORE]: Incorrect key server.removeErroringBlockEntities was corrected from null to its default, false. 
+[19:54:18] [Server thread/WARN] [ne.ne.ne.co.ModConfigSpec/CORE]: Incorrect key server.removeErroringEntities was corrected from null to its default, false. 
+[19:54:18] [Server thread/WARN] [ne.ne.ne.co.ModConfigSpec/CORE]: Incorrect key server.fullBoundingBoxLadders was corrected from null to its default, false. 
+[19:54:18] [Server thread/WARN] [ne.ne.ne.co.ModConfigSpec/CORE]: Incorrect key server.permissionHandler was corrected from null to its default, neoforge:default_handler. 
+[19:54:18] [Server thread/WARN] [ne.ne.ne.co.ModConfigSpec/CORE]: Incorrect key server.advertiseDedicatedServerToLan was corrected from null to its default, true. 
+[19:54:18] [Server thread/INFO] [minecraft/DedicatedServer]: Preparing level "world"
+[19:54:18] [Server thread/INFO] [minecraft/MinecraftServer]: Preparing start region for dimension minecraft:overworld
+[19:54:19] [Worker-Main-5/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 2%
+[19:54:19] [Server thread/INFO] [minecraft/LoggerChunkProgressListener]: Time elapsed: 267 ms
+[19:54:19] [Server thread/INFO] [minecraft/DedicatedServer]: Done (0.778s)! For help, type "help"
+[19:54:19] [LanServerPinger #1/WARN] [minecraft/LanServerPinger]: LanServerPinger: Network is unreachable: sendto
+[19:54:19] [Server thread/INFO] [ne.ne.ne.se.pe.PermissionAPI/]: Successfully initialized permission handler neoforge:default_handler
+[19:54:19] [Server thread/INFO] [QiZhangVerdict/]: External mod presence only: grimac=false, antixray=false; actual function must be tested separately
+[19:54:19] [Server thread/INFO] [QiZhangVerdict/]: QiZhangGuard started: QiZhangVerdict sessions=0, trackedIPs=0, accountPairs=0, rules=42, companion=required, vm=DENY, blacklist=DENY, rateBuckets=0, accountBans=0, deviceBans=0, deviceRequired=true. Reports are self-reported, not trusted attestation.
+[19:54:19] [Server thread/INFO] [minecraft/MinecraftServer]: QiZhangVerdict sessions=0, trackedIPs=0, accountPairs=0, rules=42, companion=required, vm=DENY, blacklist=DENY, rateBuckets=0, accountBans=0, deviceBans=0, deviceRequired=true
+[19:54:20] [Server thread/INFO] [minecraft/MinecraftServer]: QiZhangVerdict sessions=0, trackedIPs=0, accountPairs=0, rules=42, companion=required, vm=ALERT, blacklist=DENY, rateBuckets=0, accountBans=0, deviceBans=0, deviceRequired=true
+[19:54:21] [Server thread/INFO] [minecraft/PlayerList]: QVBot1[/127.0.0.1:5734] logged in with entity id 1 at (2.5, -60.0, 6.5)
+[19:54:21] [Server thread/INFO] [minecraft/MinecraftServer]: QVBot1 joined the game
+[19:54:23] [Server thread/INFO] [minecraft/ServerGamePacketListenerImpl]: QVBot1 lost connection: Disconnected
+[19:54:23] [Server thread/INFO] [minecraft/MinecraftServer]: QVBot1 left the game
+[19:54:23] [Server thread/INFO] [minecraft/MinecraftServer]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=1, rules=42, companion=required, vm=ALERT, blacklist=DENY, rateBuckets=1, accountBans=0, deviceBans=0, deviceRequired=true
+[19:54:25] [Server thread/INFO] [minecraft/PlayerList]: GateAccount[/127.0.0.1:5747] logged in with entity id 2 at (4.5, -60.0, 0.5)
+[19:54:25] [Server thread/INFO] [minecraft/MinecraftServer]: GateAccount joined the game
+[19:54:26] [Server thread/INFO] [minecraft/MinecraftServer]: Made GateAccount a server operator
+[19:54:28] [Server thread/INFO] [minecraft/MinecraftServer]: [Not Secure] [GateAccount] QZ_POST_GATE
+[19:54:29] [Server thread/INFO] [minecraft/ServerGamePacketListenerImpl]: GateAccount lost connection: Disconnected
+[19:54:29] [Server thread/INFO] [minecraft/MinecraftServer]: GateAccount left the game
+[19:54:29] [Server thread/INFO] [minecraft/MinecraftServer]: Made GateAccount no longer a server operator
+[19:54:31] [Server thread/INFO] [minecraft/MinecraftServer]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=2, rules=42, companion=required, vm=ALERT, blacklist=DENY, rateBuckets=1, accountBans=0, deviceBans=0, deviceRequired=true
+[19:54:32] [Server thread/INFO] [minecraft/PlayerList]: QVBot2[/127.0.0.1:5753] logged in with entity id 3 at (-5.5, -60.0, 8.5)
+[19:54:32] [Server thread/INFO] [minecraft/MinecraftServer]: QVBot2 joined the game
+[19:54:36] [Server thread/INFO] [minecraft/ServerGamePacketListenerImpl]: QVBot2 lost connection: QiZhangGuard: required companion report timed out
+[19:54:36] [Server thread/INFO] [minecraft/MinecraftServer]: QVBot2 left the game
+[19:54:37] [Server thread/INFO] [minecraft/PlayerList]: BadWire[/127.0.0.1:5754] logged in with entity id 4 at (-7.5, -60.0, 0.5)
+[19:54:37] [Server thread/INFO] [minecraft/MinecraftServer]: BadWire joined the game
+[19:54:38] [Server thread/INFO] [minecraft/ServerGamePacketListenerImpl]: BadWire lost connection: Malformed or oversized companion report
+[19:54:38] [Server thread/INFO] [minecraft/MinecraftServer]: BadWire left the game
+[19:54:39] [Server thread/INFO] [minecraft/PlayerList]: BadWire[/127.0.0.1:5755] logged in with entity id 5 at (-7.5, -60.0, 0.5)
+[19:54:39] [Server thread/INFO] [minecraft/MinecraftServer]: BadWire joined the game
+[19:54:40] [Server thread/INFO] [minecraft/ServerGamePacketListenerImpl]: BadWire lost connection: Disconnected
+[19:54:40] [Server thread/INFO] [minecraft/MinecraftServer]: BadWire left the game
+[19:54:41] [Server thread/INFO] [minecraft/PlayerList]: QVBot3[/127.0.0.1:5757] logged in with entity id 6 at (-0.5, -60.0, -7.5)
+[19:54:41] [Server thread/INFO] [minecraft/MinecraftServer]: QVBot3 joined the game
+[19:54:42] [Server thread/INFO] [minecraft/PlayerList]: QVBot4[/127.0.0.1:5758] logged in with entity id 7 at (-3.5, -60.0, -6.5)
+[19:54:42] [Server thread/INFO] [minecraft/MinecraftServer]: QVBot4 joined the game
+[19:54:42] [Server thread/INFO] [minecraft/ServerGamePacketListenerImpl]: QVBot4 lost connection: Only the configured number of accounts may use the same IP and device concurrently
+[19:54:42] [Server thread/INFO] [minecraft/MinecraftServer]: QVBot4 left the game
+[19:54:43] [Server thread/INFO] [minecraft/PlayerList]: QVBot5[/127.0.0.1:5759] logged in with entity id 8 at (1.5, -60.0, 9.5)
+[19:54:43] [Server thread/INFO] [minecraft/MinecraftServer]: QVBot5 joined the game
+[19:54:44] [Server thread/INFO] [minecraft/PlayerList]: QVBot6[/127.0.0.1:5761] logged in with entity id 9 at (0.5, -60.0, 8.5)
+[19:54:44] [Server thread/INFO] [minecraft/MinecraftServer]: QVBot6 joined the game
+[19:54:46] [Server thread/INFO] [minecraft/PlayerList]: QVBot7[/127.0.0.1:11770] logged in with entity id 10 at (-3.5, -60.0, -1.5)
+[19:54:46] [Server thread/INFO] [minecraft/MinecraftServer]: QVBot7 joined the game
+[19:54:46] [Server thread/INFO] [minecraft/ServerGamePacketListenerImpl]: QVBot7 lost connection: Too many simultaneous accounts from this IP
+[19:54:46] [Server thread/INFO] [minecraft/MinecraftServer]: QVBot7 left the game
+[19:54:47] [Server thread/INFO] [minecraft/ServerGamePacketListenerImpl]: QVBot3 lost connection: Disconnected
+[19:54:47] [Server thread/INFO] [minecraft/MinecraftServer]: QVBot3 left the game
+[19:54:47] [Server thread/INFO] [minecraft/ServerGamePacketListenerImpl]: QVBot5 lost connection: Disconnected
+[19:54:47] [Server thread/INFO] [minecraft/MinecraftServer]: QVBot5 left the game
+[19:54:47] [Server thread/INFO] [minecraft/ServerGamePacketListenerImpl]: QVBot6 lost connection: Disconnected
+[19:54:47] [Server thread/INFO] [minecraft/MinecraftServer]: QVBot6 left the game
+[19:54:48] [Server thread/INFO] [minecraft/PlayerList]: QVBot8[/127.0.0.1:11772] logged in with entity id 11 at (0.5, -60.0, 1.5)
+[19:54:48] [Server thread/INFO] [minecraft/MinecraftServer]: QVBot8 joined the game
+[19:54:49] [Server thread/INFO] [minecraft/ServerGamePacketListenerImpl]: QVBot8 lost connection: Disconnected
+[19:54:49] [Server thread/INFO] [minecraft/MinecraftServer]: QVBot8 left the game
+[19:54:49] [Server thread/INFO] [minecraft/PlayerList]: CheatAccount[/127.0.0.1:11776] logged in with entity id 12 at (-3.5, -60.0, 0.5)
+[19:54:49] [Server thread/INFO] [minecraft/MinecraftServer]: CheatAccount joined the game
+[19:54:50] [Server thread/INFO] [minecraft/ServerGamePacketListenerImpl]: CheatAccount lost connection: Reported mod matches an exact server blacklist rule
+[19:54:50] [Server thread/INFO] [minecraft/MinecraftServer]: CheatAccount left the game
+[19:54:51] [Server thread/INFO] [minecraft/PlayerList]: LinkedAccount[/127.0.0.1:11777] logged in with entity id 13 at (7.5, -60.0, 6.5)
+[19:54:51] [Server thread/INFO] [minecraft/MinecraftServer]: LinkedAccount joined the game
+[19:54:51] [Server thread/INFO] [minecraft/ServerGamePacketListenerImpl]: LinkedAccount lost connection: This reported device identifier is banned
+[19:54:51] [Server thread/INFO] [minecraft/MinecraftServer]: LinkedAccount left the game
+[19:54:52] [Server thread/INFO] [minecraft/PlayerList]: CheatAccount[/127.0.0.1:11778] logged in with entity id 14 at (-3.5, -60.0, 0.5)
+[19:54:52] [Server thread/INFO] [minecraft/MinecraftServer]: CheatAccount joined the game
+[19:54:52] [Server thread/INFO] [minecraft/ServerGamePacketListenerImpl]: CheatAccount lost connection: This account is banned by the server
+[19:54:52] [Server thread/INFO] [minecraft/MinecraftServer]: CheatAccount left the game
+[19:54:53] [Server thread/INFO] [minecraft/MinecraftServer]: Unbanned: true
+[19:54:55] [Server thread/INFO] [minecraft/MinecraftServer]: Unbanned: true
+[19:54:56] [Server thread/INFO] [minecraft/PlayerList]: CheatAccount[/127.0.0.1:11781] logged in with entity id 15 at (-3.5, -60.0, 0.5)
+[19:54:56] [Server thread/INFO] [minecraft/MinecraftServer]: CheatAccount joined the game
+[19:54:57] [Server thread/INFO] [minecraft/ServerGamePacketListenerImpl]: CheatAccount lost connection: Disconnected
+[19:54:57] [Server thread/INFO] [minecraft/MinecraftServer]: CheatAccount left the game
+[19:54:58] [Server thread/INFO] [minecraft/MinecraftServer]: Added rule: cc190a88-9c94-4835-937a-50d05ea8c0ae
+[19:54:59] [Server thread/INFO] [minecraft/PlayerList]: QVBot9[/127.0.0.1:11784] logged in with entity id 16 at (2.5, -60.0, -1.5)
+[19:54:59] [Server thread/INFO] [minecraft/MinecraftServer]: QVBot9 joined the game
+[19:54:59] [Server thread/INFO] [minecraft/ServerGamePacketListenerImpl]: QVBot9 lost connection: Reported mod matches a server blacklist rule
+[19:54:59] [Server thread/INFO] [minecraft/MinecraftServer]: QVBot9 left the game
+[19:55:00] [Server thread/INFO] [minecraft/MinecraftServer]: Added rule: 765fa913-2539-4a70-a472-6cfec29f7786
+[19:55:02] [Server thread/INFO] [minecraft/PlayerList]: QVBot10[/127.0.0.1:11788] logged in with entity id 17 at (-3.5, -60.0, -8.5)
+[19:55:02] [Server thread/INFO] [minecraft/MinecraftServer]: QVBot10 joined the game
+[19:55:03] [Server thread/INFO] [minecraft/ServerGamePacketListenerImpl]: QVBot10 lost connection: Disconnected
+[19:55:03] [Server thread/INFO] [minecraft/MinecraftServer]: QVBot10 left the game
+[19:55:04] [Server thread/INFO] [minecraft/MinecraftServer]: Removed: true
+[19:55:05] [Server thread/INFO] [minecraft/PlayerList]: QVBot11[/127.0.0.1:11790] logged in with entity id 18 at (1.5, -60.0, 9.5)
+[19:55:05] [Server thread/INFO] [minecraft/MinecraftServer]: QVBot11 joined the game
+[19:55:06] [Server thread/INFO] [minecraft/ServerGamePacketListenerImpl]: QVBot11 lost connection: Reported mod matches a server blacklist rule
+[19:55:06] [Server thread/INFO] [minecraft/MinecraftServer]: QVBot11 left the game
+[19:55:06] [Server thread/INFO] [minecraft/MinecraftServer]: Removed: true
+[19:55:07] [Server thread/INFO] [minecraft/PlayerList]: QVBot12[/127.0.0.1:2915] logged in with entity id 19 at (1.5, -60.0, -1.5)
+[19:55:07] [Server thread/INFO] [minecraft/MinecraftServer]: QVBot12 joined the game
+[19:55:09] [Server thread/INFO] [minecraft/ServerGamePacketListenerImpl]: QVBot12 lost connection: Disconnected
+[19:55:09] [Server thread/INFO] [minecraft/MinecraftServer]: QVBot12 left the game
+[19:55:09] [Server thread/INFO] [minecraft/MinecraftServer]: Added rule: d513cd82-8ea8-433b-8d37-a3b41eb936eb
+[19:55:11] [Server thread/INFO] [minecraft/PlayerList]: QVBot13[/127.0.0.1:2916] logged in with entity id 20 at (-2.5, -60.0, -1.5)
+[19:55:11] [Server thread/INFO] [minecraft/MinecraftServer]: QVBot13 joined the game
+[19:55:12] [Server thread/INFO] [minecraft/ServerGamePacketListenerImpl]: QVBot13 lost connection: Reported mod matches a server blacklist rule
+[19:55:12] [Server thread/INFO] [minecraft/MinecraftServer]: QVBot13 left the game
+[19:55:12] [Server thread/INFO] [minecraft/MinecraftServer]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=16, rules=43, companion=required, vm=ALERT, blacklist=DENY, rateBuckets=1, accountBans=4, deviceBans=3, deviceRequired=true
+[19:55:13] [Server thread/INFO] [minecraft/PlayerList]: QVBot14[/127.0.0.1:2918] logged in with entity id 21 at (4.5, -60.0, 6.5)
+[19:55:13] [Server thread/INFO] [minecraft/MinecraftServer]: QVBot14 joined the game
+[19:55:13] [Server thread/INFO] [minecraft/ServerGamePacketListenerImpl]: QVBot14 lost connection: This IP is denied by server policy
+[19:55:13] [Server thread/INFO] [minecraft/MinecraftServer]: QVBot14 left the game
+[19:55:14] [Server thread/INFO] [minecraft/MinecraftServer]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=16, rules=43, companion=required, vm=DENY, blacklist=DENY, rateBuckets=1, accountBans=4, deviceBans=3, deviceRequired=true
+[19:55:16] [Server thread/INFO] [minecraft/PlayerList]: QVBot15[/127.0.0.1:14049] logged in with entity id 22 at (-8.5, -60.0, 1.5)
+[19:55:16] [Server thread/INFO] [minecraft/MinecraftServer]: QVBot15 joined the game
+[19:55:17] [Server thread/INFO] [minecraft/ServerGamePacketListenerImpl]: QVBot15 lost connection: Companion reported a virtual machine indicator
+[19:55:17] [Server thread/INFO] [minecraft/MinecraftServer]: QVBot15 left the game
+[19:55:17] [Server thread/INFO] [minecraft/PlayerList]: QVBot16[/127.0.0.1:14051] logged in with entity id 23 at (2.5, -60.0, 5.5)
+[19:55:17] [Server thread/INFO] [minecraft/MinecraftServer]: QVBot16 joined the game
+[19:55:18] [Server thread/INFO] [QiZhangVerdict/]: Report decision player=edc8f3dc-ba2e-3999-9748-0637a3718bb0 code=VM_UNKNOWN message=VM status is unknown or has only inconclusive indicators
+[19:55:18] [Server thread/INFO] [minecraft/ServerGamePacketListenerImpl]: QVBot16 lost connection: Disconnected
+[19:55:18] [Server thread/INFO] [minecraft/MinecraftServer]: QVBot16 left the game
+[19:55:19] [Server thread/INFO] [minecraft/MinecraftServer]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=18, rules=43, companion=required, vm=ALERT, blacklist=DENY, rateBuckets=1, accountBans=5, deviceBans=4, deviceRequired=true
+[19:55:20] [Server thread/INFO] [minecraft/PlayerList]: QVBot17[/127.0.0.1:14056] logged in with entity id 24 at (4.5, -60.0, -1.5)
+[19:55:20] [Server thread/INFO] [minecraft/MinecraftServer]: QVBot17 joined the game
+[19:55:22] [Server thread/INFO] [minecraft/PlayerList]: QVBot18[/127.0.0.1:14057] logged in with entity id 25 at (-0.5, -60.0, -2.5)
+[19:55:22] [Server thread/INFO] [minecraft/MinecraftServer]: QVBot18 joined the game
+[19:55:23] [Server thread/INFO] [minecraft/PlayerList]: QVBot19[/127.0.0.1:14058] logged in with entity id 26 at (-8.5, -60.0, 7.5)
+[19:55:23] [Server thread/INFO] [minecraft/MinecraftServer]: QVBot19 joined the game
+[19:55:23] [Server thread/INFO] [minecraft/ServerGamePacketListenerImpl]: QVBot19 lost connection: Too many simultaneous accounts from this IP
+[19:55:23] [Server thread/INFO] [minecraft/MinecraftServer]: QVBot19 left the game
+[19:55:24] [Server thread/INFO] [minecraft/ServerGamePacketListenerImpl]: QVBot17 lost connection: Disconnected
+[19:55:24] [Server thread/INFO] [minecraft/MinecraftServer]: QVBot17 left the game
+[19:55:24] [Server thread/INFO] [minecraft/ServerGamePacketListenerImpl]: QVBot18 lost connection: Disconnected
+[19:55:24] [Server thread/INFO] [minecraft/MinecraftServer]: QVBot18 left the game
+[19:55:25] [Server thread/INFO] [minecraft/MinecraftServer]: Page 1/1
+06205eb0-363d-35e3-8c60-8c1ef8b83c9c	BLACKLIST_DENIED
+15519aaa-3950-3430-bc9c-c0c7c47a9cf3	BLACKLIST_DENIED
+87b706ea-8c04-3118-b4cc-2d720ee925df	VM_DENIED
+b791d91a-dbdc-3a65-a036-fc39d6993ac9	DEVICE_BANNED
+d8c92e3a-17df-39d2-a36d-e08c0d1aab2e	BLACKLIST_DENIED
+device:0723e1710c0a08646895f23b3eaf0153e6fb1d316ec121abe3e842cbff565460	VM_DENIED
+device:746caab8fda1c4e339d0724f9fb70b2d52b533cbfce2a0a2b98a039648cbf174	BLACKLIST_DENIED
+device:d6578071b2c3a3ef93925882a0215c31812b6db116703c2082e07adec5a2499e	BLACKLIST_DENIED
+device:fb7f23f1518fc50a1bfa07fc581a2f340c89a3596042f418617b9dd66614e239	BLACKLIST_DENIED
+[19:55:26] [Server thread/INFO] [minecraft/MinecraftServer]: Page 1/5
+legacy:automation:baritoe	BLACK	MOD	EXACT	baritoe	ALERT
+legacy:automation:baritone	BLACK	MOD	EXACT	baritone	ALERT
+legacy:mod:advanced-xray-fabric	BLACK	MOD	EXACT	advanced-xray-fabric	DENY
+legacy:mod:aegis	BLACK	MOD	EXACT	aegis	DENY
+legacy:mod:alien	BLACK	MOD	EXACT	alien	DENY
+legacy:mod:aoba	BLACK	MOD	EXACT	aoba	DENY
+legacy:mod:ares	BLACK	MOD	EXACT	ares	DENY
+legacy:mod:atianxray	BLACK	MOD	EXACT	atianxray	ALERT
+legacy:mod:blackout	BLACK	MOD	EXACT	blackout	DENY
+legacy:mod:bleachhack	BLACK	MOD	EXACT	bleachhack	DENY
+[19:55:28] [Server thread/INFO] [minecraft/MinecraftServer]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=20, rules=43, companion=required, vm=DENY, blacklist=DENY, rateBuckets=1, accountBans=5, deviceBans=4, deviceRequired=true
+[19:55:28] [Server thread/INFO] [minecraft/MinecraftServer]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=20, rules=43, companion=required, vm=DENY, blacklist=DENY, rateBuckets=1, accountBans=5, deviceBans=4, deviceRequired=true
+[19:55:28] [Server thread/INFO] [minecraft/MinecraftServer]: Stopping the server
+[19:55:28] [Server thread/INFO] [minecraft/MinecraftServer]: Stopping server
+[19:55:28] [Server thread/INFO] [minecraft/MinecraftServer]: Saving players
+[19:55:28] [Server thread/INFO] [minecraft/MinecraftServer]: Saving worlds
+[19:55:29] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[19:55:29] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[19:55:29] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
+[19:55:29] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[19:55:29] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[19:55:29] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[19:55:29] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage: All dimensions are saved
