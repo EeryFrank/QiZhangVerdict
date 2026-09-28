@@ -1,0 +1,142 @@
+{
+  "profile": "forge-1.20.6",
+  "guard": {
+    "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.20.6\\servers\\forge-42-02\\mods\\qizhangverdict-forge-1.20.6-0.5.0-dev.jar",
+    "bytes": 97107,
+    "sha256": "eee8d545fdce4372dad51bfba4ae57159810267555077e6a2e73d21736c9f09a"
+  },
+  "mode": "tcp",
+  "command": [
+    "D:\\Java\\jdk-21\\bin\\java.exe",
+    "-Xms512M",
+    "-Xmx1536M",
+    "-Djava.awt.headless=true",
+    "-Dfile.encoding=UTF-8",
+    "-Djava.io.tmpdir=E:\\CodexTemp\\QiZhangVerdict\\compat-1.20.6\\servers\\forge-42-02\\runtime-temp",
+    "-Dmixin.debug.verbose=true",
+    "-Dmixin.debug.export=true",
+    "-Dmixin.debug.countInjections=true",
+    "@libraries\\net\\minecraftforge\\forge\\1.20.6-50.2.0\\win_args.txt",
+    "nogui"
+  ],
+  "scope": "Dedicated startup/status/required command Mixin and clean stop; optional real TCP synthetic reports, not rendered companion/hardware evidence",
+  "availablePhysicalGiB": 18.42837905883789,
+  "started": true,
+  "normalStop": true,
+  "serverExitCode": 0,
+  "protocolPassed": false,
+  "defaultPolicyVerified": true,
+  "defaultCatalogVerified": true,
+  "requiredMixinObserved": true,
+  "helper": {
+    "path": "E:\\Codex_work\\QiZhangVerdict\\scripts\\modern1206_mod_smoke.py",
+    "bytes": 38765,
+    "sha256": "b5a2cefbfc3099516070b24b830036739c3a27ad8f98890bce5d3c30c8fc5ffd"
+  },
+  "serverPid": 69584,
+  "expectedRuleCount": 42,
+  "expectedCatalogActions": {
+    "DENY": 38,
+    "ALERT": 4
+  },
+  "freshStatus": "[21:26:14] [Server thread/INFO] [minecraft/MinecraftServer]: QiZhangVerdict sessions=0, trackedIPs=0, accountPairs=0, rules=42, companion=required, vm=DENY, blacklist=DENY, rateBuckets=0, accountBans=0, deviceBans=0, deviceRequired=true",
+  "mixinLines": [
+    "[21:26:12] [Worker-Main-3/INFO] [mixin/]: Mixing CommandGate1206Mixin from qizhangverdict.mixins.json into net.minecraft.commands.Commands",
+    "[21:26:12] [Worker-Main-3/WARN] [mixin/]: qizhangverdict.mixins.json:CommandGate1206Mixin: Class version 65 required is higher than the class version supported by the current version of Mixin (JAVA_17 supports class version 61)"
+  ],
+  "protocolSupport": {
+    "minecraftProtocolVersion": "1.66.2",
+    "minecraftDataVersion": "3.117.0",
+    "protocol": 766,
+    "versionMetadata": {
+      "path": "E:\\CodexTemp\\QiZhangGuard\\bot\\node_modules\\minecraft-data\\minecraft-data\\data\\pc\\1.20.6\\version.json",
+      "bytes": 106,
+      "sha256": "3f0495fafe4e39a62a41bb0d80dec9c43d15ce690a018471c6aca715a60cb754"
+    },
+    "schema": {
+      "path": "E:\\CodexTemp\\QiZhangGuard\\bot\\node_modules\\minecraft-data\\minecraft-data\\data\\pc\\1.20.5\\protocol.json",
+      "bytes": 242450,
+      "sha256": "4204f6f1d4f5aa7ab0936fe0cb78fac3d249a06e534e4903d1937614667be241"
+    },
+    "versionList": {
+      "path": "E:\\CodexTemp\\QiZhangGuard\\bot\\node_modules\\minecraft-protocol\\src\\version.js",
+      "bytes": 368,
+      "sha256": "5b473bdb689c2fedf505b545be2096ab997d152f3b58338d7c624a5c1c73d1d1"
+    },
+    "scope": "Static package support and schema inspection; TCP success is a separate run result"
+  },
+  "syntheticPolicyOverrides": {
+    "limits.max-accounts-per-ip": "100",
+    "limits.attempts-per-minute": "1000",
+    "companion.timeout-seconds": "4 (10 for the operator gate)",
+    "vm.action": "ALERT initially; DENY in VM cases",
+    "ip.deny": "127.0.0.0/8 in CIDR case",
+    "limits.max-online-per-ip": "2 in final quota cases"
+  },
+  "executedProtocol": {
+    "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.20.6\\servers\\forge-42-02\\qa\\protocol_smoke.cjs",
+    "bytes": 17854,
+    "sha256": "237ac7d2ec4aa5fc95a79575de06aa5b23d31a96ac8c04801dc3c6be5fef2939"
+  },
+  "protocolExitCode": 1,
+  "protocolElapsedSeconds": 4.072,
+  "forwardedCommands": 1,
+  "policyBeforeRestore": {
+    "limits.max-online-per-ip": "3",
+    "limits.max-online-per-ip-device": "1",
+    "limits.max-accounts-per-ip": "100",
+    "limits.account-window-hours": "720",
+    "limits.attempts-per-minute": "1000",
+    "ip.allow": "",
+    "ip.deny": "",
+    "companion.required": "true",
+    "companion.timeout-seconds": "4",
+    "device.required": "true",
+    "vm.action": "ALERT",
+    "blacklist.action": "DENY",
+    "sanctions.on-deny": "BAN"
+  },
+  "restoreReloadStatus": "[21:26:18] [Server thread/INFO] [minecraft/MinecraftServer]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=1, rules=42, companion=required, vm=DENY, blacklist=DENY, rateBuckets=1, accountBans=0, deviceBans=0, deviceRequired=true",
+  "restoredStatus": "[21:26:19] [Server thread/INFO] [minecraft/MinecraftServer]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=1, rules=42, companion=required, vm=DENY, blacklist=DENY, rateBuckets=1, accountBans=0, deviceBans=0, deviceRequired=true",
+  "strictPolicyRestored": true,
+  "elapsedSeconds": 20.01,
+  "console": {
+    "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.20.6\\servers\\forge-42-02\\console.log",
+    "bytes": 21501,
+    "sha256": "fd5252866e0d015bcba2f8dc7199451302e4065b9bb04e6840aebbb1eb9cd623"
+  },
+  "warningAndErrorLines": [
+    "WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release",
+    "WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release",
+    "WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release",
+    "WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release",
+    "WARN StatusConsoleListener Advanced terminal features are not available in this environment",
+    "[21:26:02] [main/WARN] [ne.mi.fm.lo.FMLConfig/CORE]: Configuration file E:\\CodexTemp\\QiZhangVerdict\\compat-1.20.6\\servers\\forge-42-02\\config\\fml.toml is not correct. Correcting",
+    "[21:26:04] [main/WARN] [mixin/]: Compatibility level JAVA_17 specified by qizhangverdict.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).",
+    "[21:26:04] [main/WARN] [os.ut.FileUtil/]: Configuration conflict: there is more than one oshi.properties file on the classpath: [jar:file:///E:/CodexTemp/QiZhangVerdict/compat-1.20.6/servers/forge-42-02/libraries/com/github/oshi/oshi-core/6.4.10/oshi-core-6.4.10.jar!/oshi.properties, jar:file:/E:/CodexTemp/QiZhangVerdict/compat-1.20.6/servers/forge-42-02/libraries/com/github/oshi/oshi-core/6.4.10/oshi-core-6.4.10.jar!/oshi.properties, jar:file:///E:/CodexTemp/QiZhangVerdict/compat-1.20.6/servers/forge-42-02/libraries/com/github/oshi/oshi-core/6.4.10/oshi-core-6.4.10.jar!/oshi.properties, jar:file:/E:/CodexTemp/QiZhangVerdict/compat-1.20.6/servers/forge-42-02/libraries/com/github/oshi/oshi-core/6.4.10/oshi-core-6.4.10.jar!/oshi.properties]",
+    "[21:26:04] [main/WARN] [os.ut.FileUtil/]: Configuration conflict: there is more than one oshi.architecture.properties file on the classpath: [jar:file:///E:/CodexTemp/QiZhangVerdict/compat-1.20.6/servers/forge-42-02/libraries/com/github/oshi/oshi-core/6.4.10/oshi-core-6.4.10.jar!/oshi.architecture.properties, jar:file:/E:/CodexTemp/QiZhangVerdict/compat-1.20.6/servers/forge-42-02/libraries/com/github/oshi/oshi-core/6.4.10/oshi-core-6.4.10.jar!/oshi.architecture.properties, jar:file:///E:/CodexTemp/QiZhangVerdict/compat-1.20.6/servers/forge-42-02/libraries/com/github/oshi/oshi-core/6.4.10/oshi-core-6.4.10.jar!/oshi.architecture.properties, jar:file:/E:/CodexTemp/QiZhangVerdict/compat-1.20.6/servers/forge-42-02/libraries/com/github/oshi/oshi-core/6.4.10/oshi-core-6.4.10.jar!/oshi.architecture.properties]",
+    "[21:26:12] [Worker-Main-3/WARN] [mixin/]: qizhangverdict.mixins.json:CommandGate1206Mixin: Class version 65 required is higher than the class version supported by the current version of Mixin (JAVA_17 supports class version 61)",
+    "[21:26:13] [Server thread/WARN] [minecraft/DedicatedServer]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!",
+    "[21:26:13] [Server thread/WARN] [minecraft/DedicatedServer]: The server will make no attempt to authenticate usernames. Beware.",
+    "[21:26:13] [Server thread/WARN] [minecraft/DedicatedServer]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.",
+    "[21:26:13] [Server thread/WARN] [minecraft/DedicatedServer]: To change this, set \"online-mode\" to \"true\" in the server.properties file.",
+    "[21:26:13] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Configuration file .\\world\\serverconfig\\forge-server.toml is not correct. Correcting",
+    "[21:26:13] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key server was corrected from null to its default, SimpleCommentedConfig:{}. ",
+    "[21:26:13] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key server.removeErroringBlockEntities was corrected from null to its default, false. ",
+    "[21:26:13] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key server.removeErroringEntities was corrected from null to its default, false. ",
+    "[21:26:13] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key server.fullBoundingBoxLadders was corrected from null to its default, false. ",
+    "[21:26:13] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key server.permissionHandler was corrected from null to its default, forge:default_handler. ",
+    "[21:26:13] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key server.advertiseDedicatedServerToLan was corrected from null to its default, true. ",
+    "[21:26:13] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key server.useItemWithDurationZero was corrected from null to its default, false. ",
+    "[21:26:14] [LanServerPinger #1/WARN] [minecraft/LanServerPinger]: LanServerPinger: Network is unreachable: sendto"
+  ],
+  "protocolDecoderErrors": [
+    "PartialReadError: Read error for undefined : Missing characters in string, found size is 99290 expected size was 105172"
+  ],
+  "protocolConsole": {
+    "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.20.6\\servers\\forge-42-02\\protocol-console.log",
+    "bytes": 1854,
+    "sha256": "96b81d53fe351afb1f2a9cc094202862f16340786fc0ebd9408de138dbf39bea"
+  },
+  "passed": false
+}

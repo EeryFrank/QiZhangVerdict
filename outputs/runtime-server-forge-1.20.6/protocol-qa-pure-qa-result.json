@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "kind": "pure Node fake-clock/event-emitter QA; no Java or TCP",
+  "checks": [
+    "all 26 acceptance cases and command-gate sequence byte-identical",
+    "allowed and denied assertions byte-identical",
+    "wire-report serialization byte-identical",
+    "normal login alone does not end report wait; delayed report at 1700ms succeeds",
+    "normal delayed registration/report at 3500ms retained within bound",
+    "normal report retains full 1200ms denial observation",
+    "pre-login rejection returns but remains rejected",
+    "server required-report timeout remains a failure, never synthetic send",
+    "no report and no disconnect has hard 10000+1200ms bound",
+    "silent retains join+5200ms observation and never waits for report",
+    "hold retains join+1200ms observation without automatic report",
+    "silent missing login retains original 10s+5200ms bound",
+    "hold missing login retains original 10s+1200ms bound",
+    "bounded trace separates decoder/public, handles phase swaps, cleans listeners, never reads payload/error text",
+    "pure harness never creates a Minecraft connection"
+  ],
+  "checkCount": 15,
+  "script": {
+    "path": "E:\\Codex_work\\QiZhangVerdict\\scripts\\protocol_smoke.cjs",
+    "sha256": "2830d43816df28df2565a0966a837a64afd26ee14897b1b591d995d1090be7b8",
+    "bytes": 21043
+  },
+  "before": {
+    "sha256": "237ac7d2ec4aa5fc95a79575de06aa5b23d31a96ac8c04801dc3c6be5fef2939",
+    "bytes": 17854
+  },
+  "validator": {
+    "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.20.6\\protocol-forge-investigation-01\\check-qa.cjs",
+    "sha256": "e537cff310140f2fc67c18e018c87982dce91d1375553822ee424192cfa18157"
+  },
+  "runtimeExecuted": false,
+  "serverExecuted": false,
+  "noAssertionWeakened": true,
+  "silentAndHoldTimingUnchanged": true,
+  "normalWaitLimitMs": 10000,
+  "postReportDenialObservationMs": 1200
+}

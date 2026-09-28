@@ -13,11 +13,11 @@ TARGETS = {
     'mods-1.19.2': ('platforms/1.19.2', '0.3.0-dev', ('fabric', 'forge')),
     'mods-1.20.1': ('platforms/1.20.1', '0.2.0-test.1', ('fabric', 'forge')),
     'mods-1.20.4': ('platforms/1.20.4', '0.3.0-dev', ('fabric', 'forge', 'neoforge')),
-    'mods-1.20.6': ('platforms/1.20.6', '0.5.0-dev', ('fabric', 'neoforge')),
+    'mods-1.20.6': ('platforms/1.20.6', '0.5.0-dev', ('fabric', 'neoforge', 'forge')),
     'mods-1.21.1': ('platforms/1.21.1', '0.2.0-test.1', ('fabric', 'neoforge')),
     'mods-1.21.11': ('platforms/1.21.11', '0.4.0-dev', ('fabric', 'neoforge')),
 }
-DELIVERABLE_COUNT = 14
+DELIVERABLE_COUNT = 15
 
 
 def artifact_paths(target):
@@ -93,7 +93,7 @@ def collect(input_root, output, layout):
         verify_folder(folder, expected)
         sources.extend(folder / name for name in expected)
     if len(sources) != DELIVERABLE_COUNT or len({p.name for p in sources}) != DELIVERABLE_COUNT:
-        raise ValueError('Expected exactly fourteen distinct pinned production JARs')
+        raise ValueError('Expected exactly fifteen distinct pinned production JARs')
     # Validate the entire input before creating the new result directory.
     output.mkdir(parents=True, exist_ok=False)
     for source in sources:

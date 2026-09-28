@@ -1,0 +1,313 @@
+{
+  "profile": "forge-1.20.6",
+  "guard": {
+    "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.20.6\\servers\\forge-42-03\\mods\\qizhangverdict-forge-1.20.6-0.5.0-dev.jar",
+    "bytes": 97107,
+    "sha256": "eee8d545fdce4372dad51bfba4ae57159810267555077e6a2e73d21736c9f09a"
+  },
+  "mode": "tcp",
+  "command": [
+    "D:\\Java\\jdk-21\\bin\\java.exe",
+    "-Xms512M",
+    "-Xmx1536M",
+    "-Djava.awt.headless=true",
+    "-Dfile.encoding=UTF-8",
+    "-Djava.io.tmpdir=E:\\CodexTemp\\QiZhangVerdict\\compat-1.20.6\\servers\\forge-42-03\\runtime-temp",
+    "-Dmixin.debug.verbose=true",
+    "-Dmixin.debug.export=true",
+    "-Dmixin.debug.countInjections=true",
+    "@libraries\\net\\minecraftforge\\forge\\1.20.6-50.2.0\\win_args.txt",
+    "nogui"
+  ],
+  "scope": "Dedicated startup/status/required command Mixin and clean stop; optional real TCP synthetic reports, not rendered companion/hardware evidence",
+  "availablePhysicalGiB": 18.221660614013672,
+  "started": true,
+  "normalStop": true,
+  "serverExitCode": 0,
+  "protocolPassed": true,
+  "defaultPolicyVerified": true,
+  "defaultCatalogVerified": true,
+  "requiredMixinObserved": true,
+  "helper": {
+    "path": "E:\\Codex_work\\QiZhangVerdict\\scripts\\modern1206_mod_smoke.py",
+    "bytes": 38765,
+    "sha256": "b5a2cefbfc3099516070b24b830036739c3a27ad8f98890bce5d3c30c8fc5ffd"
+  },
+  "serverPid": 76084,
+  "expectedRuleCount": 42,
+  "expectedCatalogActions": {
+    "DENY": 38,
+    "ALERT": 4
+  },
+  "freshStatus": "[21:40:27] [Server thread/INFO] [minecraft/MinecraftServer]: QiZhangVerdict sessions=0, trackedIPs=0, accountPairs=0, rules=42, companion=required, vm=DENY, blacklist=DENY, rateBuckets=0, accountBans=0, deviceBans=0, deviceRequired=true",
+  "mixinLines": [
+    "[21:40:25] [Worker-Main-3/INFO] [mixin/]: Mixing CommandGate1206Mixin from qizhangverdict.mixins.json into net.minecraft.commands.Commands",
+    "[21:40:25] [Worker-Main-3/WARN] [mixin/]: qizhangverdict.mixins.json:CommandGate1206Mixin: Class version 65 required is higher than the class version supported by the current version of Mixin (JAVA_17 supports class version 61)"
+  ],
+  "protocolSupport": {
+    "minecraftProtocolVersion": "1.66.2",
+    "minecraftDataVersion": "3.117.0",
+    "protocol": 766,
+    "versionMetadata": {
+      "path": "E:\\CodexTemp\\QiZhangGuard\\bot\\node_modules\\minecraft-data\\minecraft-data\\data\\pc\\1.20.6\\version.json",
+      "bytes": 106,
+      "sha256": "3f0495fafe4e39a62a41bb0d80dec9c43d15ce690a018471c6aca715a60cb754"
+    },
+    "schema": {
+      "path": "E:\\CodexTemp\\QiZhangGuard\\bot\\node_modules\\minecraft-data\\minecraft-data\\data\\pc\\1.20.5\\protocol.json",
+      "bytes": 242450,
+      "sha256": "4204f6f1d4f5aa7ab0936fe0cb78fac3d249a06e534e4903d1937614667be241"
+    },
+    "versionList": {
+      "path": "E:\\CodexTemp\\QiZhangGuard\\bot\\node_modules\\minecraft-protocol\\src\\version.js",
+      "bytes": 368,
+      "sha256": "5b473bdb689c2fedf505b545be2096ab997d152f3b58338d7c624a5c1c73d1d1"
+    },
+    "scope": "Static package support and schema inspection; TCP success is a separate run result"
+  },
+  "syntheticPolicyOverrides": {
+    "limits.max-accounts-per-ip": "100",
+    "limits.attempts-per-minute": "1000",
+    "companion.timeout-seconds": "4 (10 for the operator gate)",
+    "vm.action": "ALERT initially; DENY in VM cases",
+    "ip.deny": "127.0.0.0/8 in CIDR case",
+    "limits.max-online-per-ip": "2 in final quota cases"
+  },
+  "executedProtocol": {
+    "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.20.6\\servers\\forge-42-03\\qa\\protocol_smoke.cjs",
+    "bytes": 21043,
+    "sha256": "2830d43816df28df2565a0966a837a64afd26ee14897b1b591d995d1090be7b8"
+  },
+  "protocolExitCode": 0,
+  "protocolElapsedSeconds": 81.792,
+  "forwardedCommands": 17,
+  "protocolResult": {
+    "passed": 26,
+    "cases": [
+      "normal companion joins",
+      "privileged commands blocked before report and restored afterward",
+      "missing companion expires",
+      "malformed report rejected",
+      "malformed report does not permanently ban account",
+      "first account on device allowed",
+      "same IP same device second account rejected",
+      "same IP second different device allowed",
+      "same IP third different device allowed",
+      "same IP fourth account rejected",
+      "disconnect releases device and IP quota",
+      "known cheat denied and sanctioned",
+      "same banned device different account denied",
+      "banned account denied with new device",
+      "administrator account and device unban restores access",
+      "administrator glob rule enforced",
+      "whitelist overrides matching blacklist item",
+      "removed whitelist takes effect",
+      "administrator removes default rule with colon ID",
+      "administrator restores removed blacklist entry",
+      "CIDR deny rejects login",
+      "known VM signal denied",
+      "VBS hypervisor alone does not ban physical machine",
+      "two-device setting first account",
+      "two-device setting second account",
+      "two-device setting rejects third account"
+    ],
+    "orePalette": [],
+    "maxChunkZeroPadding": 0,
+    "disconnectObservations": [
+      {
+        "name": "QVBot2",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"QiZhangGuard: required companion report timed out\"}"
+      },
+      {
+        "name": "BadWire",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"Malformed or oversized companion report\"}"
+      },
+      {
+        "name": "QVBot4",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"Only the configured number of accounts may use the same IP and device concurrently\"}"
+      },
+      {
+        "name": "QVBot7",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"Too many simultaneous accounts from this IP\"}"
+      },
+      {
+        "name": "CheatAccount",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"Reported mod matches an exact server blacklist rule\"}"
+      },
+      {
+        "name": "LinkedAccount",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"This reported device identifier is banned\"}"
+      },
+      {
+        "name": "CheatAccount",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"This account is banned by the server\"}"
+      },
+      {
+        "name": "QVBot9",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"Reported mod matches a server blacklist rule\"}"
+      },
+      {
+        "name": "QVBot11",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"Reported mod matches a server blacklist rule\"}"
+      },
+      {
+        "name": "QVBot13",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"Reported mod matches a server blacklist rule\"}"
+      },
+      {
+        "name": "QVBot14",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"This IP is denied by server policy\"}"
+      },
+      {
+        "name": "QVBot15",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"Companion reported a virtual machine indicator\"}"
+      },
+      {
+        "name": "QVBot19",
+        "source": "minecraft-protocol.deserializer.data",
+        "packetName": "kick_disconnect",
+        "packetState": "play",
+        "clientState": "play",
+        "reasonJson": "{\"type\":\"string\",\"value\":\"Too many simultaneous accounts from this IP\"}"
+      }
+    ],
+    "kind": "real TCP clients using synthetic self-reports; not rendered mod client or real VM",
+    "version": "1.20.6"
+  },
+  "protocolResultRecord": {
+    "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.20.6\\servers\\forge-42-03\\protocol-result.json",
+    "bytes": 5273,
+    "sha256": "a8192523501b7f1eec7eb6a48570c7d67bd9ab900cb7e6970acc6c78902a8633"
+  },
+  "policyBeforeRestore": {
+    "limits.max-online-per-ip": "2",
+    "limits.max-online-per-ip-device": "1",
+    "limits.max-accounts-per-ip": "100",
+    "limits.account-window-hours": "720",
+    "limits.attempts-per-minute": "1000",
+    "ip.allow": "",
+    "ip.deny": "",
+    "companion.required": "true",
+    "companion.timeout-seconds": "4",
+    "device.required": "true",
+    "vm.action": "ALERT",
+    "blacklist.action": "DENY",
+    "sanctions.on-deny": "BAN"
+  },
+  "restoreReloadStatus": "[21:41:49] [Server thread/INFO] [minecraft/MinecraftServer]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=20, rules=43, companion=required, vm=DENY, blacklist=DENY, rateBuckets=1, accountBans=5, deviceBans=4, deviceRequired=true",
+  "restoredStatus": "[21:41:50] [Server thread/INFO] [minecraft/MinecraftServer]: QiZhangVerdict sessions=0, trackedIPs=1, accountPairs=20, rules=43, companion=required, vm=DENY, blacklist=DENY, rateBuckets=1, accountBans=5, deviceBans=4, deviceRequired=true",
+  "strictPolicyRestored": true,
+  "elapsedSeconds": 96.158,
+  "console": {
+    "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.20.6\\servers\\forge-42-03\\console.log",
+    "bytes": 35986,
+    "sha256": "b4cc192ae47262421f6b1729f32cf43b77a95b9f3bf9a537355b141983f9f5af"
+  },
+  "warningAndErrorLines": [
+    "WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release",
+    "WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release",
+    "WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release",
+    "WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release",
+    "WARN StatusConsoleListener Advanced terminal features are not available in this environment",
+    "[21:40:17] [main/WARN] [ne.mi.fm.lo.FMLConfig/CORE]: Configuration file E:\\CodexTemp\\QiZhangVerdict\\compat-1.20.6\\servers\\forge-42-03\\config\\fml.toml is not correct. Correcting",
+    "[21:40:18] [main/WARN] [mixin/]: Compatibility level JAVA_17 specified by qizhangverdict.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).",
+    "[21:40:18] [main/WARN] [os.ut.FileUtil/]: Configuration conflict: there is more than one oshi.properties file on the classpath: [jar:file:///E:/CodexTemp/QiZhangVerdict/compat-1.20.6/servers/forge-42-03/libraries/com/github/oshi/oshi-core/6.4.10/oshi-core-6.4.10.jar!/oshi.properties, jar:file:/E:/CodexTemp/QiZhangVerdict/compat-1.20.6/servers/forge-42-03/libraries/com/github/oshi/oshi-core/6.4.10/oshi-core-6.4.10.jar!/oshi.properties, jar:file:///E:/CodexTemp/QiZhangVerdict/compat-1.20.6/servers/forge-42-03/libraries/com/github/oshi/oshi-core/6.4.10/oshi-core-6.4.10.jar!/oshi.properties, jar:file:/E:/CodexTemp/QiZhangVerdict/compat-1.20.6/servers/forge-42-03/libraries/com/github/oshi/oshi-core/6.4.10/oshi-core-6.4.10.jar!/oshi.properties]",
+    "[21:40:19] [main/WARN] [os.ut.FileUtil/]: Configuration conflict: there is more than one oshi.architecture.properties file on the classpath: [jar:file:///E:/CodexTemp/QiZhangVerdict/compat-1.20.6/servers/forge-42-03/libraries/com/github/oshi/oshi-core/6.4.10/oshi-core-6.4.10.jar!/oshi.architecture.properties, jar:file:/E:/CodexTemp/QiZhangVerdict/compat-1.20.6/servers/forge-42-03/libraries/com/github/oshi/oshi-core/6.4.10/oshi-core-6.4.10.jar!/oshi.architecture.properties, jar:file:///E:/CodexTemp/QiZhangVerdict/compat-1.20.6/servers/forge-42-03/libraries/com/github/oshi/oshi-core/6.4.10/oshi-core-6.4.10.jar!/oshi.architecture.properties, jar:file:/E:/CodexTemp/QiZhangVerdict/compat-1.20.6/servers/forge-42-03/libraries/com/github/oshi/oshi-core/6.4.10/oshi-core-6.4.10.jar!/oshi.architecture.properties]",
+    "[21:40:25] [Worker-Main-3/WARN] [mixin/]: qizhangverdict.mixins.json:CommandGate1206Mixin: Class version 65 required is higher than the class version supported by the current version of Mixin (JAVA_17 supports class version 61)",
+    "[21:40:26] [Server thread/WARN] [minecraft/DedicatedServer]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!",
+    "[21:40:26] [Server thread/WARN] [minecraft/DedicatedServer]: The server will make no attempt to authenticate usernames. Beware.",
+    "[21:40:26] [Server thread/WARN] [minecraft/DedicatedServer]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.",
+    "[21:40:26] [Server thread/WARN] [minecraft/DedicatedServer]: To change this, set \"online-mode\" to \"true\" in the server.properties file.",
+    "[21:40:26] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Configuration file .\\world\\serverconfig\\forge-server.toml is not correct. Correcting",
+    "[21:40:26] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key server was corrected from null to its default, SimpleCommentedConfig:{}. ",
+    "[21:40:26] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key server.removeErroringBlockEntities was corrected from null to its default, false. ",
+    "[21:40:26] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key server.removeErroringEntities was corrected from null to its default, false. ",
+    "[21:40:26] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key server.fullBoundingBoxLadders was corrected from null to its default, false. ",
+    "[21:40:26] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key server.permissionHandler was corrected from null to its default, forge:default_handler. ",
+    "[21:40:26] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key server.advertiseDedicatedServerToLan was corrected from null to its default, true. ",
+    "[21:40:26] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key server.useItemWithDurationZero was corrected from null to its default, false. ",
+    "[21:40:27] [LanServerPinger #1/WARN] [minecraft/LanServerPinger]: LanServerPinger: Network is unreachable: sendto"
+  ],
+  "protocolDecoderErrors": [
+    "PartialReadError: Read error for undefined : Missing characters in string, found size is 99290 expected size was 105172",
+    "PartialReadError: Read error for undefined : Missing characters in string, found size is 99290 expected size was 105172",
+    "PartialReadError: Read error for undefined : Missing characters in string, found size is 99290 expected size was 105172",
+    "PartialReadError: Read error for undefined : Missing characters in string, found size is 99290 expected size was 105172",
+    "PartialReadError: Read error for undefined : Missing characters in string, found size is 99290 expected size was 105172",
+    "PartialReadError: Read error for undefined : Missing characters in string, found size is 99290 expected size was 105172",
+    "PartialReadError: Read error for undefined : Missing characters in string, found size is 99290 expected size was 105172",
+    "PartialReadError: Read error for undefined : Missing characters in string, found size is 99290 expected size was 105172",
+    "PartialReadError: Read error for undefined : Missing characters in string, found size is 99290 expected size was 105172",
+    "PartialReadError: Read error for undefined : Missing characters in string, found size is 99290 expected size was 105172",
+    "PartialReadError: Read error for undefined : Missing characters in string, found size is 99290 expected size was 105172",
+    "PartialReadError: Read error for undefined : Missing characters in string, found size is 99290 expected size was 105172",
+    "PartialReadError: Read error for undefined : Missing characters in string, found size is 99290 expected size was 105172",
+    "PartialReadError: Read error for undefined : Missing characters in string, found size is 99290 expected size was 105172",
+    "PartialReadError: Read error for undefined : Missing characters in string, found size is 99290 expected size was 105172",
+    "PartialReadError: Read error for undefined : Missing characters in string, found size is 99290 expected size was 105172",
+    "PartialReadError: Read error for undefined : Missing characters in string, found size is 99290 expected size was 105172",
+    "PartialReadError: Read error for undefined : Missing characters in string, found size is 99290 expected size was 105172",
+    "PartialReadError: Read error for undefined : Missing characters in string, found size is 99290 expected size was 105172",
+    "PartialReadError: Read error for undefined : Missing characters in string, found size is 99290 expected size was 105172",
+    "PartialReadError: Read error for undefined : Missing characters in string, found size is 99290 expected size was 105172",
+    "PartialReadError: Read error for undefined : Missing characters in string, found size is 99290 expected size was 105172",
+    "PartialReadError: Read error for undefined : Missing characters in string, found size is 99290 expected size was 105172",
+    "PartialReadError: Read error for undefined : Missing characters in string, found size is 99290 expected size was 105172",
+    "PartialReadError: Read error for undefined : Missing characters in string, found size is 99290 expected size was 105172",
+    "PartialReadError: Read error for undefined : Missing characters in string, found size is 99290 expected size was 105172"
+  ],
+  "protocolConsole": {
+    "path": "E:\\CodexTemp\\QiZhangVerdict\\compat-1.20.6\\servers\\forge-42-03\\protocol-console.log",
+    "bytes": 40209,
+    "sha256": "0b889337974bcc0cadbb60103833fc5945769ed54cbcdb9969a0c8003292b0f3"
+  },
+  "passed": true
+}

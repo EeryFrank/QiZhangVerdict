@@ -25,5 +25,14 @@ if [[ "$QV_TARGET" == core-bukkit ]]; then
   python3 -B -m unittest discover -s scripts -p test_artifact_core_checks.py -v 2>&1 | tee "$qv_logs/artifact-core-validator-tests.log"
 else
   (cd "$qv_project" && bash ./gradlew "${gradle_options[@]}" build :fabric:commandParserSmoke) 2>&1 | tee "$qv_logs/gradle.log"
+  if [[ "$QV_TARGET" == mods-1.20.6 ]]; then
+    # ForgeGradle 6 requires Gradle 8; the Fabric/Neo parent uses Gradle 9.
+    (cd "$qv_project/forge" && bash ./gradlew --no-daemon --max-workers=1 --console=plain --stacktrace \
+      "--project-cache-dir=$qv_runtime/forge-project-cache" \
+      "-PqzRuntimeRoot=$qv_runtime/forge-runtime" \
+      "-Porg.gradle.java.installations.paths=$QV_JAVA_PATHS" \
+      -Porg.gradle.java.installations.auto-detect=false \
+      -Porg.gradle.java.installations.auto-download=false build) 2>&1 | tee "$qv_logs/forge-gradle.log"
+  fi
 fi
 python3 -B scripts/ci_modern_artifacts.py stage --target "$QV_TARGET" --output "ci-artifacts/$QV_TARGET"

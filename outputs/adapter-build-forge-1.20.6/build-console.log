@@ -1,0 +1,81 @@
+Picked up JAVA_TOOL_OPTIONS: -Djava.io.tmpdir=E:/CodexTemp/QiZhangVerdict/compat-1.20.6/builds/forge-42-02/temp -Dqzguard.testDir=E:/CodexTemp/QiZhangVerdict/compat-1.20.6/builds/forge-42-02/core-tests -Djavax.net.ssl.trustStoreType=Windows-ROOT -Djavax.net.ssl.trustStore=NONE
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.12.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+
+> Configure project :
+Neither the 'eclipse' nor the 'idea' plugins were found, but IDE resource copy has been enabled.
+
+> Task :compileJava FROM-CACHE
+> Task :processResources
+> Task :classes
+> Task :jar
+> Task :sourcesJar
+> Task :assemble
+
+> Task :compileSmokeJava
+E:\Codex_work\QiZhangVerdict\platforms\1.20.6\forge\src\smoke\java\cn\qizhang\guard\forge\ForgePayloadSmoke.java:13: 警告: [removal] ResourceLocation 中的 ResourceLocation(String,String) 已过时, 且标记为待删除
+        var channel = ChannelBuilder.named(new ResourceLocation("qzguard", "payload_contract"))
+                                           ^
+1 个警告
+
+> Task :processSmokeResources NO-SOURCE
+> Task :smokeClasses
+
+> Task :commandParserSmoke
+Picked up JAVA_TOOL_OPTIONS: -Djava.io.tmpdir=E:/CodexTemp/QiZhangVerdict/compat-1.20.6/builds/forge-42-02/temp -Dqzguard.testDir=E:/CodexTemp/QiZhangVerdict/compat-1.20.6/builds/forge-42-02/core-tests -Djavax.net.ssl.trustStoreType=Windows-ROOT -Djavax.net.ssl.trustStore=NONE
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener Advanced terminal features are not available in this environment
+PASS: production command tree accepts unquoted device digests and legacy rule IDs, glob spaces and ban reasons; rejects non-admin access and invalid pages
+
+> Task :connectionDispatchSmoke
+Picked up JAVA_TOOL_OPTIONS: -Djava.io.tmpdir=E:/CodexTemp/QiZhangVerdict/compat-1.20.6/builds/forge-42-02/temp -Dqzguard.testDir=E:/CodexTemp/QiZhangVerdict/compat-1.20.6/builds/forge-42-02/core-tests -Djavax.net.ssl.trustStoreType=Windows-ROOT -Djavax.net.ssl.trustStore=NONE
+PASS forge-connection-dispatch 1: queues before inspecting current login state
+PASS forge-connection-dispatch 2: queued login accepts original live PLAY listener
+PASS forge-connection-dispatch 3: server switch rejects old transport
+PASS forge-connection-dispatch 4: same transport with replaced listener is rejected
+PASS forge-connection-dispatch 5: retained local listener cannot hide replacement on the transport
+PASS forge-connection-dispatch 6: closed transport is rejected even when objects remain
+PASS forge-connection-dispatch 7: configuration transition rejects queued PLAY payload
+PASS forge-connection-dispatch 8: disconnected listener cannot receive queued payload
+PASS forge-connection-dispatch 9: new challenge on same valid connection still works
+PASS forge-connection-dispatch 10: null origins are never queued
+PASS forge-connection-dispatch 11: connection comparison uses identity not equals
+PASS forge-connection-dispatch 12: listener comparison uses identity not equals
+PASS forge-connection-dispatch 13: delayed response cannot use closed connection
+PASS forge-connection-dispatch 14: delayed response cannot use non-PLAY phase
+PASS forge-connection-dispatch 15: delayed response may use exact live PLAY origin
+PASS forge-connection-dispatch total=15
+
+> Task :mixinCompatibilitySmoke
+Picked up JAVA_TOOL_OPTIONS: -Djava.io.tmpdir=E:/CodexTemp/QiZhangVerdict/compat-1.20.6/builds/forge-42-02/temp -Dqzguard.testDir=E:/CodexTemp/QiZhangVerdict/compat-1.20.6/builds/forge-42-02/core-tests -Djavax.net.ssl.trustStoreType=Windows-ROOT -Djavax.net.ssl.trustStore=NONE
+PASS: packaged required Mixin config parsed by Mixin 0.8.5+Jenkins-b310.git-155314e6e91465dad727e621a569906a410cd6f4; level=JAVA_17; classMajor=65; languageFeatures=0; ASM maxClassMajor=68
+
+> Task :payloadCodecSmoke
+Picked up JAVA_TOOL_OPTIONS: -Djava.io.tmpdir=E:/CodexTemp/QiZhangVerdict/compat-1.20.6/builds/forge-42-02/temp -Dqzguard.testDir=E:/CodexTemp/QiZhangVerdict/compat-1.20.6/builds/forge-42-02/core-tests -Djavax.net.ssl.trustStoreType=Windows-ROOT -Djavax.net.ssl.trustStore=NONE
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener Advanced terminal features are not available in this environment
+PASS: actual EventNetworkChannel raw round trips, 30000-byte bounds, readable slice and defensive buffer ownership
+
+> Task :compileTestJava NO-SOURCE
+> Task :processTestResources NO-SOURCE
+> Task :testClasses UP-TO-DATE
+> Task :test NO-SOURCE
+> Task :check
+> Task :build
+
+[Incubating] Problems report is available at: file:///E:/Codex_work/QiZhangVerdict/platforms/1.20.6/forge/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.12.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 25s
+9 actionable tasks: 8 executed, 1 from cache

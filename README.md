@@ -4,9 +4,9 @@
 
 ## 1.20.6 开发候选
 
-新增 Minecraft **1.20.6 Fabric / NeoForge**，组件 `0.5.0-dev`，使用 Java 21。两份成品各通过 102 项包内核心检查、26 组专服连接检查及默认策略下超过 60 秒的图形客户端验证，截图已另行复核。见[构建](docs/adapter-1.20.6.md)、[专服](docs/runtime-server-1.20.6.md)、[客户端](docs/runtime-client-1.20.6.md)。这些新安装包尚未发布；现有公开测试版仍是下方的 0.4 预览。
+新增 Minecraft **1.20.6 Fabric / NeoForge / Forge**，组件 `0.5.0-dev`，使用 Java 21。三份成品各通过 102 项包内核心检查、26 组专服连接检查及默认策略下超过 60 秒的图形客户端验证，截图已另行复核。Fabric/NeoForge 见[构建](docs/adapter-1.20.6.md)、[专服](docs/runtime-server-1.20.6.md)、[客户端](docs/runtime-client-1.20.6.md)；Forge 见[构建](docs/adapter-forge-1.20.6.md)、[专服](docs/runtime-server-forge-1.20.6.md)、[客户端](docs/runtime-client-forge-1.20.6.md)。这三份与既有 20 份原件组成 [0.5 预览候选](docs/preview-0.5.0-dev-preview.1.md)，发布状态以两站 Release 与后续回执为准；此段不代表上传已完成。
 
-当前开发目录扩为 **42 个精确标识（38 DENY、4 ALERT）**，新增 `gateclient`、`genshin`、`meteor-crash-addon`，附固定来源与许可说明。既有管理员名单及已发布 20 个 JAR 保持原样，更新方法见[目录说明](docs/catalog.md)。本轮没有验证 Forge 1.20.6、插件服互通、真实虚拟机攻防或全部作弊类型。
+当前开发目录扩为 **42 个精确标识（38 DENY、4 ALERT）**，新增 `gateclient`、`genshin`、`meteor-crash-addon`，附固定来源与许可说明。既有管理员名单及已发布 20 个 JAR 保持原样，更新方法见[目录说明](docs/catalog.md)。本轮没有验证 1.20.6 插件服互通、真实虚拟机攻防或全部作弊类型。
 
 ## 测试预览 0.4.0-dev-preview.1
 
@@ -117,7 +117,7 @@ sanctions.on-deny=BAN
 
 0.2.0-test.1 首次生成的 `blacklist.tsv` 包含 **37 个精确 ID：33 条 DENY、4 条 ALERT**。`baritone`、`baritoe`、`atianxray`、`keystrokesmod` 默认仅告警，服主可按玩法调整。不会因 `xray` 子串封掉正常的 `antixray`，也不默认封 Sodium、Iris、JEI、地图、投影等正常模组；存在正常项目重名的 `bigrat` 和通用 `template` ID 未设为默认拒绝。
 
-当前开发目录已扩展为 [39 条可核验规则与合并工具](docs/catalog.md)，新增 `ferox`、`wurstplusthree` 两条精确 DENY，合计 35 条 DENY、4 条 ALERT；每条附固定源码提交和描述符证据。已有安装的名单文件保持原样，包括管理员的 OFF 设置和删除记录；升级不会自动回填。管理员可审阅后显式合并新增规则。已发布 0.2.0-test.1 / 0.3.0-dev-preview.1 成品仍为原来的 37 条，历史发布包的默认规则与目录数量以对应 tag 为准。
+当前开发目录包含 [42 条可核验规则与合并工具](docs/catalog.md)，合计 38 条 DENY、4 条 ALERT；每条附固定源码提交和描述符证据。0.4 新增 `ferox`、`wurstplusthree`，本轮进一步新增 `gateclient`、`genshin`、`meteor-crash-addon`。已有安装的名单文件保持原样，包括管理员的 OFF 设置和删除记录；升级不会自动回填。管理员可审阅后显式合并新增规则。已发布 0.2 / 0.3 的 18 份成品仍默认 37 条，0.4 新增的两份仍默认 39 条；各历史包以对应 tag 为准。
 
 名单不是全市场数据库，也无法发现所有改名、注入或伪造上报的作弊。资源包透视和未知外挂需要服务端矿物混淆及行为检测；[锁定依赖与配置](integrations/README.md) 提供 Paper、Fabric、Forge、NeoForge 安装组合。Forge/NeoForge 组合含矿物混淆，目前没有 Grim 行为预测引擎，不能宣称各平台行为检测能力相同。
 

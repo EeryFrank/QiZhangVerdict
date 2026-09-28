@@ -1,0 +1,93 @@
+// SPDX-License-Identifier: GPL-3.0-only
+// Standalone ForgeGradle 6 build: do not include this project in the Gradle 9 parent.
+plugins {
+    id 'java'
+    id 'net.minecraftforge.gradle' version '6.0.54'
+}
+
+group = 'cn.qizhang.guard'
+version = '0.5.0-dev'
+base { archivesName = 'qizhangverdict-forge-1.20.6' }
+java { toolchain.languageVersion = JavaLanguageVersion.of(21); withSourcesJar() }
+
+ext.qvLicenseRoot = file('../../..')
+apply from: new File(qvLicenseRoot, 'gradle/license-resources.gradle')
+def runtimeRoot = providers.gradleProperty('qzRuntimeRoot').getOrElse(
+    System.getProperty('os.name').toLowerCase().contains('windows')
+        ? 'E:/CodexTemp/QiZhangVerdict/compat-1.20.6/forge-runtime'
+        : new File(System.getProperty('java.io.tmpdir'), 'qizhangverdict-forge-1.20.6').absolutePath)
+
+sourceSets {
+    main {
+        java.srcDirs += [new File(qvLicenseRoot, 'core/src/main/java'),
+            new File(qvLicenseRoot, 'client-common/src/main/java'), file('../common/src/main/java')]
+        resources.srcDir new File(qvLicenseRoot, 'core/src/main/resources')
+    }
+    smoke {
+        java.srcDir file('../common/src/smoke/java')
+        // EventNetworkChannel uses FriendlyByteBuf, not the typed Fabric/Neo codec.
+        // ForgePayloadSmoke below exercises the raw helper used by the production adapter.
+        java.exclude '**/PayloadCodecSmoke.java'
+        compileClasspath += sourceSets.main.output + sourceSets.main.compileClasspath
+        runtimeClasspath += sourceSets.main.output + sourceSets.main.runtimeClasspath
+    }
+}
+
+minecraft {
+    mappings channel: 'official', version: '1.20.6'
+    // Forge 50.2.0 MDK runs with official names. No SRG reobfuscation or Fabric refmap.
+    reobf = false
+    copyIdeResources = true
+    runs {
+        configureEach {
+            workingDirectory new File(runtimeRoot, name)
+            property 'forge.logging.console.level', 'info'
+            mods { qizhangverdict { source sourceSets.main } }
+        }
+        client { }
+        server { args '--nogui' }
+    }
+}
+
+repositories { mavenCentral() }
+dependencies { minecraft 'net.minecraftforge:forge:1.20.6-50.2.0' }
+
+tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8'; options.release = 21 }
+tasks.named('processResources', ProcessResources) {
+    inputs.property 'version', project.version
+    filesMatching('META-INF/mods.toml') { expand version: project.version }
+}
+tasks.named('jar', Jar) {
+    manifest { attributes 'MixinConfigs': 'qizhangverdict.mixins.json', 'Implementation-Version': project.version }
+}
+
+['commandParserSmoke': 'cn.qizhang.guard.minecraft.CommandParserSmoke',
+ 'payloadCodecSmoke': 'cn.qizhang.guard.forge.ForgePayloadSmoke',
+ 'connectionDispatchSmoke': 'cn.qizhang.guard.forge.ConnectionDispatchSmoke',
+ 'mixinCompatibilitySmoke': 'cn.qizhang.guard.forge.MixinCompatibilitySmoke'].each { taskName, className ->
+    tasks.register(taskName, JavaExec) {
+        dependsOn tasks.named('smokeClasses')
+        classpath = sourceSets.smoke.runtimeClasspath
+        mainClass = className
+        javaLauncher = javaToolchains.launcherFor { languageVersion = JavaLanguageVersion.of(21) }
+        maxHeapSize = '256m'
+        workingDir = new File(runtimeRoot, taskName)
+        if (taskName == 'mixinCompatibilitySmoke') dependsOn tasks.named('jar')
+        doFirst {
+            workingDir.mkdirs()
+            if (taskName == 'mixinCompatibilitySmoke') {
+                setArgs([tasks.named('jar', Jar).get().archiveFile.get().asFile.absolutePath])
+            }
+        }
+    }
+}
+tasks.named('check') {
+    dependsOn tasks.named('commandParserSmoke'), tasks.named('payloadCodecSmoke'), tasks.named('connectionDispatchSmoke'), tasks.named('mixinCompatibilitySmoke')
+}
+
+// Preserve the official MDK layout: each module has one combined classes/resources directory.
+sourceSets.each {
+    def destination = layout.buildDirectory.dir("sourcesSets/$it.name")
+    it.output.resourcesDir = destination
+    it.java.destinationDirectory = destination
+}
