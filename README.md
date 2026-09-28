@@ -2,9 +2,13 @@
 
 插件标识 **QiZhangVerdict**，模组 ID `qizhangverdict`，管理命令 `/qzverdict`。本项目提供 IP/账号/设备准入、可管理的黑白名单、客户端协作检查和设备关联封禁。行为预测与矿物混淆使用独立安装、固定版本的开源组件，具体见 [集成安装](integrations/README.md)。
 
-## 1.20.6 开发候选
+## 测试预览 0.5.0-dev-preview.1
 
-新增 Minecraft **1.20.6 Fabric / NeoForge / Forge**，组件 `0.5.0-dev`，使用 Java 21。三份成品各通过 102 项包内核心检查、26 组专服连接检查及默认策略下超过 60 秒的图形客户端验证，截图已另行复核。Fabric/NeoForge 见[构建](docs/adapter-1.20.6.md)、[专服](docs/runtime-server-1.20.6.md)、[客户端](docs/runtime-client-1.20.6.md)；Forge 见[构建](docs/adapter-forge-1.20.6.md)、[专服](docs/runtime-server-forge-1.20.6.md)、[客户端](docs/runtime-client-forge-1.20.6.md)。这三份与既有 20 份原件组成 [0.5 预览候选](docs/preview-0.5.0-dev-preview.1.md)，发布状态以两站 Release 与后续回执为准；此段不代表上传已完成。
+23 个安装包及对应源码已发布至 [GitHub](https://github.com/EeryFrank/QiZhangVerdict/releases/tag/v0.5.0-dev-preview.1) 和 [GitLab](https://gitlab.com/EeryFrank/QiZhangVerdict/-/releases/v0.5.0-dev-preview.1)，原始实现采用 **GPL-3.0-only**。每站提供 34 个附件，包含当前源码与三份继承组件的原版对应源码 ZIP。
+
+新增 Minecraft **1.20.6 Fabric / NeoForge / Forge**，组件 `0.5.0-dev`，使用 Java 21。三份成品各通过 102 项包内核心检查、26 组专服连接检查及默认策略下超过 60 秒的图形客户端验证，截图已另行复核。Fabric/NeoForge 见[构建](docs/adapter-1.20.6.md)、[专服](docs/runtime-server-1.20.6.md)、[客户端](docs/runtime-client-1.20.6.md)；Forge 见[构建](docs/adapter-forge-1.20.6.md)、[专服](docs/runtime-server-forge-1.20.6.md)、[客户端](docs/runtime-client-forge-1.20.6.md)。这三份与既有 20 份原件组成 [0.5 预览](docs/preview-0.5.0-dev-preview.1.md)。
+
+两站 68 份附件均已匿名下载并核对大小与 SHA256，见[发布回执](outputs/publish-receipt-0.5.0-dev-preview.1.json)；安装和源码 ZIP 见[独立审计](outputs/packaging-validation-0.5.0-dev-preview.1.json)。最终标签源码固定为 `13b3e05996f2abaf97a4616fe7c9a2e5d5288916`。同标签 GitHub 现代 8 项、旧版 5 项全部成功；GitLab 13 项因配额未启动，不计为通过，详见[最终标签 CI](outputs/release-ci-validation-0.5.0-dev-preview.1.json)。CI 重编不替换本机实测的发布成品。
 
 当前开发目录扩为 **42 个精确标识（38 DENY、4 ALERT）**，新增 `gateclient`、`genshin`、`meteor-crash-addon`，附固定来源与许可说明。既有管理员名单及已发布 20 个 JAR 保持原样，更新方法见[目录说明](docs/catalog.md)。本轮没有验证 1.20.6 插件服互通、真实虚拟机攻防或全部作弊类型。
 

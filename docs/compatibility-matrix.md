@@ -1,6 +1,6 @@
 # 兼容验证进度
 
-开发候选 `0.5.0-dev` 新增 **1.20.6 Fabric / NeoForge**（Java 21），尚未发布。两组最终成品各通过 102 项包内核心检查、26 组 TCP 准入检查，以及严格默认策略下超过 60 秒的同加载器图形客户端验证；13 项策略和 42 条默认规则保持不变，Codex 已另行审图，双端正常退出 0。TCP 使用明示的临时测试策略，不能视为全程保持默认配置。详见[构建](adapter-1.20.6.md)、[专服](runtime-server-1.20.6.md)、[客户端](runtime-client-1.20.6.md)。Forge 1.20.6、插件服互通及其他未列出的组合仍待独立验证。
+已发布的 [0.5.0-dev-preview.1](preview-0.5.0-dev-preview.1.md) 新增 **1.20.6 Fabric / NeoForge / Forge**（组件 `0.5.0-dev`、Java 21），两站共 68 个附件已匿名下载核对，见[发布回执](../outputs/publish-receipt-0.5.0-dev-preview.1.json)。三组最终成品各通过 102 项包内核心检查、26 组 TCP 准入检查，以及严格默认策略下超过 60 秒的同加载器图形客户端验证；图形测试的 13 项策略和 42 条默认规则保持不变，Codex 已另行审图，客户端与专服正常退出 0。TCP 使用明示的临时测试策略并在结束后恢复 13 项默认属性，不能视为全程保持默认配置。Fabric/NeoForge 详见[构建](adapter-1.20.6.md)、[专服](runtime-server-1.20.6.md)、[客户端](runtime-client-1.20.6.md)；Forge 详见[构建](adapter-forge-1.20.6.md)、[专服](runtime-server-forge-1.20.6.md)、[客户端](runtime-client-forge-1.20.6.md)。失败尝试及协议解码告警保留，用户正式验收仍未完成；本轮未验证 1.20.6 插件服互通、代理及其他未列出的组合。
 
 已发布的 [0.4.0-dev-preview.1](preview-0.4.0-dev-preview.1.md) 中，组件 `0.4.0-dev` 新增 Minecraft **1.21.11**，仅覆盖以下两组，使用 Java 21：
 
