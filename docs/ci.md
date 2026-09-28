@@ -18,6 +18,12 @@ GitHub 的 `qizhangverdict-twelve-modern-jars-<commit>`、GitLab 的 `collect` j
 
 [GitLab 同提交流水线](https://gitlab.com/EeryFrank/QiZhangVerdict/-/pipelines/2882969251)十二项作业均为 `ci_quota_exceeded`，`started_at` 全为空，未执行。详见[公开报告及十三份附件](../outputs/ci-development-1.21.11.json)。本轮保留十二份原始作业日志与去除作者邮箱的 API 摘要，没有下载审查 CI JAR，也不以 CI 重建包替换本机实测成品；集成测试中的一项条件跳过及上游警告仍在报告中。这是开发提交记录，最终发布标签另行核验。
 
+## 0.4.0-dev-preview.1 标签构建与发布
+
+发布标签 `v0.4.0-dev-preview.1` 固定在 `eb6d483e64e29a15501df953f7d59a9645a6905a`。[GitHub 现代构建](https://github.com/EeryFrank/QiZhangVerdict/actions/runs/36400708761)七项作业和[旧版构建](https://github.com/EeryFrank/QiZhangVerdict/actions/runs/36400708734)五项作业全部成功；[GitLab 同标签流水线](https://gitlab.com/EeryFrank/QiZhangVerdict/-/pipelines/2888799109)十二项均因 `ci_quota_exceeded` 未启动，`started_at` 全为空，不计为通过。十四份原始日志及去除作者邮箱的摘要见[标签 CI 报告](../outputs/release-ci-validation-0.4.0-dev-preview.1.json)。
+
+本轮 NeoForge 1.21.11 的 `:neoforge:test` 使用 `FROM-CACHE`，没有声称两项 JUnit 在此标签运行中重新执行；开发提交的实际 FML 初始化检查单独记录。其它实际执行和上游告警以标签原日志为准。该轮未下载审查 CI JAR；发布继续使用原有本机实测的二十个精确成品。两站各三十个附件的匿名下载与 SHA256 核验见[发布回执](../outputs/publish-receipt-0.4.0-dev-preview.1.json)，三份对应源码的归属及 ZIP 字节检查见[独立归档审查](../outputs/packaging-validation-0.4.0-dev-preview.1.json)。这些补录不修改发布标签或附件。
+
 ## 0.3.0-dev-preview.1 标签构建与发布
 
 发布标签 `v0.3.0-dev-preview.1` 固定在 `f633a30badb882cfdb8606a7fefd88e5ce28bb2b`。[GitHub 现代构建](https://github.com/EeryFrank/QiZhangVerdict/actions/runs/36144762932)的 6 项任务和[旧版构建](https://github.com/EeryFrank/QiZhangVerdict/actions/runs/36144762898)的 5 项任务全部成功；它们均由该标签触发。[GitLab 同标签流水线](https://gitlab.com/EeryFrank/QiZhangVerdict/-/pipelines/2882694889)的 11 项任务均因 `ci_quota_exceeded` 未启动，`started_at` 全部为空，不计为通过。

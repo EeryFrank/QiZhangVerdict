@@ -2,7 +2,13 @@
 
 插件标识 **QiZhangVerdict**，模组 ID `qizhangverdict`，管理命令 `/qzverdict`。本项目提供 IP/账号/设备准入、可管理的黑白名单、客户端协作检查和设备关联封禁。行为预测与矿物混淆使用独立安装、固定版本的开源组件，具体见 [集成安装](integrations/README.md)。
 
-当前开发分支新增 Minecraft **1.21.11 Fabric / NeoForge**，组件版本 `0.4.0-dev`，使用 Java 21 和 GPL-3.0-only。两份成品各通过 99 项核心检查、26 组连接检查，以及默认策略下至少 60 秒的真实图形客户端验证；具体范围、失败记录与安装选择见 [0.4 预览说明](docs/preview-0.4.0-dev-preview.1.md)。该记录不修改下方历史发布附件，也不代表其他 1.21 小版本或全部作弊类型已通过验证。
+## 测试预览 0.4.0-dev-preview.1
+
+公开源码及 20 个安装包：[GitHub](https://github.com/EeryFrank/QiZhangVerdict/releases/tag/v0.4.0-dev-preview.1) · [GitLab](https://gitlab.com/EeryFrank/QiZhangVerdict/-/releases/v0.4.0-dev-preview.1)。原创实现采用 **GPL-3.0-only**，两站分别附安装合集、三份对应源码 ZIP、LICENSE / NOTICE 和 SHA256 校验文件。
+
+本版新增 Minecraft **1.21.11 Fabric / NeoForge**，组件版本 `0.4.0-dev`，使用 Java 21。两份新成品各通过 99 项核心检查、26 组连接检查，以及默认策略下至少 60 秒的真实图形客户端验证。原 18 个组件保留原始字节和原有验证范围；安装选择、升级及对应源码关系见 [0.4 预览说明](docs/preview-0.4.0-dev-preview.1.md)。新增两份首次默认 39 条规则，旧 18 份仍默认 37 条；现有管理员规则不会自动覆盖。这些结果不代表其他小版本、全部作弊类型或真实虚拟机攻防已验证。
+
+两站各 30 个附件均已匿名下载并核对大小和 SHA256，见[发布回执](outputs/publish-receipt-0.4.0-dev-preview.1.json)；安装及源码 ZIP 已完成[独立审查](outputs/packaging-validation-0.4.0-dev-preview.1.json)。最终标签固定源码为 `eb6d483e64e29a15501df953f7d59a9645a6905a`。GitHub 12 项构建全部成功，GitLab 12 项因额度不足未启动，详情与缓存执行边界见[最终标签 CI](outputs/release-ci-validation-0.4.0-dev-preview.1.json)。以下历史发布和本次标签、附件均保持原字节，回执在发布后补录。
 
 ## 测试预览 0.3.0-dev-preview.1
 

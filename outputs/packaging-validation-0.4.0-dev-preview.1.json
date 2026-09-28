@@ -1,0 +1,228 @@
+{
+  "passed": true,
+  "sourceCommit": "eb6d483e64e29a15501df953f7d59a9645a6905a",
+  "manifestSha256": "3e7ca200512b1e4b220b932fc09b46a4b74225276cfd55a7b6f10753eda811d2",
+  "packagingReceipt": {
+    "file": "QiZhangVerdict-0.4.0-dev-preview.1-packaging.json",
+    "sha256": "ef6158aa1a79965b3acfca9b5678fe1812aed259cca226a3ab751e35bfb3b7b1"
+  },
+  "artifactCount": 20,
+  "allArtifactsMatchRootFrozenPins": true,
+  "inheritedOriginalArtifacts": 18,
+  "newArtifacts": 2,
+  "historicalSources": [
+    {
+      "file": "QiZhangVerdict-0.2.0-test.1-sources.zip",
+      "sha256": "2a0ee6445ceed36baf6beb03218d3709993aebd1b47400eeed39ba344709d6cc",
+      "bytes": 7844940,
+      "originalSourceCommit": "310e20b117183182d7767e349aa81cb1d935075c",
+      "sourceBlobsByteIdentical": 1173,
+      "crcPassed": true,
+      "markdownLinksVerified": 222,
+      "knownPrivateValueLeaks": 0
+    },
+    {
+      "file": "QiZhangVerdict-0.3.0-dev-preview.1-sources.zip",
+      "sha256": "75f59676ebd7c033ab051705e6214b2e0fea5f2a0c00311cdc69908593e22940",
+      "bytes": 9725615,
+      "originalSourceCommit": "f633a30badb882cfdb8606a7fefd88e5ce28bb2b",
+      "sourceBlobsByteIdentical": 1640,
+      "crcPassed": true,
+      "markdownLinksVerified": 269,
+      "knownPrivateValueLeaks": 0
+    }
+  ],
+  "artifactLockSha256": "b1f034982ccf5219e195775aa0a368ab8bc158137e2197e3449c300305814cce",
+  "privateInputCounts": {
+    "stateFiles": 23,
+    "scopeFiles": 38,
+    "installationIdFiles": 0
+  },
+  "newRuntimeEvidenceGate": {
+    "historical12ModRuntime": {
+      "inheritedOriginalModArtifacts": 12,
+      "inheritedMatchingServerCases": 12,
+      "oldBukkitInteroperabilityCasesCountedAsNewBukkit": 0,
+      "pngBytesVerified": 12,
+      "historicalManifestBasis": "Exact final-commit source Git blob; remains in source ZIP",
+      "clientReport": "outputs/client-validation-0.2.0-test.1.json",
+      "retestedDuringThisReleaseByThisAuditor": false
+    },
+    "historicalBukkit": {
+      "report": "outputs/bukkit-validation-0.2.1-dev.json",
+      "exactJarCoreAssertions": 97,
+      "newTcpAssertionGroups": 52,
+      "minecraftVersions": [
+        "1.20.1",
+        "1.21.1"
+      ],
+      "artifactSha256": "9849a60374ea1bb18aae2af0ee479593312437a9665b803a3f847a07c570b2c8",
+      "retainedDecoderPartialReadErrors": {
+        "1.20.1": 0,
+        "1.21.1": 22
+      },
+      "completePacketDecodingClaimed": false,
+      "syntheticReports": true,
+      "unchangedPolicyThroughoutTcpClaimed": false
+    },
+    "historicalBukkitRace": {
+      "report": "outputs/bukkit-challenge-race-validation.json",
+      "newArtifactSha256": "9849a60374ea1bb18aae2af0ee479593312437a9665b803a3f847a07c570b2c8",
+      "newFixedExperimentObservationGroups": 6,
+      "oldReproductionObservationGroups": 5,
+      "oldBukkit75GroupsCountedAsNewRuntime": 0,
+      "scope": "One Purpur 1.21.1 build2329 real-server/TCP regression comparing the published old Bukkit JAR with the new development JAR. TCP client models delayed/latest-request coalescing, not the production ClientReporter implementation.",
+      "realRenderedClientValidation": false
+    },
+    "historicalFiveModBuilds": {
+      "reports": [
+        "outputs/adapter-build-1.19.2.json",
+        "outputs/adapter-build-1.20.4.json"
+      ],
+      "neoforgeFixReport": "outputs/neoforge-1.20.4-client-fix-validation.json",
+      "exactNewJarCount": 5,
+      "otherFourArtifactsStillOriginal": true,
+      "originalNeoCandidateRetainedAsHistory": true,
+      "finalArtifactCoreExecutions": 485,
+      "distinctCoreAssertions": 97,
+      "additionalNeoDispatchAssertions": 9,
+      "workingDirectoryAppendixRebuiltJar": false
+    },
+    "historicalFiveModClients": {
+      "report": "outputs/next-platform-client-validation.json",
+      "finalArtifactProfiles": [
+        "fabric-1.19.2",
+        "fabric-1.20.4",
+        "forge-1.19.2",
+        "forge-1.20.4",
+        "neoforge-1.20.4"
+      ],
+      "finalRenderedClientCases": 5,
+      "retainedFailedAttempts": 2,
+      "historicalOldNeoCountedAsFinal": false,
+      "pngBytesVerified": 5,
+      "actualJavaMajors": [
+        17
+      ],
+      "minimumOnlineSeconds": 60.3758719000034,
+      "defaultPolicyKeys": 13,
+      "catalogRows": 37,
+      "privateScopedDevicePredicatesVerified": true,
+      "scope": [
+        "Actual production mod clients and matching dedicated servers under unchanged 13 defaults and 37 catalog rows.",
+        "Each accepted profile requires independent scoped-device recomputation, fresh console response suffixes at least 60 seconds apart, double normal exit zero, PNG CRC/decompression and exact-hash manual visual review.",
+        "The historical first Fabric1.19.2 client failed before guard handshake due to a 17-character QA username; exit zero alone is not acceptance.",
+        "Formal acceptance is derived in this aggregate; original automated result formalAcceptancePassed=false is preserved.",
+        "This is not proof of real-VM rejection, all-cheat coverage, performance, online authenticated accounts, cross-loader joins, old-world migration or third-party anti-cheat integration.",
+        "NeoForge1.20.4 candidate01 on c3e742 actually joined but timed out without an accepted report. Both cleanup processes returned zero, but normal-exit flags are false and this is a retained failure. A replacement digest requires its own accepted candidate and cannot inherit old dedicated-server TCP results."
+      ]
+    },
+    "historicalFiveModServers": {
+      "report": "outputs/next-platform-server-validation.json",
+      "finalArtifactProfiles": [
+        "fabric-1.19.2",
+        "fabric-1.20.4",
+        "forge-1.19.2",
+        "forge-1.20.4",
+        "neoforge-1.20.4"
+      ],
+      "finalSelectedServerCases": 5,
+      "finalSelectedProtocolCaseGroups": 130,
+      "historicalAdditionalPassingCaseGroups": 26,
+      "historicalOldNeoCountedAsFinal": false,
+      "retainedFailedRuntimeAttempts": 3,
+      "retainedPreparedOnlyAttempts": 1,
+      "syntheticReports": true,
+      "unchangedPolicyThroughoutTcpClaimed": false,
+      "completePacketDecodingClaimed": false
+    },
+    "current12111": {
+      "newExactArtifacts": 2,
+      "distinctCoreAssertions": 99,
+      "coreExecutionsSourceAndTwoJars": 297,
+      "tcpCaseGroups": 52,
+      "tcpDistinctDefinitions": 26,
+      "renderedClientCases": 2,
+      "rawFormalAcceptanceFalsePreserved": true,
+      "separateHashBoundVisualReviewVerified": true,
+      "tcpOnlyPolicyRestoredRulesRemain40": true,
+      "decoderErrorAbsenceScope": "Full Node console and four retained diagnostic connections per run; not all connections or packets",
+      "upstreamWarningsRetained": true,
+      "sourceCiGithubJobsPassed": 12,
+      "gitlabQuotaRefusals": 12,
+      "finalTagCiCheckedHere": false
+    },
+    "finalTagCiCheckedHere": false,
+    "finalTagCiBasis": "Separate release helpers must validate exact tag/ref/event/source/SHA and 12 named jobs; source CI cannot substitute for tag CI or runtime JAR bytes."
+  },
+  "explicitPublicEvidenceReferencesVerified": 4573,
+  "sourceTrackedFiles": 1837,
+  "archives": [
+    {
+      "file": "QiZhangVerdict-0.4.0-dev-preview.1.zip",
+      "bytes": 11819750,
+      "sha256": "4a58bcf975e989fdccba38df895d9856e455ec35946cb69b6ca823ba3af382c3",
+      "crc": "PASS",
+      "entries": 1583,
+      "allEntriesByteEqualToExpected": true,
+      "expectedBasis": "Committed explicit manifest plus twenty exact root-frozen mixed-version JARs",
+      "markdownLocalLinksVerified": 321,
+      "missingMarkdownLinks": 0,
+      "jarFiles": [
+        "qizhangverdict-bukkit-0.2.1-dev.jar",
+        "qizhangverdict-fabric-1.20.1-0.2.0-test.1.jar",
+        "qizhangverdict-forge-1.20.1-0.2.0-test.1.jar",
+        "qizhangverdict-fabric-1.21.1-0.2.0-test.1.jar",
+        "qizhangverdict-neoforge-1.21.1-0.2.0-test.1.jar",
+        "qizhangverdict-fabric-1.19.4-0.2.0-test.1.jar",
+        "qizhangverdict-forge-1.19.4-0.2.0-test.1.jar",
+        "qizhangverdict-fabric-1.18.2-0.2.0-test.1.jar",
+        "qizhangverdict-forge-1.18.2-0.2.0-test.1.jar",
+        "qizhangverdict-fabric-1.16.5-0.2.0-test.1.jar",
+        "qizhangverdict-forge-1.16.5-0.2.0-test.1.jar",
+        "qizhangverdict-forge-1.12.2-0.2.0-test.1.jar",
+        "qizhangverdict-forge-1.8.9-0.2.0-test.1.jar",
+        "qizhangverdict-fabric-1.19.2-0.3.0-dev.jar",
+        "qizhangverdict-forge-1.19.2-0.3.0-dev.jar",
+        "qizhangverdict-fabric-1.20.4-0.3.0-dev.jar",
+        "qizhangverdict-forge-1.20.4-0.3.0-dev.jar",
+        "qizhangverdict-neoforge-1.20.4-0.3.0-dev.jar",
+        "qizhangverdict-fabric-1.21.11-0.4.0-dev.jar",
+        "qizhangverdict-neoforge-1.21.11-0.4.0-dev.jar"
+      ],
+      "privateStateAndIdentifierPatterns": 0,
+      "minecraftDistributionClassesOrJarsIncluded": false
+    },
+    {
+      "file": "QiZhangVerdict-0.4.0-dev-preview.1-sources.zip",
+      "bytes": 10841055,
+      "sha256": "b10d67cb010ade8dd36ba2a94d093675b8fb7521f5a8dd67a89502496ccb1955",
+      "crc": "PASS",
+      "entries": 1837,
+      "allEntriesByteEqualToExpected": true,
+      "expectedBasis": "1837 fixed-commit Git blobs",
+      "markdownLocalLinksVerified": 321,
+      "missingMarkdownLinks": 0,
+      "jarFiles": [
+        "gradle/wrapper/gradle-wrapper.jar",
+        "platforms/1.12.2/gradle/wrapper/gradle-wrapper.jar",
+        "platforms/1.16.5/gradle/wrapper/gradle-wrapper.jar",
+        "platforms/1.18.2/gradle/wrapper/gradle-wrapper.jar",
+        "platforms/1.19.2/gradle/wrapper/gradle-wrapper.jar",
+        "platforms/1.20.1/gradle/wrapper/gradle-wrapper.jar",
+        "platforms/1.20.4/gradle/wrapper/gradle-wrapper.jar",
+        "platforms/1.21.1/gradle/wrapper/gradle-wrapper.jar",
+        "platforms/1.21.11/gradle/wrapper/gradle-wrapper.jar",
+        "platforms/1.8.9/gradle/wrapper/gradle-wrapper.jar"
+      ],
+      "privateStateAndIdentifierPatterns": 0,
+      "minecraftDistributionClassesOrJarsIncluded": false
+    }
+  ],
+  "knownPrivateTokensChecked": 61,
+  "knownPrivateDeviceDigestLeaks": 0,
+  "expandedPackageDirectoryByteEqual": true,
+  "auditScriptSha256": "3942d38d96395c645ad2cec017bf87e85b48feaa3e70de82052e9ecf8fcecd14",
+  "method": "Independent Git cat-file, ZIP CRC/entry/byte/mode, manifest and receipt, GPL/NOTICE, twenty root-frozen mixed-version JARs, descriptor/class-major, Markdown link and bounded privacy audit. No Java, build, repackage or publishing.",
+  "limits": "Pattern and known-private-token scans do not prove absence of every possible secret format. This archive audit does not expand runtime or gameplay acceptance."
+}

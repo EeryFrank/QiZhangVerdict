@@ -1,0 +1,694 @@
+﻿2026-09-28T08:59:50.4467872Z Current runner version: '2.337.0'
+2026-09-28T08:59:50.4494572Z ##[group]Runner Image Provisioner
+2026-09-28T08:59:50.4495467Z Hosted Compute Agent
+2026-09-28T08:59:50.4496089Z Version: 20260828.587
+2026-09-28T08:59:50.4496867Z Commit: abac92662cab4cc7352de4f9f9d2e2419aad9c29
+2026-09-28T08:59:50.4497632Z Build Date: 2026-08-28T16:44:25Z
+2026-09-28T08:59:50.4498418Z Worker ID: {d8cf1f74-dfc4-4201-bda4-dc605f960f4b}
+2026-09-28T08:59:50.4499197Z Azure Region: northcentralus
+2026-09-28T08:59:50.4500123Z ##[endgroup]
+2026-09-28T08:59:50.4501627Z ##[group]Operating System
+2026-09-28T08:59:50.4502277Z Ubuntu
+2026-09-28T08:59:50.4503278Z 24.04.5
+2026-09-28T08:59:50.4503899Z LTS
+2026-09-28T08:59:50.4504445Z ##[endgroup]
+2026-09-28T08:59:50.4505112Z ##[group]Runner Image
+2026-09-28T08:59:50.4505786Z Image: ubuntu-24.04
+2026-09-28T08:59:50.4506382Z Version: 20260920.314.1
+2026-09-28T08:59:50.4507828Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260920.314/images/ubuntu/Ubuntu2404-Readme.md
+2026-09-28T08:59:50.4509731Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260920.314
+2026-09-28T08:59:50.4510771Z ##[endgroup]
+2026-09-28T08:59:50.4511932Z ##[group]GITHUB_TOKEN Permissions
+2026-09-28T08:59:50.4514312Z Contents: read
+2026-09-28T08:59:50.4514923Z Metadata: read
+2026-09-28T08:59:50.4515613Z ##[endgroup]
+2026-09-28T08:59:50.4517886Z Secret source: Actions
+2026-09-28T08:59:50.4518968Z Cache mode: write
+2026-09-28T08:59:50.4520046Z Prepare workflow directory
+2026-09-28T08:59:50.4964688Z Prepare all required actions
+2026-09-28T08:59:50.5032777Z Getting action download info
+2026-09-28T08:59:50.7597930Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+2026-09-28T08:59:50.8417673Z Download action repository 'actions/setup-java@de7274f081f381c8f8158605e0321c36c376e2e6' (SHA:de7274f081f381c8f8158605e0321c36c376e2e6)
+2026-09-28T08:59:51.4072797Z Download action repository 'gradle/actions@9c971963bec38e04b3d30dcc455b5382be2fdbfb' (SHA:9c971963bec38e04b3d30dcc455b5382be2fdbfb)
+2026-09-28T08:59:52.3431609Z Download action repository 'actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a' (SHA:043fb46d1a93c77aae656e7c1c64a875d1fc6a0a)
+2026-09-28T08:59:52.6445058Z Complete job name: MC 1.19.4 development
+2026-09-28T08:59:52.7482993Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+2026-09-28T08:59:52.7484734Z with:
+2026-09-28T08:59:52.7485599Z   persist-credentials: false
+2026-09-28T08:59:52.7486663Z   repository: EeryFrank/QiZhangVerdict
+2026-09-28T08:59:52.7495778Z   token: ***
+2026-09-28T08:59:52.7496663Z   ssh-strict: true
+2026-09-28T08:59:52.7497536Z   ssh-user: git
+2026-09-28T08:59:52.7498366Z   clean: true
+2026-09-28T08:59:52.7499253Z   sparse-checkout-cone-mode: true
+2026-09-28T08:59:52.7500390Z   fetch-depth: 1
+2026-09-28T08:59:52.7501250Z   fetch-tags: false
+2026-09-28T08:59:52.7502137Z   show-progress: true
+2026-09-28T08:59:52.7503083Z   lfs: false
+2026-09-28T08:59:52.7503948Z   submodules: false
+2026-09-28T08:59:52.7504869Z   set-safe-directory: true
+2026-09-28T08:59:52.7505893Z   allow-unsafe-pr-checkout: false
+2026-09-28T08:59:52.7507213Z ##[endgroup]
+2026-09-28T08:59:52.8574718Z Syncing repository: EeryFrank/QiZhangVerdict
+2026-09-28T08:59:52.8578964Z ##[group]Getting Git version info
+2026-09-28T08:59:52.8581467Z Working directory is '/home/runner/work/QiZhangVerdict/QiZhangVerdict'
+2026-09-28T08:59:52.8584841Z [command]/usr/bin/git version
+2026-09-28T08:59:52.8612159Z git version 2.55.0
+2026-09-28T08:59:52.8634316Z ##[endgroup]
+2026-09-28T08:59:52.8645129Z Temporarily overriding HOME='/home/runner/work/_temp/cfc4200e-b097-42c2-9a61-f685168ac0a1' before making global git config changes
+2026-09-28T08:59:52.8649810Z Adding repository directory to the temporary git global config as a safe directory
+2026-09-28T08:59:52.8653856Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/QiZhangVerdict/QiZhangVerdict
+2026-09-28T08:59:52.8712646Z Deleting the contents of '/home/runner/work/QiZhangVerdict/QiZhangVerdict'
+2026-09-28T08:59:52.8716751Z ##[group]Determining repository object format
+2026-09-28T08:59:52.8720328Z ##[endgroup]
+2026-09-28T08:59:52.8722845Z ##[group]Initializing the repository
+2026-09-28T08:59:52.8725614Z [command]/usr/bin/git init /home/runner/work/QiZhangVerdict/QiZhangVerdict
+2026-09-28T08:59:52.8810746Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-09-28T08:59:52.8813943Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-09-28T08:59:52.8817770Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-09-28T08:59:52.8820828Z hint: call:
+2026-09-28T08:59:52.8822317Z hint:
+2026-09-28T08:59:52.8824109Z hint: 	git config --global init.defaultBranch <name>
+2026-09-28T08:59:52.8826290Z hint:
+2026-09-28T08:59:52.8827969Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-09-28T08:59:52.8831221Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-09-28T08:59:52.8833858Z hint:
+2026-09-28T08:59:52.8835531Z hint: 	git branch -m <name>
+2026-09-28T08:59:52.8837214Z hint:
+2026-09-28T08:59:52.8839416Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-09-28T08:59:52.8843600Z Initialized empty Git repository in /home/runner/work/QiZhangVerdict/QiZhangVerdict/.git/
+2026-09-28T08:59:52.8850326Z [command]/usr/bin/git remote add origin https://github.com/EeryFrank/QiZhangVerdict
+2026-09-28T08:59:52.8878080Z ##[endgroup]
+2026-09-28T08:59:52.8880784Z ##[group]Disabling automatic garbage collection
+2026-09-28T08:59:52.8882898Z [command]/usr/bin/git config --local gc.auto 0
+2026-09-28T08:59:52.8921825Z ##[endgroup]
+2026-09-28T08:59:52.8924041Z ##[group]Setting up auth
+2026-09-28T08:59:52.8927557Z Removing SSH command configuration
+2026-09-28T08:59:52.8930574Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-28T08:59:52.8969673Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-28T08:59:52.9380028Z Removing HTTP extra header
+2026-09-28T08:59:52.9397792Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-28T08:59:52.9434719Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-28T08:59:52.9698363Z Removing includeIf entries pointing to credentials config files
+2026-09-28T08:59:52.9701040Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-28T08:59:52.9738641Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-09-28T08:59:53.0005654Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-dd197041-ce74-4885-93b8-a02c5e3fa46c.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-09-28T08:59:53.0052207Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/QiZhangVerdict/QiZhangVerdict/.git.path /home/runner/work/_temp/git-credentials-dd197041-ce74-4885-93b8-a02c5e3fa46c.config
+2026-09-28T08:59:53.0092398Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/QiZhangVerdict/QiZhangVerdict/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-dd197041-ce74-4885-93b8-a02c5e3fa46c.config
+2026-09-28T08:59:53.0137378Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-dd197041-ce74-4885-93b8-a02c5e3fa46c.config
+2026-09-28T08:59:53.0184215Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-dd197041-ce74-4885-93b8-a02c5e3fa46c.config
+2026-09-28T08:59:53.0224428Z ##[endgroup]
+2026-09-28T08:59:53.0225941Z ##[group]Fetching the repository
+2026-09-28T08:59:53.0234612Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +refs/tags/v0.4.0-dev-preview.1:refs/tags/v0.4.0-dev-preview.1
+2026-09-28T08:59:54.2983078Z From https://github.com/EeryFrank/QiZhangVerdict
+2026-09-28T08:59:54.2984284Z  * [new tag]         v0.4.0-dev-preview.1 -> v0.4.0-dev-preview.1
+2026-09-28T08:59:54.2995513Z [command]/usr/bin/git tag --list v0.4.0-dev-preview.1
+2026-09-28T08:59:54.3035621Z v0.4.0-dev-preview.1
+2026-09-28T08:59:54.3048544Z [command]/usr/bin/git rev-parse refs/tags/v0.4.0-dev-preview.1^{commit}
+2026-09-28T08:59:54.3085680Z eb6d483e64e29a15501df953f7d59a9645a6905a
+2026-09-28T08:59:54.3089927Z ##[endgroup]
+2026-09-28T08:59:54.3090515Z ##[group]Determining the checkout info
+2026-09-28T08:59:54.3091871Z ##[endgroup]
+2026-09-28T08:59:54.3097409Z [command]/usr/bin/git sparse-checkout disable
+2026-09-28T08:59:54.3166328Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-09-28T08:59:54.3212795Z ##[group]Checking out the ref
+2026-09-28T08:59:54.3218655Z [command]/usr/bin/git checkout --progress --force refs/tags/v0.4.0-dev-preview.1
+2026-09-28T08:59:54.4939750Z Note: switching to 'refs/tags/v0.4.0-dev-preview.1'.
+2026-09-28T08:59:54.4940289Z 
+2026-09-28T08:59:54.4940604Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-09-28T08:59:54.4941107Z changes and commit them, and you can discard any commits you make in this
+2026-09-28T08:59:54.4941588Z state without impacting any branches by switching back to a branch.
+2026-09-28T08:59:54.4941875Z 
+2026-09-28T08:59:54.4942093Z If you want to create a new branch to retain commits you create, you may
+2026-09-28T08:59:54.4942560Z do so (now or later) by using -c with the switch command. Example:
+2026-09-28T08:59:54.4942816Z 
+2026-09-28T08:59:54.4942940Z   git switch -c <new-branch-name>
+2026-09-28T08:59:54.4943140Z 
+2026-09-28T08:59:54.4943258Z Or undo this operation with:
+2026-09-28T08:59:54.4943418Z 
+2026-09-28T08:59:54.4943519Z   git switch -
+2026-09-28T08:59:54.4943655Z 
+2026-09-28T08:59:54.4943895Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-09-28T08:59:54.4944255Z 
+2026-09-28T08:59:54.4944750Z HEAD is now at eb6d483 Freeze explicit twenty-artifact preview manifest
+2026-09-28T08:59:54.4956432Z ##[endgroup]
+2026-09-28T08:59:54.5009922Z [command]/usr/bin/git log -1 --format=%H
+2026-09-28T08:59:54.5042748Z eb6d483e64e29a15501df953f7d59a9645a6905a
+2026-09-28T08:59:54.5053251Z ##[group]Removing auth
+2026-09-28T08:59:54.5053792Z Removing SSH command configuration
+2026-09-28T08:59:54.5057009Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-28T08:59:54.5096812Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-28T08:59:54.5357747Z Removing HTTP extra header
+2026-09-28T08:59:54.5363301Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-28T08:59:54.5409079Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-28T08:59:54.5681494Z Removing includeIf entries pointing to credentials config files
+2026-09-28T08:59:54.5686135Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-28T08:59:54.5726010Z includeif.gitdir:/home/runner/work/QiZhangVerdict/QiZhangVerdict/.git.path
+2026-09-28T08:59:54.5726783Z includeif.gitdir:/home/runner/work/QiZhangVerdict/QiZhangVerdict/.git/worktrees/*.path
+2026-09-28T08:59:54.5727437Z includeif.gitdir:/github/workspace/.git.path
+2026-09-28T08:59:54.5727953Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-09-28T08:59:54.5738138Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/QiZhangVerdict/QiZhangVerdict/.git.path
+2026-09-28T08:59:54.5772616Z /home/runner/work/_temp/git-credentials-dd197041-ce74-4885-93b8-a02c5e3fa46c.config
+2026-09-28T08:59:54.5786071Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/QiZhangVerdict/QiZhangVerdict/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-dd197041\-ce74\-4885\-93b8\-a02c5e3fa46c\.config
+2026-09-28T08:59:54.5833364Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/QiZhangVerdict/QiZhangVerdict/.git/worktrees/*.path
+2026-09-28T08:59:54.5898667Z /home/runner/work/_temp/git-credentials-dd197041-ce74-4885-93b8-a02c5e3fa46c.config
+2026-09-28T08:59:54.5909700Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/QiZhangVerdict/QiZhangVerdict/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-dd197041\-ce74\-4885\-93b8\-a02c5e3fa46c\.config
+2026-09-28T08:59:54.5953891Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-09-28T08:59:54.5983496Z /github/runner_temp/git-credentials-dd197041-ce74-4885-93b8-a02c5e3fa46c.config
+2026-09-28T08:59:54.5997647Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-dd197041\-ce74\-4885\-93b8\-a02c5e3fa46c\.config
+2026-09-28T08:59:54.6039900Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-09-28T08:59:54.6068394Z /github/runner_temp/git-credentials-dd197041-ce74-4885-93b8-a02c5e3fa46c.config
+2026-09-28T08:59:54.6076771Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-dd197041\-ce74\-4885\-93b8\-a02c5e3fa46c\.config
+2026-09-28T08:59:54.6116691Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-09-28T08:59:54.6365994Z Removing credentials config '/home/runner/work/_temp/git-credentials-dd197041-ce74-4885-93b8-a02c5e3fa46c.config'
+2026-09-28T08:59:54.6375907Z ##[endgroup]
+2026-09-28T08:59:54.6693190Z ##[group]Run actions/setup-java@de7274f081f381c8f8158605e0321c36c376e2e6
+2026-09-28T08:59:54.6693594Z with:
+2026-09-28T08:59:54.6693805Z   distribution: temurin
+2026-09-28T08:59:54.6694038Z   java-version: 8
+2026-09-28T08:59:54.6694254Z   java-package: jdk
+2026-09-28T08:59:54.6694484Z   check-latest: false
+2026-09-28T08:59:54.6694703Z   force-download: false
+2026-09-28T08:59:54.6694932Z   set-default: true
+2026-09-28T08:59:54.6695145Z   server-id: github
+2026-09-28T08:59:54.6695385Z   mvn-repositories-include-central: true
+2026-09-28T08:59:54.6695706Z   mvn-repositories-prioritize-central: true
+2026-09-28T08:59:54.6696013Z   overwrite-settings: true
+2026-09-28T08:59:54.6696258Z   cache-read-only: false
+2026-09-28T08:59:54.6696494Z   job-status: success
+2026-09-28T08:59:54.6699148Z   token: ***
+2026-09-28T08:59:54.6699377Z   show-download-progress: false
+2026-09-28T08:59:54.6699983Z   problem-matcher: true
+2026-09-28T08:59:54.6700220Z ##[endgroup]
+2026-09-28T08:59:54.7443961Z ##[group]Installed distributions
+2026-09-28T08:59:54.7525063Z Resolved Java 8.0.504+1 from tool-cache
+2026-09-28T08:59:54.7525577Z Setting Java 8.0.504+1 as the default
+2026-09-28T08:59:54.7533552Z 
+2026-09-28T08:59:54.7533782Z Java configuration:
+2026-09-28T08:59:54.7534164Z   Distribution: temurin
+2026-09-28T08:59:54.7534515Z   Version: 8.0.504+1
+2026-09-28T08:59:54.7535017Z   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/8.0.504-1/x64
+2026-09-28T08:59:54.7535468Z 
+2026-09-28T08:59:54.7535907Z ##[endgroup]
+2026-09-28T08:59:54.7573943Z Creating settings.xml with server-id: github
+2026-09-28T08:59:54.7574593Z Creating toolchains.xml for JDK version 8 from temurin
+2026-09-28T08:59:54.7575152Z Writing to /home/runner/.m2/settings.xml
+2026-09-28T08:59:54.7585748Z Writing to /home/runner/.m2/toolchains.xml
+2026-09-28T08:59:54.7594818Z Configured MAVEN_ARGS to include -ntp to suppress Maven transfer progress logs. Set 'show-download-progress: true' to keep the download progress output.
+2026-09-28T08:59:54.7894706Z ##[group]Run actions/setup-java@de7274f081f381c8f8158605e0321c36c376e2e6
+2026-09-28T08:59:54.7895337Z with:
+2026-09-28T08:59:54.7895657Z   distribution: temurin
+2026-09-28T08:59:54.7896017Z   java-version: 17
+2026-09-28T08:59:54.7896354Z   java-package: jdk
+2026-09-28T08:59:54.7896693Z   check-latest: false
+2026-09-28T08:59:54.7897039Z   force-download: false
+2026-09-28T08:59:54.7897391Z   set-default: true
+2026-09-28T08:59:54.7897717Z   server-id: github
+2026-09-28T08:59:54.7898093Z   mvn-repositories-include-central: true
+2026-09-28T08:59:54.7898603Z   mvn-repositories-prioritize-central: true
+2026-09-28T08:59:54.7899081Z   overwrite-settings: true
+2026-09-28T08:59:54.7899661Z   cache-read-only: false
+2026-09-28T08:59:54.7900028Z   job-status: success
+2026-09-28T08:59:54.7903713Z   token: ***
+2026-09-28T08:59:54.7903958Z   show-download-progress: false
+2026-09-28T08:59:54.7904232Z   problem-matcher: true
+2026-09-28T08:59:54.7904458Z env:
+2026-09-28T08:59:54.7904810Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/8.0.504-1/x64
+2026-09-28T08:59:54.7905308Z   JAVA_HOME_8_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/8.0.504-1/x64
+2026-09-28T08:59:54.7905742Z   MAVEN_ARGS: -ntp
+2026-09-28T08:59:54.7906070Z ##[endgroup]
+2026-09-28T08:59:54.8661083Z ##[group]Installed distributions
+2026-09-28T08:59:54.8726739Z Resolved Java 17.0.20+1 from tool-cache
+2026-09-28T08:59:54.8727238Z Setting Java 17.0.20+1 as the default
+2026-09-28T08:59:54.8734795Z 
+2026-09-28T08:59:54.8734994Z Java configuration:
+2026-09-28T08:59:54.8735382Z   Distribution: temurin
+2026-09-28T08:59:54.8735736Z   Version: 17.0.20+1
+2026-09-28T08:59:54.8736228Z   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+2026-09-28T08:59:54.8736683Z 
+2026-09-28T08:59:54.8737081Z ##[endgroup]
+2026-09-28T08:59:54.8756640Z Creating settings.xml with server-id: github
+2026-09-28T08:59:54.8762389Z Creating toolchains.xml for JDK version 17 from temurin
+2026-09-28T08:59:54.8774096Z Overwriting existing file /home/runner/.m2/settings.xml
+2026-09-28T08:59:54.8866272Z Updating existing file /home/runner/.m2/toolchains.xml
+2026-09-28T08:59:54.9154886Z ##[group]Run actions/setup-java@de7274f081f381c8f8158605e0321c36c376e2e6
+2026-09-28T08:59:54.9155519Z with:
+2026-09-28T08:59:54.9155835Z   distribution: temurin
+2026-09-28T08:59:54.9156186Z   java-version: 21
+2026-09-28T08:59:54.9156519Z   java-package: jdk
+2026-09-28T08:59:54.9156848Z   check-latest: false
+2026-09-28T08:59:54.9157193Z   force-download: false
+2026-09-28T08:59:54.9157538Z   set-default: true
+2026-09-28T08:59:54.9157860Z   server-id: github
+2026-09-28T08:59:54.9158230Z   mvn-repositories-include-central: true
+2026-09-28T08:59:54.9158738Z   mvn-repositories-prioritize-central: true
+2026-09-28T08:59:54.9159220Z   overwrite-settings: true
+2026-09-28T08:59:54.9159755Z   cache-read-only: false
+2026-09-28T08:59:54.9160109Z   job-status: success
+2026-09-28T08:59:54.9164556Z   token: ***
+2026-09-28T08:59:54.9164886Z   show-download-progress: false
+2026-09-28T08:59:54.9165264Z   problem-matcher: true
+2026-09-28T08:59:54.9165592Z env:
+2026-09-28T08:59:54.9166138Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+2026-09-28T08:59:54.9167039Z   JAVA_HOME_8_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/8.0.504-1/x64
+2026-09-28T08:59:54.9167619Z   MAVEN_ARGS: -ntp
+2026-09-28T08:59:54.9168109Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+2026-09-28T08:59:54.9168676Z ##[endgroup]
+2026-09-28T08:59:54.9949022Z ##[group]Installed distributions
+2026-09-28T08:59:55.0023723Z Resolved Java 21.0.12+1 from tool-cache
+2026-09-28T08:59:55.0024178Z Setting Java 21.0.12+1 as the default
+2026-09-28T08:59:55.0024374Z 
+2026-09-28T08:59:55.0024477Z Java configuration:
+2026-09-28T08:59:55.0024730Z   Distribution: temurin
+2026-09-28T08:59:55.0025274Z   Version: 21.0.12+1
+2026-09-28T08:59:55.0025612Z   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+2026-09-28T08:59:55.0025905Z 
+2026-09-28T08:59:55.0026168Z ##[endgroup]
+2026-09-28T08:59:55.0044066Z Creating settings.xml with server-id: github
+2026-09-28T08:59:55.0049864Z Creating toolchains.xml for JDK version 21 from temurin
+2026-09-28T08:59:55.0153913Z Updating existing file /home/runner/.m2/toolchains.xml
+2026-09-28T08:59:55.0158341Z Overwriting existing file /home/runner/.m2/settings.xml
+2026-09-28T08:59:55.0431111Z ##[group]Run gradle/actions/setup-gradle@9c971963bec38e04b3d30dcc455b5382be2fdbfb
+2026-09-28T08:59:55.0431808Z with:
+2026-09-28T08:59:55.0432136Z   validate-wrappers: true
+2026-09-28T08:59:55.0432519Z   cache-read-only: false
+2026-09-28T08:59:55.0432899Z   cache-provider: enhanced
+2026-09-28T08:59:55.0433282Z   cache-disabled: false
+2026-09-28T08:59:55.0433653Z   cache-write-only: false
+2026-09-28T08:59:55.0434052Z   cache-overwrite-existing: false
+2026-09-28T08:59:55.0434510Z   cache-cleanup: on-success
+2026-09-28T08:59:55.0434991Z   gradle-home-cache-includes: caches
+notifications
+
+2026-09-28T08:59:55.0435506Z   add-job-summary: always
+2026-09-28T08:59:55.0435924Z   add-job-summary-as-pr-comment: never
+2026-09-28T08:59:55.0436379Z   dependency-graph: disabled
+2026-09-28T08:59:55.0436879Z   dependency-graph-report-dir: dependency-graph-reports
+2026-09-28T08:59:55.0437463Z   dependency-graph-continue-on-failure: true
+2026-09-28T08:59:55.0437959Z   build-scan-publish: false
+2026-09-28T08:59:55.0438446Z   allow-snapshot-wrappers: false
+2026-09-28T08:59:55.0438887Z   gradle-home-cache-strict-match: false
+2026-09-28T08:59:55.0439624Z   workflow-job-context: {
+  "minecraft": "1.19.4"
+}
+2026-09-28T08:59:55.0445847Z   github-token: ***
+2026-09-28T08:59:55.0446197Z env:
+2026-09-28T08:59:55.0446632Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+2026-09-28T08:59:55.0447237Z   JAVA_HOME_8_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/8.0.504-1/x64
+2026-09-28T08:59:55.0447669Z   MAVEN_ARGS: -ntp
+2026-09-28T08:59:55.0448043Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+2026-09-28T08:59:55.0448545Z   JAVA_HOME_21_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+2026-09-28T08:59:55.0448926Z ##[endgroup]
+2026-09-28T08:59:55.5211576Z Merged default JDK locations into /home/runner/.m2/toolchains.xml
+2026-09-28T08:59:55.5217935Z Enhanced Caching: This build is using the proprietary 'gradle-actions-caching' provider for optimized caching support. See https://github.com/gradle/actions/blob/main/DISTRIBUTION.md for terms of use and opt-out instructions.
+2026-09-28T08:59:55.6118845Z ##[group]Restore Gradle state from cache
+2026-09-28T08:59:55.7241233Z Cache hit for restore-key: gradle-home-v2|Linux-X64|build[b42cee15b8a8a22a6ad54481b883629a]-429284ed0fa296b04cf7a13253b2e95af048e5d6
+2026-09-28T08:59:56.8473776Z Received 117440512 of 785541227 (15.0%), 111.9 MBs/sec
+2026-09-28T08:59:57.8530874Z Received 281018368 of 785541227 (35.8%), 133.9 MBs/sec
+2026-09-28T08:59:58.8519206Z Received 465567744 of 785541227 (59.3%), 147.9 MBs/sec
+2026-09-28T08:59:59.8560850Z Received 633339904 of 785541227 (80.6%), 150.8 MBs/sec
+2026-09-28T09:00:00.7480040Z Received 785541227 of 785541227 (100.0%), 152.9 MBs/sec
+2026-09-28T09:00:00.7480863Z Cache Size: ~749 MB (785541227 B)
+2026-09-28T09:00:00.7645320Z [command]/usr/bin/tar -xf /home/runner/work/_temp/3315579d-1f50-4024-821f-60cbb930d66a/cache.tzst -P -C /home/runner/work/QiZhangVerdict/QiZhangVerdict --use-compress-program unzstd
+2026-09-28T09:00:02.2900112Z Cache restored successfully
+2026-09-28T09:00:02.6040826Z Restored cache entry with key gradle-home-v2|Linux-X64|build[b42cee15b8a8a22a6ad54481b883629a]-eb6d483e64e29a15501df953f7d59a9645a6905a in 6991ms
+2026-09-28T09:00:02.7308060Z Cache hit for: gradle-instrumented-jars-v2-82dcccb6fc71f1534891836e9ba7f4fa
+2026-09-28T09:00:02.7364638Z Cache hit for: gradle-dependencies-v2-a40ffdac562b4ca7b527c654889bfd99
+2026-09-28T09:00:02.7400937Z Cache hit for: gradle-build-cache-v2-2a0827784fa8fbf2970c0387a55e3946
+2026-09-28T09:00:02.7543126Z Cache hit for: gradle-groovy-dsl-v2-9adffa4f5011ed019f1167629c3362af
+2026-09-28T09:00:02.7548008Z Cache hit for: gradle-wrapper-zips-v2-a85438407cadad5878c39138dd4a9c7a
+2026-09-28T09:00:02.7730018Z Cache hit for: gradle-transforms-v2-81c90df12f259db7c3648cec7a1db593
+2026-09-28T09:00:02.9980529Z Received 99918 of 99918 (100.0%), 0.6 MBs/sec
+2026-09-28T09:00:02.9981283Z Cache Size: ~0 MB (99918 B)
+2026-09-28T09:00:03.0004510Z [command]/usr/bin/tar -xf /home/runner/work/_temp/df6ba5c1-6c6e-4349-8963-8635fab09954/cache.tzst -P -C /home/runner/work/QiZhangVerdict/QiZhangVerdict --use-compress-program unzstd
+2026-09-28T09:00:03.0156748Z Cache restored successfully
+2026-09-28T09:00:03.0163632Z Restored cache entry with key gradle-instrumented-jars-v2-82dcccb6fc71f1534891836e9ba7f4fa in 410ms
+2026-09-28T09:00:03.0427384Z Received 154228 of 154228 (100.0%), 0.8 MBs/sec
+2026-09-28T09:00:03.0428018Z Cache Size: ~0 MB (154228 B)
+2026-09-28T09:00:03.0452902Z [command]/usr/bin/tar -xf /home/runner/work/_temp/c105fb34-2c0a-44c4-86d6-2403f84dfbd0/cache.tzst -P -C /home/runner/work/QiZhangVerdict/QiZhangVerdict --use-compress-program unzstd
+2026-09-28T09:00:03.0707148Z Cache restored successfully
+2026-09-28T09:00:03.0708418Z Restored cache entry with key gradle-groovy-dsl-v2-9adffa4f5011ed019f1167629c3362af in 463ms
+2026-09-28T09:00:03.2100883Z Received 735899 of 735899 (100.0%), 2.0 MBs/sec
+2026-09-28T09:00:03.2116895Z Cache Size: ~1 MB (735899 B)
+2026-09-28T09:00:03.2214024Z [command]/usr/bin/tar -xf /home/runner/work/_temp/9066e5f1-2503-4323-832c-a338f1cfbf36/cache.tzst -P -C /home/runner/work/QiZhangVerdict/QiZhangVerdict --use-compress-program unzstd
+2026-09-28T09:00:03.2359888Z Cache restored successfully
+2026-09-28T09:00:03.2378473Z Restored cache entry with key gradle-build-cache-v2-2a0827784fa8fbf2970c0387a55e3946 in 631ms
+2026-09-28T09:00:03.4939374Z Received 29633639 of 29633639 (100.0%), 46.5 MBs/sec
+2026-09-28T09:00:03.4940678Z Cache Size: ~28 MB (29633639 B)
+2026-09-28T09:00:03.5133997Z [command]/usr/bin/tar -xf /home/runner/work/_temp/f89304db-6817-459c-b1cf-fd01bf8741c9/cache.tzst -P -C /home/runner/work/QiZhangVerdict/QiZhangVerdict --use-compress-program unzstd
+2026-09-28T09:00:03.8502432Z Received 130023424 of 136717666 (95.1%), 123.0 MBs/sec
+2026-09-28T09:00:03.8560703Z Received 79691776 of 132935311 (59.9%), 76.0 MBs/sec
+2026-09-28T09:00:03.9141065Z Cache restored successfully
+2026-09-28T09:00:03.9161692Z Restored cache entry with key gradle-transforms-v2-81c90df12f259db7c3648cec7a1db593 in 1309ms
+2026-09-28T09:00:03.9743705Z Received 136717666 of 136717666 (100.0%), 114.7 MBs/sec
+2026-09-28T09:00:03.9744360Z Cache Size: ~130 MB (136717666 B)
+2026-09-28T09:00:03.9946169Z [command]/usr/bin/tar -xf /home/runner/work/_temp/78a97b17-519f-4e0f-ae29-c42765796a19/cache.tzst -P -C /home/runner/work/QiZhangVerdict/QiZhangVerdict --use-compress-program unzstd
+2026-09-28T09:00:04.1853529Z Received 132935311 of 132935311 (100.0%), 95.1 MBs/sec
+2026-09-28T09:00:04.1880179Z Cache Size: ~127 MB (132935311 B)
+2026-09-28T09:00:04.1959296Z [command]/usr/bin/tar -xf /home/runner/work/_temp/d179cea2-4756-4ab4-8539-a1e9d06c5cd9/cache.tzst -P -C /home/runner/work/QiZhangVerdict/QiZhangVerdict --use-compress-program unzstd
+2026-09-28T09:00:04.3019910Z Cache restored successfully
+2026-09-28T09:00:04.3115813Z Restored cache entry with key gradle-wrapper-zips-v2-a85438407cadad5878c39138dd4a9c7a in 1706ms
+2026-09-28T09:00:04.4686922Z Cache restored successfully
+2026-09-28T09:00:04.4750193Z Restored cache entry with key gradle-dependencies-v2-a40ffdac562b4ca7b527c654889bfd99 in 1868ms
+2026-09-28T09:00:04.4764023Z ##[endgroup]
+2026-09-28T09:00:04.5327318Z ##[group]All Gradle Wrapper jars are valid
+2026-09-28T09:00:04.5345000Z ✓ Found known Gradle Wrapper JAR files:
+2026-09-28T09:00:04.5346040Z   7d3a4ac4de1c32b59bc6a4eb8ecb8e612ccd0cf1ae1e99f66902da64df296172 gradle/wrapper/gradle-wrapper.jar
+2026-09-28T09:00:04.5350070Z   e55e7e47a79e04c26363805b31e2f40b7a9cc89ea12113be7de750a3b2cede85 platforms/1.12.2/gradle/wrapper/gradle-wrapper.jar
+2026-09-28T09:00:04.5351756Z   7d3a4ac4de1c32b59bc6a4eb8ecb8e612ccd0cf1ae1e99f66902da64df296172 platforms/1.16.5/gradle/wrapper/gradle-wrapper.jar
+2026-09-28T09:00:04.5353310Z   7d3a4ac4de1c32b59bc6a4eb8ecb8e612ccd0cf1ae1e99f66902da64df296172 platforms/1.18.2/gradle/wrapper/gradle-wrapper.jar
+2026-09-28T09:00:04.5355141Z   7d3a4ac4de1c32b59bc6a4eb8ecb8e612ccd0cf1ae1e99f66902da64df296172 platforms/1.19.2/gradle/wrapper/gradle-wrapper.jar
+2026-09-28T09:00:04.5356667Z   7d3a4ac4de1c32b59bc6a4eb8ecb8e612ccd0cf1ae1e99f66902da64df296172 platforms/1.20.1/gradle/wrapper/gradle-wrapper.jar
+2026-09-28T09:00:04.5358185Z   7d3a4ac4de1c32b59bc6a4eb8ecb8e612ccd0cf1ae1e99f66902da64df296172 platforms/1.20.4/gradle/wrapper/gradle-wrapper.jar
+2026-09-28T09:00:04.5359855Z   7d3a4ac4de1c32b59bc6a4eb8ecb8e612ccd0cf1ae1e99f66902da64df296172 platforms/1.21.1/gradle/wrapper/gradle-wrapper.jar
+2026-09-28T09:00:04.5361416Z   423cb469ccc0ecc31f0e4e1c309976198ccb734cdcbb7029d4bda0f18f57e8d9 platforms/1.21.11/gradle/wrapper/gradle-wrapper.jar
+2026-09-28T09:00:04.5362958Z   718d7b25ea60b357fc4cb2212ce10b3f03dfd0e6fe5f23f565b15553ec46bb7e platforms/1.8.9/gradle/wrapper/gradle-wrapper.jar
+2026-09-28T09:00:04.5364273Z ##[endgroup]
+2026-09-28T09:00:04.5599651Z ##[group]Run bash scripts/ci_legacy_build.sh
+2026-09-28T09:00:04.5600346Z [36;1mbash scripts/ci_legacy_build.sh[0m
+2026-09-28T09:00:04.5871030Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-09-28T09:00:04.5871470Z env:
+2026-09-28T09:00:04.5871855Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+2026-09-28T09:00:04.5872435Z   JAVA_HOME_8_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/8.0.504-1/x64
+2026-09-28T09:00:04.5872878Z   MAVEN_ARGS: -ntp
+2026-09-28T09:00:04.5873283Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+2026-09-28T09:00:04.5873834Z   JAVA_HOME_21_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+2026-09-28T09:00:04.5874314Z   GRADLE_ACTION_ID: gradle/actions/setup-gradle
+2026-09-28T09:00:04.5874676Z   GRADLE_USER_HOME: /home/runner/.gradle
+2026-09-28T09:00:04.5875027Z   GRADLE_BUILD_ACTION_SETUP_COMPLETED: true
+2026-09-28T09:00:04.5875596Z   DEVELOCITY_INJECTION_INIT_SCRIPT_NAME: gradle-actions.inject-develocity.init.gradle
+2026-09-28T09:00:04.5876122Z   DEVELOCITY_INJECTION_CUSTOM_VALUE: gradle-actions
+2026-09-28T09:00:04.5876496Z   GITHUB_DEPENDENCY_GRAPH_ENABLED: false
+2026-09-28T09:00:04.5876820Z   QV_MC: 1.19.4
+2026-09-28T09:00:04.5877184Z   QV_JDK8: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/8.0.504-1/x64
+2026-09-28T09:00:04.5877693Z   QV_JDK17: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+2026-09-28T09:00:04.5878204Z   QV_JDK21: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+2026-09-28T09:00:04.5878623Z ##[endgroup]
+2026-09-28T09:00:04.6440303Z openjdk version "21.0.12.1" 2026-08-18 LTS
+2026-09-28T09:00:04.6450748Z OpenJDK Runtime Environment Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS)
+2026-09-28T09:00:04.6459964Z OpenJDK 64-Bit Server VM Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS, mixed mode, sharing)
+2026-09-28T09:00:05.5672283Z To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+2026-09-28T09:00:06.8637925Z Daemon will be stopped at the end of the build 
+2026-09-28T09:00:12.1650852Z 
+2026-09-28T09:00:12.1681184Z > Configure project :
+2026-09-28T09:00:12.1686318Z Architect Plugin: 3.4.164
+2026-09-28T09:00:12.5632893Z Architectury Loom: 1.11.456
+2026-09-28T09:00:12.5656865Z This version of Architectury Loom is in beta! Please report any issues you encounter: https://github.com/architectury/architectury-loom/issues
+2026-09-28T09:00:19.1630183Z 
+2026-09-28T09:00:19.1650812Z > Configure project :fabric
+2026-09-28T09:00:19.1657609Z :remapped 52 mods (intermediary -> named) in 1.775 s
+2026-09-28T09:00:25.3628569Z 
+2026-09-28T09:00:25.3634024Z > Task :fabric:adaptSharedSources
+2026-09-28T09:00:26.8641489Z > Task :fabric:compileJava FROM-CACHE
+2026-09-28T09:00:27.1651780Z > Task :fabric:processResources
+2026-09-28T09:00:27.1665738Z > Task :fabric:classes
+2026-09-28T09:00:27.1670338Z > Task :fabric:jar
+2026-09-28T09:00:27.2653076Z > Task :fabric:compileTestJava FROM-CACHE
+2026-09-28T09:00:27.2654329Z > Task :fabric:processIncludeJars
+2026-09-28T09:00:27.3651096Z > Task :fabric:sourcesJar
+2026-09-28T09:00:28.8660210Z > Task :fabric:remapJar
+2026-09-28T09:00:28.8660865Z > Task :fabric:processTestResources NO-SOURCE
+2026-09-28T09:00:28.8680287Z > Task :fabric:testClasses UP-TO-DATE
+2026-09-28T09:00:31.0627915Z 
+2026-09-28T09:00:31.0631940Z > Task :fabric:commandParserSmoke
+2026-09-28T09:00:31.0633555Z PASS: production command tree accepts unquoted device digests and legacy rule IDs, glob spaces and ban reasons; rejects non-admin access and invalid pages
+2026-09-28T09:00:31.8627171Z 
+2026-09-28T09:00:31.8638612Z > Task :fabric:test FROM-CACHE
+2026-09-28T09:00:31.8639822Z > Task :fabric:validateAccessWidener NO-SOURCE
+2026-09-28T09:00:31.8651817Z > Task :fabric:remapSourcesJar
+2026-09-28T09:00:31.8652583Z > Task :fabric:assemble
+2026-09-28T09:00:31.8653236Z > Task :fabric:check
+2026-09-28T09:00:31.8654263Z > Task :fabric:build
+2026-09-28T09:00:31.8654914Z > Task :forge:adaptSharedSources
+2026-09-28T09:00:31.9630497Z > Task :forge:compileJava FROM-CACHE
+2026-09-28T09:00:31.9660743Z > Task :forge:processResources
+2026-09-28T09:00:31.9680386Z > Task :forge:classes
+2026-09-28T09:00:31.9682376Z > Task :forge:jar
+2026-09-28T09:00:31.9683031Z > Task :forge:compileTestJava FROM-CACHE
+2026-09-28T09:00:31.9683788Z > Task :forge:processIncludeJars
+2026-09-28T09:00:32.0629629Z > Task :forge:sourcesJar
+2026-09-28T09:00:33.2645737Z > Task :forge:remapJar
+2026-09-28T09:00:33.2670368Z > Task :forge:processTestResources NO-SOURCE
+2026-09-28T09:00:33.2671057Z > Task :forge:testClasses UP-TO-DATE
+2026-09-28T09:00:34.5626618Z 
+2026-09-28T09:00:34.5653713Z > Task :forge:commandParserSmoke
+2026-09-28T09:00:34.5654974Z 2026-09-28 09:00:34,169 main WARN Advanced terminal features are not available in this environment
+2026-09-28T09:00:34.5656624Z PASS: production command tree accepts unquoted device digests and legacy rule IDs, glob spaces and ban reasons; rejects non-admin access and invalid pages
+2026-09-28T09:00:34.5657796Z 
+2026-09-28T09:00:34.5658186Z > Task :forge:test FROM-CACHE
+2026-09-28T09:00:34.5658917Z > Task :forge:validateAccessWidener NO-SOURCE
+2026-09-28T09:00:34.5659907Z > Task :forge:check
+2026-09-28T09:00:34.5660569Z > Task :forge:remapSourcesJar
+2026-09-28T09:00:34.5661234Z > Task :forge:assemble
+2026-09-28T09:00:34.5661856Z > Task :forge:build
+2026-09-28T09:00:34.5662922Z gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run-1790586008884.json
+2026-09-28T09:00:34.5663919Z 
+2026-09-28T09:00:34.5665034Z [Incubating] Problems report is available at: file:///home/runner/work/QiZhangVerdict/QiZhangVerdict/platforms/1.19.4/build/reports/problems/problems-report.html
+2026-09-28T09:00:34.6180690Z 
+2026-09-28T09:00:34.6197628Z Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+2026-09-28T09:00:34.6199813Z 
+2026-09-28T09:00:34.6201008Z You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+2026-09-28T09:00:34.6203706Z 
+2026-09-28T09:00:34.6204804Z For more on this, please refer to https://docs.gradle.org/8.14.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+2026-09-28T09:00:34.6205986Z 
+2026-09-28T09:00:34.6206381Z BUILD SUCCESSFUL in 29s
+2026-09-28T09:00:34.6207087Z 22 actionable tasks: 16 executed, 6 from cache
+2026-09-28T09:00:34.8167233Z ##[group]Run actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+2026-09-28T09:00:34.8167703Z with:
+2026-09-28T09:00:34.8168162Z   name: qizhang-legacy-logs-1.19.4
+2026-09-28T09:00:34.8168487Z   path: ci-logs/
+2026-09-28T09:00:34.8168757Z   if-no-files-found: ignore
+2026-09-28T09:00:34.8169058Z   retention-days: 14
+2026-09-28T09:00:34.8169335Z   compression-level: 6
+2026-09-28T09:00:34.8169929Z   overwrite: false
+2026-09-28T09:00:34.8170205Z   include-hidden-files: false
+2026-09-28T09:00:34.8170508Z   archive: true
+2026-09-28T09:00:34.8170757Z env:
+2026-09-28T09:00:34.8171127Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+2026-09-28T09:00:34.8171682Z   JAVA_HOME_8_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/8.0.504-1/x64
+2026-09-28T09:00:34.8172113Z   MAVEN_ARGS: -ntp
+2026-09-28T09:00:34.8172496Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+2026-09-28T09:00:34.8173063Z   JAVA_HOME_21_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+2026-09-28T09:00:34.8173519Z   GRADLE_ACTION_ID: gradle/actions/setup-gradle
+2026-09-28T09:00:34.8173874Z   GRADLE_USER_HOME: /home/runner/.gradle
+2026-09-28T09:00:34.8174230Z   GRADLE_BUILD_ACTION_SETUP_COMPLETED: true
+2026-09-28T09:00:34.8174744Z   DEVELOCITY_INJECTION_INIT_SCRIPT_NAME: gradle-actions.inject-develocity.init.gradle
+2026-09-28T09:00:34.8175273Z   DEVELOCITY_INJECTION_CUSTOM_VALUE: gradle-actions
+2026-09-28T09:00:34.8175649Z   GITHUB_DEPENDENCY_GRAPH_ENABLED: false
+2026-09-28T09:00:34.8175975Z ##[endgroup]
+2026-09-28T09:00:34.9640321Z With the provided path, there will be 1 file uploaded
+2026-09-28T09:00:34.9675989Z Artifact name is valid!
+2026-09-28T09:00:34.9676856Z Root directory input is valid!
+2026-09-28T09:00:35.2090821Z Uploading artifact: qizhang-legacy-logs-1.19.4.zip
+2026-09-28T09:00:35.2133344Z Beginning upload of artifact content to blob storage
+2026-09-28T09:00:35.3332079Z Uploaded bytes 1278
+2026-09-28T09:00:35.3605502Z Finished uploading artifact content to blob storage!
+2026-09-28T09:00:35.3606501Z SHA256 digest of uploaded artifact is 0571a9830c66d0d2d11f9611c2c926ac72dfaf291374032054036ddfe07953ba
+2026-09-28T09:00:35.3607433Z Finalizing artifact upload
+2026-09-28T09:00:35.6141195Z Artifact qizhang-legacy-logs-1.19.4 successfully finalized. Artifact ID 10959883318
+2026-09-28T09:00:35.6142210Z Artifact qizhang-legacy-logs-1.19.4 has been successfully uploaded! Final size is 1278 bytes. Artifact ID is 10959883318
+2026-09-28T09:00:35.6145169Z Artifact download URL: https://github.com/EeryFrank/QiZhangVerdict/actions/runs/36400708734/artifacts/10959883318
+2026-09-28T09:00:35.6285862Z ##[group]Run actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+2026-09-28T09:00:35.6286342Z with:
+2026-09-28T09:00:35.6286627Z   name: qizhang-legacy-jars-1.19.4
+2026-09-28T09:00:35.6286971Z   path: ci-artifacts/
+2026-09-28T09:00:35.6287275Z   if-no-files-found: error
+2026-09-28T09:00:35.6287591Z   retention-days: 14
+2026-09-28T09:00:35.6287883Z   compression-level: 6
+2026-09-28T09:00:35.6288166Z   overwrite: false
+2026-09-28T09:00:35.6288449Z   include-hidden-files: false
+2026-09-28T09:00:35.6288773Z   archive: true
+2026-09-28T09:00:35.6289050Z env:
+2026-09-28T09:00:35.6289812Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+2026-09-28T09:00:35.6290394Z   JAVA_HOME_8_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/8.0.504-1/x64
+2026-09-28T09:00:35.6290849Z   MAVEN_ARGS: -ntp
+2026-09-28T09:00:35.6291256Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+2026-09-28T09:00:35.6291838Z   JAVA_HOME_21_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+2026-09-28T09:00:35.6292303Z   GRADLE_ACTION_ID: gradle/actions/setup-gradle
+2026-09-28T09:00:35.6292689Z   GRADLE_USER_HOME: /home/runner/.gradle
+2026-09-28T09:00:35.6293049Z   GRADLE_BUILD_ACTION_SETUP_COMPLETED: true
+2026-09-28T09:00:35.6293566Z   DEVELOCITY_INJECTION_INIT_SCRIPT_NAME: gradle-actions.inject-develocity.init.gradle
+2026-09-28T09:00:35.6294100Z   DEVELOCITY_INJECTION_CUSTOM_VALUE: gradle-actions
+2026-09-28T09:00:35.6294491Z   GITHUB_DEPENDENCY_GRAPH_ENABLED: false
+2026-09-28T09:00:35.6295172Z ##[endgroup]
+2026-09-28T09:00:35.7767214Z With the provided path, there will be 3 files uploaded
+2026-09-28T09:00:35.7773631Z Artifact name is valid!
+2026-09-28T09:00:35.7786440Z Root directory input is valid!
+2026-09-28T09:00:36.0248202Z Uploading artifact: qizhang-legacy-jars-1.19.4.zip
+2026-09-28T09:00:36.0288217Z Beginning upload of artifact content to blob storage
+2026-09-28T09:00:36.2075564Z Uploaded bytes 178273
+2026-09-28T09:00:36.2350957Z Finished uploading artifact content to blob storage!
+2026-09-28T09:00:36.2352011Z SHA256 digest of uploaded artifact is f7c4bf2bf45cd2f712a6fac45a2d88790daac712a7e605cadf3fc9cdd3563ef9
+2026-09-28T09:00:36.2352946Z Finalizing artifact upload
+2026-09-28T09:00:36.5028570Z Artifact qizhang-legacy-jars-1.19.4 successfully finalized. Artifact ID 10959803648
+2026-09-28T09:00:36.5030082Z Artifact qizhang-legacy-jars-1.19.4 has been successfully uploaded! Final size is 178273 bytes. Artifact ID is 10959803648
+2026-09-28T09:00:36.5034175Z Artifact download URL: https://github.com/EeryFrank/QiZhangVerdict/actions/runs/36400708734/artifacts/10959803648
+2026-09-28T09:00:36.5265131Z Post job cleanup.
+2026-09-28T09:00:36.8082625Z In post-action step
+2026-09-28T09:00:36.8091858Z Enhanced Caching: This build is using the proprietary 'gradle-actions-caching' provider for optimized caching support. See https://github.com/gradle/actions/blob/main/DISTRIBUTION.md for terms of use and opt-out instructions.
+2026-09-28T09:00:36.8894618Z ##[group]Stopping Gradle daemons
+2026-09-28T09:00:36.8895735Z Stopping Gradle daemons for /home/runner/.gradle/wrapper/dists/gradle-8.14.1-bin/baw1sv0jfoi8rxs14qo3h49cs/gradle-8.14.1
+2026-09-28T09:00:36.8914264Z [command]/home/runner/.gradle/wrapper/dists/gradle-8.14.1-bin/baw1sv0jfoi8rxs14qo3h49cs/gradle-8.14.1/bin/gradle --stop
+2026-09-28T09:00:37.5534202Z No Gradle daemons are running.
+2026-09-28T09:00:37.5623161Z ##[endgroup]
+2026-09-28T09:00:37.5623992Z ##[group]Performing cache cleanup
+2026-09-28T09:00:38.3796930Z Removed 16 files excluded from the cache (e.g. locks)
+2026-09-28T09:00:38.3797943Z Removing Gradle User Home content that was not used during the build
+2026-09-28T09:00:38.5750691Z Active Gradle versions: 8.14.1
+2026-09-28T09:00:38.5763860Z ##[endgroup]
+2026-09-28T09:00:38.5764575Z ##[group]Caching Gradle state
+2026-09-28T09:00:39.0631167Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/QiZhangVerdict/QiZhangVerdict --files-from manifest.txt --use-compress-program zstdmt
+2026-09-28T09:00:42.3039250Z Sent 0 of 785545743 (0.0%), 0.0 MBs/sec
+2026-09-28T09:00:43.3045612Z Sent 718436879 of 785545743 (91.5%), 342.4 MBs/sec
+2026-09-28T09:00:44.3050458Z Sent 718436879 of 785545743 (91.5%), 228.3 MBs/sec
+2026-09-28T09:00:45.3048646Z Sent 718436879 of 785545743 (91.5%), 171.2 MBs/sec
+2026-09-28T09:00:45.8126073Z Sent 785545743 of 785545743 (100.0%), 166.1 MBs/sec
+2026-09-28T09:00:46.0384812Z Saved cache entry with key gradle-home-v2|Linux-X64|build[b42cee15b8a8a22a6ad54481b883629a]-eb6d483e64e29a15501df953f7d59a9645a6905a from /home/runner/.gradle/caches,/home/runner/.gradle/notifications,/home/runner/.gradle/.setup-gradle in 6988ms
+2026-09-28T09:00:46.0386248Z ##[endgroup]
+2026-09-28T09:00:46.0396708Z ##[group]Generating Job Summary
+2026-09-28T09:00:46.0398008Z 
+2026-09-28T09:00:46.0398016Z 
+2026-09-28T09:00:46.0398210Z <table>
+2026-09-28T09:00:46.0398581Z     <tr>
+2026-09-28T09:00:46.0399063Z         <th>Gradle Root Project</th>
+2026-09-28T09:00:46.0399835Z         <th>Requested Tasks</th>
+2026-09-28T09:00:46.0400356Z         <th>Gradle Version</th>
+2026-09-28T09:00:46.0400865Z         <th>Build Outcome</th>
+2026-09-28T09:00:46.0401674Z         <th>Build&nbsp;Scan®</th>
+2026-09-28T09:00:46.0402342Z     </tr>
+2026-09-28T09:00:46.0402709Z     <tr>
+2026-09-28T09:00:46.0403139Z         <td>qizhangverdict-1.19.4</td>
+2026-09-28T09:00:46.0403510Z         <td>build</td>
+2026-09-28T09:00:46.0403816Z         <td align='center'>8.14.1</td>
+2026-09-28T09:00:46.0404182Z         <td align='center'>:white_check_mark:</td>
+2026-09-28T09:00:46.0405426Z         <td><a href="https://scans.gradle.com" rel="nofollow" target="_blank"><img src="https://img.shields.io/badge/Not%20published-lightgrey" alt="Build Scan not published" /></a></td>
+2026-09-28T09:00:46.0406209Z     </tr>
+2026-09-28T09:00:46.0406465Z </table>
+2026-09-28T09:00:46.0406706Z     
+2026-09-28T09:00:46.0406971Z ============================
+2026-09-28T09:00:46.0407433Z <h4>Gradle State Caching - ⚡ Enhanced</h4>
+2026-09-28T09:00:46.0407687Z 
+2026-09-28T09:00:46.0408689Z **[Enhanced Caching](https://github.com/gradle/actions/blob/main/docs/setup-gradle.md#enhanced-caching)** uses the proprietary `gradle-actions-caching` provider. See [DISTRIBUTION.md](https://github.com/gradle/actions/blob/main/DISTRIBUTION.md) for terms of use and opt-out instructions.
+2026-09-28T09:00:46.0410016Z 
+2026-09-28T09:00:46.0410136Z <details>
+2026-09-28T09:00:46.0410585Z <summary>Entries: 7 restored (1036Mb), 1 saved (749Mb) - Expand for more details</summary>
+2026-09-28T09:00:46.0410970Z 
+2026-09-28T09:00:46.0412094Z [Cache was enabled](https://github.com/gradle/actions/blob/main/docs/setup-gradle.md#caching-build-state-between-jobs) — Gradle User Home was restored from the cache and saved for use by subsequent jobs.
+2026-09-28T09:00:46.0412891Z 
+2026-09-28T09:00:46.0413474Z [Cache cleanup](https://github.com/gradle/actions/blob/main/docs/setup-gradle.md#configuring-cache-cleanup) purged stale files from Gradle User Home before saving.
+2026-09-28T09:00:46.0414112Z 
+2026-09-28T09:00:46.0414232Z <table>
+2026-09-28T09:00:46.0414618Z     <tr><td></td><th>Count</th><th>Total Size (Mb)</th><th>Total Time (ms)</th></tr>
+2026-09-28T09:00:46.0415071Z     <tr><td>Entries Restored</td>
+2026-09-28T09:00:46.0415404Z         <td>7</td>
+2026-09-28T09:00:46.0415679Z         <td>1036</td>
+2026-09-28T09:00:46.0416000Z         <td>13378</td>
+2026-09-28T09:00:46.0416400Z     </tr>
+2026-09-28T09:00:46.0416790Z     <tr><td>Entries Saved</td>
+2026-09-28T09:00:46.0417269Z         <td>1</td>
+2026-09-28T09:00:46.0417676Z         <td>749</td>
+2026-09-28T09:00:46.0418089Z         <td>6988</td>
+2026-09-28T09:00:46.0418478Z     </tr>
+2026-09-28T09:00:46.0418825Z </table>
+2026-09-28T09:00:46.0419045Z 
+2026-09-28T09:00:46.0419202Z <pre>
+2026-09-28T09:00:46.0419827Z Entry: Gradle User Home
+2026-09-28T09:00:46.0420736Z     Requested Key : gradle-home-v2|Linux-X64|build[b42cee15b8a8a22a6ad54481b883629a]-eb6d483e64e29a15501df953f7d59a9645a6905a
+2026-09-28T09:00:46.0422196Z     Restored  Key : gradle-home-v2|Linux-X64|build[b42cee15b8a8a22a6ad54481b883629a]-429284ed0fa296b04cf7a13253b2e95af048e5d6
+2026-09-28T09:00:46.0423225Z               Size: 749 MB (785541227 B)
+2026-09-28T09:00:46.0423750Z               Time: 6991 ms
+2026-09-28T09:00:46.0424270Z               (Entry restored: partial match found)
+2026-09-28T09:00:46.0425312Z     Saved     Key : gradle-home-v2|Linux-X64|build[b42cee15b8a8a22a6ad54481b883629a]-eb6d483e64e29a15501df953f7d59a9645a6905a
+2026-09-28T09:00:46.0426293Z               Size: 749 MB (785545743 B)
+2026-09-28T09:00:46.0426842Z               Time: 6988 ms
+2026-09-28T09:00:46.0427315Z               (Entry saved)
+2026-09-28T09:00:46.0427746Z ---
+2026-09-28T09:00:46.0428292Z Entry: wrapper/dists/gradle-8.14.1-bin/baw1sv0jfoi8rxs14qo3h49cs
+2026-09-28T09:00:46.0429197Z     Requested Key : gradle-wrapper-zips-v2-a85438407cadad5878c39138dd4a9c7a
+2026-09-28T09:00:46.0430354Z     Restored  Key : gradle-wrapper-zips-v2-a85438407cadad5878c39138dd4a9c7a
+2026-09-28T09:00:46.0431088Z               Size: 130 MB (136717666 B)
+2026-09-28T09:00:46.0431588Z               Time: 1706 ms
+2026-09-28T09:00:46.0432114Z               (Entry restored: exact match found)
+2026-09-28T09:00:46.0432667Z     Saved     Key : 
+2026-09-28T09:00:46.0433083Z               Size: 
+2026-09-28T09:00:46.0433460Z               Time: 
+2026-09-28T09:00:46.0433942Z               (Entry not saved: contents unchanged)
+2026-09-28T09:00:46.0434478Z ---
+2026-09-28T09:00:46.0434882Z Entry: dependencies
+2026-09-28T09:00:46.0435535Z     Requested Key : gradle-dependencies-v2-a40ffdac562b4ca7b527c654889bfd99
+2026-09-28T09:00:46.0436891Z     Restored  Key : gradle-dependencies-v2-a40ffdac562b4ca7b527c654889bfd99
+2026-09-28T09:00:46.0437489Z               Size: 127 MB (132935311 B)
+2026-09-28T09:00:46.0437985Z               Time: 1868 ms
+2026-09-28T09:00:46.0438498Z               (Entry restored: exact match found)
+2026-09-28T09:00:46.0439095Z     Saved     Key : 
+2026-09-28T09:00:46.0439867Z               Size: 
+2026-09-28T09:00:46.0440346Z               Time: 
+2026-09-28T09:00:46.0440841Z               (Entry not saved: contents unchanged)
+2026-09-28T09:00:46.0441386Z ---
+2026-09-28T09:00:46.0441789Z Entry: instrumented-jars
+2026-09-28T09:00:46.0442441Z     Requested Key : gradle-instrumented-jars-v2-82dcccb6fc71f1534891836e9ba7f4fa
+2026-09-28T09:00:46.0443368Z     Restored  Key : gradle-instrumented-jars-v2-82dcccb6fc71f1534891836e9ba7f4fa
+2026-09-28T09:00:46.0444059Z               Size: 0 MB (99918 B)
+2026-09-28T09:00:46.0444519Z               Time: 410 ms
+2026-09-28T09:00:46.0444978Z               (Entry restored: exact match found)
+2026-09-28T09:00:46.0445699Z     Saved     Key : 
+2026-09-28T09:00:46.0446080Z               Size: 
+2026-09-28T09:00:46.0446448Z               Time: 
+2026-09-28T09:00:46.0446843Z               (Entry not saved: contents unchanged)
+2026-09-28T09:00:46.0447365Z ---
+2026-09-28T09:00:46.0447709Z Entry: build-cache
+2026-09-28T09:00:46.0448337Z     Requested Key : gradle-build-cache-v2-2a0827784fa8fbf2970c0387a55e3946
+2026-09-28T09:00:46.0449115Z     Restored  Key : gradle-build-cache-v2-2a0827784fa8fbf2970c0387a55e3946
+2026-09-28T09:00:46.0449965Z               Size: 1 MB (735899 B)
+2026-09-28T09:00:46.0450415Z               Time: 631 ms
+2026-09-28T09:00:46.0450879Z               (Entry restored: exact match found)
+2026-09-28T09:00:46.0451355Z     Saved     Key : 
+2026-09-28T09:00:46.0451722Z               Size: 
+2026-09-28T09:00:46.0452063Z               Time: 
+2026-09-28T09:00:46.0452480Z               (Entry not saved: contents unchanged)
+2026-09-28T09:00:46.0452957Z ---
+2026-09-28T09:00:46.0453284Z Entry: groovy-dsl
+2026-09-28T09:00:46.0453843Z     Requested Key : gradle-groovy-dsl-v2-9adffa4f5011ed019f1167629c3362af
+2026-09-28T09:00:46.0454704Z     Restored  Key : gradle-groovy-dsl-v2-9adffa4f5011ed019f1167629c3362af
+2026-09-28T09:00:46.0455403Z               Size: 0 MB (154228 B)
+2026-09-28T09:00:46.0455890Z               Time: 463 ms
+2026-09-28T09:00:46.0456377Z               (Entry restored: exact match found)
+2026-09-28T09:00:46.0456908Z     Saved     Key : 
+2026-09-28T09:00:46.0457307Z               Size: 
+2026-09-28T09:00:46.0457694Z               Time: 
+2026-09-28T09:00:46.0458143Z               (Entry not saved: contents unchanged)
+2026-09-28T09:00:46.0458668Z ---
+2026-09-28T09:00:46.0459034Z Entry: transforms
+2026-09-28T09:00:46.0459780Z     Requested Key : gradle-transforms-v2-81c90df12f259db7c3648cec7a1db593
+2026-09-28T09:00:46.0460688Z     Restored  Key : gradle-transforms-v2-81c90df12f259db7c3648cec7a1db593
+2026-09-28T09:00:46.0461384Z               Size: 28 MB (29633639 B)
+2026-09-28T09:00:46.0461898Z               Time: 1309 ms
+2026-09-28T09:00:46.0462384Z               (Entry restored: exact match found)
+2026-09-28T09:00:46.0462919Z     Saved     Key : 
+2026-09-28T09:00:46.0463315Z               Size: 
+2026-09-28T09:00:46.0463714Z               Time: 
+2026-09-28T09:00:46.0464153Z               (Entry not saved: contents unchanged)
+2026-09-28T09:00:46.0464689Z </pre>
+2026-09-28T09:00:46.0465039Z </details>
+2026-09-28T09:00:46.0465239Z 
+2026-09-28T09:00:46.0465758Z ##[endgroup]
+2026-09-28T09:00:46.0466184Z Completed post-action step
+2026-09-28T09:00:46.0675050Z Post job cleanup.
+2026-09-28T09:00:46.1612094Z Post job cleanup.
+2026-09-28T09:00:46.2616995Z Post job cleanup.
+2026-09-28T09:00:46.3520699Z Post job cleanup.
+2026-09-28T09:00:46.4514318Z [command]/usr/bin/git version
+2026-09-28T09:00:46.4569028Z git version 2.55.0
+2026-09-28T09:00:46.4606787Z Temporarily overriding HOME='/home/runner/work/_temp/3d55685c-9412-472d-ac7e-6b4acea9233f' before making global git config changes
+2026-09-28T09:00:46.4610880Z Adding repository directory to the temporary git global config as a safe directory
+2026-09-28T09:00:46.4613740Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/QiZhangVerdict/QiZhangVerdict
+2026-09-28T09:00:46.4653283Z Removing SSH command configuration
+2026-09-28T09:00:46.4660805Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-28T09:00:46.4702570Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-28T09:00:46.4978239Z Removing HTTP extra header
+2026-09-28T09:00:46.4979330Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-28T09:00:46.5023417Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-28T09:00:46.5300989Z Removing includeIf entries pointing to credentials config files
+2026-09-28T09:00:46.5310373Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-28T09:00:46.5356398Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-09-28T09:00:46.5809067Z Cleaning up orphan processes
