@@ -4,7 +4,7 @@
 
 ## 1.17.1 开发候选
 
-`0.6.0-dev` 新增 Minecraft **1.17.1 Fabric / Forge**，使用 Java 16。两份成品各通过 104 项包内核心检查；适配、依赖、散列和保留的失败尝试见[构建记录](docs/adapter-1.17.1.md)。此处是开发进度，公开下载仍以仓库 Releases 及下面已发布版本为准。
+`0.6.0-dev` 新增 Minecraft **1.17.1 Fabric / Forge**，使用 Java 16。两份成品各通过 104 项包内核心检查、26 组[专服准入检查](docs/runtime-server-1.17.1.md)，以及默认策略下超过 60 秒的[图形客户端验证](docs/runtime-client-1.17.1.md)，截图已另行检查。适配、依赖与散列见[构建记录](docs/adapter-1.17.1.md)。Fabric 首次启动曾发生模型初始化崩溃，同包复测通过但根因未定；失败记录完整保留。此处是开发进度，公开下载仍以仓库 Releases 及下面已发布版本为准。
 
 当前开发目录有 **44 个精确标识（40 DENY、4 ALERT）**，新增 `dualviewxray`、`simplexray`；普通模组也使用的 `hydrogen`、`lumina` 不会被默认拒绝。已有名单、白名单、OFF 和删除项不会因升级自动回填，见[目录与合并工具](docs/catalog.md)。设备及 VM 信号是客户端自报，名单数量不代表覆盖全部作弊工具。
 
